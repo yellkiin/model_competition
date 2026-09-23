@@ -1,0 +1,23 @@
+# Local processing outputs
+.work/
+__pycache__/
+*.extracting
+
+# Office lock files and OS metadata
+~$*
+.DS_Store
+Thumbs.db
+
+# Raw problem datasets remain local. See 调研/数据文件清单.json.
+/题目/A题/通用神经网络处理器下的多核调度问题  附件/data/*.json
+/题目/B题/氢燃料电池低温冷启动建模与控制策略研究  附件/
+/题目/C题/**/*.mat
+/题目/D题/数据/
+/题目/E题/E题数据/
+/题目/F题/real_attachments/
+
+# Compressed inputs must not be committed accidentally.
+/题目/**/*.zip
+/题目/**/*.xz
+/题目/**/*.7z
+/题目/**/*.rar

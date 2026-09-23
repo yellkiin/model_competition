@@ -1,0 +1,9 @@
+# Keep supplied problem files byte-for-byte, including original line endings.
+/题目/** -text
+
+# Keep authored research and tooling consistent across platforms.
+/调研/** text eol=lf
+/tools/** text eol=lf
+/README.md text eol=lf
+/.gitignore text eol=lf
+/.gitattributes text eol=lf

@@ -1,0 +1,708 @@
+{
+  "A_data_value\\regmix_tables\\est_mixture_10b.csv": {
+    "n": 63,
+    "fields": [
+      "index",
+      "train_the_pile_arxiv",
+      "train_the_pile_freelaw",
+      "train_the_pile_nih_exporter",
+      "train_the_pile_pubmed_central",
+      "train_the_pile_wikipedia_en",
+      "train_the_pile_dm_mathematics",
+      "train_the_pile_github",
+      "train_the_pile_philpapers",
+      "train_the_pile_stackexchange",
+      "train_the_pile_enron_emails",
+      "train_the_pile_gutenberg_pg_19",
+      "train_the_pile_pile_cc",
+      "train_the_pile_ubuntu_irc",
+      "train_the_pile_europarl",
+      "train_the_pile_hackernews",
+      "train_the_pile_pubmed_abstracts",
+      "train_the_pile_uspto_backgrounds"
+    ]
+  },
+  "A_data_value\\regmix_tables\\est_mixture_70b.csv": {
+    "n": 63,
+    "fields": [
+      "index",
+      "train_the_pile_arxiv",
+      "train_the_pile_freelaw",
+      "train_the_pile_nih_exporter",
+      "train_the_pile_pubmed_central",
+      "train_the_pile_wikipedia_en",
+      "train_the_pile_dm_mathematics",
+      "train_the_pile_github",
+      "train_the_pile_philpapers",
+      "train_the_pile_stackexchange",
+      "train_the_pile_enron_emails",
+      "train_the_pile_gutenberg_pg_19",
+      "train_the_pile_pile_cc",
+      "train_the_pile_ubuntu_irc",
+      "train_the_pile_europarl",
+      "train_the_pile_hackernews",
+      "train_the_pile_pubmed_abstracts",
+      "train_the_pile_uspto_backgrounds"
+    ]
+  },
+  "A_data_value\\regmix_tables\\est_pile_loss_10b.csv": {
+    "n": 63,
+    "fields": [
+      "index",
+      "metric/the_pile_arxiv_val_loss",
+      "metric/the_pile_freelaw_val_loss",
+      "metric/the_pile_pubmed_central_val_loss",
+      "metric/the_pile_wikipedia_en_val_loss",
+      "metric/the_pile_dm_mathematics_val_loss",
+      "metric/the_pile_github_val_loss",
+      "metric/the_pile_stackexchange_val_loss",
+      "metric/the_pile_gutenberg_pg_19_val_loss",
+      "metric/the_pile_pile_cc_val_loss",
+      "metric/the_pile_ubuntu_irc_val_loss",
+      "metric/the_pile_hackernews_val_loss",
+      "metric/the_pile_pubmed_abstracts_val_loss",
+      "metric/the_pile_uspto_backgrounds_val_loss"
+    ]
+  },
+  "A_data_value\\regmix_tables\\est_pile_loss_70b.csv": {
+    "n": 63,
+    "fields": [
+      "index",
+      "metric/the_pile_arxiv_val_loss",
+      "metric/the_pile_freelaw_val_loss",
+      "metric/the_pile_pubmed_central_val_loss",
+      "metric/the_pile_wikipedia_en_val_loss",
+      "metric/the_pile_dm_mathematics_val_loss",
+      "metric/the_pile_github_val_loss",
+      "metric/the_pile_stackexchange_val_loss",
+      "metric/the_pile_gutenberg_pg_19_val_loss",
+      "metric/the_pile_pile_cc_val_loss",
+      "metric/the_pile_ubuntu_irc_val_loss",
+      "metric/the_pile_hackernews_val_loss",
+      "metric/the_pile_pubmed_abstracts_val_loss",
+      "metric/the_pile_uspto_backgrounds_val_loss"
+    ]
+  },
+  "A_data_value\\regmix_tables\\test_mixture_1B.csv": {
+    "n": 64,
+    "fields": [
+      "index",
+      "train_the_pile_arxiv",
+      "train_the_pile_freelaw",
+      "train_the_pile_nih_exporter",
+      "train_the_pile_pubmed_central",
+      "train_the_pile_wikipedia_en",
+      "train_the_pile_dm_mathematics",
+      "train_the_pile_github",
+      "train_the_pile_philpapers",
+      "train_the_pile_stackexchange",
+      "train_the_pile_enron_emails",
+      "train_the_pile_gutenberg_pg_19",
+      "train_the_pile_pile_cc",
+      "train_the_pile_ubuntu_irc",
+      "train_the_pile_europarl",
+      "train_the_pile_hackernews",
+      "train_the_pile_pubmed_abstracts",
+      "train_the_pile_uspto_backgrounds"
+    ]
+  },
+  "A_data_value\\regmix_tables\\test_mixture_1m.csv": {
+    "n": 256,
+    "fields": [
+      "index",
+      "train_the_pile_arxiv",
+      "train_the_pile_freelaw",
+      "train_the_pile_nih_exporter",
+      "train_the_pile_pubmed_central",
+      "train_the_pile_wikipedia_en",
+      "train_the_pile_dm_mathematics",
+      "train_the_pile_github",
+      "train_the_pile_philpapers",
+      "train_the_pile_stackexchange",
+      "train_the_pile_enron_emails",
+      "train_the_pile_gutenberg_pg_19",
+      "train_the_pile_pile_cc",
+      "train_the_pile_ubuntu_irc",
+      "train_the_pile_europarl",
+      "train_the_pile_hackernews",
+      "train_the_pile_pubmed_abstracts",
+      "train_the_pile_uspto_backgrounds"
+    ]
+  },
+  "A_data_value\\regmix_tables\\test_mixture_60m.csv": {
+    "n": 256,
+    "fields": [
+      "index",
+      "train_the_pile_arxiv",
+      "train_the_pile_freelaw",
+      "train_the_pile_nih_exporter",
+      "train_the_pile_pubmed_central",
+      "train_the_pile_wikipedia_en",
+      "train_the_pile_dm_mathematics",
+      "train_the_pile_github",
+      "train_the_pile_philpapers",
+      "train_the_pile_stackexchange",
+      "train_the_pile_enron_emails",
+      "train_the_pile_gutenberg_pg_19",
+      "train_the_pile_pile_cc",
+      "train_the_pile_ubuntu_irc",
+      "train_the_pile_europarl",
+      "train_the_pile_hackernews",
+      "train_the_pile_pubmed_abstracts",
+      "train_the_pile_uspto_backgrounds"
+    ]
+  },
+  "A_data_value\\regmix_tables\\test_pile_loss_1B.csv": {
+    "n": 64,
+    "fields": [
+      "index",
+      "metric/the_pile_arxiv_val_loss",
+      "metric/the_pile_freelaw_val_loss",
+      "metric/the_pile_pubmed_central_val_loss",
+      "metric/the_pile_wikipedia_en_val_loss",
+      "metric/the_pile_dm_mathematics_val_loss",
+      "metric/the_pile_github_val_loss",
+      "metric/the_pile_stackexchange_val_loss",
+      "metric/the_pile_gutenberg_pg_19_val_loss",
+      "metric/the_pile_pile_cc_val_loss",
+      "metric/the_pile_ubuntu_irc_val_loss",
+      "metric/the_pile_hackernews_val_loss",
+      "metric/the_pile_pubmed_abstracts_val_loss",
+      "metric/the_pile_uspto_backgrounds_val_loss"
+    ]
+  },
+  "A_data_value\\regmix_tables\\test_pile_loss_1m.csv": {
+    "n": 256,
+    "fields": [
+      "index",
+      "metric/the_pile_arxiv_val_loss",
+      "metric/the_pile_freelaw_val_loss",
+      "metric/the_pile_pubmed_central_val_loss",
+      "metric/the_pile_wikipedia_en_val_loss",
+      "metric/the_pile_dm_mathematics_val_loss",
+      "metric/the_pile_github_val_loss",
+      "metric/the_pile_stackexchange_val_loss",
+      "metric/the_pile_gutenberg_pg_19_val_loss",
+      "metric/the_pile_pile_cc_val_loss",
+      "metric/the_pile_ubuntu_irc_val_loss",
+      "metric/the_pile_hackernews_val_loss",
+      "metric/the_pile_pubmed_abstracts_val_loss",
+      "metric/the_pile_uspto_backgrounds_val_loss"
+    ]
+  },
+  "A_data_value\\regmix_tables\\test_pile_loss_60m.csv": {
+    "n": 256,
+    "fields": [
+      "index",
+      "metric/the_pile_arxiv_val_loss",
+      "metric/the_pile_freelaw_val_loss",
+      "metric/the_pile_pubmed_central_val_loss",
+      "metric/the_pile_wikipedia_en_val_loss",
+      "metric/the_pile_dm_mathematics_val_loss",
+      "metric/the_pile_github_val_loss",
+      "metric/the_pile_stackexchange_val_loss",
+      "metric/the_pile_gutenberg_pg_19_val_loss",
+      "metric/the_pile_pile_cc_val_loss",
+      "metric/the_pile_ubuntu_irc_val_loss",
+      "metric/the_pile_hackernews_val_loss",
+      "metric/the_pile_pubmed_abstracts_val_loss",
+      "metric/the_pile_uspto_backgrounds_val_loss"
+    ]
+  },
+  "A_data_value\\regmix_tables\\train_mixture_1m.csv": {
+    "n": 512,
+    "fields": [
+      "index",
+      "train_the_pile_arxiv",
+      "train_the_pile_freelaw",
+      "train_the_pile_nih_exporter",
+      "train_the_pile_pubmed_central",
+      "train_the_pile_wikipedia_en",
+      "train_the_pile_dm_mathematics",
+      "train_the_pile_github",
+      "train_the_pile_philpapers",
+      "train_the_pile_stackexchange",
+      "train_the_pile_enron_emails",
+      "train_the_pile_gutenberg_pg_19",
+      "train_the_pile_pile_cc",
+      "train_the_pile_ubuntu_irc",
+      "train_the_pile_europarl",
+      "train_the_pile_hackernews",
+      "train_the_pile_pubmed_abstracts",
+      "train_the_pile_uspto_backgrounds"
+    ]
+  },
+  "A_data_value\\regmix_tables\\train_pile_loss_1m.csv": {
+    "n": 512,
+    "fields": [
+      "index",
+      "metric/the_pile_arxiv_val_loss",
+      "metric/the_pile_freelaw_val_loss",
+      "metric/the_pile_pubmed_central_val_loss",
+      "metric/the_pile_wikipedia_en_val_loss",
+      "metric/the_pile_dm_mathematics_val_loss",
+      "metric/the_pile_github_val_loss",
+      "metric/the_pile_stackexchange_val_loss",
+      "metric/the_pile_gutenberg_pg_19_val_loss",
+      "metric/the_pile_pile_cc_val_loss",
+      "metric/the_pile_ubuntu_irc_val_loss",
+      "metric/the_pile_hackernews_val_loss",
+      "metric/the_pile_pubmed_abstracts_val_loss",
+      "metric/the_pile_uspto_backgrounds_val_loss"
+    ]
+  },
+  "B_scaling_laws\\cerebras_training_log.csv": {
+    "n": 1029,
+    "fields": [
+      "run_id",
+      "N_params_B",
+      "D_tokens_B",
+      "C_FLOPs_1e21",
+      "steps",
+      "batch_tokens_M",
+      "lr",
+      "wd",
+      "precision",
+      "gpu_days",
+      "step_time_ms",
+      "train_loss",
+      "val_loss",
+      "ppl",
+      "grad_norm_avg"
+    ]
+  },
+  "B_scaling_laws\\open_model_family_metadata.csv": {
+    "n": 18,
+    "fields": [
+      "family",
+      "model_repo",
+      "config_bytes",
+      "readme_bytes",
+      "weight_file_count",
+      "weight_total_bytes",
+      "source_url",
+      "error"
+    ]
+  },
+  "B_scaling_laws\\published_scaling_data.csv": {
+    "n": 44,
+    "fields": [
+      "family",
+      "N_params_B",
+      "D_tokens_B",
+      "val_loss",
+      "source",
+      "is_converged"
+    ]
+  },
+  "B_scaling_laws\\pythia_checkpoint_index.csv": {
+    "n": 1386,
+    "fields": [
+      "model_repo",
+      "model_size",
+      "step",
+      "branch",
+      "commit"
+    ]
+  },
+  "B_scaling_laws\\pythia_training_log_existing.csv": {
+    "n": 1176,
+    "fields": [
+      "run_id",
+      "N_params_B",
+      "D_tokens_B",
+      "C_FLOPs_1e21",
+      "steps",
+      "batch_tokens_M",
+      "lr",
+      "wd",
+      "precision",
+      "gpu_days",
+      "step_time_ms",
+      "train_loss",
+      "val_loss",
+      "ppl",
+      "grad_norm_avg"
+    ]
+  },
+  "B_scaling_laws\\scaling_baseline.csv": {
+    "n": 57,
+    "fields": [
+      "family",
+      "N_params_B",
+      "D_tokens_B",
+      "val_loss",
+      "is_converged"
+    ]
+  },
+  "B_scaling_laws\\supplementary_large_baseline.csv": {
+    "n": 128,
+    "fields": [
+      "family",
+      "N_params_B",
+      "D_tokens_B",
+      "val_loss",
+      "is_converged"
+    ]
+  },
+  "B_scaling_laws\\supplementary_large_models.csv": {
+    "n": 132,
+    "fields": [
+      "model_name",
+      "N_params_B",
+      "D_tokens_B",
+      "FLOPs",
+      "publication_date",
+      "organization",
+      "accessibility",
+      "country"
+    ]
+  },
+  "B_scaling_laws\\supplementary_NQ_experiment.csv": {
+    "n": 360,
+    "fields": [
+      "experiment_id",
+      "N_params_B",
+      "D_tokens_B",
+      "Q_score",
+      "val_loss"
+    ]
+  },
+  "B_scaling_laws\\supplementary_NQ_experiment_expanded.csv": {
+    "n": 450,
+    "fields": [
+      "experiment_id",
+      "N_params_B",
+      "D_tokens_B",
+      "Q_score",
+      "val_loss"
+    ]
+  },
+  "B_scaling_laws\\supplementary_NQ_experiment_large.csv": {
+    "n": 1704,
+    "fields": [
+      "experiment_id",
+      "N_params_B",
+      "D_tokens_B",
+      "Q_score",
+      "val_loss",
+      "data_type"
+    ]
+  },
+  "C_efficiency_evolution\\epoch_all_ai_models.csv": {
+    "n": 3523,
+    "fields": [
+      "Model",
+      "Domain",
+      "Task",
+      "Organization",
+      "Authors",
+      "Publication date",
+      "Reference",
+      "Link",
+      "Citations",
+      "Notability criteria",
+      "Notability criteria notes",
+      "Parameters",
+      "Parameters notes",
+      "Training compute (FLOP)",
+      "Training compute notes",
+      "Training dataset size (total)",
+      "Dataset size notes",
+      "Training time (hours)",
+      "Training time notes",
+      "Training hardware",
+      "Approach",
+      "Confidence",
+      "Abstract",
+      "Epochs",
+      "WikiText and Penn Treebank data",
+      "Model accessibility",
+      "Country (of organization)",
+      "Base model",
+      "Finetune compute (FLOP)",
+      "Finetune compute notes",
+      "Hardware quantity",
+      "Hardware utilization (MFU)",
+      "Last modified",
+      "Training cloud compute vendor",
+      "Training data center",
+      "Archived links",
+      "Batch size",
+      "Batch size notes",
+      "Organization categorization",
+      "Foundation model",
+      "Training compute lower bound",
+      "Training compute upper bound",
+      "Training chip-hours",
+      "Training code accessibility",
+      "Accessibility notes",
+      "Possibly over 1e23 FLOP",
+      "Training compute cost (2023 USD)",
+      "Utilization notes",
+      "Numerical format",
+      "Frontier model",
+      "Training power draw (W)",
+      "Training compute estimation method",
+      "Hugging Face developer id",
+      "Post-training compute (FLOP)",
+      "Post-training compute notes",
+      "Hardware utilization (HFU)",
+      "Open model weights?"
+    ]
+  },
+  "C_efficiency_evolution\\leaderboard_cleaned.csv": {
+    "n": 4576,
+    "fields": [
+      "Model",
+      "#Params (B)",
+      "Submission Date",
+      "Hub License",
+      "Type",
+      "Average ⬆️",
+      "IFEval",
+      "BBH",
+      "MATH Lvl 5",
+      "GPQA",
+      "MUSR",
+      "MMLU-PRO"
+    ]
+  },
+  "C_efficiency_evolution\\leaderboard_enhanced.csv": {
+    "n": 4576,
+    "fields": [
+      "Model",
+      "#Params (B)",
+      "Submission Date",
+      "Hub License",
+      "Type",
+      "Average ⬆️",
+      "IFEval",
+      "BBH",
+      "MATH Lvl 5",
+      "GPQA",
+      "MUSR",
+      "MMLU-PRO",
+      "Epoch_AI_Publication_Date",
+      "Epoch_AI_Organization",
+      "Epoch_AI_Open_Weights"
+    ]
+  },
+  "C_efficiency_evolution\\leaderboard_extended_timeseries.csv": {
+    "n": 4599,
+    "fields": [
+      "Model",
+      "Year",
+      "Params_B",
+      "Average",
+      "IFEval",
+      "BBH",
+      "MATH_Lvl5",
+      "GPQA",
+      "MUSR",
+      "MMLU_PRO",
+      "Source"
+    ]
+  },
+  "C_efficiency_evolution\\loss_benchmark_bridge.csv": {
+    "n": 43,
+    "fields": [
+      "Model",
+      "N_params_B",
+      "D_tokens_B",
+      "Val_Loss",
+      "LB_Average",
+      "LB_IFEval",
+      "LB_BBH",
+      "LB_MATH",
+      "LB_GPQA",
+      "LB_MUSR",
+      "LB_MMLU_PRO",
+      "Loss_Source",
+      "Loss_Comparability"
+    ],
+    "comparability": {
+      "High (same model, same validation set)": 7,
+      "Medium (different validation set, approximate)": 36
+    }
+  },
+  "C_efficiency_evolution\\loss_benchmark_bridge_expanded.csv": {
+    "n": 75,
+    "fields": [
+      "Model",
+      "N_params_B",
+      "D_tokens_B",
+      "Val_Loss",
+      "LB_Average",
+      "LB_IFEval",
+      "LB_BBH",
+      "LB_MATH",
+      "LB_GPQA",
+      "LB_MUSR",
+      "LB_MMLU_PRO",
+      "Loss_Source",
+      "Loss_Comparability"
+    ],
+    "comparability": {
+      "High (same model, same validation set)": 7,
+      "Medium (different validation set, approximate)": 68
+    }
+  },
+  "C_efficiency_evolution\\model_architecture_metadata.csv": {
+    "n": 45,
+    "fields": [
+      "model_name",
+      "n_layers",
+      "n_heads",
+      "d_model",
+      "vocab_size",
+      "max_position_embeddings",
+      "training_data_TB"
+    ],
+    "contexts": [
+      2048,
+      4096,
+      8192,
+      32768,
+      131072
+    ]
+  },
+  "A_data_value\\regmix_domain_sample.jsonl": {
+    "n": 138034,
+    "fields": [
+      "text",
+      "_source_domain",
+      "_source_path"
+    ],
+    "domains": {}
+  },
+  "A_data_value\\slimpajama_quality_extended\\arxiv_part-6777d8857c6e-000486.jsonl": {
+    "n": 17523,
+    "fields": [
+      "id",
+      "dsir_books",
+      "fluency_en",
+      "rps_lines_ending_with_terminal_punctution_mark",
+      "modernbert_cleanliness",
+      "qurater",
+      "rps_doc_num_sentences",
+      "rps_doc_word_count",
+      "ad_en",
+      "rps_doc_frac_no_alph_words",
+      "modernbert_reasoning",
+      "rps_doc_frac_chars_top_2gram",
+      "rps_lines_uppercase_letter_fraction",
+      "rps_doc_frac_unique_words",
+      "rps_lines_numerical_chars_fraction",
+      "fineweb_edu",
+      "dsir_math",
+      "rps_doc_mean_word_length",
+      "dsir_wiki",
+      "rps_doc_frac_chars_top_3gram",
+      "rps_doc_unigram_entropy",
+      "modernbert_professionalism",
+      "modernbert_readability",
+      "sub_path"
+    ],
+    "domains": {}
+  },
+  "A_data_value\\slimpajama_quality_extended\\github_part-6777d8857c6e-000275.jsonl": {
+    "n": 203752,
+    "fields": [
+      "id",
+      "modernbert_reasoning",
+      "dsir_books",
+      "modernbert_readability",
+      "fineweb_edu",
+      "rps_doc_unigram_entropy",
+      "modernbert_cleanliness",
+      "rps_doc_frac_chars_top_3gram",
+      "rps_doc_frac_chars_top_2gram",
+      "rps_doc_frac_no_alph_words",
+      "modernbert_professionalism",
+      "rps_lines_ending_with_terminal_punctution_mark",
+      "dsir_math",
+      "rps_doc_frac_unique_words",
+      "rps_doc_num_sentences",
+      "rps_lines_numerical_chars_fraction",
+      "ad_en",
+      "dsir_wiki",
+      "rps_doc_word_count",
+      "rps_doc_mean_word_length",
+      "rps_lines_uppercase_letter_fraction",
+      "qurater",
+      "fluency_en",
+      "sub_path"
+    ],
+    "domains": {}
+  },
+  "A_data_value\\slimpajama_quality_signal_sample.jsonl": {
+    "n": 51230,
+    "fields": [
+      "id",
+      "content",
+      "dsir_books",
+      "fluency_en",
+      "rps_lines_ending_with_terminal_punctution_mark",
+      "modernbert_cleanliness",
+      "qurater",
+      "rps_doc_num_sentences",
+      "rps_doc_word_count",
+      "ad_en",
+      "rps_doc_frac_no_alph_words",
+      "modernbert_reasoning",
+      "rps_doc_frac_chars_top_2gram",
+      "rps_lines_uppercase_letter_fraction",
+      "rps_doc_frac_unique_words",
+      "rps_lines_numerical_chars_fraction",
+      "fineweb_edu",
+      "dsir_math",
+      "rps_doc_mean_word_length",
+      "dsir_wiki",
+      "rps_doc_frac_chars_top_3gram",
+      "rps_doc_unigram_entropy",
+      "modernbert_professionalism",
+      "modernbert_readability",
+      "sub_path",
+      "_source_domain",
+      "_source_path"
+    ],
+    "domains": {
+      "arxiv": 1419,
+      "book": 171,
+      "c4": 10000,
+      "commoncrawl": 9640,
+      "github": 10000,
+      "stackexchange": 10000,
+      "wikipedia": 10000
+    }
+  },
+  "C8": {
+    "files": 1958,
+    "invalid": [
+      "C_efficiency_evolution\\detailed_results\\DreadPoor_Winter_Dawn-8B-TIES\\results_2025-02-13T18-27-04.338360.json",
+      "C_efficiency_evolution\\detailed_results\\FINGU-AI_Chocolatine-Fusion-14B\\results_2025-02-13T18-27-04.338360.json",
+      "C_efficiency_evolution\\detailed_results\\Intel_neural-chat-7b-v3-3\\results_2025-02-13T18-27-04.338360.json",
+      "C_efficiency_evolution\\detailed_results\\Joseph717171_Hermes-3-Llama-3.1-8B_TIES_with_Base_Embeds_Initialized_to_Special_Instruct_Toks_dtypeF32\\results_2024-10-29T05-27-54.968559.json",
+      "C_efficiency_evolution\\detailed_results\\L-RAGE_3_PRYMMAL-ECE-7B-SLERP-V1\\results_2025-02-13T18-27-04.338360.json"
+    ],
+    "model_dirs": 1863
+  },
+  "E_inventory": {
+    "附件1-数据集原始多模态样本": {
+      ".xlsx": 1,
+      ".mp4": 100
+    },
+    "附件2-数据集特征文件": {
+      ".pkl": 2,
+      ".xlsx": 1
+    },
+    "附件3-模态缺失特征样本": {
+      ".pkl": 60
+    },
+    "附件4-可解释专项视频样本与特征文件": {
+      ".pkl": 40,
+      ".mp4": 40
+    }
+  }
+}
