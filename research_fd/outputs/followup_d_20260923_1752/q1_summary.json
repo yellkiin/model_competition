@@ -1,0 +1,278 @@
+{
+  "source": "research_fd/outputs/d_official.json",
+  "terrain": "official DEM",
+  "interpretation": "Q1 independent per-node trips; fleet scheduling and delivery deadlines excluded by design",
+  "lexicographic_objectives": [
+    "minimum trips",
+    "minimum transport energy kWh",
+    "minimum cumulative work seconds"
+  ],
+  "capacities": 45,
+  "reserve_sensitivity": [
+    {
+      "reserve": 0.2,
+      "trips": 18,
+      "transport_energy_kwh": 59.13042326715206,
+      "cumulative_work_s": 32776.015748915604,
+      "status": "exact_count_state_dp"
+    },
+    {
+      "reserve": 0.25,
+      "trips": 19,
+      "transport_energy_kwh": 61.072477617268966,
+      "cumulative_work_s": 34565.65938597883,
+      "status": "exact_count_state_dp"
+    },
+    {
+      "reserve": 0.3,
+      "trips": 20,
+      "transport_energy_kwh": 67.22664487767557,
+      "cumulative_work_s": 36586.1769524171,
+      "status": "exact_count_state_dp"
+    }
+  ],
+  "exact_search": {
+    "0.2": {
+      "S001": {
+        "count_states": 324,
+        "feasible_action_types": 201,
+        "box_types": 4
+      },
+      "S002": {
+        "count_states": 60,
+        "feasible_action_types": 76,
+        "box_types": 4
+      },
+      "S003": {
+        "count_states": 60,
+        "feasible_action_types": 76,
+        "box_types": 4
+      },
+      "S004": {
+        "count_states": 32,
+        "feasible_action_types": 51,
+        "box_types": 4
+      },
+      "S005": {
+        "count_states": 32,
+        "feasible_action_types": 51,
+        "box_types": 4
+      },
+      "S006": {
+        "count_states": 32,
+        "feasible_action_types": 51,
+        "box_types": 4
+      },
+      "S007": {
+        "count_states": 24,
+        "feasible_action_types": 43,
+        "box_types": 4
+      },
+      "S008": {
+        "count_states": 24,
+        "feasible_action_types": 43,
+        "box_types": 4
+      },
+      "S009": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S010": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S011": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S012": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S013": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S014": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S015": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      }
+    },
+    "0.25": {
+      "S001": {
+        "count_states": 324,
+        "feasible_action_types": 201,
+        "box_types": 4
+      },
+      "S002": {
+        "count_states": 60,
+        "feasible_action_types": 71,
+        "box_types": 4
+      },
+      "S003": {
+        "count_states": 60,
+        "feasible_action_types": 70,
+        "box_types": 4
+      },
+      "S004": {
+        "count_states": 32,
+        "feasible_action_types": 48,
+        "box_types": 4
+      },
+      "S005": {
+        "count_states": 32,
+        "feasible_action_types": 51,
+        "box_types": 4
+      },
+      "S006": {
+        "count_states": 32,
+        "feasible_action_types": 51,
+        "box_types": 4
+      },
+      "S007": {
+        "count_states": 24,
+        "feasible_action_types": 43,
+        "box_types": 4
+      },
+      "S008": {
+        "count_states": 24,
+        "feasible_action_types": 42,
+        "box_types": 4
+      },
+      "S009": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S010": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S011": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S012": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S013": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S014": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S015": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      }
+    },
+    "0.3": {
+      "S001": {
+        "count_states": 324,
+        "feasible_action_types": 201,
+        "box_types": 4
+      },
+      "S002": {
+        "count_states": 60,
+        "feasible_action_types": 61,
+        "box_types": 4
+      },
+      "S003": {
+        "count_states": 60,
+        "feasible_action_types": 61,
+        "box_types": 4
+      },
+      "S004": {
+        "count_states": 32,
+        "feasible_action_types": 40,
+        "box_types": 4
+      },
+      "S005": {
+        "count_states": 32,
+        "feasible_action_types": 51,
+        "box_types": 4
+      },
+      "S006": {
+        "count_states": 32,
+        "feasible_action_types": 51,
+        "box_types": 4
+      },
+      "S007": {
+        "count_states": 24,
+        "feasible_action_types": 43,
+        "box_types": 4
+      },
+      "S008": {
+        "count_states": 24,
+        "feasible_action_types": 34,
+        "box_types": 4
+      },
+      "S009": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S010": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S011": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S012": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S013": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S014": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      },
+      "S015": {
+        "count_states": 8,
+        "feasible_action_types": 20,
+        "box_types": 3
+      }
+    }
+  },
+  "comparison_candidates": {
+    "reserve_20": {
+      "trips": 18,
+      "energy_kwh": 59.130423
+    },
+    "reserve_25_trips": 19,
+    "reserve_30_trips": 20,
+    "B_S008_kg": 28.80179,
+    "C_S008_kg": 58.90535
+  },
+  "comparison_status": "candidate numbers above are references only; observed records are the reserve_sensitivity CSV and capacity table"
+}
