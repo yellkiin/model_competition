@@ -1,0 +1,47 @@
+{
+  "backend": "ortools-cpsat",
+  "routes": 600,
+  "active_routes": 600,
+  "excluded_no_start_routes": 0,
+  "equivalent_route_start_options": 38083,
+  "step_s": 60.0,
+  "cap_s": 8310.16907732916,
+  "common_weighted_tardiness_ceiling_s": 0.0,
+  "quality_tolerance_s": 1e-05,
+  "time_limit_per_stage_s": 30.0,
+  "workers": 4,
+  "seed": 7,
+  "objective_energy_quantum_kwh": 1e-09,
+  "objective_time_quantum_s": 1e-06,
+  "quality_rounding_s": 1e-09,
+  "positive_quality_tables": 0,
+  "baseline_hint": true,
+  "stages": [
+    {
+      "stage": "energy",
+      "status": "FEASIBLE",
+      "has_incumbent": true,
+      "objective": 71.245007449,
+      "bound": 69.968849693,
+      "relative_gap": 0.01791224117582594,
+      "elapsed_s": 30.059024000016507,
+      "response_stats": "CpSolverResponse summary:\nstatus: FEASIBLE\nobjective: 71245007449\nbest_bound: 69968849693\nintegers: 2372\nbooleans: 2396\nconflicts: 96862\nbranches: 326352\npropagations: 6176685\ninteger_propagations: 13261216\nrestarts: 222\nlp_iterations: 753\nwalltime: 30.0562\nusertime: 30.0562\ndeterministic_time: 30.0798\ngap_integral: 635.241\nsolution_fingerprint: 0xd2ae54eefb4d043f\n"
+    },
+    {
+      "stage": "makespan",
+      "status": "FEASIBLE",
+      "has_incumbent": true,
+      "objective": 8237.190525,
+      "bound": 2622.333337,
+      "relative_gap": 0.6816471187547286,
+      "elapsed_s": 30.03388529998483,
+      "response_stats": "CpSolverResponse summary:\nstatus: FEASIBLE\nobjective: 8237190525\nbest_bound: 2622333337\nintegers: 2360\nbooleans: 2377\nconflicts: 101793\nbranches: 181212\npropagations: 3706442\ninteger_propagations: 815341\nrestarts: 5\nlp_iterations: 24649\nwalltime: 30.0317\nusertime: 30.0317\ndeterministic_time: 15.8469\ngap_integral: 355.499\nsolution_fingerprint: 0x7b176834267094de\n"
+    }
+  ],
+  "scope": "Same frozen route pool and start grid; interval lengths in ticks exactly represent grid-start cumulative capacities.",
+  "elapsed_s": 60.2018781999941,
+  "all_stages_optimal": false,
+  "postcheck_violations": [],
+  "status": "feasible_solver_incumbent",
+  "ratio": 1.0
+}

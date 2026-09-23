@@ -1,0 +1,47 @@
+{
+  "backend": "ortools-cpsat",
+  "routes": 60,
+  "active_routes": 55,
+  "excluded_no_start_routes": 5,
+  "equivalent_route_start_options": 337,
+  "step_s": 60.0,
+  "cap_s": 1078.5388544306795,
+  "common_weighted_tardiness_ceiling_s": 0.0,
+  "quality_tolerance_s": 1e-05,
+  "time_limit_per_stage_s": 3.0,
+  "workers": 4,
+  "seed": 7,
+  "objective_energy_quantum_kwh": 1e-09,
+  "objective_time_quantum_s": 1e-06,
+  "quality_rounding_s": 1e-09,
+  "positive_quality_tables": 0,
+  "baseline_hint": true,
+  "stages": [
+    {
+      "stage": "energy",
+      "status": "OPTIMAL",
+      "has_incumbent": true,
+      "objective": 3.419453349,
+      "bound": 3.419453349,
+      "relative_gap": 0.0,
+      "elapsed_s": 0.04726019996451214,
+      "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 3419453349\nbest_bound: 3419453349\nintegers: 213\nbooleans: 274\nconflicts: 10\nbranches: 2134\npropagations: 3799\ninteger_propagations: 4118\nrestarts: 0\nlp_iterations: 0\nwalltime: 0.0458488\nusertime: 0.0458489\ndeterministic_time: 0.00282956\ngap_integral: 0.0285946\nsolution_fingerprint: 0x90ee6b81bb5f26c5\n"
+    },
+    {
+      "stage": "makespan",
+      "status": "OPTIMAL",
+      "has_incumbent": true,
+      "objective": 923.372514,
+      "bound": 923.372514,
+      "relative_gap": 0.0,
+      "elapsed_s": 0.028124300006311387,
+      "response_stats": "CpSolverResponse summary:\nstatus: OPTIMAL\nobjective: 923372514\nbest_bound: 923372514\nintegers: 1\nbooleans: 0\nconflicts: 0\nbranches: 0\npropagations: 0\ninteger_propagations: 0\nrestarts: 0\nlp_iterations: 0\nwalltime: 0.0279983\nusertime: 0.0279983\ndeterministic_time: 0.000507848\ngap_integral: 0\nsolution_fingerprint: 0xfb6ea54ec5545c6\n"
+    }
+  ],
+  "scope": "Same frozen route pool and start grid; interval lengths in ticks exactly represent grid-start cumulative capacities.",
+  "elapsed_s": 0.08289989997865632,
+  "all_stages_optimal": true,
+  "postcheck_violations": [],
+  "status": "feasible_solver_incumbent",
+  "ratio": 1.5
+}

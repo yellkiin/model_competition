@@ -1,0 +1,806 @@
+{
+  "scope": "necessary fixed-slot geometric bound; 3 means at least three, not solved minimum",
+  "sites": 88,
+  "requirements": 259,
+  "slots_needing_more_than_two": 0,
+  "rows": [
+    {
+      "slot_start_s": 780,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 840,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 900,
+      "requirements": 4,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 960,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1020,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1080,
+      "requirements": 4,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1140,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1200,
+      "requirements": 4,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1260,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1320,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1380,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1440,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1500,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1560,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1620,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1680,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1740,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1800,
+      "requirements": 2,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 1860,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2040,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2100,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2160,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2220,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2280,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2340,
+      "requirements": 4,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2400,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2460,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2520,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2580,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2640,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2700,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2760,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2820,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2880,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 2940,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3000,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3060,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3120,
+      "requirements": 5,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3180,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3240,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3300,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3360,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3420,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3480,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3540,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3600,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3660,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3720,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3780,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3840,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3900,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 3960,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4020,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4080,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4140,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4200,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4260,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4320,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4380,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4560,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4620,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4680,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4740,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4800,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4860,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4920,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 4980,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5040,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5100,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5160,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5220,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5280,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5340,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5400,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5460,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5520,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5580,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5640,
+      "requirements": 3,
+      "distinct_routes": 3,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5700,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5760,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5820,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5880,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 5940,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6000,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6060,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6120,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6180,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6240,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 2,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6300,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6360,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6420,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6480,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6540,
+      "requirements": 4,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6600,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6660,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6720,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6780,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6840,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6900,
+      "requirements": 4,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 6960,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7020,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7080,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7140,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7200,
+      "requirements": 1,
+      "distinct_routes": 1,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7260,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7320,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7380,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7440,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7500,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7560,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7620,
+      "requirements": 3,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7680,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7740,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    },
+    {
+      "slot_start_s": 7800,
+      "requirements": 2,
+      "distinct_routes": 2,
+      "minimum_sites_capped_at_3": 1,
+      "demands": []
+    }
+  ]
+}

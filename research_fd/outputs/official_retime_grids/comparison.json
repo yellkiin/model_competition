@@ -1,0 +1,156 @@
+{
+  "baseline": "research_fd/outputs/official_transport_s7/alns.json",
+  "horizon_s": 10380,
+  "results": [
+    {
+      "method": "original_continuous_schedule",
+      "found": true,
+      "trips": 27,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8726.848411601435,
+      "energy_kwh": 75.06916411794937,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "highs_step_60",
+      "found": true,
+      "elapsed_s": 6.76600000000326,
+      "trips": 27,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8310.16907732916,
+      "energy_kwh": 75.06916411794937,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0,
+      "solver": {
+        "backend": "scipy-highs",
+        "options": 2887,
+        "routes": 27,
+        "step_s": 60.0,
+        "horizon_s": 10380,
+        "stages": [
+          {
+            "stage": "tardiness",
+            "status": 0,
+            "objective": 0.0,
+            "gap": 0.0,
+            "bound": 0.0
+          },
+          {
+            "stage": "makespan",
+            "status": 0,
+            "objective": 8310.169077329161,
+            "gap": 0.0,
+            "bound": 8310.169077329161
+          }
+        ],
+        "all_stages_optimal": true
+      }
+    },
+    {
+      "method": "highs_step_30",
+      "found": true,
+      "elapsed_s": 31.79699999996228,
+      "trips": 27,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8297.190524525828,
+      "energy_kwh": 75.06916411794937,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0,
+      "solver": {
+        "backend": "scipy-highs",
+        "options": 5761,
+        "routes": 27,
+        "step_s": 30.0,
+        "horizon_s": 10380,
+        "stages": [
+          {
+            "stage": "tardiness",
+            "status": 0,
+            "objective": 0.0,
+            "gap": 0.0,
+            "bound": 0.0
+          },
+          {
+            "stage": "makespan",
+            "status": 0,
+            "objective": 8297.190524525828,
+            "gap": 0.0,
+            "bound": 8297.190524525828
+          }
+        ],
+        "all_stages_optimal": true
+      }
+    },
+    {
+      "method": "highs_step_10",
+      "found": false,
+      "elapsed_s": 42.42200000002049,
+      "trips": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 0.0,
+      "energy_kwh": 0.0,
+      "resource_overlaps": 0,
+      "unserved": 80,
+      "duplicated": 0,
+      "solver": {
+        "backend": "scipy-highs",
+        "options": 17255,
+        "routes": 27,
+        "step_s": 10.0,
+        "horizon_s": 10380,
+        "stages": [
+          {
+            "stage": "tardiness",
+            "status": 1,
+            "objective": null,
+            "gap": null,
+            "bound": null
+          }
+        ],
+        "all_stages_optimal": false
+      }
+    },
+    {
+      "method": "cpsat_seconds",
+      "found": true,
+      "elapsed_s": 2.48499999998603,
+      "trips": 27,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8258.190524525828,
+      "energy_kwh": 75.06916411794937,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0,
+      "solver": {
+        "backend": "ortools-cpsat",
+        "stages": [
+          {
+            "stage": "tardiness",
+            "status": "OPTIMAL",
+            "bound": 0.0
+          },
+          {
+            "stage": "makespan",
+            "status": "OPTIMAL",
+            "bound": 8259.0
+          }
+        ],
+        "time_rounding_s": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,1320 @@
+{
+  "scope": "Only outputs/small_s7 and outputs/benchmark80; all synthetic; not official attachment results.",
+  "seeds": [
+    7,
+    17,
+    42,
+    73,
+    101
+  ],
+  "environment": {
+    "python": "3.12.8",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "budgets": {
+    "milp_stage_limit_s": 10,
+    "alns_iteration_limit": 70,
+    "alns_total_limit_s": 30,
+    "benchmark_route_trials": 500,
+    "small_route_trials": 200,
+    "max_stops": 3,
+    "max_boxes_per_route": 8,
+    "dual_rounds": 2,
+    "benchmark_full_backend": "none",
+    "small_full_backend": "HiGHS",
+    "small_time_step_s": 60,
+    "small_radio_sample_step_s": 40,
+    "small_radio_evaluation_step_s": 10,
+    "radio_ray_step_m": 50.0
+  },
+  "benchmark_records": [
+    {
+      "seed": 7,
+      "method": "greedy",
+      "elapsed_s": 0.004933799966238439,
+      "pool_size": 1737,
+      "feasible": false,
+      "trips": 15,
+      "hard_violations": 8,
+      "hard_lateness_s": 4105.125510845894,
+      "weighted_tardiness_s": 56678.751996978855,
+      "makespan_s": 5535.725761683539,
+      "energy_kwh": 15.804875381416526,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 7,
+      "method": "route_milp",
+      "elapsed_s": 0.0553702000179328,
+      "pool_size": 1737,
+      "feasible": false,
+      "trips": 14,
+      "hard_violations": 10,
+      "hard_lateness_s": 7341.287304109141,
+      "weighted_tardiness_s": 69012.57553245906,
+      "makespan_s": 4921.929444779166,
+      "energy_kwh": 14.309114756527306,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 7,
+      "method": "dual_route_milp",
+      "elapsed_s": 1.5136961999814957,
+      "pool_size": 2485,
+      "feasible": false,
+      "trips": 14,
+      "hard_violations": 10,
+      "hard_lateness_s": 7341.287304109141,
+      "weighted_tardiness_s": 69012.57553245906,
+      "makespan_s": 4921.929444779166,
+      "energy_kwh": 14.309114756527306,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 7,
+      "method": "resource_dispatch",
+      "elapsed_s": 0.006053399993106723,
+      "pool_size": 2485,
+      "feasible": true,
+      "trips": 31,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 4748.63176529082,
+      "makespan_s": 3918.4209586871357,
+      "energy_kwh": 26.730600073414884,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 7,
+      "method": "alns",
+      "elapsed_s": 0.5126801000442356,
+      "pool_size": 2485,
+      "feasible": true,
+      "trips": 28,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 383.23293446472076,
+      "makespan_s": 3385.8042830975596,
+      "energy_kwh": 22.638238482498593,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 17,
+      "method": "greedy",
+      "elapsed_s": 0.005971300008241087,
+      "pool_size": 1760,
+      "feasible": false,
+      "trips": 16,
+      "hard_violations": 8,
+      "hard_lateness_s": 6346.254107090837,
+      "weighted_tardiness_s": 61209.79426106521,
+      "makespan_s": 5186.840663611925,
+      "energy_kwh": 14.773215989900248,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 17,
+      "method": "route_milp",
+      "elapsed_s": 0.2790542000439018,
+      "pool_size": 1760,
+      "feasible": false,
+      "trips": 15,
+      "hard_violations": 10,
+      "hard_lateness_s": 8919.597653905405,
+      "weighted_tardiness_s": 74447.86145815927,
+      "makespan_s": 4938.399225862083,
+      "energy_kwh": 13.691825632892538,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 17,
+      "method": "dual_route_milp",
+      "elapsed_s": 3.669260100054089,
+      "pool_size": 2519,
+      "feasible": false,
+      "trips": 15,
+      "hard_violations": 10,
+      "hard_lateness_s": 8919.597653905405,
+      "weighted_tardiness_s": 74447.86145815927,
+      "makespan_s": 4938.399225862083,
+      "energy_kwh": 13.691825632892538,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 17,
+      "method": "resource_dispatch",
+      "elapsed_s": 0.00574430002598092,
+      "pool_size": 2519,
+      "feasible": true,
+      "trips": 35,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 12676.706156305216,
+      "makespan_s": 4486.725173532215,
+      "energy_kwh": 29.341283471407753,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 17,
+      "method": "alns",
+      "elapsed_s": 0.44157859997358173,
+      "pool_size": 2519,
+      "feasible": true,
+      "trips": 30,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 603.0470453221758,
+      "makespan_s": 3614.8681166760603,
+      "energy_kwh": 22.440110701617357,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 42,
+      "method": "greedy",
+      "elapsed_s": 0.007646800018846989,
+      "pool_size": 1830,
+      "feasible": false,
+      "trips": 19,
+      "hard_violations": 2,
+      "hard_lateness_s": 839.560268118466,
+      "weighted_tardiness_s": 27190.283146849477,
+      "makespan_s": 6080.1586959243405,
+      "energy_kwh": 19.457731689816303,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 42,
+      "method": "route_milp",
+      "elapsed_s": 0.09559490001993254,
+      "pool_size": 1830,
+      "feasible": false,
+      "trips": 14,
+      "hard_violations": 9,
+      "hard_lateness_s": 9927.332611312133,
+      "weighted_tardiness_s": 81525.55500954938,
+      "makespan_s": 5311.5388103159285,
+      "energy_kwh": 15.394021706504173,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 42,
+      "method": "dual_route_milp",
+      "elapsed_s": 2.1737535999855027,
+      "pool_size": 2693,
+      "feasible": false,
+      "trips": 14,
+      "hard_violations": 9,
+      "hard_lateness_s": 9927.332611312133,
+      "weighted_tardiness_s": 81525.55500954938,
+      "makespan_s": 5311.5388103159285,
+      "energy_kwh": 15.394021706504173,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 42,
+      "method": "resource_dispatch",
+      "elapsed_s": 0.005634700006339699,
+      "pool_size": 2693,
+      "feasible": true,
+      "trips": 34,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 16884.580044216884,
+      "makespan_s": 4311.183264554655,
+      "energy_kwh": 28.76380221627942,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 42,
+      "method": "alns",
+      "elapsed_s": 0.572780899994541,
+      "pool_size": 2693,
+      "feasible": true,
+      "trips": 27,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 1157.6779835188056,
+      "makespan_s": 3180.782398738027,
+      "energy_kwh": 18.82406682735097,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 73,
+      "method": "greedy",
+      "elapsed_s": 0.005594199988991022,
+      "pool_size": 1811,
+      "feasible": false,
+      "trips": 15,
+      "hard_violations": 6,
+      "hard_lateness_s": 4692.181850721814,
+      "weighted_tardiness_s": 57389.98465331766,
+      "makespan_s": 6334.800945974481,
+      "energy_kwh": 19.62835361641181,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 73,
+      "method": "route_milp",
+      "elapsed_s": 0.2760200999910012,
+      "pool_size": 1811,
+      "feasible": false,
+      "trips": 13,
+      "hard_violations": 9,
+      "hard_lateness_s": 9933.448359902497,
+      "weighted_tardiness_s": 74867.94641825411,
+      "makespan_s": 5504.103086792403,
+      "energy_kwh": 16.29325137844387,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 73,
+      "method": "dual_route_milp",
+      "elapsed_s": 2.419370599964168,
+      "pool_size": 2411,
+      "feasible": false,
+      "trips": 13,
+      "hard_violations": 9,
+      "hard_lateness_s": 9933.448359902497,
+      "weighted_tardiness_s": 74867.94641825411,
+      "makespan_s": 5504.103086792403,
+      "energy_kwh": 16.29325137844387,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 73,
+      "method": "resource_dispatch",
+      "elapsed_s": 0.005787300004158169,
+      "pool_size": 2411,
+      "feasible": true,
+      "trips": 35,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 25563.74565899068,
+      "makespan_s": 5166.099402219118,
+      "energy_kwh": 33.292356542598256,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 73,
+      "method": "alns",
+      "elapsed_s": 2.0902457000338472,
+      "pool_size": 2411,
+      "feasible": true,
+      "trips": 25,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 1882.1597651827597,
+      "makespan_s": 3246.7505924298657,
+      "energy_kwh": 21.44702297350522,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 101,
+      "method": "greedy",
+      "elapsed_s": 0.006832199986092746,
+      "pool_size": 1824,
+      "feasible": false,
+      "trips": 18,
+      "hard_violations": 6,
+      "hard_lateness_s": 5805.847147790491,
+      "weighted_tardiness_s": 81570.45995582613,
+      "makespan_s": 6681.5906597321255,
+      "energy_kwh": 17.929544032149668,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 101,
+      "method": "route_milp",
+      "elapsed_s": 0.09009530005278066,
+      "pool_size": 1824,
+      "feasible": false,
+      "trips": 13,
+      "hard_violations": 8,
+      "hard_lateness_s": 8901.467137156123,
+      "weighted_tardiness_s": 83722.77431272903,
+      "makespan_s": 5244.1820763902,
+      "energy_kwh": 14.852255272409208,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 101,
+      "method": "dual_route_milp",
+      "elapsed_s": 2.8390802000067197,
+      "pool_size": 2561,
+      "feasible": false,
+      "trips": 13,
+      "hard_violations": 8,
+      "hard_lateness_s": 8901.467137156123,
+      "weighted_tardiness_s": 83722.77431272903,
+      "makespan_s": 5244.1820763902,
+      "energy_kwh": 14.852255272409208,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 101,
+      "method": "resource_dispatch",
+      "elapsed_s": 0.006516899971757084,
+      "pool_size": 2561,
+      "feasible": true,
+      "trips": 37,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 21220.37484255904,
+      "makespan_s": 4878.398176994746,
+      "energy_kwh": 29.813438777209896,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "seed": 101,
+      "method": "alns",
+      "elapsed_s": 0.5606558999861591,
+      "pool_size": 2561,
+      "feasible": true,
+      "trips": 25,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 772.6712983099228,
+      "makespan_s": 3364.152428174874,
+      "energy_kwh": 18.98950776463149,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    }
+  ],
+  "method_feasibility": {
+    "greedy": {
+      "feasible": 0,
+      "infeasible": 5
+    },
+    "route_milp": {
+      "feasible": 0,
+      "infeasible": 5
+    },
+    "dual_route_milp": {
+      "feasible": 0,
+      "infeasible": 5
+    },
+    "resource_dispatch": {
+      "feasible": 5,
+      "infeasible": 0
+    },
+    "alns": {
+      "feasible": 5,
+      "infeasible": 0
+    }
+  },
+  "dispatch_alns_pairs": [
+    {
+      "seed": 7,
+      "dispatch": {
+        "weighted_tardiness_s": 4748.63176529082,
+        "makespan_s": 3918.4209586871357,
+        "energy_kwh": 26.730600073414884,
+        "trips": 31,
+        "feasible": true
+      },
+      "alns": {
+        "weighted_tardiness_s": 383.23293446472076,
+        "makespan_s": 3385.8042830975596,
+        "energy_kwh": 22.638238482498593,
+        "trips": 28,
+        "feasible": true
+      },
+      "reduction_pct": {
+        "weighted_tardiness_s": 91.92961355172062,
+        "makespan_s": 13.592635431595612,
+        "energy_kwh": 15.309651035430285
+      }
+    },
+    {
+      "seed": 17,
+      "dispatch": {
+        "weighted_tardiness_s": 12676.706156305216,
+        "makespan_s": 4486.725173532215,
+        "energy_kwh": 29.341283471407753,
+        "trips": 35,
+        "feasible": true
+      },
+      "alns": {
+        "weighted_tardiness_s": 603.0470453221758,
+        "makespan_s": 3614.8681166760603,
+        "energy_kwh": 22.440110701617357,
+        "trips": 30,
+        "feasible": true
+      },
+      "reduction_pct": {
+        "weighted_tardiness_s": 95.24287273139775,
+        "makespan_s": 19.43192469196364,
+        "energy_kwh": 23.52035069125518
+      }
+    },
+    {
+      "seed": 42,
+      "dispatch": {
+        "weighted_tardiness_s": 16884.580044216884,
+        "makespan_s": 4311.183264554655,
+        "energy_kwh": 28.76380221627942,
+        "trips": 34,
+        "feasible": true
+      },
+      "alns": {
+        "weighted_tardiness_s": 1157.6779835188056,
+        "makespan_s": 3180.782398738027,
+        "energy_kwh": 18.82406682735097,
+        "trips": 27,
+        "feasible": true
+      },
+      "reduction_pct": {
+        "weighted_tardiness_s": 93.14357845746171,
+        "makespan_s": 26.220199802464162,
+        "energy_kwh": 34.55640291985762
+      }
+    },
+    {
+      "seed": 73,
+      "dispatch": {
+        "weighted_tardiness_s": 25563.74565899068,
+        "makespan_s": 5166.099402219118,
+        "energy_kwh": 33.292356542598256,
+        "trips": 35,
+        "feasible": true
+      },
+      "alns": {
+        "weighted_tardiness_s": 1882.1597651827597,
+        "makespan_s": 3246.7505924298657,
+        "energy_kwh": 21.44702297350522,
+        "trips": 25,
+        "feasible": true
+      },
+      "reduction_pct": {
+        "weighted_tardiness_s": 92.63738659314656,
+        "makespan_s": 37.15276575911003,
+        "energy_kwh": 35.57973901287729
+      }
+    },
+    {
+      "seed": 101,
+      "dispatch": {
+        "weighted_tardiness_s": 21220.37484255904,
+        "makespan_s": 4878.398176994746,
+        "energy_kwh": 29.813438777209896,
+        "trips": 37,
+        "feasible": true
+      },
+      "alns": {
+        "weighted_tardiness_s": 772.6712983099228,
+        "makespan_s": 3364.152428174874,
+        "energy_kwh": 18.98950776463149,
+        "trips": 25,
+        "feasible": true
+      },
+      "reduction_pct": {
+        "weighted_tardiness_s": 96.35882351729114,
+        "makespan_s": 31.039814584235053,
+        "energy_kwh": 36.30554359550256
+      }
+    }
+  ],
+  "means": {
+    "dispatch": {
+      "weighted_tardiness_s": 16218.807693472527,
+      "makespan_s": 4552.165395197574,
+      "energy_kwh": 29.58829621618204
+    },
+    "alns": {
+      "weighted_tardiness_s": 959.7578053596769,
+      "makespan_s": 3358.4715638232774,
+      "energy_kwh": 20.867789349920727
+    },
+    "mean_paired_reduction_pct": {
+      "weighted_tardiness_s": 93.86245497020356,
+      "makespan_s": 25.487468053873698,
+      "energy_kwh": 29.054337450984587
+    },
+    "reduction_of_mean_pct": {
+      "weighted_tardiness_s": 94.082439205775,
+      "makespan_s": 26.222549660291676,
+      "energy_kwh": 29.472825344678036
+    }
+  },
+  "dual_vs_static_no_objective_improvement_on_all_seeds": true,
+  "small_transport": {
+    "input_metadata": {
+      "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+      "seed": 7,
+      "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+    },
+    "methods": [
+      {
+        "method": "greedy",
+        "elapsed_s": 0.00041750003583729267,
+        "pool_size": 355,
+        "feasible": true,
+        "trips": 3,
+        "hard_violations": 0,
+        "hard_lateness_s": 0.0,
+        "weighted_tardiness_s": 0.0,
+        "makespan_s": 1385.7516650020248,
+        "energy_kwh": 4.255686890784548,
+        "resource_overlaps": 0,
+        "unserved": 0,
+        "duplicated": 0
+      },
+      {
+        "method": "route_milp",
+        "elapsed_s": 0.02946459996746853,
+        "pool_size": 355,
+        "feasible": true,
+        "trips": 2,
+        "hard_violations": 0,
+        "hard_lateness_s": 0.0,
+        "weighted_tardiness_s": 0.0,
+        "makespan_s": 923.3725130203488,
+        "energy_kwh": 3.419453349063565,
+        "resource_overlaps": 0,
+        "unserved": 0,
+        "duplicated": 0
+      },
+      {
+        "method": "dual_route_milp",
+        "elapsed_s": 0.10582070000236854,
+        "pool_size": 362,
+        "feasible": true,
+        "trips": 2,
+        "hard_violations": 0,
+        "hard_lateness_s": 0.0,
+        "weighted_tardiness_s": 0.0,
+        "makespan_s": 923.3725130203488,
+        "energy_kwh": 3.419453349063565,
+        "resource_overlaps": 0,
+        "unserved": 0,
+        "duplicated": 0
+      },
+      {
+        "method": "resource_dispatch",
+        "elapsed_s": 0.0008533999789506197,
+        "pool_size": 362,
+        "feasible": true,
+        "trips": 3,
+        "hard_violations": 0,
+        "hard_lateness_s": 0.0,
+        "weighted_tardiness_s": 0.0,
+        "makespan_s": 1340.2160760881823,
+        "energy_kwh": 5.612555089878289,
+        "resource_overlaps": 0,
+        "unserved": 0,
+        "duplicated": 0
+      },
+      {
+        "method": "alns",
+        "elapsed_s": 0.6981838999781758,
+        "pool_size": 362,
+        "feasible": true,
+        "trips": 4,
+        "hard_violations": 0,
+        "hard_lateness_s": 0.0,
+        "weighted_tardiness_s": 0.0,
+        "makespan_s": 866.4704109044052,
+        "energy_kwh": 3.4725112188772247,
+        "resource_overlaps": 0,
+        "unserved": 0,
+        "duplicated": 0
+      },
+      {
+        "method": "fixed_route_retime",
+        "elapsed_s": 0.006458199990447611,
+        "pool_size": 362,
+        "feasible": true,
+        "trips": 4,
+        "hard_violations": 0,
+        "hard_lateness_s": 0.0,
+        "weighted_tardiness_s": 0.0,
+        "makespan_s": 866.4704109044052,
+        "energy_kwh": 3.4725112188772247,
+        "resource_overlaps": 0,
+        "unserved": 0,
+        "duplicated": 0
+      },
+      {
+        "method": "integrated_highs",
+        "elapsed_s": 0.6079582999809645,
+        "pool_size": 362,
+        "feasible": true,
+        "trips": 8,
+        "hard_violations": 0,
+        "hard_lateness_s": 0.0,
+        "weighted_tardiness_s": 0.0,
+        "makespan_s": 719.0259029537864,
+        "energy_kwh": 5.5676805465355645,
+        "resource_overlaps": 0,
+        "unserved": 0,
+        "duplicated": 0
+      }
+    ],
+    "best_method": "integrated_highs",
+    "details": {
+      "greedy": {},
+      "route_milp": {
+        "status": 0,
+        "objective": 1969.842923924754,
+        "gap": 0.0,
+        "bound": 1969.842923924754,
+        "scope": "restricted candidate pool; not a global VRP bound"
+      },
+      "dual_route_milp": {
+        "pricing": [
+          {
+            "round": 0,
+            "restricted_lp": 1806.1777931300194,
+            "columns_added": 4
+          },
+          {
+            "round": 1,
+            "restricted_lp": 1806.1777931300194,
+            "columns_added": 3
+          }
+        ],
+        "status": 0,
+        "objective": 1969.842923924754,
+        "gap": 0.0,
+        "bound": 1969.842923924754,
+        "scope": "restricted candidate pool; not a global VRP bound"
+      },
+      "resource_dispatch": {},
+      "alns": {
+        "iterations": 70,
+        "history": [
+          {
+            "iteration": 14,
+            "operator": "late",
+            "trips": 3,
+            "hard_violations": 0,
+            "hard_lateness_s": 0.0,
+            "weighted_tardiness_s": 0.0,
+            "makespan_s": 904.1925541204982,
+            "energy_kwh": 3.2174855904860116,
+            "resource_overlaps": 0,
+            "unserved": 0,
+            "duplicated": 0
+          },
+          {
+            "iteration": 41,
+            "operator": "random",
+            "trips": 5,
+            "hard_violations": 0,
+            "hard_lateness_s": 0.0,
+            "weighted_tardiness_s": 0.0,
+            "makespan_s": 866.4704109044052,
+            "energy_kwh": 3.5476751708021435,
+            "resource_overlaps": 0,
+            "unserved": 0,
+            "duplicated": 0
+          },
+          {
+            "iteration": 42,
+            "operator": "geographic",
+            "trips": 4,
+            "hard_violations": 0,
+            "hard_lateness_s": 0.0,
+            "weighted_tardiness_s": 0.0,
+            "makespan_s": 866.4704109044052,
+            "energy_kwh": 3.4725112188772247,
+            "resource_overlaps": 0,
+            "unserved": 0,
+            "duplicated": 0
+          }
+        ],
+        "operator_weights": {
+          "random": 1.9396804507029395,
+          "late": 1.714204087248385,
+          "geographic": 1.9720045171148157
+        }
+      },
+      "fixed_route_retime": {
+        "backend": "scipy-highs",
+        "options": 32,
+        "routes": 4,
+        "step_s": 60,
+        "horizon_s": 1140,
+        "stages": [
+          {
+            "stage": "tardiness",
+            "status": 0,
+            "objective": 0.0,
+            "gap": 0.0,
+            "bound": 0.0
+          },
+          {
+            "stage": "makespan",
+            "status": 0,
+            "objective": 866.4704109044052,
+            "gap": 0.0,
+            "bound": 866.4704109044052
+          }
+        ],
+        "all_stages_optimal": true
+      },
+      "integrated_highs": {
+        "backend": "scipy-highs",
+        "options": 1186,
+        "routes": 362,
+        "step_s": 60,
+        "horizon_s": 1140,
+        "stages": [
+          {
+            "stage": "tardiness",
+            "status": 0,
+            "objective": 0.0,
+            "gap": 0.0,
+            "bound": 0.0
+          },
+          {
+            "stage": "makespan",
+            "status": 0,
+            "objective": 719.0259019537864,
+            "gap": 0.0,
+            "bound": 719.0259019537864
+          }
+        ],
+        "all_stages_optimal": true,
+        "candidate_pruned": false
+      }
+    }
+  },
+  "small_radio": {
+    "requirements": 44,
+    "unreachable": [],
+    "sites": 47,
+    "sessions": 1155,
+    "pool_truncated": false,
+    "options": 8,
+    "stages": [
+      {
+        "stage": "tardiness",
+        "status": 0,
+        "value": 0.0,
+        "gap": 0.0
+      },
+      {
+        "stage": "joint_makespan",
+        "status": 0,
+        "value": 719.0259029537864,
+        "gap": 0.0
+      },
+      {
+        "stage": "total_energy",
+        "status": 0,
+        "value": 5.913493009563675,
+        "gap": 0.0
+      }
+    ],
+    "sample_step_s": 40.0,
+    "schedule_step_s": 60.0,
+    "status": "feasible",
+    "joint_makespan_s": 719.0259029537864,
+    "relay_energy_kwh": 0.3458124630281106,
+    "relay_trips": 2,
+    "fine_evaluation": {
+      "samples": 512,
+      "misses": 0,
+      "minimum_margin_db": 0.3934260614034173,
+      "sample_step_s": 10,
+      "details": [],
+      "scope": "numerical trajectory samples, including every phase boundary"
+    }
+  },
+  "small_partitions": {
+    "strict_2": {
+      "feasible": false,
+      "reason": "fewer indivisible components than groups",
+      "components": [
+        [
+          "S001",
+          "S002",
+          "S003",
+          "S004"
+        ]
+      ],
+      "policy": "strict",
+      "k": 2
+    },
+    "strict_3": {
+      "feasible": false,
+      "reason": "fewer indivisible components than groups",
+      "components": [
+        [
+          "S001",
+          "S002",
+          "S003",
+          "S004"
+        ]
+      ],
+      "policy": "strict",
+      "k": 3
+    },
+    "duplicate_2": {
+      "feasible": true,
+      "policy": "duplicate",
+      "k": 2,
+      "components": [
+        [
+          "S001"
+        ],
+        [
+          "S002"
+        ],
+        [
+          "S003"
+        ],
+        [
+          "S004"
+        ]
+      ],
+      "enumeration_exact": true,
+      "evaluated": 7,
+      "global_resources": {
+        "A_aircraft": 4,
+        "A_battery": 4,
+        "B_aircraft": 2,
+        "B_battery": 2,
+        "C_aircraft": 2,
+        "C_battery": 2,
+        "relay": 2,
+        "relay_pack": 2
+      },
+      "groups": [
+        [
+          "S001",
+          "S004"
+        ],
+        [
+          "S002",
+          "S003"
+        ]
+      ],
+      "resources": [
+        {
+          "A_aircraft": 2,
+          "A_battery": 2,
+          "B_aircraft": 0,
+          "B_battery": 0,
+          "C_aircraft": 2,
+          "C_battery": 2,
+          "relay": 2,
+          "relay_pack": 2
+        },
+        {
+          "A_aircraft": 2,
+          "A_battery": 2,
+          "B_aircraft": 2,
+          "B_battery": 2,
+          "C_aircraft": 0,
+          "C_battery": 0,
+          "relay": 1,
+          "relay_pack": 1
+        }
+      ],
+      "extra": {
+        "A_aircraft": 0,
+        "A_battery": 0,
+        "B_aircraft": 0,
+        "B_battery": 0,
+        "C_aircraft": 0,
+        "C_battery": 0,
+        "relay": 1,
+        "relay_pack": 1
+      },
+      "normalized_redundancy": 1.0,
+      "workload_cv": 0.02003071973649329
+    },
+    "duplicate_3": {
+      "feasible": true,
+      "policy": "duplicate",
+      "k": 3,
+      "components": [
+        [
+          "S001"
+        ],
+        [
+          "S002"
+        ],
+        [
+          "S003"
+        ],
+        [
+          "S004"
+        ]
+      ],
+      "enumeration_exact": true,
+      "evaluated": 6,
+      "global_resources": {
+        "A_aircraft": 4,
+        "A_battery": 4,
+        "B_aircraft": 2,
+        "B_battery": 2,
+        "C_aircraft": 2,
+        "C_battery": 2,
+        "relay": 2,
+        "relay_pack": 2
+      },
+      "groups": [
+        [
+          "S001",
+          "S003"
+        ],
+        [
+          "S002"
+        ],
+        [
+          "S004"
+        ]
+      ],
+      "resources": [
+        {
+          "A_aircraft": 2,
+          "A_battery": 2,
+          "B_aircraft": 2,
+          "B_battery": 2,
+          "C_aircraft": 0,
+          "C_battery": 0,
+          "relay": 1,
+          "relay_pack": 1
+        },
+        {
+          "A_aircraft": 2,
+          "A_battery": 2,
+          "B_aircraft": 0,
+          "B_battery": 0,
+          "C_aircraft": 0,
+          "C_battery": 0,
+          "relay": 1,
+          "relay_pack": 1
+        },
+        {
+          "A_aircraft": 0,
+          "A_battery": 0,
+          "B_aircraft": 0,
+          "B_battery": 0,
+          "C_aircraft": 2,
+          "C_battery": 2,
+          "relay": 2,
+          "relay_pack": 2
+        }
+      ],
+      "extra": {
+        "A_aircraft": 0,
+        "A_battery": 0,
+        "B_aircraft": 0,
+        "B_battery": 0,
+        "C_aircraft": 0,
+        "C_battery": 0,
+        "relay": 2,
+        "relay_pack": 2
+      },
+      "normalized_redundancy": 2.0,
+      "workload_cv": 0.3135005497021896
+    }
+  },
+  "small_relay_tasks": [
+    {
+      "session": "0",
+      "site": "24",
+      "aircraft": "0",
+      "aircraft_id": "R01",
+      "pack": "0",
+      "pack_label": "R-B01",
+      "site_x_m": "-899.2517178994856",
+      "site_y_m": "1680.9905042831783",
+      "site_altitude_m": "401.6840838302412",
+      "preparation_start_s": "0.0",
+      "departure_s": "0.0",
+      "arrived_s": "170.6615744293049",
+      "ready_s": "240.0",
+      "service_stop_s": "480.0",
+      "returned_s": "675.7753374209746",
+      "aircraft_available_s": "780.0",
+      "pack_full_s": "1020.0",
+      "energy_kwh": "0.2691457963614439",
+      "flight_energy_kwh": "0.18321845592513972",
+      "cruise_energy_kwh": "",
+      "climb_energy_kwh": "",
+      "hover_energy_kwh": "0.08592734043630419",
+      "communication_energy_kwh": "0.0",
+      "return_soc": "0.9158919386370488",
+      "charge_duration_s": "336.432245451805",
+      "backhaul_margin_db": "15.242547075740703"
+    },
+    {
+      "session": "1",
+      "site": "26",
+      "aircraft": "1",
+      "aircraft_id": "R02",
+      "pack": "1",
+      "pack_label": "R-B02",
+      "site_x_m": "0.0",
+      "site_y_m": "0.0",
+      "site_altitude_m": "220.3189279302056",
+      "preparation_start_s": "360.0",
+      "departure_s": "360.0",
+      "arrived_s": "390.0",
+      "ready_s": "480.0",
+      "service_stop_s": "540.0",
+      "returned_s": "580.0",
+      "aircraft_available_s": "720.0",
+      "pack_full_s": "720.0",
+      "energy_kwh": "0.07666666666666666",
+      "flight_energy_kwh": "0.035",
+      "cruise_energy_kwh": "",
+      "climb_energy_kwh": "",
+      "hover_energy_kwh": "0.041666666666666664",
+      "communication_energy_kwh": "0.0",
+      "return_soc": "0.9760416666666667",
+      "charge_duration_s": "95.83333333333321",
+      "backhaul_margin_db": "40.27730005602889"
+    }
+  ],
+  "small_validation": {
+    "status": "valid",
+    "transport_valid": true,
+    "relay_valid": true,
+    "radio_valid": true,
+    "joint_valid": true,
+    "input": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\small_s7\\instance.json",
+    "plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\small_s7\\radio\\joint_plan.json",
+    "metadata": {
+      "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+      "seed": 7,
+      "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+    },
+    "runtime_model": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\d_model.py",
+    "exported_resource_labels": "Aircraft IDs use input metadata when supplied; battery/relay-pack labels (A-B01, R-B01) are derived export labels, not attachment-provided serial numbers. Internal resource indices remain zero-based.",
+    "validation_scope": "Independent coverage/inventory/all-pairs interval/deadline arithmetic; declared route and radio engines reused for physics.",
+    "charging_scope": "Parallel charging; no unprovided finite charger inventory introduced.",
+    "stored_metrics": {
+      "trips": 8,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 719.0259029537864,
+      "energy_kwh": 5.5676805465355645,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    "independently_recomputed_metrics": {
+      "trips": 8,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 719.0259029537864,
+      "energy_kwh": 5.5676805465355645
+    },
+    "issues": [],
+    "notes": [],
+    "relay_sessions": 2,
+    "radio_ray_step_m": 50.0,
+    "radio_evaluation": {
+      "samples": 512,
+      "misses": 0,
+      "minimum_margin_db": 0.3934260614034173,
+      "sample_step_s": 10.0,
+      "details": [],
+      "scope": "numerical trajectory samples, including every phase boundary"
+    },
+    "numerical_scope": "Finite temporal and terrain-ray samples do not prove continuous-time communication."
+  },
+  "small_exact_bin_packing": {
+    "weights": [
+      6,
+      5,
+      3,
+      2,
+      2,
+      2
+    ],
+    "capacity": 10,
+    "ffd_trips": 3,
+    "exact_trips": 2,
+    "exact_loads": [
+      10,
+      10
+    ],
+    "solver": {
+      "status": 0,
+      "objective": 2.0,
+      "gap": 0.0,
+      "bound": 2.0,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    }
+  },
+  "execution_logs": {
+    "small": {
+      "command": [
+        "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\.venv\\Scripts\\python.exe",
+        "research_fd/scripts/run_d_local.py",
+        "--size",
+        "small",
+        "--seconds",
+        "10",
+        "--radio",
+        "--seed",
+        "7",
+        "--out",
+        "research_fd/outputs/small_s7"
+      ],
+      "cwd": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition",
+      "started": "2026-09-23T14:36:58.916578+08:00",
+      "python": "3.12.8",
+      "status": "completed",
+      "source_sha256": {
+        "research_fd/d_core.py": "c3237ef8c930ceee4d1db5a323d59ee181e78012beefa6af647e9eeaf25b1cf7",
+        "research_fd/d_data.py": "ee50cb7500f9d63c6cf2e65fb0acb4deead2f90255f652de72a644701025d114",
+        "research_fd/d_experiments.py": "5a8c67f99eb8b32f58008f5842f56688eeec5de51d99ffe8a8e0351d580c83f5",
+        "research_fd/d_geometry.py": "e14325f977fe5c82141af7c2466d0ad340ef37ea6ffaba6b3c6b028fa007c364",
+        "research_fd/d_model.py": "2e36a5a3fb17cccf352bf9e65060b5642fb183e4b06b49fc6dfc210d25d2bdfa",
+        "research_fd/d_partition.py": "f415b5fd6aacacc04189014da237add5e5a4c85adc95671cee7e57fb3c4497ff",
+        "research_fd/d_radio.py": "7c62b6f8f41cc12870acbf49775efb78f7a34ec15fd46762f69f995f57f6b6ac",
+        "research_fd/d_routes.py": "f7d1f085d9201ef74e46814614a82a31f8f2be27125b7b63f986369d40380c44",
+        "research_fd/d_schedule.py": "c3d11ed2efe530d7eae32487900661f4abd9a33157a2bd00649cca58cfad9328",
+        "research_fd/d_uncertainty.py": "01714a0ed8954c2d06c90d98589f5eb7f69c18aaae0597a6e0d38e5c01251e9f"
+      },
+      "returncode": 0,
+      "elapsed_s": 9.155999999959022,
+      "finished": "2026-09-23T14:37:08.155351+08:00"
+    },
+    "benchmark80": {
+      "command": [
+        "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\.venv\\Scripts\\python.exe",
+        "-m",
+        "research_fd.d_experiments",
+        "benchmark",
+        "--out",
+        "research_fd/outputs/benchmark80",
+        "--seeds",
+        "7,17,42,73,101",
+        "--boxes",
+        "80",
+        "--nodes",
+        "15",
+        "--seconds",
+        "10",
+        "--trials",
+        "500",
+        "--backend",
+        "none"
+      ],
+      "cwd": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition",
+      "started": "2026-09-23T14:37:35.040029+08:00",
+      "python": "3.12.8",
+      "status": "completed",
+      "source_sha256": {
+        "research_fd/d_core.py": "c3237ef8c930ceee4d1db5a323d59ee181e78012beefa6af647e9eeaf25b1cf7",
+        "research_fd/d_data.py": "ee50cb7500f9d63c6cf2e65fb0acb4deead2f90255f652de72a644701025d114",
+        "research_fd/d_experiments.py": "5a8c67f99eb8b32f58008f5842f56688eeec5de51d99ffe8a8e0351d580c83f5",
+        "research_fd/d_geometry.py": "e14325f977fe5c82141af7c2466d0ad340ef37ea6ffaba6b3c6b028fa007c364",
+        "research_fd/d_model.py": "2e36a5a3fb17cccf352bf9e65060b5642fb183e4b06b49fc6dfc210d25d2bdfa",
+        "research_fd/d_partition.py": "f415b5fd6aacacc04189014da237add5e5a4c85adc95671cee7e57fb3c4497ff",
+        "research_fd/d_radio.py": "7c62b6f8f41cc12870acbf49775efb78f7a34ec15fd46762f69f995f57f6b6ac",
+        "research_fd/d_routes.py": "f7d1f085d9201ef74e46814614a82a31f8f2be27125b7b63f986369d40380c44",
+        "research_fd/d_schedule.py": "c3d11ed2efe530d7eae32487900661f4abd9a33157a2bd00649cca58cfad9328",
+        "research_fd/d_uncertainty.py": "01714a0ed8954c2d06c90d98589f5eb7f69c18aaae0597a6e0d38e5c01251e9f"
+      },
+      "returncode": 0,
+      "elapsed_s": 19.96799999999348,
+      "finished": "2026-09-23T14:37:55.010498+08:00"
+    }
+  },
+  "not_run_in_these_experiments": [
+    "CP-SAT",
+    "80-box full time-indexed model",
+    "80-box fixed-route retiming",
+    "synthetic Pareto sweep",
+    "radio 60/20/5 s reconstruction",
+    "radio ray 30/15/7.5 m sweep"
+  ],
+  "limits": [
+    "Synthetic geometry, physical parameters and deadlines cannot be treated as official values.",
+    "Only a finite route pool is searched; the same box group retains one visit order.",
+    "MILP optimality applies to the finite candidate pool and time grid, not the continuous original problem.",
+    "A solved static route selection can still violate delivery hard deadlines after list scheduling.",
+    "No unexecuted backend is assigned a score; no formal population confidence claim from five synthetic seeds.",
+    "Fine radio evaluation is numerical sampling, not a continuous-time proof.",
+    "Elapsed method time excludes route-pool construction except method-specific expansion; end-to-end logs report whole-process time."
+  ],
+  "source_sha256": {
+    "research_fd/outputs/benchmark80/summary.json": "0ca6329c3a4ae5ec71b7c8c05ac4004b1688dbbb64a397f979f9d1498c3ca283",
+    "research_fd/outputs/benchmark80/seed_7/comparison.json": "b9f9275b12b0a036a24fdc6fc66b0c4d74151785109a19400749322173162a97",
+    "research_fd/outputs/benchmark80/seed_7/instance.json": "619131da6b17fbcada24d7da93fd41efbca71b46e83e533d1728c77bd98a2e57",
+    "research_fd/outputs/benchmark80/seed_17/comparison.json": "9451651139df4b56173dc386697b5f29ed61d00b22520dc9bd21b2e44dab398e",
+    "research_fd/outputs/benchmark80/seed_17/instance.json": "a784c6fbc6e3f7241e24a60a551a63e73ae866121ecab79e28c3645d81619550",
+    "research_fd/outputs/benchmark80/seed_42/comparison.json": "950d1cf6628e4ec5881b57a1c1ca2c20f9ba3b2d3cf2d76f52cd835fbda1a10a",
+    "research_fd/outputs/benchmark80/seed_42/instance.json": "d36ff856de77514044bdcfc3d861248345ef6552a6174bca00b651bf7cc188be",
+    "research_fd/outputs/benchmark80/seed_73/comparison.json": "732f7cf4e0c13d7ab6d08e56d9185bc922e67e66df7ee201afae2b0e18e149ca",
+    "research_fd/outputs/benchmark80/seed_73/instance.json": "d6eaa44dbb23399db262c219178f4c6a7a1e0b41c99e1fbeaeb573fd77d4cd94",
+    "research_fd/outputs/benchmark80/seed_101/comparison.json": "c1f919c70b8c0b2383b950b5998aff40105a67af3a940fea7bfd5c86475c2bda",
+    "research_fd/outputs/benchmark80/seed_101/instance.json": "4ac3f2bfa0c2a78f9817a7e2ce6acfb3523c086bb8c8f263f78b7eb0ae4579aa",
+    "research_fd/outputs/small_s7/transport/comparison.json": "d510bbd8200cd16ac0801a79a1081c49d07bcf7dba783b355c64d0400cccbceb",
+    "research_fd/outputs/small_s7/instance.json": "2678a4b29c7e5785909440c048490ba81bd04294b5e98d01b41ada6bc7c415e2",
+    "research_fd/outputs/small_s7/radio/radio_result.json": "736ab41895bcf791e6948e21ad1531588a7813b87d502fa048535af2e74abdd5",
+    "research_fd/outputs/small_s7/partition_strict_2.json": "ff68b1f85f4feda08c4cc874e8c019905bae7850c1b7214d48eced296b5821c8",
+    "research_fd/outputs/small_s7/partition_strict_3.json": "fb5617cab3a9ff3e39c6ad04f408b6abe363574f9281ec03f19e7f7741025e41",
+    "research_fd/outputs/small_s7/partition_duplicate_2.json": "3f4f54db8713293dbd27309d375218d1763434c5db36857035cf657ce99c1159",
+    "research_fd/outputs/small_s7/partition_duplicate_3.json": "57f463595a98239691ad9a1230f94b087c0818bbcbae3e7b9be978c1c257f526",
+    "research_fd/outputs/small_s7/export/validation.json": "249c31cffa633271db6571624a918bdc6375b659fc0093e96379eafa612640c6",
+    "research_fd/outputs/small_s7/export/relay_tasks.csv": "8adaceeaaced76b810233f55ff4220e283a52a752a1b8e64b576c914a091249e",
+    "research_fd/outputs/logs/small_end_to_end.json": "7f9d827040a354df5eaa100ef09ed1b2034c5fc48a694f8c4ee67ae97269ffdb",
+    "research_fd/outputs/logs/benchmark80.json": "8ba1c5cbee01c5b4480ae15292b428b8b09d3419eca0257ca1bf27a0600aa122",
+    "research_fd/outputs/benchmark80/small_exact.json": "33520e38c8f81b18840e0c6314e5c3ca03918dc7b5d9cb65a8c377f775956dd5"
+  }
+}

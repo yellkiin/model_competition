@@ -1,0 +1,88 @@
+{
+  "plan": "research_fd/outputs/official_pareto_cpsat/energy_cap_1.json",
+  "input": "research_fd/outputs/d_official.json",
+  "rows": [
+    {
+      "samples": 699,
+      "misses": 253,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 60.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 30.0,
+      "elapsed_s": 0.031000000017229468
+    },
+    {
+      "samples": 1854,
+      "misses": 672,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 20.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 30.0,
+      "elapsed_s": 0.07900000002700835
+    },
+    {
+      "samples": 7075,
+      "misses": 2591,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 5.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 30.0,
+      "elapsed_s": 0.31299999996554106
+    },
+    {
+      "samples": 699,
+      "misses": 253,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 60.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 15.0,
+      "elapsed_s": 0.0470000000204891
+    },
+    {
+      "samples": 1854,
+      "misses": 672,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 20.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 15.0,
+      "elapsed_s": 0.10999999998603016
+    },
+    {
+      "samples": 7075,
+      "misses": 2589,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 5.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 15.0,
+      "elapsed_s": 0.4529999999795109
+    },
+    {
+      "samples": 699,
+      "misses": 253,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 60.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 7.5,
+      "elapsed_s": 0.0779999999795109
+    },
+    {
+      "samples": 1854,
+      "misses": 676,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 20.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 7.5,
+      "elapsed_s": 0.14100000000325963
+    },
+    {
+      "samples": 7075,
+      "misses": 2601,
+      "minimum_margin_db": -6.204786010407361,
+      "sample_step_s": 5.0,
+      "scope": "numerical trajectory samples, including every phase boundary",
+      "ray_step_m": 7.5,
+      "elapsed_s": 0.6099999999860302
+    }
+  ],
+  "limitation": "Finite numerical samples, including phase boundaries; no claim of an all-continuous-time proof."
+}

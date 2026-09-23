@@ -1,0 +1,71 @@
+{
+  "status": "valid",
+  "nodes": 16,
+  "boxes": 80,
+  "mass_kg": 758.0,
+  "volume_m3": 2.011,
+  "first_batch_boxes": 30,
+  "medical_boxes": 16,
+  "hard_deadline_boxes": 31,
+  "first_batch_count_by_node": {
+    "S001": 2,
+    "S002": 2,
+    "S003": 2,
+    "S004": 2,
+    "S005": 2,
+    "S006": 2,
+    "S007": 2,
+    "S008": 2,
+    "S009": 2,
+    "S010": 2,
+    "S011": 2,
+    "S012": 2,
+    "S013": 2,
+    "S014": 2,
+    "S015": 2
+  },
+  "issues": [],
+  "source_files": [
+    {
+      "path": "题目/D题/山区洪涝灾害下无人机运输与通信协同优化.docx",
+      "bytes": 6971534,
+      "sha256": "0a4f507b91a02a0ea4264973dd432cdcb5b8916c61c24214719665f326d57685"
+    },
+    {
+      "path": "题目/D题/结果提交模板.xlsx",
+      "bytes": 20893,
+      "sha256": "16f521f29a7103c4ff7c3709ce1696bb9fffa18ce741895e45b7bc7afaf3320a"
+    },
+    {
+      "path": "题目/D题/数据/无人机应急物资运输基础数据/中继无人机数据.xlsx",
+      "bytes": 11082,
+      "sha256": "be52643ff29419233e6a141dca03a04160a8af551cab36d8c49b51bb836bea04"
+    },
+    {
+      "path": "题目/D题/数据/无人机应急物资运输基础数据/物资需求与配送时限.xlsx",
+      "bytes": 17474,
+      "sha256": "5a3346159ceddcf585859d270b8f62114b388a1f737fbe64ffde0ee1fdc8170a"
+    },
+    {
+      "path": "题目/D题/数据/无人机应急物资运输基础数据/调度中心与服务区.xlsx",
+      "bytes": 11017,
+      "sha256": "541a7af1ded08c9a3ff448480332cb5f6a54902f0afa6e9bcd50c1d2b2b34e38"
+    },
+    {
+      "path": "题目/D题/数据/无人机应急物资运输基础数据/运输无人机数据.xlsx",
+      "bytes": 11746,
+      "sha256": "9296a657c07e042afba6aeea7999665d9cd24e00b592fd6c269de6e338480dcb"
+    },
+    {
+      "path": "题目/D题/数据/无人机应急物资运输基础数据/通信链路参数.xlsx",
+      "bytes": 10485,
+      "sha256": "1860d153199e7ae460ba36e83b673374e640e19de91ea167f2877271001f5f81"
+    },
+    {
+      "path": "题目/D题/数据/镇龙乡地理空间数据/镇龙乡及周边地理数据/数字高程模型数据（DEM）/镇龙乡及周边30米DEM.tif",
+      "bytes": 7867096,
+      "sha256": "741fe6de0b2bcaffd0f4007f574ee698d46197094f52cc954b532c4f90fc7c03"
+    }
+  ],
+  "input_sha256": "faac74db473ed42876d09ce22ccea2a73588b56350f5623b2bdf9173b483445b"
+}

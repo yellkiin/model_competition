@@ -1,0 +1,27 @@
+{
+  "options": 332,
+  "demands": 2839,
+  "blocks": 1024,
+  "each_original_demand_exactly_once": true,
+  "owner_indices_consistent": true,
+  "max_block_span_s": 120.0,
+  "site_generator_matches_all_original_diagnostic_sites": true,
+  "original_site_count": 88,
+  "selected_site_count": 13,
+  "selected_site_indices": [
+    12,
+    14,
+    17,
+    26,
+    28,
+    36,
+    43,
+    44,
+    52,
+    66,
+    67,
+    82,
+    86
+  ],
+  "snapshot_sha256": "3d0310cab7142094d7e6ee7d8017f09ae0e8e11bff9ca125bfb910a5fab5416f"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "not_computed_no_feasible_joint_plan",
+  "groups": 3,
+  "policy": "duplicate",
+  "feasible": null,
+  "joint_plan": null,
+  "resources": null,
+  "resource_gaps": null,
+  "partition": null,
+  "reason": "No attempted official finite candidate/window model returned a joint incumbent. Time limits, candidate restrictions and external termination do not prove the original continuous problem infeasible.",
+  "required_dependency": "official_joint_final: a complete physical and radio-feasible Q3 plan",
+  "not_used": "Synthetic group counts and communication-failing transportation-only plans were not substituted."
+}

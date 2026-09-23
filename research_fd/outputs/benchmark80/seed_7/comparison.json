@@ -1,0 +1,164 @@
+{
+  "input_metadata": {
+    "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+    "seed": 7,
+    "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+  },
+  "methods": [
+    {
+      "method": "greedy",
+      "elapsed_s": 0.004933799966238439,
+      "pool_size": 1737,
+      "feasible": false,
+      "trips": 15,
+      "hard_violations": 8,
+      "hard_lateness_s": 4105.125510845894,
+      "weighted_tardiness_s": 56678.751996978855,
+      "makespan_s": 5535.725761683539,
+      "energy_kwh": 15.804875381416526,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "route_milp",
+      "elapsed_s": 0.0553702000179328,
+      "pool_size": 1737,
+      "feasible": false,
+      "trips": 14,
+      "hard_violations": 10,
+      "hard_lateness_s": 7341.287304109141,
+      "weighted_tardiness_s": 69012.57553245906,
+      "makespan_s": 4921.929444779166,
+      "energy_kwh": 14.309114756527306,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "dual_route_milp",
+      "elapsed_s": 1.5136961999814957,
+      "pool_size": 2485,
+      "feasible": false,
+      "trips": 14,
+      "hard_violations": 10,
+      "hard_lateness_s": 7341.287304109141,
+      "weighted_tardiness_s": 69012.57553245906,
+      "makespan_s": 4921.929444779166,
+      "energy_kwh": 14.309114756527306,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "resource_dispatch",
+      "elapsed_s": 0.006053399993106723,
+      "pool_size": 2485,
+      "feasible": true,
+      "trips": 31,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 4748.63176529082,
+      "makespan_s": 3918.4209586871357,
+      "energy_kwh": 26.730600073414884,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "alns",
+      "elapsed_s": 0.5126801000442356,
+      "pool_size": 2485,
+      "feasible": true,
+      "trips": 28,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 383.23293446472076,
+      "makespan_s": 3385.8042830975596,
+      "energy_kwh": 22.638238482498593,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    }
+  ],
+  "best_method": "alns",
+  "details": {
+    "greedy": {},
+    "route_milp": {
+      "status": 0,
+      "objective": 8958.749332462588,
+      "gap": 0.0,
+      "bound": 8958.749332462588,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    },
+    "dual_route_milp": {
+      "pricing": [
+        {
+          "round": 0,
+          "restricted_lp": 8710.266374944047,
+          "columns_added": 447
+        },
+        {
+          "round": 1,
+          "restricted_lp": 8668.99467160737,
+          "columns_added": 301
+        }
+      ],
+      "status": 0,
+      "objective": 8958.749332462587,
+      "gap": 0.0,
+      "bound": 8958.749332462587,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    },
+    "resource_dispatch": {},
+    "alns": {
+      "iterations": 70,
+      "history": [
+        {
+          "iteration": 4,
+          "operator": "random",
+          "trips": 29,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 1939.1582763793654,
+          "makespan_s": 3848.6984079906215,
+          "energy_kwh": 24.65162086141438,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 12,
+          "operator": "geographic",
+          "trips": 29,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 910.2676254003725,
+          "makespan_s": 3438.984497206583,
+          "energy_kwh": 23.24600354561987,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 14,
+          "operator": "random",
+          "trips": 28,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 383.23293446472076,
+          "makespan_s": 3385.8042830975596,
+          "energy_kwh": 22.638238482498593,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        }
+      ],
+      "operator_weights": {
+        "random": 1.2444388152281083,
+        "late": 1.0,
+        "geographic": 1.0329709008807244
+      }
+    }
+  }
+}

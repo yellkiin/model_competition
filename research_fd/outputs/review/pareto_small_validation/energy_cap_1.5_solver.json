@@ -1,0 +1,44 @@
+{
+  "backend": "scipy-highs",
+  "routes": 60,
+  "options": 337,
+  "step_s": 60.0,
+  "cap_s": 1078.5388544306795,
+  "weighted_tardiness_ceiling_s": 0.0,
+  "quality_tolerance_s": 1e-05,
+  "stage_order": [
+    "energy",
+    "makespan"
+  ],
+  "time_limit_per_stage_s": 3.0,
+  "scope": "Fixed candidate pool, zero-anchored discrete starts, cap, hard deadlines and shared resources.",
+  "stages": [
+    {
+      "stage": "energy",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective": 3.419453349063565,
+      "gap": 0.0,
+      "bound": 3.419453349063565,
+      "has_incumbent": true,
+      "elapsed_s": 0.020611200015991926
+    },
+    {
+      "stage": "makespan",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective": 923.3725130203488,
+      "gap": 0.0,
+      "bound": 923.3725130203488,
+      "has_incumbent": true,
+      "elapsed_s": 0.022829400026239455
+    }
+  ],
+  "all_stages_optimal": true,
+  "elapsed_s": 0.04995039995992556,
+  "status": "feasible_incumbent",
+  "postcheck_violations": [],
+  "ratio": 1.5,
+  "baseline_starts_outside_grid": 0,
+  "pool_file": "route_pool.json"
+}

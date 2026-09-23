@@ -1,0 +1,75 @@
+{
+  "feasible": true,
+  "policy": "duplicate",
+  "k": 2,
+  "components": [
+    [
+      "S001"
+    ],
+    [
+      "S002"
+    ],
+    [
+      "S003"
+    ],
+    [
+      "S004"
+    ]
+  ],
+  "enumeration_exact": true,
+  "evaluated": 7,
+  "global_resources": {
+    "A_aircraft": 4,
+    "A_battery": 4,
+    "B_aircraft": 2,
+    "B_battery": 2,
+    "C_aircraft": 2,
+    "C_battery": 2,
+    "relay": 2,
+    "relay_pack": 2
+  },
+  "groups": [
+    [
+      "S001",
+      "S004"
+    ],
+    [
+      "S002",
+      "S003"
+    ]
+  ],
+  "resources": [
+    {
+      "A_aircraft": 2,
+      "A_battery": 2,
+      "B_aircraft": 0,
+      "B_battery": 0,
+      "C_aircraft": 2,
+      "C_battery": 2,
+      "relay": 2,
+      "relay_pack": 2
+    },
+    {
+      "A_aircraft": 2,
+      "A_battery": 2,
+      "B_aircraft": 2,
+      "B_battery": 2,
+      "C_aircraft": 0,
+      "C_battery": 0,
+      "relay": 1,
+      "relay_pack": 1
+    }
+  ],
+  "extra": {
+    "A_aircraft": 0,
+    "A_battery": 0,
+    "B_aircraft": 0,
+    "B_battery": 0,
+    "C_aircraft": 0,
+    "C_battery": 0,
+    "relay": 1,
+    "relay_pack": 1
+  },
+  "normalized_redundancy": 1.0,
+  "workload_cv": 0.02003071973649329
+}

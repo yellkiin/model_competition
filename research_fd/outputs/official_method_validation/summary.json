@@ -1,0 +1,207 @@
+[
+  {
+    "source": "official_transport_s7/greedy.json",
+    "status": "invalid",
+    "transport_valid": false,
+    "metrics": {
+      "trips": 16,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 15,
+      "hard_lateness_s": 29384.1641262991,
+      "weighted_tardiness_s": 915144.6690911243,
+      "makespan_s": 12589.847948777211,
+      "energy_kwh": 62.76147479275549
+    },
+    "issues": 23,
+    "issue_types": {
+      "route_latest_start_violation": 8,
+      "hard_deadline_violation": 15
+    }
+  },
+  {
+    "source": "official_transport_s7/route_milp.json",
+    "status": "invalid",
+    "transport_valid": false,
+    "metrics": {
+      "trips": 13,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 18,
+      "hard_lateness_s": 30427.466224086587,
+      "weighted_tardiness_s": 988554.3613117317,
+      "makespan_s": 15063.222420515063,
+      "energy_kwh": 61.580141880735745
+    },
+    "issues": 27,
+    "issue_types": {
+      "route_latest_start_violation": 9,
+      "hard_deadline_violation": 18
+    }
+  },
+  {
+    "source": "official_transport_s7/dual_route_milp.json",
+    "status": "invalid",
+    "transport_valid": false,
+    "metrics": {
+      "trips": 13,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 16,
+      "hard_lateness_s": 28377.510531987195,
+      "weighted_tardiness_s": 943488.5443640352,
+      "makespan_s": 14074.221527247468,
+      "energy_kwh": 59.96554082859237
+    },
+    "issues": 25,
+    "issue_types": {
+      "route_latest_start_violation": 9,
+      "hard_deadline_violation": 16
+    }
+  },
+  {
+    "source": "official_transport_s7/resource_dispatch.json",
+    "status": "invalid",
+    "transport_valid": false,
+    "metrics": {
+      "trips": 60,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 1,
+      "hard_lateness_s": 46.91464798196694,
+      "weighted_tardiness_s": 1313971.8162039202,
+      "makespan_s": 16054.194230363471,
+      "energy_kwh": 155.81127904919245
+    },
+    "issues": 2,
+    "issue_types": {
+      "route_latest_start_violation": 1,
+      "hard_deadline_violation": 1
+    }
+  },
+  {
+    "source": "official_transport_s7/alns.json",
+    "status": "transport_valid_radio_not_checked",
+    "transport_valid": true,
+    "metrics": {
+      "trips": 27,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8726.848411601435,
+      "energy_kwh": 75.06916411794937
+    },
+    "issues": 0,
+    "issue_types": {}
+  },
+  {
+    "source": "official_transport_s7/fixed_route_retime.json",
+    "status": "transport_valid_radio_not_checked",
+    "transport_valid": true,
+    "metrics": {
+      "trips": 27,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8310.16907732916,
+      "energy_kwh": 75.06916411794937
+    },
+    "issues": 0,
+    "issue_types": {}
+  },
+  {
+    "source": "official_transport_s7/integrated_highs.json",
+    "status": "invalid",
+    "transport_valid": false,
+    "metrics": {
+      "trips": 0,
+      "unserved": 80,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 0.0,
+      "energy_kwh": 0
+    },
+    "issues": 81,
+    "issue_types": {
+      "empty_plan": 1,
+      "box_coverage_not_exactly_one": 80
+    }
+  },
+  {
+    "source": "official_transport_cpsat/integrated_cpsat.json",
+    "status": "transport_valid_radio_not_checked",
+    "transport_valid": true,
+    "metrics": {
+      "trips": 33,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 10354.509722550627,
+      "energy_kwh": 90.3162067097326
+    },
+    "issues": 0,
+    "issue_types": {}
+  },
+  {
+    "source": "official_retime_grids/highs_step_30.json",
+    "status": "transport_valid_radio_not_checked",
+    "transport_valid": true,
+    "metrics": {
+      "trips": 27,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8297.190524525828,
+      "energy_kwh": 75.06916411794937
+    },
+    "issues": 0,
+    "issue_types": {}
+  },
+  {
+    "source": "official_retime_grids/highs_step_10.json",
+    "status": "invalid",
+    "transport_valid": false,
+    "metrics": {
+      "trips": 0,
+      "unserved": 80,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 0.0,
+      "energy_kwh": 0
+    },
+    "issues": 81,
+    "issue_types": {
+      "empty_plan": 1,
+      "box_coverage_not_exactly_one": 80
+    }
+  },
+  {
+    "source": "official_retime_grids/cpsat_seconds.json",
+    "status": "transport_valid_radio_not_checked",
+    "transport_valid": true,
+    "metrics": {
+      "trips": 27,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8258.190524525828,
+      "energy_kwh": 75.06916411794937
+    },
+    "issues": 0,
+    "issue_types": {}
+  }
+]

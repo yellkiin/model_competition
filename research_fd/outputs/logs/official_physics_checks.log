@@ -1,0 +1,75 @@
+[
+  {
+    "test": "charge_exact_3_knots",
+    "status": "passed",
+    "details": [
+      {
+        "kind": "A",
+        "maximum_formula_error_s": 4.547473508864641e-13,
+        "maximum_3_vs_101_knot_error_s": 4.547473508864641e-13
+      },
+      {
+        "kind": "B",
+        "maximum_formula_error_s": 4.547473508864641e-13,
+        "maximum_3_vs_101_knot_error_s": 4.547473508864641e-13
+      },
+      {
+        "kind": "C",
+        "maximum_formula_error_s": 6.821210263296962e-13,
+        "maximum_3_vs_101_knot_error_s": 4.547473508864641e-13
+      }
+    ]
+  },
+  {
+    "test": "loading_30_seconds_per_box",
+    "status": "passed",
+    "details": {
+      "boxes": 2,
+      "loading_per_box_s": 30,
+      "added_duration_s": 60.0,
+      "energy_unchanged_kwh": 0.5601445841755175,
+      "first_airborne_time_s": 360.0
+    }
+  },
+  {
+    "test": "relay_official_energy_and_timeline",
+    "status": "passed",
+    "details": {
+      "flight": {
+        "horizontal_m": 1500.0,
+        "peak_m": 100.0,
+        "outbound_s": 125.0,
+        "inbound_s": 133.33333333333334,
+        "flight_energy_kwh": 0.07277994888117284,
+        "cruise_energy_kwh": 0.06388888888888888,
+        "climb_energy_kwh": 0.008891059992283951,
+        "hover_total_kw": 1.1,
+        "official": true
+      },
+      "resource_start_s": 240.0,
+      "takeoff_s": 420.0,
+      "arrival_s": 545.0,
+      "ready_s": 600.0,
+      "stop_s": 660.0,
+      "returned_s": 793.3333333333334,
+      "energy_kwh": 0.10791883777006173,
+      "aircraft_end_s": 1140.0,
+      "pack_end_s": 1020.0,
+      "energy_components_kwh": {
+        "cruise": 0.06388888888888888,
+        "climb": 0.008891059992283951,
+        "hover": 0.033541666666666664,
+        "communication": 0.0015972222222222223
+      }
+    }
+  },
+  {
+    "test": "legacy_synthetic_preserved",
+    "status": "passed",
+    "details": {
+      "legacy_flight_energy_kwh": 0.10416666666666667,
+      "sessions_checked": 7,
+      "prepared_seconds": 0
+    }
+  }
+]

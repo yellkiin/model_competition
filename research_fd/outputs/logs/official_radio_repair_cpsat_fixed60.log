@@ -1,0 +1,4 @@
+{"event": "cpsat_build_start", "demands": 259, "sites": 88}
+{"event": "cpsat_model_ready", "columns": 13387, "elapsed_s": 8.655999999959022}
+{"stage": "joint_makespan", "status": "UNKNOWN", "objective": null, "bound": 8310170.0, "elapsed_s": 69.0}
+{"requirements": 259, "unreachable": [], "sites": 88, "sessions": 13387, "pool_truncated": false, "raw_sessions": 45423, "backend": "ortools-cpsat-fixed-relay", "sample_step_s": 60.0, "schedule_step_s": 60.0, "return_objective_resolution_s": 0.001, "energy_objective_resolution_kwh": 1e-09, "stages": [{"stage": "joint_makespan", "status": "UNKNOWN", "objective": null, "bound": 8310170.0, "elapsed_s": 69.0}], "status": "no_incumbent", "elapsed_s": 69.0}

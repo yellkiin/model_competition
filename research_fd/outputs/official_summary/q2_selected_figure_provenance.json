@@ -1,0 +1,299 @@
+{
+  "scope": "Transport only / Q2",
+  "plan": "research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.json",
+  "export": "research_fd\\outputs\\official_pareto_cpsat\\export_cap1",
+  "metrics": {
+    "trips": 26,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 8237.190524525828,
+    "energy_kwh": 71.24500745014467,
+    "resource_overlaps": 0,
+    "unserved": 0,
+    "duplicated": 0
+  },
+  "validation": {
+    "status": "transport_valid_radio_not_checked",
+    "transport_valid": true,
+    "relay_valid": true,
+    "radio_valid": false,
+    "joint_valid": false,
+    "input": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\d_official.json",
+    "plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.json",
+    "metadata": {
+      "source": "Official D DOCX/XLSX and DEM with explicit source mappings",
+      "source_commit": "4012819",
+      "parameter_sources": "official_parameter_sources.md",
+      "physical_runtime": "runtime/research_fd",
+      "node_elevation_rule": "Retain official node-table elevation; DEM gives intervening terrain",
+      "numerical_controls": {
+        "arc_step_m": 15,
+        "ray_step_m": 15,
+        "relay_heights_m": [
+          100,
+          200,
+          300
+        ]
+      },
+      "transport_aircraft_ids": {
+        "A": [
+          "U01",
+          "U02",
+          "U03",
+          "U04"
+        ],
+        "B": [
+          "U05",
+          "U06"
+        ],
+        "C": [
+          "U07",
+          "U08"
+        ]
+      },
+      "relay_aircraft_ids": [
+        "R01",
+        "R02"
+      ],
+      "modeling_conventions": {
+        "fleet.turnaround": {
+          "value": 0.0,
+          "status": "not an official table value",
+          "reason": "No separate transport turnaround is supplied; next preparation/loading starts on return and already occupies the aircraft. Do not copy relay turnaround or synthetic 90 s."
+        },
+        "fleet.hover_kw": {
+          "value": 0.0,
+          "status": "official-rule interpretation, not measured hover power",
+          "reason": "DOCX P0053-P0058 define trip transport energy as the sum of horizontal/cruise and additional climb energy, and supply no transport hover power; service affects time only under that rule."
+        },
+        "gravity_m_s2": {
+          "value": 9.80665,
+          "status": "standard physical constant convention; not stated numerically in attachments"
+        },
+        "horizontal_and_climb_energy": {
+          "status": "physical completion of terms named by DOCX; explicit sub-formulas absent from P0053-P0055",
+          "formula": "E_horizontal=E_use*d/L(q); E_climb=(empty_mass+load)*g*positive_climb/(eta*3.6e6)"
+        },
+        "relay_setup_waiting_energy": {
+          "status": "conservative explicit convention",
+          "reason": "Charge hover plus communication power during all post-arrival waiting and setup as well as active service; off-service communication timing is not explicitly separated by source."
+        },
+        "ground_preparation_energy": {
+          "status": "no battery flight-energy charge during preparation",
+          "reason": "No ground preparation power is provided; ground time occupies body and energy component, while flight/hover equations apply after launch."
+        }
+      },
+      "energy_convention": "Horizontal energy=usable_kwh*distance/range(load); climb=m*g*h/eta. Explicit model interpretation of DOCX energy terms, not additional official measurements."
+    },
+    "runtime_model": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\runtime\\research_fd\\d_model.py",
+    "exported_resource_labels": "Aircraft IDs use input metadata when supplied; battery/relay-pack labels (A-B01, R-B01) are derived export labels, not attachment-provided serial numbers. Internal resource indices remain zero-based.",
+    "validation_scope": "Independent coverage/inventory/all-pairs interval/deadline arithmetic; declared route and radio engines reused for physics.",
+    "charging_scope": "Parallel charging; no unprovided finite charger inventory introduced.",
+    "stored_metrics": {
+      "trips": 26,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8237.190524525828,
+      "energy_kwh": 71.24500745014467,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    "independently_recomputed_metrics": {
+      "trips": 26,
+      "unserved": 0,
+      "duplicated": 0,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8237.190524525828,
+      "energy_kwh": 71.24500745014467
+    },
+    "issues": [],
+    "notes": [
+      "Radio recomputation explicitly skipped; cannot certify joint feasibility."
+    ],
+    "relay_sessions": 0,
+    "radio_ray_step_m": 15,
+    "radio_evaluation": null,
+    "numerical_scope": "Finite temporal and terrain-ray samples do not prove continuous-time communication."
+  },
+  "aircraft_ids": {
+    "A": [
+      "U01",
+      "U02",
+      "U03",
+      "U04"
+    ],
+    "B": [
+      "U05",
+      "U06"
+    ],
+    "C": [
+      "U07",
+      "U08"
+    ]
+  },
+  "battery_labels": [
+    "A-B01",
+    "A-B02",
+    "A-B03",
+    "A-B04",
+    "A-B05",
+    "A-B06",
+    "B-B01",
+    "B-B02",
+    "B-B03",
+    "B-B04",
+    "C-B01",
+    "C-B02",
+    "C-B03",
+    "C-B04"
+  ],
+  "job_label_mapping": {
+    "J01": {
+      "job": 0,
+      "route_id": 2,
+      "aircraft_id": "U07"
+    },
+    "J02": {
+      "job": 1,
+      "route_id": 3,
+      "aircraft_id": "U01"
+    },
+    "J03": {
+      "job": 2,
+      "route_id": 7,
+      "aircraft_id": "U02"
+    },
+    "J04": {
+      "job": 3,
+      "route_id": 8,
+      "aircraft_id": "U08"
+    },
+    "J05": {
+      "job": 4,
+      "route_id": 9,
+      "aircraft_id": "U08"
+    },
+    "J06": {
+      "job": 5,
+      "route_id": 10,
+      "aircraft_id": "U07"
+    },
+    "J07": {
+      "job": 6,
+      "route_id": 11,
+      "aircraft_id": "U02"
+    },
+    "J08": {
+      "job": 7,
+      "route_id": 12,
+      "aircraft_id": "U03"
+    },
+    "J09": {
+      "job": 8,
+      "route_id": 13,
+      "aircraft_id": "U07"
+    },
+    "J10": {
+      "job": 9,
+      "route_id": 14,
+      "aircraft_id": "U01"
+    },
+    "J11": {
+      "job": 10,
+      "route_id": 15,
+      "aircraft_id": "U04"
+    },
+    "J12": {
+      "job": 11,
+      "route_id": 16,
+      "aircraft_id": "U05"
+    },
+    "J13": {
+      "job": 12,
+      "route_id": 17,
+      "aircraft_id": "U06"
+    },
+    "J14": {
+      "job": 13,
+      "route_id": 18,
+      "aircraft_id": "U05"
+    },
+    "J15": {
+      "job": 14,
+      "route_id": 19,
+      "aircraft_id": "U04"
+    },
+    "J16": {
+      "job": 15,
+      "route_id": 111,
+      "aircraft_id": "U06"
+    },
+    "J17": {
+      "job": 16,
+      "route_id": 115,
+      "aircraft_id": "U06"
+    },
+    "J18": {
+      "job": 17,
+      "route_id": 116,
+      "aircraft_id": "U05"
+    },
+    "J19": {
+      "job": 18,
+      "route_id": 151,
+      "aircraft_id": "U06"
+    },
+    "J20": {
+      "job": 19,
+      "route_id": 155,
+      "aircraft_id": "U05"
+    },
+    "J21": {
+      "job": 20,
+      "route_id": 173,
+      "aircraft_id": "U06"
+    },
+    "J22": {
+      "job": 21,
+      "route_id": 176,
+      "aircraft_id": "U05"
+    },
+    "J23": {
+      "job": 22,
+      "route_id": 283,
+      "aircraft_id": "U07"
+    },
+    "J24": {
+      "job": 23,
+      "route_id": 405,
+      "aircraft_id": "U08"
+    },
+    "J25": {
+      "job": 24,
+      "route_id": 447,
+      "aircraft_id": "U05"
+    },
+    "J26": {
+      "job": 25,
+      "route_id": 502,
+      "aircraft_id": "U06"
+    }
+  },
+  "source_sha256": {
+    "research_fd/outputs/d_official.json": "faac74db473ed42876d09ce22ccea2a73588b56350f5623b2bdf9173b483445b",
+    "research_fd/outputs/official_pareto_cpsat/export_cap1/validation.json": "9d777e7b3ab9c2b403dba0b79e7a9c904032515e8c5437d57c31a793dc9fe3aa",
+    "research_fd/outputs/official_pareto_cpsat/energy_cap_1.json": "4c03ce87ec36f27ef82e291bd3ba8863701eb252b99b0bc8230b04ce1491eb7a",
+    "research_fd/outputs/official_pareto_cpsat/export_cap1/aircraft_timeline.csv": "fcd4e9e6b1245974b9112a8fe5de0bd5237c43cc2afddd0214786a2e1208f138",
+    "research_fd/outputs/official_pareto_cpsat/export_cap1/battery_timeline.csv": "9d5e938f688900a1c454a0b0815c8b76f9a274dce37f50320def7bf224cd63f9",
+    "research_fd/outputs/official_pareto_cpsat/export_cap1/transport_trips.csv": "87d592de8cc2a9f064d72bc188cb26a190a2c86886d6fdd193db14ed1a33ed3f",
+    "research_fd/outputs/official_pareto_cpsat/export_cap1/transport_segments.csv": "55efe2c2e6cf27f6d2e96d41ec59186c0b4990c0e3efeb90255f0059562464a4",
+    "research_fd/outputs/runtime/research_fd/d_model.py": "cb2145cf54d8ee33063f7144c5465bc437d03ccd6536b96045a9d98820896540"
+  },
+  "script_sha256": "6ad1f5edeb34141b7a79bf79dd4abc59c3a7d5f9feed4cfcae2c21d4617b31fd",
+  "uncertainty": "Deterministic single-instance plans; no statistical confidence intervals asserted."
+}

@@ -1,0 +1,324 @@
+{
+  "status": "invalid",
+  "transport_valid": false,
+  "relay_valid": true,
+  "radio_valid": false,
+  "joint_valid": false,
+  "input": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\d_official.json",
+  "plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\official_transport_s7\\dual_route_milp.json",
+  "metadata": {
+    "source": "Official D DOCX/XLSX and DEM with explicit source mappings",
+    "source_commit": "4012819",
+    "parameter_sources": "official_parameter_sources.md",
+    "physical_runtime": "runtime/research_fd",
+    "node_elevation_rule": "Retain official node-table elevation; DEM gives intervening terrain",
+    "numerical_controls": {
+      "arc_step_m": 15,
+      "ray_step_m": 15,
+      "relay_heights_m": [
+        100,
+        200,
+        300
+      ]
+    },
+    "transport_aircraft_ids": {
+      "A": [
+        "U01",
+        "U02",
+        "U03",
+        "U04"
+      ],
+      "B": [
+        "U05",
+        "U06"
+      ],
+      "C": [
+        "U07",
+        "U08"
+      ]
+    },
+    "relay_aircraft_ids": [
+      "R01",
+      "R02"
+    ],
+    "modeling_conventions": {
+      "fleet.turnaround": {
+        "value": 0.0,
+        "status": "not an official table value",
+        "reason": "No separate transport turnaround is supplied; next preparation/loading starts on return and already occupies the aircraft. Do not copy relay turnaround or synthetic 90 s."
+      },
+      "fleet.hover_kw": {
+        "value": 0.0,
+        "status": "official-rule interpretation, not measured hover power",
+        "reason": "DOCX P0053-P0058 define trip transport energy as the sum of horizontal/cruise and additional climb energy, and supply no transport hover power; service affects time only under that rule."
+      },
+      "gravity_m_s2": {
+        "value": 9.80665,
+        "status": "standard physical constant convention; not stated numerically in attachments"
+      },
+      "horizontal_and_climb_energy": {
+        "status": "physical completion of terms named by DOCX; explicit sub-formulas absent from P0053-P0055",
+        "formula": "E_horizontal=E_use*d/L(q); E_climb=(empty_mass+load)*g*positive_climb/(eta*3.6e6)"
+      },
+      "relay_setup_waiting_energy": {
+        "status": "conservative explicit convention",
+        "reason": "Charge hover plus communication power during all post-arrival waiting and setup as well as active service; off-service communication timing is not explicitly separated by source."
+      },
+      "ground_preparation_energy": {
+        "status": "no battery flight-energy charge during preparation",
+        "reason": "No ground preparation power is provided; ground time occupies body and energy component, while flight/hover equations apply after launch."
+      }
+    },
+    "energy_convention": "Horizontal energy=usable_kwh*distance/range(load); climb=m*g*h/eta. Explicit model interpretation of DOCX energy terms, not additional official measurements."
+  },
+  "runtime_model": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\runtime\\research_fd\\d_model.py",
+  "exported_resource_labels": "Aircraft IDs use input metadata when supplied; battery/relay-pack labels (A-B01, R-B01) are derived export labels, not attachment-provided serial numbers. Internal resource indices remain zero-based.",
+  "validation_scope": "Independent coverage/inventory/all-pairs interval/deadline arithmetic; declared route and radio engines reused for physics.",
+  "charging_scope": "Parallel charging; no unprovided finite charger inventory introduced.",
+  "stored_metrics": {
+    "trips": 13,
+    "hard_violations": 16,
+    "hard_lateness_s": 28377.510531987195,
+    "weighted_tardiness_s": 943488.5443640351,
+    "makespan_s": 14074.221527247468,
+    "energy_kwh": 59.96554082859237,
+    "resource_overlaps": 0,
+    "unserved": 0,
+    "duplicated": 0
+  },
+  "independently_recomputed_metrics": {
+    "trips": 13,
+    "unserved": 0,
+    "duplicated": 0,
+    "hard_violations": 16,
+    "hard_lateness_s": 28377.510531987195,
+    "weighted_tardiness_s": 943488.5443640352,
+    "makespan_s": 14074.221527247468,
+    "energy_kwh": 59.96554082859237
+  },
+  "issues": [
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 2611.271786034693,
+      "latest": 2046.683807592393,
+      "job": 2,
+      "route_id": 1222
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S002-MED-01",
+      "delivered_s": 4164.5879784423,
+      "hard_due_s": 3600.0,
+      "job": 2,
+      "route_id": 1222
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S002-WAT-01",
+      "delivered_s": 4164.5879784423,
+      "hard_due_s": 3600.0,
+      "job": 2,
+      "route_id": 1222
+    },
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 3093.067390797444,
+      "latest": 2285.7304613354204,
+      "job": 3,
+      "route_id": 2016
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S001-MED-02",
+      "delivered_s": 4407.336929462024,
+      "hard_due_s": 3600.0,
+      "job": 3,
+      "route_id": 2016
+    },
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 5035.914241200904,
+      "latest": 2351.7304613354204,
+      "job": 5,
+      "route_id": 2599
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S001-MED-01",
+      "delivered_s": 6284.183779865483,
+      "hard_due_s": 3600.0,
+      "job": 5,
+      "route_id": 2599
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S001-WAT-01",
+      "delivered_s": 6284.183779865483,
+      "hard_due_s": 3600.0,
+      "job": 5,
+      "route_id": 2599
+    },
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 5580.676254184173,
+      "latest": 2390.5780660191913,
+      "job": 6,
+      "route_id": 352
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S006-MED-01",
+      "delivered_s": 6790.098188164981,
+      "hard_due_s": 3600.0,
+      "job": 6,
+      "route_id": 352
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S006-WAT-01",
+      "delivered_s": 6790.098188164981,
+      "hard_due_s": 3600.0,
+      "job": 6,
+      "route_id": 352
+    },
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 6596.0833185300635,
+      "latest": 5209.6171453743345,
+      "job": 7,
+      "route_id": 3102
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S008-MED-01",
+      "delivered_s": 8586.466173155728,
+      "hard_due_s": 7200.0,
+      "job": 7,
+      "route_id": 3102
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S008-WAT-01",
+      "delivered_s": 8586.466173155728,
+      "hard_due_s": 7200.0,
+      "job": 7,
+      "route_id": 3102
+    },
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 7319.463309244076,
+      "latest": 5616.501653758423,
+      "job": 8,
+      "route_id": 329
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S004-MED-01",
+      "delivered_s": 8902.961655485653,
+      "hard_due_s": 7200.0,
+      "job": 8,
+      "route_id": 329
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S004-WAT-01",
+      "delivered_s": 8902.961655485653,
+      "hard_due_s": 7200.0,
+      "job": 8,
+      "route_id": 329
+    },
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 9288.476779698436,
+      "latest": 5620.494325197618,
+      "job": 9,
+      "route_id": 861
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S003-WAT-01",
+      "delivered_s": 10867.982454500818,
+      "hard_due_s": 7200.0,
+      "job": 9,
+      "route_id": 861
+    },
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 9620.52000172723,
+      "latest": 9426.769737737086,
+      "job": 11,
+      "route_id": 341
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S005-MED-01",
+      "delivered_s": 10993.750263990143,
+      "hard_due_s": 10800.0,
+      "job": 11,
+      "route_id": 341
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S005-WAT-01",
+      "delivered_s": 10993.750263990143,
+      "hard_due_s": 10800.0,
+      "job": 11,
+      "route_id": 341
+    },
+    {
+      "scope": "transport",
+      "code": "route_latest_start_violation",
+      "start": 11842.878516304612,
+      "latest": 9613.830981396724,
+      "job": 12,
+      "route_id": 922
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S009-MED-01",
+      "delivered_s": 13029.047534907888,
+      "hard_due_s": 10800.0,
+      "job": 12,
+      "route_id": 922
+    },
+    {
+      "scope": "transport",
+      "code": "hard_deadline_violation",
+      "box": "S009-WAT-01",
+      "delivered_s": 13029.047534907888,
+      "hard_due_s": 10800.0,
+      "job": 12,
+      "route_id": 922
+    }
+  ],
+  "notes": [
+    "Radio recomputation explicitly skipped; cannot certify joint feasibility."
+  ],
+  "relay_sessions": 0,
+  "radio_ray_step_m": 15,
+  "radio_evaluation": null,
+  "numerical_scope": "Finite temporal and terrain-ray samples do not prove continuous-time communication."
+}

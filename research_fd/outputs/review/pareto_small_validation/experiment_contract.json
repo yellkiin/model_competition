@@ -1,0 +1,48 @@
+{
+  "input": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\small_s7\\instance.json",
+  "baseline_plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\small_s7\\transport\\best_plan.json",
+  "runtime_model": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\runtime\\research_fd\\d_model.py",
+  "metadata": {
+    "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+    "seed": 7,
+    "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+  },
+  "baseline_metrics": {
+    "trips": 8,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 719.0259029537864,
+    "energy_kwh": 5.5676805465355645,
+    "resource_overlaps": 0,
+    "unserved": 0,
+    "duplicated": 0
+  },
+  "common_weighted_tardiness_ceiling_s": 0.0,
+  "quality_tolerance_s": 1e-05,
+  "pool": {
+    "generated_routes": 162,
+    "fixed_pool_routes": 60,
+    "required_routes": 40,
+    "baseline_routes": 8,
+    "max_routes_requested": 60,
+    "required_exceeds_limit": false,
+    "policy": "Keep all baseline routes and feasible singleton routes; fill remaining slots by per-box aircraft occupation.",
+    "pool_generation_elapsed_s": 0.01299809996271506
+  },
+  "stage_order": [
+    "energy",
+    "makespan"
+  ],
+  "step_s": 60.0,
+  "ratios": [
+    1.5
+  ],
+  "seed": 7,
+  "trials": 40,
+  "seconds_per_stage": 3.0,
+  "baseline_starts_outside_grid": [],
+  "grid_warning": "Containing baseline routes does not contain its continuous start times. Off-grid starts and the finite cap can exclude that baseline; no incumbent does not prove the physical problem infeasible.",
+  "comparison_scope": "Transport-only energy and return makespan at one common baseline soft-tardiness ceiling. No relay energy optimization.",
+  "code_origin": "Copied/modified time-index logic of research_fd.d_schedule.integrated_milp; original/runtime modules unchanged."
+}

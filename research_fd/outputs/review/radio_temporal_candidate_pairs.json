@@ -1,0 +1,2745 @@
+{
+  "scope": "Spatial candidate diagnostic only; no preparation, travel-time, depot-return, charging, or continuous-radio feasibility assertion.",
+  "input": "research_fd\\outputs\\d_official.json",
+  "plan": "research_fd\\outputs\\official_transport_s7\\best_plan.json",
+  "source_sha256": {
+    "research_fd\\outputs\\d_official.json": "faac74db473ed42876d09ce22ccea2a73588b56350f5623b2bdf9173b483445b",
+    "research_fd\\outputs\\official_transport_s7\\best_plan.json": "14600a90040b6368e01b605526fbf69eb4e78ef382a4390d788c7b92ed231529"
+  },
+  "site_generator": "runtime research_fd.d_radio.candidates(p,3)",
+  "sites_meaning": "All original backhaul-qualified candidate xyz points, in the generator's original zero-based index order.",
+  "sites": [
+    [
+      -3942.921647886474,
+      4534.98098984151,
+      536.229248046875
+    ],
+    [
+      -3942.921647886474,
+      4534.98098984151,
+      636.229248046875
+    ],
+    [
+      -3942.921647886474,
+      4534.98098984151,
+      736.229248046875
+    ],
+    [
+      -3898.3531320965067,
+      2316.068973383675,
+      414.2220458984375
+    ],
+    [
+      -3898.3531320965067,
+      2316.068973383675,
+      514.2220458984375
+    ],
+    [
+      -3898.3531320965067,
+      2316.068973383675,
+      614.2220458984375
+    ],
+    [
+      -3184.999346678965,
+      -87.75943164345067,
+      375.1272277832031
+    ],
+    [
+      -3184.999346678965,
+      -87.75943164345067,
+      475.1272277832031
+    ],
+    [
+      -3184.999346678965,
+      -87.75943164345067,
+      575.1272277832031
+    ],
+    [
+      -3176.9424626697323,
+      1759.3975722123487,
+      547.5720520019531
+    ],
+    [
+      -3176.9424626697323,
+      1759.3975722123487,
+      647.5720520019531
+    ],
+    [
+      -3176.9424626697323,
+      1759.3975722123487,
+      747.5720520019531
+    ],
+    [
+      -1971.460823943237,
+      2267.490494920755,
+      370.958984375
+    ],
+    [
+      -1971.460823943237,
+      2267.490494920755,
+      470.958984375
+    ],
+    [
+      -1971.460823943237,
+      2267.490494920755,
+      570.958984375
+    ],
+    [
+      -1949.1765660482533,
+      1158.0344866918374,
+      386.2146301269531
+    ],
+    [
+      -1949.1765660482533,
+      1158.0344866918374,
+      486.2146301269531
+    ],
+    [
+      -1949.1765660482533,
+      1158.0344866918374,
+      586.2146301269531
+    ],
+    [
+      -1592.4996733394826,
+      -43.879715821725334,
+      267.96922302246094
+    ],
+    [
+      -1592.4996733394826,
+      -43.879715821725334,
+      367.96922302246094
+    ],
+    [
+      -1592.4996733394826,
+      -43.879715821725334,
+      467.96922302246094
+    ],
+    [
+      -1077.8835676015897,
+      2592.961224342375,
+      278.04286193847656
+    ],
+    [
+      -1077.8835676015897,
+      2592.961224342375,
+      378.04286193847656
+    ],
+    [
+      -1077.8835676015897,
+      2592.961224342375,
+      478.04286193847656
+    ],
+    [
+      -927.5153906587184,
+      3931.591180170867,
+      384.017822265625
+    ],
+    [
+      -927.5153906587184,
+      3931.591180170867,
+      484.017822265625
+    ],
+    [
+      -927.5153906587184,
+      3931.591180170867,
+      584.017822265625
+    ],
+    [
+      -538.9417838007948,
+      1296.4806121711874,
+      281.2503662109375
+    ],
+    [
+      -538.9417838007948,
+      1296.4806121711874,
+      381.2503662109375
+    ],
+    [
+      -538.9417838007948,
+      1296.4806121711874,
+      481.2503662109375
+    ],
+    [
+      -473.2758425606071,
+      -364.4606025047231,
+      255.7490997314453
+    ],
+    [
+      -473.2758425606071,
+      -364.4606025047231,
+      355.7490997314453
+    ],
+    [
+      -473.2758425606071,
+      -364.4606025047231,
+      455.7490997314453
+    ],
+    [
+      -473.2758425606071,
+      3749.3608789185055,
+      300.7164306640625
+    ],
+    [
+      -473.2758425606071,
+      3749.3608789185055,
+      400.7164306640625
+    ],
+    [
+      -473.2758425606071,
+      3749.3608789185055,
+      500.7164306640625
+    ],
+    [
+      -473.2758425606071,
+      7863.182360341734,
+      530.7783203125
+    ],
+    [
+      -261.4677396934258,
+      5274.129714261403,
+      269.03955078125
+    ],
+    [
+      -261.4677396934258,
+      5274.129714261403,
+      369.03955078125
+    ],
+    [
+      -261.4677396934258,
+      5274.129714261403,
+      469.03955078125
+    ],
+    [
+      -130.7338698467129,
+      2637.0648571307015,
+      312.18304443359375
+    ],
+    [
+      -130.7338698467129,
+      2637.0648571307015,
+      412.18304443359375
+    ],
+    [
+      -130.7338698467129,
+      2637.0648571307015,
+      512.1830444335938
+    ],
+    [
+      0.0,
+      0.0,
+      228.7255401611328
+    ],
+    [
+      0.0,
+      0.0,
+      328.7255401611328
+    ],
+    [
+      0.0,
+      0.0,
+      428.7255401611328
+    ],
+    [
+      375.0016942540803,
+      3839.076588818001,
+      299.1041564941406
+    ],
+    [
+      375.0016942540803,
+      3839.076588818001,
+      399.1041564941406
+    ],
+    [
+      375.0016942540803,
+      3839.076588818001,
+      499.1041564941406
+    ],
+    [
+      634.4676168349195,
+      1388.9375570386405,
+      252.0780792236328
+    ],
+    [
+      634.4676168349195,
+      1388.9375570386405,
+      352.0780792236328
+    ],
+    [
+      634.4676168349195,
+      1388.9375570386405,
+      452.0780792236328
+    ],
+    [
+      750.0033885081606,
+      7678.153177636002,
+      495.1157531738281
+    ],
+    [
+      1193.424039798716,
+      2590.928177580047,
+      256.3206329345703
+    ],
+    [
+      1193.424039798716,
+      2590.928177580047,
+      356.3206329345703
+    ],
+    [
+      1193.424039798716,
+      2590.928177580047,
+      456.3206329345703
+    ],
+    [
+      1268.935233669839,
+      2777.875114077281,
+      253.96136474609375
+    ],
+    [
+      1268.935233669839,
+      2777.875114077281,
+      353.96136474609375
+    ],
+    [
+      1268.935233669839,
+      2777.875114077281,
+      453.96136474609375
+    ],
+    [
+      1419.2109561117675,
+      3423.1156754426293,
+      284.5447540283203
+    ],
+    [
+      1419.2109561117675,
+      3423.1156754426293,
+      384.5447540283203
+    ],
+    [
+      1419.2109561117675,
+      3423.1156754426293,
+      484.5447540283203
+    ],
+    [
+      2077.2558668948086,
+      1250.5182812457126,
+      344.6664123535156
+    ],
+    [
+      2077.2558668948086,
+      1250.5182812457126,
+      444.6664123535156
+    ],
+    [
+      2077.2558668948086,
+      1250.5182812457126,
+      544.6664123535156
+    ],
+    [
+      2314.889256527812,
+      603.4363896584746,
+      433.7569885253906
+    ],
+    [
+      2314.889256527812,
+      603.4363896584746,
+      533.7569885253906
+    ],
+    [
+      2314.889256527812,
+      603.4363896584746,
+      633.7569885253906
+    ],
+    [
+      2386.848079597432,
+      5181.856355160094,
+      289.4370880126953
+    ],
+    [
+      2386.848079597432,
+      5181.856355160094,
+      389.4370880126953
+    ],
+    [
+      2386.848079597432,
+      5181.856355160094,
+      489.4370880126953
+    ],
+    [
+      2679.067867049209,
+      2545.0809825158954,
+      320.26963806152344
+    ],
+    [
+      2679.067867049209,
+      2545.0809825158954,
+      420.26963806152344
+    ],
+    [
+      2679.067867049209,
+      2545.0809825158954,
+      520.2696380615234
+    ],
+    [
+      2703.6666201091257,
+      -182.23030125236156,
+      455.21295166015625
+    ],
+    [
+      2703.6666201091257,
+      -182.23030125236156,
+      555.2129516601562
+    ],
+    [
+      2703.6666201091257,
+      -182.23030125236156,
+      655.2129516601562
+    ],
+    [
+      4154.511733789617,
+      2501.0365624914252,
+      421.70806884765625
+    ],
+    [
+      4154.511733789617,
+      2501.0365624914252,
+      521.7080688476562
+    ],
+    [
+      4154.511733789617,
+      2501.0365624914252,
+      621.7080688476562
+    ],
+    [
+      4629.778513055624,
+      1206.8727793169492,
+      421.5816650390625
+    ],
+    [
+      4629.778513055624,
+      1206.8727793169492,
+      521.5816650390625
+    ],
+    [
+      4629.778513055624,
+      1206.8727793169492,
+      621.5816650390625
+    ],
+    [
+      5407.333240218251,
+      -364.4606025047231,
+      420.9825134277344
+    ],
+    [
+      5407.333240218251,
+      -364.4606025047231,
+      520.9825134277344
+    ],
+    [
+      5407.333240218251,
+      -364.4606025047231,
+      620.9825134277344
+    ],
+    [
+      5407.333240218251,
+      3749.3608789185055,
+      586.3650207519531
+    ],
+    [
+      5407.333240218251,
+      7863.182360341734,
+      632.5147094726562
+    ]
+  ],
+  "site_count": 88,
+  "selected_site_indices": [
+    12,
+    14,
+    17,
+    26,
+    28,
+    36,
+    43,
+    44,
+    52,
+    66,
+    67,
+    82,
+    86
+  ],
+  "selected_site_count": 13,
+  "selected_sites": [
+    [
+      -1971.460823943237,
+      2267.490494920755,
+      370.958984375
+    ],
+    [
+      -1971.460823943237,
+      2267.490494920755,
+      570.958984375
+    ],
+    [
+      -1949.1765660482533,
+      1158.0344866918374,
+      586.2146301269531
+    ],
+    [
+      -927.5153906587184,
+      3931.591180170867,
+      584.017822265625
+    ],
+    [
+      -538.9417838007948,
+      1296.4806121711874,
+      381.2503662109375
+    ],
+    [
+      -473.2758425606071,
+      7863.182360341734,
+      530.7783203125
+    ],
+    [
+      0.0,
+      0.0,
+      228.7255401611328
+    ],
+    [
+      0.0,
+      0.0,
+      328.7255401611328
+    ],
+    [
+      750.0033885081606,
+      7678.153177636002,
+      495.1157531738281
+    ],
+    [
+      2314.889256527812,
+      603.4363896584746,
+      533.7569885253906
+    ],
+    [
+      2314.889256527812,
+      603.4363896584746,
+      633.7569885253906
+    ],
+    [
+      4629.778513055624,
+      1206.8727793169492,
+      621.5816650390625
+    ],
+    [
+      5407.333240218251,
+      3749.3608789185055,
+      586.3650207519531
+    ]
+  ],
+  "demand_sample_step_s": 60,
+  "ray_step_m": 15,
+  "demands_count": 259,
+  "active_minutes": 114,
+  "uncovered_minutes": [],
+  "minute_binning": "floor(time/60 + 1e-9), same as session-pool slot calculation; all sampled demands within the minute must be covered by the union of the chosen pair.",
+  "movement_proxy": "At each active minute minimize the sum of two 3D Euclidean distances under the better of two matchings from the previous selected pair. First pair starts at O01 ground. Inactive minutes do not reset positions. This is not a physical travel-energy calculation.",
+  "pair_semantics": "Unordered pairs with repetition were enumerated; repeated index means a single spatial candidate covers all demands. Ordered output records the chosen minimum-distance matching, not actual relay IDs.",
+  "records": [
+    {
+      "minute_index": 13,
+      "time_bin_s": [
+        780,
+        840
+      ],
+      "demand_indices": [
+        0
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3745,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        43,
+        44
+      ],
+      "movement_proxy_m": 302.05108032226565
+    },
+    {
+      "minute_index": 14,
+      "time_bin_s": [
+        840,
+        900
+      ],
+      "demand_indices": [
+        1
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3420,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        43,
+        44
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 15,
+      "time_bin_s": [
+        900,
+        960
+      ],
+      "demand_indices": [
+        2,
+        22,
+        75,
+        76
+      ],
+      "demand_count": 4,
+      "feasible_unordered_pairs_with_repetition": 519,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        28,
+        66
+      ],
+      "movement_proxy_m": 3813.3150617757383
+    },
+    {
+      "minute_index": 16,
+      "time_bin_s": [
+        960,
+        1020
+      ],
+      "demand_indices": [
+        3,
+        23,
+        77
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 168,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        66
+      ],
+      "movement_proxy_m": 1730.6290490188953
+    },
+    {
+      "minute_index": 17,
+      "time_bin_s": [
+        1020,
+        1080
+      ],
+      "demand_indices": [
+        4,
+        24,
+        78
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 168,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        66
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 18,
+      "time_bin_s": [
+        1080,
+        1140
+      ],
+      "demand_indices": [
+        5,
+        6,
+        25,
+        79
+      ],
+      "demand_count": 4,
+      "feasible_unordered_pairs_with_repetition": 168,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        66
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 19,
+      "time_bin_s": [
+        1140,
+        1200
+      ],
+      "demand_indices": [
+        7,
+        26,
+        80
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 168,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        66
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 20,
+      "time_bin_s": [
+        1200,
+        1260
+      ],
+      "demand_indices": [
+        8,
+        27,
+        81,
+        82
+      ],
+      "demand_count": 4,
+      "feasible_unordered_pairs_with_repetition": 168,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        66
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 21,
+      "time_bin_s": [
+        1260,
+        1320
+      ],
+      "demand_indices": [
+        9,
+        10,
+        28
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 3213,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        66
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 22,
+      "time_bin_s": [
+        1320,
+        1380
+      ],
+      "demand_indices": [
+        11,
+        29
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 1116,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        67
+      ],
+      "movement_proxy_m": 100.0
+    },
+    {
+      "minute_index": 23,
+      "time_bin_s": [
+        1380,
+        1440
+      ],
+      "demand_indices": [
+        12,
+        30,
+        31
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 657,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 2392.278408725443
+    },
+    {
+      "minute_index": 24,
+      "time_bin_s": [
+        1440,
+        1500
+      ],
+      "demand_indices": [
+        13,
+        32
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 466,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 25,
+      "time_bin_s": [
+        1500,
+        1560
+      ],
+      "demand_indices": [
+        14,
+        33,
+        34
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 466,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 26,
+      "time_bin_s": [
+        1560,
+        1620
+      ],
+      "demand_indices": [
+        15,
+        35
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 466,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 27,
+      "time_bin_s": [
+        1620,
+        1680
+      ],
+      "demand_indices": [
+        16,
+        36,
+        37
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 466,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 28,
+      "time_bin_s": [
+        1680,
+        1740
+      ],
+      "demand_indices": [
+        17,
+        38
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 480,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 29,
+      "time_bin_s": [
+        1740,
+        1800
+      ],
+      "demand_indices": [
+        18
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 513,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 30,
+      "time_bin_s": [
+        1800,
+        1860
+      ],
+      "demand_indices": [
+        19,
+        20
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 756,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 31,
+      "time_bin_s": [
+        1860,
+        1920
+      ],
+      "demand_indices": [
+        21
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3286,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 34,
+      "time_bin_s": [
+        2040,
+        2100
+      ],
+      "demand_indices": [
+        58,
+        251
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 3736,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 35,
+      "time_bin_s": [
+        2100,
+        2160
+      ],
+      "demand_indices": [
+        59,
+        252
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 3660,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 36,
+      "time_bin_s": [
+        2160,
+        2220
+      ],
+      "demand_indices": [
+        60,
+        61,
+        253
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 3400,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 37,
+      "time_bin_s": [
+        2220,
+        2280
+      ],
+      "demand_indices": [
+        62,
+        254
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 3084,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 38,
+      "time_bin_s": [
+        2280,
+        2340
+      ],
+      "demand_indices": [
+        39,
+        63,
+        255
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 2765,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 39,
+      "time_bin_s": [
+        2340,
+        2400
+      ],
+      "demand_indices": [
+        40,
+        64,
+        256,
+        257
+      ],
+      "demand_count": 4,
+      "feasible_unordered_pairs_with_repetition": 513,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 40,
+      "time_bin_s": [
+        2400,
+        2460
+      ],
+      "demand_indices": [
+        41,
+        65,
+        258
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 492,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 41,
+      "time_bin_s": [
+        2460,
+        2520
+      ],
+      "demand_indices": [
+        42,
+        43,
+        66
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 469,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        12,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 42,
+      "time_bin_s": [
+        2520,
+        2580
+      ],
+      "demand_indices": [
+        44,
+        67
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 42,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 1975.9674154015797
+    },
+    {
+      "minute_index": 43,
+      "time_bin_s": [
+        2580,
+        2640
+      ],
+      "demand_indices": [
+        45,
+        68,
+        69
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 42,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 44,
+      "time_bin_s": [
+        2640,
+        2700
+      ],
+      "demand_indices": [
+        46,
+        70
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 558,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 45,
+      "time_bin_s": [
+        2700,
+        2760
+      ],
+      "demand_indices": [
+        47,
+        71
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 595,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 46,
+      "time_bin_s": [
+        2760,
+        2820
+      ],
+      "demand_indices": [
+        48,
+        72
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 595,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 47,
+      "time_bin_s": [
+        2820,
+        2880
+      ],
+      "demand_indices": [
+        49,
+        73
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 595,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 48,
+      "time_bin_s": [
+        2880,
+        2940
+      ],
+      "demand_indices": [
+        50,
+        51,
+        74
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 595,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 49,
+      "time_bin_s": [
+        2940,
+        3000
+      ],
+      "demand_indices": [
+        52,
+        196,
+        197
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 360,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 50,
+      "time_bin_s": [
+        3000,
+        3060
+      ],
+      "demand_indices": [
+        53,
+        198
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 528,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        82
+      ],
+      "movement_proxy_m": 1964.4906952114966
+    },
+    {
+      "minute_index": 51,
+      "time_bin_s": [
+        3060,
+        3120
+      ],
+      "demand_indices": [
+        54,
+        150,
+        199
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 711,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 52,
+      "time_bin_s": [
+        3120,
+        3180
+      ],
+      "demand_indices": [
+        55,
+        151,
+        152,
+        200,
+        201
+      ],
+      "demand_count": 5,
+      "feasible_unordered_pairs_with_repetition": 864,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 53,
+      "time_bin_s": [
+        3180,
+        3240
+      ],
+      "demand_indices": [
+        56,
+        153,
+        202
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 810,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 54,
+      "time_bin_s": [
+        3240,
+        3300
+      ],
+      "demand_indices": [
+        57,
+        154,
+        203
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 2701,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 55,
+      "time_bin_s": [
+        3300,
+        3360
+      ],
+      "demand_indices": [
+        120,
+        155
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 2888,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 56,
+      "time_bin_s": [
+        3360,
+        3420
+      ],
+      "demand_indices": [
+        121,
+        156
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 578,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 1964.4906952114966
+    },
+    {
+      "minute_index": 57,
+      "time_bin_s": [
+        3420,
+        3480
+      ],
+      "demand_indices": [
+        122,
+        157
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 526,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 58,
+      "time_bin_s": [
+        3480,
+        3540
+      ],
+      "demand_indices": [
+        123,
+        158
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 514,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        82
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 59,
+      "time_bin_s": [
+        3540,
+        3600
+      ],
+      "demand_indices": [
+        124,
+        125,
+        159
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 14,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 7546.26521118822
+    },
+    {
+      "minute_index": 60,
+      "time_bin_s": [
+        3600,
+        3660
+      ],
+      "demand_indices": [
+        126,
+        160,
+        161
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 175,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 61,
+      "time_bin_s": [
+        3660,
+        3720
+      ],
+      "demand_indices": [
+        127,
+        162
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 175,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 62,
+      "time_bin_s": [
+        3720,
+        3780
+      ],
+      "demand_indices": [
+        128,
+        163
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 175,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 63,
+      "time_bin_s": [
+        3780,
+        3840
+      ],
+      "demand_indices": [
+        129,
+        164
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 175,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 64,
+      "time_bin_s": [
+        3840,
+        3900
+      ],
+      "demand_indices": [
+        130,
+        165
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 175,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 65,
+      "time_bin_s": [
+        3900,
+        3960
+      ],
+      "demand_indices": [
+        131,
+        166
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 175,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 66,
+      "time_bin_s": [
+        3960,
+        4020
+      ],
+      "demand_indices": [
+        132,
+        167,
+        168
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 2179,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 67,
+      "time_bin_s": [
+        4020,
+        4080
+      ],
+      "demand_indices": [
+        133,
+        169,
+        228
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 2847,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 68,
+      "time_bin_s": [
+        4080,
+        4140
+      ],
+      "demand_indices": [
+        134,
+        170,
+        229
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 2831,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        26,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 69,
+      "time_bin_s": [
+        4140,
+        4200
+      ],
+      "demand_indices": [
+        135,
+        171,
+        230
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 915,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 1964.4906952114966
+    },
+    {
+      "minute_index": 70,
+      "time_bin_s": [
+        4200,
+        4260
+      ],
+      "demand_indices": [
+        136,
+        231
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 969,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 71,
+      "time_bin_s": [
+        4260,
+        4320
+      ],
+      "demand_indices": [
+        232
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 72,
+      "time_bin_s": [
+        4320,
+        4380
+      ],
+      "demand_indices": [
+        233
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 73,
+      "time_bin_s": [
+        4380,
+        4440
+      ],
+      "demand_indices": [
+        234
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3136,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 76,
+      "time_bin_s": [
+        4560,
+        4620
+      ],
+      "demand_indices": [
+        83
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3510,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 77,
+      "time_bin_s": [
+        4620,
+        4680
+      ],
+      "demand_indices": [
+        84
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3175,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 78,
+      "time_bin_s": [
+        4680,
+        4740
+      ],
+      "demand_indices": [
+        85
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 2788,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 79,
+      "time_bin_s": [
+        4740,
+        4800
+      ],
+      "demand_indices": [
+        86
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 1963,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 80,
+      "time_bin_s": [
+        4800,
+        4860
+      ],
+      "demand_indices": [
+        87,
+        235
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 1432,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 81,
+      "time_bin_s": [
+        4860,
+        4920
+      ],
+      "demand_indices": [
+        88,
+        236
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 1015,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        14,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 82,
+      "time_bin_s": [
+        4920,
+        4980
+      ],
+      "demand_indices": [
+        89,
+        237
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 520,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 1109.7846444569698
+    },
+    {
+      "minute_index": 83,
+      "time_bin_s": [
+        4980,
+        5040
+      ],
+      "demand_indices": [
+        90,
+        238
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 480,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 84,
+      "time_bin_s": [
+        5040,
+        5100
+      ],
+      "demand_indices": [
+        91,
+        239
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 408,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 85,
+      "time_bin_s": [
+        5100,
+        5160
+      ],
+      "demand_indices": [
+        92,
+        93,
+        240
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 336,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 86,
+      "time_bin_s": [
+        5160,
+        5220
+      ],
+      "demand_indices": [
+        94,
+        241
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 48,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 6093.804780506624
+    },
+    {
+      "minute_index": 87,
+      "time_bin_s": [
+        5220,
+        5280
+      ],
+      "demand_indices": [
+        95,
+        242
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 48,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 88,
+      "time_bin_s": [
+        5280,
+        5340
+      ],
+      "demand_indices": [
+        96,
+        243
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 48,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 89,
+      "time_bin_s": [
+        5340,
+        5400
+      ],
+      "demand_indices": [
+        97,
+        244,
+        245
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 48,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 90,
+      "time_bin_s": [
+        5400,
+        5460
+      ],
+      "demand_indices": [
+        98,
+        246
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 714,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 91,
+      "time_bin_s": [
+        5460,
+        5520
+      ],
+      "demand_indices": [
+        99,
+        100,
+        247
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 1200,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 92,
+      "time_bin_s": [
+        5520,
+        5580
+      ],
+      "demand_indices": [
+        101,
+        248
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 2557,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 93,
+      "time_bin_s": [
+        5580,
+        5640
+      ],
+      "demand_indices": [
+        102,
+        249
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 3025,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 94,
+      "time_bin_s": [
+        5640,
+        5700
+      ],
+      "demand_indices": [
+        103,
+        104,
+        250
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 3388,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 95,
+      "time_bin_s": [
+        5700,
+        5760
+      ],
+      "demand_indices": [
+        105,
+        204
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 3110,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 96,
+      "time_bin_s": [
+        5760,
+        5820
+      ],
+      "demand_indices": [
+        106,
+        205
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 2389,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        86
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 97,
+      "time_bin_s": [
+        5820,
+        5880
+      ],
+      "demand_indices": [
+        107,
+        108,
+        206
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 96,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 6093.804780506624
+    },
+    {
+      "minute_index": 98,
+      "time_bin_s": [
+        5880,
+        5940
+      ],
+      "demand_indices": [
+        109,
+        207
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 62,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 99,
+      "time_bin_s": [
+        5940,
+        6000
+      ],
+      "demand_indices": [
+        110,
+        208
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 46,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 100,
+      "time_bin_s": [
+        6000,
+        6060
+      ],
+      "demand_indices": [
+        111,
+        209
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 38,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 101,
+      "time_bin_s": [
+        6060,
+        6120
+      ],
+      "demand_indices": [
+        112,
+        210,
+        211
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 16,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 102,
+      "time_bin_s": [
+        6120,
+        6180
+      ],
+      "demand_indices": [
+        113,
+        212
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 16,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 103,
+      "time_bin_s": [
+        6180,
+        6240
+      ],
+      "demand_indices": [
+        114,
+        213
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 16,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 104,
+      "time_bin_s": [
+        6240,
+        6300
+      ],
+      "demand_indices": [
+        115,
+        116,
+        214
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 16,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 105,
+      "time_bin_s": [
+        6300,
+        6360
+      ],
+      "demand_indices": [
+        117,
+        215
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 862,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 106,
+      "time_bin_s": [
+        6360,
+        6420
+      ],
+      "demand_indices": [
+        118,
+        216
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 954,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 107,
+      "time_bin_s": [
+        6420,
+        6480
+      ],
+      "demand_indices": [
+        119,
+        217
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 847,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 108,
+      "time_bin_s": [
+        6480,
+        6540
+      ],
+      "demand_indices": [
+        218
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 109,
+      "time_bin_s": [
+        6540,
+        6600
+      ],
+      "demand_indices": [
+        137,
+        138,
+        219,
+        220
+      ],
+      "demand_count": 4,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 110,
+      "time_bin_s": [
+        6600,
+        6660
+      ],
+      "demand_indices": [
+        139,
+        221
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 111,
+      "time_bin_s": [
+        6660,
+        6720
+      ],
+      "demand_indices": [
+        140,
+        222
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 112,
+      "time_bin_s": [
+        6720,
+        6780
+      ],
+      "demand_indices": [
+        141,
+        223
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 113,
+      "time_bin_s": [
+        6780,
+        6840
+      ],
+      "demand_indices": [
+        142,
+        224
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 114,
+      "time_bin_s": [
+        6840,
+        6900
+      ],
+      "demand_indices": [
+        143,
+        225
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 115,
+      "time_bin_s": [
+        6900,
+        6960
+      ],
+      "demand_indices": [
+        144,
+        145,
+        226,
+        227
+      ],
+      "demand_count": 4,
+      "feasible_unordered_pairs_with_repetition": 990,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 116,
+      "time_bin_s": [
+        6960,
+        7020
+      ],
+      "demand_indices": [
+        146
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 2086,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 117,
+      "time_bin_s": [
+        7020,
+        7080
+      ],
+      "demand_indices": [
+        147
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3013,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 118,
+      "time_bin_s": [
+        7080,
+        7140
+      ],
+      "demand_indices": [
+        148
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3796,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 119,
+      "time_bin_s": [
+        7140,
+        7200
+      ],
+      "demand_indices": [
+        149
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3825,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 120,
+      "time_bin_s": [
+        7200,
+        7260
+      ],
+      "demand_indices": [
+        172
+      ],
+      "demand_count": 1,
+      "feasible_unordered_pairs_with_repetition": 3888,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 121,
+      "time_bin_s": [
+        7260,
+        7320
+      ],
+      "demand_indices": [
+        173,
+        174,
+        185
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 3589,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        52
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 122,
+      "time_bin_s": [
+        7320,
+        7380
+      ],
+      "demand_indices": [
+        175,
+        186
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 2134,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 1237.707434861675
+    },
+    {
+      "minute_index": 123,
+      "time_bin_s": [
+        7380,
+        7440
+      ],
+      "demand_indices": [
+        176,
+        187
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 2105,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 124,
+      "time_bin_s": [
+        7440,
+        7500
+      ],
+      "demand_indices": [
+        177,
+        188
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 2012,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 125,
+      "time_bin_s": [
+        7500,
+        7560
+      ],
+      "demand_indices": [
+        178,
+        189
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 2012,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 126,
+      "time_bin_s": [
+        7560,
+        7620
+      ],
+      "demand_indices": [
+        179,
+        190,
+        191
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 2012,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 127,
+      "time_bin_s": [
+        7620,
+        7680
+      ],
+      "demand_indices": [
+        180,
+        181,
+        192
+      ],
+      "demand_count": 3,
+      "feasible_unordered_pairs_with_repetition": 2012,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 128,
+      "time_bin_s": [
+        7680,
+        7740
+      ],
+      "demand_indices": [
+        182,
+        193
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 2105,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 129,
+      "time_bin_s": [
+        7740,
+        7800
+      ],
+      "demand_indices": [
+        183,
+        194
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 3781,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 0.0
+    },
+    {
+      "minute_index": 130,
+      "time_bin_s": [
+        7800,
+        7860
+      ],
+      "demand_indices": [
+        184,
+        195
+      ],
+      "demand_count": 2,
+      "feasible_unordered_pairs_with_repetition": 3843,
+      "status": "spatial_pair_found",
+      "ordered_site_indices": [
+        17,
+        36
+      ],
+      "movement_proxy_m": 0.0
+    }
+  ],
+  "elapsed_s": 2.375
+}

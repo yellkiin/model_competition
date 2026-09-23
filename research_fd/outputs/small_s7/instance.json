@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+    "seed": 7,
+    "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+  },
+  "depot": "O01",
+  "nodes": [
+    {
+      "id": "O01",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 100.3189279302056,
+      "work_height": 0.0
+    },
+    {
+      "id": "S001",
+      "x": 1125.859199442003,
+      "y": 3574.924208726179,
+      "z": 109.36915749242591,
+      "work_height": 30.0
+    },
+    {
+      "id": "S002",
+      "x": 2481.171212206742,
+      "y": -2473.135290084673,
+      "z": 289.4681234343702,
+      "work_height": 30.0
+    },
+    {
+      "id": "S003",
+      "x": -1798.5034357989712,
+      "y": 3361.9810085663566,
+      "z": 166.05339734331318,
+      "work_height": 30.0
+    },
+    {
+      "id": "S004",
+      "x": -4452.612258909828,
+      "y": 2891.0557654448967,
+      "z": 102.67559133172475,
+      "work_height": 30.0
+    }
+  ],
+  "boxes": [
+    {
+      "id": "B001",
+      "node": "S001",
+      "mass": 6.0,
+      "volume": 0.02,
+      "due": 3114.431914628888,
+      "hard_due": 3114.431914628888,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B002",
+      "node": "S002",
+      "mass": 8.0,
+      "volume": 0.02,
+      "due": 2175.7616109566957,
+      "hard_due": 2175.7616109566957,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B003",
+      "node": "S003",
+      "mass": 14.0,
+      "volume": 0.02,
+      "due": 2084.252216542837,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B004",
+      "node": "S004",
+      "mass": 10.0,
+      "volume": 0.028,
+      "due": 2558.6416920201113,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B005",
+      "node": "S001",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 3491.450538525346,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B006",
+      "node": "S002",
+      "mass": 8.0,
+      "volume": 0.036,
+      "due": 2782.140535938209,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B007",
+      "node": "S003",
+      "mass": 14.0,
+      "volume": 0.014,
+      "due": 2009.086526647638,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B008",
+      "node": "S004",
+      "mass": 6.0,
+      "volume": 0.014,
+      "due": 2763.8252481187583,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B009",
+      "node": "S001",
+      "mass": 6.0,
+      "volume": 0.028,
+      "due": 1667.7925296698327,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B010",
+      "node": "S002",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 2485.791448118049,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B011",
+      "node": "S003",
+      "mass": 10.0,
+      "volume": 0.028,
+      "due": 2795.52988353292,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B012",
+      "node": "S004",
+      "mass": 8.0,
+      "volume": 0.014,
+      "due": 2544.059527247658,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    }
+  ],
+  "fleet": [
+    {
+      "id": "A",
+      "count": 4,
+      "batteries": 6,
+      "payload": 25,
+      "volume": 0.06,
+      "empty_mass": 28,
+      "usable_kwh": 2.2,
+      "range_empty_km": 40,
+      "range_full_km": 22,
+      "speed": 17,
+      "climb_speed": 4.0,
+      "descend_speed": 3.0,
+      "efficiency": 0.72,
+      "reserve": 0.15,
+      "prepare": 90.0,
+      "turnaround": 90.0,
+      "full_charge": 1800,
+      "charge_knee": 0.8,
+      "charge_slow": 2.0,
+      "service": 35.0,
+      "service_per_box": 3.0,
+      "hover_kw": 0.0
+    },
+    {
+      "id": "B",
+      "count": 2,
+      "batteries": 4,
+      "payload": 30,
+      "volume": 0.073,
+      "empty_mass": 35,
+      "usable_kwh": 2.8,
+      "range_empty_km": 48,
+      "range_full_km": 25,
+      "speed": 20,
+      "climb_speed": 4.0,
+      "descend_speed": 3.0,
+      "efficiency": 0.72,
+      "reserve": 0.15,
+      "prepare": 90.0,
+      "turnaround": 90.0,
+      "full_charge": 2400,
+      "charge_knee": 0.8,
+      "charge_slow": 2.0,
+      "service": 35.0,
+      "service_per_box": 3.0,
+      "hover_kw": 0.0
+    },
+    {
+      "id": "C",
+      "count": 2,
+      "batteries": 4,
+      "payload": 80,
+      "volume": 0.25,
+      "empty_mass": 85,
+      "usable_kwh": 6.8,
+      "range_empty_km": 65,
+      "range_full_km": 32,
+      "speed": 24,
+      "climb_speed": 4.0,
+      "descend_speed": 3.0,
+      "efficiency": 0.72,
+      "reserve": 0.15,
+      "prepare": 90.0,
+      "turnaround": 90.0,
+      "full_charge": 3000,
+      "charge_knee": 0.8,
+      "charge_slow": 2.0,
+      "service": 35.0,
+      "service_per_box": 3.0,
+      "hover_kw": 0.0
+    }
+  ],
+  "terrain": {
+    "kind": "gaussian",
+    "base": 100.0,
+    "hills": [
+      {
+        "x": 2500.0,
+        "y": 0.0,
+        "sx": 600.0,
+        "sy": 2800.0,
+        "height": 280.0
+      },
+      {
+        "x": -1800.0,
+        "y": 2300.0,
+        "sx": 950.0,
+        "sy": 750.0,
+        "height": 180.0
+      }
+    ]
+  },
+  "clearance_m": 50.0,
+  "arc_step_m": 20.0,
+  "radio": {
+    "frequency_mhz": 2400.0,
+    "obstruction_db": 10.0,
+    "direct_budget_db": 110.0,
+    "access_budget_db": 116.0,
+    "backhaul_budget_db": 121.0,
+    "ground_antenna_m": 12.0,
+    "ray_step_m": 50.0
+  },
+  "relay": {
+    "count": 2,
+    "packs": 6,
+    "energy_kwh": 3.2,
+    "reserve": 0.15,
+    "speed": 20.0,
+    "climb_speed": 4.0,
+    "descend_speed": 3.0,
+    "travel_kw": 1.8,
+    "hover_kw": 1.0,
+    "setup": 60.0,
+    "turnaround": 90.0,
+    "full_charge": 2400.0,
+    "charge_knee": 0.8,
+    "charge_slow": 2.0,
+    "heights_m": [
+      120.0,
+      220.0,
+      300.0
+    ]
+  }
+}

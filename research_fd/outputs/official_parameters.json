@@ -1,0 +1,413 @@
+{
+  "source_status": "Read original DOCX and three parameter XLSX files; no synthetic values used. Explicit modeling conventions and numerical search settings are listed separately.",
+  "clearance_m": 50.0,
+  "work_height": {
+    "depot_m": 0.0,
+    "service_m": 30.0
+  },
+  "fleet": [
+    {
+      "id": "A",
+      "count": 4,
+      "batteries": 6,
+      "payload": 25.0,
+      "volume": 0.06,
+      "empty_mass": 70.0,
+      "usable_kwh": 4.5,
+      "range_empty_km": 25.0,
+      "range_full_km": 20.0,
+      "speed": 12.0,
+      "climb_speed": 3.0,
+      "descend_speed": 2.5,
+      "efficiency": 0.72,
+      "reserve": 0.2,
+      "prepare": 300.0,
+      "turnaround": 0.0,
+      "full_charge": 1800.0,
+      "charge_knee": 0.9,
+      "charge_slow": 4.846153846153846,
+      "service": 150.0,
+      "service_per_box": 30.0,
+      "hover_kw": 0.0,
+      "charge_table": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.9,
+          1170.0
+        ],
+        [
+          1.0,
+          1800.0
+        ]
+      ],
+      "loading_per_box": 30.0
+    },
+    {
+      "id": "B",
+      "count": 2,
+      "batteries": 4,
+      "payload": 30.0,
+      "volume": 0.073,
+      "empty_mass": 65.0,
+      "usable_kwh": 4.0,
+      "range_empty_km": 28.0,
+      "range_full_km": 16.0,
+      "speed": 15.0,
+      "climb_speed": 3.0,
+      "descend_speed": 2.5,
+      "efficiency": 0.72,
+      "reserve": 0.2,
+      "prepare": 300.0,
+      "turnaround": 0.0,
+      "full_charge": 2400.0,
+      "charge_knee": 0.9,
+      "charge_slow": 4.846153846153846,
+      "service": 150.0,
+      "service_per_box": 30.0,
+      "hover_kw": 0.0,
+      "charge_table": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.9,
+          1560.0
+        ],
+        [
+          1.0,
+          2400.0
+        ]
+      ],
+      "loading_per_box": 30.0
+    },
+    {
+      "id": "C",
+      "count": 2,
+      "batteries": 4,
+      "payload": 80.0,
+      "volume": 0.25,
+      "empty_mass": 69.9,
+      "usable_kwh": 8.0,
+      "range_empty_km": 26.0,
+      "range_full_km": 12.0,
+      "speed": 15.0,
+      "climb_speed": 2.5,
+      "descend_speed": 2.0,
+      "efficiency": 0.72,
+      "reserve": 0.2,
+      "prepare": 300.0,
+      "turnaround": 0.0,
+      "full_charge": 3000.0,
+      "charge_knee": 0.9,
+      "charge_slow": 4.846153846153846,
+      "service": 180.0,
+      "service_per_box": 36.0,
+      "hover_kw": 0.0,
+      "charge_table": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.9,
+          1950.0
+        ],
+        [
+          1.0,
+          3000.0
+        ]
+      ],
+      "loading_per_box": 30.0
+    }
+  ],
+  "transport_loading_per_box_s": {
+    "A": 30.0,
+    "B": 30.0,
+    "C": 30.0
+  },
+  "transport_aircraft_ids": {
+    "A": [
+      "U01",
+      "U02",
+      "U03",
+      "U04"
+    ],
+    "B": [
+      "U05",
+      "U06"
+    ],
+    "C": [
+      "U07",
+      "U08"
+    ]
+  },
+  "radio": {
+    "frequency_mhz": 2400.0,
+    "direct_budget_db": 122.0,
+    "access_budget_db": 116.0,
+    "backhaul_budget_db": 126.0,
+    "obstruction_db": 10.0,
+    "ground_antenna_m": 20.0,
+    "ray_step_m": 15.0
+  },
+  "relay": {
+    "count": 2,
+    "packs": 6,
+    "energy_kwh": 3.2,
+    "reserve": 0.2,
+    "speed": 15.0,
+    "climb_speed": 4.0,
+    "descend_speed": 3.0,
+    "travel_kw": 1.15,
+    "hover_kw": 1.1,
+    "setup": 30.0,
+    "prepare": 180.0,
+    "turnaround": 300.0,
+    "full_charge": 1800.0,
+    "charge_knee": 0.9,
+    "charge_slow": 4.846153846153846,
+    "charge_table": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.9,
+        1170.0
+      ],
+      [
+        1.0,
+        1800.0
+      ]
+    ],
+    "heights_m": [
+      100.0,
+      200.0,
+      300.0
+    ],
+    "takeoff_mass_kg": 23.5,
+    "climb_efficiency": 0.72,
+    "descent_efficiency": 0.0,
+    "hover_only_kw": 1.05,
+    "communication_kw": 0.05,
+    "max_hover_agl_m": 300.0,
+    "energy_model": "official_horizontal_climb",
+    "gravity_m_s2": 9.80665
+  },
+  "relay_aircraft_ids": [
+    "R01",
+    "R02"
+  ],
+  "charging": {
+    "source": "DOCX P0062-P0065",
+    "soc_initial": 1.0,
+    "fully_charge_before_next_trip": true,
+    "inventory_includes_installed_batteries": true,
+    "resources_can_charge_in_parallel": true,
+    "exact_formula": "t_charge(s)/T = 0.65*(0.9-s)/0.9+0.35 for 0<=s<0.9; =0.35*(1-s)/0.1 for 0.9<=s<=1",
+    "cumulative_table": "[0,0], [0.9,0.65*T], [1,T] gives exact piecewise-linear interpolation, not an approximation",
+    "charge_slow_derivation": "(0.35/0.1)/(0.65/0.9) = 63/13",
+    "resolution_check": "Compare 3-knot table with dense grids including 0.9; outputs should agree to floating-point tolerance. A dense grid omitting the breakpoint is not exact."
+  },
+  "radio_budget_derivation": {
+    "threshold_dbm": -90.0,
+    "system_loss_db": 3.0,
+    "receiver_sensitivity_dbm": -98.0,
+    "fade_margin_db": 8.0,
+    "direct_directional_db": [
+      122.0,
+      129.0
+    ],
+    "access_directional_db": [
+      116.0,
+      116.0
+    ],
+    "backhaul_directional_db": [
+      126.0,
+      134.0
+    ],
+    "formula": "Ptx + Gtx + Grx - Lsys - (Psens + M); take smaller direction",
+    "endpoint_parameters": {
+      "transport": {
+        "power_dbm": 20.0,
+        "gain_dbi": 3.0
+      },
+      "relay_access": {
+        "power_dbm": 20.0,
+        "gain_dbi": 6.0
+      },
+      "relay_backhaul": {
+        "power_dbm": 19.0,
+        "gain_dbi": 8.0
+      },
+      "gateway": {
+        "power_dbm": 27.0,
+        "gain_dbi": 12.0
+      }
+    }
+  },
+  "field_sources": {
+    "fleet": {
+      "file": "题目/D题/数据/无人机应急物资运输基础数据/运输无人机数据.xlsx",
+      "sheet": "数据",
+      "header_row": 2,
+      "model_rows": {
+        "A": 3,
+        "B": 4,
+        "C": 5
+      },
+      "columns": {
+        "id": "A",
+        "empty_mass": "C",
+        "payload": "D",
+        "volume": "E",
+        "speed": "F",
+        "range_empty_km": "G / 1000",
+        "range_full_km": "H / 1000",
+        "usable_kwh": "I",
+        "reserve": "J / 100",
+        "prepare": "K",
+        "loading_per_box": "L",
+        "service": "M",
+        "service_per_box": "N",
+        "climb_speed": "O",
+        "descend_speed": "P",
+        "efficiency": "Q",
+        "descent_efficiency": "R"
+      },
+      "entity_rows": "A9:C16",
+      "inventory_rows": {
+        "A": 20,
+        "B": 21,
+        "C": 22
+      },
+      "inventory_columns": {
+        "batteries": "B",
+        "full_charge": "C"
+      }
+    },
+    "relay": {
+      "file": "题目/D题/数据/无人机应急物资运输基础数据/中继无人机数据.xlsx",
+      "sheet": "数据",
+      "header_row": 2,
+      "value_row": 3,
+      "columns": {
+        "takeoff_mass_kg": "E3",
+        "speed": "F3",
+        "travel_kw": "G3",
+        "energy_kwh": "H3",
+        "reserve": "I3 / 100",
+        "prepare": "J3",
+        "setup": "K3",
+        "turnaround": "L3",
+        "climb_speed": "M3",
+        "descend_speed": "N3",
+        "climb_efficiency": "O3",
+        "descent_efficiency": "P3",
+        "hover_only_kw": "Q3",
+        "communication_kw": "R3",
+        "max_hover_agl_m": "S3"
+      },
+      "entity_rows": "A7:C8",
+      "packs": "B12",
+      "full_charge": "C12"
+    },
+    "radio": {
+      "file": "题目/D题/数据/无人机应急物资运输基础数据/通信链路参数.xlsx",
+      "sheet": "数据",
+      "columns": {
+        "frequency_mhz": "E3",
+        "system_loss_db": "E4",
+        "obstruction_db": "E5",
+        "receiver_sensitivity_dbm": "E6",
+        "fade_margin_db": "E7",
+        "transport_power_dbm": "E8",
+        "transport_gain_dbi": "E9",
+        "relay_access_power_dbm": "E10",
+        "relay_access_gain_dbi": "E11",
+        "relay_backhaul_power_dbm": "E12",
+        "relay_backhaul_gain_dbi": "E13",
+        "gateway_power_dbm": "E14",
+        "gateway_gain_dbi": "E15",
+        "ground_antenna_m": "E16"
+      }
+    },
+    "clearance_work_heights": "DOCX P0046",
+    "charging_rule": "DOCX P0062-P0065",
+    "relay_energy_rule": "DOCX P0060",
+    "directional_link_budget": "DOCX P0076-P0084"
+  },
+  "modeling_conventions": {
+    "fleet.turnaround": {
+      "value": 0.0,
+      "status": "not an official table value",
+      "reason": "No separate transport turnaround is supplied; next preparation/loading starts on return and already occupies the aircraft. Do not copy relay turnaround or synthetic 90 s."
+    },
+    "fleet.hover_kw": {
+      "value": 0.0,
+      "status": "official-rule interpretation, not measured hover power",
+      "reason": "DOCX P0053-P0058 define trip transport energy as the sum of horizontal/cruise and additional climb energy, and supply no transport hover power; service affects time only under that rule."
+    },
+    "gravity_m_s2": {
+      "value": 9.80665,
+      "status": "standard physical constant convention; not stated numerically in attachments"
+    },
+    "horizontal_and_climb_energy": {
+      "status": "physical completion of terms named by DOCX; explicit sub-formulas absent from P0053-P0055",
+      "formula": "E_horizontal=E_use*d/L(q); E_climb=(empty_mass+load)*g*positive_climb/(eta*3.6e6)"
+    },
+    "relay_setup_waiting_energy": {
+      "status": "conservative explicit convention",
+      "reason": "Charge hover plus communication power during all post-arrival waiting and setup as well as active service; off-service communication timing is not explicitly separated by source."
+    },
+    "ground_preparation_energy": {
+      "status": "no battery flight-energy charge during preparation",
+      "reason": "No ground preparation power is provided; ground time occupies body and energy component, while flight/hover equations apply after launch."
+    }
+  },
+  "numerical_search_settings": {
+    "radio.ray_step_m": {
+      "value": 15.0,
+      "status": "numerical precision, not an official constant",
+      "compare": [
+        30.0,
+        15.0,
+        7.5
+      ]
+    },
+    "relay.heights_m": {
+      "value": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "status": "finite search grid using thirds of official 300 m maximum, not official mandated altitudes",
+      "refine": "add 50,150,250 m and derivative-free legal sites if unreachable"
+    },
+    "arc_step_m": {
+      "recommended": 15.0,
+      "compare": [
+        15.0,
+        7.5,
+        3.75
+      ],
+      "status": "numerical projection polyline precision, not official physical parameter"
+    }
+  },
+  "required_model_extensions": [
+    "Transport route preparation must add transport_loading_per_box_s[kind]*number_of_boxes before flight; shift all segment/delivery times, duration and holds consistently.",
+    "Relay resource task begins 180 s preparation before takeoff. Record resource start, airborne departure, ready, stop, return and turnaround separately.",
+    "Relay flight energy must be 1.15 kW * total horizontal cruise seconds / 3600 + 23.5*g*total positive climb/(0.72*3.6e6), not 1.15 kW times all flight stages.",
+    "Relay service/waiting energy uses 1.05+0.05=1.10 kW under the declared conservative setup/waiting convention.",
+    "Keep original research_fd modules unchanged; place official adapter and all results in outputs."
+  ],
+  "missing_numerical_fields": [],
+  "unresolved_interpretations": [
+    "Attachment energy text names horizontal and climb components but does not print their explicit sub-formulas; retain the physical definitions above as transparent model definitions, not copied equations.",
+    "No transport turnaround, transport hover power, or preparation power is numerically supplied; applied conventions are recorded above rather than labeled as official measured values."
+  ]
+}

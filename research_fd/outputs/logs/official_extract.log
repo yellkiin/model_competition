@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\LEGION\Documents\ChatGPT\华为杯\model_competition\research_fd\d_data.py", line 128, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "C:\Users\LEGION\Documents\ChatGPT\华为杯\model_competition\research_fd\d_data.py", line 125, in main
+    result=extract(args.repo,args.out) if args.command=='inspect' else normalize(args.repo,args.mapping,args.out)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LEGION\Documents\ChatGPT\华为杯\model_competition\research_fd\d_data.py", line 57, in extract
+    with zipfile.ZipFile(file) as z:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\zipfile\__init__.py", line 1349, in __init__
+    self._RealGetContents()
+  File "C:\Program Files\Python312\Lib\zipfile\__init__.py", line 1416, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file

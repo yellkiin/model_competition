@@ -1,0 +1,358 @@
+{
+  "coordinates": {
+    "input": "lonlat",
+    "source_crs": "EPSG:4326"
+  },
+  "template": {
+    "schema_version": 1,
+    "metadata": {
+      "source": "Official D DOCX/XLSX and DEM with explicit source mappings",
+      "source_commit": "4012819",
+      "parameter_sources": "official_parameter_sources.md",
+      "physical_runtime": "runtime/research_fd",
+      "node_elevation_rule": "Retain official node-table elevation; DEM gives intervening terrain",
+      "numerical_controls": {
+        "arc_step_m": 15,
+        "ray_step_m": 15,
+        "relay_heights_m": [
+          100,
+          200,
+          300
+        ]
+      },
+      "transport_aircraft_ids": {
+        "A": [
+          "U01",
+          "U02",
+          "U03",
+          "U04"
+        ],
+        "B": [
+          "U05",
+          "U06"
+        ],
+        "C": [
+          "U07",
+          "U08"
+        ]
+      },
+      "relay_aircraft_ids": [
+        "R01",
+        "R02"
+      ],
+      "modeling_conventions": {
+        "fleet.turnaround": {
+          "value": 0.0,
+          "status": "not an official table value",
+          "reason": "No separate transport turnaround is supplied; next preparation/loading starts on return and already occupies the aircraft. Do not copy relay turnaround or synthetic 90 s."
+        },
+        "fleet.hover_kw": {
+          "value": 0.0,
+          "status": "official-rule interpretation, not measured hover power",
+          "reason": "DOCX P0053-P0058 define trip transport energy as the sum of horizontal/cruise and additional climb energy, and supply no transport hover power; service affects time only under that rule."
+        },
+        "gravity_m_s2": {
+          "value": 9.80665,
+          "status": "standard physical constant convention; not stated numerically in attachments"
+        },
+        "horizontal_and_climb_energy": {
+          "status": "physical completion of terms named by DOCX; explicit sub-formulas absent from P0053-P0055",
+          "formula": "E_horizontal=E_use*d/L(q); E_climb=(empty_mass+load)*g*positive_climb/(eta*3.6e6)"
+        },
+        "relay_setup_waiting_energy": {
+          "status": "conservative explicit convention",
+          "reason": "Charge hover plus communication power during all post-arrival waiting and setup as well as active service; off-service communication timing is not explicitly separated by source."
+        },
+        "ground_preparation_energy": {
+          "status": "no battery flight-energy charge during preparation",
+          "reason": "No ground preparation power is provided; ground time occupies body and energy component, while flight/hover equations apply after launch."
+        }
+      },
+      "energy_convention": "Horizontal energy=usable_kwh*distance/range(load); climb=m*g*h/eta. Explicit model interpretation of DOCX energy terms, not additional official measurements."
+    },
+    "depot": "O01",
+    "clearance_m": 50.0,
+    "arc_step_m": 15,
+    "terrain": {
+      "kind": "raster",
+      "path": "题目/D题/数据/镇龙乡地理空间数据/镇龙乡及周边地理数据/数字高程模型数据（DEM）/镇龙乡及周边30米DEM.tif"
+    },
+    "fleet": [
+      {
+        "id": "A",
+        "count": 4,
+        "batteries": 6,
+        "payload": 25.0,
+        "volume": 0.06,
+        "empty_mass": 70.0,
+        "usable_kwh": 4.5,
+        "range_empty_km": 25.0,
+        "range_full_km": 20.0,
+        "speed": 12.0,
+        "climb_speed": 3.0,
+        "descend_speed": 2.5,
+        "efficiency": 0.72,
+        "reserve": 0.2,
+        "prepare": 300.0,
+        "turnaround": 0.0,
+        "full_charge": 1800.0,
+        "charge_knee": 0.9,
+        "charge_slow": 4.846153846153846,
+        "service": 150.0,
+        "service_per_box": 30.0,
+        "hover_kw": 0.0,
+        "charge_table": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.9,
+            1170.0
+          ],
+          [
+            1.0,
+            1800.0
+          ]
+        ],
+        "loading_per_box": 30.0
+      },
+      {
+        "id": "B",
+        "count": 2,
+        "batteries": 4,
+        "payload": 30.0,
+        "volume": 0.073,
+        "empty_mass": 65.0,
+        "usable_kwh": 4.0,
+        "range_empty_km": 28.0,
+        "range_full_km": 16.0,
+        "speed": 15.0,
+        "climb_speed": 3.0,
+        "descend_speed": 2.5,
+        "efficiency": 0.72,
+        "reserve": 0.2,
+        "prepare": 300.0,
+        "turnaround": 0.0,
+        "full_charge": 2400.0,
+        "charge_knee": 0.9,
+        "charge_slow": 4.846153846153846,
+        "service": 150.0,
+        "service_per_box": 30.0,
+        "hover_kw": 0.0,
+        "charge_table": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.9,
+            1560.0
+          ],
+          [
+            1.0,
+            2400.0
+          ]
+        ],
+        "loading_per_box": 30.0
+      },
+      {
+        "id": "C",
+        "count": 2,
+        "batteries": 4,
+        "payload": 80.0,
+        "volume": 0.25,
+        "empty_mass": 69.9,
+        "usable_kwh": 8.0,
+        "range_empty_km": 26.0,
+        "range_full_km": 12.0,
+        "speed": 15.0,
+        "climb_speed": 2.5,
+        "descend_speed": 2.0,
+        "efficiency": 0.72,
+        "reserve": 0.2,
+        "prepare": 300.0,
+        "turnaround": 0.0,
+        "full_charge": 3000.0,
+        "charge_knee": 0.9,
+        "charge_slow": 4.846153846153846,
+        "service": 180.0,
+        "service_per_box": 36.0,
+        "hover_kw": 0.0,
+        "charge_table": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.9,
+            1950.0
+          ],
+          [
+            1.0,
+            3000.0
+          ]
+        ],
+        "loading_per_box": 30.0
+      }
+    ],
+    "radio": {
+      "frequency_mhz": 2400.0,
+      "direct_budget_db": 122.0,
+      "access_budget_db": 116.0,
+      "backhaul_budget_db": 126.0,
+      "obstruction_db": 10.0,
+      "ground_antenna_m": 20.0,
+      "ray_step_m": 15
+    },
+    "relay": {
+      "count": 2,
+      "packs": 6,
+      "energy_kwh": 3.2,
+      "reserve": 0.2,
+      "speed": 15.0,
+      "climb_speed": 4.0,
+      "descend_speed": 3.0,
+      "travel_kw": 1.15,
+      "hover_kw": 1.1,
+      "setup": 30.0,
+      "prepare": 180.0,
+      "turnaround": 300.0,
+      "full_charge": 1800.0,
+      "charge_knee": 0.9,
+      "charge_slow": 4.846153846153846,
+      "charge_table": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.9,
+          1170.0
+        ],
+        [
+          1.0,
+          1800.0
+        ]
+      ],
+      "heights_m": [
+        100,
+        200,
+        300
+      ],
+      "takeoff_mass_kg": 23.5,
+      "climb_efficiency": 0.72,
+      "descent_efficiency": 0.0,
+      "hover_only_kw": 1.05,
+      "communication_kw": 0.05,
+      "max_hover_agl_m": 300.0,
+      "energy_model": "official_horizontal_climb",
+      "gravity_m_s2": 9.80665
+    }
+  },
+  "tables": {
+    "nodes": {
+      "blocks": [
+        {
+          "file": "题目/D题/数据/无人机应急物资运输基础数据/调度中心与服务区.xlsx",
+          "sheet": "数据",
+          "header_row": 2,
+          "row_start": 3,
+          "row_end": 3,
+          "skip_if_empty": "调度中心编号",
+          "fields": {
+            "id": {
+              "column": "调度中心编号",
+              "type": "str"
+            },
+            "lon": "经度（°）",
+            "lat": "纬度（°）",
+            "z": "海拔（m）",
+            "work_height": {
+              "const": 0
+            }
+          }
+        },
+        {
+          "file": "题目/D题/数据/无人机应急物资运输基础数据/调度中心与服务区.xlsx",
+          "sheet": "数据",
+          "header_row": 6,
+          "row_start": 7,
+          "row_end": 21,
+          "skip_if_empty": "服务区编号",
+          "fields": {
+            "id": {
+              "column": "服务区编号",
+              "type": "str"
+            },
+            "lon": "经度（°）",
+            "lat": "纬度（°）",
+            "z": "海拔（m）",
+            "work_height": {
+              "const": 30
+            }
+          }
+        }
+      ]
+    },
+    "boxes": {
+      "file": "题目/D题/数据/无人机应急物资运输基础数据/物资需求与配送时限.xlsx",
+      "sheet": "逐箱货箱清单",
+      "header_row": 1,
+      "row_start": 2,
+      "row_end": 81,
+      "skip_if_empty": "货箱编号",
+      "fields": {
+        "id": {
+          "column": "货箱编号",
+          "type": "str"
+        },
+        "node": "服务区编号",
+        "mass": "单箱质量（kg）",
+        "volume": "单箱体积（m³）",
+        "due": {
+          "column": "期望送达时间（s）",
+          "scale": 1
+        },
+        "hard_due": {
+          "min": [
+            {
+              "when": {
+                "column": "物资类型",
+                "in": [
+                  "医疗物资"
+                ]
+              },
+              "then": {
+                "column": "期望送达时间（s）"
+              }
+            },
+            {
+              "when": {
+                "column": "是否首批保障",
+                "in": [
+                  "是"
+                ]
+              },
+              "then": {
+                "column": "首批截止时间（s）"
+              }
+            }
+          ]
+        },
+        "weight": "应急优先系数",
+        "release": {
+          "const": 0
+        }
+      }
+    }
+  },
+  "mapping_notes": [
+    "Node sheet contains two headers; read only specified inclusive row blocks.",
+    "All deadline fields are already seconds. No minute conversion.",
+    "Medical due and first-batch deadline are both hard; choose the earlier nonempty deadline.",
+    "Work heights 0/30m and clearance 50m follow DOCX P0046.",
+    "Release at time zero is the static initial-stock scenario convention; no release column exists.",
+    "Model-specific fleet/radio/relay values are documented in official_parameter_sources.md."
+  ]
+}

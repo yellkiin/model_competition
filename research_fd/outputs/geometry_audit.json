@@ -1,0 +1,169 @@
+{
+  "path": "题目/D题/数据/镇龙乡地理空间数据/镇龙乡及周边地理数据/数字高程模型数据（DEM）/镇龙乡及周边30米DEM.tif",
+  "crs": "EPSG:4326",
+  "shape": [
+    1309,
+    1486
+  ],
+  "resolution_native": [
+    0.00027777777777777393,
+    0.0002777777777777777
+  ],
+  "bounds_native": [
+    109.0326388888889,
+    22.86125,
+    109.44541666666667,
+    23.22486111111111
+  ],
+  "nodata": null,
+  "nodata_count": 0,
+  "valid_height_min_m": 41.68907928466797,
+  "valid_height_max_m": 1132.8560791015625,
+  "nodes": [
+    {
+      "id": "O01",
+      "sheet_row": 3,
+      "lon": 109.2308517,
+      "lat": 23.0085095,
+      "official_z_m": 127.7,
+      "dem_z_m": 128.7255401611328,
+      "difference_m": -1.0255401611328097
+    },
+    {
+      "id": "S001",
+      "sheet_row": 7,
+      "lon": 109.2432319,
+      "lat": 23.0335927,
+      "official_z_m": 154.0,
+      "dem_z_m": 153.96136474609375,
+      "difference_m": 0.03863525390625
+    },
+    {
+      "id": "S002",
+      "sheet_row": 8,
+      "lon": 109.2585519,
+      "lat": 23.0703271,
+      "official_z_m": 189.5,
+      "dem_z_m": 188.7942352294922,
+      "difference_m": 0.7057647705078125
+    },
+    {
+      "id": "S003",
+      "sheet_row": 9,
+      "lon": 109.1688578,
+      "lat": 23.0402714,
+      "official_z_m": 308.5,
+      "dem_z_m": 308.51068115234375,
+      "difference_m": -0.01068115234375
+    },
+    {
+      "id": "S004",
+      "sheet_row": 10,
+      "lon": 109.2381714,
+      "lat": 23.0778414,
+      "official_z_m": 198.3,
+      "dem_z_m": 195.11575317382812,
+      "difference_m": 3.1842468261718864
+    },
+    {
+      "id": "S005",
+      "sheet_row": 11,
+      "lon": 109.2283003,
+      "lat": 23.0561338,
+      "official_z_m": 165.0,
+      "dem_z_m": 169.03955078125,
+      "difference_m": -4.03955078125
+    },
+    {
+      "id": "S006",
+      "sheet_row": 12,
+      "lon": 109.1997836,
+      "lat": 23.007714,
+      "official_z_m": 284.8,
+      "dem_z_m": 275.1272277832031,
+      "difference_m": 9.672772216796886
+    },
+    {
+      "id": "S007",
+      "sheet_row": 13,
+      "lon": 109.1928191,
+      "lat": 23.0294186,
+      "official_z_m": 318.5,
+      "dem_z_m": 314.2220458984375,
+      "difference_m": 4.2779541015625
+    },
+    {
+      "id": "S008",
+      "sheet_row": 14,
+      "lon": 109.2127472,
+      "lat": 23.0795113,
+      "official_z_m": 240.9,
+      "dem_z_m": 248.2891845703125,
+      "difference_m": -7.389184570312494
+    },
+    {
+      "id": "S009",
+      "sheet_row": 15,
+      "lon": 109.2541424,
+      "lat": 23.0552989,
+      "official_z_m": 200.0,
+      "dem_z_m": 189.4370880126953,
+      "difference_m": 10.562911987304688
+    },
+    {
+      "id": "S010",
+      "sheet_row": 16,
+      "lon": 109.2760168,
+      "lat": 23.0194009,
+      "official_z_m": 321.6,
+      "dem_z_m": 321.5816650390625,
+      "difference_m": 0.018334960937522737
+    },
+    {
+      "id": "S011",
+      "sheet_row": 17,
+      "lon": 109.2203356,
+      "lat": 23.0319231,
+      "official_z_m": 182.1,
+      "dem_z_m": 178.04286193847656,
+      "difference_m": 4.057138061523432
+    },
+    {
+      "id": "S012",
+      "sheet_row": 18,
+      "lon": 109.2831357,
+      "lat": 23.054464,
+      "official_z_m": 249.8,
+      "dem_z_m": 253.31507873535156,
+      "difference_m": -3.515078735351551
+    },
+    {
+      "id": "S013",
+      "sheet_row": 19,
+      "lon": 109.2713839,
+      "lat": 23.0310882,
+      "official_z_m": 321.7,
+      "dem_z_m": 321.70806884765625,
+      "difference_m": -0.008068847656261369
+    },
+    {
+      "id": "S014",
+      "sheet_row": 20,
+      "lon": 109.2835966,
+      "lat": 23.0052097,
+      "official_z_m": 321.0,
+      "dem_z_m": 320.9825134277344,
+      "difference_m": 0.017486572265625
+    },
+    {
+      "id": "S015",
+      "sheet_row": 21,
+      "lon": 109.1923786,
+      "lat": 23.0494548,
+      "official_z_m": 444.5,
+      "dem_z_m": 436.229248046875,
+      "difference_m": 8.270751953125
+    }
+  ],
+  "decision": "Retain official XLSX node elevations; use the official raster for between-node terrain. Record and investigate elevation differences rather than overwriting source values."
+}

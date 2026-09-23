@@ -1,0 +1,1051 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+    "seed": 7,
+    "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+  },
+  "depot": "O01",
+  "nodes": [
+    {
+      "id": "O01",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 100.3189279302056,
+      "work_height": 0.0
+    },
+    {
+      "id": "S001",
+      "x": 1125.859199442003,
+      "y": 3574.924208726179,
+      "z": 109.36915749242591,
+      "work_height": 30.0
+    },
+    {
+      "id": "S002",
+      "x": 2481.171212206742,
+      "y": -2473.135290084673,
+      "z": 289.4681234343702,
+      "work_height": 30.0
+    },
+    {
+      "id": "S003",
+      "x": -1798.5034357989712,
+      "y": 3361.9810085663566,
+      "z": 166.05339734331318,
+      "work_height": 30.0
+    },
+    {
+      "id": "S004",
+      "x": -4452.612258909828,
+      "y": 2891.0557654448967,
+      "z": 102.67559133172475,
+      "work_height": 30.0
+    },
+    {
+      "id": "S005",
+      "x": 2673.624858768416,
+      "y": -288.5854244065131,
+      "z": 367.0963432640311,
+      "work_height": 30.0
+    },
+    {
+      "id": "S006",
+      "x": -1772.7081586261784,
+      "y": -1994.16949109304,
+      "z": 100.00001369724022,
+      "work_height": 30.0
+    },
+    {
+      "id": "S007",
+      "x": -2206.1737111128787,
+      "y": -494.3132470561809,
+      "z": 100.15896782786203,
+      "work_height": 30.0
+    },
+    {
+      "id": "S008",
+      "x": 40.93433062157965,
+      "y": 481.47616867043234,
+      "z": 101.51826825957174,
+      "work_height": 30.0
+    },
+    {
+      "id": "S009",
+      "x": 4459.502550909534,
+      "y": 2633.957272923778,
+      "z": 100.86891043932056,
+      "work_height": 30.0
+    },
+    {
+      "id": "S010",
+      "x": 1099.6130649704637,
+      "y": 4400.6413291369645,
+      "z": 105.37797645430253,
+      "work_height": 30.0
+    },
+    {
+      "id": "S011",
+      "x": -2562.2217158796093,
+      "y": -3058.091695279399,
+      "z": 100.00000000107806,
+      "work_height": 30.0
+    },
+    {
+      "id": "S012",
+      "x": 1012.8564384572774,
+      "y": -4104.52192834755,
+      "z": 104.43131382908692,
+      "work_height": 30.0
+    },
+    {
+      "id": "S013",
+      "x": -4178.877491037635,
+      "y": 133.99938244233272,
+      "z": 100.12093164861099,
+      "work_height": 30.0
+    },
+    {
+      "id": "S014",
+      "x": -304.14577207239836,
+      "y": 3754.509958735671,
+      "z": 107.94884694780207,
+      "work_height": 30.0
+    },
+    {
+      "id": "S015",
+      "x": 1163.0362904190943,
+      "y": 127.0588193956246,
+      "z": 123.38404933112758,
+      "work_height": 30.0
+    }
+  ],
+  "boxes": [
+    {
+      "id": "B001",
+      "node": "S001",
+      "mass": 8.0,
+      "volume": 0.014,
+      "due": 2544.059527247658,
+      "hard_due": 2544.059527247658,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B002",
+      "node": "S002",
+      "mass": 6.0,
+      "volume": 0.014,
+      "due": 1622.4086485307612,
+      "hard_due": 1622.4086485307612,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B003",
+      "node": "S003",
+      "mass": 14.0,
+      "volume": 0.014,
+      "due": 2914.861029675494,
+      "hard_due": 2914.861029675494,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B004",
+      "node": "S004",
+      "mass": 10.0,
+      "volume": 0.014,
+      "due": 2302.1189901441926,
+      "hard_due": 2302.1189901441926,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B005",
+      "node": "S005",
+      "mass": 12.0,
+      "volume": 0.014,
+      "due": 3177.0906866233163,
+      "hard_due": 3177.0906866233163,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B006",
+      "node": "S006",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 2108.4386786711925,
+      "hard_due": 2108.4386786711925,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B007",
+      "node": "S007",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 2568.602538750004,
+      "hard_due": 2568.602538750004,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B008",
+      "node": "S008",
+      "mass": 6.0,
+      "volume": 0.028,
+      "due": 2815.4626171908,
+      "hard_due": 2815.4626171908,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B009",
+      "node": "S009",
+      "mass": 8.0,
+      "volume": 0.028,
+      "due": 1773.8416496197867,
+      "hard_due": 1773.8416496197867,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B010",
+      "node": "S010",
+      "mass": 12.0,
+      "volume": 0.036,
+      "due": 2564.7672489706647,
+      "hard_due": 2564.7672489706647,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B011",
+      "node": "S011",
+      "mass": 12.0,
+      "volume": 0.028,
+      "due": 2286.4017121268994,
+      "hard_due": 2286.4017121268994,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B012",
+      "node": "S012",
+      "mass": 12.0,
+      "volume": 0.02,
+      "due": 1712.5781204564569,
+      "hard_due": 1712.5781204564569,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B013",
+      "node": "S013",
+      "mass": 8.0,
+      "volume": 0.014,
+      "due": 2213.7690578905926,
+      "hard_due": 2213.7690578905926,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B014",
+      "node": "S014",
+      "mass": 10.0,
+      "volume": 0.02,
+      "due": 3151.042397256244,
+      "hard_due": 3151.042397256244,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B015",
+      "node": "S015",
+      "mass": 8.0,
+      "volume": 0.028,
+      "due": 3459.620980381321,
+      "hard_due": 3459.620980381321,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B016",
+      "node": "S001",
+      "mass": 10.0,
+      "volume": 0.028,
+      "due": 2749.6068822767174,
+      "hard_due": 2749.6068822767174,
+      "weight": 3.0,
+      "release": 0.0
+    },
+    {
+      "id": "B017",
+      "node": "S002",
+      "mass": 14.0,
+      "volume": 0.014,
+      "due": 2885.255463244298,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B018",
+      "node": "S003",
+      "mass": 8.0,
+      "volume": 0.014,
+      "due": 2436.5955876575563,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B019",
+      "node": "S004",
+      "mass": 14.0,
+      "volume": 0.014,
+      "due": 2364.746766397565,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B020",
+      "node": "S005",
+      "mass": 14.0,
+      "volume": 0.014,
+      "due": 3438.8732969927605,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B021",
+      "node": "S006",
+      "mass": 6.0,
+      "volume": 0.02,
+      "due": 2876.3538089614412,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B022",
+      "node": "S007",
+      "mass": 6.0,
+      "volume": 0.028,
+      "due": 3260.7463496840583,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B023",
+      "node": "S008",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 1850.070050035781,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B024",
+      "node": "S009",
+      "mass": 12.0,
+      "volume": 0.036,
+      "due": 3395.401525175461,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B025",
+      "node": "S010",
+      "mass": 8.0,
+      "volume": 0.014,
+      "due": 2682.4663809326266,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B026",
+      "node": "S011",
+      "mass": 12.0,
+      "volume": 0.036,
+      "due": 1965.6806404398314,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B027",
+      "node": "S012",
+      "mass": 6.0,
+      "volume": 0.014,
+      "due": 2649.420326567801,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B028",
+      "node": "S013",
+      "mass": 14.0,
+      "volume": 0.028,
+      "due": 3279.708098973293,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B029",
+      "node": "S014",
+      "mass": 6.0,
+      "volume": 0.02,
+      "due": 2682.419121500235,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B030",
+      "node": "S015",
+      "mass": 8.0,
+      "volume": 0.014,
+      "due": 2380.8150360985464,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B031",
+      "node": "S001",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 1672.3088447133543,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B032",
+      "node": "S002",
+      "mass": 12.0,
+      "volume": 0.028,
+      "due": 2488.6874119467825,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B033",
+      "node": "S003",
+      "mass": 10.0,
+      "volume": 0.036,
+      "due": 2212.1102885824275,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B034",
+      "node": "S004",
+      "mass": 12.0,
+      "volume": 0.02,
+      "due": 1647.8740545233447,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B035",
+      "node": "S005",
+      "mass": 14.0,
+      "volume": 0.014,
+      "due": 1657.6655593298121,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B036",
+      "node": "S006",
+      "mass": 6.0,
+      "volume": 0.028,
+      "due": 3437.5816472549986,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B037",
+      "node": "S007",
+      "mass": 6.0,
+      "volume": 0.028,
+      "due": 2413.6184681400146,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B038",
+      "node": "S008",
+      "mass": 12.0,
+      "volume": 0.02,
+      "due": 3258.3374962730713,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B039",
+      "node": "S009",
+      "mass": 8.0,
+      "volume": 0.028,
+      "due": 2721.552866350458,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B040",
+      "node": "S010",
+      "mass": 14.0,
+      "volume": 0.028,
+      "due": 2275.286176344673,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B041",
+      "node": "S011",
+      "mass": 12.0,
+      "volume": 0.036,
+      "due": 3053.970028229193,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B042",
+      "node": "S012",
+      "mass": 10.0,
+      "volume": 0.036,
+      "due": 1887.0183283459494,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B043",
+      "node": "S013",
+      "mass": 10.0,
+      "volume": 0.036,
+      "due": 1609.8398450493212,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B044",
+      "node": "S014",
+      "mass": 12.0,
+      "volume": 0.014,
+      "due": 3140.0009776027655,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B045",
+      "node": "S015",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 2395.916936735052,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B046",
+      "node": "S001",
+      "mass": 14.0,
+      "volume": 0.028,
+      "due": 1627.1152604007602,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B047",
+      "node": "S002",
+      "mass": 14.0,
+      "volume": 0.028,
+      "due": 3106.7449503862645,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B048",
+      "node": "S003",
+      "mass": 8.0,
+      "volume": 0.014,
+      "due": 2979.1138990470654,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B049",
+      "node": "S004",
+      "mass": 14.0,
+      "volume": 0.02,
+      "due": 1977.1901811860785,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B050",
+      "node": "S005",
+      "mass": 8.0,
+      "volume": 0.02,
+      "due": 1940.8714523775784,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B051",
+      "node": "S006",
+      "mass": 14.0,
+      "volume": 0.028,
+      "due": 3401.435716680548,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B052",
+      "node": "S007",
+      "mass": 6.0,
+      "volume": 0.02,
+      "due": 2246.1293280995956,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B053",
+      "node": "S008",
+      "mass": 8.0,
+      "volume": 0.02,
+      "due": 3408.8750323442923,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B054",
+      "node": "S009",
+      "mass": 6.0,
+      "volume": 0.028,
+      "due": 3462.75002667312,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B055",
+      "node": "S010",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 2590.2156451498254,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B056",
+      "node": "S011",
+      "mass": 10.0,
+      "volume": 0.028,
+      "due": 3011.2580946085754,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B057",
+      "node": "S012",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 2410.6340572888907,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B058",
+      "node": "S013",
+      "mass": 12.0,
+      "volume": 0.036,
+      "due": 2382.127684823088,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B059",
+      "node": "S014",
+      "mass": 8.0,
+      "volume": 0.02,
+      "due": 1730.5591690315368,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B060",
+      "node": "S015",
+      "mass": 10.0,
+      "volume": 0.036,
+      "due": 2587.0781577679318,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B061",
+      "node": "S001",
+      "mass": 12.0,
+      "volume": 0.036,
+      "due": 2076.8985686630404,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B062",
+      "node": "S002",
+      "mass": 8.0,
+      "volume": 0.028,
+      "due": 2885.2952799973273,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B063",
+      "node": "S003",
+      "mass": 14.0,
+      "volume": 0.036,
+      "due": 2796.282147396387,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B064",
+      "node": "S004",
+      "mass": 12.0,
+      "volume": 0.02,
+      "due": 2232.094772501517,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B065",
+      "node": "S005",
+      "mass": 6.0,
+      "volume": 0.014,
+      "due": 1985.5323292056808,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B066",
+      "node": "S006",
+      "mass": 8.0,
+      "volume": 0.036,
+      "due": 2004.5255704531444,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B067",
+      "node": "S007",
+      "mass": 10.0,
+      "volume": 0.014,
+      "due": 3196.32075260094,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B068",
+      "node": "S008",
+      "mass": 14.0,
+      "volume": 0.02,
+      "due": 2747.180148102044,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B069",
+      "node": "S009",
+      "mass": 10.0,
+      "volume": 0.028,
+      "due": 2729.901253927729,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B070",
+      "node": "S010",
+      "mass": 6.0,
+      "volume": 0.036,
+      "due": 2182.6530326888565,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B071",
+      "node": "S011",
+      "mass": 8.0,
+      "volume": 0.028,
+      "due": 2485.0960666161373,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B072",
+      "node": "S012",
+      "mass": 6.0,
+      "volume": 0.014,
+      "due": 2806.9297494094553,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B073",
+      "node": "S013",
+      "mass": 12.0,
+      "volume": 0.02,
+      "due": 1717.544294497111,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B074",
+      "node": "S014",
+      "mass": 12.0,
+      "volume": 0.036,
+      "due": 3051.6571680330903,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B075",
+      "node": "S015",
+      "mass": 14.0,
+      "volume": 0.014,
+      "due": 2986.9795731039235,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B076",
+      "node": "S001",
+      "mass": 12.0,
+      "volume": 0.036,
+      "due": 3335.3742369089864,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B077",
+      "node": "S002",
+      "mass": 14.0,
+      "volume": 0.028,
+      "due": 3267.6135966341135,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B078",
+      "node": "S003",
+      "mass": 8.0,
+      "volume": 0.014,
+      "due": 3339.7073266913917,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B079",
+      "node": "S004",
+      "mass": 10.0,
+      "volume": 0.014,
+      "due": 1657.5487844700438,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    },
+    {
+      "id": "B080",
+      "node": "S005",
+      "mass": 12.0,
+      "volume": 0.014,
+      "due": 2080.260488109667,
+      "hard_due": null,
+      "weight": 1.0,
+      "release": 0.0
+    }
+  ],
+  "fleet": [
+    {
+      "id": "A",
+      "count": 4,
+      "batteries": 6,
+      "payload": 25,
+      "volume": 0.06,
+      "empty_mass": 28,
+      "usable_kwh": 2.2,
+      "range_empty_km": 40,
+      "range_full_km": 22,
+      "speed": 17,
+      "climb_speed": 4.0,
+      "descend_speed": 3.0,
+      "efficiency": 0.72,
+      "reserve": 0.15,
+      "prepare": 90.0,
+      "turnaround": 90.0,
+      "full_charge": 1800,
+      "charge_knee": 0.8,
+      "charge_slow": 2.0,
+      "service": 35.0,
+      "service_per_box": 3.0,
+      "hover_kw": 0.0
+    },
+    {
+      "id": "B",
+      "count": 2,
+      "batteries": 4,
+      "payload": 30,
+      "volume": 0.073,
+      "empty_mass": 35,
+      "usable_kwh": 2.8,
+      "range_empty_km": 48,
+      "range_full_km": 25,
+      "speed": 20,
+      "climb_speed": 4.0,
+      "descend_speed": 3.0,
+      "efficiency": 0.72,
+      "reserve": 0.15,
+      "prepare": 90.0,
+      "turnaround": 90.0,
+      "full_charge": 2400,
+      "charge_knee": 0.8,
+      "charge_slow": 2.0,
+      "service": 35.0,
+      "service_per_box": 3.0,
+      "hover_kw": 0.0
+    },
+    {
+      "id": "C",
+      "count": 2,
+      "batteries": 4,
+      "payload": 80,
+      "volume": 0.25,
+      "empty_mass": 85,
+      "usable_kwh": 6.8,
+      "range_empty_km": 65,
+      "range_full_km": 32,
+      "speed": 24,
+      "climb_speed": 4.0,
+      "descend_speed": 3.0,
+      "efficiency": 0.72,
+      "reserve": 0.15,
+      "prepare": 90.0,
+      "turnaround": 90.0,
+      "full_charge": 3000,
+      "charge_knee": 0.8,
+      "charge_slow": 2.0,
+      "service": 35.0,
+      "service_per_box": 3.0,
+      "hover_kw": 0.0
+    }
+  ],
+  "terrain": {
+    "kind": "gaussian",
+    "base": 100.0,
+    "hills": [
+      {
+        "x": 2500.0,
+        "y": 0.0,
+        "sx": 600.0,
+        "sy": 2800.0,
+        "height": 280.0
+      },
+      {
+        "x": -1800.0,
+        "y": 2300.0,
+        "sx": 950.0,
+        "sy": 750.0,
+        "height": 180.0
+      }
+    ]
+  },
+  "clearance_m": 50.0,
+  "arc_step_m": 20.0,
+  "radio": {
+    "frequency_mhz": 2400.0,
+    "obstruction_db": 10.0,
+    "direct_budget_db": 110.0,
+    "access_budget_db": 116.0,
+    "backhaul_budget_db": 121.0,
+    "ground_antenna_m": 12.0,
+    "ray_step_m": 50.0
+  },
+  "relay": {
+    "count": 2,
+    "packs": 6,
+    "energy_kwh": 3.2,
+    "reserve": 0.15,
+    "speed": 20.0,
+    "climb_speed": 4.0,
+    "descend_speed": 3.0,
+    "travel_kw": 1.8,
+    "hover_kw": 1.0,
+    "setup": 60.0,
+    "turnaround": 90.0,
+    "full_charge": 2400.0,
+    "charge_knee": 0.8,
+    "charge_slow": 2.0,
+    "heights_m": [
+      120.0,
+      220.0,
+      300.0
+    ]
+  }
+}
