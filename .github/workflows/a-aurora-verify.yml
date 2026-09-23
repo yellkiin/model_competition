@@ -20,18 +20,18 @@ jobs:
       OMP_NUM_THREADS: '1'
       OPENBLAS_NUM_THREADS: '1'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           lfs: false
-          persist-credentials: false
-      - uses: actions/setup-python@v5
+          persist-credentials: true
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12.5'
-      - name: Extract the A statement and preserve exact reference source for verification
+      - name: Prepare bounded diagnostic sources
         shell: python
         run: |
           from pathlib import Path
-          import zipfile, xml.etree.ElementTree as ET, shutil
+          import zipfile, xml.etree.ElementTree as ET, shutil, subprocess
           root = Path.cwd()
           source = root / '\u9898\u76ee' / 'A\u9898'
           out = root / 'aurora_ci_reference'
@@ -42,14 +42,27 @@ jobs:
               ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
               text = '\n'.join(''.join(p.itertext()) for p in tree.findall('.//w:p', ns))
               (out / 'problem_statement.txt').write_text(text, encoding='utf-8')
-              print(text)
+          cases = (1, 2, 16, 44, 59, 83)
           for directory in source.iterdir():
               if directory.is_dir() and (directory / 'code').is_dir():
+                  paths = [directory / 'data' / f'case_{i:03d}.json' for i in cases]
+                  includes = ','.join(p.relative_to(root).as_posix() for p in paths)
+                  subprocess.run(['git', 'lfs', 'pull', '--include=' + includes, '--exclude='], check=True, timeout=180)
                   shutil.copytree(directory / 'code', out / 'code', dirs_exist_ok=True)
                   shutil.copytree(directory / 'docs', out / 'docs', dirs_exist_ok=True)
                   shutil.copy2(directory / 'README.md', out / 'README.md')
                   shutil.copy2(directory / 'data' / 'config.txt', out / 'config.txt')
-          print('Reference extraction complete. No original input, configuration, or evaluator modified.')
+                  (out / 'data').mkdir(exist_ok=True)
+                  for p in paths:
+                      if p.read_bytes().startswith(b'version https://git-lfs'):
+                          raise RuntimeError('LFS data unavailable: ' + str(p))
+                      shutil.copy2(p, out / 'data' / p.name)
+          papers = root / '\u8c03\u7814' / 'A\u9898_\u6587\u732e\u5e93' / 'pdf'
+          (out / 'reading').mkdir(exist_ok=True)
+          for prefix in ('A49_', 'A39_', 'A02_', 'A16_', 'A42_'):
+              for p in papers.glob(prefix + '*.pdf'):
+                  shutil.copy2(p, out / 'reading' / p.name)
+          print('Prepared six purpose-selected diagnostic cases; not a representative full benchmark.')
       - name: Run Aurora tests when implementation is present
         shell: pwsh
         run: |
@@ -57,7 +70,7 @@ jobs:
             python -m unittest research_a_aurora.test_aurora -v
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           }
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: a-aurora-reference-and-verification
