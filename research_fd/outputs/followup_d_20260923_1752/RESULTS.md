@@ -44,8 +44,9 @@
 | 9 | fast | 1200 | 16 | 13 | 235 | INFEASIBLE |
 | 10 | energy | 1200 | 16 | 13 | 110 | INFEASIBLE |
 | 11 | fast | 1200 | 16 | 88 | 235 | INFEASIBLE |
+| 12 | baseline | 1200 | 16 | 13 | 120 | INFEASIBLE |
 
-固定最短工期 Q2 时刻约 2640 s 有一个 30 s 诊断时间格至少需要 3 个同时驻点，而正式库存仅 2 架中继；这只是固定时刻的空间下界。空通信要求控制模型可行；移除中继机/电池资源约束的诊断模型可行（不计正式成绩），表明资源占用是当前表示下的主要瓶颈。细节见 `q3_diagnostic.json` 和 `witness_iterations.json`。
+固定最短工期 Q2 时刻约 2640 s 有一个 30 s 诊断时间格至少需要 3 个同时驻点，而正式库存仅 2 架中继；这只是固定时刻的空间下界。空通信要求控制模型可行；移除中继机/电池资源约束的诊断模型可行（不计正式成绩），表明资源占用是当前表示下的主要瓶颈。各驻点/路线/粒度的原始通信块分别留在 `q3_blocks_*.csv`，索引为 `q3_block_catalog.json`；求解状态和诊断见 `witness_iterations.json`、`q3_diagnostic.json`。
 
 没有联合 incumbent，所以未执行 60/15/10 s 和 7.5 m 的候选验证，`q3_joint_plan.json` 与对应验证 JSON 均是明确的 null/status 记录，不包含虚构计划或能耗。`relay_tasks.csv` 也只有状态行。
 

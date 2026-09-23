@@ -17,6 +17,8 @@
 & research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_compact.py --seconds 120 --allow-soft --single-window 1200 --slots-per-aircraft 8 --split-blocks
 & research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_compact.py --plan research_fd/outputs/followup_d_20260923_1752/q2_candidate_energy.json --seconds 120 --allow-soft --single-window 1200 --slots-per-aircraft 8
 & research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_compact.py --seconds 120 --allow-soft --single-window 1200 --slots-per-aircraft 8 --all-sites --split-blocks
+& research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_compact.py --plan research_fd/outputs/official_pareto_cpsat/energy_cap_1.json --seconds 120 --allow-soft --single-window 1200 --slots-per-aircraft 8
+& research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_export_blocks.py
 ```
 
 各命令对应日志和模型状态文件均在本目录；`q3_diagnose.py` 中的资源放松只用于失败定位。没有执行独立 Q4 求解，因为正式 Q3 冻结门槛未达到。

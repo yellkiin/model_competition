@@ -2,7 +2,7 @@
   "status": "NO_VALIDATED_JOINT_PLAN",
   "formal_result": null,
   "reason": "All recorded finite task-slot models returned INFEASIBLE; this does not prove the unrestricted official Q3 infeasible.",
-  "attempt_count": 11,
+  "attempt_count": 12,
   "frozen_q3": null,
   "formal_q4": null,
   "iterations": [
@@ -179,6 +179,25 @@
       "radio_block_count": 235,
       "split_blocks": true,
       "source_plan": "research_fd\\outputs\\followup_d_20260923_1752\\q2_candidate_fast.json",
+      "transport_start_options": "continuous-integer-second-interval"
+    },
+    {
+      "status": "INFEASIBLE",
+      "window_s": 1200,
+      "slots_per_aircraft": 8,
+      "allow_soft_lateness": true,
+      "diagnostic_relax_resources": false,
+      "relay_task_slots": 16,
+      "site_count": 13,
+      "radio_blocks": 120,
+      "variables": 2427,
+      "constraints": 8413,
+      "solve_s": 17.489280399982817,
+      "objective_bound_scaled": null,
+      "iteration": 12,
+      "radio_block_count": 120,
+      "split_blocks": false,
+      "source_plan": "research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.json",
       "transport_start_options": "continuous-integer-second-interval"
     }
   ]

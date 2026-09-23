@@ -55,7 +55,8 @@ def main():
     wrows=[]
     for x in witness:
         source=x.get("source_plan", "q2_candidate_fast.json" if x["iteration"]<10 else "q2_candidate_energy.json")
-        source="energy" if "energy.json" in source else "fast"
+        source=("energy" if "energy.json" in source else
+                "baseline" if "official_pareto_cpsat" in source else "fast")
         wrows.append(f"| {x['iteration']} | {source} | {x['window_s']} | {x['relay_task_slots']} | {x.get('site_count',13)} | {x['radio_blocks']} | {x['status']} |")
     md("RESULTS.md",f"""# D 题四问深化实验：执行结果
 
@@ -92,7 +93,7 @@ def main():
 |---:|---|---:|---:|---:|---:|---|
 """+"\n".join(wrows)+f"""
 
-固定最短工期 Q2 时刻约 2640 s 有一个 30 s 诊断时间格至少需要 3 个同时驻点，而正式库存仅 2 架中继；这只是固定时刻的空间下界。空通信要求控制模型可行；移除中继机/电池资源约束的诊断模型可行（不计正式成绩），表明资源占用是当前表示下的主要瓶颈。细节见 `q3_diagnostic.json` 和 `witness_iterations.json`。
+固定最短工期 Q2 时刻约 2640 s 有一个 30 s 诊断时间格至少需要 3 个同时驻点，而正式库存仅 2 架中继；这只是固定时刻的空间下界。空通信要求控制模型可行；移除中继机/电池资源约束的诊断模型可行（不计正式成绩），表明资源占用是当前表示下的主要瓶颈。各驻点/路线/粒度的原始通信块分别留在 `q3_blocks_*.csv`，索引为 `q3_block_catalog.json`；求解状态和诊断见 `witness_iterations.json`、`q3_diagnostic.json`。
 
 没有联合 incumbent，所以未执行 60/15/10 s 和 7.5 m 的候选验证，`q3_joint_plan.json` 与对应验证 JSON 均是明确的 null/status 记录，不包含虚构计划或能耗。`relay_tasks.csv` 也只有状态行。
 
@@ -143,6 +144,8 @@ def main():
 & research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_compact.py --seconds 120 --allow-soft --single-window 1200 --slots-per-aircraft 8 --split-blocks
 & research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_compact.py --plan research_fd/outputs/followup_d_20260923_1752/q2_candidate_energy.json --seconds 120 --allow-soft --single-window 1200 --slots-per-aircraft 8
 & research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_compact.py --seconds 120 --allow-soft --single-window 1200 --slots-per-aircraft 8 --all-sites --split-blocks
+& research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_compact.py --plan research_fd/outputs/official_pareto_cpsat/energy_cap_1.json --seconds 120 --allow-soft --single-window 1200 --slots-per-aircraft 8
+& research_fd/.venv/Scripts/python.exe research_fd/outputs/followup_d_20260923_1752/q3_export_blocks.py
 ```
 
 各命令对应日志和模型状态文件均在本目录；`q3_diagnose.py` 中的资源放松只用于失败定位。没有执行独立 Q4 求解，因为正式 Q3 冻结门槛未达到。
