@@ -1,0 +1,55 @@
+name: A fast source-aligned validation
+on:
+  push:
+    branches: [research/a-fast-constrained]
+    paths: ['research_a_fast/**', '.github/workflows/a-fast-validation.yml']
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: windows-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read original statement and prepare original A code
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile, xml.etree.ElementTree as ET
+          root = Path('题目/A题')
+          doc = next(root.glob('*.docx'))
+          ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+          with zipfile.ZipFile(doc) as z:
+              tree = ET.fromstring(z.read('word/document.xml'))
+          paragraphs = [''.join(e.itertext()) for e in tree.findall('.//w:p', ns)]
+          text = '\n'.join(paragraphs)
+          Path('a_statement.txt').write_text(text, encoding='utf-8')
+          for i, p in enumerate(paragraphs):
+              if any(word in p for word in ('问题一', '问题二', '问题三', '合理时间', 'Python', '提交', '平均加速比', '必须')):
+                  print(i, p)
+          with zipfile.ZipFile('a_source_validation.zip', 'w', zipfile.ZIP_DEFLATED) as bundle:
+              bundle.write('a_statement.txt')
+              bundle.write(doc)
+              for p in root.rglob('*.py'):
+                  bundle.write(p)
+              for p in root.rglob('config.txt'):
+                  bundle.write(p)
+      - name: Run mathematical and original-evaluator tests when present
+        shell: pwsh
+        run: |
+          if (Test-Path research_a_fast/test_fast.py) {
+            python -m unittest -v research_a_fast.test_fast
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: a-source-validation
+          path: |
+            a_source_validation.zip
+            a_statement.txt
+          retention-days: 2
