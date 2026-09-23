@@ -1,0 +1,268 @@
+{
+  "input_metadata": {
+    "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+    "seed": 73,
+    "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+  },
+  "methods": [
+    {
+      "method": "greedy",
+      "elapsed_s": 0.005594199988991022,
+      "pool_size": 1811,
+      "feasible": false,
+      "trips": 15,
+      "hard_violations": 6,
+      "hard_lateness_s": 4692.181850721814,
+      "weighted_tardiness_s": 57389.98465331766,
+      "makespan_s": 6334.800945974481,
+      "energy_kwh": 19.62835361641181,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "route_milp",
+      "elapsed_s": 0.2760200999910012,
+      "pool_size": 1811,
+      "feasible": false,
+      "trips": 13,
+      "hard_violations": 9,
+      "hard_lateness_s": 9933.448359902497,
+      "weighted_tardiness_s": 74867.94641825411,
+      "makespan_s": 5504.103086792403,
+      "energy_kwh": 16.29325137844387,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "dual_route_milp",
+      "elapsed_s": 2.419370599964168,
+      "pool_size": 2411,
+      "feasible": false,
+      "trips": 13,
+      "hard_violations": 9,
+      "hard_lateness_s": 9933.448359902497,
+      "weighted_tardiness_s": 74867.94641825411,
+      "makespan_s": 5504.103086792403,
+      "energy_kwh": 16.29325137844387,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "resource_dispatch",
+      "elapsed_s": 0.005787300004158169,
+      "pool_size": 2411,
+      "feasible": true,
+      "trips": 35,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 25563.74565899068,
+      "makespan_s": 5166.099402219118,
+      "energy_kwh": 33.292356542598256,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "alns",
+      "elapsed_s": 2.0902457000338472,
+      "pool_size": 2411,
+      "feasible": true,
+      "trips": 25,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 1882.1597651827597,
+      "makespan_s": 3246.7505924298657,
+      "energy_kwh": 21.44702297350522,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    }
+  ],
+  "best_method": "alns",
+  "details": {
+    "greedy": {},
+    "route_milp": {
+      "status": 0,
+      "objective": 9570.844925807947,
+      "gap": 0.0,
+      "bound": 9570.844925807947,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    },
+    "dual_route_milp": {
+      "pricing": [
+        {
+          "round": 0,
+          "restricted_lp": 9056.314364459886,
+          "columns_added": 358
+        },
+        {
+          "round": 1,
+          "restricted_lp": 8807.1736301217,
+          "columns_added": 242
+        }
+      ],
+      "status": 0,
+      "objective": 9570.844925807942,
+      "gap": 0.0,
+      "bound": 9570.844925807942,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    },
+    "resource_dispatch": {},
+    "alns": {
+      "iterations": 70,
+      "history": [
+        {
+          "iteration": 4,
+          "operator": "geographic",
+          "trips": 31,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 14966.342123140057,
+          "makespan_s": 5245.185323486103,
+          "energy_kwh": 30.690172419229107,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 5,
+          "operator": "geographic",
+          "trips": 28,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 8991.976091044427,
+          "makespan_s": 5032.623647936066,
+          "energy_kwh": 28.726655987225705,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 9,
+          "operator": "random",
+          "trips": 27,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 7492.865416648499,
+          "makespan_s": 4039.709016213078,
+          "energy_kwh": 26.730917048544523,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 16,
+          "operator": "late",
+          "trips": 29,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 6104.776434555636,
+          "makespan_s": 4473.228353661453,
+          "energy_kwh": 25.86489808446654,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 19,
+          "operator": "late",
+          "trips": 26,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 4711.440749416814,
+          "makespan_s": 3894.0302635831813,
+          "energy_kwh": 24.054768518138843,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 24,
+          "operator": "late",
+          "trips": 26,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 4386.075885627066,
+          "makespan_s": 3894.0302635831813,
+          "energy_kwh": 24.054768518138843,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 33,
+          "operator": "geographic",
+          "trips": 26,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 3466.1460493899604,
+          "makespan_s": 3676.3376475422674,
+          "energy_kwh": 22.968202496086434,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 43,
+          "operator": "random",
+          "trips": 25,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 3433.4348701168256,
+          "makespan_s": 3715.019741558756,
+          "energy_kwh": 21.828862091876946,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 52,
+          "operator": "late",
+          "trips": 25,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 3035.752839896679,
+          "makespan_s": 3447.760595747718,
+          "energy_kwh": 21.828862091876946,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 58,
+          "operator": "random",
+          "trips": 26,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 2684.9688475093076,
+          "makespan_s": 3726.19445379399,
+          "energy_kwh": 21.695626505266677,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 67,
+          "operator": "random",
+          "trips": 25,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 1882.1597651827597,
+          "makespan_s": 3246.7505924298657,
+          "energy_kwh": 21.44702297350522,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        }
+      ],
+      "operator_weights": {
+        "random": 2.358402854425713,
+        "late": 2.186706191589731,
+        "geographic": 1.3506419472534217
+      }
+    }
+  }
+}

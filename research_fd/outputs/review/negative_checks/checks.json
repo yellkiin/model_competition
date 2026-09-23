@@ -1,0 +1,14 @@
+[
+  {
+    "case": "inventory",
+    "expected_code": "resource_id_outside_inventory",
+    "detected": true,
+    "status": "invalid"
+  },
+  {
+    "case": "empty",
+    "expected_code": "empty_plan",
+    "detected": true,
+    "status": "invalid"
+  }
+]

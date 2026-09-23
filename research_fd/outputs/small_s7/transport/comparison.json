@@ -1,0 +1,243 @@
+{
+  "input_metadata": {
+    "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+    "seed": 7,
+    "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+  },
+  "methods": [
+    {
+      "method": "greedy",
+      "elapsed_s": 0.00041750003583729267,
+      "pool_size": 355,
+      "feasible": true,
+      "trips": 3,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 1385.7516650020248,
+      "energy_kwh": 4.255686890784548,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "route_milp",
+      "elapsed_s": 0.02946459996746853,
+      "pool_size": 355,
+      "feasible": true,
+      "trips": 2,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 923.3725130203488,
+      "energy_kwh": 3.419453349063565,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "dual_route_milp",
+      "elapsed_s": 0.10582070000236854,
+      "pool_size": 362,
+      "feasible": true,
+      "trips": 2,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 923.3725130203488,
+      "energy_kwh": 3.419453349063565,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "resource_dispatch",
+      "elapsed_s": 0.0008533999789506197,
+      "pool_size": 362,
+      "feasible": true,
+      "trips": 3,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 1340.2160760881823,
+      "energy_kwh": 5.612555089878289,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "alns",
+      "elapsed_s": 0.6981838999781758,
+      "pool_size": 362,
+      "feasible": true,
+      "trips": 4,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 866.4704109044052,
+      "energy_kwh": 3.4725112188772247,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "fixed_route_retime",
+      "elapsed_s": 0.006458199990447611,
+      "pool_size": 362,
+      "feasible": true,
+      "trips": 4,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 866.4704109044052,
+      "energy_kwh": 3.4725112188772247,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "integrated_highs",
+      "elapsed_s": 0.6079582999809645,
+      "pool_size": 362,
+      "feasible": true,
+      "trips": 8,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 719.0259029537864,
+      "energy_kwh": 5.5676805465355645,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    }
+  ],
+  "best_method": "integrated_highs",
+  "details": {
+    "greedy": {},
+    "route_milp": {
+      "status": 0,
+      "objective": 1969.842923924754,
+      "gap": 0.0,
+      "bound": 1969.842923924754,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    },
+    "dual_route_milp": {
+      "pricing": [
+        {
+          "round": 0,
+          "restricted_lp": 1806.1777931300194,
+          "columns_added": 4
+        },
+        {
+          "round": 1,
+          "restricted_lp": 1806.1777931300194,
+          "columns_added": 3
+        }
+      ],
+      "status": 0,
+      "objective": 1969.842923924754,
+      "gap": 0.0,
+      "bound": 1969.842923924754,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    },
+    "resource_dispatch": {},
+    "alns": {
+      "iterations": 70,
+      "history": [
+        {
+          "iteration": 14,
+          "operator": "late",
+          "trips": 3,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 904.1925541204982,
+          "energy_kwh": 3.2174855904860116,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 41,
+          "operator": "random",
+          "trips": 5,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 866.4704109044052,
+          "energy_kwh": 3.5476751708021435,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 42,
+          "operator": "geographic",
+          "trips": 4,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 866.4704109044052,
+          "energy_kwh": 3.4725112188772247,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        }
+      ],
+      "operator_weights": {
+        "random": 1.9396804507029395,
+        "late": 1.714204087248385,
+        "geographic": 1.9720045171148157
+      }
+    },
+    "fixed_route_retime": {
+      "backend": "scipy-highs",
+      "options": 32,
+      "routes": 4,
+      "step_s": 60,
+      "horizon_s": 1140,
+      "stages": [
+        {
+          "stage": "tardiness",
+          "status": 0,
+          "objective": 0.0,
+          "gap": 0.0,
+          "bound": 0.0
+        },
+        {
+          "stage": "makespan",
+          "status": 0,
+          "objective": 866.4704109044052,
+          "gap": 0.0,
+          "bound": 866.4704109044052
+        }
+      ],
+      "all_stages_optimal": true
+    },
+    "integrated_highs": {
+      "backend": "scipy-highs",
+      "options": 1186,
+      "routes": 362,
+      "step_s": 60,
+      "horizon_s": 1140,
+      "stages": [
+        {
+          "stage": "tardiness",
+          "status": 0,
+          "objective": 0.0,
+          "gap": 0.0,
+          "bound": 0.0
+        },
+        {
+          "stage": "makespan",
+          "status": 0,
+          "objective": 719.0259019537864,
+          "gap": 0.0,
+          "bound": 719.0259019537864
+        }
+      ],
+      "all_stages_optimal": true,
+      "candidate_pruned": false
+    }
+  }
+}

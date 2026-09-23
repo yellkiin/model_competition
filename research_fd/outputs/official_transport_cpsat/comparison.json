@@ -1,0 +1,534 @@
+{
+  "input_metadata": {
+    "source": "Official D DOCX/XLSX and DEM with explicit source mappings",
+    "source_commit": "4012819",
+    "parameter_sources": "official_parameter_sources.md",
+    "physical_runtime": "runtime/research_fd",
+    "node_elevation_rule": "Retain official node-table elevation; DEM gives intervening terrain",
+    "numerical_controls": {
+      "arc_step_m": 15,
+      "ray_step_m": 15,
+      "relay_heights_m": [
+        100,
+        200,
+        300
+      ]
+    },
+    "transport_aircraft_ids": {
+      "A": [
+        "U01",
+        "U02",
+        "U03",
+        "U04"
+      ],
+      "B": [
+        "U05",
+        "U06"
+      ],
+      "C": [
+        "U07",
+        "U08"
+      ]
+    },
+    "relay_aircraft_ids": [
+      "R01",
+      "R02"
+    ],
+    "modeling_conventions": {
+      "fleet.turnaround": {
+        "value": 0.0,
+        "status": "not an official table value",
+        "reason": "No separate transport turnaround is supplied; next preparation/loading starts on return and already occupies the aircraft. Do not copy relay turnaround or synthetic 90 s."
+      },
+      "fleet.hover_kw": {
+        "value": 0.0,
+        "status": "official-rule interpretation, not measured hover power",
+        "reason": "DOCX P0053-P0058 define trip transport energy as the sum of horizontal/cruise and additional climb energy, and supply no transport hover power; service affects time only under that rule."
+      },
+      "gravity_m_s2": {
+        "value": 9.80665,
+        "status": "standard physical constant convention; not stated numerically in attachments"
+      },
+      "horizontal_and_climb_energy": {
+        "status": "physical completion of terms named by DOCX; explicit sub-formulas absent from P0053-P0055",
+        "formula": "E_horizontal=E_use*d/L(q); E_climb=(empty_mass+load)*g*positive_climb/(eta*3.6e6)"
+      },
+      "relay_setup_waiting_energy": {
+        "status": "conservative explicit convention",
+        "reason": "Charge hover plus communication power during all post-arrival waiting and setup as well as active service; off-service communication timing is not explicitly separated by source."
+      },
+      "ground_preparation_energy": {
+        "status": "no battery flight-energy charge during preparation",
+        "reason": "No ground preparation power is provided; ground time occupies body and energy component, while flight/hover equations apply after launch."
+      }
+    },
+    "energy_convention": "Horizontal energy=usable_kwh*distance/range(load); climb=m*g*h/eta. Explicit model interpretation of DOCX energy terms, not additional official measurements."
+  },
+  "methods": [
+    {
+      "method": "greedy",
+      "elapsed_s": 0.011401599971577525,
+      "pool_size": 2898,
+      "feasible": false,
+      "trips": 16,
+      "hard_violations": 15,
+      "hard_lateness_s": 29384.164126299096,
+      "weighted_tardiness_s": 915144.6690911242,
+      "makespan_s": 12589.847948777211,
+      "energy_kwh": 62.76147479275549,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "route_milp",
+      "elapsed_s": 0.3431370000471361,
+      "pool_size": 2898,
+      "feasible": false,
+      "trips": 13,
+      "hard_violations": 18,
+      "hard_lateness_s": 30427.466224086587,
+      "weighted_tardiness_s": 988554.3613117319,
+      "makespan_s": 15063.222420515063,
+      "energy_kwh": 61.580141880735745,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "dual_route_milp",
+      "elapsed_s": 7.368635900027584,
+      "pool_size": 3864,
+      "feasible": false,
+      "trips": 13,
+      "hard_violations": 16,
+      "hard_lateness_s": 28377.510531987195,
+      "weighted_tardiness_s": 943488.5443640351,
+      "makespan_s": 14074.221527247468,
+      "energy_kwh": 59.96554082859237,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "resource_dispatch",
+      "elapsed_s": 0.02114979998441413,
+      "pool_size": 3864,
+      "feasible": false,
+      "trips": 60,
+      "hard_violations": 1,
+      "hard_lateness_s": 46.91464798196694,
+      "weighted_tardiness_s": 1313971.81620392,
+      "makespan_s": 16054.194230363471,
+      "energy_kwh": 155.81127904919245,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "alns",
+      "elapsed_s": 9.351815300004091,
+      "pool_size": 3864,
+      "feasible": true,
+      "trips": 27,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8726.848411601435,
+      "energy_kwh": 75.06916411794937,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "fixed_route_retime",
+      "elapsed_s": 6.488284999970347,
+      "pool_size": 3864,
+      "feasible": true,
+      "trips": 27,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 8310.16907732916,
+      "energy_kwh": 75.06916411794937,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    },
+    {
+      "method": "integrated_cpsat",
+      "elapsed_s": 37.45256539998809,
+      "pool_size": 3864,
+      "feasible": true,
+      "trips": 33,
+      "hard_violations": 0,
+      "hard_lateness_s": 0.0,
+      "weighted_tardiness_s": 0.0,
+      "makespan_s": 10354.509722550627,
+      "energy_kwh": 90.3162067097326,
+      "resource_overlaps": 0,
+      "unserved": 0,
+      "duplicated": 0
+    }
+  ],
+  "best_method": "fixed_route_retime",
+  "details": {
+    "greedy": {},
+    "route_milp": {
+      "status": 0,
+      "objective": 28549.5914591843,
+      "gap": 0.0,
+      "bound": 28549.5914591843,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    },
+    "dual_route_milp": {
+      "pricing": [
+        {
+          "round": 0,
+          "restricted_lp": 26529.974332285903,
+          "columns_added": 375
+        },
+        {
+          "round": 1,
+          "restricted_lp": 25862.49040822944,
+          "columns_added": 249
+        },
+        {
+          "round": 2,
+          "restricted_lp": 25597.425273442648,
+          "columns_added": 342
+        }
+      ],
+      "status": 0,
+      "objective": 28101.38227727685,
+      "gap": 0.0,
+      "bound": 28101.38227727685,
+      "scope": "restricted candidate pool; not a global VRP bound"
+    },
+    "resource_dispatch": {},
+    "alns": {
+      "iterations": 500,
+      "history": [
+        {
+          "iteration": 1,
+          "operator": "geographic",
+          "trips": 50,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 727959.7790857992,
+          "makespan_s": 13921.874784486337,
+          "energy_kwh": 129.53885290986247,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 2,
+          "operator": "random",
+          "trips": 48,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 602720.151382279,
+          "makespan_s": 14629.835723528931,
+          "energy_kwh": 123.36675248747841,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 4,
+          "operator": "late",
+          "trips": 47,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 543390.9397995713,
+          "makespan_s": 14441.53121751789,
+          "energy_kwh": 119.78581375034554,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 5,
+          "operator": "random",
+          "trips": 43,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 371809.09917393327,
+          "makespan_s": 13979.329720679421,
+          "energy_kwh": 111.90824916940878,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 8,
+          "operator": "geographic",
+          "trips": 36,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 269068.51620378223,
+          "makespan_s": 10575.878526735614,
+          "energy_kwh": 93.3184265556579,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 14,
+          "operator": "late",
+          "trips": 35,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 261171.7900285309,
+          "makespan_s": 11012.608693829416,
+          "energy_kwh": 90.22249362865129,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 22,
+          "operator": "geographic",
+          "trips": 32,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 254578.55987928493,
+          "makespan_s": 9182.076921046362,
+          "energy_kwh": 83.70866095710325,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 23,
+          "operator": "late",
+          "trips": 31,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 232410.8241472439,
+          "makespan_s": 10311.310672862022,
+          "energy_kwh": 82.77780195323294,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 34,
+          "operator": "geographic",
+          "trips": 29,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 145050.31317219007,
+          "makespan_s": 10921.90944503331,
+          "energy_kwh": 83.56409588013382,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 39,
+          "operator": "late",
+          "trips": 30,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 63041.5634015015,
+          "makespan_s": 9562.780557979766,
+          "energy_kwh": 85.04176215553868,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 40,
+          "operator": "late",
+          "trips": 30,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 21385.16277689936,
+          "makespan_s": 9562.780557979766,
+          "energy_kwh": 85.03728652549036,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 44,
+          "operator": "late",
+          "trips": 30,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 20125.042011331814,
+          "makespan_s": 9562.780557979766,
+          "energy_kwh": 85.03728652549036,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 64,
+          "operator": "late",
+          "trips": 30,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 17701.567244168487,
+          "makespan_s": 9562.780557979766,
+          "energy_kwh": 85.03728652549036,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 100,
+          "operator": "random",
+          "trips": 28,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 16927.453272945164,
+          "makespan_s": 9888.933684083877,
+          "energy_kwh": 82.09208056287139,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 115,
+          "operator": "late",
+          "trips": 28,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 9707.084428278366,
+          "energy_kwh": 82.4379756813617,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 127,
+          "operator": "late",
+          "trips": 28,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 9506.049771156755,
+          "energy_kwh": 82.59047302086802,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 389,
+          "operator": "geographic",
+          "trips": 26,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 9361.745900858155,
+          "energy_kwh": 79.34409757145353,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 422,
+          "operator": "geographic",
+          "trips": 26,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 9326.390421460417,
+          "energy_kwh": 78.31599312793882,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 428,
+          "operator": "late",
+          "trips": 26,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 9326.390421460417,
+          "energy_kwh": 77.61135709598312,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 496,
+          "operator": "geographic",
+          "trips": 26,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 9199.233108382812,
+          "energy_kwh": 74.51169190289525,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        },
+        {
+          "iteration": 497,
+          "operator": "late",
+          "trips": 27,
+          "hard_violations": 0,
+          "hard_lateness_s": 0.0,
+          "weighted_tardiness_s": 0.0,
+          "makespan_s": 8726.848411601435,
+          "energy_kwh": 75.06916411794937,
+          "resource_overlaps": 0,
+          "unserved": 0,
+          "duplicated": 0
+        }
+      ],
+      "operator_weights": {
+        "random": 1.0287720441424815,
+        "late": 1.9420735637497848,
+        "geographic": 1.6855832464152314
+      }
+    },
+    "fixed_route_retime": {
+      "backend": "scipy-highs",
+      "options": 2887,
+      "routes": 27,
+      "step_s": 60.0,
+      "horizon_s": 10380.0,
+      "stages": [
+        {
+          "stage": "tardiness",
+          "status": 0,
+          "objective": 0.0,
+          "gap": 0.0,
+          "bound": 0.0
+        },
+        {
+          "stage": "makespan",
+          "status": 0,
+          "objective": 8310.169077329161,
+          "gap": 0.0,
+          "bound": 8310.169077329161
+        }
+      ],
+      "all_stages_optimal": true
+    },
+    "integrated_cpsat": {
+      "backend": "ortools-cpsat",
+      "stages": [
+        {
+          "stage": "tardiness",
+          "status": "OPTIMAL",
+          "bound": 0.0
+        },
+        {
+          "stage": "makespan",
+          "status": "UNKNOWN",
+          "bound": 2162.0
+        }
+      ],
+      "time_rounding_s": 1,
+      "candidate_pruned": true
+    }
+  }
+}

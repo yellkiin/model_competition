@@ -1,0 +1,5 @@
+{"event": "reduced_candidate_sites", "policy": "greedy_double", "original_sites": 88, "retained_sites": 8, "indices": [26, 11, 82, 36, 35, 2, 85, 52]}
+{"event": "cpsat_build_start", "demands": 259, "sites": 8}
+{"event": "cpsat_model_ready", "columns": 2588, "elapsed_s": 3.077999999979511}
+{"stage": "joint_makespan", "status": "INFEASIBLE", "objective": null, "bound": 0.0, "elapsed_s": 7.2810000000172295}
+{"requirements": 259, "unreachable": [], "sites": 8, "sessions": 2588, "pool_truncated": false, "raw_sessions": 4417, "backend": "ortools-cpsat-fixed-relay", "sample_step_s": 60.0, "schedule_step_s": 60.0, "return_objective_resolution_s": 0.001, "energy_objective_resolution_kwh": 1e-09, "site_policy": "greedy_double", "original_sites": 88, "retained_site_indices": [26, 11, 82, 36, 35, 2, 85, 52], "stages": [{"stage": "joint_makespan", "status": "INFEASIBLE", "objective": null, "bound": 0.0, "elapsed_s": 7.2810000000172295}], "status": "no_incumbent", "elapsed_s": 7.2810000000172295}

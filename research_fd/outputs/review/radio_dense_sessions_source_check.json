@@ -1,0 +1,10 @@
+{
+  "only_ends_assignment_differs_in_function_AST": true,
+  "old_ends": [
+    "sorted(set([int(lo + 1), int(lo + 2), int(lo + 4), int(lo + 8), int(lo + 16), int(lo + 32), int(maxend)]))"
+  ],
+  "new_ends": [
+    "sorted(set((int(s) + 1 for s in valid_slots if lo <= s < maxend)))"
+  ],
+  "expanded_source_sha256": "93f037c9d16a8fa2b66e82c91092ab41901bdc5632934f4a9d85496fb51f0fe7"
+}

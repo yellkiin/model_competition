@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "source": "Official D DOCX/XLSX and DEM with explicit source mappings",
+    "source_commit": "4012819",
+    "parameter_sources": "official_parameter_sources.md",
+    "physical_runtime": "runtime/research_fd",
+    "node_elevation_rule": "Retain official node-table elevation; DEM gives intervening terrain",
+    "numerical_controls": {
+      "arc_step_m": 15,
+      "ray_step_m": 15,
+      "relay_heights_m": [
+        100,
+        200,
+        300
+      ]
+    },
+    "transport_aircraft_ids": {
+      "A": [
+        "U01",
+        "U02",
+        "U03",
+        "U04"
+      ],
+      "B": [
+        "U05",
+        "U06"
+      ],
+      "C": [
+        "U07",
+        "U08"
+      ]
+    },
+    "relay_aircraft_ids": [
+      "R01",
+      "R02"
+    ],
+    "modeling_conventions": {
+      "fleet.turnaround": {
+        "value": 0.0,
+        "status": "not an official table value",
+        "reason": "No separate transport turnaround is supplied; next preparation/loading starts on return and already occupies the aircraft. Do not copy relay turnaround or synthetic 90 s."
+      },
+      "fleet.hover_kw": {
+        "value": 0.0,
+        "status": "official-rule interpretation, not measured hover power",
+        "reason": "DOCX P0053-P0058 define trip transport energy as the sum of horizontal/cruise and additional climb energy, and supply no transport hover power; service affects time only under that rule."
+      },
+      "gravity_m_s2": {
+        "value": 9.80665,
+        "status": "standard physical constant convention; not stated numerically in attachments"
+      },
+      "horizontal_and_climb_energy": {
+        "status": "physical completion of terms named by DOCX; explicit sub-formulas absent from P0053-P0055",
+        "formula": "E_horizontal=E_use*d/L(q); E_climb=(empty_mass+load)*g*positive_climb/(eta*3.6e6)"
+      },
+      "relay_setup_waiting_energy": {
+        "status": "conservative explicit convention",
+        "reason": "Charge hover plus communication power during all post-arrival waiting and setup as well as active service; off-service communication timing is not explicitly separated by source."
+      },
+      "ground_preparation_energy": {
+        "status": "no battery flight-energy charge during preparation",
+        "reason": "No ground preparation power is provided; ground time occupies body and energy component, while flight/hover equations apply after launch."
+      }
+    },
+    "energy_convention": "Horizontal energy=usable_kwh*distance/range(load); climb=m*g*h/eta. Explicit model interpretation of DOCX energy terms, not additional official measurements."
+  },
+  "metrics": {
+    "trips": 0,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 0.0,
+    "energy_kwh": 0.0,
+    "resource_overlaps": 0,
+    "unserved": 80,
+    "duplicated": 0
+  },
+  "jobs": [],
+  "relay_sessions": [],
+  "detail": {
+    "backend": "scipy-highs",
+    "routes": 600,
+    "options": 47298,
+    "step_s": 60.0,
+    "cap_s": 9141.185985062077,
+    "weighted_tardiness_ceiling_s": 0.0,
+    "quality_tolerance_s": 1e-05,
+    "energy_lock_tolerance_kwh": 1e-05,
+    "stage_order": [
+      "energy",
+      "makespan"
+    ],
+    "time_limit_per_stage_s": 60.0,
+    "scope": "Fixed candidate pool, zero-anchored discrete starts, cap, hard deadlines and shared resources.",
+    "stages": [
+      {
+        "stage": "energy",
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "objective": null,
+        "gap": null,
+        "bound": null,
+        "has_incumbent": false,
+        "elapsed_s": 63.17244940000819
+      }
+    ],
+    "all_stages_optimal": false,
+    "elapsed_s": 66.32514329999685,
+    "status": "no_incumbent",
+    "ratio": 1.1,
+    "baseline_starts_outside_grid": 0,
+    "pool_file": "route_pool.json"
+  }
+}

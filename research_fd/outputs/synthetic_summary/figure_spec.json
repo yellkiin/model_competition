@@ -1,0 +1,14 @@
+{
+  "source": "research_fd/outputs/benchmark80/summary.json",
+  "source_sha256": "0ca6329c3a4ae5ec71b7c8c05ac4004b1688dbbb64a397f979f9d1498c3ca283",
+  "script": "build_summary.py",
+  "script_sha256": "b6a989fcb447a16a3da1ee54ee80748dbcddd312434dbaed7cb719e2dc4d5fb5",
+  "panels": [
+    "Hard violations (5 methods, 5 seeds)",
+    "Weighted tardiness in weighted minutes",
+    "Return makespan in minutes",
+    "Transport energy in kWh"
+  ],
+  "uncertainty": "None displayed; observations are five individual synthetic seeds.",
+  "paired_reduction": "Arithmetic mean of per-seed (dispatch - ALNS) / dispatch percentages."
+}

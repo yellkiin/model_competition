@@ -1,0 +1,51 @@
+{
+  "source_sha256": {
+    "research_fd\\outputs\\official_pareto_summary.json": "0761a4ec42115e1c0f8c19bf9287849a6aafe9a3774842422bce92811b9ae607",
+    "research_fd\\outputs\\official_pareto\\energy_cap_1.json": "04156743b912eabfa22d00d6a17aa816eada01b82b7b91ed105817e742f85c23",
+    "research_fd\\outputs\\official_pareto\\export_cap1\\validation.json": "868eaa47d635bf873cc59adf2cc96f58bd9a41e2d0942b42b77a5cb1bdf69302",
+    "research_fd\\outputs\\official_pareto\\energy_cap_1.1.json": "c466b09ed724bcbb7455c7cf0a46182762ee4ec7282242ab90b84e8e86650e9e",
+    "research_fd\\outputs\\official_pareto\\export_cap1p1\\validation.json": "23d20f5adbc5f19f04901d99db867070d545deddc80b955b9356527f64132681",
+    "research_fd\\outputs\\official_pareto\\energy_cap_1.25.json": "cf06da84b155c7981c102f3f2d912de2d014a7ceb68c60cdf06f67097a567ed2",
+    "research_fd\\outputs\\official_pareto\\export_cap1p25\\validation.json": "39ed0de03f61aded31318c3fae8fb708639d9d2c51396ec4325449f4f7aebbad",
+    "research_fd\\outputs\\official_pareto\\energy_cap_1.5.json": "8d1f315a1ca6e11041dadfa44bee2b0bc01e48b322b99a5584613a5c6e39fca3",
+    "research_fd\\outputs\\official_pareto\\export_cap1p5\\validation.json": "97c165fc63cdf3f2f5fdb914950fef8084d9a0e77c9732c1e7a62788321cc35d",
+    "research_fd\\outputs\\official_pareto_repair_exact\\energy_cap_1.json": "6eb4321c7c1f4137b5b32620908af73eecfd9375d6a4e6d2ebe33d2252461e89",
+    "research_fd\\outputs\\official_pareto_repair_exact\\export_cap1\\validation.json": "ea90bb493a0e4f8218aa921d3630e0ce5ab7bdda2206506a13e4677fbe66a376",
+    "research_fd\\outputs\\official_pareto_repair_exact\\energy_cap_1.1.json": "e422e408b45a88d16da5ffb2b0c5eeddb5aa28013708faf4bed02d089534d2e9",
+    "research_fd\\outputs\\official_pareto_repair_exact\\export_cap1p1\\validation.json": "4dea8d91ed7f02842cbedeb444cca5e65b904eaec44a677b446b1837accd8abb",
+    "research_fd\\outputs\\official_pareto_repair_exact\\energy_cap_1.25.json": "5fdf465ee90b1f4986baa0b7fcfbbaf3a788cc0d1a0985e3e38185fa485b6e4d",
+    "research_fd\\outputs\\official_pareto_repair_exact\\export_cap1p25\\validation.json": "38bf08bc7730fd901564836eaac736fff06bb694c3d3c16f5c07da7dd3e03fcc",
+    "research_fd\\outputs\\official_pareto_repair_exact\\energy_cap_1.5.json": "5d5ed2d0592273efb42feaf4baa42e1b84134b0ebd54b8de0ebc77567b35bae5",
+    "research_fd\\outputs\\official_pareto_repair_exact\\export_cap1p5\\validation.json": "d7e203114716986cbe98ac09fa2b192a526061af273429262f3a34389995a9d8",
+    "research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.json": "4c03ce87ec36f27ef82e291bd3ba8863701eb252b99b0bc8230b04ce1491eb7a",
+    "research_fd\\outputs\\official_pareto_cpsat\\export_cap1\\validation.json": "9d777e7b3ab9c2b403dba0b79e7a9c904032515e8c5437d57c31a793dc9fe3aa",
+    "research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.1.json": "556bff2185dcf5a1dbc520847f203d2a4173db63a3c5b0d64b27b906a6158b40",
+    "research_fd\\outputs\\official_pareto_cpsat\\export_cap1p1\\validation.json": "600164480208b39e8fd3f0609f8c7155b3a4aba0f9270106029915a14c9f53d9",
+    "research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.25.json": "3375bb4483e3be3802aadaf42ccc13a125eacec0015690999c689b5fe655022f",
+    "research_fd\\outputs\\official_pareto_cpsat\\export_cap1p25\\validation.json": "b61267349cd6cf98a7662eb8a88e5a4a0356eaa413e12e406d1a1a2812f56ecc",
+    "research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.5.json": "cee2900c6b7555b472fde39580179d977d13561de2fd02f247be645254a57dbc",
+    "research_fd\\outputs\\official_pareto_cpsat\\export_cap1p5\\validation.json": "0d1d02f8015c2fd2609cf767882abc2f044357aea751e8b6826f9cceef1ade88",
+    "research_fd\\outputs\\official_pareto_cpsat_warm180\\energy_cap_1.5.json": "26cdf64b540496a563b7f170b9a59fc279407754f3ca8b337df5be99bca85c81",
+    "research_fd\\outputs\\official_pareto_cpsat_warm180\\export_cap1p5\\validation.json": "3e03e76420fcfadb888ac24ab2ec593c6ba9da78c108a83586980d25fcbf76cc"
+  },
+  "script_sha256": "5a3c2f251b57c784c19e7e7d710a6c595d5f6da7af08742d211a05a72f56252d",
+  "attempts": 13,
+  "solver_incumbents": 5,
+  "failed_no_incumbent": 8,
+  "unique_observed_nondominated_coordinates": [
+    {
+      "makespan_s": 8237.190525,
+      "energy_kwh": 71.24500745,
+      "plans": [
+        "official_pareto_cpsat/energy_cap_1.json",
+        "official_pareto_cpsat_warm180/energy_cap_1.5.json"
+      ]
+    }
+  ],
+  "figure_scope": "Q2 transportation only; same-route-pool epsilon-cap attempts. Do not connect observed points into an inferred global frontier.",
+  "units": {
+    "makespan": "minutes in panel a",
+    "energy": "kWh",
+    "vertical_segments": "solver optimality bounds, not confidence intervals"
+  }
+}

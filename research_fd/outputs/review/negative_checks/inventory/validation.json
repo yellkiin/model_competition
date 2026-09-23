@@ -1,0 +1,56 @@
+{
+  "status": "invalid",
+  "transport_valid": false,
+  "relay_valid": true,
+  "radio_valid": false,
+  "joint_valid": false,
+  "input": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\small_s7\\instance.json",
+  "plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\review\\negative_checks\\inventory_plan.json",
+  "metadata": {
+    "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+    "seed": 7,
+    "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+  },
+  "runtime_model": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\d_model.py",
+  "validation_scope": "Independent coverage/inventory/all-pairs interval/deadline arithmetic; declared route and radio engines reused for physics.",
+  "charging_scope": "Parallel charging; no unprovided finite charger inventory introduced.",
+  "stored_metrics": {
+    "trips": 8,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 719.0259029537864,
+    "energy_kwh": 5.5676805465355645,
+    "resource_overlaps": 0,
+    "unserved": 0,
+    "duplicated": 0
+  },
+  "independently_recomputed_metrics": {
+    "trips": 8,
+    "unserved": 0,
+    "duplicated": 0,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 719.0259029537864,
+    "energy_kwh": 5.5676805465355645
+  },
+  "issues": [
+    {
+      "scope": "transport",
+      "code": "resource_id_outside_inventory",
+      "resource": "A_aircraft",
+      "resource_id": 999,
+      "inventory": 4,
+      "job": 0,
+      "route_id": 5
+    }
+  ],
+  "notes": [
+    "Radio recomputation explicitly skipped; cannot certify joint feasibility."
+  ],
+  "relay_sessions": 2,
+  "radio_ray_step_m": 50.0,
+  "radio_evaluation": null,
+  "numerical_scope": "Finite temporal and terrain-ray samples do not prove continuous-time communication."
+}

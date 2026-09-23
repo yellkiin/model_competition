@@ -1,0 +1,51 @@
+{
+  "backend": "ortools-cpsat",
+  "routes": 600,
+  "active_routes": 600,
+  "excluded_no_start_routes": 0,
+  "equivalent_route_start_options": 44642,
+  "step_s": 60.0,
+  "cap_s": 12465.253615993739,
+  "common_weighted_tardiness_ceiling_s": 0.0,
+  "quality_tolerance_s": 1e-05,
+  "time_limit_per_stage_s": {
+    "energy": 180.0,
+    "makespan": 30.0
+  },
+  "workers": 4,
+  "seed": 7,
+  "objective_energy_quantum_kwh": 1e-09,
+  "objective_time_quantum_s": 1e-06,
+  "quality_rounding_s": 1e-09,
+  "positive_quality_tables": 0,
+  "baseline_hint": true,
+  "stages": [
+    {
+      "stage": "energy",
+      "status": "FEASIBLE",
+      "has_incumbent": true,
+      "objective": 71.245007449,
+      "bound": 68.762715228,
+      "relative_gap": 0.03484163045076411,
+      "elapsed_s": 180.04834759997902,
+      "response_stats": "CpSolverResponse summary:\nstatus: FEASIBLE\nobjective: 71245007449\nbest_bound: 68762715228\nintegers: 2372\nbooleans: 2372\nconflicts: 444576\nbranches: 1125689\npropagations: 38230856\ninteger_propagations: 75332850\nrestarts: 951\nlp_iterations: 9610\nwalltime: 180.045\nusertime: 180.045\ndeterministic_time: 203.506\ngap_integral: 4430.19\nsolution_fingerprint: 0xe9ca2afb7aab4f87\n"
+    },
+    {
+      "stage": "makespan",
+      "status": "FEASIBLE",
+      "has_incumbent": true,
+      "objective": 8237.190525,
+      "bound": 1960.523305,
+      "relative_gap": 0.7619912640056362,
+      "elapsed_s": 30.114515499968547,
+      "response_stats": "CpSolverResponse summary:\nstatus: FEASIBLE\nobjective: 8237190525\nbest_bound: 1960523305\nintegers: 2360\nbooleans: 2381\nconflicts: 84716\nbranches: 416973\npropagations: 6199309\ninteger_propagations: 3744616\nrestarts: 378\nlp_iterations: 46748\nwalltime: 30.112\nusertime: 30.112\ndeterministic_time: 35.782\ngap_integral: 806.91\nsolution_fingerprint: 0xe3dbe5550ed0d5cf\n"
+    }
+  ],
+  "scope": "Same frozen route pool and start grid; interval lengths in ticks exactly represent grid-start cumulative capacities.",
+  "elapsed_s": 210.3254429999506,
+  "all_stages_optimal": false,
+  "postcheck_violations": [],
+  "status": "feasible_solver_incumbent",
+  "hint_plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.json",
+  "ratio": 1.5
+}

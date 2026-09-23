@@ -1,0 +1,39 @@
+{
+  "input": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\d_official.json",
+  "baseline_plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\official_transport_s7\\best_plan.json",
+  "pool_source": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\official_pareto\\route_pool.json",
+  "runtime_model": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\runtime\\research_fd\\d_model.py",
+  "baseline_metrics": {
+    "trips": 27,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 8310.16907732916,
+    "energy_kwh": 75.06916411794937,
+    "resource_overlaps": 0,
+    "unserved": 0,
+    "duplicated": 0
+  },
+  "common_quality_ceiling_s": 0.0,
+  "hint_plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\official_pareto_cpsat\\energy_cap_1.json",
+  "hint_metrics": {
+    "trips": 26,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 8237.190524525828,
+    "energy_kwh": 71.24500745014467,
+    "resource_overlaps": 0,
+    "unserved": 0,
+    "duplicated": 0
+  },
+  "energy_seconds": 180.0,
+  "ratios": [
+    1.5
+  ],
+  "step_s": 60.0,
+  "seed": 7,
+  "seconds_per_stage": 30.0,
+  "model": "Fixed-pool common-quality energy and return-makespan biobjective; no relay optimization.",
+  "incumbent_policy": "Only OPTIMAL/FEASIBLE backend results populate cap plans. Known baseline is stored separately if backend returns UNKNOWN."
+}

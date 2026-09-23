@@ -1,0 +1,673 @@
+{
+  "status": "invalid",
+  "transport_valid": false,
+  "relay_valid": true,
+  "radio_valid": false,
+  "joint_valid": false,
+  "input": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\d_official.json",
+  "plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\official_transport_s7\\integrated_highs.json",
+  "metadata": {
+    "source": "Official D DOCX/XLSX and DEM with explicit source mappings",
+    "source_commit": "4012819",
+    "parameter_sources": "official_parameter_sources.md",
+    "physical_runtime": "runtime/research_fd",
+    "node_elevation_rule": "Retain official node-table elevation; DEM gives intervening terrain",
+    "numerical_controls": {
+      "arc_step_m": 15,
+      "ray_step_m": 15,
+      "relay_heights_m": [
+        100,
+        200,
+        300
+      ]
+    },
+    "transport_aircraft_ids": {
+      "A": [
+        "U01",
+        "U02",
+        "U03",
+        "U04"
+      ],
+      "B": [
+        "U05",
+        "U06"
+      ],
+      "C": [
+        "U07",
+        "U08"
+      ]
+    },
+    "relay_aircraft_ids": [
+      "R01",
+      "R02"
+    ],
+    "modeling_conventions": {
+      "fleet.turnaround": {
+        "value": 0.0,
+        "status": "not an official table value",
+        "reason": "No separate transport turnaround is supplied; next preparation/loading starts on return and already occupies the aircraft. Do not copy relay turnaround or synthetic 90 s."
+      },
+      "fleet.hover_kw": {
+        "value": 0.0,
+        "status": "official-rule interpretation, not measured hover power",
+        "reason": "DOCX P0053-P0058 define trip transport energy as the sum of horizontal/cruise and additional climb energy, and supply no transport hover power; service affects time only under that rule."
+      },
+      "gravity_m_s2": {
+        "value": 9.80665,
+        "status": "standard physical constant convention; not stated numerically in attachments"
+      },
+      "horizontal_and_climb_energy": {
+        "status": "physical completion of terms named by DOCX; explicit sub-formulas absent from P0053-P0055",
+        "formula": "E_horizontal=E_use*d/L(q); E_climb=(empty_mass+load)*g*positive_climb/(eta*3.6e6)"
+      },
+      "relay_setup_waiting_energy": {
+        "status": "conservative explicit convention",
+        "reason": "Charge hover plus communication power during all post-arrival waiting and setup as well as active service; off-service communication timing is not explicitly separated by source."
+      },
+      "ground_preparation_energy": {
+        "status": "no battery flight-energy charge during preparation",
+        "reason": "No ground preparation power is provided; ground time occupies body and energy component, while flight/hover equations apply after launch."
+      }
+    },
+    "energy_convention": "Horizontal energy=usable_kwh*distance/range(load); climb=m*g*h/eta. Explicit model interpretation of DOCX energy terms, not additional official measurements."
+  },
+  "runtime_model": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\runtime\\research_fd\\d_model.py",
+  "exported_resource_labels": "Aircraft IDs use input metadata when supplied; battery/relay-pack labels (A-B01, R-B01) are derived export labels, not attachment-provided serial numbers. Internal resource indices remain zero-based.",
+  "validation_scope": "Independent coverage/inventory/all-pairs interval/deadline arithmetic; declared route and radio engines reused for physics.",
+  "charging_scope": "Parallel charging; no unprovided finite charger inventory introduced.",
+  "stored_metrics": {
+    "trips": 0,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 0.0,
+    "energy_kwh": 0.0,
+    "resource_overlaps": 0,
+    "unserved": 80,
+    "duplicated": 0
+  },
+  "independently_recomputed_metrics": {
+    "trips": 0,
+    "unserved": 80,
+    "duplicated": 0,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 0.0,
+    "energy_kwh": 0
+  },
+  "issues": [
+    {
+      "scope": "transport",
+      "code": "empty_plan",
+      "expected_boxes": 80
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-MED-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-WAT-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-WAT-03",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-WAT-04",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-WAT-05",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-WAT-06",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-WAT-07",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-WAT-08",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-FOD-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-FOD-03",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-HYG-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S001-HYG-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S002-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S002-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S002-WAT-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S002-WAT-03",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S002-WAT-04",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S002-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S002-FOD-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S002-HYG-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S003-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S003-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S003-WAT-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S003-WAT-03",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S003-WAT-04",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S003-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S003-FOD-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S003-HYG-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S004-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S004-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S004-WAT-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S004-WAT-03",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S004-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S004-HYG-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S005-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S005-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S005-WAT-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S005-WAT-03",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S005-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S005-HYG-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S006-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S006-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S006-WAT-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S006-WAT-03",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S006-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S006-HYG-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S007-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S007-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S007-WAT-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S007-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S007-HYG-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S008-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S008-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S008-WAT-02",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S008-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S008-HYG-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S009-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S009-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S009-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S010-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S010-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S010-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S011-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S011-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S011-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S012-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S012-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S012-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S013-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S013-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S013-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S014-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S014-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S014-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S015-MED-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S015-WAT-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "S015-FOD-01",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    }
+  ],
+  "notes": [
+    "Radio recomputation explicitly skipped; cannot certify joint feasibility."
+  ],
+  "relay_sessions": 0,
+  "radio_ray_step_m": 15,
+  "radio_evaluation": null,
+  "numerical_scope": "Finite temporal and terrain-ray samples do not prove continuous-time communication."
+}

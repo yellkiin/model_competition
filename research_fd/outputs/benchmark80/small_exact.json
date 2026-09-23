@@ -1,0 +1,24 @@
+{
+  "weights": [
+    6,
+    5,
+    3,
+    2,
+    2,
+    2
+  ],
+  "capacity": 10,
+  "ffd_trips": 3,
+  "exact_trips": 2,
+  "exact_loads": [
+    10,
+    10
+  ],
+  "solver": {
+    "status": 0,
+    "objective": 2.0,
+    "gap": 0.0,
+    "bound": 2.0,
+    "scope": "restricted candidate pool; not a global VRP bound"
+  }
+}

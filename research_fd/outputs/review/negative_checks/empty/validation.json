@@ -1,0 +1,164 @@
+{
+  "status": "invalid",
+  "transport_valid": false,
+  "relay_valid": true,
+  "radio_valid": false,
+  "joint_valid": false,
+  "input": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\small_s7\\instance.json",
+  "plan": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\outputs\\review\\negative_checks\\empty_plan.json",
+  "metadata": {
+    "source": "SYNTHETIC BENCHMARK; not the competition attachment",
+    "seed": 7,
+    "note": "15/80 and fleet counts/capacities resemble prior report; geometry, energy, times and boxes are artificial."
+  },
+  "runtime_model": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\research_fd\\d_model.py",
+  "validation_scope": "Independent coverage/inventory/all-pairs interval/deadline arithmetic; declared route and radio engines reused for physics.",
+  "charging_scope": "Parallel charging; no unprovided finite charger inventory introduced.",
+  "stored_metrics": {
+    "trips": 8,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 719.0259029537864,
+    "energy_kwh": 5.5676805465355645,
+    "resource_overlaps": 0,
+    "unserved": 0,
+    "duplicated": 0
+  },
+  "independently_recomputed_metrics": {
+    "trips": 0,
+    "unserved": 12,
+    "duplicated": 0,
+    "hard_violations": 0,
+    "hard_lateness_s": 0.0,
+    "weighted_tardiness_s": 0.0,
+    "makespan_s": 0.0,
+    "energy_kwh": 0
+  },
+  "issues": [
+    {
+      "scope": "transport",
+      "code": "empty_plan",
+      "expected_boxes": 12
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B001",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B002",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B003",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B004",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B005",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B006",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B007",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B008",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B009",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B010",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B011",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "box_coverage_not_exactly_one",
+      "box": "B012",
+      "route_occurrences": 0,
+      "delivery_occurrences": 0
+    },
+    {
+      "scope": "transport",
+      "code": "stored_value_differs_from_recomputed",
+      "field": "metrics.trips",
+      "stored": 8,
+      "expected": 0
+    },
+    {
+      "scope": "transport",
+      "code": "stored_value_differs_from_recomputed",
+      "field": "metrics.unserved",
+      "stored": 0,
+      "expected": 12
+    },
+    {
+      "scope": "transport",
+      "code": "stored_value_differs_from_recomputed",
+      "field": "metrics.makespan_s",
+      "stored": 719.0259029537864,
+      "expected": 0.0
+    },
+    {
+      "scope": "transport",
+      "code": "stored_value_differs_from_recomputed",
+      "field": "metrics.energy_kwh",
+      "stored": 5.5676805465355645,
+      "expected": 0
+    }
+  ],
+  "notes": [
+    "Radio recomputation explicitly skipped; cannot certify joint feasibility."
+  ],
+  "relay_sessions": 0,
+  "radio_ray_step_m": 50.0,
+  "radio_evaluation": null,
+  "numerical_scope": "Finite temporal and terrain-ray samples do not prove continuous-time communication."
+}

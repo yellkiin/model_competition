@@ -1,0 +1,12 @@
+{
+  "scenario_assumptions": {
+    "seed": 7,
+    "count": 200,
+    "lognormal_sigma": 0.08
+  },
+  "mean_tardiness_s": 844.7990102234236,
+  "cvar90_tardiness_s": 2854.2969072278943,
+  "mean_makespan_s": 3465.565637172038,
+  "fraction_with_deadline_or_energy_violation": 0.0,
+  "note": "synthetic perturbations and fixed resource order; NOT estimated weather probabilities; radio not replayed"
+}

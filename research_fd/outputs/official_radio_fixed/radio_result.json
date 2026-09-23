@@ -1,0 +1,19 @@
+{
+  "requirements": 259,
+  "unreachable": [],
+  "sites": 88,
+  "sessions": 6000,
+  "pool_truncated": true,
+  "options": 27,
+  "stages": [
+    {
+      "stage": "tardiness",
+      "status": 2,
+      "value": null,
+      "gap": null
+    }
+  ],
+  "sample_step_s": 60.0,
+  "schedule_step_s": 60.0,
+  "status": "no_incumbent"
+}

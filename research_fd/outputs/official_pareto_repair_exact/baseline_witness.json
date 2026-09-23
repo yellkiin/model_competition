@@ -1,0 +1,126 @@
+{
+  "baseline_is_feasible_discrete_model_witness": true,
+  "errors": [],
+  "original_and_repair_route_pools_identical": true,
+  "cap_s": 8310.16907732916,
+  "weighted_tardiness_s": 0.0,
+  "resource_peaks": {
+    "C_aircraft": 2,
+    "C_battery": 4,
+    "A_aircraft": 4,
+    "A_battery": 6,
+    "B_aircraft": 2,
+    "B_battery": 2
+  },
+  "selected_route_start_columns": [
+    {
+      "route_id": 0,
+      "start_s": 0.0
+    },
+    {
+      "route_id": 1,
+      "start_s": 120.0
+    },
+    {
+      "route_id": 2,
+      "start_s": 1440.0
+    },
+    {
+      "route_id": 3,
+      "start_s": 1260.0
+    },
+    {
+      "route_id": 4,
+      "start_s": 0.0
+    },
+    {
+      "route_id": 5,
+      "start_s": 2100.0
+    },
+    {
+      "route_id": 6,
+      "start_s": 0.0
+    },
+    {
+      "route_id": 7,
+      "start_s": 60.0
+    },
+    {
+      "route_id": 8,
+      "start_s": 3660.0
+    },
+    {
+      "route_id": 9,
+      "start_s": 4680.0
+    },
+    {
+      "route_id": 10,
+      "start_s": 2460.0
+    },
+    {
+      "route_id": 11,
+      "start_s": 5700.0
+    },
+    {
+      "route_id": 12,
+      "start_s": 2280.0
+    },
+    {
+      "route_id": 13,
+      "start_s": 6360.0
+    },
+    {
+      "route_id": 14,
+      "start_s": 6540.0
+    },
+    {
+      "route_id": 15,
+      "start_s": 0.0
+    },
+    {
+      "route_id": 16,
+      "start_s": 2160.0
+    },
+    {
+      "route_id": 17,
+      "start_s": 0.0
+    },
+    {
+      "route_id": 18,
+      "start_s": 2520.0
+    },
+    {
+      "route_id": 19,
+      "start_s": 4920.0
+    },
+    {
+      "route_id": 20,
+      "start_s": 2880.0
+    },
+    {
+      "route_id": 21,
+      "start_s": 4080.0
+    },
+    {
+      "route_id": 22,
+      "start_s": 1320.0
+    },
+    {
+      "route_id": 23,
+      "start_s": 6240.0
+    },
+    {
+      "route_id": 24,
+      "start_s": 4980.0
+    },
+    {
+      "route_id": 25,
+      "start_s": 7080.0
+    },
+    {
+      "route_id": 26,
+      "start_s": 3420.0
+    }
+  ],
+  "conclusion": "This is a directly checked feasible witness, not an incumbent returned by an unexecuted solver."
+}

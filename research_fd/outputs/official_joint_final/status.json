@@ -1,0 +1,14 @@
+{
+  "status": "not_computed_no_feasible_joint_plan",
+  "selected_joint_plan": null,
+  "input": "research_fd/outputs/d_official.json",
+  "actual_attempts": 10,
+  "ledger": "research_fd/outputs/official_radio_runs.json",
+  "reason": "No attempted official finite candidate/window model returned a joint incumbent. Time limits, candidate restrictions and external termination do not prove the original continuous problem infeasible.",
+  "relay_sessions": null,
+  "joint_makespan_s": null,
+  "joint_energy_kwh": null,
+  "joint_radio_precision_results": null,
+  "transport_baseline_precision": "research_fd/outputs/official_radio_baseline_no_relay_precision/summary.json",
+  "scope": "The precision file is a no-relay transportation negative control, not a feasible joint plan."
+}

@@ -1,0 +1,37 @@
+{
+  "backend": "scipy-highs",
+  "routes": 600,
+  "options": 44642,
+  "step_s": 60.0,
+  "cap_s": 12465.253615993739,
+  "options_before_exact_quality_pruning": 59783,
+  "options_pruned": 15141,
+  "repair": "Exact prescreen of individually over-ceiling options; all tardiness terms nonnegative and option variables binary.",
+  "weighted_tardiness_ceiling_s": 0.0,
+  "quality_tolerance_s": 1e-05,
+  "energy_lock_tolerance_kwh": 1e-05,
+  "stage_order": [
+    "energy",
+    "makespan"
+  ],
+  "time_limit_per_stage_s": 120.0,
+  "scope": "Fixed candidate pool, zero-anchored discrete starts, cap, hard deadlines and shared resources.",
+  "stages": [
+    {
+      "stage": "energy",
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "objective": null,
+      "gap": null,
+      "bound": null,
+      "has_incumbent": false,
+      "elapsed_s": 124.08534519997193
+    }
+  ],
+  "all_stages_optimal": false,
+  "elapsed_s": 127.8689057000447,
+  "status": "no_incumbent",
+  "ratio": 1.5,
+  "baseline_starts_outside_grid": 0,
+  "pool_file": "route_pool.json"
+}
