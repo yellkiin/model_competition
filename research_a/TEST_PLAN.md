@@ -20,12 +20,13 @@
 
 RR只是一份确定性工作量分块＋轮转分核基线，消耗1次评估。full主实验每作业至多32次；full相对RR提升属于**追加优化收益**，不是同预算算法优越性。公平预算结论来自E3的common/full/消融对照。所有权重只改变候选评分，不改变官方config。
 
-```sh
-bash research_a/setup_wsl.sh
-source research_a/.venv/bin/activate
+```bat
+git switch main
+git pull --ff-only origin main
 git lfs install --local
-git lfs pull --include="题目/A题/**" --exclude=""
-python -m research_a.run prepare --out research_a/runs/cases.json
+git lfs pull
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a\setup_windows.ps1 -SkipPull
+D:\python\python.exe -m research_a.run prepare --out research_a\runs\cases.json
 ```
 
 如果已经用脚本生成 `cases.json`，无需重复prepare。数据、算法、Python或评估器改变后使用新输出根目录；原样中断可用 `--resume`。
@@ -36,7 +37,7 @@ python -m research_a.run prepare --out research_a/runs/cases.json
 
 执行数学检验：
 
-```sh
+```bat
 python -m unittest -v research_a.test_theory
 ```
 
@@ -48,8 +49,8 @@ python -m unittest -v research_a.test_theory
 
 ## E2. 100图×三问×五核数主实验
 
-```sh
-bash research_a/experiments.sh main
+```bat
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a\experiments.ps1 main
 ```
 
 每问n=1…5，RR与full，seed0、full预算32。输出每问5行核心主结果，并保留每图所有方案。默认最多49,600次原CLI调用：100单核＋100×3×5×(1+32)；实际重复候选可能提前耗尽，按真实调用数报告。
@@ -70,8 +71,8 @@ bash research_a/experiments.sh main
 
 ## E3. 公平预算消融、种子稳定性和预算收敛
 
-```sh
-bash research_a/experiments.sh dev
+```bat
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a\experiments.ps1 dev
 ```
 
 20开发图、n=2/4、seeds=0/1/2、每个方法24次原评估。Q1/Q2比较common、full、no_memory；Q3再加入no_cache。common、full、两个消融保留相同的候选操作集合，只改变评分项；轨迹因选择不同而分叉是算法预期，不强称每次候选完全相同。最多28,820次调用。
@@ -85,9 +86,9 @@ bash research_a/experiments.sh dev
 
 可选同预算局部搜索对照：
 
-```sh
-python -m research_a.run run --manifest research_a/runs/cases.json --split dev --questions 1 2 3 --cores 2 4 --variants full portfolio --seeds 0 1 2 --budget 32 --out research_a/runs/local_ablation --workers 2
-python -m research_a.report analyze --source research_a/runs/local_ablation --out research_a/runs/local_ablation_report
+```bat
+D:\python\python.exe -m research_a.run run --manifest research_a/runs/cases.json --split dev --questions 1 2 3 --cores 2 4 --variants full portfolio --seeds 0 1 2 --budget 32 --out research_a/runs/local_ablation --workers 2
+D:\python\python.exe -m research_a.report analyze --source research_a/runs/local_ablation --out research_a/runs/local_ablation_report
 ```
 
 `paired.csv`给同图配对差值和图级重采样区间；区间是图集敏感性，不是对新图总体的保证。种子波动大时，增加种子并比较均值/差例，不挑最佳seed。
@@ -96,8 +97,8 @@ python -m research_a.report analyze --source research_a/runs/local_ablation --ou
 
 ## E4. 切分粒度：两个场景的含义不能混淆
 
-```sh
-bash research_a/experiments.sh granularity
+```bat
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a\experiments.ps1 granularity
 ```
 
 20开发图、三问、n=2/4/5、块数约为0.25n、n、2n、4n、8n，其他规则固定为同一拓扑序、等工作量块和轮转分核。实际块数、makespan、分区新增字节、Spill、Pipe占用与内存峰值记录于 `granularity.json`。
@@ -112,11 +113,15 @@ Q1重点看U形关系：粗块的并行损失与细块的等待/DDR成本。Q2/Q
 
 从开发集有Spill的图定位机制；正式分数仍保留所有图。对所有开发图做统一权重扫描，避免只挑能获益的图拟合：
 
-```sh
-for w in 0 0.05 0.15 0.5 1; do
-  python -m research_a.run run --manifest research_a/runs/cases.json --split dev --questions 1 2 3 --cores 2 4 --variants full --seeds 0 1 2 --budget 24 --memory-weight "$w" --workers 2 --out "research_a/runs/memory_w$w"
-  python -m research_a.report analyze --source "research_a/runs/memory_w$w" --out "research_a/runs/memory_w${w}_report"
-done
+```powershell
+foreach ($w in 0, 0.05, 0.15, 0.5, 1) {
+    & "D:\python\python.exe" -m research_a.run run `
+        --manifest "research_a\runs\cases.json" --split dev --questions 1 2 3 `
+        --cores 2 4 --variants full --seeds 0 1 2 --budget 24 `
+        --memory-weight $w --workers 2 --out "research_a\runs\memory_w$w"
+    & "D:\python\python.exe" -m research_a.report analyze `
+        --source "research_a\runs\memory_w$w" --out "research_a\runs\memory_w$($w)_report"
+}
 ```
 
 记录λ、代理excess、真实Spill、真实峰值、内存复用依赖数、时间、搜索开销。代理峰值不是真实物理上界，不强求两者完全相等。峰值贴近容量并不等于发生Spill，必须看真实Spill字段。
@@ -132,8 +137,8 @@ done
 
 ## E6. 第三问专项：3×3同方案、并发填充与收益分解
 
-```sh
-bash research_a/experiments.sh cross
+```bat
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a\experiments.ps1 cross
 ```
 
 对每图/核数，从P1、P2、P3三个来源各取一个已选方案，用三个原评估器回放。保持原方案JSON中的ID和顺序，不在回放时重新优化或重新编号。对角线复用原成绩，另外6个格子真实评估；默认最多3,000次额外调用。
@@ -153,8 +158,8 @@ bash research_a/experiments.sh cross
 
 跨问候选再优化可直接使用已实现的修正接口：将Q3的父方案替换不是手工覆盖原文件，而是使用下面脚本级调用，输出到新目录：
 
-```sh
-python - <<'PY'
+```powershell
+@'
 from pathlib import Path
 from research_a.model import Graph, Plan, read_json, settings
 from research_a.run import attachment
@@ -172,18 +177,18 @@ if out.exists():
 evaluator = Official(a / 'code', a / 'data/config.txt', graph_path, out)
 search(graph, settings(a / 'data/config.txt'), lambda p: evaluator.evaluate(p, 3),
        out, question=3, cores=4, variant='cache', budget=96, seed=0, initial=plan)
-PY
+'@ | & "D:\python\python.exe" -
 ```
 
 这96次是明确的追加预算。论文可另列“跨场景热启动”，但不可替换原32次主表。该示例路径可改为其他图/核数，`cores`必须与父方案一致。
 
 ## E7. 可控机制图与小图枚举：找出为什么有效/无效
 
-```sh
-python -m research_a.fixtures --out research_a/runs/mechanism_data
-python -m research_a.run prepare --data research_a/runs/mechanism_data --expected 8 --dev-count 2 --out research_a/runs/mechanism_cases.json
-python -m research_a.run run --manifest research_a/runs/mechanism_cases.json --questions 1 2 3 --cores 1 2 4 --variants rr full --budget 16 --workers 2 --out research_a/runs/mechanisms
-python -m research_a.report analyze --source research_a/runs/mechanisms --out research_a/runs/mechanisms_report
+```bat
+D:\python\python.exe -m research_a.fixtures --out research_a/runs/mechanism_data
+D:\python\python.exe -m research_a.run prepare --data research_a/runs/mechanism_data --expected 8 --dev-count 2 --out research_a/runs/mechanism_cases.json
+D:\python\python.exe -m research_a.run run --manifest research_a/runs/mechanism_cases.json --questions 1 2 3 --cores 1 2 4 --variants rr full --budget 16 --workers 2 --out research_a/runs/mechanisms
+D:\python\python.exe -m research_a.report analyze --source research_a/runs/mechanisms --out research_a/runs/mechanisms_report
 ```
 
 |生成图|控制机制|预期用途，不是承诺的正式分数|不符时的修正|
@@ -199,19 +204,21 @@ python -m research_a.report analyze --source research_a/runs/mechanisms --out re
 
 构造图不代表正式图分布；burst/stagger改变了依赖与计算，所以不能仅用两图总时间差估计“纯缓存效应”，应在每图内部做Q2/Q3同方案对照。完整回放可用 `run cross --source research_a/runs/mechanisms --cores 1 2 4 ...`。
 
-```sh
-for q in 1 2 3; do
-  python -m research_a.run oracle --graph research_a/runs/mechanism_data/case_008.json --question "$q" --cores 2 --out "research_a/runs/oracle_q$q"
-done
+```powershell
+foreach ($q in 1, 2, 3) {
+    & "D:\python\python.exe" -m research_a.run oracle `
+        --graph "research_a\runs\mechanism_data\case_008.json" `
+        --question $q --cores 2 --out "research_a\runs\oracle_q$q"
+}
 ```
 
 每问54个固定拓扑序连续划分/分核候选；若任意调用失败，只称已观察最优。启发式可生成其他拓扑序，若比该枚举值更好并不矛盾。大于枚举值提示遗漏，但不是相对于全局最优的精确差距。
 
 ## E8. 统一诊断→修正→复核，不覆盖旧成绩
 
-```sh
-python -m research_a.report analyze --source research_a/runs/dev --out research_a/runs/dev_report
-python -m research_a.report repair --source research_a/runs/dev --out research_a/runs/dev_repairs --limit 12 --budget 96 --workers 2
+```bat
+D:\python\python.exe -m research_a.report analyze --source research_a/runs/dev --out research_a/runs/dev_report
+D:\python\python.exe -m research_a.report repair --source research_a/runs/dev --out research_a/runs/dev_repairs --limit 12 --budget 96 --workers 2
 ```
 
 默认只处理开发集full的12个最弱作业，诊断规则按以下顺序选择一种首要修正。阈值是可解释的工程启发，不是统计显著性标准；多个病因可以同时存在，先验证首个，再试其他profile。
@@ -230,8 +237,8 @@ python -m research_a.report repair --source research_a/runs/dev --out research_a
 
 显式指定方向：
 
-```sh
-python -m research_a.report repair --source research_a/runs/dev --out research_a/runs/repair_locality --profile locality --limit 12 --budget 96 --workers 2
+```bat
+D:\python\python.exe -m research_a.report repair --source research_a/runs/dev --out research_a/runs/repair_locality --profile locality --limit 12 --budget 96 --workers 2
 ```
 
 `repair_summary.csv`报告旧makespan、新makespan、比值、实际追加调用、搜索秒数及失败。每个修正先重评原best_plan，代码保存父目录和原因。若重评失败，不能引用“保留父方案所以一定不差”的论断。
@@ -240,9 +247,9 @@ python -m research_a.report repair --source research_a/runs/dev --out research_a
 
 在开发实验选择一个统一配置后，使用新目录重跑全部100图：
 
-```sh
-MAIN_VARIANT=locality OUT_ROOT=research_a/runs_locality bash research_a/experiments.sh main
-MAIN_VARIANT=locality OUT_ROOT=research_a/runs_locality bash research_a/experiments.sh cross
+```bat
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a\experiments.ps1 main -MainVariant locality -OutRoot "research_a\runs_locality"
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a\experiments.ps1 cross -MainVariant locality -OutRoot "research_a\runs_locality"
 ```
 
 不将逐图不同profile、不同预算事后取最好的集合称为一个公平32次算法；可另外命名为明确预算的组合策略，并对所有图执行同一选择规则。
@@ -255,6 +262,6 @@ MAIN_VARIANT=locality OUT_ROOT=research_a/runs_locality bash research_a/experime
 
 ## 10. 资源与本环境完成情况
 
-主程序和原评估器使用CPU；不需要CUDA/RTX3060。WSL中Python>=3.10，标准库venv即可；`setup_wsl.sh`创建环境，`--workers`调CPU并行，`--cores`是仿真硬件核数。先控制workers=1或2，过度并发会增加内存峰值而不一定更快；本计划不对未知CPU/内存配置给耗时估计。
+主程序和原评估器使用CPU；不需要CUDA/RTX3060。当前 Windows 机器直接使用 `D:\\python\\python.exe`（Python 3.12.5）；Conda 26.3.2 已安装但无需激活环境。`setup_windows.ps1`负责核对 Python/Git/Git LFS，`experiments.ps1 -Workers`控制 Windows 上的 CPU 并行，`--cores`仍是仿真硬件核数。先控制 Workers=1 或 2，过度并发会增加内存峰值而不一定更快；本计划不对未知 CPU/内存配置给耗时估计。
 
 当前容器已跑26项数学/算法/统计检验，1项原评估器三问集成检验因缺源码实体被明确跳过。正式100图未运行。测试记录保存在 `results/local_tests.txt`。本地原程序集成项和真实实验会提供本轮尚缺的数值证据。
