@@ -3,16 +3,15 @@
 __pycache__/
 *.extracting
 *.reassembling
-
-# Office lock files and OS metadata
+# Office locks and OS metadata
 ~$*
 .DS_Store
 Thumbs.db
-
-# This >2 GB original is reconstructed from the tracked Git LFS byte parts.
-/题目/E题/E题数据/附件2-数据集特征文件/unaligned_50.pkl
-
-# Compressed inputs must not be committed accidentally.
+# Removed topic stays local if restored by a user.
+/题目/E题/
+# Original archives are local inputs, not generated experiment results.
+/A题.zip
+/*附件.zip
 /题目/**/*.zip
 /题目/**/*.xz
 /题目/**/*.7z
