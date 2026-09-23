@@ -1,0 +1,32 @@
+test_all_three_questions_against_original_builder (research_a.test_theory.OfficialFormulaTests.test_all_three_questions_against_original_builder) ... skipped 'Original evaluator unavailable in this container; run in the repository after checkout'
+test_budget_prefix_and_incumbent_monotonicity (research_a.test_theory.TheoryTests.test_budget_prefix_and_incumbent_monotonicity) ... ok
+test_byte_rate_and_count_rate_differ (research_a.test_theory.TheoryTests.test_byte_rate_and_count_rate_differ) ... ok
+test_cache_decomposition_is_per_graph_identity (research_a.test_theory.TheoryTests.test_cache_decomposition_is_per_graph_identity) ... ok
+test_compute_bound_independent_same_pipe (research_a.test_theory.TheoryTests.test_compute_bound_independent_same_pipe) ... ok
+test_compute_bound_on_chain (research_a.test_theory.TheoryTests.test_compute_bound_on_chain) ... ok
+test_consumers_on_one_remote_core_deduplicate (research_a.test_theory.TheoryTests.test_consumers_on_one_remote_core_deduplicate) ... ok
+test_contiguous_plans_and_mutations_are_topological (research_a.test_theory.TheoryTests.test_contiguous_plans_and_mutations_are_topological) ... ok
+test_copy_contracted_dependency (research_a.test_theory.TheoryTests.test_copy_contracted_dependency) ... ok
+test_diagnosis_has_executable_profile (research_a.test_theory.TheoryTests.test_diagnosis_has_executable_profile) ... ok
+test_direct_edges_differ_by_question (research_a.test_theory.TheoryTests.test_direct_edges_differ_by_question) ... ok
+test_estimates_exist_for_all_questions_and_profiles (research_a.test_theory.TheoryTests.test_estimates_exist_for_all_questions_and_profiles) ... ok
+test_fifo_completion_not_issue_insertion (research_a.test_theory.TheoryTests.test_fifo_completion_not_issue_insertion) ... ok
+test_fifo_hit_does_not_refresh_order (research_a.test_theory.TheoryTests.test_fifo_hit_does_not_refresh_order) ... ok
+test_fifo_not_monotone_in_capacity (research_a.test_theory.TheoryTests.test_fifo_not_monotone_in_capacity) ... ok
+test_hit_can_be_reinserted_at_completion (research_a.test_theory.TheoryTests.test_hit_can_be_reinserted_at_completion) ... ok
+test_metrics_ddr_is_not_scheduled_in_q3 (research_a.test_theory.TheoryTests.test_metrics_ddr_is_not_scheduled_in_q3) ... ok
+test_missing_jobs_do_not_produce_full_average (research_a.test_theory.TheoryTests.test_missing_jobs_do_not_produce_full_average) ... ok
+test_occupancy_is_interval_union (research_a.test_theory.TheoryTests.test_occupancy_is_interval_union) ... ok
+test_official_whitespace_configuration (research_a.test_theory.TheoryTests.test_official_whitespace_configuration) ... ok
+test_original_io_counted (research_a.test_theory.TheoryTests.test_original_io_counted) ... ok
+test_plan_round_trip (research_a.test_theory.TheoryTests.test_plan_round_trip) ... ok
+test_q1_single_export_q2_per_pair_export (research_a.test_theory.TheoryTests.test_q1_single_export_q2_per_pair_export) ... ok
+test_q2_q3_task_copy_identity (research_a.test_theory.TheoryTests.test_q2_q3_task_copy_identity) ... ok
+test_same_core_is_not_free_in_q1 (research_a.test_theory.TheoryTests.test_same_core_is_not_free_in_q1) ... ok
+test_seed_average_before_graph_average (research_a.test_theory.TheoryTests.test_seed_average_before_graph_average) ... ok
+test_split_is_not_memory_reset_in_q2 (research_a.test_theory.TheoryTests.test_split_is_not_memory_reset_in_q2) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.037s
+
+OK (skipped=1)
