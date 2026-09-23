@@ -197,4 +197,4 @@ $$G_{joint}=G_{cache|P2}\,G_{retune}.$$
 
 [5] `code/schedule_step2.py`：Spill计数；`schedule_step3.py::_op_duration / PIPE_SLOTS`：最短周期、COPY取整和单Pipe槽；`singlecore_evaluate.py`：统一单核分母。
 
-[6] [Python venv 官方说明](https://docs.python.org/3/library/venv.html)、[multiprocessing 官方说明](https://docs.python.org/3/library/multiprocessing.html)、[Microsoft WSL 环境建议](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)。用于CPU环境与Linux文件系统部署建议。
+[6] [Python Windows 官方说明](https://docs.python.org/3/using/windows.html)、[multiprocessing 官方说明](https://docs.python.org/3/library/multiprocessing.html)、[Git LFS 官方说明](https://git-lfs.com/)。用于 Windows 原生 CPU 环境、子进程并发与大文件拉取说明；本项目不依赖 CUDA。
