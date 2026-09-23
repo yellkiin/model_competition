@@ -1,0 +1,54 @@
+{
+  "no_radio": {
+    "status": "OPTIMAL",
+    "window_s": 1200,
+    "slots_per_aircraft": 1,
+    "allow_soft_lateness": true,
+    "diagnostic_relax_resources": false,
+    "relay_task_slots": 2,
+    "radio_blocks": 0,
+    "variables": 87,
+    "constraints": 123,
+    "solve_s": 0.022707700030878186,
+    "objective_bound_s": 7760.0,
+    "joint_makespan_s": 7759.629278762139,
+    "transport_energy_kwh": 69.49366746718746,
+    "relay_energy_kwh": 0.6608217655097162,
+    "relay_trips": 2,
+    "zero_late": true
+  },
+  "relaxed_radio": {
+    "status": "DIAGNOSTIC_RELAXED_FEASIBLE",
+    "window_s": 1200,
+    "slots_per_aircraft": 8,
+    "allow_soft_lateness": true,
+    "diagnostic_relax_resources": true,
+    "relay_task_slots": 16,
+    "radio_blocks": 110,
+    "variables": 2267,
+    "constraints": 7734,
+    "solve_s": 7.064922299992759,
+    "objective_bound_s": 7760.0,
+    "relay_trips": 5
+  },
+  "fixed_baseline_spatial_lower_bound_time_bins": {
+    "1": 108,
+    "2": 32,
+    "3": 1
+  },
+  "more_than_two_sites_at_fixed_baseline": [
+    {
+      "time_s": 2640,
+      "active_blocks": 3,
+      "minimum_simultaneous_sites": 3
+    }
+  ],
+  "scope": "Fixed Q2 start times, 30-s bins, 13 sites; spatial lower bound ignores relay travel and duration. Retiming may avoid conflicts.",
+  "relative_cache": {
+    "relative_samples": 690,
+    "direct_ray_cache": 313,
+    "access_ray_cache": 1508
+  },
+  "unreachable": [],
+  "individually_impossible_blocks_under_1200s_hard_window": []
+}

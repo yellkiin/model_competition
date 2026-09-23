@@ -1,0 +1,5 @@
+method,status,global_optimality_proven,trips,hard_violations,hard_lateness_s,weighted_tardiness_s,makespan_s,energy_kwh,resource_overlaps,unserved,duplicated
+baseline,feasible_zero_lateness,False,26,0,0.0,0.0,8237.190524525828,71.24500745014467,0,0,0
+dag_compressed,feasible_zero_lateness,False,26,0,0.0,0.0,8145.55112506437,71.24500745014467,0,0,0
+candidate_energy,feasible_zero_lateness,False,26,0,0.0,0.0,8789.208510780698,68.63937880942296,0,0,0
+candidate_fast,feasible_zero_lateness,False,26,0,0.0,0.0,7757.804475184881,69.49366746718746,0,0,0
