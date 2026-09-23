@@ -2,35 +2,40 @@ name: A construction mathematics
 on:
   push:
     branches: [research/a-construct-certify]
+    paths: ['research_a_next/**/*.py', '.github/workflows/a-construct-check.yml']
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  requirements-and-math:
-    runs-on: ubuntu-latest
+  mathematical-and-official-synthetic:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 8
+    env:
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: 'utf-8'
     steps:
       - uses: actions/checkout@v4
         with:
           lfs: false
-      - name: Read original A requirements
-        shell: python
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.5'
+      - name: Mathematics and unchanged official evaluator on synthetic bipartite graphs
+        run: python -m unittest -v research_a_next.test_math
+      - name: Parse and exercise Windows environment script when present
+        if: runner.os == 'Windows'
+        shell: pwsh
         run: |
-          from pathlib import Path
-          from zipfile import ZipFile
-          import xml.etree.ElementTree as E
-          p = next(Path('题目/A题').glob('*.docx'))
-          with ZipFile(p) as z:
-              root = E.fromstring(z.read('word/document.xml'))
-          w = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
-          m = '{http://schemas.openxmlformats.org/officeDocument/2006/math}'
-          for i, para in enumerate(root.iter(w+'p'), 1):
-              text = ''.join(n.text or '' for n in para.iter() if n.tag in (w+'t', m+'t'))
-              if text.strip():
-                  print(f'P{i:04d}: {text}')
-      - name: Mathematical and official synthetic checks when implementation exists
-        shell: bash
-        run: |
-          if [ -f research_a_next/test_math.py ]; then
-            python -m unittest -v research_a_next.test_math
-          fi
+          if (Test-Path research_a_next/configure_windows.ps1) {
+            $python = (Get-Command python).Source
+            & ./research_a_next/configure_windows.ps1 -Python $python
+          }
+          Get-ChildItem research_a_next/*.ps1 | ForEach-Object {
+            $tokens=$null; $errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$tokens,[ref]$errors) | Out-Null
+            if ($errors.Count) { throw $errors }
+          }
