@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.venv/
+runs/
+*.mat
+*.npz
+*.edf
+*.bdf
+results/pytest.xml

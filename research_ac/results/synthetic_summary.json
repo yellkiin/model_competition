@@ -1,0 +1,428 @@
+{
+  "data_kind": "synthetic_only",
+  "seed_set": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sklearn": "1.8.0"
+  },
+  "source_sha256": {
+    "a_batch.py": "d41813c4658aee7354dfa161529858250a7b28308a77deade62107ab64e4e2ba",
+    "a_search.py": "af2514662cd95051993cae2cf6e740340cceaa841424587e04982c88bfe8daf0",
+    "c_deconvolve.py": "e27ae165c90ecaf6762270691be2332bd0084254679b93e61126191dda5d9925",
+    "c_models.py": "6ec14255ed138ebeda8ca89fe4cbf7d0f0c6e4bbf0759bc04eef5b39ab228ca2",
+    "c_pipeline.py": "661f8e508a755e244bace3e98535a96f96f1547f3e658d593e568d6c003d0ad1",
+    "experiments.py": "249c8535b461fa527e9eea949f5c9d5f2f6a2b4e1dfe5ca433eda1dbcfa2abe0",
+    "test_ac.py": "c8384f17b632ad3271b709051385e9c80f32dbaf840ad95ec1259c3739fc4f4e"
+  },
+  "A": {
+    "data_kind": "synthetic_structural_tests_not_official_simulation",
+    "checked_plans": 3600,
+    "fanout_same_remote_task_proxy_bytes": 2048.0,
+    "fanout_three_remote_tasks_proxy_bytes": 4096.0,
+    "naive_per_edge_read_write_bytes": 6144,
+    "fifo_trace": [
+      "A",
+      "B",
+      "A",
+      "C",
+      "A"
+    ],
+    "fifo_hits": 1,
+    "lru_hits": 2,
+    "warning": "Coverage/quotient/core-order tests do NOT establish Step3/Pipe/COPY execution validity"
+  },
+  "overlap": [
+    {
+      "seed": 0,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5576060131297806,
+      "deconvolved_false_difference_rms": 0.0384126641418941,
+      "naive_stimulus_rmse": 0.5137418324031594,
+      "deconvolved_stimulus_rmse": 0.02632569443734856,
+      "heldout_continuous_mse": 0.04021049961567125
+    },
+    {
+      "seed": 1,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5795243046674242,
+      "deconvolved_false_difference_rms": 0.03933825433582769,
+      "naive_stimulus_rmse": 0.5258152087223814,
+      "deconvolved_stimulus_rmse": 0.027292938954165496,
+      "heldout_continuous_mse": 0.04047491022854729
+    },
+    {
+      "seed": 2,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5330338257354775,
+      "deconvolved_false_difference_rms": 0.03682888534782374,
+      "naive_stimulus_rmse": 0.5089211396941714,
+      "deconvolved_stimulus_rmse": 0.025508574012034886,
+      "heldout_continuous_mse": 0.040288980183995036
+    },
+    {
+      "seed": 3,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5710527639930032,
+      "deconvolved_false_difference_rms": 0.037996923463728655,
+      "naive_stimulus_rmse": 0.5212897614967708,
+      "deconvolved_stimulus_rmse": 0.028619352176989715,
+      "heldout_continuous_mse": 0.04093354583672962
+    },
+    {
+      "seed": 4,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5617308163783467,
+      "deconvolved_false_difference_rms": 0.037990345705809975,
+      "naive_stimulus_rmse": 0.5194489601829062,
+      "deconvolved_stimulus_rmse": 0.026326266136453887,
+      "heldout_continuous_mse": 0.04062215300477336
+    },
+    {
+      "seed": 5,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5574718635829747,
+      "deconvolved_false_difference_rms": 0.03927337393754464,
+      "naive_stimulus_rmse": 0.5216213931752145,
+      "deconvolved_stimulus_rmse": 0.026998625802166908,
+      "heldout_continuous_mse": 0.04041647081519107
+    },
+    {
+      "seed": 6,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5617049345098286,
+      "deconvolved_false_difference_rms": 0.03814956730201234,
+      "naive_stimulus_rmse": 0.5145699703005859,
+      "deconvolved_stimulus_rmse": 0.027476839865631156,
+      "heldout_continuous_mse": 0.03993933630205104
+    },
+    {
+      "seed": 7,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5526441102931757,
+      "deconvolved_false_difference_rms": 0.03811175085928021,
+      "naive_stimulus_rmse": 0.5158527601146565,
+      "deconvolved_stimulus_rmse": 0.026975716373662438,
+      "heldout_continuous_mse": 0.04082667827097039
+    },
+    {
+      "seed": 8,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5565074271676086,
+      "deconvolved_false_difference_rms": 0.03707991840389388,
+      "naive_stimulus_rmse": 0.5151881345529383,
+      "deconvolved_stimulus_rmse": 0.027122337216692487,
+      "heldout_continuous_mse": 0.040705522049817755
+    },
+    {
+      "seed": 9,
+      "true_stimulus_difference_rms": 0.0,
+      "naive_false_difference_rms": 0.5660907941736888,
+      "deconvolved_false_difference_rms": 0.04025425998681383,
+      "naive_stimulus_rmse": 0.5214224553017248,
+      "deconvolved_stimulus_rmse": 0.028063926553525652,
+      "heldout_continuous_mse": 0.04085304983485937
+    }
+  ],
+  "rank": [
+    {
+      "seed": 0,
+      "none": {
+        "balanced_accuracy": 0.9846938775510203,
+        "reconstruction_mse": 0.36111793320700336
+      },
+      "pca1": {
+        "balanced_accuracy": 0.511204481792717,
+        "reconstruction_mse": 0.1273719179178291
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9846938775510203,
+        "reconstruction_mse": 1.0067905761915907
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9897959183673469,
+        "reconstruction_mse": 1.1196540372034653
+      }
+    },
+    {
+      "seed": 1,
+      "none": {
+        "balanced_accuracy": 0.9842595404393157,
+        "reconstruction_mse": 0.36152237537438897
+      },
+      "pca1": {
+        "balanced_accuracy": 0.46214191719809694,
+        "reconstruction_mse": 0.12783233260150573
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9831460674157304,
+        "reconstruction_mse": 1.307562118447297
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9842595404393157,
+        "reconstruction_mse": 0.2434525503581668
+      }
+    },
+    {
+      "seed": 2,
+      "none": {
+        "balanced_accuracy": 0.97,
+        "reconstruction_mse": 0.3616528118442864
+      },
+      "pca1": {
+        "balanced_accuracy": 0.45,
+        "reconstruction_mse": 0.12723621651673428
+      },
+      "dss1": {
+        "balanced_accuracy": 0.975,
+        "reconstruction_mse": 1.340911989978574
+      },
+      "dss2": {
+        "balanced_accuracy": 0.97,
+        "reconstruction_mse": 1.340556931598167
+      }
+    },
+    {
+      "seed": 3,
+      "none": {
+        "balanced_accuracy": 0.9806763285024154,
+        "reconstruction_mse": 0.35910529787316786
+      },
+      "pca1": {
+        "balanced_accuracy": 0.5076489533011272,
+        "reconstruction_mse": 0.1281549005600514
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9806763285024154,
+        "reconstruction_mse": 1.2560033208751507
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9752415458937198,
+        "reconstruction_mse": 1.3623338361847204
+      }
+    },
+    {
+      "seed": 4,
+      "none": {
+        "balanced_accuracy": 0.979681713542188,
+        "reconstruction_mse": 0.3578870553398389
+      },
+      "pca1": {
+        "balanced_accuracy": 0.5198678810929837,
+        "reconstruction_mse": 0.1271620970249107
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9848363527174457,
+        "reconstruction_mse": 1.240286298590716
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9848363527174457,
+        "reconstruction_mse": 0.2402767445617529
+      }
+    },
+    {
+      "seed": 5,
+      "none": {
+        "balanced_accuracy": 0.9845744146316953,
+        "reconstruction_mse": 0.3632423501440921
+      },
+      "pca1": {
+        "balanced_accuracy": 0.4807557029444277,
+        "reconstruction_mse": 0.12842118550581474
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9852778615214551,
+        "reconstruction_mse": 1.2412873345894238
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9852778615214551,
+        "reconstruction_mse": 1.360192200902457
+      }
+    },
+    {
+      "seed": 6,
+      "none": {
+        "balanced_accuracy": 0.9804511278195489,
+        "reconstruction_mse": 0.3573394503774131
+      },
+      "pca1": {
+        "balanced_accuracy": 0.5328320802005012,
+        "reconstruction_mse": 0.12830550583833458
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9852130325814537,
+        "reconstruction_mse": 1.1847976963668698
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9799498746867168,
+        "reconstruction_mse": 0.43741970865044644
+      }
+    },
+    {
+      "seed": 7,
+      "none": {
+        "balanced_accuracy": 0.9811320754716981,
+        "reconstruction_mse": 0.3611201658293524
+      },
+      "pca1": {
+        "balanced_accuracy": 0.4712966680048173,
+        "reconstruction_mse": 0.1289428716820829
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9899638699317543,
+        "reconstruction_mse": 1.085718585603894
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9799277398635087,
+        "reconstruction_mse": 0.2481931603937336
+      }
+    },
+    {
+      "seed": 8,
+      "none": {
+        "balanced_accuracy": 0.9908256880733946,
+        "reconstruction_mse": 0.361266971048978
+      },
+      "pca1": {
+        "balanced_accuracy": 0.44989414255469307,
+        "reconstruction_mse": 0.12825795337602344
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9908256880733946,
+        "reconstruction_mse": 1.1264204732092211
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9908256880733946,
+        "reconstruction_mse": 1.2465537795918586
+      }
+    },
+    {
+      "seed": 9,
+      "none": {
+        "balanced_accuracy": 0.9801980198019802,
+        "reconstruction_mse": 0.35663375154213556
+      },
+      "pca1": {
+        "balanced_accuracy": 0.5097509750975098,
+        "reconstruction_mse": 0.12597805983693536
+      },
+      "dss1": {
+        "balanced_accuracy": 0.9801980198019802,
+        "reconstruction_mse": 1.4006748474293615
+      },
+      "dss2": {
+        "balanced_accuracy": 0.9801980198019802,
+        "reconstruction_mse": 1.5184896349417865
+      }
+    }
+  ],
+  "diffusion": {
+    "null_upper_mass": 0.49534935556231624,
+    "null_lower_mass": 0.49534935556230575,
+    "null_survival": 0.009301288875412705,
+    "mass_error": 3.4638958368304884e-14,
+    "biased_upper_mass": 0.8746068822069596,
+    "fine_upper_mass": 0.877055209064713,
+    "analytic_eventual_upper": 0.8807970779778823,
+    "finite_horizon_caveat": "Mass at t<=4 is not exactly eventual hitting probability; see survival",
+    "biased_survival": 0.001300959777298461,
+    "fine_survival": 0.0013295571502800708
+  },
+  "EI": {
+    "distinct_parameters_same_response_max_error": 1.7819724917877977e-08,
+    "exact_equivalent_parameters": [
+      [
+        0.06,
+        0.1,
+        1.2
+      ],
+      [
+        0.05,
+        0.15,
+        1.75
+      ]
+    ],
+    "scale_invariance_error": 0.0,
+    "synthetic_multistart_solutions": [
+      {
+        "parameters": [
+          0.06086319735540617,
+          0.09768037108820071,
+          1.1797037518165672
+        ],
+        "mse": 6.0562867267703474e-12,
+        "observation_matrix": [
+          [
+            1.0144304173655185,
+            0.811548217006803,
+            0.6086687903012213
+          ],
+          [
+            -0.32090721224550833,
+            -0.11801330598650037,
+            0.18396093156529827
+          ]
+        ],
+        "converged": true,
+        "fixed_tau_i": null
+      },
+      {
+        "parameters": [
+          0.04636936670224619,
+          0.19603217816437482,
+          2.331745015271672
+        ],
+        "mse": 4.886946918587221e-11,
+        "observation_matrix": [
+          [
+            0.772877361233373,
+            0.618314120367819,
+            0.46375961620306483
+          ],
+          [
+            0.2870362883528924,
+            0.44167355105487416,
+            0.747771185451542
+          ]
+        ],
+        "converged": true,
+        "fixed_tau_i": null
+      },
+      {
+        "parameters": [
+          0.049215087793874075,
+          0.15755362143694845,
+          1.840743712914836
+        ],
+        "mse": 2.435959931895201e-10,
+        "observation_matrix": [
+          [
+            0.8203445980358101,
+            0.6563053749324975,
+            0.4922873636176485
+          ],
+          [
+            0.08313798848200428,
+            0.24732161020422785,
+            0.5406561029397553
+          ]
+        ],
+        "converged": true,
+        "fixed_tau_i": null
+      }
+    ],
+    "warning": "Near-perfect fit need not recover a unique E-I parameter vector"
+  }
+}

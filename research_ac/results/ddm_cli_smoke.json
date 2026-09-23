@@ -1,0 +1,38 @@
+{
+  "data": "synthetic only; same numerical family, not an independent accuracy test",
+  "seed": 20260923,
+  "trials": 80,
+  "true_drift": 1.0,
+  "true_boundary": 0.8,
+  "censored": 2,
+  "cli_returncode": 0,
+  "fits": {
+    "no_memory": {
+      "parameters": [
+        1.2970406147374833,
+        0.8386748822266463
+      ],
+      "nll": 42.80769693722033,
+      "aic": 89.61539387444066,
+      "converged": true,
+      "memory_tau_fixed": 0.3,
+      "nondecision_fixed": 0.0,
+      "sigma_fixed": 1.0,
+      "note": "In-sample fit only; blocked held-out likelihood still required"
+    },
+    "decaying_drive": {
+      "parameters": [
+        1.188074269860209,
+        0.8440067220966946,
+        0.2848750018797259
+      ],
+      "nll": 42.7141935549613,
+      "aic": 91.4283871099226,
+      "converged": true,
+      "memory_tau_fixed": 0.3,
+      "nondecision_fixed": 0.0,
+      "sigma_fixed": 1.0,
+      "note": "In-sample fit only; blocked held-out likelihood still required"
+    }
+  }
+}
