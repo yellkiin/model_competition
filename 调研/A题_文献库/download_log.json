@@ -1,0 +1,1030 @@
+[
+  {
+    "id": "A01",
+    "checked_at": "2026-09-23T12:56:11.480400+00:00",
+    "attempts": [
+      {
+        "url": "https://openaccess.marmara.edu.tr/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/download",
+        "http_status": 200,
+        "resolved_url": "https://openaccess.marmara.edu.tr/server/api/core/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/content",
+        "error_type": "ValueError",
+        "detail": "Title mismatch: overlap=0.0"
+      },
+      {
+        "url": "https://openaccess.marmara.edu.tr/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/download",
+        "http_status": 200,
+        "resolved_url": "https://openaccess.marmara.edu.tr/server/api/core/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/content"
+      }
+    ],
+    "bytes": 789096,
+    "sha256": "122b1b6959be177eda1a1d5685745dd805bae6ac6dae01cfeaca232fcf79f177",
+    "pages": 15,
+    "title_token_overlap": 0.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "title_check": "manual_visual_review_required",
+    "status": "downloaded",
+    "local_path": "pdf/A01_2002_HEFT_CPOP.pdf",
+    "download_url": "https://openaccess.marmara.edu.tr/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/download",
+    "resolved_url": "https://openaccess.marmara.edu.tr/server/api/core/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/content"
+  },
+  {
+    "id": "A02",
+    "checked_at": "2026-09-23T12:56:11.480400+00:00",
+    "attempts": [
+      {
+        "url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
+        "http_status": 200,
+        "resolved_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf"
+      }
+    ],
+    "bytes": 320132,
+    "sha256": "67e19dc9fbee0b67823ff5afc9b585667cfcf24266e9a563a631ca5723767f62",
+    "pages": 10,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A02_2017_Acyclic_DAG_Partitioning.pdf",
+    "download_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
+    "resolved_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
+    "reused": true
+  },
+  {
+    "id": "A03",
+    "checked_at": "2026-09-23T12:56:11.481399+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/1704.00705",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/1704.00705"
+      }
+    ],
+    "bytes": 566051,
+    "sha256": "9d3a7e554bdd263ff3a269fe4c20f81cbefe7c16717dd2f75b02862baced15ab",
+    "pages": 14,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A03_2017_Acyclicity_Constraints.pdf",
+    "download_url": "https://arxiv.org/pdf/1704.00705",
+    "resolved_url": "https://arxiv.org/pdf/1704.00705",
+    "reused": true
+  },
+  {
+    "id": "A04",
+    "checked_at": "2026-09-23T12:56:11.481399+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/2207.13638",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/2207.13638"
+      }
+    ],
+    "bytes": 407477,
+    "sha256": "7f2b02462140eee334b580b8f54007d0b8757f9cc9c80b64b3690e71ea9eb1cc",
+    "pages": 12,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A04_2022_Acyclic_DAG_MILP.pdf",
+    "download_url": "https://arxiv.org/pdf/2207.13638",
+    "resolved_url": "https://arxiv.org/pdf/2207.13638",
+    "reused": true
+  },
+  {
+    "id": "A05",
+    "checked_at": "2026-09-23T12:56:11.529256+00:00",
+    "attempts": [
+      {
+        "url": "https://www.eecs.harvard.edu/~htk/publication/1981-stoc-hong-kung.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.eecs.harvard.edu/~htk/publication/1981-stoc-hong-kung.pdf"
+      }
+    ],
+    "bytes": 593375,
+    "sha256": "b70147993c1ef70326aae7f1cbfc92ef4851aad3de2abf1f8e16df0afa3218bb",
+    "pages": 8,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A05_1981_Red_Blue_Pebble.pdf",
+    "download_url": "https://www.eecs.harvard.edu/~htk/publication/1981-stoc-hong-kung.pdf",
+    "resolved_url": "https://www.eecs.harvard.edu/~htk/publication/1981-stoc-hong-kung.pdf",
+    "reused": true
+  },
+  {
+    "id": "A06",
+    "checked_at": "2026-09-23T12:56:11.529256+00:00",
+    "attempts": [
+      {
+        "url": "https://aiichironakano.github.io/cs596/Williams-Roofline-CACM09.pdf",
+        "http_status": 200,
+        "resolved_url": "https://aiichironakano.github.io/cs596/Williams-Roofline-CACM09.pdf"
+      }
+    ],
+    "bytes": 653122,
+    "sha256": "7899ea80767c9b0e358a7d3bf4b8e09e488314746fd0a27248412a601f58b843",
+    "pages": 12,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A06_2009_Roofline.pdf",
+    "download_url": "https://aiichironakano.github.io/cs596/Williams-Roofline-CACM09.pdf",
+    "resolved_url": "https://aiichironakano.github.io/cs596/Williams-Roofline-CACM09.pdf",
+    "reused": true
+  },
+  {
+    "id": "A07",
+    "checked_at": "2026-09-23T12:56:11.530738+00:00",
+    "attempts": [
+      {
+        "url": "https://www.usenix.org/system/files/osdi20-ma.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.usenix.org/system/files/osdi20-ma.pdf"
+      }
+    ],
+    "bytes": 1214998,
+    "sha256": "ab4b133abdca197bd12a81b1836c1739db88b2c725948fda12c8c1fbdf424770",
+    "pages": 18,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A07_2020_Rammer.pdf",
+    "download_url": "https://www.usenix.org/system/files/osdi20-ma.pdf",
+    "resolved_url": "https://www.usenix.org/system/files/osdi20-ma.pdf",
+    "reused": true
+  },
+  {
+    "id": "A08",
+    "checked_at": "2026-09-23T12:56:11.570109+00:00",
+    "attempts": [
+      {
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2021/file/1f8053a67ec8e0b57455713cefdd8218-Paper.pdf",
+        "http_status": 200,
+        "resolved_url": "https://proceedings.mlsys.org/paper_files/paper/2021/file/1f8053a67ec8e0b57455713cefdd8218-Paper.pdf"
+      }
+    ],
+    "bytes": 2608067,
+    "sha256": "7c55cd6ccecf0e2b9696c5f15359e08bc5e427c008e55507abbee5ec501bbd7b",
+    "pages": 14,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A08_2021_IOS.pdf",
+    "download_url": "https://proceedings.mlsys.org/paper_files/paper/2021/file/1f8053a67ec8e0b57455713cefdd8218-Paper.pdf",
+    "resolved_url": "https://proceedings.mlsys.org/paper_files/paper/2021/file/1f8053a67ec8e0b57455713cefdd8218-Paper.pdf",
+    "reused": true
+  },
+  {
+    "id": "A09",
+    "checked_at": "2026-09-23T12:56:11.591122+00:00",
+    "attempts": [
+      {
+        "url": "https://www.usenix.org/system/files/osdi23-shi.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.usenix.org/system/files/osdi23-shi.pdf"
+      }
+    ],
+    "bytes": 2006497,
+    "sha256": "7105a13f0a737aa189dec8a13b13b78aa7ef6adedf1217fc43f46863a2462b27",
+    "pages": 19,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A09_2023_Welder.pdf",
+    "download_url": "https://www.usenix.org/system/files/osdi23-shi.pdf",
+    "resolved_url": "https://www.usenix.org/system/files/osdi23-shi.pdf",
+    "reused": true
+  },
+  {
+    "id": "A10",
+    "checked_at": "2026-09-23T12:56:11.591122+00:00",
+    "attempts": [
+      {
+        "url": "https://www.usenix.org/system/files/osdi22-zhu.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.usenix.org/system/files/osdi22-zhu.pdf"
+      }
+    ],
+    "bytes": 1154047,
+    "sha256": "231f5567c4da7dedc641364d885e2163f2ece11a290d6689c6b1ea5dc11b1443",
+    "pages": 17,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A10_2022_ROLLER.pdf",
+    "download_url": "https://www.usenix.org/system/files/osdi22-zhu.pdf",
+    "resolved_url": "https://www.usenix.org/system/files/osdi22-zhu.pdf",
+    "reused": true
+  },
+  {
+    "id": "A11",
+    "checked_at": "2026-09-23T12:56:11.632069+00:00",
+    "attempts": [
+      {
+        "url": "https://www.usenix.org/system/files/osdi18-chen.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.usenix.org/system/files/osdi18-chen.pdf"
+      }
+    ],
+    "bytes": 1292153,
+    "sha256": "0ddc28deb2d66ce460d019588ea326ce59bb08290dad09bc2f6ca372b64333c6",
+    "pages": 17,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A11_2018_TVM.pdf",
+    "download_url": "https://www.usenix.org/system/files/osdi18-chen.pdf",
+    "resolved_url": "https://www.usenix.org/system/files/osdi18-chen.pdf",
+    "reused": true
+  },
+  {
+    "id": "A12",
+    "checked_at": "2026-09-23T12:56:11.633174+00:00",
+    "attempts": [
+      {
+        "url": "https://www.usenix.org/system/files/osdi20-zheng.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.usenix.org/system/files/osdi20-zheng.pdf"
+      }
+    ],
+    "bytes": 1300727,
+    "sha256": "73ef4169ed3856f016195bc28a7819e7040274e0af8fb90df2e92a964ea04232",
+    "pages": 18,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A12_2020_Ansor.pdf",
+    "download_url": "https://www.usenix.org/system/files/osdi20-zheng.pdf",
+    "resolved_url": "https://www.usenix.org/system/files/osdi20-zheng.pdf",
+    "reused": true
+  },
+  {
+    "id": "A13",
+    "checked_at": "2026-09-23T12:56:11.634355+00:00",
+    "attempts": [
+      {
+        "url": "https://www.usenix.org/system/files/osdi22-zheng-lianmin.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.usenix.org/system/files/osdi22-zheng-lianmin.pdf"
+      }
+    ],
+    "bytes": 1422776,
+    "sha256": "c13729032db5b7d264f8a3d7606da5ef6a399ca45f629d4021a4629e6de588bd",
+    "pages": 21,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A13_2022_Alpa.pdf",
+    "download_url": "https://www.usenix.org/system/files/osdi22-zheng-lianmin.pdf",
+    "resolved_url": "https://www.usenix.org/system/files/osdi22-zheng-lianmin.pdf",
+    "reused": true
+  },
+  {
+    "id": "A14",
+    "checked_at": "2026-09-23T12:56:11.669487+00:00",
+    "attempts": [
+      {
+        "url": "https://www.usenix.org/system/files/osdi22-unger.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.usenix.org/system/files/osdi22-unger.pdf"
+      }
+    ],
+    "bytes": 9757889,
+    "sha256": "4420859b0e9b48779c8cf02cb59f5ab995ed5c19c90afb6f9a28b1d8907c285e",
+    "pages": 19,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A14_2022_Unity.pdf",
+    "download_url": "https://www.usenix.org/system/files/osdi22-unger.pdf",
+    "resolved_url": "https://www.usenix.org/system/files/osdi22-unger.pdf",
+    "reused": true
+  },
+  {
+    "id": "A15",
+    "checked_at": "2026-09-23T12:56:11.683996+00:00",
+    "attempts": [
+      {
+        "url": "https://theory.stanford.edu/~aiken/publications/papers/sosp19.pdf",
+        "http_status": 200,
+        "resolved_url": "https://theory.stanford.edu/~aiken/publications/papers/sosp19.pdf"
+      }
+    ],
+    "bytes": 4647032,
+    "sha256": "1d8aaeae26e45b3839d380be532150ba54ec19c0280f691ef79e0a20ba391dc8",
+    "pages": 16,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A15_2019_TASO.pdf",
+    "download_url": "https://theory.stanford.edu/~aiken/publications/papers/sosp19.pdf",
+    "resolved_url": "https://theory.stanford.edu/~aiken/publications/papers/sosp19.pdf",
+    "reused": true
+  },
+  {
+    "id": "A16",
+    "checked_at": "2026-09-23T12:56:15.799148+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/2311.18246",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/2311.18246"
+      }
+    ],
+    "bytes": 760096,
+    "sha256": "18fca35dd5a17e3950840797101946c0566871ff2cb929847052145c41354b6d",
+    "pages": 8,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A16_2023_COSMA.pdf",
+    "download_url": "https://arxiv.org/pdf/2311.18246",
+    "resolved_url": "https://arxiv.org/pdf/2311.18246"
+  },
+  {
+    "id": "A17",
+    "checked_at": "2026-09-23T12:56:15.799148+00:00",
+    "attempts": [
+      {
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf",
+        "http_status": 200,
+        "resolved_url": "https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf"
+      }
+    ],
+    "bytes": 1318803,
+    "sha256": "e69c4efe35e7b08cf460acf78376bd177a0ea01d59fed0f41e09a784ef2b817e",
+    "pages": 14,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A17_2020_SERENITY.pdf",
+    "download_url": "https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf",
+    "resolved_url": "https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf"
+  },
+  {
+    "id": "A18",
+    "checked_at": "2026-09-23T12:56:15.800149+00:00",
+    "attempts": [
+      {
+        "url": "https://chengcheng-wan.github.io/paper/22-DAC.pdf",
+        "http_status": 200,
+        "resolved_url": "https://chengcheng-wan.github.io/paper/22-DAC.pdf"
+      }
+    ],
+    "bytes": 1959949,
+    "sha256": "51040aef0d556519e7fa0bfccaa92a7d0818afa9e4565696cbb6b8a34fc676b8",
+    "pages": 6,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A18_2022_HMCOS.pdf",
+    "download_url": "https://chengcheng-wan.github.io/paper/22-DAC.pdf",
+    "resolved_url": "https://chengcheng-wan.github.io/paper/22-DAC.pdf"
+  },
+  {
+    "id": "A19",
+    "checked_at": "2026-09-23T12:56:15.800149+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/2310.19295",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/2310.19295"
+      }
+    ],
+    "bytes": 2195747,
+    "sha256": "7927c20a5163128869b1ed684f1a9e24b9c9e1ba41fcec0c301cfe5c0d929cb2",
+    "pages": 14,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A19_2023_ROAM.pdf",
+    "download_url": "https://arxiv.org/pdf/2310.19295",
+    "resolved_url": "https://arxiv.org/pdf/2310.19295"
+  },
+  {
+    "id": "A20",
+    "checked_at": "2026-09-23T12:56:17.169425+00:00",
+    "attempts": [
+      {
+        "url": "https://light-of-hers.github.io/assets/MoteNN.pdf",
+        "http_status": 200,
+        "resolved_url": "https://light-of-hers.github.io/assets/MoteNN.pdf"
+      }
+    ],
+    "bytes": 1350765,
+    "sha256": "5bea52ad0c3899a469cc34ceb0a9da5fca694e5f27416252ec957a17d66d295f",
+    "pages": 6,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A20_2024_MoteNN.pdf",
+    "download_url": "https://light-of-hers.github.io/assets/MoteNN.pdf",
+    "resolved_url": "https://light-of-hers.github.io/assets/MoteNN.pdf"
+  },
+  {
+    "id": "A21",
+    "checked_at": "2026-09-23T12:56:18.509898+00:00",
+    "attempts": [
+      {
+        "url": "https://ksp.etri.re.kr/ksp/article/file/66959.pdf",
+        "http_status": 200,
+        "resolved_url": "https://ksp.etri.re.kr/ksp/article/file/66959.pdf"
+      }
+    ],
+    "bytes": 1520130,
+    "sha256": "842daffd85a0b2b82336793e6fdf24f7f8f0d5f584a8a05ff42ffce810296797",
+    "pages": 11,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A21_2023_PartitionTuner.pdf",
+    "download_url": "https://ksp.etri.re.kr/ksp/article/file/66959.pdf",
+    "resolved_url": "https://ksp.etri.re.kr/ksp/article/file/66959.pdf"
+  },
+  {
+    "id": "A22",
+    "checked_at": "2026-09-23T12:56:19.693819+00:00",
+    "attempts": [
+      {
+        "url": "https://accelergy.mit.edu/timeloop.pdf",
+        "http_status": 200,
+        "resolved_url": "https://accelergy.mit.edu/timeloop.pdf"
+      }
+    ],
+    "bytes": 726123,
+    "sha256": "43f0b0b8b16ec95ba1348f9884f8434cc626f1032aac52f61bb85633509d4a45",
+    "pages": 12,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A22_2019_Timeloop.pdf",
+    "download_url": "https://accelergy.mit.edu/timeloop.pdf",
+    "resolved_url": "https://accelergy.mit.edu/timeloop.pdf"
+  },
+  {
+    "id": "A23",
+    "checked_at": "2026-09-23T12:56:20.243363+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/2007.11360",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/2007.11360"
+      }
+    ],
+    "bytes": 4263696,
+    "sha256": "2f6950ff708a0a0b5afac67d834fc8218e9c7ea4f49d4486c22b0273b30ffdb2",
+    "pages": 14,
+    "title_token_overlap": 0.8,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A23_2020_ZigZag_arXiv.pdf",
+    "download_url": "https://arxiv.org/pdf/2007.11360",
+    "resolved_url": "https://arxiv.org/pdf/2007.11360"
+  },
+  {
+    "id": "A24",
+    "checked_at": "2026-09-23T13:04:56.486588+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/1805.02566",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/1805.02566"
+      },
+      {
+        "url": "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/c/332/files/2021/02/maestro_toppicks2020.pdf",
+        "http_status": 200,
+        "resolved_url": "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/c/332/files/2021/02/maestro_toppicks2020.pdf"
+      }
+    ],
+    "bytes": 2369809,
+    "sha256": "2899115111b7896db622983836fec29c15b195ce154233872e76e5e0434f0ff1",
+    "pages": 10,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A24_2020_MAESTRO_IEEE_Micro.pdf",
+    "download_url": "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/c/332/files/2021/02/maestro_toppicks2020.pdf",
+    "resolved_url": "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/c/332/files/2021/02/maestro_toppicks2020.pdf"
+  },
+  {
+    "id": "A25",
+    "checked_at": "2026-09-23T13:04:56.487571+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/2002.07752",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/2002.07752"
+      },
+      {
+        "url": "https://par.nsf.gov/servlets/purl/10348661",
+        "http_status": 200,
+        "resolved_url": "https://par.nsf.gov/servlets/purl/10348661"
+      }
+    ],
+    "bytes": 4277963,
+    "sha256": "67ca1f8297c834fbcf29684c294f804d1eb35db04f9703c649ad803b97459030",
+    "pages": 26,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A25_2021_Marvel_TACO.pdf",
+    "download_url": "https://par.nsf.gov/servlets/purl/10348661",
+    "resolved_url": "https://par.nsf.gov/servlets/purl/10348661"
+  },
+  {
+    "id": "A26",
+    "checked_at": "2026-09-23T12:56:24.455964+00:00",
+    "attempts": [
+      {
+        "url": "https://proceedings.mlr.press/v202/steiner23a/steiner23a.pdf",
+        "http_status": 200,
+        "resolved_url": "https://proceedings.mlr.press/v202/steiner23a/steiner23a.pdf"
+      }
+    ],
+    "bytes": 731244,
+    "sha256": "920b0d873d65028ea7f22ce8c725a687fd48aad13d3fbbaf7187531e801eb9f5",
+    "pages": 15,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A26_2023_MODeL.pdf",
+    "download_url": "https://proceedings.mlr.press/v202/steiner23a/steiner23a.pdf",
+    "resolved_url": "https://proceedings.mlr.press/v202/steiner23a/steiner23a.pdf"
+  },
+  {
+    "id": "A27",
+    "checked_at": "2026-09-23T12:56:24.742718+00:00",
+    "attempts": [
+      {
+        "url": "https://www.cs.utexas.edu/~skeckler/pubs/MICRO_2016_vDNN.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.cs.utexas.edu/~skeckler/pubs/MICRO_2016_vDNN.pdf"
+      }
+    ],
+    "bytes": 2508779,
+    "sha256": "de4ac890b620e90a6c1b679213e57ea90ee38dceaa19ec6a2540a9ad3b4b3adf",
+    "pages": 13,
+    "title_token_overlap": 0.9,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A27_2016_vDNN.pdf",
+    "download_url": "https://www.cs.utexas.edu/~skeckler/pubs/MICRO_2016_vDNN.pdf",
+    "resolved_url": "https://www.cs.utexas.edu/~skeckler/pubs/MICRO_2016_vDNN.pdf"
+  },
+  {
+    "id": "A28",
+    "checked_at": "2026-09-23T12:56:25.350217+00:00",
+    "attempts": [
+      {
+        "url": "https://par.nsf.gov/servlets/purl/10191573",
+        "http_status": 200,
+        "resolved_url": "https://par.nsf.gov/servlets/purl/10191573"
+      }
+    ],
+    "bytes": 556952,
+    "sha256": "130e5fb7bf4fe4554deb512b0eb702839f0975a6b2ec7201b83c45d0fa3576fa",
+    "pages": 15,
+    "title_token_overlap": 0.909,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A28_2020_SwapAdvisor.pdf",
+    "download_url": "https://par.nsf.gov/servlets/purl/10191573",
+    "resolved_url": "https://par.nsf.gov/servlets/purl/10191573"
+  },
+  {
+    "id": "A29",
+    "checked_at": "2026-09-23T12:56:26.844653+00:00",
+    "attempts": [
+      {
+        "url": "https://alchem.usc.edu/portal/static/download/capuchin.pdf",
+        "error_type": "SSLError"
+      }
+    ],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A30",
+    "checked_at": "2026-09-23T12:58:37.105223+00:00",
+    "attempts": [
+      {
+        "url": "https://citeseerx.ist.psu.edu/document?doi=6423d72764e46aad08e8f4c687aa3e313ad2384b&repid=rep1&type=pdf",
+        "http_status": 404,
+        "resolved_url": "https://web.archive.org/web/20251230112235/https://citeseerx.ist.psu.edu//document?doi=6423d72764e46aad08e8f4c687aa3e313ad2384b&repid=rep1&type=pdf",
+        "error_type": "HTTPError"
+      }
+    ],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A31",
+    "checked_at": "2026-09-23T13:13:54.081904+00:00",
+    "attempts": [
+      {
+        "url": "https://inria.hal.science/hal-01828312/file/IPDPS.pdf",
+        "http_status": 200,
+        "resolved_url": "https://inria.hal.science/hal-01828312/file/IPDPS.pdf",
+        "error_type": "ValueError",
+        "detail": "Response is not a PDF (HTML/login/error responses are rejected)"
+      },
+      {
+        "url": "https://www.uni-bremen.de/fileadmin/user_upload/fachbereiche/fb3/infcon/CSLog/Publications/bsimon/papers/2018-MNSV-IPDPS.pdf",
+        "http_status": 200,
+        "resolved_url": "https://www.uni-bremen.de/fileadmin/user_upload/fachbereiche/fb3/infcon/CSLog/Publications/bsimon/papers/2018-MNSV-IPDPS.pdf"
+      }
+    ],
+    "bytes": 224753,
+    "sha256": "795c61a45474bbf7a44bd3b84e9158e3bd6a37aaf10626b1c842deed29b7555d",
+    "pages": 10,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A31_2018.pdf",
+    "download_url": "https://www.uni-bremen.de/fileadmin/user_upload/fachbereiche/fb3/infcon/CSLog/Publications/bsimon/papers/2018-MNSV-IPDPS.pdf",
+    "resolved_url": "https://www.uni-bremen.de/fileadmin/user_upload/fachbereiche/fb3/infcon/CSLog/Publications/bsimon/papers/2018-MNSV-IPDPS.pdf"
+  },
+  {
+    "id": "A32",
+    "checked_at": "2026-09-23T13:03:59.787227+00:00",
+    "attempts": [
+      {
+        "url": "https://icl.utk.edu/files/publications/2020/icl-utk-1383-2020.pdf",
+        "http_status": 200,
+        "resolved_url": "https://icl.utk.edu/files/publications/2020/icl-utk-1383-2020.pdf"
+      }
+    ],
+    "bytes": 325556,
+    "sha256": "5aa7ee276d79c252aba2ce8650f554139a9a51425f882aafe176fa8101ea35e5",
+    "pages": 10,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A32_2020.pdf",
+    "download_url": "https://icl.utk.edu/files/publications/2020/icl-utk-1383-2020.pdf",
+    "resolved_url": "https://icl.utk.edu/files/publications/2020/icl-utk-1383-2020.pdf"
+  },
+  {
+    "id": "A33",
+    "checked_at": "2026-09-23T12:58:37.106864+00:00",
+    "attempts": [
+      {
+        "url": "https://ptolemy.berkeley.edu/projects/chess/pubs/226/01c_2_854.pdf",
+        "http_status": 200,
+        "resolved_url": "https://ptolemy.berkeley.edu/projects/chess/pubs/226/01c_2_854.pdf"
+      }
+    ],
+    "bytes": 128285,
+    "sha256": "c68dbe2752a77689a05f576f2ab876d417975c0f1679956a2796fb2efe9a86ff",
+    "pages": 6,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A33_2007.pdf",
+    "download_url": "https://ptolemy.berkeley.edu/projects/chess/pubs/226/01c_2_854.pdf",
+    "resolved_url": "https://ptolemy.berkeley.edu/projects/chess/pubs/226/01c_2_854.pdf"
+  },
+  {
+    "id": "A34",
+    "checked_at": "2026-09-23T12:58:37.106864+00:00",
+    "attempts": [
+      {
+        "url": "https://www.sciencedirect.com/science/article/pii/S0305054817302186/pdfft",
+        "http_status": 403,
+        "resolved_url": "https://www.sciencedirect.com/science/article/pii/S0305054817302186/pdfft",
+        "error_type": "HTTPError"
+      }
+    ],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A35",
+    "checked_at": "2026-09-23T12:58:37.773608+00:00",
+    "attempts": [
+      {
+        "url": "https://www.sciencedirect.com/science/article/pii/S1383762119305132/pdfft",
+        "http_status": 403,
+        "resolved_url": "https://www.sciencedirect.com/science/article/pii/S1383762119305132/pdfft",
+        "error_type": "HTTPError"
+      }
+    ],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A36",
+    "checked_at": "2026-09-23T12:58:38.166289+00:00",
+    "attempts": [],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A37",
+    "checked_at": "2026-09-23T12:58:38.166289+00:00",
+    "attempts": [
+      {
+        "url": "https://who.rocq.inria.fr/Liliana.Cucu/LCG-JSA2022.pdf",
+        "http_status": 200,
+        "resolved_url": "https://who.rocq.inria.fr/Liliana.Cucu/LCG-JSA2022.pdf"
+      }
+    ],
+    "bytes": 1050534,
+    "sha256": "16c0d51501b0c4427e74d1f7b9c8094ff389e9ddb176c1cd48ad68f8fc2a12d0",
+    "pages": 9,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A37_2022.pdf",
+    "download_url": "https://who.rocq.inria.fr/Liliana.Cucu/LCG-JSA2022.pdf",
+    "resolved_url": "https://who.rocq.inria.fr/Liliana.Cucu/LCG-JSA2022.pdf"
+  },
+  {
+    "id": "A38",
+    "checked_at": "2026-09-23T12:58:38.386947+00:00",
+    "attempts": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3477037",
+        "http_status": 403,
+        "resolved_url": "https://dl.acm.org/doi/pdf/10.1145/3477037",
+        "error_type": "HTTPError"
+      }
+    ],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A39",
+    "checked_at": "2026-09-23T12:58:38.976526+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/2002.02962",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/2002.02962"
+      }
+    ],
+    "bytes": 1581396,
+    "sha256": "f75030b38a9f7d821be428bc1b23087472421d0a6c77582bb8c4a8a3ed96b658",
+    "pages": 20,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A39_2021.pdf",
+    "download_url": "https://arxiv.org/pdf/2002.02962",
+    "resolved_url": "https://arxiv.org/pdf/2002.02962"
+  },
+  {
+    "id": "A40",
+    "checked_at": "2026-09-23T12:58:39.641574+00:00",
+    "attempts": [
+      {
+        "url": "https://eprints.whiterose.ac.uk/id/eprint/225201/1/JSA24_Cache_aware_DAG.pdf",
+        "http_status": 200,
+        "resolved_url": "https://eprints.whiterose.ac.uk/id/eprint/225201/1/JSA24_Cache_aware_DAG.pdf"
+      }
+    ],
+    "bytes": 10462979,
+    "sha256": "7b6fd39b378c7a1c9213a49ff0e6ac2ded1710cf73c629724b2796f8550513e1",
+    "pages": 15,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A40_2025.pdf",
+    "download_url": "https://eprints.whiterose.ac.uk/id/eprint/225201/1/JSA24_Cache_aware_DAG.pdf",
+    "resolved_url": "https://eprints.whiterose.ac.uk/id/eprint/225201/1/JSA24_Cache_aware_DAG.pdf"
+  },
+  {
+    "id": "A41",
+    "checked_at": "2026-09-23T12:58:40.415189+00:00",
+    "attempts": [
+      {
+        "url": "https://albert-jan.yzelman.net/PDFs/papp23a-pp.pdf",
+        "http_status": 200,
+        "resolved_url": "https://albert-jan.yzelman.net/PDFs/papp23a-pp.pdf"
+      }
+    ],
+    "bytes": 595420,
+    "sha256": "34a851a8791a69c89667cff1f85f0927687f7497ec37503bda1e52ef31565ee9",
+    "pages": 30,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A41_2025.pdf",
+    "download_url": "https://albert-jan.yzelman.net/PDFs/papp23a-pp.pdf",
+    "resolved_url": "https://albert-jan.yzelman.net/PDFs/papp23a-pp.pdf"
+  },
+  {
+    "id": "A42",
+    "checked_at": "2026-09-23T12:58:40.777919+00:00",
+    "attempts": [
+      {
+        "url": "https://albert-jan.yzelman.net/PDFs/papp24a-pp.pdf",
+        "http_status": 200,
+        "resolved_url": "https://albert-jan.yzelman.net/PDFs/papp24a-pp.pdf"
+      }
+    ],
+    "bytes": 837855,
+    "sha256": "8ca87cdbfcf8b17363e7a1632e1218d7c689e13b1c5e14ce9469c3ef216cd661",
+    "pages": 24,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A42_2024.pdf",
+    "download_url": "https://albert-jan.yzelman.net/PDFs/papp24a-pp.pdf",
+    "resolved_url": "https://albert-jan.yzelman.net/PDFs/papp24a-pp.pdf"
+  },
+  {
+    "id": "A43",
+    "checked_at": "2026-09-23T12:58:42.561433+00:00",
+    "attempts": [
+      {
+        "url": "https://albert-jan.yzelman.net/PDFs/papp25b-pp.pdf",
+        "http_status": 200,
+        "resolved_url": "https://albert-jan.yzelman.net/PDFs/papp25b-pp.pdf"
+      }
+    ],
+    "bytes": 710302,
+    "sha256": "eb54727d40e89305c6b52a6ef6b0ced277f0cb4f7f638089d4d5fa74600641ea",
+    "pages": 18,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A43_2025.pdf",
+    "download_url": "https://albert-jan.yzelman.net/PDFs/papp25b-pp.pdf",
+    "resolved_url": "https://albert-jan.yzelman.net/PDFs/papp25b-pp.pdf"
+  },
+  {
+    "id": "A44",
+    "checked_at": "2026-09-23T12:58:44.321939+00:00",
+    "attempts": [
+      {
+        "url": "https://www.sciencedirect.com/science/article/pii/S1383762126000147/pdfft",
+        "http_status": 403,
+        "resolved_url": "https://www.sciencedirect.com/science/article/pii/S1383762126000147/pdfft",
+        "error_type": "HTTPError"
+      }
+    ],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A45",
+    "checked_at": "2026-09-23T12:58:44.849441+00:00",
+    "attempts": [
+      {
+        "url": "https://hal.science/hal-04879748v1/document",
+        "http_status": 200,
+        "resolved_url": "https://hal.science/hal-04879748v1/document",
+        "error_type": "ValueError",
+        "detail": "Response is not a PDF (HTML/login/error responses are rejected)"
+      }
+    ],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A46",
+    "checked_at": "2026-09-23T12:58:44.969836+00:00",
+    "attempts": [
+      {
+        "url": "https://arxiv.org/pdf/2308.13898",
+        "http_status": 200,
+        "resolved_url": "https://arxiv.org/pdf/2308.13898"
+      }
+    ],
+    "bytes": 2160509,
+    "sha256": "5194345443c9d427f5b3c0386ff2249263b5b462244833480680e255fcafe37a",
+    "pages": 9,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A46_2023.pdf",
+    "download_url": "https://arxiv.org/pdf/2308.13898",
+    "resolved_url": "https://arxiv.org/pdf/2308.13898"
+  },
+  {
+    "id": "A47",
+    "checked_at": "2026-09-23T12:58:46.113830+00:00",
+    "attempts": [
+      {
+        "url": "https://hal.science/hal-05568320/document",
+        "http_status": 200,
+        "resolved_url": "https://hal.science/hal-05568320/document",
+        "error_type": "ValueError",
+        "detail": "Response is not a PDF (HTML/login/error responses are rejected)"
+      },
+      {
+        "url": "https://papers.ssrn.com/sol3/Delivery.cfm/b27087ca-7574-4b78-a768-fb4f18e423f8-MECA.pdf?abstractid=5357513&mirid=1",
+        "http_status": 403,
+        "resolved_url": "https://papers.ssrn.com/sol3/Delivery.cfm/b27087ca-7574-4b78-a768-fb4f18e423f8-MECA.pdf?abstractid=5357513&mirid=1",
+        "error_type": "HTTPError"
+      }
+    ],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A48",
+    "checked_at": "2026-09-23T13:03:59.787782+00:00",
+    "attempts": [
+      {
+        "url": "https://platformxlab.github.io/papers/t10-sosp24.pdf",
+        "http_status": 200,
+        "resolved_url": "https://platformxlab.github.io/papers/t10-sosp24.pdf"
+      }
+    ],
+    "bytes": 3418700,
+    "sha256": "a688e9f28c029eed4cf2ae06443644da6786254175e1ba71b3abf23e432b6825",
+    "pages": 17,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A48_2024_T10.pdf",
+    "download_url": "https://platformxlab.github.io/papers/t10-sosp24.pdf",
+    "resolved_url": "https://platformxlab.github.io/papers/t10-sosp24.pdf"
+  },
+  {
+    "id": "A49",
+    "checked_at": "2026-09-23T13:11:16.662094+00:00",
+    "attempts": [
+      {
+        "url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ipdps2019.pdf",
+        "http_status": 200,
+        "resolved_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ipdps2019.pdf"
+      }
+    ],
+    "bytes": 1031010,
+    "sha256": "fb239bc60be7bfd61957186a9f80a7c1e49e0114d107c70d173942d44d01bf7c",
+    "pages": 11,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A49_2019.pdf",
+    "download_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ipdps2019.pdf",
+    "resolved_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ipdps2019.pdf"
+  },
+  {
+    "id": "A50",
+    "checked_at": "2026-09-23T13:11:16.662686+00:00",
+    "attempts": [],
+    "status": "not_downloaded"
+  },
+  {
+    "id": "A51",
+    "checked_at": "2026-09-23T13:11:16.662686+00:00",
+    "attempts": [
+      {
+        "url": "https://cs.newpaltz.edu/~lik/publications/Yan-Wang-IEEE-Access-2019.pdf",
+        "http_status": 200,
+        "resolved_url": "https://cs.newpaltz.edu/~lik/publications/Yan-Wang-IEEE-Access-2019.pdf"
+      }
+    ],
+    "bytes": 6854671,
+    "sha256": "bd5a0b0f7d4a4b84bd46530191b0364eec8b982e4cacf5a2599add1ece723351",
+    "pages": 12,
+    "title_token_overlap": 1.0,
+    "pdf_validation": "PDF header and all-page renderability; title tokens in first two pages",
+    "text_extractable": true,
+    "status": "downloaded",
+    "local_path": "pdf/A51_2019.pdf",
+    "download_url": "https://cs.newpaltz.edu/~lik/publications/Yan-Wang-IEEE-Access-2019.pdf",
+    "resolved_url": "https://cs.newpaltz.edu/~lik/publications/Yan-Wang-IEEE-Access-2019.pdf"
+  },
+  {
+    "id": "A52",
+    "checked_at": "2026-09-23T13:11:16.663231+00:00",
+    "attempts": [],
+    "status": "not_downloaded"
+  }
+]

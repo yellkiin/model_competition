@@ -10,7 +10,43 @@
     "type": "论文",
     "relevance": "问题1/2：HEFT上行优先级和最早完成时间基线；须改写同构核与共享带宽代价。",
     "verified_date": "2026-09-23",
-    "verification": "作者机构论文摘要页；作者信息同时核对论文首页"
+    "verification": "作者机构论文摘要页；作者信息同时核对论文首页",
+    "pdf_urls": [
+      "https://openaccess.marmara.edu.tr/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/download"
+    ],
+    "pdf_filename": "A01_2002_HEFT_CPOP.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://openaccess.marmara.edu.tr/entities/publication/feba5344-0457-405a-8cb2-1d26f8963e33",
+      "https://openaccess.marmara.edu.tr/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/download"
+    ],
+    "priority": "P1",
+    "category": "任务列表调度",
+    "method": "HEFT/CPOP：上行rank、插入式最早完成时间和关键路径同核。",
+    "limitations": "原论文异构执行时间；A核同构但有多Pipe、共享DDR和缓存。EFT须用题目事件模型重算。",
+    "pdf_version": "作者机构保存的正式发表PDF；文字编码异常，已视觉核对首页",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A01_2002_HEFT_CPOP.pdf",
+    "pdf_pages": 15,
+    "pdf_sha256": "122b1b6959be177eda1a1d5685745dd805bae6ac6dae01cfeaca232fcf79f177",
+    "download_url": "https://openaccess.marmara.edu.tr/bitstreams/d1584f1e-5066-47a6-8c04-15607a53960f/download",
+    "fulltext_status": "available_pdf",
+    "ieee_api": {
+      "article_number": "993206",
+      "access_type": "LOCKED",
+      "query_group": "known_a_references"
+    },
+    "allow_visual_title_check": true,
+    "selection_role": "简单基线",
+    "reading_rank": 6,
+    "selection_reason": "保留HEFT/CPOP作低成本对照；共享DDR、同构核和双Pipe需要重新计算EFT，不以经典基线代替主方法。"
   },
   {
     "id": "A02",
@@ -19,11 +55,57 @@
     "year": 2017,
     "venue": "IEEE/ACM CCGrid",
     "url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
-    "doi": "",
+    "doi": "10.1109/CCGRID.2017.101",
     "type": "论文",
     "relevance": "问题1/2：无环粗化、初分和细化；解释普通无向切图为什么可能不合法。",
     "verified_date": "2026-09-23",
-    "verification": "作者公开PDF首页、摘要和引言（非全文精读）"
+    "verification": "作者公开PDF首页、摘要和引言（非全文精读）",
+    "pdf_urls": [
+      "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf"
+    ],
+    "pdf_filename": "A02_2017_Acyclic_DAG_Partitioning.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
+      "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
+      "https://ohiostate.elsevierpure.com/en/publications/acyclic-partitioning-of-large-directed-acyclic-graphs/"
+    ],
+    "priority": "P1",
+    "category": "无环图与超图划分",
+    "method": "粗化、二分、细化的无环DAG划分。",
+    "limitations": "仅商图无环不保证完整Pipe/FIFO等待图无环；图边割不能直接等于张量搬运字节。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A02_2017_Acyclic_DAG_Partitioning.pdf",
+    "pdf_pages": 10,
+    "pdf_sha256": "67e19dc9fbee0b67823ff5afc9b585667cfcf24266e9a563a631ca5723767f62",
+    "download_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
+    "fulltext_status": "available_pdf",
+    "ieee_api": {
+      "article_number": "7973723",
+      "access_type": "LOCKED",
+      "query_group": "acyclic_graph_partitioning"
+    },
+    "selection_role": "主线方法",
+    "reading_rank": 3,
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读本地PDF的模型及算法段落",
+      "pdf_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "无环DAG粗化及受约束划分是可实现的基础方法；比纯拓扑序切块更有依据。节点权和割代价均不是官方内存峰值或makespan。"
+    }
   },
   {
     "id": "A03",
@@ -36,7 +118,36 @@
     "type": "论文",
     "relevance": "问题1/2：带无环约束的图划分启发式，设计局部移点的合法性检查。",
     "verified_date": "2026-09-23",
-    "verification": "作者预印本摘要页"
+    "verification": "作者预印本摘要页",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1704.00705"
+    ],
+    "pdf_filename": "A03_2017_Acyclicity_Constraints.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://arxiv.org/abs/1704.00705",
+      "https://arxiv.org/pdf/1704.00705"
+    ],
+    "priority": "P2",
+    "category": "无环图与超图划分",
+    "method": "多层次无环划分与局部改进。",
+    "limitations": "平衡节点权和最小割是代理目标，还需双缓存和官方makespan评估。",
+    "pdf_version": "arXiv预印本",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A03_2017_Acyclicity_Constraints.pdf",
+    "pdf_pages": 14,
+    "pdf_sha256": "9d3a7e554bdd263ff3a269fe4c20f81cbefe7c16717dd2f75b02862baced15ab",
+    "download_url": "https://arxiv.org/pdf/1704.00705",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。"
   },
   {
     "id": "A04",
@@ -49,7 +160,36 @@
     "type": "论文",
     "relevance": "问题1/2：小规模整数规划对照及分区商图无环的数学表达；不能直接代替本题仿真目标。",
     "verified_date": "2026-09-23",
-    "verification": "作者预印本摘要页"
+    "verification": "作者预印本摘要页",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2207.13638"
+    ],
+    "pdf_filename": "A04_2022_Acyclic_DAG_MILP.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://arxiv.org/abs/2207.13638",
+      "https://arxiv.org/pdf/2207.13638"
+    ],
+    "priority": "P2",
+    "category": "无环图与超图划分",
+    "method": "无环DAG分区的数学规划表达。",
+    "limitations": "适合小图可行性/最优划分对照；不含题目的完整缓存和共享带宽时间模型。",
+    "pdf_version": "arXiv预印本",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A04_2022_Acyclic_DAG_MILP.pdf",
+    "pdf_pages": 12,
+    "pdf_sha256": "7f2b02462140eee334b580b8f54007d0b8757f9cc9c80b64b3690e71ea9eb1cc",
+    "download_url": "https://arxiv.org/pdf/2207.13638",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。"
   },
   {
     "id": "A05",
@@ -62,7 +202,36 @@
     "type": "论文",
     "relevance": "问题1–3：缓存容量与数据移动的理论关系，给通信优化提供解释。",
     "verified_date": "2026-09-23",
-    "verification": "ACM论文摘要页"
+    "verification": "ACM论文摘要页",
+    "pdf_urls": [
+      "https://www.eecs.harvard.edu/~htk/publication/1981-stoc-hong-kung.pdf"
+    ],
+    "pdf_filename": "A05_1981_Red_Blue_Pebble.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://doi.org/10.1145/800076.802486",
+      "https://www.eecs.harvard.edu/~htk/publication/1981-stoc-hong-kung.pdf"
+    ],
+    "priority": "P2",
+    "category": "访存下界与性能模型",
+    "method": "红蓝卵石描述快慢存储之间的数据移动及I/O下界。",
+    "limitations": "经典模型与A的双缓存、并行Pipe、FIFO不同；允许重算的变体不能直接用作A可行调度。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A05_1981_Red_Blue_Pebble.pdf",
+    "pdf_pages": 8,
+    "pdf_sha256": "b70147993c1ef70326aae7f1cbfc92ef4851aad3de2abf1f8e16df0afa3218bb",
+    "download_url": "https://www.eecs.harvard.edu/~htk/publication/1981-stoc-hong-kung.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。"
   },
   {
     "id": "A06",
@@ -73,9 +242,38 @@
     "url": "https://doi.org/10.1145/1498765.1498785",
     "doi": "10.1145/1498765.1498785",
     "type": "论文",
-    "relevance": "问题1–3：以计算/内存下界解释扩核饱和；本题cycles不能擅自等同FLOPs。",
+    "relevance": "用于解释计算/访存瓶颈。A的数值下界需从官方cycles、Pipe和带宽另行推导，不能直接把Roofline曲线作为证明。",
     "verified_date": "2026-09-23",
-    "verification": "作者机构技术报告摘要和正文片段、期刊版本首页"
+    "verification": "作者机构技术报告摘要和正文片段、期刊版本首页",
+    "pdf_urls": [
+      "https://aiichironakano.github.io/cs596/Williams-Roofline-CACM09.pdf"
+    ],
+    "pdf_filename": "A06_2009_Roofline.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://doi.org/10.1145/1498765.1498785",
+      "https://aiichironakano.github.io/cs596/Williams-Roofline-CACM09.pdf"
+    ],
+    "priority": "P2",
+    "category": "访存下界与性能模型",
+    "method": "计算强度与带宽屋顶解释计算/访存瓶颈。",
+    "limitations": "仅解释性性能界；不能将共享60 B/cycle按核数相乘，也不能替代依赖与同步建模。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A06_2009_Roofline.pdf",
+    "pdf_pages": 12,
+    "pdf_sha256": "7899ea80767c9b0e358a7d3bf4b8e09e488314746fd0a27248412a601f58b843",
+    "download_url": "https://aiichironakano.github.io/cs596/Williams-Roofline-CACM09.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。"
   },
   {
     "id": "A07",
@@ -88,7 +286,36 @@
     "type": "论文",
     "relevance": "问题1/2：跨算子与算子内并行的统一调度思想，启发Cube/Vector互补。",
     "verified_date": "2026-09-23",
-    "verification": "会议论文页面与PDF摘要"
+    "verification": "会议论文页面与PDF摘要",
+    "pdf_urls": [
+      "https://www.usenix.org/system/files/osdi20-ma.pdf"
+    ],
+    "pdf_filename": "A07_2020_Rammer.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://www.usenix.org/conference/osdi20/presentation/ma",
+      "https://www.usenix.org/system/files/osdi20-ma.pdf"
+    ],
+    "priority": "P3",
+    "category": "编译器与并行搜索背景",
+    "method": "rTask/rKernel及整体编译调度。",
+    "limitations": "只能借鉴固定图上的工作分配和候选搜索；不能改写算子或使用论文硬件/运行时替换官方Pipe。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A07_2020_Rammer.pdf",
+    "pdf_pages": 18,
+    "pdf_sha256": "ab4b133abdca197bd12a81b1836c1739db88b2c725948fda12c8c1fbdf424770",
+    "download_url": "https://www.usenix.org/system/files/osdi20-ma.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
   },
   {
     "id": "A08",
@@ -101,7 +328,36 @@
     "type": "论文",
     "relevance": "问题1/2：动态规划选择算子分组/并行方案，可借鉴拓扑窗口搜索。",
     "verified_date": "2026-09-23",
-    "verification": "会议论文摘要页"
+    "verification": "会议论文摘要页",
+    "pdf_urls": [
+      "https://proceedings.mlsys.org/paper_files/paper/2021/file/1f8053a67ec8e0b57455713cefdd8218-Paper.pdf"
+    ],
+    "pdf_filename": "A08_2021_IOS.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://proceedings.mlsys.org/paper_files/paper/2021/hash/1f8053a67ec8e0b57455713cefdd8218-Abstract.html",
+      "https://proceedings.mlsys.org/paper_files/paper/2021/file/1f8053a67ec8e0b57455713cefdd8218-Paper.pdf"
+    ],
+    "priority": "P2",
+    "category": "算子分组与多核映射",
+    "method": "算子间并行的动态规划与执行组搜索。",
+    "limitations": "实际提交自由度为子图划分/映射/核内子图顺序；不能修改算子定义和题目周期。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A08_2021_IOS.pdf",
+    "pdf_pages": 14,
+    "pdf_sha256": "7c55cd6ccecf0e2b9696c5f15359e08bc5e427c008e55507abbee5ec501bbd7b",
+    "download_url": "https://proceedings.mlsys.org/paper_files/paper/2021/file/1f8053a67ec8e0b57455713cefdd8218-Paper.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。"
   },
   {
     "id": "A09",
@@ -114,7 +370,36 @@
     "type": "论文",
     "relevance": "问题2/3：分块数据复用与分层访存代价，设计张量级共享输入亲和度。",
     "verified_date": "2026-09-23",
-    "verification": "会议论文摘要页"
+    "verification": "会议论文摘要页",
+    "pdf_urls": [
+      "https://www.usenix.org/system/files/osdi23-shi.pdf"
+    ],
+    "pdf_filename": "A09_2023_Welder.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://www.usenix.org/conference/osdi23/presentation/shi",
+      "https://www.usenix.org/system/files/osdi23-shi.pdf"
+    ],
+    "priority": "P3",
+    "category": "编译器与并行搜索背景",
+    "method": "Tile-graph组织张量访存和复用优化。",
+    "limitations": "Tile重构/融合/算子生成不在A的允许决策中，仅借鉴复用与访存代价。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A09_2023_Welder.pdf",
+    "pdf_pages": 19,
+    "pdf_sha256": "7105a13f0a737aa189dec8a13b13b78aa7ef6adedf1217fc43f46863a2462b27",
+    "download_url": "https://www.usenix.org/system/files/osdi23-shi.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
   },
   {
     "id": "A10",
@@ -127,7 +412,36 @@
     "type": "论文",
     "relevance": "问题1–3：快速构造候选、微型性能模型；本题不重新生成算子内核。",
     "verified_date": "2026-09-23",
-    "verification": "会议论文摘要页"
+    "verification": "会议论文摘要页",
+    "pdf_urls": [
+      "https://www.usenix.org/system/files/osdi22-zhu.pdf"
+    ],
+    "pdf_filename": "A10_2022_ROLLER.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://www.usenix.org/conference/osdi22/presentation/zhu",
+      "https://www.usenix.org/system/files/osdi22-zhu.pdf"
+    ],
+    "priority": "P3",
+    "category": "编译器与并行搜索背景",
+    "method": "以规则化搜索快速生成张量程序。",
+    "limitations": "算子内tiling和代码生成不是A的优化对象，作为通用搜索背景。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A10_2022_ROLLER.pdf",
+    "pdf_pages": 17,
+    "pdf_sha256": "231f5567c4da7dedc641364d885e2163f2ece11a290d6689c6b1ea5dc11b1443",
+    "download_url": "https://www.usenix.org/system/files/osdi22-zhu.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
   },
   {
     "id": "A11",
@@ -140,7 +454,36 @@
     "type": "论文",
     "relevance": "背景与实现组织：图层/算子层优化分离、成本模型搜索。",
     "verified_date": "2026-09-23",
-    "verification": "会议论文摘要页"
+    "verification": "会议论文摘要页",
+    "pdf_urls": [
+      "https://www.usenix.org/system/files/osdi18-chen.pdf"
+    ],
+    "pdf_filename": "A11_2018_TVM.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://www.usenix.org/conference/osdi18/presentation/chen",
+      "https://www.usenix.org/system/files/osdi18-chen.pdf"
+    ],
+    "priority": "P3",
+    "category": "编译器与并行搜索背景",
+    "method": "端到端张量编译与代价引导搜索。",
+    "limitations": "不能把算子生成或图变换当作A的可提交优化。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A11_2018_TVM.pdf",
+    "pdf_pages": 17,
+    "pdf_sha256": "0ddc28deb2d66ce460d019588ea326ce59bb08290dad09bc2f6ca372b64333c6",
+    "download_url": "https://www.usenix.org/system/files/osdi18-chen.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
   },
   {
     "id": "A12",
@@ -153,7 +496,36 @@
     "type": "论文",
     "relevance": "问题1–3：分层候选和进化搜索预算分配；仅借鉴搜索机制。",
     "verified_date": "2026-09-23",
-    "verification": "会议论文摘要页"
+    "verification": "会议论文摘要页",
+    "pdf_urls": [
+      "https://www.usenix.org/system/files/osdi20-zheng.pdf"
+    ],
+    "pdf_filename": "A12_2020_Ansor.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://www.usenix.org/conference/osdi20/presentation/zheng",
+      "https://www.usenix.org/system/files/osdi20-zheng.pdf"
+    ],
+    "priority": "P3",
+    "category": "编译器与并行搜索背景",
+    "method": "层次搜索空间、程序采样与代价模型。",
+    "limitations": "只借鉴候选生成/排序；A的固定算子不能重写张量程序。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A12_2020_Ansor.pdf",
+    "pdf_pages": 18,
+    "pdf_sha256": "73ef4169ed3856f016195bc28a7819e7040274e0af8fb90df2e92a964ea04232",
+    "download_url": "https://www.usenix.org/system/files/osdi20-zheng.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
   },
   {
     "id": "A13",
@@ -166,7 +538,36 @@
     "type": "论文",
     "relevance": "问题1/2：划分与映射的分层优化；GPU集群通信结论不可照搬NPU共享DDR。",
     "verified_date": "2026-09-23",
-    "verification": "会议论文摘要页"
+    "verification": "会议论文摘要页",
+    "pdf_urls": [
+      "https://www.usenix.org/system/files/osdi22-zheng-lianmin.pdf"
+    ],
+    "pdf_filename": "A13_2022_Alpa.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://www.usenix.org/conference/osdi22/presentation/zheng-lianmin",
+      "https://www.usenix.org/system/files/osdi22-zheng-lianmin.pdf"
+    ],
+    "priority": "P3",
+    "category": "编译器与并行搜索背景",
+    "method": "算子间/算子内并行的分层规划。",
+    "limitations": "集群训练、流水批次和算子切分与A的1–5核单图不同；不直接迁移执行模型。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A13_2022_Alpa.pdf",
+    "pdf_pages": 21,
+    "pdf_sha256": "c13729032db5b7d264f8a3d7606da5ef6a399ca45f629d4021a4629e6de588bd",
+    "download_url": "https://www.usenix.org/system/files/osdi22-zheng-lianmin.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
   },
   {
     "id": "A14",
@@ -179,19 +580,1919 @@
     "type": "论文",
     "relevance": "问题1–3：联合搜索的研究背景；本题仅改变分组与调度，不改变计算语义。",
     "verified_date": "2026-09-23",
-    "verification": "会议论文摘要页"
+    "verification": "会议论文摘要页",
+    "pdf_urls": [
+      "https://www.usenix.org/system/files/osdi22-unger.pdf"
+    ],
+    "pdf_filename": "A14_2022_Unity.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://www.usenix.org/conference/osdi22/presentation/unger",
+      "https://www.usenix.org/system/files/osdi22-unger.pdf"
+    ],
+    "priority": "P3",
+    "category": "编译器与并行搜索背景",
+    "method": "联合代数图变换与并行化的搜索。",
+    "limitations": "A不允许代数替换或重算，保留原清单但只作方法背景。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A14_2022_Unity.pdf",
+    "pdf_pages": 19,
+    "pdf_sha256": "4420859b0e9b48779c8cf02cb59f5ab995ed5c19c90afb6f9a28b1d8907c285e",
+    "download_url": "https://www.usenix.org/system/files/osdi22-unger.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
   },
   {
     "id": "A15",
-    "title": "TASO: Optimizing Deep Learning Computation with Automated Generation of Graph Substitutions",
+    "title": "TASO: Optimizing Deep Learning Computation with Automatic Generation of Graph Substitutions",
     "authors": "Jia, Z.; Padon, O.; Thomas, J.; Warszawski, T.; Zaharia, M.; Aiken, A.",
     "year": 2019,
     "venue": "ACM SOSP",
     "url": "https://catalyst.cs.cmu.edu/projects/taso.html",
-    "doi": "",
+    "doi": "10.1145/3341301.3359630",
     "type": "论文",
-    "relevance": "创新备选：受约束图变换的正确性意识；仅使用合法合并/拆分/迁移，不做代数替换。",
+    "relevance": "图替换的背景资料。A禁止改写算子语义，TASO的核心替换操作不作为本题候选方法。",
     "verified_date": "2026-09-23",
-    "verification": "作者研究组项目页及论文出版信息"
+    "verification": "作者研究组项目页及论文出版信息",
+    "pdf_urls": [
+      "https://theory.stanford.edu/~aiken/publications/papers/sosp19.pdf"
+    ],
+    "pdf_filename": "A15_2019_TASO.pdf",
+    "origin": "existing_15",
+    "source_evidence": [
+      "https://catalyst.cs.cmu.edu/projects/taso.html",
+      "https://theory.stanford.edu/~aiken/publications/papers/sosp19.pdf"
+    ],
+    "metadata_correction": "原索引 Automated 更正为论文首页/正式出版题名中的 Automatic。",
+    "priority": "P3",
+    "category": "编译器与并行搜索背景",
+    "method": "自动生成并验证图替换。",
+    "limitations": "A图及算子语义固定，不可直接应用替换；保留原清单作边界参考。",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "license_note": "保留原文版权与来源；论文不适用本仓库代码许可。",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A15_2019_TASO.pdf",
+    "pdf_pages": 16,
+    "pdf_sha256": "1d8aaeae26e45b3839d380be532150ba54ec19c0280f691ef79e0a20ba391dc8",
+    "download_url": "https://theory.stanford.edu/~aiken/publications/papers/sosp19.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "Combined Scheduling, Memory Allocation and Tensor Replacement for Minimizing Off-Chip Data Accesses of DNN Accelerators",
+    "authors": "Yi Li; Aarti Gupta; Sharad Malik",
+    "year": 2023,
+    "venue": "arXiv preprint arXiv:2311.18246",
+    "doi": "10.48550/arXiv.2311.18246",
+    "url": "https://arxiv.org/abs/2311.18246",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2311.18246",
+      "https://arxiv.org/pdf/2311.18246.pdf"
+    ],
+    "method": "COSMA以DNN依赖约束为基础，把operator schedule、scratchpad memory allocation和tensor replacement放进ILP；同时给出大图的divide-and-conquer启发式，以非强制片外访问量为目标。",
+    "relevance": "主线：用create/preserve/spill/retrieve状态分析额外片外访问，帮助评价分组和核归属引起的内存压力；不赋予选手自由控制Step2/3的权限。",
+    "limitations": "原文时间步执行单个operator，允许优化operator顺序、spill/retrieval及连续地址分配。A由固定Step1/2/3决定这些内部行为且无地址碎片；只取状态/访存代价及候选评分思想。其ILP不能直接称为A的小图最优解。",
+    "priority": "P1",
+    "source_evidence": [
+      "https://arxiv.org/abs/2311.18246",
+      "https://arxiv.org/pdf/2311.18246"
+    ],
+    "license_note": "The arXiv page and paper copyright notice govern reuse; no separate permissive license was asserted.",
+    "id": "A16",
+    "pdf_filename": "A16_2023_COSMA.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [],
+    "verification_depth": "D2: local PDF first page/abstract plus arXiv metadata",
+    "pdf_version": "arXiv预印本",
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "预印本",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A16_2023_COSMA.pdf",
+    "pdf_pages": 8,
+    "pdf_sha256": "18fca35dd5a17e3950840797101946c0566871ff2cb929847052145c41354b6d",
+    "download_url": "https://arxiv.org/pdf/2311.18246",
+    "fulltext_status": "available_pdf",
+    "selection_role": "主线方法",
+    "reading_rank": 4,
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读本地PDF的模型及算法段落",
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "decision": "COSMA显式优化spill/retrieval额外访存，比只优化峰值内存更对口。取其张量状态和代价思想；A的固定Step2/3不允许直接移植自由调度/逐张量置换/地址变量。"
+    }
+  },
+  {
+    "title": "Ordering Chaos: Memory-Aware Scheduling of Irregularly Wired Neural Networks for Edge Devices",
+    "authors": "Byung Hoon Ahn; Jinwon Lee; Jamie Menjay Lin; Hsin-Pai Cheng; Jilei Hou; Hadi Esmaeilzadeh",
+    "year": 2020,
+    "venue": "Proceedings of Machine Learning and Systems 2 (MLSys 2020)",
+    "doi": "",
+    "url": "https://proceedings.mlsys.org/paper_files/paper/2020/hash/79c36fe64e04b80fc44845bb9fe73242-Abstract.html",
+    "pdf_urls": [
+      "https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf",
+      "https://cseweb.ucsd.edu/~hadi/doc/paper/2020-sysml-serenity.pdf"
+    ],
+    "method": "SERENITY把满足DAG依赖的operator顺序视为峰值激活内存优化问题，利用部分调度的重复子路径、签名和动态规划搜索最优内存序列，并用adaptive soft budgeting控制搜索规模。",
+    "relevance": "补充：以活跃Tensor集合评价外层子图顺序候选。原文的单设备op顺序DP不能直接作为A的可提交方案。",
+    "limitations": "主要针对单设备单模型推理和不规则网络，目标是激活峰值而非多核makespan；论文还含graph rewriting，A中不能用代数/语义改写，因此只采用不改变图的顺序搜索。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://proceedings.mlsys.org/paper_files/paper/2020/hash/79c36fe64e04b80fc44845bb9fe73242-Abstract.html",
+      "https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf"
+    ],
+    "license_note": "Open conference paper; retain the authorship and venue notice when reusing material.",
+    "id": "A17",
+    "pdf_filename": "A17_2020_SERENITY.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [],
+    "verification_depth": "D2: local PDF first page/abstract plus official MLSys record",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A17_2020_SERENITY.pdf",
+    "pdf_pages": 14,
+    "pdf_sha256": "e69c4efe35e7b08cf460acf78376bd177a0ea01d59fed0f41e09a784ef2b817e",
+    "download_url": "https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。",
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读所列PDF页，范围按decision注明",
+      "pdf_pages": [
+        1
+      ],
+      "decision": "摘要核对：优化单设备激活峰值；可用活跃集代理，但不能把自由op顺序当作A的提交变量。"
+    }
+  },
+  {
+    "title": "Hierarchical Memory-Constrained Operator Scheduling of Neural Architecture Search Networks",
+    "authors": "Zihan Wang; Chengcheng Wan; Yuting Chen; Ziyi Lin; He Jiang; Lei Qiao",
+    "year": 2022,
+    "venue": "DAC '22: 59th ACM/IEEE Design Automation Conference, pp. 493-498",
+    "doi": "10.1145/3489517.3530472",
+    "url": "https://doi.org/10.1145/3489517.3530472",
+    "pdf_urls": [
+      "https://chengcheng-wan.github.io/paper/22-DAC.pdf"
+    ],
+    "method": "HMCOS先构造层级化计算图，再用记忆约束的调度算法安排NAS网络中的operator/cell，使峰值内存最小；它显式处理cell间和cell内的调度层级。",
+    "relevance": "补充：从层级计算图借鉴分组粒度和活跃集剪枝；A没有预先给定NAS cell结构，需自行构造且保持原图不变。",
+    "limitations": "原文重点是单设备峰值内存和NAS网络，未建模A的Cube/Vector周期、核间同步及共享DDR/L2带宽；需分别检查L1和UB，不能把论文单一内存约束直接替换官方Step3。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://doi.org/10.1145/3489517.3530472",
+      "https://chengcheng-wan.github.io/paper/22-DAC.pdf"
+    ],
+    "license_note": "Author-hosted PDF is available; publication rights remain with ACM/IEEE or the rights holder.",
+    "id": "A18",
+    "pdf_filename": "A18_2022_HMCOS.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [
+      "Candidate author order was wrong: the PDF order is Zihan Wang, Chengcheng Wan, Yuting Chen, Ziyi Lin, He Jiang, Lei Qiao."
+    ],
+    "verification_depth": "D2: local PDF first page plus DOI/author record",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A18_2022_HMCOS.pdf",
+    "pdf_pages": 6,
+    "pdf_sha256": "51040aef0d556519e7fa0bfccaa92a7d0818afa9e4565696cbb6b8a34fc676b8",
+    "download_url": "https://chengcheng-wan.github.io/paper/22-DAC.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。",
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读所列PDF页，范围按decision注明",
+      "pdf_pages": [
+        1
+      ],
+      "decision": "摘要核对：NAS层级图和迭代峰值内存优化；A图没有已知NAS cell结构，作为补充候选。"
+    }
+  },
+  {
+    "title": "ROAM: memory-efficient large DNN training via optimized operator ordering and memory layout",
+    "authors": "Huiyao Shu; Ang Wang; Ziji Shi; Hanyu Zhao; Yong Li; Lu Lu",
+    "year": 2023,
+    "venue": "arXiv preprint arXiv:2310.19295",
+    "doi": "10.48550/arXiv.2310.19295",
+    "url": "https://arxiv.org/abs/2310.19295",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2310.19295",
+      "https://arxiv.org/pdf/2310.19295.pdf"
+    ],
+    "method": "ROAM在计算图层面联合优化operator order和tensor memory layout，以张量生命周期/大小推导内存负载，并用树式算法自动搜索任务划分。",
+    "relevance": "背景：顺序与张量生命周期的关系可帮助理解驻留压力；其训练、自由op顺序及真实地址布局不是A的优化变量。",
+    "limitations": "论文面向训练和单GPU内存，memory layout/fragmentation假设与A官方Step3的可拆分虚拟字节额度不同；不覆盖多核共享带宽、FIFO L2命中或Pipe资源，不能直接搬运其收益。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://arxiv.org/abs/2310.19295",
+      "https://arxiv.org/pdf/2310.19295"
+    ],
+    "license_note": "ArXiv author version; no separate permissive license was asserted.",
+    "id": "A19",
+    "pdf_filename": "A19_2023_ROAM.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [],
+    "verification_depth": "D2: local PDF first page/abstract plus arXiv metadata",
+    "pdf_version": "arXiv预印本",
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "预印本",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A19_2023_ROAM.pdf",
+    "pdf_pages": 14,
+    "pdf_sha256": "7927c20a5163128869b1ed684f1a9e24b9c9e1ba41fcec0c301cfe5c0d929cb2",
+    "download_url": "https://arxiv.org/pdf/2310.19295",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "MoteNN: Memory Optimization via Fine-grained Scheduling for Deep Neural Networks on Tiny Devices",
+    "authors": "Renze Chen; Zijian Ding; Size Zheng; Meng Li; Yun Liang",
+    "year": 2024,
+    "venue": "61st ACM/IEEE Design Automation Conference (DAC '24), 6 pages",
+    "doi": "10.1145/3649329.3655922",
+    "url": "https://doi.org/10.1145/3649329.3655922",
+    "pdf_urls": [
+      "https://light-of-hers.github.io/assets/MoteNN.pdf"
+    ],
+    "method": "MoteNN提出Axis Connecting Graph表示，在图级进行operator partition，并由内存瓶颈引导细粒度schedule，以较小延迟代价降低峰值内存。",
+    "relevance": "背景：原文细粒度算子切分不被A允许，当前不将其作为合并/拆分子图算法。",
+    "limitations": "面向tiny-device单设备部署，细粒度分割可能改变算子形状和调用数；A不能改变cycles/size或算子语义，故只能采用已有计算操作的合法子图分组与顺序，不照搬其算子分割。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://doi.org/10.1145/3649329.3655922",
+      "https://light-of-hers.github.io/assets/MoteNN.pdf"
+    ],
+    "license_note": "Author-hosted conference PDF; ACM publication rights and redistribution terms still apply.",
+    "id": "A20",
+    "pdf_filename": "A20_2024_MoteNN.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [],
+    "verification_depth": "D2: local PDF first page/abstract plus ACM DOI record",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A20_2024_MoteNN.pdf",
+    "pdf_pages": 6,
+    "pdf_sha256": "5bea52ad0c3899a469cc34ceb0a9da5fca694e5f27416252ec957a17d66d295f",
+    "download_url": "https://light-of-hers.github.io/assets/MoteNN.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "PartitionTuner: An operator scheduler for deep-learning compilers supporting multiple heterogeneous processing units",
+    "authors": "Misun Yu; Yongin Kwon; Jemin Lee; Jeman Park; Junmo Park; Taeho Kim",
+    "year": 2023,
+    "venue": "ETRI Journal 45(2): 318-328",
+    "doi": "10.4218/etrij.2021-0446",
+    "url": "https://onlinelibrary.wiley.com/doi/10.4218/etrij.2021-0446",
+    "pdf_urls": [
+      "https://ksp.etri.re.kr/ksp/article/file/66959.pdf"
+    ],
+    "method": "PartitionTuner用单个/成组operator profiling、branch extraction、动态规划backend finder和partition scheduler，为CPU/NPU等异构PU同时生成分区和并行执行计划。",
+    "relevance": "补充：分区和独立分支的组织可供参考；CPU/NPU异构PU不等同A的同构核心或核内Cube/Vector Pipe，不能沿用原profile代价。",
+    "limitations": "目标是CPU+NPU异构PU，主要考虑执行时间和转移开销，没有A的同构多核共享DDR争用、L1/UB双容量、Task等待环或FIFO L2；其连续分支分区约束也不能强加给所有A图。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://onlinelibrary.wiley.com/doi/10.4218/etrij.2021-0446",
+      "https://ksp.etri.re.kr/ksp/article/file/66959.pdf"
+    ],
+    "license_note": "The ETRI PDF states KOGL Type 4; preserve attribution, non-commercial/no-derivatives conditions and source notice.",
+    "id": "A21",
+    "pdf_filename": "A21_2023_PartitionTuner.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [],
+    "verification_depth": "D2: local PDF first page/abstract plus ETRI/Wiley record",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "category": "算子分组与多核映射",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A21_2023_PartitionTuner.pdf",
+    "pdf_pages": 11,
+    "pdf_sha256": "842daffd85a0b2b82336793e6fdf24f7f8f0d5f584a8a05ff42ffce810296797",
+    "download_url": "https://ksp.etri.re.kr/ksp/article/file/66959.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。",
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读所列PDF页，范围按decision注明",
+      "pdf_pages": [
+        1,
+        2
+      ],
+      "decision": "摘要/引言核对：CPU/NPU异构profile驱动分区；A是同构核且周期固定，因此弱于A49的结构匹配。"
+    }
+  },
+  {
+    "title": "Timeloop: A Systematic Approach to DNN Accelerator Evaluation",
+    "authors": "Angshuman Parashar; Priyanka Raina; Yakun Sophia Shao; Yu-Hsin Chen; Victor A. Ying; Anurag Mukkara; Rangharajan Venkatesan; Brucek Khailany; Stephen W. Keckler; Joel Emer",
+    "year": 2019,
+    "venue": "2019 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS), pp. 304-315",
+    "doi": "10.1109/ISPASS.2019.00042",
+    "url": "https://research.nvidia.com/publication/2019-03_timeloop-systematic-approach-dnn-accelerator-evaluation",
+    "pdf_urls": [
+      "https://accelergy.mit.edu/timeloop.pdf",
+      "https://people.csail.mit.edu/emer/media/papers/2019.03.ispass.timeloop.pdf"
+    ],
+    "method": "Timeloop以统一架构/工作负载描述构造mapspace，搜索loop tiling、spatial/temporal mapping和多级存储驻留，用成本模型估计周期、数据访问和能耗。",
+    "relevance": "背景：层次数据流/映射的成本建模。A算子cycles固定，不能移植loop tiling、硬件配置搜索或宣称原模型给出A的下界。",
+    "limitations": "主要面向规则DNN层和空间加速器映射，不是A的任意DAG子图分区/多核Task调度；不能替代官方仿真，也不能把其能量/带宽模型当作题面cycles或60 B/cycle的事实。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://research.nvidia.com/publication/2019-03_timeloop-systematic-approach-dnn-accelerator-evaluation",
+      "https://accelergy.mit.edu/timeloop.pdf",
+      "https://doi.org/10.1109/ISPASS.2019.00042"
+    ],
+    "license_note": "Public author/NVIDIA/MIT manuscript; publication copyright remains with IEEE.",
+    "id": "A22",
+    "pdf_filename": "A22_2019_Timeloop.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [],
+    "verification_depth": "D2: local PDF first page plus NVIDIA/MIT/IEEE records",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "category": "访存下界与性能模型",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A22_2019_Timeloop.pdf",
+    "pdf_pages": 12,
+    "pdf_sha256": "43f0b0b8b16ec95ba1348f9884f8434cc626f1032aac52f61bb85633509d4a45",
+    "download_url": "https://accelergy.mit.edu/timeloop.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "ZigZag: Enlarging Joint Architecture-Mapping Design Space Exploration for DNN Accelerators",
+    "authors": "Linyan Mei; Pouya Houshmand; Vikram Jain; Sebastian Giraldo; Marian Verhelst",
+    "year": 2021,
+    "venue": "IEEE Transactions on Computers 70(8): 1160-1174",
+    "doi": "10.1109/TC.2021.3059962",
+    "url": "https://ieeexplore.ieee.org/document/9360462/",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2007.11360",
+      "https://arxiv.org/pdf/2007.11360.pdf"
+    ],
+    "method": "ZigZag用memory-centric nested-for-loop统一表示算法、硬件与映射，支持不同操作数在存储层级上使用不均匀temporal/spatial mapping，并搜索架构和数据流。",
+    "relevance": "背景：内存层级与映射空间的关系；论文的算子内uneven mapping不等同A的核映射或Cube/Vector分配。",
+    "limitations": "是单层/加速器DSE与loop mapping框架，通常假设规则张量计算；A的正式决策是DAG子图归属、核内顺序和共享DDR竞争，需将ZigZag仅作为代理生成器。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://ieeexplore.ieee.org/document/9360462/",
+      "https://arxiv.org/abs/2007.11360",
+      "https://arxiv.org/pdf/2007.11360",
+      "https://dblp.org/rec/journals/tc/MeiHJGV21.html"
+    ],
+    "license_note": "The local file is an arXiv author version; the IEEE version has publisher copyright.",
+    "id": "A23",
+    "pdf_filename": "A23_2020_ZigZag_arXiv.pdf",
+    "origin": "new_memory",
+    "related_versions": {
+      "preprint_title": "ZigZag: A Memory-Centric Rapid DNN Accelerator Design Space Exploration Framework",
+      "preprint_year": 2020,
+      "preprint_doi": "10.48550/arXiv.2007.11360"
+    },
+    "metadata_notes": [
+      "The downloaded A23 PDF is the arXiv preprint, whose title differs from the expanded IEEE Transactions on Computers title. Keep both version titles and cite the IEEE title/DOI when claiming the journal publication."
+    ],
+    "verification_depth": "D3: local PDF first page plus arXiv and IEEE/DBLP publication metadata",
+    "downloaded_version": {
+      "title": "ZigZag: A Memory-Centric Rapid DNN Accelerator Design Space Exploration Framework",
+      "authors": [
+        "Linyan Mei",
+        "Pouya Houshmand",
+        "Vikram Jain",
+        "Sebastian Giraldo",
+        "Marian Verhelst"
+      ],
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2007.11360"
+    },
+    "pdf_version": "2020 arXiv预印本，题名不同于2021 IEEE期刊版",
+    "category": "访存下界与性能模型",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A23_2020_ZigZag_arXiv.pdf",
+    "pdf_pages": 14,
+    "pdf_sha256": "2f6950ff708a0a0b5afac67d834fc8218e9c7ea4f49d4486c22b0273b30ffdb2",
+    "download_url": "https://arxiv.org/pdf/2007.11360",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "MAESTRO: A Data-Centric Approach to Understand Reuse, Performance, and Hardware Cost of DNN Mappings",
+    "authors": "Hyoukjun Kwon; Prasanth Chatarasi; Vivek Sarkar; Tushar Krishna; Michael Pellauer; Angshuman Parashar",
+    "year": 2020,
+    "venue": "IEEE Micro 40(3): 20-29",
+    "doi": "10.1109/MM.2020.2985963",
+    "url": "https://research.nvidia.com/publication/2020-04_maestro-data-centric-approach-understand-reuse-performance-and-hardware-cost",
+    "pdf_urls": [
+      "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/c/332/files/2021/02/maestro_toppicks2020.pdf"
+    ],
+    "method": "MAESTRO以data-centric directives表达空间/时间映射和数据复用，快速分析各级存储访问、吞吐、延迟与硬件成本，提供可用于映射搜索的解析成本模型。",
+    "relevance": "背景：用于理解数据复用和访存统计，不能凭规则DNN dataflow模型预测A的FIFO命中或替代官方事件仿真。",
+    "limitations": "针对规则DNN accelerator dataflow，不处理任意DAG的商图无环、跨核Task同步或官方FIFO语义；A中cycles不是FLOPs，MAESTRO的吞吐/能耗预测必须以官方计时重新校准。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://research.nvidia.com/publication/2020-04_maestro-data-centric-approach-understand-reuse-performance-and-hardware-cost",
+      "https://arxiv.org/abs/1805.02566",
+      "https://doi.org/10.1109/MM.2020.2985963",
+      "https://par.nsf.gov/servlets/purl/10168817",
+      "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/c/332/files/2021/02/maestro_toppicks2020.pdf",
+      "https://github.com/maestro-project/maestro"
+    ],
+    "license_note": "The IEEE Micro PDF is posted with IEEE permission and states authorized-use restrictions; the arXiv and MICRO copies have their own copyright notices. The MAESTRO code repository is MIT licensed, but that does not change paper rights.",
+    "id": "A24",
+    "pdf_filename": "A24_2020_MAESTRO_IEEE_Micro.pdf",
+    "origin": "new_memory",
+    "related_versions": {
+      "conference_version_title": "Understanding Reuse, Performance, and Hardware Cost of DNN Dataflow: A Data-Centric Approach",
+      "conference_version_year": 2019,
+      "conference_version_doi": "10.1145/3352460.3358252",
+      "preprint_doi": "10.48550/arXiv.1805.02566"
+    },
+    "metadata_notes": [
+      "The downloaded PDF is the arXiv preprint and does not have the IEEE Micro title. The work has three distinguishable records: arXiv preprint (Using MAESTRO), MICRO 2019 conference paper, and IEEE Micro 2020 Top Picks article. Add the verified IEEE Micro PDF URL above when the journal version is required."
+    ],
+    "verification_depth": "D3: local PDF first page plus arXiv, MICRO, IEEE Micro and author project records",
+    "pdf_version": "正式发表PDF（作者/机构公开副本）",
+    "category": "访存下界与性能模型",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A24_2020_MAESTRO_IEEE_Micro.pdf",
+    "pdf_pages": 10,
+    "pdf_sha256": "2899115111b7896db622983836fec29c15b195ce154233872e76e5e0434f0ff1",
+    "download_url": "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/c/332/files/2021/02/maestro_toppicks2020.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "Marvel: A Data-Centric Approach for Mapping Deep Learning Operators on Spatial Accelerators",
+    "authors": "Prasanth Chatarasi; Hyoukjun Kwon; Angshuman Parashar; Michael Pellauer; Tushar Krishna; Vivek Sarkar",
+    "year": 2021,
+    "venue": "ACM Transactions on Architecture and Code Optimization 19(1), Article 6",
+    "doi": "10.1145/3485137",
+    "url": "https://doi.org/10.1145/3485137",
+    "pdf_urls": [
+      "https://par.nsf.gov/servlets/purl/10348661"
+    ],
+    "method": "Marvel为MDC可表达的DNN operator建立可验证映射边界，把高维映射空间解耦为off-chip与on-chip子空间，先优化片外再优化片上并用成本模型剪枝。",
+    "relevance": "背景：可参考搜索空间分解的组织方式；其off-chip/on-chip算子映射空间并非A的合法决策空间。",
+    "limitations": "仅覆盖规则、仿射、完美嵌套loop operator及空间加速器，不能直接处理A的任意DAG子图；MDC mapping的片上地址/层级假设与A虚拟字节额度不同。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://doi.org/10.1145/3485137",
+      "https://arxiv.org/abs/2002.07752",
+      "https://arxiv.org/pdf/2002.07752",
+      "https://par.nsf.gov/servlets/purl/10348661"
+    ],
+    "license_note": "ArXiv author version and ACM open article are both discoverable; use the relevant version's copyright/permission notice for redistribution.",
+    "id": "A25",
+    "pdf_filename": "A25_2021_Marvel_TACO.pdf",
+    "origin": "new_memory",
+    "related_versions": {
+      "preprint_title": "Marvel: A Data-centric Compiler for DNN Operators on Spatial Accelerators",
+      "preprint_authors": [
+        "Prasanth Chatarasi",
+        "Hyoukjun Kwon",
+        "Natesh Raina",
+        "Saurabh Malik",
+        "Vaisakh Haridas",
+        "Angshuman Parashar",
+        "Michael Pellauer",
+        "Tushar Krishna",
+        "Vivek Sarkar"
+      ],
+      "preprint_doi": "10.48550/arXiv.2002.07752"
+    },
+    "metadata_notes": [
+      "The local PDF is the arXiv version: its title is Data-centric Compiler and it has nine authors. The final ACM article has a different title and six-author list; Saurabh Malik, Natesh Raina and Vaisakh Haridas are present in the preprint but not in the ACM metadata."
+    ],
+    "verification_depth": "D3: local PDF first page plus arXiv and ACM final article metadata",
+    "pdf_version": "正式发表PDF（作者/机构公开副本）",
+    "category": "访存下界与性能模型",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A25_2021_Marvel_TACO.pdf",
+    "pdf_pages": 26,
+    "pdf_sha256": "67ca1f8297c834fbcf29684c294f804d1eb35db04f9703c649ad803b97459030",
+    "download_url": "https://par.nsf.gov/servlets/purl/10348661",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "MODeL: Memory Optimizations for Deep Learning",
+    "authors": "Benoit Steiner; Mostafa Elhoushi; Jacob Kahn; James Hegarty",
+    "year": 2023,
+    "venue": "Proceedings of the 40th International Conference on Machine Learning, PMLR 202: 32618-32632",
+    "doi": "",
+    "url": "https://proceedings.mlr.press/v202/steiner23a.html",
+    "pdf_urls": [
+      "https://proceedings.mlr.press/v202/steiner23a/steiner23a.pdf",
+      "https://arxiv.org/pdf/2210.12924"
+    ],
+    "method": "MODeL用联合ILP优化张量lifetime与memory location，并以operator order optimization、fragmentation reduction和动态内存profile降低峰值训练内存；它是OLLA预印本的同行评审版本。",
+    "relevance": "背景：张量lifetime与location的形式化；A没有真实地址碎片，因此优先读同时考虑spill的COSMA，MODeL不作主方案。",
+    "limitations": "训练场景包含spilling/rematerialization与GPU/CPU位置决策，A禁止重算和语义变化且官方Step3没有实际地址碎片；只保留liveness/ordering思想，最后以官方搬运仿真筛选。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://proceedings.mlr.press/v202/steiner23a.html",
+      "https://proceedings.mlr.press/v202/steiner23a/steiner23a.pdf",
+      "https://github.com/facebookresearch/MODel_opt",
+      "https://arxiv.org/abs/2210.12924",
+      "https://arxiv.org/pdf/2210.12924"
+    ],
+    "license_note": "PMLR provides open access; the accompanying implementation is separately licensed (MIT in the cited repository).",
+    "id": "A26",
+    "pdf_filename": "A26_2023_MODeL.pdf",
+    "origin": "new_memory",
+    "related_versions": {
+      "preprint_title": "OLLA: Optimizing the Lifetime and Location of Arrays to Reduce the Memory Usage of Neural Networks",
+      "preprint_year": 2022,
+      "preprint_venue": "arXiv preprint arXiv:2210.12924",
+      "preprint_doi": "10.48550/arXiv.2210.12924",
+      "preprint_url": "https://arxiv.org/abs/2210.12924"
+    },
+    "metadata_notes": [
+      "Do not use the arXiv OLLA DOI as MODeL's publication DOI. PMLR supplies the ICML 2023 record and no publisher DOI; retain 10.48550/arXiv.2210.12924 in a separate preprint field."
+    ],
+    "verification_depth": "D3: local PDF first page plus PMLR and arXiv records",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A26_2023_MODeL.pdf",
+    "pdf_pages": 15,
+    "pdf_sha256": "920b0d873d65028ea7f22ce8c725a687fd48aad13d3fbbaf7187531e801eb9f5",
+    "download_url": "https://proceedings.mlr.press/v202/steiner23a/steiner23a.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "vDNN: Virtualized Deep Neural Networks for Scalable, Memory-Efficient Neural Network Design",
+    "authors": "Minsoo Rhu; Natalia Gimelshein; Jason Clemons; Arslan Zulfiqar; Stephen W. Keckler",
+    "year": 2016,
+    "venue": "49th Annual IEEE/ACM International Symposium on Microarchitecture (MICRO), Article 18",
+    "doi": "10.1109/MICRO.2016.7783721",
+    "url": "https://arxiv.org/abs/1602.08124",
+    "pdf_urls": [
+      "https://www.cs.utexas.edu/~skeckler/pubs/MICRO_2016_vDNN.pdf",
+      "https://arxiv.org/pdf/1602.08124"
+    ],
+    "method": "vDNN运行时把DNN张量在GPU显存与CPU内存间虚拟化，依据层执行顺序进行activation prefetch/eviction，以流水化数据搬运隐藏部分迁移延迟。",
+    "relevance": "背景：CPU/GPU换入换出和计算重叠；A的prefetch/eviction由官方步骤决定，选手不能直接照搬运行时策略。",
+    "limitations": "GPU/CPU异构内存和训练激活为主，依赖显式prefetch/eviction，不处理A的核分组、共享DDR仲裁、L1/UB双容量或FIFO L2；A不允许用其虚拟化机制改官方评估器。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://arxiv.org/abs/1602.08124",
+      "https://www.cs.utexas.edu/~skeckler/pubs/MICRO_2016_vDNN.pdf",
+      "https://doi.org/10.1109/MICRO.2016.7783721"
+    ],
+    "license_note": "Author/UT and arXiv copies are public; IEEE publication copyright applies.",
+    "id": "A27",
+    "pdf_filename": "A27_2016_vDNN.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [],
+    "verification_depth": "D2: local PDF first page plus arXiv/IEEE metadata",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "category": "换入换出与重算背景",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A27_2016_vDNN.pdf",
+    "pdf_pages": 13,
+    "pdf_sha256": "de4ac890b620e90a6c1b679213e57ea90ee38dceaa19ec6a2540a9ad3b4b3adf",
+    "download_url": "https://www.cs.utexas.edu/~skeckler/pubs/MICRO_2016_vDNN.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "SwapAdvisor: Pushing Deep Learning Beyond the GPU Memory Limit via Smart Swapping",
+    "authors": "Chien-Chin Huang; Gu Jin; Jinyang Li",
+    "year": 2020,
+    "venue": "25th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), pp. 1341-1355",
+    "doi": "10.1145/3373376.3378530",
+    "url": "https://doi.org/10.1145/3373376.3378530",
+    "pdf_urls": [
+      "https://par.nsf.gov/servlets/purl/10191573"
+    ],
+    "method": "SwapAdvisor联合搜索DNN operator执行顺序、GPU内存分配和CPU↔GPU tensor swap计划，用遗传算法搜索可与GPU computation重叠的swap in/out时间线。",
+    "relevance": "背景：调度与swap的相互作用；只用于解释搬运压力，不将训练运行时swap策略作为A可控变量。",
+    "limitations": "GPU-CPU双向交换、训练网络和单设备假设；A的DDR是所有核共享且评估器决定换入换出，不能把SwapAdvisor的具体swap计划或遗传算法当作官方执行语义。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://doi.org/10.1145/3373376.3378530",
+      "https://par.nsf.gov/servlets/purl/10191573",
+      "https://dblp.org/rec/conf/asplos/HuangJ020.html"
+    ],
+    "license_note": "Author/NSF manuscript is public; ASPLOS/ACM publication rights and redistribution terms apply.",
+    "id": "A28",
+    "pdf_filename": "A28_2020_SwapAdvisor.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [],
+    "verification_depth": "D2: local PDF first page/abstract plus ASPLOS/ACM/DBLP records",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "category": "换入换出与重算背景",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A28_2020_SwapAdvisor.pdf",
+    "pdf_pages": 15,
+    "pdf_sha256": "130e5fb7bf4fe4554deb512b0eb702839f0975a6b2ec7201b83c45d0fa3576fa",
+    "download_url": "https://par.nsf.gov/servlets/purl/10191573",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "Capuchin: Tensor-based GPU Memory Management for Deep Learning",
+    "authors": "Xuan Peng; Xuanhua Shi; Hulin Dai; Hai Jin; Weiliang Ma; Qian Xiong; Fan Yang; Xuehai Qian",
+    "year": 2020,
+    "venue": "25th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), pp. 891-905",
+    "doi": "10.1145/3373376.3378505",
+    "url": "https://doi.org/10.1145/3373376.3378505",
+    "pdf_urls": [
+      "https://alchem.usc.edu/portal/static/download/capuchin.pdf"
+    ],
+    "method": "Capuchin运行时跟踪tensor访问模式，以动态决策eviction、prefetch和recomputation，并利用GPU stream把搬运与计算重叠。",
+    "relevance": "背景且未取得全文：训练期offload/重算与A边界差异明显，暂不优先追踪。",
+    "limitations": "针对GPU训练、动态运行时和重算；A禁止重算且由官方评估器统一处理spill、地址与同步，不能引入Capuchin运行时或将所有张量视为可缓存。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://doi.org/10.1145/3373376.3378505",
+      "https://asplos-conference.org/wp-content/uploads/2020/abstracts/paper_9_4.html",
+      "https://alchem.usc.edu/portal/static/download/capuchin.pdf",
+      "https://dblp.org/rec/conf/asplos/PengSD0MXYQ20.html"
+    ],
+    "license_note": "Author-hosted PDF is public; ASPLOS/ACM publication rights and redistribution terms apply.",
+    "id": "A29",
+    "pdf_filename": "A29_2020_Capuchin.pdf",
+    "origin": "new_memory",
+    "metadata_notes": [
+      "No local A29_2020_Capuchin.pdf was found in 调研/A题_文献库/pdf; metadata and method were verified from the official ASPLOS abstract and the author-hosted PDF URL only."
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "pdf_version": "尚未取得本地全文",
+    "category": "换入换出与重算背景",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "Communication contention in task scheduling",
+    "authors": "Oliver Sinnen; Leonel A. Sousa",
+    "year": 2005,
+    "venue": "IEEE Transactions on Parallel and Distributed Systems 16(6):503-515",
+    "doi": "10.1109/TPDS.2005.64",
+    "url": "https://researchportal.ulisboa.pt/en/publications/communication-contention-in-task-scheduling/",
+    "pdf_urls": [
+      "https://citeseerx.ist.psu.edu/document?doi=6423d72764e46aad08e8f4c687aa3e313ad2384b&repid=rep1&type=pdf"
+    ],
+    "method": "把任务 DAG 的边显式映射到通信拓扑的链路，联合考虑端点争用、网络争用、路由和因果顺序，并将经典 list scheduling 扩展为 edge scheduling/通信感知列表调度。",
+    "relevance": "待全文：显式通信事件的思想值得核查；A的公平共享DDR不能按独占链路排程，任务边权也需按Tensor/COPY规则去重。",
+    "limitations": "原模型面向一般拓扑和通信链路，未处理本题 L1/UB 驻留、FIFO L2、Cube/Vector 双 Pipe 及官方 spill 语义；需把链路资源改为共享 DDR/L2 资源。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://researchportal.ulisboa.pt/en/publications/communication-contention-in-task-scheduling/",
+      "https://doi.org/10.1109/TPDS.2005.64",
+      "https://citeseerx.ist.psu.edu/document?doi=6423d72764e46aad08e8f4c687aa3e313ad2384b&repid=rep1&type=pdf"
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "license_note": "Public copy has no verified permissive license; publication copyright applies.",
+    "id": "A30",
+    "pdf_filename": "A30_2005.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "No A30_2005.pdf was present locally, so the candidate's claim of a checked local PDF cannot be reproduced here."
+    ],
+    "category": "通信争用与精确调度",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "ieee_api": {
+      "article_number": "1425439",
+      "access_type": "LOCKED",
+      "query_group": "known_a_references"
+    },
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "title": "Parallel Scheduling of DAGs under Memory Constraints",
+    "authors": "Loris Marchal; Hanna Nagy; Bertrand Simon; Frédéric Vivien",
+    "year": 2018,
+    "venue": "2018 IEEE International Parallel and Distributed Processing Symposium (IPDPS), pp. 204-213",
+    "doi": "10.1109/IPDPS.2018.00030",
+    "url": "https://inria.hal.science/hal-01828312/",
+    "pdf_urls": [
+      "https://www.uni-bremen.de/fileadmin/user_upload/fachbereiche/fb3/infcon/CSLog/Publications/bsimon/papers/2018-MNSV-IPDPS.pdf",
+      "https://inria.hal.science/hal-01828312/file/IPDPS.pdf"
+    ],
+    "method": "计算DAG任意并行调度的最大内存峰值，并以ILP/启发式添加虚拟先后边，在降低该最坏峰值时尽量保持短关键路径。",
+    "relevance": "补充：用来理解增加并行度与最坏内存峰值的关系；不直接提供A选定方案的峰值最优解，也不向原图添加虚拟边。",
+    "limitations": "针对共享内存、所有并行调度的最坏峰值；A优化选定方案的makespan，且不能提交额外原图边。只能作并行度/内存风险的辅助分析，不能把其ILP当A联合优化器。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://inria.hal.science/hal-01828312/",
+      "https://doi.org/10.1109/IPDPS.2018.00030",
+      "https://inria.hal.science/hal-01828312/file/IPDPS.pdf",
+      "https://www.uni-bremen.de/fileadmin/user_upload/fachbereiche/fb3/infcon/CSLog/Publications/bsimon/papers/2018-MNSV-IPDPS.pdf"
+    ],
+    "verification_depth": "主代理直接核读；具体页码、范围与修正见personal_review。",
+    "license_note": "HAL is an open archive, but no separate reuse license was verified for the manuscript.",
+    "id": "A31",
+    "pdf_filename": "A31_2018.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "HAL端点未返回PDF；随后从University of Bremen作者公开地址取得IPDPS2018稿。正式页码204–213，作者稿共10页。"
+    ],
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A31_2018.pdf",
+    "pdf_pages": 10,
+    "pdf_sha256": "795c61a45474bbf7a44bd3b84e9158e3bd6a37aaf10626b1c842deed29b7555d",
+    "download_url": "https://www.uni-bremen.de/fileadmin/user_upload/fachbereiche/fb3/infcon/CSLog/Publications/bsimon/papers/2018-MNSV-IPDPS.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。",
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读所列PDF页，范围按decision注明",
+      "pdf_pages": [
+        1
+      ],
+      "decision": "原文求任意并行调度的最大内存峰值，并添加虚拟边限制并行度；不是直接寻找A的最小makespan或最小峰值顺序。"
+    }
+  },
+  {
+    "title": "Revisiting dynamic DAG scheduling under memory constraints for shared-memory platforms",
+    "authors": "Gabriel Bathie; Loris Marchal; Yves Robert; Samuel Thibault",
+    "year": 2020,
+    "venue": "2020 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), pp. 597-606",
+    "doi": "10.1109/IPDPSW50202.2020.00102",
+    "url": "https://doi.org/10.1109/IPDPSW50202.2020.00102",
+    "pdf_urls": [
+      "https://icl.utk.edu/files/publications/2020/icl-utk-1383-2020.pdf"
+    ],
+    "method": "将执行期内存区分为红/黑边，约束有效cut中红边数不超过p，求p处理器任意调度可能达到的最大内存峰值；给出ILP、舍入启发式及series-parallel精确算法。",
+    "relevance": "补充：资源数量限制下的最坏峰值分析；若用于A需先证明共享内存模型到双片上容量的对应关系，不能直接拿ILP结果作A最优标签。",
+    "limitations": "最坏调度峰值上界与寻找最佳调度不同；单共享内存模型不能替代A每核L1/UB、Spill或共享DDR时间线。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://doi.org/10.1109/IPDPSW50202.2020.00102",
+      "https://icl.utk.edu/files/publications/2020/icl-utk-1383-2020.pdf"
+    ],
+    "verification_depth": "主代理直接核读；具体页码、范围与修正见personal_review。",
+    "license_note": "Public author/기관 copy has no verified permissive license.",
+    "id": "A32",
+    "pdf_filename": "A32_2020.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [],
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A32_2020.pdf",
+    "pdf_pages": 10,
+    "pdf_sha256": "5aa7ee276d79c252aba2ce8650f554139a9a51425f882aafe176fa8101ea35e5",
+    "download_url": "https://icl.utk.edu/files/publications/2020/icl-utk-1383-2020.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。",
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读所列PDF页，范围按decision注明",
+      "pdf_pages": [
+        1
+      ],
+      "decision": "原文界定p处理器任意调度的最大峰值；ILP和series-parallel精确算法针对这个最坏情况问题，不是A的联合调度最优解。"
+    }
+  },
+  {
+    "title": "A Decomposition-based Constraint Optimization Approach for Statically Scheduling Task Graphs with Communication Delays to Multiprocessors",
+    "authors": "Nadathur Satish; Kaushik Ravindran; Kurt Keutzer",
+    "year": 2007,
+    "venue": "Design, Automation and Test in Europe Conference (DATE 2007), pp. 57-62",
+    "doi": "10.1109/DATE.2007.364567",
+    "url": "https://doi.org/10.1109/DATE.2007.364567",
+    "pdf_urls": [
+      "https://ptolemy.berkeley.edu/projects/chess/pubs/226/01c_2_854.pdf"
+    ],
+    "method": "以类似 Benders decomposition 的 master/sub 分解，把处理器分配与快速图论可行性/下界子问题交替求解；通过记录冲突约束、紧下界和启发式引导，使原本难扩展的约束优化可处理百节点级图。",
+    "relevance": "补充：任务映射与顺序的分解式搜索值得参考；官方仿真失败反馈不自动构成有效Benders割，最优性需对具体模型另证。",
+    "limitations": "实验平台是同构处理器、点对点通信且规模仍受求解器限制；论文没有本题的官方缓存换入换出和 L2 FIFO，需要把子问题改成评估器代理或真实评估。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://doi.org/10.1109/DATE.2007.364567",
+      "https://dblp.org/rec/conf/date/SatishRK07",
+      "https://ptolemy.berkeley.edu/projects/chess/pubs/226/01c_2_854.pdf"
+    ],
+    "verification_depth": "D3: local PDF first page/abstract/body plus DBLP/DOI.",
+    "license_note": "Berkeley author PDF has no verified permissive license; IEEE publication copyright applies.",
+    "id": "A33",
+    "pdf_filename": "A33_2007.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [],
+    "category": "通信争用与精确调度",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A33_2007.pdf",
+    "pdf_pages": 6,
+    "pdf_sha256": "c68dbe2752a77689a05f576f2ab876d417975c0f1679956a2796fb2efe9a86ff",
+    "download_url": "https://ptolemy.berkeley.edu/projects/chess/pubs/226/01c_2_854.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。"
+  },
+  {
+    "title": "Satisfiability modulo theory (SMT) formulation for optimal scheduling of task graphs with communication delay",
+    "authors": "Avinash Malik; Cameron G. Walker; Michael J. O'Sullivan; Oliver Sinnen",
+    "year": 2018,
+    "venue": "Computers & Operations Research 89:113-126",
+    "doi": "10.1016/j.cor.2017.08.012",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0305054817302186",
+    "pdf_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S0305054817302186/pdfft"
+    ],
+    "method": "提出仅用一组处理器分配二元变量的紧凑 SMT/QF-LRA 模型，编码 DAG 先后、跨核通信和同核不重叠约束，并与 MILP 在约千个图上比较最优求解能力。",
+    "relevance": "待全文：SMT可用于受限调度子问题的形式化参考；加上A的资源规则后复杂度和精确性尚未论证，不能预先称为A的oracle或下界。",
+    "limitations": "目标平台是同构处理器，通信延迟按边给定且不含共享带宽争用；SMT 对全量 100 图和官方事件级仿真可能过慢，不能当主求解器。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://www.sciencedirect.com/science/article/pii/S0305054817302186",
+      "https://doi.org/10.1016/j.cor.2017.08.012"
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "license_note": "No verified open license for the publisher or author copy.",
+    "id": "A34",
+    "pdf_filename": "A34_2018.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "No A34_2018.pdf was present locally; the candidate's verification-depth wording should be read as web/author-preprint verification, not local-PDF inspection."
+    ],
+    "category": "通信争用与精确调度",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "title": "Contention-aware optimal scheduling of real-time precedence-constrained task graphs on heterogeneous distributed systems",
+    "authors": "Sanjit Kumar Roy; Rajesh Devaraj; Arnab Sarkar; Sayani Sinha; Kankana Maji",
+    "year": 2020,
+    "venue": "Journal of Systems Architecture 105:101706",
+    "doi": "10.1016/j.sysarc.2019.101706",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1383762119305132",
+    "pdf_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S1383762119305132/pdfft"
+    ],
+    "method": "提出 ILP-ETR（显式最早/最晚移动时间）和 ILP-NC（非重叠约束）两种最优离线模型，把异构处理元、异构共享总线、任务/消息节点、依赖和资源争用放入同一调度问题。",
+    "relevance": "待全文：任务/消息联合建模与A存在联系；独占共享总线的不重叠约束不符合A的并发公平带宽，不列作现成基线。",
+    "limitations": "假设分布式异构处理器和有限共享总线，未处理 NPU 的 Cube/Vector 双 Pipe、L1/UB 溢出和只读 FIFO L2；显式时间 ILP 对大图不具可扩展性。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://www.sciencedirect.com/science/article/pii/S1383762119305132",
+      "https://doi.org/10.1016/j.sysarc.2019.101706",
+      "https://facweb.iitkgp.ac.in/~arnab/pub.html"
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "license_note": "Publisher page gives no verified open license.",
+    "id": "A35",
+    "pdf_filename": "A35_2020.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "No A35_2020.pdf was present locally; the ScienceDirect/author metadata is the evidence used here."
+    ],
+    "category": "通信争用与精确调度",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "title": "Contention Cognizant Scheduling of Task Graphs on Shared Bus-Based Heterogeneous Platforms",
+    "authors": "Sanjit Kumar Roy; Rajesh Devaraj; Arnab Sarkar",
+    "year": 2022,
+    "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems 41(2):281-293",
+    "doi": "10.1109/TCAD.2021.3059569",
+    "url": "https://doi.org/10.1109/TCAD.2021.3059569",
+    "pdf_urls": [],
+    "method": "先给出共享总线异构平台的 ILP 最优模型，再提出低开销 CC-TMS（Contention Cognizant Task and Message Scheduler）启发式，联合安排任务、消息、处理元和共享总线，显式避免通信冲突。",
+    "relevance": "待全文：CC-TMS是通信争用启发式线索；A的DDR不能直接当串行共享总线，需核读正文并重新定义EFT后才可比较。",
+    "limitations": "目标是实时 DTG 和总线通信，资源/消息粒度与本题事件模拟器不同；论文未含 L1/UB 复用、FIFO L2 和双 Pipe 互补，需要重新定义消息与容量约束。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://doi.org/10.1109/TCAD.2021.3059569",
+      "https://dblp.org/rec/journals/tcad/RoyDS22"
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "license_note": "No verified open license; ResearchGate request-full-text status is not an open-license grant.",
+    "id": "A36",
+    "pdf_filename": "A36_2022.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "No A36_2022.pdf was present locally. Some author pages label the online publication as 2021, while DBLP/IEEE volume 41(2) metadata gives 2022; retain 2022 for the journal volume and optionally record 2021 as online-first year."
+    ],
+    "online_first_year": 2021,
+    "category": "通信争用与精确调度",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "ieee_api": {
+      "article_number": "9354857",
+      "access_type": "LOCKED",
+      "query_group": "known_a_references"
+    },
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "title": "Graph reductions and partitioning heuristics for multicore DAG scheduling",
+    "authors": "Slim Ben-Amor; Liliana Cucu-Grosjean",
+    "year": 2022,
+    "venue": "Journal of Systems Architecture 124:102359",
+    "doi": "10.1016/j.sysarc.2021.102359",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1383762121002502",
+    "pdf_urls": [
+      "https://who.rocq.inria.fr/Liliana.Cucu/LCG-JSA2022.pdf"
+    ],
+    "method": "提出同时考虑 DAG 依赖结构、周期、利用率、优先级和通信延迟的分区启发式，并给出保持原依赖结构的图约简，将相连子任务合并以降低调度分析复杂度。",
+    "relevance": "背景：固定优先级实时DAG的图约简/分区分析，与A的单图makespan和固定评估器目标有差异，不据此修改原图或声称加速。",
+    "limitations": "研究的是多 DAG 实时固定优先级同构核，目标是响应时间分析，不是一次性官方 makespan；约简不能忽略本题子图商图无环、Pipe FIFO 和真实 spill。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://www.sciencedirect.com/science/article/pii/S1383762121002502",
+      "https://doi.org/10.1016/j.sysarc.2021.102359",
+      "https://who.rocq.inria.fr/Liliana.Cucu/LCG-JSA2022.pdf"
+    ],
+    "verification_depth": "D3: local PDF first page/abstract/body plus ScienceDirect/author record.",
+    "license_note": "Author PDF carries publication copyright information and no verified permissive license.",
+    "id": "A37",
+    "pdf_filename": "A37_2022.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [],
+    "category": "无环图与超图划分",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A37_2022.pdf",
+    "pdf_pages": 9,
+    "pdf_sha256": "16c0d51501b0c4427e74d1f7b9c8094ff389e9ddb176c1cd48ad68f8fc2a12d0",
+    "download_url": "https://who.rocq.inria.fr/Liliana.Cucu/LCG-JSA2022.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "HMDS: A Makespan Minimizing DAG Scheduler for Heterogeneous Distributed Systems",
+    "authors": "Debabrata Senapati; Arnab Sarkar; Chandan Karfa",
+    "year": 2021,
+    "venue": "ACM Transactions on Embedded Computing Systems 20(5s), Article 106:1-26",
+    "doi": "10.1145/3477037",
+    "url": "https://doi.org/10.1145/3477037",
+    "pdf_urls": [
+      "https://dl.acm.org/doi/pdf/10.1145/3477037"
+    ],
+    "method": "在异构分布式处理器上用列表式 HMDS 生成 makespan 候选，并用 guided state-space/branch-and-bound 搜索扩展局部决策，结合剩余关键路径和资源分配剪枝。",
+    "relevance": "待全文：启发式与搜索策略可作候选；目前不能称为A强基线，尚需核查算法与实际改造代价。",
+    "limitations": "通信通常按处理器间边延迟处理，未纳入共享 DDR 争用、独立 L1/UB 容量、FIFO L2 和 Cube/Vector Pipe；原搜索复杂度仍随节点数快速增长。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://doi.org/10.1145/3477037",
+      "https://www.sigbed.org/emsoft-info/confs/emsoft2021.html",
+      "https://www.iitg.ac.in/cseweb/thesis/MzQ3MzQwNDAwBgA%3D"
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "license_note": "ACM publication rights apply; no verified open license for the author materials.",
+    "id": "A38",
+    "pdf_filename": "A38_2021.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "No A38_2021.pdf was present locally; the candidate's method summary should be treated as metadata/author-thesis verification."
+    ],
+    "category": "通信争用与精确调度",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "title": "Multilevel Acyclic Hypergraph Partitioning",
+    "authors": "Merten Popp; Sebastian Schlag; Christian Schulz; Daniel Seemaier",
+    "year": 2021,
+    "venue": "2021 Proceedings of the Workshop on Algorithm Engineering and Experiments (ALENEX), pp. 1-15",
+    "doi": "10.1137/1.9781611976472.1",
+    "url": "https://epubs.siam.org/doi/10.1137/1.9781611976472.1",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2002.02962"
+    ],
+    "method": "用有向超图表示集合依赖，采用n-level粗化、初始无环划分、局部FM细化及memetic搜索，优化connectivity (lambda-1)目标。原文形式定义方向为tail到head。",
+    "relevance": "主线：用超边表达同一Tensor关联的生产者和消费者集合，借鉴无环粗化/细化；只按官方生成的COPY计费，不把超边connectivity等同实际字节。",
+    "limitations": "A的一个生产者到多个消费者应对应一个tail和多个heads；不能把单head特例的收缩规则直接照搬，原文多head情形要求共享超边中的角色一致。connectivity不是A的COPY字节恒等式，需按Task/核构图逐份计费；商图无环仍不足以排除Pipe等待环。",
+    "priority": "P1",
+    "source_evidence": [
+      "https://epubs.siam.org/doi/10.1137/1.9781611976472.1",
+      "https://arxiv.org/abs/2002.02962",
+      "https://arxiv.org/pdf/2002.02962",
+      "https://ae.iti.kit.edu/3987.php"
+    ],
+    "verification_depth": "主代理直接核读；具体页码、范围与修正见personal_review。",
+    "license_note": "ArXiv copy is public; SIAM publication copyright applies and no specific permissive license was verified.",
+    "id": "A39",
+    "pdf_filename": "A39_2021.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "主代理根据PDF第3页形式定义纠正初稿：tail为前驱端，head为后继端；第5页区分单head与多head收缩条件。"
+    ],
+    "category": "无环图与超图划分",
+    "pdf_version": "arXiv预印本（2020），引用对应ALENEX 2021正式论文",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A39_2021.pdf",
+    "pdf_pages": 20,
+    "pdf_sha256": "f75030b38a9f7d821be428bc1b23087472421d0a6c77582bb8c4a8a3ed96b658",
+    "download_url": "https://arxiv.org/pdf/2002.02962",
+    "fulltext_status": "available_pdf",
+    "selection_role": "主线方法",
+    "reading_rank": 2,
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读本地PDF的模型及算法段落",
+      "pdf_pages": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "decision": "有向超图、多层次粗化和无环细化适合共享Tensor的集合结构。须采用原文tail到head方向，并将connectivity代理替换为官方COPY计数。"
+    }
+  },
+  {
+    "title": "A cache-aware DAG scheduling method on multicores: Exploiting node affinity and deferred executions",
+    "authors": "Huixuan Yi; Yuanhai Zhang; Zhiyang Lin; Haoran Chen; Yiyang Gao; Xiaotian Dai; Shuai Zhao",
+    "year": 2025,
+    "venue": "Journal of Systems Architecture 161:103372",
+    "doi": "10.1016/j.sysarc.2025.103372",
+    "url": "https://www.sciencedirect.com/science/article/pii/S138376212500044X",
+    "pdf_urls": [
+      "https://eprints.whiterose.ac.uk/id/eprint/225201/1/JSA24_Cache_aware_DAG.pdf"
+    ],
+    "method": "CADE 先构造考虑多个就绪节点争抢偏好核的 affinity-aware priority，再用 contention-aware allocation 比较分配对其他节点缓存加速的损失，并允许 deferred execution 把忙核纳入候选。",
+    "relevance": "背景：保留亲和收益与等待损失的启发。其周期节点跨次释放、LRU和CRP假设不符合A第三问，明确不列主算法。",
+    "limitations": "原文是周期DAG、inclusive L1/L2与LRU；CRP依赖同一节点前后两次释放之间的复用距离。A题FIFO单图COPY_IN缓存不满足该假设，也不允许自由插入delay，故仅保留亲和/等待代价的背景思想。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://www.sciencedirect.com/science/article/pii/S138376212500044X",
+      "https://doi.org/10.1016/j.sysarc.2025.103372",
+      "https://eprints.whiterose.ac.uk/id/eprint/225201/"
+    ],
+    "verification_depth": "主代理直接核读；具体页码、范围与修正见personal_review。",
+    "license_note": "White Rose accepted version states CC BY; the publisher version remains subject to Elsevier terms.",
+    "id": "A40",
+    "pdf_filename": "A40_2025.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [],
+    "category": "缓存亲和与共享输入",
+    "pdf_version": "White Rose机构仓储作者稿",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A40_2025.pdf",
+    "pdf_pages": 15,
+    "pdf_sha256": "7b6fd39b378c7a1c9213a49ff0e6ac2ded1710cf73c629724b2796f8550513e1",
+    "download_url": "https://eprints.whiterose.ac.uk/id/eprint/225201/1/JSA24_Cache_aware_DAG.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。",
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读所列PDF页，范围按decision注明",
+      "pdf_pages": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "decision": "正文采用inclusive L1/L2、LRU、周期DAG同节点跨次释放的Cache Reuse Profile。A是FIFO且研究单图执行，不能把其缓存命中模型当A第三问主算法。"
+    }
+  },
+  {
+    "title": "DAG Scheduling in the BSP Model",
+    "authors": "Pál András Papp; Georg Anegg; Albert-Jan N. Yzelman",
+    "year": 2025,
+    "venue": "SOFSEM 2025, Lecture Notes in Computer Science 15539, pp. 238-253",
+    "doi": "10.1007/978-3-031-82697-9_18",
+    "url": "https://arxiv.org/abs/2303.05989",
+    "pdf_urls": [
+      "https://albert-jan.yzelman.net/PDFs/papp23a-pp.pdf"
+    ],
+    "method": "把 DAG 调度定义为 BSP 中的计算阶段、通信阶段和同步 superstep，分别研究通信安排子问题，给出复杂度/不可近似性结果及 ILP 表述，并分析不同通信规则。",
+    "relevance": "补充理论：理解计算/通信/同步权衡。BSP阶段不能替代A异步时间线；其代价及下界需要额外证明才能用于A。",
+    "limitations": "BSP全局superstep不同于A异步Pipe及公平共享带宽；没有模型嵌入/松弛证明时，论文BSP代价或下界不能称为A的严格下界。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://arxiv.org/abs/2303.05989",
+      "https://doi.org/10.1007/978-3-031-82697-9_18",
+      "https://albert-jan.yzelman.net/PDFs/papp23a-pp.pdf",
+      "https://albert-jan.yzelman.net/publications.php"
+    ],
+    "verification_depth": "D3: local PDF first page/body plus arXiv, Springer DOI and DBLP SOFSEM record.",
+    "license_note": "Local author PDF has no verified permissive license; Springer publication rights apply.",
+    "id": "A41",
+    "pdf_filename": "A41_2025.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "Keep the candidate's 2025 SOFSEM metadata, but add a version field: local A41 is the 2023 arXiv/author version. Add the Springer chapter URL when citing the final venue."
+    ],
+    "category": "通信争用与精确调度",
+    "pdf_version": "作者公开扩展预印本（30页），引用对应SOFSEM 2025会议版",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A41_2025.pdf",
+    "pdf_pages": 30,
+    "pdf_sha256": "34a851a8791a69c89667cff1f85f0927687f7497ec37503bda1e52ef31565ee9",
+    "download_url": "https://albert-jan.yzelman.net/PDFs/papp23a-pp.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。"
+  },
+  {
+    "title": "Efficient Multi-Processor Scheduling in Increasingly Realistic Models",
+    "authors": "Pál András Papp; Georg Anegg; Aikaterini Karanasiou; Albert-Jan N. Yzelman",
+    "year": 2024,
+    "venue": "Proceedings of the 36th ACM Symposium on Parallelism in Algorithms and Architectures (SPAA 2024), pp. 463-474",
+    "doi": "10.1145/3626183.3659972",
+    "url": "https://doi.org/10.1145/3626183.3659972",
+    "pdf_urls": [
+      "https://albert-jan.yzelman.net/PDFs/papp24a-pp.pdf",
+      "https://arxiv.org/pdf/2404.15246"
+    ],
+    "method": "在扩展 BSP 的 NUMA/层次通信模型上组合多个初始化启发式、hill-climbing/HCC 局部搜索、全模型/分块 ILP、通信子问题 ILP 和多级粗化-细化调度。",
+    "relevance": "主线：迁移多初值、合法局部迁移/局部窗口及多层次搜索框架；真实得分与带宽行为使用A原评估器，原BSP/NUMA公式不直接移植。",
+    "limitations": "原模型把计算与通信划为互不重叠supersteps，并含NUMA通信成本；A的Cube/Vector/COPY及DDR可能重叠。只迁移多层次/局部搜索结构，候选变量和接受判据均改为A接口与原评估器。",
+    "priority": "P1",
+    "source_evidence": [
+      "https://doi.org/10.1145/3626183.3659972",
+      "https://arxiv.org/abs/2404.15246",
+      "https://albert-jan.yzelman.net/PDFs/papp24a-pp.pdf",
+      "https://spaa.acm.org/2024-program/"
+    ],
+    "verification_depth": "D3: local PDF first page/body plus ACM DOI, SPAA program and author full-version record.",
+    "license_note": "Author full version says it is for personal use/not redistribution; ACM publication rights apply.",
+    "id": "A42",
+    "pdf_filename": "A42_2024.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "Normalize the fourth author to Albert-Jan N. Yzelman in final metadata; retain A. N. Yzelman only when quoting the arXiv form."
+    ],
+    "category": "通信争用与精确调度",
+    "pdf_version": "作者公开预印本（24页），引用对应SPAA 2024会议版",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A42_2024.pdf",
+    "pdf_pages": 24,
+    "pdf_sha256": "8ca87cdbfcf8b17363e7a1632e1218d7c689e13b1c5e14ce9469c3ef216cd661",
+    "download_url": "https://albert-jan.yzelman.net/PDFs/papp24a-pp.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "主线方法",
+    "reading_rank": 5,
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读本地PDF的模型及算法段落",
+      "pdf_pages": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "decision": "局部迁移、局部ILP窗口及多层次调度提供清晰搜索框架；采用官方makespan评价候选。BSP通信阶段、NUMA代价与A不同，不移植原代价函数。"
+    }
+  },
+  {
+    "title": "Multiprocessor Scheduling with Memory Constraints: Fundamental Properties and Finding Optimal Solutions",
+    "authors": "Pál András Papp; Toni Böhnlein; Albert-Jan N. Yzelman",
+    "year": 2025,
+    "venue": "Proceedings of the 54th International Conference on Parallel Processing (ICPP 2025), pp. 238-247",
+    "doi": "10.1145/3754598.3754676",
+    "url": "https://arxiv.org/abs/2507.17411",
+    "pdf_urls": [
+      "https://albert-jan.yzelman.net/PDFs/papp25b-pp.pdf",
+      "https://arxiv.org/pdf/2507.17411"
+    ],
+    "method": "在两级内存层次下直接联合优化 DAG 并行化、处理器安排和数据移动，分析分开优化的线性损失，并给出整体 ILP/分治 ILP 与小规模实验。",
+    "relevance": "补充：支持同时考虑映射与内存移动的研究动机。默认重算、自由内存操作及BSP模型均需改造；不能用论文结论保证A的改进或最优性。",
+    "limitations": "MBSP两级存储和BSP式阶段与A不同；默认ILP允许重算，必须显式禁止后才可讨论无重算子问题。分治没有全局最优保证，论文第9页报告部分大图比基线更差。A固定Step2/3还缩小了可控内存决策，不能直接当A的精确oracle。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://arxiv.org/abs/2507.17411",
+      "https://doi.org/10.1145/3754598.3754676",
+      "https://albert-jan.yzelman.net/PDFs/papp25b-pp.pdf",
+      "https://cris.biu.ac.il/en/publications/multiprocessor-scheduling-with-memory-constraints-fundamental-pro/"
+    ],
+    "verification_depth": "主代理直接核读；具体页码、范围与修正见personal_review。",
+    "license_note": "Author full version says it is for personal use/not redistribution; ACM publication rights apply.",
+    "id": "A43",
+    "pdf_filename": "A43_2025.pdf",
+    "origin": "new_dag",
+    "metadata_notes": [
+      "No bibliographic correction. Use 'optimal solutions' as the paper's problem/theory wording; its practical holistic ILP is a small-instance method and is not an exact solver for all A graphs."
+    ],
+    "category": "内存约束与活跃张量",
+    "pdf_version": "作者公开预印本（18页），引用对应ICPP 2025会议版",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A43_2025.pdf",
+    "pdf_pages": 18,
+    "pdf_sha256": "eb54727d40e89305c6b52a6ef6b0ced277f0cb4f7f638089d4d5fa74600641ea",
+    "download_url": "https://albert-jan.yzelman.net/PDFs/papp25b-pp.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。",
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读所列PDF页，范围按decision注明",
+      "pdf_pages": [
+        1,
+        2,
+        9
+      ],
+      "decision": "第9页明确默认ILP允许重算；禁止重算后代价可能增加，分治在部分大图还劣于基线。仅作联合内存/映射建模补充，不作为A现成oracle。"
+    }
+  },
+  {
+    "title": "Peak-memory-aware partitioning and scheduling for multi-tenant DNN model inference",
+    "authors": "Jaeho Lee; Ju Min Lee; Haeeun Jeong; Hyunho Kwon; Youngsok Kim; Yongjun Park; Hanjun Kim",
+    "year": 2026,
+    "venue": "Journal of Systems Architecture 173:103696",
+    "doi": "10.1016/j.sysarc.2026.103696",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1383762126000147",
+    "pdf_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S1383762126000147/pdfft"
+    ],
+    "method": "Quilt研究多租户DNN推理的峰值内存感知划分和调度；根据出版方摘要归纳。",
+    "relevance": "待全文：出版方摘要提供峰值内存分组线索；多租户GPU和共享池/yield与A不同，不能由摘要判定其可直接用于本题。",
+    "limitations": "针对多租户单GPU模型推理，内存是单一GPU池；A每个核分别检查L1/UB，DDR是所有核共享，且A的官方Step3使用可拆分虚拟字节额度。不能把Quilt的yield/共享池实现直接替换官方评估器，也不能把多核双缓存合成一个容量。当前未找到作者开放全文，ScienceDirect PDF端点可能需要机构权限。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://www.sciencedirect.com/science/article/pii/S1383762126000147",
+      "https://doi.org/10.1016/j.sysarc.2026.103696",
+      "https://yonsei.elsevierpure.com/en/publications/peak-memory-aware-partitioning-and-scheduling-for-multi-tenant-dn/"
+    ],
+    "license_note": "Elsevier publication; abstract is publicly viewable, while full-text reuse requires the applicable Elsevier license.",
+    "id": "A44",
+    "pdf_filename": "A44_2026.pdf",
+    "origin": "new_recent",
+    "metadata_notes": [
+      "No A44_2026.pdf or open author full text was found locally. Do not say that the whole paper was read; claims must be limited to the publisher abstract/highlights and metadata."
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "category": "算子分组与多核映射",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "title": "Parallel Scheduling of Task Graphs with Minimal Memory Requirements",
+    "authors": "Pascal Fradet; Alain Girault; Alexandre Honorat",
+    "year": 2025,
+    "venue": "2025 IEEE International Parallel and Distributed Processing Symposium (IPDPS), pp. 395-406",
+    "doi": "10.1109/IPDPS64566.2025.00042",
+    "url": "https://ieeexplore.ieee.org/document/11078551/",
+    "pdf_urls": [
+      "https://hal.science/hal-04879748v1/document"
+    ],
+    "method": "从可达到最小峰值内存的顺序调度出发，构造带内存约束的动态并行list scheduling：仅在就绪任务及其输出能够放入剩余共享内存时派发，保证给定内存上限下的可行并行执行。",
+    "relevance": "待全文：共享内存受限并行调度主题值得跟进；取得完整算法后仍需区分单共享内存与每核L1/UB、列表构造与全局最优。",
+    "limitations": "模型是单一共享内存、任务级输出和通用task graph，未区分A每核独立L1/UB，也未建模Cube/Vector Pipe、共享DDR带宽争用、Task等待和L2 FIFO；其memory peak约束不能替代A官方搬运/容量仿真。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://ieeexplore.ieee.org/document/11078551/",
+      "https://pop-art.inrialpes.fr/people/fradet/publications.html",
+      "https://cv.hal.science/alexandre-honorat",
+      "https://hal.science/hal-04879748v1/document"
+    ],
+    "license_note": "IEEE publication rights apply; HAL author deposit is not treated as a blanket redistribution license.",
+    "id": "A45",
+    "pdf_filename": "A45_2025.pdf",
+    "origin": "new_recent",
+    "metadata_notes": [
+      "No A45_2025.pdf was present locally. Do not describe the list-scheduling construction as automatically exact or globally optimal; its exact/minimal component concerns the prerequisite memory-minimizing sequential schedule or special subproblem, while the multiprocessor construction is a feasible scheduling method under the modeled shared-memory constraint."
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "title": "Memory-aware Scheduling for Complex Wired Networks with Iterative Graph Optimization",
+    "authors": "Shuzhang Zhong; Meng Li; Yun Liang; Runsheng Wang; Ru Huang",
+    "year": 2023,
+    "venue": "arXiv:2308.13898; presented at ICCAD 2023",
+    "doi": "10.48550/arXiv.2308.13898",
+    "url": "https://arxiv.org/abs/2308.13898",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2308.13898",
+      "https://arxiv.org/pdf/2308.13898.pdf"
+    ],
+    "method": "对复杂cell级/网络级DNN图迭代执行保调度最优性的graph fusion，再在简化图上用ILP与topology-aware variable pruning求峰值内存最小的执行顺序。",
+    "relevance": "补充：借鉴搜索抽象和变量剪枝；原论文保持峰值调度最优性的图融合并不自动保持A的多Pipe/共享带宽makespan。",
+    "limitations": "单设备DNN推理、目标为单一峰值内存，graph fusion需证明不改变A图语义；不处理多核makespan、Cube/Vector资源、两个片上缓存或共享DDR/L2时间线。融合仅可作为搜索等价类/代理，最终方案必须覆盖原始操作并通过官方合法性检查。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://arxiv.org/abs/2308.13898",
+      "https://arxiv.org/pdf/2308.13898",
+      "https://confcats-siteplex.s3.us-east-1.amazonaws.com/iccad23/ICCAD_2023_Proceedings_v3_f24f2addb7.pdf"
+    ],
+    "license_note": "ArXiv author version is public; ICCAD publication rights apply.",
+    "id": "A46",
+    "pdf_filename": "A46_2023.pdf",
+    "origin": "new_recent",
+    "metadata_notes": [],
+    "verification_depth": "D3: local PDF first page/abstract plus arXiv and ICCAD proceedings.",
+    "category": "内存约束与活跃张量",
+    "pdf_version": "arXiv作者预印本",
+    "verified_date": "2026-09-23",
+    "type": "预印本",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A46_2023.pdf",
+    "pdf_pages": 9,
+    "pdf_sha256": "5194345443c9d427f5b3c0386ff2249263b5b462244833480680e255fcafe37a",
+    "download_url": "https://arxiv.org/pdf/2308.13898",
+    "fulltext_status": "available_pdf",
+    "selection_role": "定向补充",
+    "selection_reason": "只补充主线的一个环节；目标、自由决策变量或执行模型与A存在差异，见limitations。",
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读所列PDF页，范围按decision注明",
+      "pdf_pages": [
+        1
+      ],
+      "decision": "摘要核对：图融合保持其峰值内存调度模型的最优性；A只能借作搜索抽象，不能提交修改后的原算子图。"
+    }
+  },
+  {
+    "title": "Minimizing memory in parallel task graph scheduling: Focusing on average consumption",
+    "authors": "Anne Benoit; Loris Marchal; Adrien Obrecht",
+    "year": 2026,
+    "venue": "Journal of Parallel and Distributed Computing 215:105299",
+    "doi": "10.1016/j.jpdc.2026.105299",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0743731526000778",
+    "pdf_urls": [
+      "https://hal.science/hal-05568320/document",
+      "https://papers.ssrn.com/sol3/Delivery.cfm/b27087ca-7574-4b78-a768-fb4f18e423f8-MECA.pdf?abstractid=5357513&mirid=1"
+    ],
+    "method": "形式化并行task graph的平均内存消耗（两种数据/共享模型），对k-chain和pumpkin给出精确算法，对一般DAG给出启发式，并比较平均内存目标与传统峰值内存目标在多应用并发时的差异。",
+    "relevance": "待全文：平均驻留内存可作辅助统计，不能替代A的峰值容量、FIFO事件与makespan目标，也不能自动预测L2命中。",
+    "limitations": "论文优化的是average memory，不是A官方要求的per-core L1/UB peak和makespan；其共享内存模型不区分两个片上缓存，也不含Cube/Vector、DDR争用、FIFO命中。因此只能作为辅助排序/分析指标，不能用平均值替代容量峰值，不能据此宣称A方案可行。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://www.sciencedirect.com/science/article/abs/pii/S0743731526000778",
+      "https://doi.org/10.1016/j.jpdc.2026.105299",
+      "https://hal.science/hal-05568320/document",
+      "https://papers.ssrn.com/sol3/Delivery.cfm/b27087ca-7574-4b78-a768-fb4f18e423f8-MECA.pdf?abstractid=5357513&mirid=1"
+    ],
+    "license_note": "Elsevier publication; HAL/author and SSRN versions have separate reuse terms.",
+    "id": "A47",
+    "pdf_filename": "A47_2026.pdf",
+    "origin": "new_recent",
+    "metadata_notes": [
+      "No A47_2026.pdf was present locally; verify any detailed algorithm claim against the HAL/author manuscript before calling it full-text verified."
+    ],
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "category": "内存约束与活跃张量",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "fulltext_status": "not_obtained",
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "id": "A48",
+    "title": "Scaling Deep Learning Computation over the Inter-core Connected Intelligence Processor with T10",
+    "authors": "Yiqi Liu; Yuqi Xue; Yu Cheng; Lingxiao Ma; Ziming Miao; Jilong Xue; Jian Huang",
+    "year": 2024,
+    "venue": "SOSP 2024, pp. 505–521",
+    "doi": "10.1145/3694715.3695955",
+    "url": "https://doi.org/10.1145/3694715.3695955",
+    "pdf_urls": [
+      "https://platformxlab.github.io/papers/t10-sosp24.pdf"
+    ],
+    "pdf_filename": "A48_2024_T10.pdf",
+    "origin": "new_accelerator",
+    "method": "T10用rTensor和compute-shift描述计算与通信，在片上内存消耗和核间通信间搜索全局方案。",
+    "relevance": "背景：内存/通信候选权衡。核间直接scratchpad访问和算子切分不被A允许，不移植T10执行方案。",
+    "limitations": "硬件允许直接访问其他核scratchpad，且优化会拆分算子；A题不具备这些自由度，只保留候选剪枝与全局权衡思想，不能照搬其执行模型。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://platformxlab.github.io/papers/t10-sosp24.pdf",
+      "https://experts.illinois.edu/en/publications/scaling-deep-learning-computation-over-the-inter-core-connected-i/"
+    ],
+    "license_note": "论文首页注明CC BY-NC-SA 4.0；保留原文。",
+    "verification_depth": "publisher-copy PDF title, author list, DOI and abstract",
+    "category": "算子分组与多核映射",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A48_2024_T10.pdf",
+    "pdf_pages": 17,
+    "pdf_sha256": "a688e9f28c029eed4cf2ae06443644da6786254175e1ba71b3abf23e432b6825",
+    "download_url": "https://platformxlab.github.io/papers/t10-sosp24.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "A Scalable Clustering-Based Task Scheduler for Homogeneous Processors Using DAG Partitioning",
+    "authors": "M. Yusuf Özkaya; Anne Benoit; Bora Uçar; Julien Herrmann; Ümit V. Catalyürek",
+    "year": 2019,
+    "venue": "2019 IEEE International Parallel and Distributed Processing Symposium (IPDPS)",
+    "doi": "10.1109/IPDPS.2019.00026",
+    "url": "https://ieeexplore.ieee.org/document/8820781/",
+    "pdf_urls": [
+      "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ipdps2019.pdf",
+      "https://graal.ens-lyon.fr/~abenoit/papers/RR-9185-v2.pdf"
+    ],
+    "method": "先作无环DAG聚类，再在单个任务层执行列表调度，并约束同一簇的全部任务映射到同一处理器；比较不同簇粒度与静态/动态优先级。",
+    "relevance": "主线：先无环聚类，再以同簇同核约束引导任务映射；分组粒度与局部性/并行度权衡最值得优先改造。原文不是原子簇调度。",
+    "limitations": "原文不是把簇当原子节点排程，而是同簇同核约束下的任务级调度；其同核通信免费、duplex single-port通信不适用于A问题1跨Task仍走DDR的规则，问题2/3还受L1/UB、Spill及双Pipe影响。",
+    "priority": "P1",
+    "source_evidence": [
+      "https://ieeexplore.ieee.org/document/8820781/",
+      "https://doi.org/10.1109/IPDPS.2019.00026"
+    ],
+    "license_note": "Metadata is from IEEE Xplore. Full text is recorded only when the API marks it Open Access and the official endpoint permits retrieval.",
+    "id": "A49",
+    "origin": "new_ieee_api",
+    "pdf_filename": "A49_2019.pdf",
+    "ieee_api": {
+      "article_number": "8820781",
+      "access_type": "LOCKED",
+      "query_group": "acyclic_graph_partitioning"
+    },
+    "category": "算子分组与多核映射",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A49_2019.pdf",
+    "pdf_pages": 11,
+    "pdf_sha256": "fb239bc60be7bfd61957186a9f80a7c1e49e0114d107c70d173942d44d01bf7c",
+    "download_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ipdps2019.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "主线方法",
+    "reading_rank": 1,
+    "personal_review": {
+      "reviewer": "主代理",
+      "date": "2026-09-23",
+      "depth": "直接核读本地PDF的模型及算法段落",
+      "pdf_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "decision": "同构处理器、无环聚类与通信/并行度权衡，与分组和映射结构最接近。原文调度单个任务并约束同簇同核，不是原子簇调度；需按A的提交接口改造。"
+    },
+    "verification_depth": "主代理直接核读；具体页码、范围与修正见personal_review。"
+  },
+  {
+    "title": "Efficient Scheduling of Irregular Network Structures on CNN Accelerators",
+    "authors": "Shixuan Zheng; Xianjue Zhang; Daoli Ou; Shibin Tang; Leibo Liu; Shaojun Wei; Shouyi Yin",
+    "year": 2020,
+    "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems 39(11):3408-3419",
+    "doi": "10.1109/TCAD.2020.3012215",
+    "url": "https://ieeexplore.ieee.org/document/9211523/",
+    "pdf_urls": [],
+    "method": "动态规划和节点聚类联合DAG划分、层间复用、子图顺序与片上内存分配。",
+    "relevance": "待全文：IEEE摘要涉及DAG划分、层间复用与片上内存，主题较近；需要确认loop tiling等不可迁移自由度，不因摘要对口就列入主线。",
+    "limitations": "同时优化loop tiling；A只允许复用其中的固定图划分/顺序思想，不能移植算子内重构或改变cycles。当前仅核对摘要。",
+    "priority": "P2",
+    "source_evidence": [
+      "https://ieeexplore.ieee.org/document/9211523/",
+      "https://doi.org/10.1109/TCAD.2020.3012215"
+    ],
+    "license_note": "Metadata is from IEEE Xplore. Full text is recorded only when the API marks it Open Access and the official endpoint permits retrieval.",
+    "id": "A50",
+    "origin": "new_ieee_api",
+    "pdf_filename": "A50_2020.pdf",
+    "ieee_api": {
+      "article_number": "9211523",
+      "access_type": "LOCKED",
+      "query_group": "acyclic_graph_partitioning"
+    },
+    "category": "算子分组与多核映射",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "尚未取得本地全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "verification_depth": "元数据/摘要/公开作者材料核查；本地全文尚未取得，不视为已读全文",
+    "fulltext_status": "not_obtained",
+    "selection_role": "待全文复核",
+    "selection_reason": "主题或摘要有迁移价值，但尚未取得全文；不进入主线推荐。"
+  },
+  {
+    "title": "Dynamic Data Allocation and Task Scheduling on Multiprocessor Systems With NVM-Based SPM",
+    "authors": "Yan Wang; Kenli Li; Keqin Li",
+    "year": 2019,
+    "venue": "IEEE Access 7:1548-1559",
+    "doi": "10.1109/ACCESS.2018.2887024",
+    "url": "https://ieeexplore.ieee.org/document/8579198/",
+    "pdf_urls": [
+      "https://cs.newpaltz.edu/~lik/publications/Yan-Wang-IEEE-Access-2019.pdf"
+    ],
+    "method": "DGDATS联合动态任务调度和SRAM/NVM scratchpad数据分配，考虑数据位置与后续访问代价。",
+    "relevance": "背景：SRAM/NVM数据分配与调度联合优化；NVM写代价和可控地址分配不属于A，仅保留公开全文与联合建模线索。",
+    "limitations": "混合SRAM/NVM的写能耗与耐久目标不同于A。仅借鉴数据驻留/映射联合代价，DDR、L1/UB容量和spill仍由官方评估。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://ieeexplore.ieee.org/document/8579198/",
+      "https://doi.org/10.1109/ACCESS.2018.2887024"
+    ],
+    "license_note": "IEEE Open Access/CC BY公开全文；保留原版权、许可与来源。",
+    "id": "A51",
+    "origin": "new_ieee_api",
+    "pdf_filename": "A51_2019.pdf",
+    "ieee_api": {
+      "article_number": "8579198",
+      "access_type": "OPEN_ACCESS"
+    },
+    "category": "通信与存储联合分配",
+    "local_xml": "A题_文献库/fulltext/A51_8579198.xml",
+    "xml_source": "https://ieeexploreapi.ieee.org/api/v1/search/document/8579198/fulltext",
+    "xml_version": "IEEE API XML全文（含正文和参考文献；非PDF/页面版式）",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "downloaded",
+    "local_pdf": "A题_文献库/pdf/A51_2019.pdf",
+    "pdf_pages": 12,
+    "pdf_sha256": "bd5a0b0f7d4a4b84bd46530191b0364eec8b982e4cacf5a2599add1ece723351",
+    "download_url": "https://cs.newpaltz.edu/~lik/publications/Yan-Wang-IEEE-Access-2019.pdf",
+    "fulltext_status": "available_pdf",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
+  },
+  {
+    "title": "Dynamic Cluster Selection DAG Scheduling for Clustered Many-Core Processor Considering Inter-Cluster Communication",
+    "authors": "Yutaro Nozaki; Fuma Omori; Takuya Azumi",
+    "year": 2025,
+    "venue": "IEEE Access 13:135876-135898",
+    "doi": "10.1109/ACCESS.2025.3593662",
+    "url": "https://ieeexplore.ieee.org/document/11098909/",
+    "pdf_urls": [],
+    "method": "根据剩余计算资源和依赖任务所在簇动态选簇，抑制簇内与簇间通信。",
+    "relevance": "背景：依赖亲和的多核簇选择；周期/事件任务及簇模型不同于A，不作为第三问FIFO或静态分组主方法。",
+    "limitations": "周期/事件驱动任务和簇式many-core不同于A单个固定图；可参考依赖亲和映射，不能套用响应时间或实时性结论。",
+    "priority": "P3",
+    "source_evidence": [
+      "https://ieeexplore.ieee.org/document/11098909/",
+      "https://doi.org/10.1109/ACCESS.2025.3593662"
+    ],
+    "license_note": "IEEE Open Access/CC BY公开全文；保留原版权、许可与来源。",
+    "id": "A52",
+    "origin": "new_ieee_api",
+    "pdf_filename": "A52_2025.pdf",
+    "ieee_api": {
+      "article_number": "11098909",
+      "access_type": "CCBY - IEEE is not the copyright holder of this material"
+    },
+    "category": "通信与存储联合分配",
+    "local_xml": "A题_文献库/fulltext/A52_11098909.xml",
+    "xml_source": "https://ieeexploreapi.ieee.org/api/v1/search/document/11098909/fulltext",
+    "xml_version": "IEEE API XML全文（含正文和参考文献；非PDF/页面版式）",
+    "verified_date": "2026-09-23",
+    "type": "论文",
+    "pdf_version": "未取得PDF；已取得IEEE XML全文",
+    "a_decisions": [
+      "子图划分",
+      "子图到核映射",
+      "每核子图顺序"
+    ],
+    "scope_note": "所有迁移均须遵守固定DAG、Step1/2/3、双缓存容量和共享带宽；文献成绩不代表A题成绩。",
+    "download_status": "not_downloaded",
+    "local_pdf": null,
+    "verification_depth": "IEEE元数据及官方XML全文；已确认body结构及正文，PDF端点未返回PDF",
+    "fulltext_status": "available_xml",
+    "selection_role": "背景存档",
+    "selection_reason": "主要涉及算子内编译、真实地址布局、重算/训练换入换出或不同硬件/周期任务，当前不优先移植；下载件保留作背景。"
   }
 ]

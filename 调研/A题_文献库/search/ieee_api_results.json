@@ -1,0 +1,583 @@
+{
+  "generated": "2026-09-23",
+  "search_endpoint": "/api/v1/search/articles",
+  "fulltext_endpoint": "/api/v1/search/document/{article_number}/fulltext",
+  "groups": [
+    {
+      "id": "memory_constrained_dag",
+      "note": "memory-constrained DAG scheduling",
+      "query": "(\"memory constrained\" OR \"memory-constrained\") AND (DAG OR \"directed acyclic graph\") AND scheduling",
+      "start_year": 2018,
+      "end_year": 2026,
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "error_type": "",
+      "total_records": 1,
+      "returned_records": 1,
+      "selected_records": 1,
+      "selected": [
+        "11414626"
+      ]
+    },
+    {
+      "id": "communication_contention",
+      "note": "communication and shared-bandwidth contention",
+      "query": "(\"communication contention\" OR \"bandwidth contention\") AND (scheduling OR \"graph scheduling\")",
+      "start_year": 2018,
+      "end_year": 2026,
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "error_type": "",
+      "total_records": 38,
+      "returned_records": 10,
+      "selected_records": 3,
+      "selected": [
+        "9213582",
+        "9576147",
+        "8958696"
+      ]
+    },
+    {
+      "id": "acyclic_graph_partitioning",
+      "note": "acyclic graph partitioning",
+      "query": "(\"acyclic partitioning\" OR \"DAG partitioning\") AND (graph OR hypergraph)",
+      "start_year": 2010,
+      "end_year": 2026,
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "error_type": "",
+      "total_records": 8,
+      "returned_records": 8,
+      "selected_records": 6,
+      "selected": [
+        "9211523",
+        "8820781",
+        "7973723",
+        "11539713",
+        "10795279",
+        "9218632"
+      ]
+    },
+    {
+      "id": "neural_network_multicore",
+      "note": "neural-network multicore scheduling",
+      "query": "(\"neural network\" OR DNN) AND (multicore OR \"multi-core\") AND scheduling",
+      "start_year": 2015,
+      "end_year": 2026,
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "error_type": "",
+      "total_records": 230,
+      "returned_records": 10,
+      "selected_records": 8,
+      "selected": [
+        "10704560",
+        "10681954",
+        "11662260",
+        "11065866",
+        "10844834",
+        "9627422",
+        "9937409",
+        "10587381"
+      ]
+    },
+    {
+      "id": "tensor_memory_scheduling",
+      "note": "tensor graph memory/cache scheduling",
+      "query": "(\"tensor graph\" OR \"computational graph\") AND (memory OR cache) AND scheduling",
+      "start_year": 2015,
+      "end_year": 2026,
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "error_type": "",
+      "total_records": 108,
+      "returned_records": 10,
+      "selected_records": 9,
+      "selected": [
+        "11692768",
+        "11648801",
+        "11634559",
+        "11509135",
+        "11341897",
+        "7251841",
+        "8438981",
+        "11181702",
+        "9848990"
+      ]
+    },
+    {
+      "id": "npu_accelerator_scheduling",
+      "note": "accelerator task/graph scheduling",
+      "query": "(\"neural network accelerator\" OR NPU) AND (\"task scheduling\" OR \"graph scheduling\")",
+      "start_year": 2015,
+      "end_year": 2026,
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "error_type": "",
+      "total_records": 35,
+      "returned_records": 10,
+      "selected_records": 4,
+      "selected": [
+        "11100346",
+        "10977050",
+        "9574381",
+        "11577180"
+      ]
+    },
+    {
+      "id": "hypergraph_partitioning",
+      "note": "hypergraph partitioning with DAG/communication relevance",
+      "query": "(\"hypergraph partitioning\") AND (DAG OR acyclic OR scheduling OR communication)",
+      "start_year": 2010,
+      "end_year": 2026,
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "error_type": "",
+      "total_records": 51,
+      "returned_records": 10,
+      "selected_records": 3,
+      "selected": [
+        "6173287",
+        "10618032",
+        "7473026"
+      ]
+    },
+    {
+      "id": "known_a_references",
+      "note": "known A01/A02 and contention DOI checks",
+      "query": "\"10.1109/71.993206\" OR \"10.1109/CCGRID.2017.101\" OR \"10.1109/TPDS.2005.64\" OR \"10.1109/TCAD.2021.3059569\"",
+      "start_year": null,
+      "end_year": null,
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "error_type": "",
+      "total_records": 4,
+      "returned_records": 4,
+      "selected_records": 3,
+      "selected": [
+        "993206",
+        "9354857",
+        "1425439"
+      ]
+    }
+  ],
+  "fulltext_attempts": [
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11414626",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9213582",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9576147",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "8958696",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9211523",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "8820781",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "7973723",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11539713",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "10795279",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9218632",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "10704560",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "10681954",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11662260",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11065866",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "10844834",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9627422",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9937409",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "10587381",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11692768",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11648801",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11634559",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11509135",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11341897",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "7251841",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "8438981",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11181702",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9848990",
+      "access_type": "CCBY - IEEE is not the copyright holder of this material. Please follow the instructions via https://creativecommons.org/licenses/by/4.0/ to obtain full-text articles and stipulations in the API documentation.",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11100346",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "10977050",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9574381",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "11577180",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "6173287",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "10618032",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "7473026",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "993206",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "9354857",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    },
+    {
+      "attempted": false,
+      "endpoint": "/api/v1/search/document/{article_number}/fulltext",
+      "article_number": "1425439",
+      "access_type": "LOCKED",
+      "http_status": null,
+      "content_type": "",
+      "interface": "",
+      "saved_file": "",
+      "error_type": "skipped_non_open_access_or_missing_article_number"
+    }
+  ],
+  "credential": {
+    "source": "OAReg/.codex/config.toml",
+    "variable": "IEEE_API_KEY",
+    "value_recorded": false
+  },
+  "notes": [
+    "Searches are bounded to max_records=10 per group.",
+    "Only records marked Open Access were sent to the official full-text endpoint.",
+    "Locked/chargeable records were not sent to a full-text or purchase path."
+  ]
+}

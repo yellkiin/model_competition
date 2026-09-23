@@ -1,0 +1,220 @@
+{
+  "generated": "2026-09-23",
+  "metadata_records": [
+    {
+      "article_number": "11098909",
+      "title": "Dynamic Cluster Selection DAG Scheduling for Clustered Many-Core Processor Considering Inter-Cluster Communication",
+      "authors": "Yutaro Nozaki, Fuma Omori, Takuya Azumi",
+      "venue": "IEEE Access",
+      "volume": "13",
+      "issue": "",
+      "pages": "135876-135898",
+      "year": 2025,
+      "publication_date": "2025",
+      "doi": "10.1109/ACCESS.2025.3593662",
+      "access_type": "CCBY - IEEE is not the copyright holder of this material",
+      "article_url": "https://ieeexplore.ieee.org/document/11098909/"
+    },
+    {
+      "article_number": "8579198",
+      "title": "Dynamic Data Allocation and Task Scheduling on Multiprocessor Systems With NVM-Based SPM",
+      "authors": "Yan Wang, Kenli Li, Keqin Li",
+      "venue": "IEEE Access",
+      "volume": "7",
+      "issue": "",
+      "pages": "1548-1559",
+      "year": 2019,
+      "publication_date": "2019",
+      "doi": "10.1109/ACCESS.2018.2887024",
+      "access_type": "OPEN_ACCESS",
+      "article_url": "https://ieeexplore.ieee.org/document/8579198/"
+    },
+    {
+      "article_number": "9211523",
+      "title": "Efficient Scheduling of Irregular Network Structures on CNN Accelerators",
+      "authors": "Shixuan Zheng, Xianjue Zhang, Daoli Ou, Shibin Tang, Leibo Liu, Shaojun Wei, Shouyi Yin",
+      "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+      "volume": "39",
+      "issue": "11",
+      "pages": "3408-3419",
+      "year": 2020,
+      "publication_date": "Nov. 2020",
+      "doi": "10.1109/TCAD.2020.3012215",
+      "access_type": "LOCKED",
+      "article_url": "https://ieeexplore.ieee.org/document/9211523/"
+    }
+  ],
+  "xml_structure_checks": [
+    {
+      "article_number": "8579198",
+      "file": "fulltext/A51_8579198.xml",
+      "parse_ok": true,
+      "root_tag": "response",
+      "bytes": 92190,
+      "element_count": 1497,
+      "body_count": 1,
+      "has_abstract": false,
+      "text_chars": 21839,
+      "conclusion": "Parsed XML contains a body element and substantial article text; it is not an error envelope or abstract-only response."
+    },
+    {
+      "article_number": "11098909",
+      "file": "fulltext/A52_11098909.xml",
+      "parse_ok": true,
+      "root_tag": "response",
+      "bytes": 145613,
+      "element_count": 1749,
+      "body_count": 1,
+      "has_abstract": false,
+      "text_chars": 32134,
+      "conclusion": "Parsed XML contains a body element and substantial article text."
+    }
+  ],
+  "public_pdf_checks": [
+    {
+      "article_number": "11098909",
+      "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11098909",
+      "http_status": 418,
+      "content_type": "text/html",
+      "bytes": 15410,
+      "saved_file": "",
+      "conclusion": "The direct IEEE PDF URL did not return a PDF; no retry or chargeable path was attempted."
+    }
+  ],
+  "official_api_docs": {
+    "open_access_filter": "https://developer.ieee.org/docs/read/metadata_api_details/Filtering_Parameters",
+    "fulltext_fields": "https://developer.ieee.org/docs/read/Metadata_API_responses",
+    "fulltext_endpoint": "/api/v1/search/document/{article_number}/fulltext",
+    "finding": "The documented filter is open_access=True; full text requires article_number. Open Access and Ephemera are freely available from IEEE; Locked requires sign-in or subscription."
+  },
+  "oa_queries": [
+    {
+      "id": "oa_dag_memory",
+      "query": "(DAG OR directed acyclic graph) AND (memory OR scheduling)",
+      "parameters": {
+        "open_access": true,
+        "start_year": 2015,
+        "end_year": 2026,
+        "max_records": 10
+      },
+      "http_status": 200,
+      "total_records": 262,
+      "screening": "Retained only A-relevant DAG/memory scheduling candidates; cloud, offloading and unrelated application hits were not promoted."
+    },
+    {
+      "id": "oa_graph_partition",
+      "query": "(graph partitioning OR hypergraph partitioning) AND (acyclic OR DAG)",
+      "parameters": {
+        "open_access": true,
+        "start_year": 2015,
+        "end_year": 2026,
+        "max_records": 10
+      },
+      "http_status": 200,
+      "total_records": 5,
+      "screening": "The returned set was mostly general graph/cloud material; one GPU graph partitioning item was not promoted as an A method."
+    }
+  ],
+  "zigzag_check": {
+    "article_number": "9360462",
+    "title": "ZigZag: Enlarging Joint Architecture-Mapping Design Space Exploration for DNN Accelerators",
+    "doi": "10.1109/TC.2021.3059962",
+    "http_status": 200,
+    "access_type": "LOCKED",
+    "fulltext_attempted": false,
+    "reason": "Locked record; no chargeable or purchase path was called.",
+    "ieee_url": "https://ieeexplore.ieee.org/document/9360462/"
+  },
+  "fulltext_checks": [
+    {
+      "article_number": "11098909",
+      "title": "Dynamic Cluster Selection DAG Scheduling for Clustered Many-Core Processor Considering Inter-Cluster Communication",
+      "access_type": "CCBY - IEEE is not the copyright holder of this material",
+      "http_status": 200,
+      "content_type": "application/xml;charset=UTF-8",
+      "interface": "XML",
+      "bytes": 145613,
+      "saved_file": "fulltext/A52_11098909.xml"
+    },
+    {
+      "article_number": "8579198",
+      "title": "Dynamic Data Allocation and Task Scheduling on Multiprocessor Systems With NVM-Based SPM",
+      "access_type": "OPEN_ACCESS",
+      "http_status": 200,
+      "content_type": "application/xml;charset=UTF-8",
+      "interface": "XML",
+      "bytes": 92190,
+      "saved_file": "fulltext/A51_8579198.xml"
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Dynamic Cluster Selection DAG Scheduling for Clustered Many-Core Processor Considering Inter-Cluster Communication",
+      "authors": "Yutaro Nozaki, Fuma Omori, Takuya Azumi",
+      "year": 2025,
+      "venue": "IEEE Access",
+      "doi": "10.1109/ACCESS.2025.3593662",
+      "url": "https://ieeexplore.ieee.org/document/11098909/",
+      "pdf_urls": [
+        "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11098909"
+      ],
+      "method": "Selects clusters dynamically for DAG scheduling on clustered many-core processors while accounting for inter-cluster communication.",
+      "relevance": "high",
+      "limitations": "CCBY record whose copyright is not held by IEEE; clustered many-core communication semantics differ from the A题 shared DDR and official evaluator.",
+      "priority": 1,
+      "source_evidence": {
+        "source": "IEEE Xplore Open Access-filtered metadata",
+        "endpoint": "/api/v1/search/articles",
+        "article_number": "11098909",
+        "access_type": "CCBY - IEEE is not the copyright holder of this material",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "license_note": "CC BY instructions apply; no IEEE fulltext endpoint was called because access_type was not Open Access/Ephemera."
+    },
+    {
+      "title": "Dynamic Data Allocation and Task Scheduling on Multiprocessor Systems With NVM-Based SPM",
+      "authors": "Yan Wang, Kenli Li, Keqin Li",
+      "year": 2019,
+      "venue": "IEEE Access",
+      "doi": "10.1109/ACCESS.2018.2887024",
+      "url": "https://ieeexplore.ieee.org/document/8579198/",
+      "pdf_urls": [
+        "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8579198"
+      ],
+      "method": "Combines dynamic task scheduling with data allocation on a hybrid SRAM/NVM scratch-pad memory to reduce multiprocessor memory cost and latency.",
+      "relevance": "high",
+      "limitations": "Memory hierarchy is NVM-based SPM rather than the A题 L1/UB/DDR/FIFO-cache evaluator; use as memory-allocation background, not a direct baseline.",
+      "priority": 1,
+      "source_evidence": {
+        "source": "IEEE Xplore Open Access-filtered metadata and fulltext check",
+        "endpoint": "/api/v1/search/document/8579198/fulltext",
+        "article_number": "8579198",
+        "access_type": "OPEN_ACCESS",
+        "fulltext_file": "fulltext/A51_8579198.xml"
+      },
+      "license_note": "Retrieved through the documented IEEE Open Access fulltext endpoint as XML."
+    }
+  ],
+  "focused_existing": [
+    {
+      "title": "A Scalable Clustering-Based Task Scheduler for Homogeneous Processors Using DAG Partitioning",
+      "doi": "10.1109/IPDPS.2019.00026",
+      "public_author_pdf": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ipdps2019.pdf",
+      "public_report_pdf": "https://graal.ens-lyon.fr/~abenoit/papers/RR-9185-v2.pdf",
+      "method": "Uses an acyclic DAG partitioner to form global clusters, then schedules clusters with list heuristics so locality gains are balanced against parallelism and communication."
+    },
+    {
+      "title": "Efficient Scheduling of Irregular Network Structures on CNN Accelerators",
+      "doi": "10.1109/TCAD.2020.3012215",
+      "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+      "volume": "39",
+      "issue": "11",
+      "pages": "3408-3419",
+      "year": 2020,
+      "access_type": "LOCKED",
+      "public_author_pdf": "",
+      "public_evidence_url": "https://www.researchgate.net/publication/346069450_Efficient_Scheduling_of_Irregular_Network_Structures_on_CNN_Accelerators",
+      "method": "Uses dynamic-programming/node-clustering DAG partitioning for inter-layer reuse, then co-optimizes subgraph order, on-chip memory allocation and loop tiling for fused layers."
+    }
+  ]
+}

@@ -16,7 +16,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a\experiments.ps1
 
 |题目|报告|结构化文献|
 |---|---|---|
-|A 多核调度|[基础调研](A题_基础调研与写作方向.md)|[文献](A题_文献.json)|
+|A 多核调度|[基础调研](A题_基础调研与写作方向.md)|[文献](A题_文献.json) · [52篇方法文献库与全文](A题_文献库/README.md)|
 |B 低温冷启动|[基础调研](B题_基础调研与写作方向.md)|[文献](B题_文献.json)|
 |C 脑电计算模型|[基础调研](C题_基础调研与写作方向.md)|[文献](C题_文献.json)|
 |D 运输与通信|[基础调研](D题_基础调研与写作方向.md)|[文献](D题_文献.json)|

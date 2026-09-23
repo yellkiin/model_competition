@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response><body>
+<sec id="sec1"><label>I.</label>
+<title>Introduction</title><p>Low-power and short-latency memory access is critical to the performance of chip multiprocessor (CMP) system devices. Several recent studies have revealed a potential low-power and short-latency alternative by replacing the hardware-controlled cache with scratchpad memory (SPM), such as IBM’s CELL processor, TI TMS370CX7X, and M-core MMC221. SPM, a software-managed on-chip memory, has been used in CMPs as a part of the memory hierarchy to improve system performance. Compared to hardware-managed cache, SPM is managed by the compiler and programmer and has considerable advantages in area estimation, power consumption, and timing predictability <xref ref-type="bibr" rid="ref7">[7]</xref>, <xref ref-type="bibr" rid="ref31">[31]</xref>. However, since the speed transistor of CMOS grows with the increasing density, the leakage power consumption of pure static random-access memory (SRAM) SPMs is massive. For example, the literature <xref ref-type="bibr" rid="ref10">[10]</xref> has demonstrated that the SRAM SPM consumes 33.7% of the total energy consumption of a CMP on average. Therefore, nonvolatile memory (NVM) has been adopted in SPMs because it allows for lower memory power consumption.</p><p>NVM, such as magnetic RAM (MRAM) and phase change memory (PCM), has a low static power consumption, high storage density, and high resistance to soft errors such as shifts from single event upsets. Several previous studies have demonstrated the use and benefits of NVM at different levels of the memory hierarchy. For example, <xref ref-type="bibr" rid="ref5">[5]</xref>, <xref ref-type="bibr" rid="ref6">[6]</xref>, <xref ref-type="bibr" rid="ref12">[12]</xref>, <xref ref-type="bibr" rid="ref26">[26]</xref>, <xref ref-type="bibr" rid="ref30">[30]</xref>, and <xref ref-type="bibr" rid="ref32">[32]</xref> used NVM as the main memory. These studies confirmed a considerable reduction in the energy consumption and performance that was comparable to that when DRAM was used as the main memory. However, although NVMs have many attractive characteristics as described above, their disadvantages are explicit. First, the lifespan of NVM is bounded by a limited number of write operations. Second, the cost of a read operation is much less than that of a write operation on NVMs. In addition, to the best of our knowledge, no previous studies have considered SPMs that use pure NVM. Therefore, exploring an efficient memory architectural model is necessary to control the number of write operations on NVMs. Many works have used NVMs to build cache or hybrid SPM hierarchies. For example, <xref ref-type="bibr" rid="ref7">[7]</xref>, <xref ref-type="bibr" rid="ref15">[15]</xref>, <xref ref-type="bibr" rid="ref19">[19]</xref>, <xref ref-type="bibr" rid="ref20">[20]</xref>, <xref ref-type="bibr" rid="ref28">[28]</xref>, and <xref ref-type="bibr" rid="ref29">[29]</xref> employed NVM together with SRAM to construct a hybrid SPM. These works demonstrated that, compared to SRAM, NVMs could improve the system performance considerably when configured and appropriately used in hybrid SPM hierarchies. To fully utilize the benefits of NVM, in the article, we adopt an NVM-based hybrid SPM architecture that is composed of an NVM and an SRAM. Significant energy reductions can be achieved using the target hybrid SPM architecture while improving the performance and extending the lifetime of NVM.</p><p>In the NVM-based hybrid SPM architecture, a significant problem is how to allocate data to maximize the benefits of NVM. Several studies have focused on the data allocation problem and proposed static or dynamic data allocation techniques in embedded systems with hybrid SPM <xref ref-type="bibr" rid="ref8">[8]</xref>, <xref ref-type="bibr" rid="ref9">[9]</xref>, <xref ref-type="bibr" rid="ref13">[13]</xref>, <xref ref-type="bibr" rid="ref14">[14]</xref>, <xref ref-type="bibr" rid="ref23">[23]</xref>, <xref ref-type="bibr" rid="ref25">[25]</xref>. Power-driven data allocation problems were studied in <xref ref-type="bibr" rid="ref17">[17]</xref>, <xref ref-type="bibr" rid="ref21">[21]</xref>, <xref ref-type="bibr" rid="ref22">[22]</xref>, <xref ref-type="bibr" rid="ref27">[27]</xref>, and <xref ref-type="bibr" rid="ref28">[28]</xref> by incorporating the power cost into the embedded system with hybrid SPMs. However, the above data allocation algorithms do not consider the data dependencies or the relationship between memory access operations and tasks. Numerous problems, such as long latency, occur when data dependency applications are executed on multiprocessor systems with hybrid on-chip SPMs. There are many static data allocation and task scheduling techniques for SPM that consider data dependency <xref ref-type="bibr" rid="ref11">[11]</xref>, <xref ref-type="bibr" rid="ref15">[15]</xref>, <xref ref-type="bibr" rid="ref26">[26]</xref>, <xref ref-type="bibr" rid="ref29">[29]</xref>. However, to the best of our knowledge, no existing dynamic data allocation and task scheduling research has considered data dependency with regard to the hybrid SPM. Fortunately, applications can fully utilize compiler-analyzable data access patterns, which can offer efficient dynamic data and task assignment mechanisms for CMP systems with a hybrid SPM architecture.</p><p>In the article, the target architectural model is application-specific CMP systems, on which application programs can be comprehensively analyzed. The CMP system adopts a hybrid SPM, which consists of an SRAM and an NVM, as the on-chip memory to utilize the high density and low leakage power of NVM. Based on the target architecture, we first propose an initial data assignment algorithm to obtain an initial data assignment with minimum memory access. The initial data assignment can also be used as a static data allocation algorithm for the target architecture. Second, we propose a dynamic greedy data allocation and task scheduling (DGDATS) algorithm based on the initial data assignment. In this algorithm, we first generate a data-task pair set that describes the relationship between executable tasks and data. Second, according to the current data assignment, we reallocate data and schedule executable tasks in terms of data-task pair sets. The goal of this paper is to achieve an on-chip memory solution that is long-lived and has low execution costs by utilizing the benefits of both NVM and SRAM. We have evaluated our proposed data and task allocation techniques based on the target architecture, which uses NVM and SRAM as a hybrid SPM. The experimental results demonstrate that, compared to the HA algorithm, our proposed algorithm can reduce energy consumption by 22.18% and the writes on NVM by 19.82% on average.</p><p>The main contributions of this paper include the following:
+<list list-type="ordered"><list-item><label>1)</label><p>We focus on data dependency to solve the issue of dynamic data allocation and task scheduling on the multiprocessor’s NVM-based hybrid SPM. The goal is to decrease the execution costs and to lower the number of write operations for the sake of maximizing the lifetime of the NVM parts of the hybrid SPM.</p></list-item><list-item><label>2)</label><p>We propose an initial data assignment algorithm to obtain an initial data assignment with minimum memory access. The initial data assignment can also be used as a static data allocation algorithm for the target architecture.</p></list-item><list-item><label>3)</label><p>We propose a dynamic greedy data allocation and task scheduling algorithm for the CMP with a hybrid SPM that can reduce the total execution cost while extending the lifespan of the NVM.</p></list-item>
+</list></p><p>The remainder of this paper is organized as follows. In the next section, background and related studies are discussed. In <xref ref-type="sec" rid="sec3">section III</xref>, the basic definitions and models used in the remainder of the paper are provided. In <xref ref-type="sec" rid="sec4">section IV</xref>, we use a motivational example to illustrate the effectiveness of our proposed algorithm. <xref ref-type="sec" rid="sec5">Section V</xref> shows the main algorithms in detail. Experimental results and concluding remarks are provided in <xref ref-type="sec" rid="sec6">Section VI</xref> and <xref ref-type="sec" rid="sec7">Section VII</xref>, respectively.</p>
+</sec>
+<sec id="sec2"><label>II.</label>
+<title>Related Work</title><p>Existing works on the data and task allocation problem can be categorized into two categories, static data and task allocation and dynamic data and task allocation, depending on the cost when the data and task allocation decision is made. In static data allocation and task scheduling scenarios, the analysis of an application program, task mapping and data allocation decision is made at the compile-time (offline). The task execution order and data allocation decisions are made before running the application. The required tasks and data are loaded at the system initialization stage and remain unchanged during the execution. For example, Gu <italic>et al.</italic> <xref ref-type="bibr" rid="ref4">[4]</xref> studied static task assignments and data allocation on multi-core systems with multi-port SPMs to minimize the cost. The authors also formulated the problem as an integer linear programming and used a heuristic algorithm to solve it. Wang <italic>et al.</italic> <xref ref-type="bibr" rid="ref28">[28]</xref> studied static data allocation on a hybrid SPM and proposed the EADA and BDAEW algorithms to allocate data on different memories and map tasks to different cores, thus to reduce the memory latency and energy consumption.</p><p>In dynamic data allocation and task scheduling, the task mapping and data allocation are performed in real time as the application executes. Many studies have focused on dynamic techniques to move data back and forth between the on-chip memory and main memory at runtime to improve the performance or reduce the energy consumption. For example, Ghattas <italic>et al.</italic> <xref ref-type="bibr" rid="ref3">[3]</xref> proposed a synergistic optimal approach to allocate data objects and to schedule real-time tasks for embedded systems. In <xref ref-type="bibr" rid="ref1">[1]</xref>, to enable more efficient data center resizing and minimize the communication cost, the authors proposed an efficient data allocation technique and a generic model that considers both the static and dynamic characteristics. Ji <italic>et al.</italic> <xref ref-type="bibr" rid="ref9">[9]</xref> presented a dynamic and adaptive SPM management strategy that targets a multi-task environment. Marchal <italic>et al.</italic> <xref ref-type="bibr" rid="ref18">[18]</xref> presented an SDRAM data assignment technique for dynamic multithreaded multimedia applications. This technique was combined with task scheduling to minimize the energy cost and the number of deadline violations. The above methods could obtain a highly-efficient data and task allocation approach to improve the performance. However, when applications are run on multi-processors systems with NVM-based hybrid SPMs, the data and task allocation problem is different from the existing data and task assignment problems on uniform memory access architectures. This is because the costs of read and write operations on NVMs are asymmetric, and the write times to that component should not exceed the limitation.</p><p>Many dynamic data allocation algorithms have been presented to enhance the lifespan of NVM-based SPMs while reducing the total energy consumption and improving the performance. Long <italic>et al.</italic> <xref ref-type="bibr" rid="ref16">[16]</xref> studied the benefits of high-density MLC and low-energy SLC and then proposed a specific SPM with a morphable NVM and a theory of thermal expansion and contraction optimization technique by which data can be dynamically programmed and allocated into the MLC mode or SLC mode. Soliman and Pellizzoni <xref ref-type="bibr" rid="ref24">[24]</xref> introduced a compiler-directed prefetching scheme, WCET-driven dynamic data allocation, for the SPM. The method can overlap data transfers and task execution to achieve the purpose of hiding the memory latency. Udayakumaran and Barua <xref ref-type="bibr" rid="ref25">[25]</xref> presented methods for allocating the global and stack data based on a hybrid SPM. Wang <xref ref-type="bibr" rid="ref16">[16]</xref>, <xref ref-type="bibr" rid="ref29">[29]</xref> presented algorithms for allocating data variables to the SPM and distributing the write activity evenly in the SPM address space to achieve wear leveling and prolong the lifetime of the NVM. In these techniques, data could be reloaded into the SPM and migrated among memories to guarantee the execution of the application. However, the above techniques did not consider the data dependencies. Compared to the above approaches, the approach presented in this paper has several different aspects. First, to solve the data and task allocation problem, we employ CMP systems with NVM-based hybrid SPMs as the target architectural model. Second, we propose a dynamic data allocation and task scheduling algorithm to obtain an efficient dynamic execution approach such that the total execution cost can be reduced while the overall performance can be improved.</p>
+</sec>
+<sec id="sec3"><label>III.</label>
+<title>Models</title>
+<sec id="sec3a"><label>A.</label>
+<title>Architectural Model</title><p>In this paper, we target the CMPs using a hybrid SPM to replace the cache. In the architectural model shown in <xref ref-type="fig" rid="fig1">Figure 1</xref>, each core is tightly equipped with an on-chip hybrid SPM, which consists of an NVM and an SRAM. In a hybrid SPM, the NVM and SRAM use jointly the same address space with the DRAM main memory. Additional, in the architectural model, all of the cores use jointly the same address space with a large-capacity main memory. Each core can access data from its local SPM directly and from another remote SPM by bus, and data can be migrated between memories using an individual instruction supported by the cores. Core access from the local SPM is referred to as local access, whereas access from the SPM of another core is called remote access. This architecture is similar to the CELL processor, in which a multi-channel ring structure permits the communication between any two cores without intervention from other cores. The cost of data transfer between cores can safely be assumed to be a constant value. Remote access consumes more energy and is slower than local access, whereas accessing the main memory results in the most energy consumption and the longest latency.
+<fig id="fig1" orientation="portrait" position="float"><label>FIGURE 1.</label><caption><p>Architecture model.</p></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang1-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+</fig></p><p>In this architecture, a hybrid SPM is fabricated with 3-D chips. This arrangement is chosen because 3-D integration is a promising and feasible scheme to fabricating hybrid SPMs. For fabrication, as shown in <xref ref-type="fig" rid="fig2">Figure 2</xref>, the SRAM is equipped into the same layer as the core, and the separation layer is equipped with NVM. This device method enables designers to fully utilize the advantages of NVM.
+<fig id="fig2" orientation="portrait" position="float"><label>FIGURE 2.</label><caption><p>SPM architecture.</p></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang2-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+</fig></p>
+</sec>
+<sec id="sec3b"><label>B.</label>
+<title>Computational Model</title><p>In this subsection, we formally present the computational model. The applications are modeled as <italic>directed acyclic graph</italic> (DAG). A DAG <inline-formula>
+<tex-math notation="LaTeX">$G=(V,E,D,in,out,Nr,Nw,C,M)$
+</tex-math></inline-formula> is a node-weighted and edge-weighted directed graph. A note set <inline-formula>
+<tex-math notation="LaTeX">$V=\{v_{1},v_{2},\ldots, v_{N}\}$
+</tex-math></inline-formula> represents a set of <inline-formula>
+<tex-math notation="LaTeX">$N$
+</tex-math></inline-formula> tasks. A set <inline-formula>
+<tex-math notation="LaTeX">$E\subseteq V \times V$
+</tex-math></inline-formula> describes the dependency relations among the nodes in <inline-formula>
+<tex-math notation="LaTeX">$V$
+</tex-math></inline-formula>. The set <inline-formula>
+<tex-math notation="LaTeX">$D$
+</tex-math></inline-formula> consists of all data for tasks. <inline-formula>
+<tex-math notation="LaTeX">$in(v_{i})\subseteq D$
+</tex-math></inline-formula> represents a set of input data of task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>, and <inline-formula>
+<tex-math notation="LaTeX">$in(h,v_{i})$
+</tex-math></inline-formula> means that executing task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> needs to read data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> to the corresponding core. <inline-formula>
+<tex-math notation="LaTeX">$out(v_{i})\subseteq D$
+</tex-math></inline-formula> represents a set of output data of task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>, and <inline-formula>
+<tex-math notation="LaTeX">$out(h,v_{i})$
+</tex-math></inline-formula> means that output data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> needs to be written to the memory after task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> completion. <inline-formula>
+<tex-math notation="LaTeX">$Nr(v_{i})$
+</tex-math></inline-formula> denotes the read times of different input data for the task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>, i.e., <inline-formula>
+<tex-math notation="LaTeX">$Nr(h,v_{i})$
+</tex-math></inline-formula> represents the read times of data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> for the task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>. <inline-formula>
+<tex-math notation="LaTeX">$Nw(v_{i})$
+</tex-math></inline-formula> is the write times of the output data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> for task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>, i.e., <inline-formula>
+<tex-math notation="LaTeX">$Nw(h,v_{i})$
+</tex-math></inline-formula> represents the write times of <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> for task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>. Set <inline-formula>
+<tex-math notation="LaTeX">$C = \{c_{1}, c_{2}, c_{3}, \ldots, c_{n}\}$
+</tex-math></inline-formula> is a set of <inline-formula>
+<tex-math notation="LaTeX">$n$
+</tex-math></inline-formula> cores that should schedule tasks. Set <inline-formula>
+<tex-math notation="LaTeX">$M= \{M_{1}, M_{2},\ldots,M_{2i-1},M_{2i},\ldots,M_{2n_{1}},M_{2n}\}$
+</tex-math></inline-formula> is a set of local memories to access data. For a core <inline-formula>
+<tex-math notation="LaTeX">$c_{i}$
+</tex-math></inline-formula>, its equipped SRAM and NVM are denoted by <inline-formula>
+<tex-math notation="LaTeX">$M_{2i-1}$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$M_{2i}$
+</tex-math></inline-formula>, respectively.</p><p><xref ref-type="fig" rid="fig3">Figure 3</xref> illustrates an example of a DAG. There are <inline-formula>
+<tex-math notation="LaTeX">$N=4$
+</tex-math></inline-formula> tasks, i.e., <inline-formula>
+<tex-math notation="LaTeX">$v_{1},v_{2},v_{3},v_{4}$
+</tex-math></inline-formula>. <xref ref-type="fig" rid="fig3">Figure 3 (a)</xref> shows the data dependencies among the tasks, and <xref ref-type="fig" rid="fig3">Figure 3 (b)</xref> shows the read times and write times of each datum for the tasks.
+<fig id="fig3" orientation="portrait" position="float"><label>FIGURE 3.</label><caption><p>An example of DAG. (a) data dependencies among tasks. (b) the input and output data of tasks.</p></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang3ab-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+</fig></p>
+</sec>
+<sec id="sec3c"><label>C.</label>
+<title>Problem Definition</title><p>Before giving the problem definition, we use <xref ref-type="table" rid="table1">Table 1</xref> to provide the notations used in the article. Here, the cost can be any cost, such as energy consumption, reliability cost, or execution time, being dependent on the optimization goal.<table-wrap id="table1" orientation="portrait" position="float"><label>TABLE 1</label><caption>
+<title>Notation Used in the Paper</title></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang.t1-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/><table cellpadding="5" frame="box" rules="all"><colgroup span="1"><col span="2"/></colgroup><thead><tr><th colspan="1" rowspan="1">notation</th><th colspan="1" rowspan="1">description</th></tr></thead><tbody><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$RS_{L}$
+</tex-math></inline-formula>,<inline-formula>
+<tex-math notation="LaTeX">$RS_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">cost of local and remote reads from SRAM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$RN_{L}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$RN_{R} $
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">cost of local and remote reads from NVM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$WS_{L}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$WS_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">cost of local and remote writes from SRAM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$WN_{L}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$WN_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">cost of local and remote writes from NVM</td></tr><tr><td colspan="1" rowspan="1">RM</td><td colspan="1" rowspan="1">reads cost from main memory</td></tr><tr><td colspan="1" rowspan="1">WM</td><td colspan="1" rowspan="1">writes cost from main memory</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$S\rightarrow N_{L}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to local NVM from SRAM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$S\rightarrow N_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to remote NVM from SRAM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$N\rightarrow S_{L}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to local SRAM from NVM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$N\rightarrow S_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to remote SRAM from NVM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$S\rightarrow S$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to SRAM from SRAM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$N\rightarrow N$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to NVM from NVM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$S\rightarrow M$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to main memory from SRAM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$N\rightarrow M$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to main memory from NVM</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$M\rightarrow S$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to SRAM from main memory</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$M\rightarrow N$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">migrating cost that data to NVM from main memory</td></tr></tbody></table></table-wrap></p><p>Assume that we are given a CMP system consisting of <inline-formula>
+<tex-math notation="LaTeX">$n$
+</tex-math></inline-formula> cores <inline-formula>
+<tex-math notation="LaTeX">$c_{1}, c_{2},\ldots c_{n}$
+</tex-math></inline-formula>, where each core is equipped with a hybrid SRAM+NVM SPM. The cost of each type of memory operation for a unit of data is known beforehand to be useful, as is the capacity of each type of memory. We define the <italic>cost optimization data allocation and task scheduling (CODATS) problem</italic> as follows: Given an input DAG <inline-formula>
+<tex-math notation="LaTeX">$G=(V,E,D,in,out,Nr,Nw,C,M)$
+</tex-math></inline-formula>, the objectives of the CODATS problem are to find (1) a data assignment <inline-formula>
+<tex-math notation="LaTeX">$Mem$
+</tex-math></inline-formula> for each task: <inline-formula>
+<tex-math notation="LaTeX">$D\rightarrow M$
+</tex-math></inline-formula>, where <inline-formula>
+<tex-math notation="LaTeX">$Mem(h,v_{i})\in M$
+</tex-math></inline-formula> represents the memory to hold data <inline-formula>
+<tex-math notation="LaTeX">$h\in D$
+</tex-math></inline-formula> for task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>; (2) a movement path: <inline-formula>
+<tex-math notation="LaTeX">$M\rightarrow M$
+</tex-math></inline-formula>, where <inline-formula>
+<tex-math notation="LaTeX">$M_{h}(i,j)$
+</tex-math></inline-formula> shows the data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> moving from the memory <inline-formula>
+<tex-math notation="LaTeX">$M_{i}$
+</tex-math></inline-formula> to <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula> before executing a task; and (3) and a task allocation <inline-formula>
+<tex-math notation="LaTeX">$A$
+</tex-math></inline-formula>: <inline-formula>
+<tex-math notation="LaTeX">$V\rightarrow C$
+</tex-math></inline-formula>, where <inline-formula>
+<tex-math notation="LaTeX">$A(v_{i})$
+</tex-math></inline-formula> is the core to schedule task <inline-formula>
+<tex-math notation="LaTeX">$v_{i} \in V$
+</tex-math></inline-formula> such that the execution cost of the DAG is minimized. We describe the objective function of the target problem as below.</p><p>For each data assignment and task mapping, the inputs of our algorithm are the size of the NVM <inline-formula>
+<tex-math notation="LaTeX">$Size_{n}$
+</tex-math></inline-formula>, the size of the SRAM <inline-formula>
+<tex-math notation="LaTeX">$Sise_{s}$
+</tex-math></inline-formula>, the read and write numbers of each datum for each task, the initial data allocation in the CMP, and the cost of each type of memory operation for a unit of data.</p><p>The outputs are a data movement path, data allocation and task mapping under which the total cost of the executable tasks set is minimized. The cost of each datum for each task can be defined as follows:<disp-formula id="deqn1">
+<tex-math notation="LaTeX">\begin{align*} C(h,v_{i})=&amp;Nr(h,i)\times CR(h,v_{i})+Nw(h,i) \times CW(h,v_{i}) \\[4pt]&amp;\qquad \qquad +\, moving\_{}cost+ overhead\_{}cost\tag{1}\end{align*}
+</tex-math></disp-formula> where <inline-formula>
+<tex-math notation="LaTeX">$moving\_{}cost$
+</tex-math></inline-formula> represents the cost of migrating data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> from one memory to another memory; <inline-formula>
+<tex-math notation="LaTeX">$overhead\_{}cost$
+</tex-math></inline-formula> represents the additional reads, writes, and migration costs of another data set that is generated by changing the data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> assignment for performing the task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>; and <inline-formula>
+<tex-math notation="LaTeX">$CR(h,v_{i})$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$CW(h,v_{i})$
+</tex-math></inline-formula> represent the cost of each read and each write for the data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>, respectively. <inline-formula>
+<tex-math notation="LaTeX">$move\_{}cost$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$overhead\_{}cost$
+</tex-math></inline-formula> depend on the migration path of the data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>. The values of <inline-formula>
+<tex-math notation="LaTeX">$CR(h,v_{i})$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$CW(h,v_{i})$
+</tex-math></inline-formula> relate to the assignment of data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> and task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>. Let the binary variable <inline-formula>
+<tex-math notation="LaTeX">$MF(h,v_{i})=Mem(h,v_{i}) \mod 2$
+</tex-math></inline-formula> indicate whether data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> for task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> is assigned in NVM or not. If <inline-formula>
+<tex-math notation="LaTeX">$MF(h,v_{i}) =1$
+</tex-math></inline-formula>, then data are allocated in NVM. Let <inline-formula>
+<tex-math notation="LaTeX">$CM(h,v_{i})=\lceil Mem(h,v_{i})/2 \rceil $
+</tex-math></inline-formula> represent the corresponding core of stored data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> for task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>. The <inline-formula>
+<tex-math notation="LaTeX">$CR(h,v_{i})$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$CW(h,v_{i})$
+</tex-math></inline-formula> can be obtained as follows:<disp-formula id="deqn2-3">
+<tex-math notation="LaTeX">\begin{align*} CR(h,v_{i})=&amp;\begin{cases} RS_{L},&amp; if~MF(h,v_{i})=0,~CM(h,v_{i}) =A(v_{i}) \\ RS_{R},&amp; if~MF(h,v_{i})=0,~CM(h,v_{i}) \neq A(v_{i}) \\ RN_{L},&amp; if~MF(h,v_{i})=1,~CM(h,v_{i}) =A(v_{i}) \\ RN_{R},&amp; if~MF(h,v_{i})=1,~CM(h,v_{i}) \neq A(v_{i}) \end{cases}\!\! \\ {}\tag{2}\\ CW(h,v_{i})=&amp;\begin{cases} WS_{L},&amp; if~MF(h,v_{i})=0,~CM(h,v_{i}) =A(v_{i}) \\ WS_{R},&amp; if~MF(h,v_{i})=0,~CM(h,v_{i}) \neq A(v_{i}) \\ WN_{L},&amp; if~MF(h,v_{i})=1,~CM(h,v_{i}) =A(v_{i}) \\ WN_{R},&amp; if~MF(h,v_{i})=1,~CM(h,v_{i}) \neq A(v_{i}) \end{cases}\!\! \\ {}\tag{3}\end{align*}
+</tex-math></disp-formula></p><p>The total cost consists of two parts: the cost of the memory operation part and the cost of the computing part. Hence, given the cost of each task <inline-formula>
+<tex-math notation="LaTeX">$C_{v_{i}}$
+</tex-math></inline-formula>, the total cost of the DAG can be calculated as follows:<disp-formula id="deqn4">
+<tex-math notation="LaTeX">\begin{equation*} C_{total}=\sum _{v_{i} \in V}\sum _{h\in D} C(h,v_{i})+ \sum _{v_{i} \in V} C_{v_{i}}\tag{4}\end{equation*}
+</tex-math></disp-formula></p>
+</sec>
+</sec>
+<sec id="sec4"><label>IV.</label>
+<title>Motivational Example</title><p>To show the effectiveness of the data and task allocation algorithm presented in this paper, we provide a motivational example in this section. In the example, we demonstrate that with well-planned data and task allocation, we can reduce the total costs and improve system performance while also utilizing the benefits of NVM in the hybrid SPM architecture.</p><p>Assume that there are two cores and that each core is equipped with a hybrid SPM. In the hybrid SPM, the SRAM can store 3 units of data, the NVM can store 2 units of data, and the DRAM main memory can store all of the data needed for an application. The example shown in <xref ref-type="fig" rid="fig3">Figure 3</xref> is used as a motivational example. Here, we have four tasks: <inline-formula>
+<tex-math notation="LaTeX">$V_{1}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$V_{2}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$V_{3}$
+</tex-math></inline-formula>, and <inline-formula>
+<tex-math notation="LaTeX">$V_{4}$
+</tex-math></inline-formula>. For simplicity, the size of all data is equal in the example. The number of reads and the number of writes of each data for each task are shown in <xref ref-type="fig" rid="fig3">Fig 3 (b)</xref>, and <xref ref-type="table" rid="table2">Table 2</xref> shows all the costs used in the example.<table-wrap id="table2" orientation="portrait" position="float"><label>TABLE 2</label><caption>
+<title>Cost of Each Access</title></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang.t2-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/><table cellpadding="5" frame="box" rules="all"><colgroup span="1"><col span="6"/></colgroup><thead><tr><th colspan="1" rowspan="1">Notation</th><th colspan="1" rowspan="1">Costs</th><th colspan="1" rowspan="1">Notation</th><th colspan="1" rowspan="1">Costs</th><th colspan="1" rowspan="1">Notation</th><th colspan="1" rowspan="1">Costs</th></tr></thead><tbody><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$RS_{L}$
+</tex-math></inline-formula>,<inline-formula>
+<tex-math notation="LaTeX">$WS_{L}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">1</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$RN_{L}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">2</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$WN_{L}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">5</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$RS_{R}$
+</tex-math></inline-formula>,<inline-formula>
+<tex-math notation="LaTeX">$WS_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">7</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$RN_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">8</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$WN_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">11</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$S\rightarrow N_{L}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">6</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$N\rightarrow S_{L}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">3</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$S\rightarrow S$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">8</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$S\rightarrow N_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">12</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$N\rightarrow S_{R}$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">9</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$N\rightarrow N$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">13</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$S\rightarrow M$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">51</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$N\rightarrow M$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">53</td><td colspan="1" rowspan="1">RM</td><td colspan="1" rowspan="1">50</td></tr><tr><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$M\rightarrow S$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">51</td><td colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$M\rightarrow N$
+</tex-math></inline-formula></td><td colspan="1" rowspan="1">55</td><td colspan="1" rowspan="1">WM</td><td colspan="1" rowspan="1">50</td></tr></tbody></table></table-wrap></p><p>In the example, we compare the data allocation and task scheduling generated by our proposed algorithm and the HA algorithm. For simplicity, we illustrate only the results of these two techniques without detailing how each result is generated. Based on the example application, the HA algorithm generates a data allocation and task schedule shown in <xref ref-type="fig" rid="fig4">Figure 4 (a)</xref>. In this approach, tasks <inline-formula>
+<tex-math notation="LaTeX">$V_{1}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$V_{3}$
+</tex-math></inline-formula>, and <inline-formula>
+<tex-math notation="LaTeX">$V_{4}$
+</tex-math></inline-formula> are scheduled on core 1, and task <inline-formula>
+<tex-math notation="LaTeX">$V_{2}$
+</tex-math></inline-formula> is scheduled on core 2. The initial data allocation is as follows: <inline-formula>
+<tex-math notation="LaTeX">$B$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$C$
+</tex-math></inline-formula>, and <inline-formula>
+<tex-math notation="LaTeX">$D$
+</tex-math></inline-formula> in core 1’s SRAM, <inline-formula>
+<tex-math notation="LaTeX">$A$
+</tex-math></inline-formula> in core 1’s NVM, <inline-formula>
+<tex-math notation="LaTeX">$E$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$F$
+</tex-math></inline-formula>, and <inline-formula>
+<tex-math notation="LaTeX">$G$
+</tex-math></inline-formula> in core 2’s SRAM, <inline-formula>
+<tex-math notation="LaTeX">$H$
+</tex-math></inline-formula> in core 2’s NVM, and <inline-formula>
+<tex-math notation="LaTeX">$I$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$J$
+</tex-math></inline-formula> in the main memory. In this approach, the execution cost is 672, the overhead is 139, and there are 21 writes on NVM.
+<fig id="fig4" orientation="portrait" position="float"><label>FIGURE 4.</label><caption><p>Data allocation and task schedule comparison (a) greedy approach (b) the proposed approach.</p></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang4ab-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+</fig></p><p>However, when we use another data allocation and task scheduling scheme, the total execution cost can be reduced. Instead of the data allocation and task schedule generated by the HA algorithm, if <inline-formula>
+<tex-math notation="LaTeX">$V_{1}$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$V_{3}$
+</tex-math></inline-formula> are executed on core 1, then <inline-formula>
+<tex-math notation="LaTeX">$V_{2}$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$V_{4}$
+</tex-math></inline-formula> are executed on core 2. Before performing tasks <inline-formula>
+<tex-math notation="LaTeX">$V_{1}$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$V_{2}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$B$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$C$
+</tex-math></inline-formula>, and <inline-formula>
+<tex-math notation="LaTeX">$D$
+</tex-math></inline-formula> are allocated in core 1’s SRAM; <inline-formula>
+<tex-math notation="LaTeX">$A$
+</tex-math></inline-formula> in core 1’s NVM; <inline-formula>
+<tex-math notation="LaTeX">$E$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$F$
+</tex-math></inline-formula>, and <inline-formula>
+<tex-math notation="LaTeX">$G$
+</tex-math></inline-formula> in core 2’s SRAM; <inline-formula>
+<tex-math notation="LaTeX">$H$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$J$
+</tex-math></inline-formula> in the NVM of core 2; and <inline-formula>
+<tex-math notation="LaTeX">$I$
+</tex-math></inline-formula> in the main memory. Then, we dynamically schedule tasks and reallocate the data according to the current data allocation. For example, we should schedule task <inline-formula>
+<tex-math notation="LaTeX">$V_{4}$
+</tex-math></inline-formula> in core 2 according to the current data allocation, then we reallocate data <inline-formula>
+<tex-math notation="LaTeX">$F$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$B$
+</tex-math></inline-formula> in core 2’s NVM, data <inline-formula>
+<tex-math notation="LaTeX">$G$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$A$
+</tex-math></inline-formula> in core 1’s SRAM, and data <inline-formula>
+<tex-math notation="LaTeX">$C$
+</tex-math></inline-formula> in core 1’s NVM to get better benefits. In this case, there are 22 writes on NVM, the execution cost can be reduced to 583, and the overhead can be reduced to 80. Compared with the HA approach, the execution cost is reduced by (672 − 583)/672=13.24%, and the overhead is reduced by 42.44%.</p><p>The above example demonstrates that studying a well-planned data and task allocation algorithm on the CMP system with hybrid SPM can reduce the total execution cost. A hybrid SPM architecture has more challenges than a pure cache or pure SPM in terms of selecting the appropriate memory for a datum to accomplish our objectives of cost saving and reducing the write operations on NVM. Therefore, the data and task allocation problem on the CMP system with hybrid SPMs must be investigated.</p>
+</sec>
+<sec id="sec5"><label>V.</label>
+<title>Algorithms</title><p>In this section, we will discuss the details of the Dynamic Greedy Data Allocation and Task Scheduling (DGDATS) algorithm. In the algorithm, <inline-formula>
+<tex-math notation="LaTeX">$A(v_{i})$
+</tex-math></inline-formula> indicates the assignment of task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>; and <inline-formula>
+<tex-math notation="LaTeX">$Mem(h,v_{i})$
+</tex-math></inline-formula> represents the assignment of data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> for task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>. Before we formally discuss the details of the DGDATS algorithm to solve the CODATS problem, let us first propose an initial data allocation approach.</p>
+<sec id="sec5a"><label>A.</label>
+<title>Initial Data Allocation</title><p>The initial data allocation approach is shown in <xref ref-type="algorithm" rid="alg1">Algorithm 1</xref>, which is a straightforward heuristic algorithm and includes two phases. The first phase aims to determine the earliest execution task for each core and achieve a better data allocation for the input and output data of the earliest execution tasks. The second phase proposes to find a preferred initial assignment for each unassigned data. In the algorithm, <inline-formula>
+<tex-math notation="LaTeX">$EL$
+</tex-math></inline-formula> is the set of earliest execution tasks, and set <inline-formula>
+<tex-math notation="LaTeX">$AS\_{}data$
+</tex-math></inline-formula> contains all data that must be allocated.<algorithm auto-num="no" boxed="no" id="alg1" rule="both" type-style="proportional"><label>Algorithm 1</label>
+<title>Initial Data Allocation Approach</title><alg-item rule="none"><label>Input:</label><p>An DAG <inline-formula>
+<tex-math notation="LaTeX">$G=(V,E,D,in,out,Nr,Nw,C,M)$
+</tex-math></inline-formula>, the capacity of each memory, and the number of cores.</p></alg-item><alg-item rule="none"><label>Output:</label><p>a initial data allocation approach.</p></alg-item><alg-item rule="none"><label>1:</label><p>built a priority queue <inline-formula>
+<tex-math notation="LaTeX">$wq$
+</tex-math></inline-formula> by execution order and tasks dependency</p></alg-item><alg-item rule="none"><label>2:</label><p>put all data in set <inline-formula>
+<tex-math notation="LaTeX">$AS\_{}data$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>3:</label><p>find the <italic>earliest execution task</italic> for each core <inline-formula>
+<tex-math notation="LaTeX">$\rightarrow el(v_{i}, core_{k})\in EL$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>4:</label><p><bold>for</bold> each <inline-formula>
+<tex-math notation="LaTeX">$el(v_{i}, core_{k})$
+</tex-math></inline-formula> <bold>do</bold></p></alg-item><alg-item rule="none"><label>5:</label><p>find all reads and writes data, and marked as data-task pairs <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})\in PA$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>6:</label><p>remove <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> from <inline-formula>
+<tex-math notation="LaTeX">$wq$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>7:</label><p><bold>end for</bold></p></alg-item><alg-item rule="none"><label>8:</label><p><bold>while</bold> <inline-formula>
+<tex-math notation="LaTeX">$PA\neq \varnothing $
+</tex-math></inline-formula> <bold>do</bold></p></alg-item><alg-item rule="none"><label>9:</label><p>select a data-task pair <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})$
+</tex-math></inline-formula> with maximum value of <inline-formula>
+<tex-math notation="LaTeX">$Nr(h,v_{i})+Nw(h,v_{i})$
+</tex-math></inline-formula> in <inline-formula>
+<tex-math notation="LaTeX">$PA$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>10:</label><p><bold>for</bold> each memory <inline-formula>
+<tex-math notation="LaTeX">$M_{k}$
+</tex-math></inline-formula> <bold>do</bold></p></alg-item><alg-item rule="none"><label>11:</label><p><bold>if</bold> memory <inline-formula>
+<tex-math notation="LaTeX">$M_{k}$
+</tex-math></inline-formula> has enough free space to allocate data h <bold>then</bold></p></alg-item><alg-item rule="none"><label>12:</label><p>compute the cost <inline-formula>
+<tex-math notation="LaTeX">$C_{k}(h,v_{i})$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>13:</label><p><bold>end if</bold></p></alg-item><alg-item rule="none"><label>14:</label><p><bold>end for</bold></p></alg-item><alg-item rule="none"><label>15:</label><p>choose the memory with minimum cost <inline-formula>
+<tex-math notation="LaTeX">$C_{k}(h,v_{i})$
+</tex-math></inline-formula> to allocate data <inline-formula>
+<tex-math notation="LaTeX">$h\,\,\rightarrow Mem(h,v_{i})=k$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>16:</label><p>remove <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})$
+</tex-math></inline-formula> from <inline-formula>
+<tex-math notation="LaTeX">$PA$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>17:</label><p>remove data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> from <inline-formula>
+<tex-math notation="LaTeX">$AS\_{}data$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>18:</label><p><bold>end while</bold></p></alg-item><alg-item rule="none"><label>19:</label><p><bold>while</bold> <inline-formula>
+<tex-math notation="LaTeX">$AS\_{}data \neq \varnothing $
+</tex-math></inline-formula> <bold>do</bold></p></alg-item><alg-item rule="none"><label>20:</label><p>choose data <inline-formula>
+<tex-math notation="LaTeX">$h \in AS\_{}data$
+</tex-math></inline-formula> with maximum priority value</p></alg-item><alg-item rule="none"><label>21:</label><p>choose <inline-formula>
+<tex-math notation="LaTeX">$core_{j}$
+</tex-math></inline-formula> with Maximum <inline-formula>
+<tex-math notation="LaTeX">$Nd(c_{j},v_{i})$
+</tex-math></inline-formula> to hold data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>.</p></alg-item><alg-item rule="none"><label>22:</label><p><bold>if</bold> <inline-formula>
+<tex-math notation="LaTeX">$M_{2j-1}$
+</tex-math></inline-formula> have enough free space to hold data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> <bold>then</bold></p></alg-item><alg-item rule="none"><label>23:</label><p>allocate <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> in <inline-formula>
+<tex-math notation="LaTeX">$M_{2j-1}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$IM(h)=2j-1$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>24:</label><p><bold>else</bold></p></alg-item><alg-item rule="none"><label>25:</label><p><bold>if</bold> <inline-formula>
+<tex-math notation="LaTeX">$M_{2j}$
+</tex-math></inline-formula> have enough free space to hold data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> <bold>then</bold></p></alg-item><alg-item rule="none"><label>26:</label><p>allocate <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> in <inline-formula>
+<tex-math notation="LaTeX">$M_{2j}$
+</tex-math></inline-formula>, <inline-formula>
+<tex-math notation="LaTeX">$IM(h)=2j$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>27:</label><p><bold>else</bold></p></alg-item><alg-item rule="none"><label>28:</label><p>allocate <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> in main memory, <inline-formula>
+<tex-math notation="LaTeX">$IM(h)=0$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>29:</label><p><bold>end if</bold></p></alg-item><alg-item rule="none"><label>30:</label><p><bold>end if</bold></p></alg-item><alg-item rule="none"><label>31:</label><p>remove data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> from <inline-formula>
+<tex-math notation="LaTeX">$AS\_{}data$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>32:</label><p><bold>end while</bold></p></alg-item><alg-item rule="none"><label>33:</label><p><bold>return</bold> an initial data assignment</p></alg-item></algorithm></p><p>In the first phase, we first find the earliest execution task for each core and put it in set <inline-formula>
+<tex-math notation="LaTeX">$EL$
+</tex-math></inline-formula> (Line 3). Then, we find each input and output data to map a data-task pair <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})\in PA$
+</tex-math></inline-formula> for each task in set <inline-formula>
+<tex-math notation="LaTeX">$EL$
+</tex-math></inline-formula> (Lines 4–7), where a data-task pair <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})$
+</tex-math></inline-formula> means that performing task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> requires reading or writing data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>. More than one data-task pair can be closely associated with the data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> because different tasks could access the same data. To reduce remote memory access operations, we prioritize the allocation of data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> in data-task pair <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})$
+</tex-math></inline-formula> with the maximum memory operations among all of the data-task pairs (Line 9). To allocate data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>, we first compute the cost of each available allocation for data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> and then employ the minimum cost as a measurement to determine the memory in which to place the data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> (Lines 10–15). After the data assignment of a data-task pair is performed, the algorithm attempts to find a new data allocation for other data in such a way to reduce the cost until the data-task pair set <inline-formula>
+<tex-math notation="LaTeX">$PA$
+</tex-math></inline-formula> is empty.</p><p>In the second phase, a data assignment should be established for each unassigned datum. In this phase, although a datum may be accessed by different tasks, we assign these data only according to task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> that is the earliest access to the data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>. For convenience, we call task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>, which has the earliest access to data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> among all of the unassigned tasks, the <italic>earliest task</italic>. To reduce the reassignment and migration operations, we use the maximum priority value as a measure for deciding how to prioritize the assignment of the data (Line 20). In allocating data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> in <inline-formula>
+<tex-math notation="LaTeX">$AS\_{}data$
+</tex-math></inline-formula> to achieve a high-efficiency initial data allocation approach, we use <inline-formula>
+<tex-math notation="LaTeX">$Max\{Nd(c_{j},v_{i})\}$
+</tex-math></inline-formula> as a measurement to determine which core is assigned to hold data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>, where <inline-formula>
+<tex-math notation="LaTeX">$Nd(c_{j},v_{i})$
+</tex-math></inline-formula> represents the amount of data accessed by task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> on core <inline-formula>
+<tex-math notation="LaTeX">$c_{j}$
+</tex-math></inline-formula>. We find the locations of all of the assigned data for <italic>earliest task</italic> <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>, and we select the core <inline-formula>
+<tex-math notation="LaTeX">$core_{j}$
+</tex-math></inline-formula> that allocated the majority of the data needed by performing <italic>earliest task</italic> <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> to hold data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> (Line 21). To minimize the cost, we select a befitting memory to hold the data as follows: if the SRAM has enough free space to save the datum, then allocate the datum into SRAM. In contrast, we must detect the free space of the NVM. If the NVM has enough free space to store the datum, then allocate the datum into the NVM; otherwise, allocate the datum into the main memory (Lines 22–30).</p><p>In <xref ref-type="algorithm" rid="alg1">Algorithm 1</xref>, it takes <inline-formula>
+<tex-math notation="LaTeX">$O(|VED|)$
+</tex-math></inline-formula> time to mark the priority value and takes <inline-formula>
+<tex-math notation="LaTeX">$O(P|V|)$
+</tex-math></inline-formula> time to find the earliest execution task for each core, where <inline-formula>
+<tex-math notation="LaTeX">$V$
+</tex-math></inline-formula> represents the number of tasks, <inline-formula>
+<tex-math notation="LaTeX">$E$
+</tex-math></inline-formula> is the number of edges, <inline-formula>
+<tex-math notation="LaTeX">$D$
+</tex-math></inline-formula> represents the number of data instances, and P represents the number of cores. In the first phase, <inline-formula>
+<tex-math notation="LaTeX">$O(P|D|)$
+</tex-math></inline-formula> is used to obtain a data-task pair set and calculate the cost. In the second phase, <inline-formula>
+<tex-math notation="LaTeX">$O(|VDP|+|D|)$
+</tex-math></inline-formula> is used to achieve a better data allocation. Thus, if <inline-formula>
+<tex-math notation="LaTeX">$P$
+</tex-math></inline-formula> is treated as a constant, the complexity of <xref ref-type="algorithm" rid="alg1">Algorithm 1</xref> is <inline-formula>
+<tex-math notation="LaTeX">$O(|V|+|D|+|VED|+|VD|)$
+</tex-math></inline-formula>.</p><p><xref ref-type="algorithm" rid="alg1">Algorithm 1</xref> can also be seen as a static data allocation approach to reduce the total cost. However, because a datum could be required by different tasks, a constant static data allocation will result in a different memory access cost for different tasks and might not be ideal for all tasks that are associated with the data. Therefore, we will present a dynamic data and task allocation algorithm that uses <xref ref-type="algorithm" rid="alg1">Algorithm 1</xref> as an input to generate a more efficient data allocation and task scheduling.</p>
+</sec>
+<sec id="sec5b"><label>B.</label>
+<title>Dynamic Data Allocation and Task Scheduling Approach</title><p>In this section, we illustrate the DGDATS algorithm, as shown in <xref ref-type="algorithm" rid="alg2">Algorithm 2</xref>. The goal of the DGDATS algorithm is to minimize the execution cost by dynamically allocating the data in the memories and scheduling tasks on a suitable core, which is based on the scheduled tasks and the current data allocation. In the DGDATS algorithm, <inline-formula>
+<tex-math notation="LaTeX">$ST$
+</tex-math></inline-formula> is a current executable task set. Additionally, in each dynamic assignment, we select <inline-formula>
+<tex-math notation="LaTeX">$k\leq n$
+</tex-math></inline-formula> executable tasks from priority queue <inline-formula>
+<tex-math notation="LaTeX">$wq$
+</tex-math></inline-formula> to <inline-formula>
+<tex-math notation="LaTeX">$ST$
+</tex-math></inline-formula> (Line 2). To achieve a better allocation scheme, each executable task and its corresponding data are dynamically assigned as follows. First, we find all data-task pairs for the executable task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> and use <inline-formula>
+<tex-math notation="LaTeX">$\max \{Nd(c_{j},v_{i})\}$
+</tex-math></inline-formula> as a measurement to determine which core is assigned to executable task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>, where <inline-formula>
+<tex-math notation="LaTeX">$Nd(c_{j},v_{i})$
+</tex-math></inline-formula> represents the amount of data accessed by executable task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> on core <inline-formula>
+<tex-math notation="LaTeX">$c_{j}$
+</tex-math></inline-formula> (Lines 4–8). Then, we migrate or allocate data in descending order according to the number of accesses to the data for executable task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>. For executable task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>, we select a data-task pair <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})$
+</tex-math></inline-formula> with the maximum number of memory operations among set <inline-formula>
+<tex-math notation="LaTeX">$PA$
+</tex-math></inline-formula> and calculate the cost <inline-formula>
+<tex-math notation="LaTeX">$C_{j}(h,v_{i})$
+</tex-math></inline-formula> of each available assignment allocation for data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>. In migrating data to reduce the memory access operation cost, we use <inline-formula>
+<tex-math notation="LaTeX">$\min \{C_{j}(h,v_{i})\}$
+</tex-math></inline-formula> as a measure to determine which memory can be a target memory to allocate data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> for schedule task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula>. If <inline-formula>
+<tex-math notation="LaTeX">$\min \{C_{j}(h,v_{i})\}$
+</tex-math></inline-formula> is less than the cost of the original assignment for data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula>, we will migrate the data to the target memory (Lines 10–20). After the adjustment of the data allocation, the algorithm finds a new data migration to minimize the memory operation cost until the task-pair set <inline-formula>
+<tex-math notation="LaTeX">$PA$
+</tex-math></inline-formula> is empty. In this manner, the executable task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> can be executed. After a task is executed, the algorithm attempts to find a new task to schedule and allocates its corresponding data until all of the tasks have been performed.<algorithm auto-num="no" boxed="no" id="alg2" rule="both" type-style="proportional"><label>Algorithm 2</label>
+<title>Dynamic Greedy Data Allocation and Task Scheduling (DGDATS)</title><alg-item rule="none"><label>Input:</label><p>Initial data allocation, an DAG <inline-formula>
+<tex-math notation="LaTeX">$G=(V,E,D,R, W,Nr,Nw,C,M)$
+</tex-math></inline-formula>, the capacity of each memory, and the cost of each read and write on each memory.</p></alg-item><alg-item rule="none"><label>Output:</label><p>a scheduling with dynamic data and task assignment.</p></alg-item><alg-item rule="none"><label>1:</label><p><bold>while</bold> <inline-formula>
+<tex-math notation="LaTeX">$wq \neq \varnothing $
+</tex-math></inline-formula> <bold>do</bold></p></alg-item><alg-item rule="none"><label>2:</label><p>select <inline-formula>
+<tex-math notation="LaTeX">$k\leq n$
+</tex-math></inline-formula> executable tasks from <inline-formula>
+<tex-math notation="LaTeX">$wq$
+</tex-math></inline-formula> and put in set <inline-formula>
+<tex-math notation="LaTeX">$ST$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>3:</label><p><bold>for</bold> each task <inline-formula>
+<tex-math notation="LaTeX">$v_{i} \in ST$
+</tex-math></inline-formula> <bold>do</bold></p></alg-item><alg-item rule="none"><label>4:</label><p>remove <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> from <inline-formula>
+<tex-math notation="LaTeX">$wq$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>5:</label><p>find all reads and writes data and put in set <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})\in PA$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>6:</label><p>calculate the number of data <inline-formula>
+<tex-math notation="LaTeX">$Nd(c_{j},v_{i})$
+</tex-math></inline-formula>in each core <inline-formula>
+<tex-math notation="LaTeX">$c_{j}$
+</tex-math></inline-formula> for execution task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>7:</label><p>choose the <inline-formula>
+<tex-math notation="LaTeX">$core_{j}$
+</tex-math></inline-formula> with the <inline-formula>
+<tex-math notation="LaTeX">$\max \{Nd(c_{j},v_{i})\}$
+</tex-math></inline-formula> for execution task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>8:</label><p>assign task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> on <inline-formula>
+<tex-math notation="LaTeX">$core_{j}\,\,\rightarrow A(v_{i})=k$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>9:</label><p>remove task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}$
+</tex-math></inline-formula> from <inline-formula>
+<tex-math notation="LaTeX">$ST$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>10:</label><p><bold>while</bold> <inline-formula>
+<tex-math notation="LaTeX">$PA\neq \varnothing $
+</tex-math></inline-formula> <bold>do</bold></p></alg-item><alg-item rule="none"><label>11:</label><p>find the data h with maximum value of <inline-formula>
+<tex-math notation="LaTeX">$Nr(h,v_{i})+Nw(h,v_{i})$
+</tex-math></inline-formula> in <inline-formula>
+<tex-math notation="LaTeX">$PA$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>12:</label><p><inline-formula>
+<tex-math notation="LaTeX">$Mem(h,v_{i})=IM(h)$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>13:</label><p>compute the cost of <inline-formula>
+<tex-math notation="LaTeX">$C(h,v_{i})$
+</tex-math></inline-formula> for the latest data assignment</p></alg-item><alg-item rule="none"><label>14:</label><p><bold>for</bold> each memory <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula> <bold>do</bold></p></alg-item><alg-item rule="none"><label>15:</label><p>compute the cost of each data <inline-formula>
+<tex-math notation="LaTeX">$h$
+</tex-math></inline-formula> on <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula> for task <inline-formula>
+<tex-math notation="LaTeX">$v_{i}~\rightarrow C_{j}(h,v_{i})$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>16:</label><p><bold>if</bold> <inline-formula>
+<tex-math notation="LaTeX">$C_{j}(h,v_{i}) &lt; C(h,v_{i})$
+</tex-math></inline-formula> <bold>then</bold></p></alg-item><alg-item rule="none"><label>17:</label><p><inline-formula>
+<tex-math notation="LaTeX">$C(h,v_{i}) = C_{j}(h,v_{i})$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>18:</label><p><inline-formula>
+<tex-math notation="LaTeX">$Mem(h,v_{i})=j$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>19:</label><p><bold>end if</bold></p></alg-item><alg-item rule="none"><label>20:</label><p><bold>end for</bold></p></alg-item><alg-item rule="none"><label>21:</label><p><inline-formula>
+<tex-math notation="LaTeX">$IM(h)=Mem(h,v_{i})$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>22:</label><p>remove <inline-formula>
+<tex-math notation="LaTeX">$pa(h,v_{i})$
+</tex-math></inline-formula> from <inline-formula>
+<tex-math notation="LaTeX">$PA$
+</tex-math></inline-formula></p></alg-item><alg-item rule="none"><label>23:</label><p><bold>end while</bold></p></alg-item><alg-item rule="none"><label>24:</label><p><bold>end for</bold></p></alg-item><alg-item rule="none"><label>25:</label><p><bold>end while</bold></p></alg-item><alg-item rule="none"><label>26:</label><p><bold>return</bold> a near-optimal schedule</p></alg-item></algorithm></p><p>If the target memory does not have sufficient space, we will choose data and migrate that data from the target memory to another memory. Because the cost of the memory part includes the migration overhead and access cost, the migration path must be considered when calculating cost <inline-formula>
+<tex-math notation="LaTeX">$C_{j}(h,v_{i})$
+</tex-math></inline-formula>. Since data could have more than one migration path and different migration paths show significant heterogeneity in their migration costs, an optimal migration path with a minimum cost must be determined. How to choose an optimal migration path will be discussed in detail in the next subsection.</p><p>In <xref ref-type="algorithm" rid="alg2">Algorithm 2</xref>, it takes <inline-formula>
+<tex-math notation="LaTeX">$O(P|D|)$
+</tex-math></inline-formula> time to obtain a better assignment for tasks, where <inline-formula>
+<tex-math notation="LaTeX">$P$
+</tex-math></inline-formula> is the core number and <inline-formula>
+<tex-math notation="LaTeX">$D$
+</tex-math></inline-formula> is the number of data points. To dynamically assign data for each task, it spends at most <inline-formula>
+<tex-math notation="LaTeX">$O(D^{2})$
+</tex-math></inline-formula> time to determine which data will be reallocated and at most <inline-formula>
+<tex-math notation="LaTeX">$O(DM)$
+</tex-math></inline-formula> to find the target memory for the data. The DGDATS algorithm iterates at most <inline-formula>
+<tex-math notation="LaTeX">$O(V)$
+</tex-math></inline-formula> times, as each task is executed only once. Thus, if <inline-formula>
+<tex-math notation="LaTeX">$P$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$M$
+</tex-math></inline-formula> are treated as constants, the time complexity of <xref ref-type="algorithm" rid="alg2">Algorithm 2</xref> is <inline-formula>
+<tex-math notation="LaTeX">$O(V|D|^{2}|+|VD|)$
+</tex-math></inline-formula>.</p>
+</sec>
+<sec id="sec5c"><label>C.</label>
+<title>Migration Path and Overhead</title><p>In this subsection, we illustrate the migration path of the data. For simplicity and convenience, all of the available migration paths of one data instance are modeled as a data migration path graph (DMPG). A DMPG is a node-weighted directed graph that is represented by <inline-formula>
+<tex-math notation="LaTeX">$G'=(DM,E,MC)$
+</tex-math></inline-formula>, where <inline-formula>
+<tex-math notation="LaTeX">$DM$
+</tex-math></inline-formula> is a set of data assignment nodes and <inline-formula>
+<tex-math notation="LaTeX">$dm(h,M_{i})$
+</tex-math></inline-formula> represents data h allocated in memory <inline-formula>
+<tex-math notation="LaTeX">$M_{i}$
+</tex-math></inline-formula>. <inline-formula>
+<tex-math notation="LaTeX">$E\subseteq DM\times DM$
+</tex-math></inline-formula> is a set of edges. An <inline-formula>
+<tex-math notation="LaTeX">$edge(dm(u,M_{i}),dm(v,M_{j}))$
+</tex-math></inline-formula> describes that data <inline-formula>
+<tex-math notation="LaTeX">$u$
+</tex-math></inline-formula> will be migrated from memory <inline-formula>
+<tex-math notation="LaTeX">$M_{i}$
+</tex-math></inline-formula> to <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula>. Data <inline-formula>
+<tex-math notation="LaTeX">$u$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$v$
+</tex-math></inline-formula> are the same, which means that memory <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula> has sufficient space to hold data <inline-formula>
+<tex-math notation="LaTeX">$u$
+</tex-math></inline-formula>. In contrast, if data <inline-formula>
+<tex-math notation="LaTeX">$u$
+</tex-math></inline-formula> and <inline-formula>
+<tex-math notation="LaTeX">$v$
+</tex-math></inline-formula> are two different data, we must migrate data <inline-formula>
+<tex-math notation="LaTeX">$v$
+</tex-math></inline-formula> from memory <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula> to another memory before migrating data <inline-formula>
+<tex-math notation="LaTeX">$u$
+</tex-math></inline-formula> to memory <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula>. This arrangement occurs because the target memory <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula> does not have sufficient space to store data <inline-formula>
+<tex-math notation="LaTeX">$u$
+</tex-math></inline-formula>. For example, as shown in <xref ref-type="fig" rid="fig5">Figure 5</xref>, <inline-formula>
+<tex-math notation="LaTeX">$edge(dm(a,M_{1}),dm(b,M_{2}))$
+</tex-math></inline-formula> indicates that data <inline-formula>
+<tex-math notation="LaTeX">$b$
+</tex-math></inline-formula> must be migrated to another memory, such as <inline-formula>
+<tex-math notation="LaTeX">$M_{3}$
+</tex-math></inline-formula>, to release space for memory <inline-formula>
+<tex-math notation="LaTeX">$M_{2}$
+</tex-math></inline-formula> to hold data <inline-formula>
+<tex-math notation="LaTeX">$a$
+</tex-math></inline-formula>. <inline-formula>
+<tex-math notation="LaTeX">$MC$
+</tex-math></inline-formula>, the weight of the edges, is a migration cost function, and <inline-formula>
+<tex-math notation="LaTeX">$MC(dm(u,M_{i}),dm(v,M_{j}))$
+</tex-math></inline-formula> shows the migration cost of migrating data <inline-formula>
+<tex-math notation="LaTeX">$u$
+</tex-math></inline-formula> from memory <inline-formula>
+<tex-math notation="LaTeX">$M_{i}$
+</tex-math></inline-formula> to <inline-formula>
+<tex-math notation="LaTeX">$M_{j}$
+</tex-math></inline-formula>.
+<fig id="fig5" orientation="portrait" position="float"><label>FIGURE 5.</label><caption><p>The migration path.</p></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang5ab-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+</fig></p><p>For each available migration path <inline-formula>
+<tex-math notation="LaTeX">$MP_{i}$
+</tex-math></inline-formula>, we can calculate the total migration cost as follows:<disp-formula id="deqn5">
+<tex-math notation="LaTeX">\begin{align*} T_{mc}(MP_{i})=&amp;\sum _{edge \in mp_{i}} MC(dm(u,M_{i}),dm(v,M_{j})) \\=&amp;move\_{}cost +overhead\_{}cost\tag{5}\end{align*}
+</tex-math></disp-formula></p><p>To obtain the migration path with the minimum total migration cost, we add a node as a leaf node and add the corresponding edges from the original leaf nodes to the node. To ensure that the total migration cost of each path does not change, we set the weight <inline-formula>
+<tex-math notation="LaTeX">$MC$
+</tex-math></inline-formula> of each added edge as 0. Therefore, the problem to search a migration path with the minimum total migration cost for the data can be translated into a shortest path problem. In this paper, we use the Dijkstra algorithm to solve the problem.</p>
+</sec>
+</sec>
+<sec id="sec6"><label>VI.</label>
+<title>Experiments</title>
+<sec id="sec6a"><label>A.</label>
+<title>Experimental Setup</title><p>In our experiments, we evaluate the proposed algorithms when they are applied to our target architecture. In this experiment, we chose a PCM as a part of an NVM-based hybrid SPM. This choice was made because the PCM is one of the most promising NVM technologies due to its access latency and lifetime. We employed a PCM-supporting variant of the CACTI tool NVsim simulator <xref ref-type="bibr" rid="ref2">[2]</xref> to obtain the execution and access costs for a given size of PCM memory. We also used NVsim to obtain the execution and access costs for a given size of SRAM memory. NVsim simulator is a circuit-level model for NVM performance, energy, and area estimation that supports various NVM technologies, including STT-RAM, PCM, ReRAM, and legacy NAND Flash. To be more specific and more efficient, we developed a custom simulator with a hybrid SPM based on NVsim to conduct the experiments. The simulator is composed of a multicore with hybrid PCM+SRAM SPMs, a DRAM main memory, and a memory trace processing unit that is readily adapted for similar studies. <xref ref-type="table" rid="table3">Table 3</xref> shows the specification of the target architectural model used for our experiments.<table-wrap id="table3" orientation="portrait" position="float"><label>TABLE 3</label><caption>
+<title>Target System Specification</title></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang.t3-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/><table cellpadding="5" frame="box" rules="all"><colgroup span="1"><col span="2"/></colgroup><thead><tr><th colspan="1" rowspan="1">Component</th><th colspan="1" rowspan="1">Description</th></tr></thead><tbody><tr><td colspan="1" rowspan="1">CPU</td><td colspan="1" rowspan="1">Frequency: 1.8GHZ</td></tr><tr><td colspan="1" rowspan="1">On-chip SPM SRAM part</td><td colspan="1" rowspan="1">Size: 16KB, access latency: 3.95ns, access energy: 0.034nj, leakage power: 7.99nW</td></tr><tr><td colspan="1" rowspan="1">On-chip SPM NVM part</td><td colspan="1" rowspan="1">Size: 64KB, read latency: 1.55ns, write latency (SET/RESET): 131.01/61.01ns, read energy: 0.043nj, write energy(SET/RESET): 3.21/3.85nJ, leakage power: 2.01mW</td></tr><tr><td colspan="1" rowspan="1">main memory</td><td colspan="1" rowspan="1">DRAM, Size: 512MB, access latency: 104.4ns, access energy: 3.26nJ, leakage power: 200.685mW</td></tr></tbody></table></table-wrap></p><p>To evaluate the effectiveness of our proposed algorithm, we conduct a series of experiments, and the benchmark programs are selected from DSPstone <xref ref-type="bibr" rid="ref33">[33]</xref>, which consists of IIR filter (IIR), all-pole filter (allpole), 4-stage lattice filter (4-lattice), elliptic filter (elliptic), diff filter (diff), and C-sehwa. We use GCC to compile each benchmark and generate the read/write data sets accompanied by the task graphs. Then, the task graphs and data sets and obtained parameters from NVsim are integrated into our simulator. To ensure that our experimental results are convincing, we tested each benchmark as follows: We tested the same benchmark repeatedly, but for each test, the same benchmark may be equipped with different data volumes.</p><p>In this paper, we measure the execution cost of our proposed algorithms. We compare the proposed algorithm with the HA algorithm presented in <xref ref-type="bibr" rid="ref25">[25]</xref> and the AGADA algorithm presented in <xref ref-type="bibr" rid="ref23">[23]</xref>. The HA algorithm is a classical algorithm for solving the dynamic data allocation problem, and the AGADA algorithm is recently published and employed for data allocation problems for minimizing the total cost of hybrid memories with NVM. Therefore, the HA and AGADA algorithms are the two most related and remarkable candidates for comparison. In this experiment, the HA and AGADA algorithms have been adjusted such that they are suited for the target architecture model to work out a solution to the CODATS problem. To make a fair comparison, we conducted all three algorithms, including DGDATS, AGADA, and HA, in the same allocation framework. In addition, we ran the AGADA approach 50 times and took an average as the final result for each benchmark, since the AGADA approach is an adaptive genetic algorithm. In this manner, we can ensure that the performance disadvantage of the AGADA and HA algorithms is not due to fundamental limitations of the implementations.</p>
+</sec>
+<sec id="sec6b"><label>B.</label>
+<title>Results and Analysis</title><p>In this section, we performed experiments on three algorithms to show the effectiveness of our proposed algorithm. We collected the on-chip memory access cost and task execution cost for each algorithm. Note that the execution cost of our experiments refers to the power cost. The results of the execution cost are illustrated by the comparison and statistics of different methods when changing the amount of data. <xref ref-type="fig" rid="fig6">Figure 6</xref> shows the results. As can be observed, the execution costs of all three approaches increase with the increasing number of data points. For all of the benchmarks, the execution cost of the DGDATS is less than that of the HA and AGADA algorithms. Additionally, the execution cost of the AGADA algorithm is the maximum of the three different approaches. Compared with the HA and AGADA algorithms, the DGDATS algorithm can reduce the execution cost by an average of 22.18% and 51.37%, respectively. Although the execution cost of the HA algorithm is less than that of the DGDATS algorithm in several cases, the HA algorithm does not take into account data-dependency, which will cause many overhead write operations on the main memory.
+<fig id="fig6" orientation="portrait" position="float"><label>FIGURE 6.</label><caption><p>The execution cost of benchmarks under different methods when change the number of data. (a) iir, (b) allpole, (c) diff, (d) elliptic, (e) C-sehwa, (f) 4_lattice.</p></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang6abcdef-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+</fig></p><p>The number of write operations on the NVM has a considerable effect on the lifespan of the NVM. <xref ref-type="table" rid="table4">Table 4</xref> shows the comparison and statistical results of all three algorithms for benchmarks about write operations on the PCM based on the target architecture. In <xref ref-type="table" rid="table4">Table 4</xref>, the sixth and twelfth columns represent the percentage of write operations on the NVM that the proposed algorithm DGDATS eliminates compared to the HA algorithm under different benchmarks. There are the fewest write operations on the NVM when using the AGADA algorithm, and our proposed algorithm can achieve a more significant reduction in write operations than the HA algorithm. The number of write operations on the NVM of our proposed DGADTS algorithm is more than that of AGADA algorithm, but there are considerably fewer write operations on the main memory and a lower execution cost. Our proposed algorithm can reduce the number of write operations on the NVM by an average of 19.82% compared to the HA algorithm. The lifespan percentage improvement of the NVM of our proposed DGDATS algorithm compared with that of the HA algorithm can be calculated by <inline-formula>
+<tex-math notation="LaTeX">$\frac {(M/W'-M/W)}{M/W}$
+</tex-math></inline-formula>, where <inline-formula>
+<tex-math notation="LaTeX">$M$
+</tex-math></inline-formula> is the write endurance of the NVM, <inline-formula>
+<tex-math notation="LaTeX">$W$
+</tex-math></inline-formula> is the write operation counts on the NVM when using the HA algorithm, and <inline-formula>
+<tex-math notation="LaTeX">$W'$
+</tex-math></inline-formula> is the write operation counts on the NVM when employing the presented algorithm. A 19.82% reduction in the number of write operations is equivalent to a 115.89% increase in the lifetime on the NVM. This finding illustrates that our proposed algorithm can prolong the lifespan of the NVM by over three years.<table-wrap id="table4" orientation="portrait" position="float"><label>TABLE 4</label><caption>
+<title>The Number of Writes on PRAM</title></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang.t4-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/><table cellpadding="5" frame="box" rules="all"><colgroup span="1"><col span="12"/></colgroup><thead><tr><th colspan="1" rowspan="1">Bench</th><th colspan="1" rowspan="1">data</th><th colspan="1" rowspan="1">AGADA</th><th colspan="1" rowspan="1">HA</th><th colspan="1" rowspan="1">DGDATS</th><th colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$\frac {C_{H}-C}{E_{H}}$
+</tex-math></inline-formula>%</th><th colspan="1" rowspan="1">Bench</th><th colspan="1" rowspan="1">data</th><th colspan="1" rowspan="1">AGADA</th><th colspan="1" rowspan="1">HA</th><th colspan="1" rowspan="1">DGDATS</th><th colspan="1" rowspan="1"><inline-formula>
+<tex-math notation="LaTeX">$\frac {C_{H}-C}{E_{H}}$
+</tex-math></inline-formula>%</th></tr></thead><tbody><tr><td colspan="1" rowspan="5">iir</td><td colspan="1" rowspan="1">10</td><td colspan="1" rowspan="1">157</td><td colspan="1" rowspan="1">168</td><td colspan="1" rowspan="1">148</td><td colspan="1" rowspan="1">11.90%</td><td colspan="1" rowspan="5">4-lattic</td><td colspan="1" rowspan="1">10</td><td colspan="1" rowspan="1">182</td><td colspan="1" rowspan="1">246</td><td colspan="1" rowspan="1">237</td><td colspan="1" rowspan="1">3.66%</td></tr><tr><td colspan="1" rowspan="1">15</td><td colspan="1" rowspan="1">163</td><td colspan="1" rowspan="1">245</td><td colspan="1" rowspan="1">155</td><td colspan="1" rowspan="1">36.73%</td><td colspan="1" rowspan="1">20</td><td colspan="1" rowspan="1">656</td><td colspan="1" rowspan="1">781</td><td colspan="1" rowspan="1">677</td><td colspan="1" rowspan="1">13.32%</td></tr><tr><td colspan="1" rowspan="1">20</td><td colspan="1" rowspan="1">280</td><td colspan="1" rowspan="1">439</td><td colspan="1" rowspan="1">343</td><td colspan="1" rowspan="1">21.86%</td><td colspan="1" rowspan="1">30</td><td colspan="1" rowspan="1">1547</td><td colspan="1" rowspan="1">2953</td><td colspan="1" rowspan="1">2083</td><td colspan="1" rowspan="1">29.46%</td></tr><tr><td colspan="1" rowspan="1">25</td><td colspan="1" rowspan="1">363</td><td colspan="1" rowspan="1">578</td><td colspan="1" rowspan="1">463</td><td colspan="1" rowspan="1">19.89%</td><td colspan="1" rowspan="1">40</td><td colspan="1" rowspan="1">2507</td><td colspan="1" rowspan="1">4250</td><td colspan="1" rowspan="1">3155</td><td colspan="1" rowspan="1">25.76%</td></tr><tr><td colspan="1" rowspan="1">30</td><td colspan="1" rowspan="1">463</td><td colspan="1" rowspan="1">703</td><td colspan="1" rowspan="1">535</td><td colspan="1" rowspan="1">23.89%</td><td colspan="1" rowspan="1">50</td><td colspan="1" rowspan="1">3308</td><td colspan="1" rowspan="1">5679</td><td colspan="1" rowspan="1">4130</td><td colspan="1" rowspan="1">27.27%</td></tr><tr><td colspan="1" rowspan="5">diff</td><td colspan="1" rowspan="1">4</td><td colspan="1" rowspan="1">2</td><td colspan="1" rowspan="1">12</td><td colspan="1" rowspan="1">9</td><td colspan="1" rowspan="1">25.0%</td><td colspan="1" rowspan="5">allpole</td><td colspan="1" rowspan="1">10</td><td colspan="1" rowspan="1">168</td><td colspan="1" rowspan="1">215</td><td colspan="1" rowspan="1">156</td><td colspan="1" rowspan="1">27.44%</td></tr><tr><td colspan="1" rowspan="1">8</td><td colspan="1" rowspan="1">12</td><td colspan="1" rowspan="1">25</td><td colspan="1" rowspan="1">19</td><td colspan="1" rowspan="1">24.0%</td><td colspan="1" rowspan="1">15</td><td colspan="1" rowspan="1">238</td><td colspan="1" rowspan="1">299</td><td colspan="1" rowspan="1">225</td><td colspan="1" rowspan="1">24.75%</td></tr><tr><td colspan="1" rowspan="1">12</td><td colspan="1" rowspan="1">65</td><td colspan="1" rowspan="1">97</td><td colspan="1" rowspan="1">71</td><td colspan="1" rowspan="1">26.80%</td><td colspan="1" rowspan="1">20</td><td colspan="1" rowspan="1">336</td><td colspan="1" rowspan="1">425</td><td colspan="1" rowspan="1">373</td><td colspan="1" rowspan="1">12.23%</td></tr><tr><td colspan="1" rowspan="1">16</td><td colspan="1" rowspan="1">122</td><td colspan="1" rowspan="1">168</td><td colspan="1" rowspan="1">142</td><td colspan="1" rowspan="1">14.47%</td><td colspan="1" rowspan="1">25</td><td colspan="1" rowspan="1">389</td><td colspan="1" rowspan="1">476</td><td colspan="1" rowspan="1">432</td><td colspan="1" rowspan="1">9.2%</td></tr><tr><td colspan="1" rowspan="1">20</td><td colspan="1" rowspan="1">224</td><td colspan="1" rowspan="1">356</td><td colspan="1" rowspan="1">293</td><td colspan="1" rowspan="1">17.69%</td><td colspan="1" rowspan="1">30</td><td colspan="1" rowspan="1">464</td><td colspan="1" rowspan="1">578</td><td colspan="1" rowspan="1">497</td><td colspan="1" rowspan="1">14.01%</td></tr><tr><td colspan="1" rowspan="5">c-sehwa</td><td colspan="1" rowspan="1">15</td><td colspan="1" rowspan="1">246</td><td colspan="1" rowspan="1">236</td><td colspan="1" rowspan="1">228</td><td colspan="1" rowspan="1">3.38%</td><td colspan="1" rowspan="5">Elliptic</td><td colspan="1" rowspan="1">20</td><td colspan="1" rowspan="1">718</td><td colspan="1" rowspan="1">1003</td><td colspan="1" rowspan="1">947</td><td colspan="1" rowspan="1">5.58%</td></tr><tr><td colspan="1" rowspan="1">30</td><td colspan="1" rowspan="1">389</td><td colspan="1" rowspan="1">589</td><td colspan="1" rowspan="1">496</td><td colspan="1" rowspan="1">15.78%</td><td colspan="1" rowspan="1">40</td><td colspan="1" rowspan="1">1010</td><td colspan="1" rowspan="1">2095</td><td colspan="1" rowspan="1">1447</td><td colspan="1" rowspan="1">30.93%</td></tr><tr><td colspan="1" rowspan="1">45</td><td colspan="1" rowspan="1">778</td><td colspan="1" rowspan="1">856</td><td colspan="1" rowspan="1">716</td><td colspan="1" rowspan="1">16.35%</td><td colspan="1" rowspan="1">60</td><td colspan="1" rowspan="1">1893</td><td colspan="1" rowspan="1">3996</td><td colspan="1" rowspan="1">2675</td><td colspan="1" rowspan="1">33.05%</td></tr><tr><td colspan="1" rowspan="1">60</td><td colspan="1" rowspan="1">1334</td><td colspan="1" rowspan="1">2760</td><td colspan="1" rowspan="1">2181</td><td colspan="1" rowspan="1">20.97%</td><td colspan="1" rowspan="1">80</td><td colspan="1" rowspan="1">3366</td><td colspan="1" rowspan="1">5845</td><td colspan="1" rowspan="1">4716</td><td colspan="1" rowspan="1">19.31%</td></tr><tr><td colspan="1" rowspan="1">75</td><td colspan="1" rowspan="1">2234</td><td colspan="1" rowspan="1">4200</td><td colspan="1" rowspan="1">3137</td><td colspan="1" rowspan="1">25.30%</td><td colspan="1" rowspan="1">100</td><td colspan="1" rowspan="1">4787</td><td colspan="1" rowspan="1">6754</td><td colspan="1" rowspan="1">5826</td><td colspan="1" rowspan="1">13.74%</td></tr></tbody></table></table-wrap></p><p><xref ref-type="fig" rid="fig7">Figure 7</xref> shows the overhead cost of the three algorithms. The overhead cost flows from the cost of calculating data dependencies, the scheduling cost, the cost of additional data migration and read/write operations, and other logistics costs. <xref ref-type="fig" rid="fig7">Figure 7</xref> shows that the overhead cost of the AGADA algorithm is less than that of the HA algorithm and DGDATS algorithm, and the overhead cost of the HA algorithm is more than that of the DGDATS algorithm. The AGADA algorithm has a lower overhead cost than our proposed algorithm because the overhead cost of the proposed algorithm is dependent on not only the number of data but also the product of the number of data, data dependency, and the number of memories, whereas that of the AGADA algorithm grows linearly with the growth of data. However, even in this case, the total net execution cost of the DGDATS algorithm is less than that of AGADA because the AGADA algorithm causes more data to be allocated in the main memory, resulting in a high execution cost. Therefore, the benefits that we acquire by our proposed algorithms outweigh the additional overhead.
+<fig id="fig7" orientation="portrait" position="float"><label>FIGURE 7.</label><caption><p>The overhead cost of benchmarks under different approaches when change the number of data. (a) iir, (b) allpole, (c) diff, (d) elliptic, (e) C-sehwa, (f) 4_lattice.</p></caption>
+<graphic orientation="portrait" position="float" xlink:href="wang7abcdef-2887024.eps" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+</fig></p><p>In conclusion, when data dependency applications run in a CMP with hybrid SPMs composed of an NVM and an SRAM, our proposed algorithm can output a high-efficiency dynamic data and task allocation approach such that the total execution cost is minimized with only slight degradations in the endurance and performance of the NVM. Our proposed algorithm is also evaluated with a simulation experiment, and the results show that our proposed algorithm can achieve a better approach in terms of the execution cost and the number of write operations on the NVM compared with the HA algorithm.</p>
+</sec>
+</sec>
+<sec id="sec7"><label>VII.</label>
+<title>Conclusion</title><p>An NVM-based SPM is a practical approach to reducing the execution cost of CMP systems. In this paper, we propose a novel dynamic data allocation and task scheduling algorithm to fully utilize the potential of the NVM. With the NVM-based hybrid SPM architecture, the data and task management code is executed to dynamically obtain a data assignment that is suited to the corresponding task and to generate a reasonable task mapping. The total execution cost can be reduced with little performance degradation caused by the disadvantages of NVM. According to the experimental results, based on CMP systems with hybrid SPMs, our proposed algorithm achieves noticeable average reduction rates in the total execution cost, and the number of write operations on the NVM can be reduced compared with the HA and AGADA algorithms.</p>
+</sec>
+<ack>
+<title>Acknowledgment</title><p>The authors would like to thank the three anonymous reviewers for their constructive comments.</p></ack></body></response>
