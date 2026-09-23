@@ -1,0 +1,6 @@
+{
+  "valid_occupancy": false,
+  "errors": ["A: overlapping battery B1"],
+  "required": {"A": {"aircraft": 1, "battery": 2}},
+  "scope": "fixed intervals only; not a full energy/deadline/communication verifier"
+}
