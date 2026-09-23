@@ -1,0 +1,40 @@
+name: A construction mathematics
+on:
+  push:
+    branches: [research/a-construct-certify]
+    paths: ['research_a_next/**/*.py', 'research_a_next/*.ps1', '.github/workflows/a-construct-check.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mathematical-and-official-synthetic:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 8
+    env:
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: 'utf-8'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.5'
+      - name: Mathematics and unchanged official evaluator on synthetic bipartite graphs
+        run: python -m unittest -v research_a_next.test_math research_a_next.test_extensions
+      - name: Windows PowerShell environment and syntax
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $python = (Get-Command python).Source
+          powershell -NoProfile -ExecutionPolicy Bypass -File research_a_next/configure_windows.ps1 -Python $python
+          if ($LASTEXITCODE -ne 0) { throw 'Windows environment setup failed' }
+          Get-ChildItem research_a_next/*.ps1 | ForEach-Object {
+            $tokens=$null; $errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$tokens,[ref]$errors) | Out-Null
+            if ($errors.Count) { throw $errors }
+          }
