@@ -15,10 +15,25 @@
 
 ## 数据管理
 
-题面位于 `题目/`。按仓库使用者选择，原始附件数据仅保留本地，不推送 GitHub；原 ZIP/XZ 在解压并核验后删除。A 题评估程序及配套说明保留在版本管理中。
+题面与已解压附件位于 `题目/`，纳入 Git 或 Git LFS 版本管理；原 ZIP/XZ 在解压并核验后删除。A 题测试图及较大的二进制、语料文件使用 Git LFS。系统元数据和 Office 锁文件继续忽略。
 
-另一台机器克隆仓库后，需要从原题提供方或队内授权渠道取得原始数据，并放回清单对应路径。详见 [数据清单说明](调研/数据清单说明.md)、[逐文件 SHA-256 清单](调研/数据文件清单.json)和 [解压核验记录](调研/数据整理记录.json)。
+E 题的 `unaligned_50.pkl` 超过 2 GiB，使用三个未压缩字节分片存放于 `data-parts/E_unaligned_50/`，由 Git LFS 管理；完整原件由脚本按原路径重建。分片与原件的字节数和 SHA-256 记录在 [分片清单](data-parts/manifest.json)。
 
-`tools/prepare_problem_data.py` 提供安全解压和核验流程；`tools/build_data_inventory.py` 生成数据清单。调研资料以 Markdown 和 JSON 保存，便于多人协作、检索与修订。
+安装 Git LFS 后，在另一台机器上获取完整数据：
+
+```sh
+git lfs install
+git -c core.longpaths=true clone https://github.com/yellkiin/model_competition.git
+cd model_competition
+git config --local core.longpaths true
+git lfs pull
+python tools/restore_data_parts.py
+```
+
+`core.longpaths` 用于支持 Windows 下 F 题附件的长路径。已有克隆可先设置该选项、执行 `git pull`，再执行最后两条命令。恢复脚本检查分片和原件的 SHA-256，已有且一致的原件会跳过重建；内容不一致时中止，不覆盖文件。使用 `python tools/restore_data_parts.py --verify-only` 可仅校验分片及已有原件。GitHub 的 ZIP 源码下载不能替代上述完整数据获取流程。
+
+详见 [数据清单说明](调研/数据清单说明.md)、[逐文件 SHA-256 清单](调研/数据文件清单.json)和 [解压核验记录](调研/数据整理记录.json)。题目数据约 6.06 GB，分片另外占用约 2.90 GB；Git LFS 本地缓存还会占用磁盘空间。
+
+`tools/prepare_problem_data.py` 提供安全解压和核验流程；`tools/build_data_inventory.py` 生成数据清单并区分普通 Git、Git LFS、分片重建及本地忽略文件。调研资料以 Markdown 和 JSON 保存，便于多人协作、检索与修订。
 
 原有 `各种建模agent/` 资料保持原样。本次调研不代表其中工具已经安装、运行或通过验证。
