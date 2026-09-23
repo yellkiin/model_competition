@@ -1,0 +1,5 @@
+# GIS imports are lazy; synthetic experiments need only requirements_d.txt.
+rasterio==1.5.0
+pyproj==3.7.2
+# CP-SAT source is provided but OR-Tools was not installed/run in this environment.
+ortools>=9.12,<10

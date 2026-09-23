@@ -1,0 +1,12 @@
+{
+  "notice": "SYNTHETIC ONLY. Coordinates match the unit-test metre CRS, not the competition DEM. Replace only after explicit workbook/CRS mapping.",
+  "nodes": [
+    {"id": "O01", "x": 500015, "y": 3499985, "work_height_m": 0},
+    {"id": "S001", "x": 500105, "y": 3499895, "work_height_m": 30}
+  ],
+  "capacities": {"A": {"aircraft": 1, "battery": 2}},
+  "tasks": [
+    {"id": "demo1", "type": "A", "aircraft": "A1", "battery": "B1", "start": 0, "aircraft_end": 10, "battery_ready": 30},
+    {"id": "demo2", "type": "A", "aircraft": "A1", "battery": "B1", "start": 15, "aircraft_end": 25, "battery_ready": 45}
+  ]
+}
