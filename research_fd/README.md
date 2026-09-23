@@ -59,3 +59,15 @@ python -m research_fd.run_data f-mixtures --repo . \
 ```
 
 F的全量附件拟合本轮未执行。旧results/local_validation.json记录原先合成机制实验与B1的34行摘录；不把它当全量F验证。新D不增加哈希登记或启动测试流程，把精力放在算法效果和可复现实验。
+
+
+## 2026-09-23：基于正式实验结果的四问跟进
+
+main 已包含正式 D 输入和执行结果；当前正式 Q2 最佳已验证方案为 26 趟、8237.190525 s、71.245007450 kWh，零硬迟到与零加权软迟到。正式 Q3 的 10 次联合中继尝试尚未取得可行 incumbent，最后一次模型保留约 13.6 万会话，因此下一阶段重点从“继续枚举会话”切换到紧凑中继时空模型。
+
+- [四问深化与下一阶段算法](docs/d_four_questions_followup.md)
+- [可直接交给本地 Agent 的提示词](docs/d_followup_agent_prompt.md)
+- [结构化跟进结果与待复跑候选](results/d_followup_20260923.json)
+- [跟进实验编排器](scripts/run_d_followup.py)
+
+本轮跟进明确不增加哈希登记，也不以冒烟测试作为研究任务。Q1/Q2 的新候选数值需要在本地正式 DEM 与当前 runtime 上复跑确认；Q3/Q4 的正式成绩只在通信联合计划通过加密复核后产生。

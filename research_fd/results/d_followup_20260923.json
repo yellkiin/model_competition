@@ -1,0 +1,75 @@
+{
+  "date": "2026-09-23",
+  "baseline_from_main": {
+    "q2": {
+      "trips": 26,
+      "makespan_s": 8237.190525,
+      "transport_energy_kwh": 71.24500745,
+      "hard_violations": 0,
+      "weighted_tardiness_s": 0,
+      "source": "research_fd/outputs/REPORT_D_EXECUTED.md and PARETO_OFFICIAL_RESULTS.md"
+    },
+    "q3": {
+      "status": "no_joint_feasible_incumbent_after_10_attempts",
+      "last_attempt": {
+        "candidate_sites": 13,
+        "transport_start_options": 332,
+        "communication_demands": 2839,
+        "generated_sessions": 144707,
+        "retained_sessions": 135653,
+        "feasibility_status": "UNKNOWN"
+      },
+      "source": "research_fd/outputs/REPORT_D_EXECUTED.md and official_radio_runs.md"
+    }
+  },
+  "followup_candidates_to_reproduce_locally": {
+    "q1": {
+      "reserve_20": {
+        "trips": 18,
+        "energy_kwh": 59.130423,
+        "cumulative_work_s": 32776.015749
+      },
+      "reserve_sensitivity_min_trips": {
+        "0.25": 19,
+        "0.30": 20
+      },
+      "capacity_examples_kg": {
+        "B/S008": 28.80179,
+        "C/S008": 58.90535
+      }
+    },
+    "q2": {
+      "energy_candidate": {
+        "trips": 26,
+        "makespan_s": 8041.875249,
+        "transport_energy_kwh": 69.828388,
+        "hard_violations": 0,
+        "weighted_tardiness_s": 0
+      },
+      "fast_candidate": {
+        "trips": 26,
+        "makespan_s": 7900.109768,
+        "transport_energy_kwh": 70.645692,
+        "hard_violations": 0,
+        "weighted_tardiness_s": 0
+      }
+    },
+    "q3_synthetic_mechanism": {
+      "dense_samples": 990,
+      "coarse_solution_failures_before_witness_repair": 28,
+      "failures_after_witness_repair": 0,
+      "final_min_margin_db": 0.0228,
+      "note": "mechanism validation only; not official Q3"
+    }
+  },
+  "required_next_run": {
+    "priority": [
+      "reproduce Q1 45 capacities and grouping with official DEM",
+      "reproduce and improve Q2 two candidate plans",
+      "implement compact relay-task/radio-block Q3 and witness repair on official DEM",
+      "run Q4 only after a formally frozen, communication-valid Q3 plan exists"
+    ],
+    "no_hash_inventory": true,
+    "no_smoke_test_task": true
+  }
+}
