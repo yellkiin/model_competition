@@ -1,0 +1,53 @@
+name: Verify Huawei Cup migration once
+on:
+  push:
+    branches: [codex/huaweicup-agent-and-papers-20260923]
+    paths:
+      - '.github/migration-bootstrap/**'
+      - '.github/workflows/migrate-huaweicup-20260923.yml'
+permissions:
+  contents: write
+jobs:
+  migrate:
+    if: github.event.repository.private == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GIT_LFS_SKIP_SMUDGE: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: codex/huaweicup-agent-and-papers-20260923
+          fetch-depth: 1
+          lfs: false
+          sparse-checkout: |
+            .github
+            tools
+            调研
+            各种建模agent
+      - name: Restore locally tested authored text only
+        run: python .github/migration-bootstrap/materialize.py
+      - name: Install independent workbench dependencies and PDF reader
+        run: |
+          command -v pdfinfo || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+          python -m pip install -r '各种建模agent/华为杯整合Agent/huaweicup_agent/requirements.txt'
+      - name: Validate tests, all guide paths, original index and real PDFs
+        run: python .github/migration-bootstrap/validate.py
+      - name: Commit only the approved migration paths
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add AGENTS.md tools/huaweicup.py '各种建模agent/华为杯整合Agent' '各种建模agent/hwb-math-modeling-skills/数模资料/优秀论文索引/近期论文原文'
+          git diff --cached --check
+          git commit -m 'feat: integrate modeling workbench and verified paper archive in the correct repository'
+          git push origin HEAD:codex/huaweicup-agent-and-papers-20260923
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: huaweicup-migration-verification
+          path: |
+            各种建模agent/华为杯整合Agent/huaweicup_agent/docs/repository_verification.json
+            各种建模agent/hwb-math-modeling-skills/数模资料/优秀论文索引/近期论文原文/verification.json
+          retention-days: 7
+          if-no-files-found: error
