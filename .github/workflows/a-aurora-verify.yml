@@ -1,0 +1,67 @@
+name: A Aurora isolated verification
+on:
+  push:
+    branches: [feat/a-aurora-constrained-20260923]
+    paths: ['research_a_aurora/**', '.github/workflows/a-aurora-verify.yml']
+  pull_request:
+    paths: ['research_a_aurora/**', '.github/workflows/a-aurora-verify.yml']
+permissions:
+  contents: read
+concurrency:
+  group: a-aurora-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 12
+    env:
+      PYTHONUTF8: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.5'
+      - name: Extract the A statement and preserve exact reference source for verification
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile, xml.etree.ElementTree as ET, shutil
+          root = Path.cwd()
+          source = root / '\u9898\u76ee' / 'A\u9898'
+          out = root / 'aurora_ci_reference'
+          out.mkdir(exist_ok=True)
+          for doc in source.glob('*.docx'):
+              with zipfile.ZipFile(doc) as z:
+                  tree = ET.fromstring(z.read('word/document.xml'))
+              ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+              text = '\n'.join(''.join(p.itertext()) for p in tree.findall('.//w:p', ns))
+              (out / 'problem_statement.txt').write_text(text, encoding='utf-8')
+              print(text)
+          for directory in source.iterdir():
+              if directory.is_dir() and (directory / 'code').is_dir():
+                  shutil.copytree(directory / 'code', out / 'code', dirs_exist_ok=True)
+                  shutil.copytree(directory / 'docs', out / 'docs', dirs_exist_ok=True)
+                  shutil.copy2(directory / 'README.md', out / 'README.md')
+                  shutil.copy2(directory / 'data' / 'config.txt', out / 'config.txt')
+          print('Reference extraction complete. No original input, configuration, or evaluator modified.')
+      - name: Run Aurora tests when implementation is present
+        shell: pwsh
+        run: |
+          if (Test-Path research_a_aurora/test_aurora.py) {
+            python -m unittest research_a_aurora.test_aurora -v
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a-aurora-reference-and-verification
+          path: |
+            aurora_ci_reference
+            research_a_aurora/ci_results
+          retention-days: 3
