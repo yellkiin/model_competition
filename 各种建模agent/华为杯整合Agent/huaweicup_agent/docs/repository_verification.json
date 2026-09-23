@@ -1,0 +1,190 @@
+{
+  "repository": "yellkiin/model_competition",
+  "base_commit": "f48de9dde7f8b7eb028c01824c3521e3662f06a6",
+  "python": "3.12.3",
+  "workflow_run": "35818016489",
+  "unit_tests": [
+    {
+      "directory": "各种建模agent/华为杯整合Agent/huaweicup_agent/tests",
+      "run": 35,
+      "skipped": [
+        "XeLaTeX absent",
+        "TeX toolchain absent"
+      ],
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "directory": "各种建模agent/hwb-math-modeling-skills/数模资料/优秀论文索引/近期论文原文",
+      "run": 5,
+      "skipped": [],
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "role_guides": {
+    "orchestrator": [
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/总控类/hwb-modeling-workflow/SKILL.md",
+        "exists": true,
+        "sha256": "3444df5f60dc2b0b1b2faf710e2840521069dab6829818b582773b914a77c4f2",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "调研/README.md",
+        "exists": true,
+        "sha256": "af28b09a634f73f05f6ca6888ca8ebb7ed5d47690dcea258bbd56f2c1aa9d9f8",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "各种建模agent/MathModelAgent/backend/app/core/flows.py",
+        "exists": true,
+        "sha256": "28c5cb0b7fefe566ae4627a942933be5912bbb92fa070406fd9fde62355c20b7",
+        "reading_status": "host_must_read",
+        "execute": false
+      }
+    ],
+    "researcher": [
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/数模资料/优秀论文索引/README.md",
+        "exists": true,
+        "sha256": "39297d73c5aa0059b2f6f8f6d41c6e314ca1ca385a03e2f985db43cc9d7945a2",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "调研/文献总索引.md",
+        "exists": true,
+        "sha256": "46f549713227ac3bd4ae3ab1a173e3645a9880aed93cfff80ad1e1a06f6ca7aa",
+        "reading_status": "host_must_read",
+        "execute": false
+      }
+    ],
+    "modeler": [
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/生成类/hwb-modeling-ideas/SKILL.md",
+        "exists": true,
+        "sha256": "48383fc4f73f4202cbd3c2d548ec4232e99087bce05f5358e7bd752f809f72f4",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-model-dictionary/SKILL.md",
+        "exists": true,
+        "sha256": "eb5425c8eea8349d0dfa1bd4f8931bec955eb76f8a6d5aad2d761feb1a9c2948",
+        "reading_status": "host_must_read",
+        "execute": false
+      }
+    ],
+    "coder": [
+      {
+        "path": "各种建模agent/MathModelAgent/backend/app/core/agents/coder_agent.py",
+        "exists": true,
+        "sha256": "7cc81560b11f73e39db196b23f47cea018024e8ca742dd2c07cd803c689d0e52",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-model-solution-checker/SKILL.md",
+        "exists": true,
+        "sha256": "f3c0428006f87b8fca2fde2bcb7279eaf1fa30218c9d29433326df3556257cfe",
+        "reading_status": "host_must_read",
+        "execute": false
+      }
+    ],
+    "visualizer": [
+      {
+        "path": "各种建模agent/awesome-ai-research-writing/README.md",
+        "exists": true,
+        "sha256": "683ccab5559a3cb029736ca3dd70e3ff674aadcae0e2af3dbad9ef307093a7ef",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-paper-format-checker/SKILL.md",
+        "exists": true,
+        "sha256": "2422d7dd8859f76cb979784fc96341ab7779e82910694e5a25b72abfe39293b9",
+        "reading_status": "host_must_read",
+        "execute": false
+      }
+    ],
+    "writer": [
+      {
+        "path": "各种建模agent/awesome-ai-research-writing/README.md",
+        "exists": true,
+        "sha256": "683ccab5559a3cb029736ca3dd70e3ff674aadcae0e2af3dbad9ef307093a7ef",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-abstract-checker/SKILL.md",
+        "exists": true,
+        "sha256": "397f75b3c97d7126de8fb0cebdc0c8f2202831c4a6858dcc3405563f34c879af",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-reference-appendix-checker/SKILL.md",
+        "exists": true,
+        "sha256": "98336e5c4573affa1d2697acbec5dcd7c5e6d1d1b796f70248cf88f04c009616",
+        "reading_status": "host_must_read",
+        "execute": false
+      }
+    ],
+    "reviewer": [
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-review-paper/SKILL.md",
+        "exists": true,
+        "sha256": "377e88e13428022b0ef52895943ee2a4aba36b29d5b95aee870fb24f39ebb632",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-model-solution-checker/SKILL.md",
+        "exists": true,
+        "sha256": "f3c0428006f87b8fca2fde2bcb7279eaf1fa30218c9d29433326df3556257cfe",
+        "reading_status": "host_must_read",
+        "execute": false
+      }
+    ],
+    "redteam": [
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-model-assumption-checker/SKILL.md",
+        "exists": true,
+        "sha256": "5b20d75ff0adc3219627639e92feceb7fad94e73e22e41f3375617cc02e3dceb",
+        "reading_status": "host_must_read",
+        "execute": false
+      },
+      {
+        "path": "各种建模agent/hwb-math-modeling-skills/skills/论文自查类/hwb-reference-appendix-checker/SKILL.md",
+        "exists": true,
+        "sha256": "98336e5c4573affa1d2697acbec5dcd7c5e6d1d1b796f70248cf88f04c009616",
+        "reading_status": "host_must_read",
+        "execute": false
+      }
+    ]
+  },
+  "paper_library": {
+    "status": "passed",
+    "paper_count": 12,
+    "physical_pages": 811,
+    "archive_sha256": "9062cd5372ab1fad06a1f85e81f9384187b5e6e5058adc4d886db04d439083dd",
+    "archive_bytes": 47571071,
+    "local_index_checked": true,
+    "pdf_pages_checked": true,
+    "reading_status": "integrity_only_not_fulltext_reviewed",
+    "award_status": "not_independently_verified"
+  },
+  "demo": "executed synthetic experiment, plot, TeX source and audit; final audit rejected rehearsal",
+  "remote_tex_compile": "not run; local XeLaTeX migration rehearsal compiled and rendered separately",
+  "status": "passed",
+  "limitations": [
+    "No actual LLM contest solve",
+    "No live Crossref fact verification",
+    "No upstream backend execution",
+    "No 2024/2025 full PDFs",
+    "No independent award verification"
+  ]
+}
