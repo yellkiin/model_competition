@@ -136,6 +136,8 @@ def merge(destination, sources):
     if (destination/'manifest.json').exists() and read_json(destination/'manifest.json')!=manifests[0]:
         raise ValueError('Destination belongs to another experiment')
     write(destination/'manifest.json',manifests[0])
+    if (Path(sources[0])/'baseline_plans').exists() and not (destination/'baseline_plans').exists():
+        shutil.copytree(Path(sources[0])/'baseline_plans',destination/'baseline_plans')
     for source in map(Path,sources):
         for machine in source.glob('machine_*.json'):
             dst=destination/(source.name+'_'+machine.name)
