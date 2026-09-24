@@ -10,7 +10,7 @@ from collections import deque
 from .run import resources, rss, terminate
 from research_a_orion_anytime.engine import OfficialSession
 from research_a_orion_anytime.core import bounds
-from . import reuse_repair
+from . import reuse_repair\nfrom .policy import better
 
 FIELDS=['case','q','n','method','run_id','mode','status','baseline','old_makespan','new_makespan','old_added_copy_bytes','new_added_copy_bytes','old_spill_bytes','new_spill_bytes','seed_solve_seconds','added_solve_seconds','total_solve_seconds','construction_seconds','candidate_generation_seconds','official_eval_seconds','evaluations','lower','no_l2_makespan','cache_hit_rate','plan_file','result_file','selected_name','best_new_makespan','best_new_name']
 
@@ -66,9 +66,9 @@ def worker(req):
             write(out/rn,r);raw=r['official_result'];traffic=raw['data_movement_bytes']
             row.update(makespan=raw['makespan'],added_copy_bytes=traffic['added_copy_bytes'],spill_bytes=traffic['spill_added_copy_bytes'],partition_bytes=traffic['partition_added_copy_bytes'])
             if r['status']=='ok' and time.monotonic()<deadline:
-                if state['best_new'] is None or (row['makespan'],row['added_copy_bytes'])<(state['best_new']['makespan'],state['best_new']['added_copy_bytes']):state['best_new']={**row}
+                if state['best_new'] is None or better(row['makespan'],row['added_copy_bytes'],state['best_new']['makespan'],state['best_new']['added_copy_bytes']):state['best_new']={**row}
                 previous=state['selected']
-                if (row['makespan'],row['added_copy_bytes']) < (previous['makespan'],previous['added_copy_bytes']):
+                if better(row['makespan'],row['added_copy_bytes'],previous['makespan'],previous['added_copy_bytes']):
                     state['selected']={k:row[k] for k in ['name','makespan','added_copy_bytes','spill_bytes','plan_file','result_file']}
                     state['selected']['ready_seconds']=time.monotonic()-started
             row['completed_seconds']=time.monotonic()-started
