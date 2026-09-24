@@ -10,7 +10,7 @@ from copy import deepcopy
 import time
 from research_a_orion_anytime.core import plan_view, make_plan, estimate, bounds
 from .reuse_repair import plan_key
-from .plugin import _peak_window
+from .plugin import _peak_window\nfrom .policy import search_state
 VERSION='memory-local-2.3'
 
 
