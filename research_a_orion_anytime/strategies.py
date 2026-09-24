@@ -45,7 +45,8 @@ def _bins(g, count=24, weighted=False):
 
 def _pack_by_stage(g, plan, bins, cuts):
     m, groups, cores, _=plan_view(g,plan)
-    owner={u:cores[m[u]] for u in g.ops}+    packed=[]; where=[]; previous=0
+    owner={u:cores[m[u]] for u in g.ops}
+    packed=[]; where=[]; previous=0
     for end in cuts:
         nodes=set().union(*bins[previous:end]); previous=end
         for k in range(len(plan['core_schedules'])):

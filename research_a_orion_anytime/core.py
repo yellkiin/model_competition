@@ -342,7 +342,8 @@ def map_groups(g: Graph, groups: list[set[int]], n: int, cfg: Config, q: int) ->
             if w[p]:
                 loads[k][p] = max(loads[k][p], end - max(w.values())) + w[p]
         assigned_inputs[k].update(external)
-        ordered_groups.append(comp)+        ordered_cores.append(k)
+        ordered_groups.append(comp)
+        ordered_cores.append(k)
     return make_plan(ordered_groups, ordered_cores, n)
 
 

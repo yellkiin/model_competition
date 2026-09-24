@@ -178,7 +178,8 @@ def solve(official, config, graph_path, out, q, n, mode='improve', evaluations=3
                        solve_seconds=time.monotonic() - started,
                        official_eval_seconds=sum(a.get('eval_seconds') or 0 for a in summary['attempts']),
                        failed_evaluations=sum(a['status'] not in ('ok', 'certified_pruned') for a in summary['attempts']))
-        if best:+            r = best['official_result']
+        if best:
+            r = best['official_result']
             summary.update(candidate=best['candidate'], plan_hash=fingerprint(best['plan']),
                            makespan=r['makespan'], **r['data_movement_bytes'],
                            cache_hit_rate=r.get('cache_stats', {}).get('hit_rate'),
