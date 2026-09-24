@@ -1,0 +1,26 @@
+{
+  "stop_epoch": 1790247487.732,
+  "stop_utc": "2026-09-24T10:58:07.7355224+00:00",
+  "reason": "User clarified: current solver jobs finish normally, then remaining refinement uses four workers",
+  "old_workers": 2,
+  "new_workers": 4,
+  "source_root": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0_w2\\auto",
+  "jobs": [
+    {
+      "pid": 93108,
+      "folder": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0_w2\\auto\\refinement\\case_089_q1_n3",
+      "cap": 27.0,
+      "hard_timeout": true,
+      "process_seconds": 27.0280706,
+      "exit_code": null
+    },
+    {
+      "pid": 93700,
+      "folder": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0_w2\\auto\\refinement\\case_089_q2_n3",
+      "cap": 27.0,
+      "hard_timeout": true,
+      "process_seconds": 27.019316,
+      "exit_code": null
+    }
+  ]
+}

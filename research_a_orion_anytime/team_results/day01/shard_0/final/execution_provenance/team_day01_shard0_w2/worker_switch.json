@@ -1,0 +1,32 @@
+{
+  "stop_epoch": 1790246016.494,
+  "stop_utc": "2026-09-24T10:33:36.4998434+00:00",
+  "reason": "User explicitly authorized stopping and continuation with two workers and mixed segments",
+  "source_root": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0\\auto",
+  "old_workers": 1,
+  "new_workers": 2,
+  "preserved_refinement_at_stop": 243,
+  "planned_refinement": 620,
+  "owned_processes": [
+    {
+      "ProcessId": 58516,
+      "ParentProcessId": 47712,
+      "CommandLine": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"-NoProfile\" \"-ExecutionPolicy\" \"Bypass\" \"-File\" \"D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\experiments.ps1\" \"-Stage\" \"formal\" \"-Python\" \"D:\\python\\python.exe\" \"-Official\" \"D:\\桌面\\model_competition\\题目\\A题\\通用神经网络处理器下的多核调度问题  附件\" \"-Out\" \"D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0\\auto\" \"-Workers\" \"1\" \"-Hours\" \"10.317365989305555\" \"-Shards\" \"2\" \"-ShardIndex\" \"0\" \"-Gate\" \"D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\day01_fix04\\auto\\gate.json\" "
+    },
+    {
+      "ProcessId": 81060,
+      "ParentProcessId": 58516,
+      "CommandLine": "\"D:\\python\\python.exe\" -u -m research_a_orion_anytime.watchdog formal --out D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0\\auto --workers 1 --hours 10.3173659893056 --seconds 30 --large-seconds 180 --calls 24 --refine-seconds 30 --shards 2 --shard-index 0 --official \"D:\\桌面\\model_competition\\题目\\A题\\通用神经网络处理器下的多核调度问题  附件\" --gate D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\day01_fix04\\auto\\gate.json"
+    },
+    {
+      "ProcessId": 72840,
+      "ParentProcessId": 81060,
+      "CommandLine": "D:\\python\\python.exe -m research_a_orion_anytime.campaign formal --out D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0\\auto --workers 1 --hours 10.3173659893056 --seconds 30 --large-seconds 180 --calls 24 --refine-seconds 30 --shards 2 --shard-index 0 --official \"D:\\桌面\\model_competition\\题目\\A题\\通用神经网络处理器下的多核调度问题  附件\" --gate D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\day01_fix04\\auto\\gate.json"
+    },
+    {
+      "ProcessId": 95076,
+      "ParentProcessId": 72840,
+      "CommandLine": "D:\\python\\python.exe -m research_a_orion_anytime.solver D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0\\auto\\refinement\\case_043_q3_n3\\request.json"
+    }
+  ]
+}
