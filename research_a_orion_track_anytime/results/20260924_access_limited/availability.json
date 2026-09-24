@@ -1,0 +1,14 @@
+{
+  "status": "BLOCKED_NOT_MEASURED",
+  "official_evaluations_in_this_round": 0,
+  "new_method_performance_claim": false,
+  "original_docx_read": false,
+  "original_raw_zip_records_read": false,
+  "initial_blocker": "At initial inspection Git blobs were LFS pointers; original attachment not mounted in execution container.",
+  "later_update": "PR25 merged during research. main now serves ordinary graph JSON and tools/a_input_payloads gzip+base64 text parts. The beginning of repaired case_044.json was read successfully.",
+  "remaining_blocker": "Connector text resources have no runtime materialization bridge here; container has no network. Full original inputs/code and raw experiment archives are still not present in the runtime.",
+  "elapsed_trajectory_available": false,
+  "gate_passed": false,
+  "entry_attempt": "../20260924_startup_attempt/blocked.json",
+  "scope": "No original files changed, no synthetic graph substitute, no data manually rewritten from partial snippets."
+}

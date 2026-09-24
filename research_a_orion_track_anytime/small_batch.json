@@ -1,0 +1,12 @@
+{
+  "status": "PENDING_REAL_GRAPH_GATE",
+  "cases": ["024", "083", "086", "001", "059", "044", "084"],
+  "experimental_roles_only_not_algorithm_rules": {
+    "low_cache_or_budget_return": ["024", "083", "086", "001", "059"],
+    "controls": ["044", "084"]
+  },
+  "questions": [1, 2, 3],
+  "cores": [2, 5],
+  "continuous_prefix_seconds": [30, 60, 120, 300],
+  "note": "083 is not uniformly cache-poor: its five-core same-plan cache benefit is positive. Case IDs occur only in experiment manifests."
+}
