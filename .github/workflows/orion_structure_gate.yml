@@ -5,32 +5,52 @@ on:
 jobs:
   gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 24
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
           filter: blob:none
           sparse-checkout: |
-            research_a_orion_anytime
-            research_a_orion_track_structure
-            题目/A题
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Cold paired old/new 30-second gate
+            research_a_orion_anytime/team_results/day01/shard_0/final
+            research_a_orion_anytime/team_results/day01/shard_1/final
+      - name: Inspect raw final transfer entries for structure cases
         shell: bash
         run: |
           set -euo pipefail
-          python -m research_a_orion_track_structure.run             --cases 016,024,044,048,059             --questions 1,2,3 --cores 2,5             --seconds 30 --wall-seconds 1250             --max-evaluations 8 --workers 2             --out gate_outputs/cold30
-          echo PER_CASE_BEGIN
-          cat gate_outputs/cold30/per_case.csv
-          echo PER_CASE_END
-          echo TRAJECTORY_BEGIN
-          cat gate_outputs/cold30/trajectory.csv
-          echo TRAJECTORY_END
-          cat gate_outputs/cold30/run_summary.json
-      - uses: actions/upload-artifact@v4
-        with:
-          name: orion-structure-cold30
-          path: gate_outputs/cold30/
+          python - <<'PY'
+          import json, zipfile
+          from pathlib import Path
+          root=Path('research_a_orion_anytime/team_results/day01')
+          cases=('016','024','044','048','059')
+          for shard, manifest_name in [('shard_0','TRANSFER_PARTS.json'),('shard_1','ARCHIVE_PARTS.json')]:
+              d=root/shard/'final'
+              m=json.loads((d/manifest_name).read_text(encoding='utf-8-sig'))
+              zpath=Path('/tmp')/m['archive_name']
+              with zpath.open('wb') as w:
+                  for p in m['parts']:
+                      w.write((d/p['name']).read_bytes())
+              print('RAW_ARCHIVE',shard,zpath.stat().st_size)
+              with zipfile.ZipFile(zpath) as z:
+                  names=z.namelist()
+                  for c in cases:
+                      matches=[n for n in names if f'case_{c}' in n and
+                               any(k in n.lower() for k in ('progress','summary','result','request','plan'))]
+                      if matches:
+                          print('RAW_MATCH',shard,c,len(matches))
+                          for n in matches[:35]:
+                              print('RAW_PATH',shard,c,n)
+                              low=n.lower()
+                              if (low.endswith('.json') or low.endswith('.json.gz')) and
+                                  any(k in low for k in ('progress','summary','request')):
+                                  try:
+                                      raw=z.read(n)
+                                      if low.endswith('.gz'):
+                                          import gzip
+                                          raw=gzip.decompress(raw)
+                                      if len(raw)<=80000:
+                                          obj=json.loads(raw)
+                                          print('RAW_JSON',shard,c,n,json.dumps(obj,separators=(',',':'))[:12000])
+                                  except Exception as e:
+                                      print('RAW_READ_ERROR',n,repr(e))
+          PY
