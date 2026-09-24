@@ -6,6 +6,7 @@ No smoke suite, fingerprint pass, random seed sweep, or optimizer dependency.
 from __future__ import annotations
 from collections import defaultdict
 from research_a.model import Graph, Plan, PIPES, copy_accounting, residency, fifo_requests
+from .component_moves import component_neighbors
 
 
 def relaxation_bound(g: Graph, cores: int) -> float:
@@ -199,6 +200,11 @@ def neighbors(g: Graph, p: Plan, cfg: dict, limit=12):
     for s in sorted(candidates, key=lambda s: (-weights[s], s))[:3]:
         moves.append((s, light))
     produced = 0
+    for candidate in component_neighbors(g, p, limit=min(6, limit)):
+        yield candidate
+        produced += 1
+        if produced >= limit:
+            return
     seen_moves = set()
     for s, k in moves:
         if (s, k) in seen_moves or p.owners[s] == k:
