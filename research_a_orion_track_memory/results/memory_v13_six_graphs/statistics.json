@@ -1,0 +1,37 @@
+{
+  "warm_start": {
+    "wins": 5,
+    "ties": 15,
+    "losses": 16,
+    "pairs": 36,
+    "excluded_pairs": 0,
+    "old_over_memory_geomean": 0.9871552390450018,
+    "median_makespan_reduction_pct": 0.0
+  },
+  "cold_start": {
+    "wins": 1,
+    "ties": 8,
+    "losses": 25,
+    "pairs": 34,
+    "excluded_pairs": 2,
+    "old_over_memory_geomean": 0.8958141326107945,
+    "median_makespan_reduction_pct": -8.901667028436215
+  },
+  "excluded": [
+    {"case": "case_059", "q": 3, "n": 2, "mode": "cold_start", "reason": "old arm interrupted at global deadline; valid incumbent retained"},
+    {"case": "case_059", "q": 1, "n": 5, "mode": "cold_start", "reason": "old arm interrupted at global deadline; valid incumbent retained"}
+  ],
+  "actual_unique_job_cost": {
+    "warm_start": {"jobs": 72, "job_wall_seconds_sum": 1611.2904495089983},
+    "pairs": {"jobs": 48, "job_wall_seconds_sum": 116.60035947200049},
+    "seeds": {"jobs": 36, "job_wall_seconds_sum": 649.6919613729997},
+    "baselines": {"jobs": 6, "job_wall_seconds_sum": 54.84099462699942},
+    "cold_start": {"jobs": 72, "job_wall_seconds_sum": 1712.478427277002}
+  },
+  "source_adapter_version": "1.3",
+  "summary_adapter_version": "1.4",
+  "reran_search": false,
+  "formal_100_graph_complete": false,
+  "requested_priority_gate_passed": false,
+  "interpretation": "Old/new Makespan ratio above 1 favors memory. Job wall sums include concurrent work and are not campaign elapsed time. This readable repository summary is derived from complete CSV/progress/response evidence in the indexed attachment."
+}

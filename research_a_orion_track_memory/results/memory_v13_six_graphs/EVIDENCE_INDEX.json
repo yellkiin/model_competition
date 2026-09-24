@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "distribution": "conversation_attachment",
+  "archive_name": "orion_memory_measured_results.zip",
+  "archive_bytes": 101120294,
+  "archive_entries": 5301,
+  "archive_root": "research_a_orion_track_memory/results/",
+  "github_release_asset": null,
+  "not_uploaded_as_github_binary": true,
+  "retrieval": "Download the identically named attachment from the delivery conversation. Extract into a new evidence directory; do not overwrite an active experiment.",
+  "runs": {
+    "delivery_external_seed_044": {
+      "path": "results/delivery_external_seed_044",
+      "files": 80,
+      "status": {"requested_configs": 2, "requested_rows": 4, "recorded_rows": 4, "ok_rows": 4, "missing": [], "global_deadline_reached": false}
+    },
+    "delivery_v14_real_044": {
+      "path": "results/delivery_v14_real_044",
+      "files": 382,
+      "status": {"requested_configs": 6, "requested_rows": 24, "recorded_rows": 24, "ok_rows": 24, "missing": [], "global_deadline_reached": false}
+    },
+    "matched_044_initial": {
+      "path": "results/matched_044_initial",
+      "files": 493,
+      "status": {"requested_configs": 3, "requested_rows": 12, "recorded_rows": 12, "ok_rows": 12, "missing": [], "global_deadline_reached": false}
+    },
+    "mechanism_probe_20260924": {"path": "results/mechanism_probe_20260924", "files": 8},
+    "mechanism_repair_20260924": {"path": "results/mechanism_repair_20260924", "files": 8},
+    "mechanism_reuse_bands_20260924": {"path": "results/mechanism_reuse_bands_20260924", "files": 22},
+    "memory_v13_six_graphs": {
+      "path": "results/memory_v13_six_graphs",
+      "files": 4308,
+      "status": {
+        "requested_configs": 36,
+        "recorded_rows": 144,
+        "ok_rows": 144,
+        "paired_q3": 48,
+        "originally_stopped_global_deadline": true,
+        "completion_limit_seconds": 900.0,
+        "completion_wall_seconds": 315.63874395399944,
+        "completion_deadline_reached": false,
+        "never_started_search_jobs_completed": 29,
+        "same_plan_pairs_attempted": 24,
+        "formal_100_graph_complete": false,
+        "requested_priority_gate_passed": false
+      }
+    }
+  },
+  "original_inputs_or_papers_included": false,
+  "official_source_modified": false,
+  "common_fields": "Full per_case.csv / trajectory.csv / budget_prefixes.csv and 48 Q3 pair responses are inside the original run folder in this archive. Repository comparison.csv is an additional readable index, not a replacement.",
+  "raw_scope": "All new memory candidate responses, selected/failure old responses, all preserved old scalar attempts, requests/progress/seed costs/frozen source. Original old solver did not save every nonwinning successful response.",
+  "clock_notice": "memory_v13_six_graphs was executed with adapter1.3; original exports retained; summary1.4 reexports add conservative clock bounds, not new measurements.",
+  "priority_cases_not_reexecuted": ["005", "051", "073", "090", "092", "067"],
+  "optional_residency_helper": "GitHub write was blocked; not retried, not included as publishable source. Its measured supplemental diagnostic results are retained. Main runner/plugin do not depend on that helper."
+}
