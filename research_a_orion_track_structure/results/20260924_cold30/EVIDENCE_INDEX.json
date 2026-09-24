@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "formal_source": "research_a_orion_anytime/team_results/day01/combined_final",
+  "raw_sources": [
+    "research_a_orion_anytime/team_results/day01/shard_0/final",
+    "research_a_orion_anytime/team_results/day01/shard_1/final"
+  ],
+  "fresh_official_replay": {
+    "workflow_run_id": 36046094858,
+    "purpose": "formal selected-plan replay and first real structural candidate gate"
+  },
+  "effective_core_replay_044": {
+    "workflow_run_id": 36046578817,
+    "result": {
+      "formal_n3": 45343,
+      "formal_n5": 67069,
+      "padded_n3_to_n5": 45343,
+      "audit_ok": true
+    }
+  },
+  "cold_paired_30s": {
+    "workflow_run_id": 36046726567,
+    "job_id": 107791998297,
+    "machine": "GitHub hosted Ubuntu runner, Python 3.12",
+    "cases": ["016","024","044","048","059"],
+    "questions": [1,2,3],
+    "cores": [2,5],
+    "budget_seconds_each_arm": 30,
+    "workers": 2
+  },
+  "raw_final_archive_inspection": {
+    "workflow_run_id": 36047055409,
+    "job_id": 107793080974,
+    "notes": "Reassembled both unchanged final transfer archives and inspected progress/summary/request/plan/result paths for the selected structure cases. Raw history is used as evidence, not as a substitute for fresh re-evaluation."
+  },
+  "temporary_workflow_removed": true
+}
