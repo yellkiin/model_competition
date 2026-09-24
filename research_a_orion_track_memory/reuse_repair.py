@@ -9,7 +9,7 @@ from collections import defaultdict
 from copy import deepcopy
 import math
 import time
-from research_a_orion_anytime.core import plan_view, make_plan, bounds, planned_traffic
+from research_a_orion_anytime.core import plan_view, make_plan, bounds, planned_traffic\nfrom .policy import search_state
 
 VERSION = 'memory-reuse-2.2'
 
