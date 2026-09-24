@@ -41,8 +41,8 @@ jobs:
                           for n in matches[:35]:
                               print('RAW_PATH',shard,c,n)
                               low=n.lower()
-                              if (low.endswith('.json') or low.endswith('.json.gz')) and
-                                  any(k in low for k in ('progress','summary','request')):
+                              if ((low.endswith('.json') or low.endswith('.json.gz')) and
+                                  any(k in low for k in ('progress','summary','request'))):
                                   try:
                                       raw=z.read(n)
                                       if low.endswith('.gz'):
