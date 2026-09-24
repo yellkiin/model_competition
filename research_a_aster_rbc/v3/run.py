@@ -17,9 +17,7 @@ from .model import read_json
 from .policy import VERSION
 from .session import dump
 
-ROOT=Path(__file__).resolve().parents[3]
-
-
+ROOT=Path(__file__).resolve().parents[2]
 from .reporting import aggregate
 
 
@@ -77,7 +75,6 @@ def main(argv=None):
         manifest=old
     else:
         out.mkdir(parents=True,exist_ok=False);dump(out/'manifest.json',manifest)
-    # Resume ONLY unstarted jobs; never overwrite or silently rerun partial/failed jobs.
     pending=[job for job in jobs if not (out/job['id']).exists()]
     deadline=time.monotonic()+args.wall_seconds;active={};cursor=0
     print(f'Output: {out}; unstarted jobs: {len(pending)}',flush=True)
