@@ -15,51 +15,96 @@ jobs:
             research_a_orion_anytime
             research_a_orion_track_structure
             research_a_orion_review_3pc
-            调研/A题_文献库
-            调研/A题_文献.json
             题目/A题
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Inspect official assets and selected-plan archive
+      - name: Replay formal selected plans and structural candidates
         shell: bash
         run: |
           set -euo pipefail
-          python --version
           python - <<'PY'
+          import json, zipfile, time
           from pathlib import Path
-          import zipfile, re
+          from research_a_orion_anytime.engine import OfficialSession
+          from research_a_orion_track_structure.analyze import graph_features, timeline
+          from research_a_orion_track_structure.plugin import pad_plan, propose
+
           root=Path('.')
-          z=root/'research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip'
-          print('selected_zip',z.exists(),z.stat().st_size if z.exists() else None)
-          if z.exists():
-              with zipfile.ZipFile(z) as f:
-                  names=f.namelist()
-                  print('archive_entries',len(names))
-                  for n in names:
-                      if re.search(r'044',n):
-                          print('MATCH044',n)
-                  print('sample',*names[:25],sep='\n')
-          base=root/'题目/A题'
-          docs=list(base.glob('*.docx'))
-          print('docx',*[str(x) for x in docs],sep='\n')
-          for p in docs:
-              try:
-                  with zipfile.ZipFile(p) as f:
-                      xml=f.read('word/document.xml').decode('utf-8','ignore')
-                  txt=re.sub(r'<[^>]+>',' ',xml)
-                  txt=re.sub(r'\s+',' ',txt)
-                  print('DOC_TEXT',p,txt[:16000])
-              except Exception as e:
-                  print('DOC_ERR',p,e)
+          official=root/'题目/A题/通用神经网络处理器下的多核调度问题  附件'
+          data=official/'data'
+          config=data/'config.txt'
+          if not config.exists():
+              config=official/'config.txt'
+          zpath=root/'research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip'
+          out=root/'gate_outputs'; out.mkdir(exist_ok=True)
+          cases=['001','016','024','044','048','059','064','084']
+          selected={}
+          with zipfile.ZipFile(zpath) as z:
+              for c in cases:
+                  for q,n in [(2,2),(2,3),(2,5),(1,5),(3,5)]:
+                      name=f'plans/q{q}/n{n}/case_{c}_multicore_res.json'
+                      try:
+                          selected[(c,q,n)]=json.loads(z.read(name))
+                      except KeyError:
+                          pass
+
+          rows=[]
+          diag={}
+          for c,q,n in [('016',2,5),('024',2,5),('044',2,3),('044',2,5),
+                        ('048',2,5),('059',2,5),('064',2,5),('001',2,5),('084',2,5)]:
+              s=OfficialSession(official,data/f'case_{c}.json',config)
+              plan=selected[(c,q,n)]
+              r=s.evaluate(plan,q)
+              d=timeline(s.graph,plan,r)
+              feat=graph_features(s.graph,s.cfg,n)
+              diag[f'{c}_q{q}_n{n}']={'timeline':d,'graph':feat}
+              rows.append({'case':c,'q':q,'n':n,'kind':'formal_selected',
+                           'makespan':r['official_result']['makespan'],
+                           'added_copy_bytes':r['official_result']['data_movement_bytes']['added_copy_bytes'],
+                           'effective_cores':d['effective_cores'],
+                           'core_compute_ops':[x['compute_ops'] for x in d['cores']],
+                           'core_pipe_work':[x['pipe_work'] for x in d['cores']]})
+          # Required effective-core test: exact formal q2/n3 plan, padded to n5, fresh official evaluation.
+          s=OfficialSession(official,data/'case_044.json',config)
+          p3=selected[('044',2,3)]
+          padded=pad_plan(p3,5)
+          rp=s.evaluate(padded,2)
+          dp=timeline(s.graph,padded,rp)
+          rows.append({'case':'044','q':2,'n':5,'kind':'padded_formal_n3',
+                       'makespan':rp['official_result']['makespan'],
+                       'added_copy_bytes':rp['official_result']['data_movement_bytes']['added_copy_bytes'],
+                       'effective_cores':dp['effective_cores'],
+                       'core_compute_ops':[x['compute_ops'] for x in dp['cores']],
+                       'core_pipe_work':[x['pipe_work'] for x in dp['cores']]})
+          # Evaluate deterministic structure candidates directly on representative bad/good cases.
+          for c in ['016','024','044','048','064','059','001']:
+              for q in [1,2,3]:
+                  s=OfficialSession(official,data/f'case_{c}.json',config)
+                  start=time.monotonic()
+                  for i,cand in enumerate(propose(s.graph,5,s.cfg,q,deadline=start+45)):
+                      if i>=4: break
+                      try:
+                          rr=s.evaluate(cand['plan'],q)
+                          raw=rr['official_result']
+                          td=timeline(s.graph,cand['plan'],rr)
+                          rows.append({'case':c,'q':q,'n':5,'kind':'structure_candidate',
+                                       'name':cand['name'],'family':cand['family'],
+                                       'status':rr['status'],'makespan':raw['makespan'],
+                                       'added_copy_bytes':raw['data_movement_bytes']['added_copy_bytes'],
+                                       'effective_cores':td['effective_cores'],
+                                       'core_compute_ops':[x['compute_ops'] for x in td['cores']]})
+                      except Exception as e:
+                          rows.append({'case':c,'q':q,'n':5,'kind':'structure_candidate',
+                                       'name':cand['name'],'family':cand['family'],'status':'error','error':repr(e)})
+          (out/'rows.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf8')
+          (out/'diag.json').write_text(json.dumps(diag,ensure_ascii=False,indent=2),encoding='utf8')
+          print('STRUCTURE_ROWS_BEGIN')
+          for row in rows:
+              print(json.dumps(row,ensure_ascii=False,separators=(',',':')))
+          print('STRUCTURE_ROWS_END')
           PY
-      - name: Verify selected real inputs are materialized
-        shell: bash
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          from pathlib import Path
-          for c in ('001','016','024','044','048','064','084'):
-              p=Path('题目/A题/通用神经网络处理器下的多核调度问题  附件/data')/f'case_{c}.json'
-              print(c,p.exists(),p.stat().st_size if p.exists() else None,p.read_bytes()[:32] if p.exists() else b'')
-          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-structure-gate
+          path: gate_outputs/
