@@ -7,3 +7,5 @@ refinement_complete包含700有效主记录、620改进终态（619有效/1失�
 全部失败、原始监督器退出码null的状态差异与执行来源均保留。分卷均为同一个标准transfer ZIP的连续字节；下载完整分卷后运行reassemble_transfer.py，再使用原transfer unpack。只检查文件目录结构、键数和分卷字节数，不执行哈希/指纹测试。
 
 AI辅助：在原报告CSV基础上生成逐图改进、低尾贡献、预算前缀与解释性报告；事实与瓶颈推断分开。报告生成脚本放analysis_tools，实验接续脚本放每版execution_provenance。无自动PR合并或赛事平台上传。
+
+2026-09-24：两片结果已在新根解包并使用原collect统一验证通过，1400主记录+500同方案缓存对照+1400主核验完整，formal_complete=true。完整团队报告见 ../combined_final/REPORT.md。本机最终包已修复Windows扩展路径引用后发布，六卷共498612048字节。
