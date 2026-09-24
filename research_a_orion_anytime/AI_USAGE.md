@@ -23,3 +23,5 @@ were run. setup_windows.ps1 reports CPython 3.12.5 x64 and Workers=1.
 Failed startup roots day01 and day01_fix02 are retained. The restarted output is
 day01_fix03, with the original team deadline 2026-09-24T17:43:48.3137853+00:00.
 Further actual import failure identified strategies.py:48 with the same joined-line defect. Focused search of the execution dependency chain also found core.py:345 adding two append return values. Both were split back into the intended two statements. New run root day01_fix04; same team deadline; all earlier failures retained.
+
+2026-09-24 User authorized early refinement-complete result publication while the existing process continues pairs and final verification. Added ITERATION_HANDOFF.md and TEAMMATE_ITERATION_PROMPT.md with shared day01/shard_0 and shard_1 artifact schema, immutable phase/final snapshots, path relocation, and evidence-based performance diagnosis. No experiment Python, budgets, official inputs, evaluators or live outputs changed. Phase results remain incomplete until actual cache pairs and final verification; original failures retained.

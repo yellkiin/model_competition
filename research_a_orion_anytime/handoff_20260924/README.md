@@ -90,3 +90,7 @@ Get-Content -LiteralPath $S.stdout -Tail 60 -Wait
 
 
 已知恢复限制：请保持监督进程连续运行。现有 formal 入口在恢复时仍按整片全部作业重新做容量准入，尚未扣除已完成记录；因此较晚中断后可能因剩余时间不足而拒绝恢复，即使已有很多结果。若中断，请保留原 Gate 有无、Workers、Official、Out 等参数，先报告协调人；不能承诺任意时点可断点续跑，也不能绕过容量门槛。此限制不影响目前连续运行和首次启动。
+
+## 2026-09-24 快速迭代补充
+
+用户要求改进阶段结束先发阶段结果，同时原进程继续缓存配对和验证。运行中的机器请采用新增的 [统一阶段交接规范](ITERATION_HANDOFF.md) 和 [队友补充提示词](TEAMMATE_ITERATION_PROMPT.md)；无需重新部署或覆盖当前代码。两台发布路径分别为 research_a_orion_anytime/team_results/day01/shard_0 和 shard_1，统一 refinement_complete 与 final 子目录。本补充优先于下文停止后才打包的旧说明；活动auto不能直接全量打包，先按新规范冻结已完成阶段并重定位路径。
