@@ -1,0 +1,33 @@
+{
+  "observed_at_utc": "2026-09-24T11:53:23.722876+00:00",
+  "raw_supervisor_status": {
+    "status": "process_failed",
+    "pid": 75740,
+    "started_utc": "2026-09-24T10:58:08.2705491+00:00",
+    "team_deadline_utc": "2026-09-24T17:43:48.3137853+00:00",
+    "main_deadline_utc": "2026-09-24T16:43:48.3137853+00:00",
+    "shards": 2,
+    "shard_index": 0,
+    "workers": 4,
+    "stage": "continuation",
+    "out": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0_w4\\auto",
+    "stdout": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0_w4\\launcher_stdout.txt",
+    "stderr": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0_w4\\launcher_stderr.txt",
+    "source": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0_w2\\auto",
+    "switch_record": "D:\\桌面\\model_competition_orion_anytime\\research_a_orion_anytime\\runs\\team_day01_shard0_w4\\worker_switch.json",
+    "exit_code": null,
+    "finished_utc": "2026-09-24T11:42:29.7824020+00:00"
+  },
+  "python_status": {
+    "stage": "finished",
+    "status": "complete",
+    "workers": 4
+  },
+  "report_expected": 700,
+  "report_valid": 700,
+  "valid_pairs": 250,
+  "independent_checks": 700,
+  "missing": [],
+  "interpretation": "Supervisor classified unavailable/null ExitCode as failure. Actual exit code unknown; Python completion and complete official verification are available. Original record preserved.",
+  "note": "This later observation does not promote a refinement_complete snapshot to final verification."
+}
