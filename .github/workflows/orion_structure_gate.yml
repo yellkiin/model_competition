@@ -1,0 +1,56 @@
+name: ORION structure real-data gate
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect official assets and selected-plan archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          python --version
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile, re
+          root=Path('.')
+          z=root/'research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip'
+          print('selected_zip',z.exists(),z.stat().st_size if z.exists() else None)
+          if z.exists():
+              with zipfile.ZipFile(z) as f:
+                  names=f.namelist()
+                  print('archive_entries',len(names))
+                  for n in names:
+                      if re.search(r'044',n) and re.search(r'(q|question)[_=-]?2',n,re.I):
+                          print('MATCH044Q2',n)
+                  print('sample',*names[:25],sep='\n')
+          base=root/'题目/A题'
+          docs=list(base.glob('*.docx'))
+          print('docx',*[str(x) for x in docs],sep='\n')
+          for p in docs:
+              try:
+                  with zipfile.ZipFile(p) as f:
+                      xml=f.read('word/document.xml').decode('utf-8','ignore')
+                  txt=re.sub(r'<[^>]+>',' ',xml)
+                  txt=re.sub(r'\s+',' ',txt)
+                  if '核' in txt or 'Task' in txt:
+                      print('DOC_TEXT',p,txt[:12000])
+              except Exception as e:
+                  print('DOC_ERR',p,e)
+          PY
+      - name: Verify selected real inputs are materialized
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          for c in ('001','016','024','044','048','064','084'):
+              p=Path('题目/A题/通用神经网络处理器下的多核调度问题  附件/data')/f'case_{c}.json'
+              print(c,p.exists(),p.stat().st_size if p.exists() else None,p.read_bytes()[:32] if p.exists() else b'')
+          PY
