@@ -1,0 +1,19 @@
+{
+  "supervisor_pid": 12580,
+  "started_local": "2026-09-24T15:03:31.9542210+08:00",
+  "run_root": "E:\\handoff_20260924\\orion_team_run_20260924",
+  "official": "E:\\handoff_20260924\\A题官方附件",
+  "python": "C:\\Users\\13925\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "workers": 2,
+  "shards": 2,
+  "shard_index": 1,
+  "stdout": "E:\\handoff_20260924\\orion_team_run_20260924\\local_shard1_supervisor_stdout_20260924_150331.txt",
+  "stderr": "E:\\handoff_20260924\\orion_team_run_20260924\\local_shard1_supervisor_stderr_20260924_150331.txt",
+  "probe_python": "CPython 3.12.14 AMD64",
+  "probe_platform": "Windows-11-10.0.26200-SP0",
+  "probe_logical_cpus": 16,
+  "probe_available_memory_gib": 16.00365447998047,
+  "probe_recommended_workers": 2,
+  "source_changes": [],
+  "adaptation": "Working directory and -Python/-Official parameters only; no source or official input changes"
+}

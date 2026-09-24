@@ -1,0 +1,1157 @@
+[
+  {
+    "key": [
+      "case_046",
+      3,
+      2
+    ],
+    "main_summary": {
+      "case": "case_046",
+      "q": 3,
+      "n": 2,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_046_q3_n2",
+      "job_identity": "f04da5d77f6a91166297aa35fc040b6328e4fd2ac3ab935a68c76f9a5fc992fa",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "1917fbb2bfe1141fd8dc4bdac6119dd44014df9a13eb18faa3e55f25bcc91659",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 3,
+        "n": 2,
+        "seconds": 30,
+        "max_evaluations": 256,
+        "strategy": "anytime",
+        "gap_tolerance": 0.005,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": true,
+      "process_seconds": 30.015999999974156,
+      "total_job_seconds": 30.015999999974156,
+      "construction_seconds": 0.25,
+      "evaluations": 69,
+      "exit_code": 1,
+      "stopped": "hard_job_deadline",
+      "features": {
+        "ops": 992,
+        "components": 8,
+        "max_component": 124
+      },
+      "makespan": 113944,
+      "plan_hash": "662303e3846a447b59cfee10a358e4bdd02340a3224a691795e3c3b908f825ed",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_046_q3_n2/incumbents/e0039_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_046_q3_n2/incumbents/e0039_result.json.gz",
+      "certificate": {
+        "compute_path": 28456,
+        "compute_load": 104624.0,
+        "compulsory_ddr": 17691.2,
+        "global_lower": 104624.0,
+        "logical_aliases": false,
+        "candidate_core_load": 104624,
+        "candidate_communication": 28456,
+        "candidate_io": 6425.393548387096,
+        "pre_spill_read_bytes": 1926336,
+        "pre_spill_write_bytes": 65536,
+        "candidate_lower": 104624.0,
+        "feasible_upper": 113944,
+        "approximation_ratio_upper": 1.0890808992200642,
+        "absolute_optimality_gap_upper": 9320.0
+      },
+      "cache_hit_rate": 0.004551646234094156,
+      "original_graph_copy_bytes": 1061472,
+      "scheduled_copy_bytes": 1991872,
+      "added_copy_bytes": 930400,
+      "partition_added_copy_bytes": 930400,
+      "spill_added_copy_bytes": 0,
+      "prefix3_makespan": 113992,
+      "completed_evaluations": 68,
+      "official_eval_seconds": 12.091972299880581,
+      "first_valid_seconds": 0.8280000000086147,
+      "expanded_construction_seconds": 0.46900000001187436,
+      "coverage_seconds": 0.875,
+      "end_to_end_solve_seconds": 30.890999999974156
+    },
+    "pair_summary": {
+      "case": "case_046",
+      "q": 2,
+      "n": 2,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_046_q2_n2",
+      "job_identity": "9b17649ae627a3ee4bcffaaa4b9b36d86b499674d30285779ad5b3b919d34c93",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "1917fbb2bfe1141fd8dc4bdac6119dd44014df9a13eb18faa3e55f25bcc91659",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 2,
+        "n": 2,
+        "seconds": 8,
+        "max_evaluations": 1,
+        "strategy": "anytime",
+        "gap_tolerance": 0,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": false,
+      "process_seconds": 0.23499999998603016,
+      "total_job_seconds": 0.25,
+      "construction_seconds": 0.030999999988125637,
+      "evaluations": 1,
+      "exit_code": 0,
+      "stopped": "single_official_evaluation",
+      "features": {
+        "ops": 992,
+        "components": 8,
+        "max_component": 124
+      },
+      "makespan": 113936,
+      "plan_hash": "662303e3846a447b59cfee10a358e4bdd02340a3224a691795e3c3b908f825ed",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_046_q2_n2/incumbents/e0001_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_046_q2_n2/incumbents/e0001_result.json.gz",
+      "certificate": {
+        "compute_path": 28456,
+        "compute_load": 104624.0,
+        "compulsory_ddr": 17691.2,
+        "global_lower": 104624.0,
+        "logical_aliases": false,
+        "candidate_core_load": 104624,
+        "candidate_communication": 28456,
+        "candidate_io": 33197.86666666667,
+        "pre_spill_read_bytes": 1926336,
+        "pre_spill_write_bytes": 65536,
+        "candidate_lower": 104624.0,
+        "feasible_upper": 113936,
+        "approximation_ratio_upper": 1.089004434928888,
+        "absolute_optimality_gap_upper": 9312.0
+      },
+      "cache_hit_rate": null,
+      "original_graph_copy_bytes": 1061472,
+      "scheduled_copy_bytes": 1991872,
+      "added_copy_bytes": 930400,
+      "partition_added_copy_bytes": 930400,
+      "spill_added_copy_bytes": 0,
+      "prefix3_makespan": 113936,
+      "completed_evaluations": 1,
+      "official_eval_seconds": 0.09519369999179617,
+      "first_valid_seconds": 0.125,
+      "expanded_construction_seconds": 0
+    },
+    "cache_stats": {
+      "copy_in_hits": 15,
+      "copy_in_misses": 93,
+      "hit_bytes": 8768,
+      "miss_bytes": 1917568,
+      "hits": 15,
+      "accesses": 108,
+      "hit_rate": 0.004551646234094156
+    },
+    "with_data_movement": {
+      "original_graph_copy_bytes": 1061472,
+      "scheduled_copy_bytes": 1991872,
+      "added_copy_bytes": 930400,
+      "partition_added_copy_bytes": 930400,
+      "spill_added_copy_bytes": 0
+    },
+    "without_data_movement": {
+      "original_graph_copy_bytes": 1061472,
+      "scheduled_copy_bytes": 1991872,
+      "added_copy_bytes": 930400,
+      "partition_added_copy_bytes": 930400,
+      "spill_added_copy_bytes": 0
+    },
+    "with_memory_peak": {
+      "0": {
+        "L1": 377344,
+        "UB": 0
+      },
+      "1": {
+        "L1": 377344,
+        "UB": 0
+      }
+    },
+    "without_memory_peak": {
+      "0": {
+        "L1": 377344,
+        "UB": 0
+      },
+      "1": {
+        "L1": 377344,
+        "UB": 0
+      }
+    },
+    "with_core_ends": [
+      113944,
+      113880
+    ],
+    "without_core_ends": [
+      113936,
+      113856
+    ],
+    "cache_capacity": 1048576,
+    "cache_bandwidth": 250,
+    "ddr_bandwidth": 60
+  },
+  {
+    "key": [
+      "case_046",
+      3,
+      5
+    ],
+    "main_summary": {
+      "case": "case_046",
+      "q": 3,
+      "n": 5,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_046_q3_n5",
+      "job_identity": "f39537f0baa9099d871bca1d5e57504989d8b80155f88a11b3b14ac10219563e",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "1917fbb2bfe1141fd8dc4bdac6119dd44014df9a13eb18faa3e55f25bcc91659",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 3,
+        "n": 5,
+        "seconds": 30,
+        "max_evaluations": 256,
+        "strategy": "anytime",
+        "gap_tolerance": 0.005,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": true,
+      "process_seconds": 30.01500000001397,
+      "total_job_seconds": 30.01500000001397,
+      "construction_seconds": 0.5320000000065193,
+      "evaluations": 101,
+      "exit_code": 1,
+      "stopped": "hard_job_deadline",
+      "features": {
+        "ops": 992,
+        "components": 8,
+        "max_component": 124
+      },
+      "makespan": 52952,
+      "plan_hash": "b02ac04aec8963e80e473e03b3a287e46bac4f5f810f287aec506a9257d97772",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_046_q3_n5/incumbents/e0100_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_046_q3_n5/incumbents/e0100_result.json.gz",
+      "certificate": {
+        "compute_path": 28456,
+        "compute_load": 41849.6,
+        "compulsory_ddr": 17691.2,
+        "global_lower": 41849.6,
+        "logical_aliases": false,
+        "candidate_core_load": 45904,
+        "candidate_communication": 29956,
+        "candidate_io": 15969.754838709678,
+        "pre_spill_read_bytes": 4790880,
+        "pre_spill_write_bytes": 159744,
+        "candidate_lower": 45904,
+        "feasible_upper": 52952,
+        "approximation_ratio_upper": 1.265292858235204,
+        "absolute_optimality_gap_upper": 11102.400000000001
+      },
+      "cache_hit_rate": 0.7699791477026966,
+      "original_graph_copy_bytes": 1061472,
+      "scheduled_copy_bytes": 5147232,
+      "added_copy_bytes": 4085760,
+      "partition_added_copy_bytes": 3889152,
+      "spill_added_copy_bytes": 196608,
+      "prefix3_makespan": 80683,
+      "completed_evaluations": 100,
+      "official_eval_seconds": 11.431660400005057,
+      "first_valid_seconds": 1.187999999994645,
+      "expanded_construction_seconds": 0.5309999999881256,
+      "coverage_seconds": 1.6089999999967404,
+      "end_to_end_solve_seconds": 31.62400000001071
+    },
+    "pair_summary": {
+      "case": "case_046",
+      "q": 2,
+      "n": 5,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_046_q2_n5",
+      "job_identity": "6b9e4ee8311cecfa93e59957dd678c25ea33506e0468617e802eaa95fb325393",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "1917fbb2bfe1141fd8dc4bdac6119dd44014df9a13eb18faa3e55f25bcc91659",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 2,
+        "n": 5,
+        "seconds": 8,
+        "max_evaluations": 1,
+        "strategy": "anytime",
+        "gap_tolerance": 0,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": false,
+      "process_seconds": 0.2970000000204891,
+      "total_job_seconds": 0.2970000000204891,
+      "construction_seconds": 0.014999999984866008,
+      "evaluations": 1,
+      "exit_code": 0,
+      "stopped": "single_official_evaluation",
+      "features": {
+        "ops": 992,
+        "components": 8,
+        "max_component": 124
+      },
+      "makespan": 105278,
+      "plan_hash": "b02ac04aec8963e80e473e03b3a287e46bac4f5f810f287aec506a9257d97772",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_046_q2_n5/incumbents/e0001_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_046_q2_n5/incumbents/e0001_result.json.gz",
+      "certificate": {
+        "compute_path": 28456,
+        "compute_load": 41849.6,
+        "compulsory_ddr": 17691.2,
+        "global_lower": 41849.6,
+        "logical_aliases": false,
+        "candidate_core_load": 45904,
+        "candidate_communication": 29956,
+        "candidate_io": 82510.4,
+        "pre_spill_read_bytes": 4790880,
+        "pre_spill_write_bytes": 159744,
+        "candidate_lower": 82510.4,
+        "feasible_upper": 105278,
+        "approximation_ratio_upper": 2.5156273895090995,
+        "absolute_optimality_gap_upper": 63428.4
+      },
+      "cache_hit_rate": null,
+      "original_graph_copy_bytes": 1061472,
+      "scheduled_copy_bytes": 5147232,
+      "added_copy_bytes": 4085760,
+      "partition_added_copy_bytes": 3889152,
+      "spill_added_copy_bytes": 196608,
+      "prefix3_makespan": 105278,
+      "completed_evaluations": 1,
+      "official_eval_seconds": 0.12612369999988005,
+      "first_valid_seconds": 0.15599999998812564,
+      "expanded_construction_seconds": 0
+    },
+    "cache_stats": {
+      "copy_in_hits": 188,
+      "copy_in_misses": 125,
+      "hit_bytes": 3816608,
+      "miss_bytes": 1140160,
+      "hits": 188,
+      "accesses": 313,
+      "hit_rate": 0.7699791477026966
+    },
+    "with_data_movement": {
+      "original_graph_copy_bytes": 1061472,
+      "scheduled_copy_bytes": 5147232,
+      "added_copy_bytes": 4085760,
+      "partition_added_copy_bytes": 3889152,
+      "spill_added_copy_bytes": 196608
+    },
+    "without_data_movement": {
+      "original_graph_copy_bytes": 1061472,
+      "scheduled_copy_bytes": 5147232,
+      "added_copy_bytes": 4085760,
+      "partition_added_copy_bytes": 3889152,
+      "spill_added_copy_bytes": 196608
+    },
+    "with_memory_peak": {
+      "0": {
+        "L1": 524288,
+        "UB": 0
+      },
+      "1": {
+        "L1": 177152,
+        "UB": 0
+      },
+      "2": {
+        "L1": 387584,
+        "UB": 0
+      },
+      "3": {
+        "L1": 521728,
+        "UB": 0
+      },
+      "4": {
+        "L1": 523776,
+        "UB": 0
+      }
+    },
+    "without_memory_peak": {
+      "0": {
+        "L1": 524288,
+        "UB": 0
+      },
+      "1": {
+        "L1": 177152,
+        "UB": 0
+      },
+      "2": {
+        "L1": 387584,
+        "UB": 0
+      },
+      "3": {
+        "L1": 521728,
+        "UB": 0
+      },
+      "4": {
+        "L1": 523776,
+        "UB": 0
+      }
+    },
+    "with_core_ends": [
+      43852,
+      52952,
+      52155,
+      52414,
+      50478
+    ],
+    "without_core_ends": [
+      76261,
+      105278,
+      92513,
+      105155,
+      97938
+    ],
+    "cache_capacity": 1048576,
+    "cache_bandwidth": 250,
+    "ddr_bandwidth": 60
+  },
+  {
+    "key": [
+      "case_084",
+      3,
+      5
+    ],
+    "main_summary": {
+      "case": "case_084",
+      "q": 3,
+      "n": 5,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_084_q3_n5",
+      "job_identity": "07707f63485127335fd5b3df29b1ec49d451605c34527f6a3c6e62e78c689e01",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "1af22ac8dd69090ed25be62ae1bbb18a922ce99a8cffb2be4f89e7a1234794ee",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 3,
+        "n": 5,
+        "seconds": 60,
+        "max_evaluations": 256,
+        "strategy": "anytime",
+        "gap_tolerance": 0.005,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": true,
+      "process_seconds": 60.046999999991385,
+      "total_job_seconds": 60.046999999991385,
+      "construction_seconds": 5.172000000020489,
+      "evaluations": 11,
+      "exit_code": 1,
+      "stopped": "hard_job_deadline",
+      "features": {
+        "ops": 8616,
+        "components": 1077,
+        "max_component": 8
+      },
+      "makespan": 391700,
+      "plan_hash": "032ba6f1fe1676b325f0c144b80d7d48bf0b9ea279ff4c7acfbe090144a264c4",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_084_q3_n5/incumbents/e0001_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_084_q3_n5/incumbents/e0001_result.json.gz",
+      "certificate": {
+        "compute_path": 2328,
+        "compute_load": 253310.4,
+        "compulsory_ddr": 220605.5,
+        "global_lower": 253310.4,
+        "logical_aliases": false,
+        "candidate_core_load": 253428,
+        "candidate_communication": 2828,
+        "candidate_io": 137856.0,
+        "pre_spill_read_bytes": 14890602,
+        "pre_spill_write_bytes": 8271360,
+        "candidate_lower": 253428,
+        "feasible_upper": 391700,
+        "approximation_ratio_upper": 1.5463241935585748,
+        "absolute_optimality_gap_upper": 138389.6
+      },
+      "cache_hit_rate": 0.0,
+      "original_graph_copy_bytes": 13236330,
+      "scheduled_copy_bytes": 23161962,
+      "added_copy_bytes": 9925632,
+      "partition_added_copy_bytes": 9925632,
+      "spill_added_copy_bytes": 0,
+      "prefix3_makespan": 391700,
+      "completed_evaluations": 10,
+      "official_eval_seconds": 23.17292510002153,
+      "first_valid_seconds": 13.76500000001397,
+      "expanded_construction_seconds": 6.35899999999674,
+      "coverage_seconds": 7.014999999984866,
+      "end_to_end_solve_seconds": 67.06199999997625
+    },
+    "pair_summary": {
+      "case": "case_084",
+      "q": 2,
+      "n": 5,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_084_q2_n5",
+      "job_identity": "e3b15267f79fc6e79a0502810d08ba8e678e3cfe512a66463d83a1c1397ed0f9",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "1af22ac8dd69090ed25be62ae1bbb18a922ce99a8cffb2be4f89e7a1234794ee",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 2,
+        "n": 5,
+        "seconds": 13,
+        "max_evaluations": 1,
+        "strategy": "anytime",
+        "gap_tolerance": 0,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": false,
+      "process_seconds": 2.860000000015134,
+      "total_job_seconds": 2.875,
+      "construction_seconds": 0.25,
+      "evaluations": 1,
+      "exit_code": 0,
+      "stopped": "single_official_evaluation",
+      "features": {
+        "ops": 8616,
+        "components": 1077,
+        "max_component": 8
+      },
+      "makespan": 391700,
+      "plan_hash": "032ba6f1fe1676b325f0c144b80d7d48bf0b9ea279ff4c7acfbe090144a264c4",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_084_q2_n5/incumbents/e0001_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_084_q2_n5/incumbents/e0001_result.json.gz",
+      "certificate": {
+        "compute_path": 2328,
+        "compute_load": 253310.4,
+        "compulsory_ddr": 220605.5,
+        "global_lower": 253310.4,
+        "logical_aliases": false,
+        "candidate_core_load": 253428,
+        "candidate_communication": 2828,
+        "candidate_io": 386032.7,
+        "pre_spill_read_bytes": 14890602,
+        "pre_spill_write_bytes": 8271360,
+        "candidate_lower": 386032.7,
+        "feasible_upper": 391700,
+        "approximation_ratio_upper": 1.5463241935585748,
+        "absolute_optimality_gap_upper": 138389.6
+      },
+      "cache_hit_rate": null,
+      "original_graph_copy_bytes": 13236330,
+      "scheduled_copy_bytes": 23161962,
+      "added_copy_bytes": 9925632,
+      "partition_added_copy_bytes": 9925632,
+      "spill_added_copy_bytes": 0,
+      "prefix3_makespan": 391700,
+      "completed_evaluations": 1,
+      "official_eval_seconds": 2.2493123000022024,
+      "first_valid_seconds": 2.562000000005355,
+      "expanded_construction_seconds": 0
+    },
+    "cache_stats": {
+      "copy_in_hits": 0,
+      "copy_in_misses": 5385,
+      "hit_bytes": 0,
+      "miss_bytes": 14890602,
+      "hits": 0,
+      "accesses": 5385,
+      "hit_rate": 0.0
+    },
+    "with_data_movement": {
+      "original_graph_copy_bytes": 13236330,
+      "scheduled_copy_bytes": 23161962,
+      "added_copy_bytes": 9925632,
+      "partition_added_copy_bytes": 9925632,
+      "spill_added_copy_bytes": 0
+    },
+    "without_data_movement": {
+      "original_graph_copy_bytes": 13236330,
+      "scheduled_copy_bytes": 23161962,
+      "added_copy_bytes": 9925632,
+      "partition_added_copy_bytes": 9925632,
+      "spill_added_copy_bytes": 0
+    },
+    "with_memory_peak": {
+      "0": {
+        "L1": 10752,
+        "UB": 13920
+      },
+      "1": {
+        "L1": 10752,
+        "UB": 13920
+      },
+      "2": {
+        "L1": 10752,
+        "UB": 13920
+      },
+      "3": {
+        "L1": 10752,
+        "UB": 13920
+      },
+      "4": {
+        "L1": 10752,
+        "UB": 13920
+      }
+    },
+    "without_memory_peak": {
+      "0": {
+        "L1": 10752,
+        "UB": 13920
+      },
+      "1": {
+        "L1": 10752,
+        "UB": 13920
+      },
+      "2": {
+        "L1": 10752,
+        "UB": 13920
+      },
+      "3": {
+        "L1": 10752,
+        "UB": 13920
+      },
+      "4": {
+        "L1": 10752,
+        "UB": 13920
+      }
+    },
+    "with_core_ends": [
+      391561,
+      391561,
+      391700,
+      391700,
+      390924
+    ],
+    "without_core_ends": [
+      391561,
+      391561,
+      391700,
+      391700,
+      390924
+    ],
+    "cache_capacity": 1048576,
+    "cache_bandwidth": 250,
+    "ddr_bandwidth": 60
+  },
+  {
+    "key": [
+      "case_024",
+      3,
+      5
+    ],
+    "main_summary": {
+      "case": "case_024",
+      "q": 3,
+      "n": 5,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_024_q3_n5",
+      "job_identity": "4fd90f50994e2a03166f9987ab9973cf3b99b2b90387a0fd0a4acd22e0c9683b",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "f974fbf1a23b4a145b5f8c9c691eb1b247f93d8785d98bb46a9cdd8626399aec",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 3,
+        "n": 5,
+        "seconds": 30,
+        "max_evaluations": 256,
+        "strategy": "anytime",
+        "gap_tolerance": 0.005,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": true,
+      "process_seconds": 30.01600000000326,
+      "total_job_seconds": 30.03200000000652,
+      "construction_seconds": 1.0309999999881256,
+      "evaluations": 10,
+      "exit_code": 1,
+      "stopped": "hard_job_deadline",
+      "features": {
+        "ops": 5959,
+        "components": 1,
+        "max_component": 5959
+      },
+      "makespan": 2227340,
+      "plan_hash": "ce28fb6c4230ed123dc2e8b32996de83d49d43dc5ac3c839180894c670093749",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_024_q3_n5/incumbents/e0010_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_024_q3_n5/incumbents/e0010_result.json.gz",
+      "certificate": {
+        "compute_path": 216948,
+        "compute_load": 510959.0,
+        "compulsory_ddr": 6553.633333333333,
+        "global_lower": 510959.0,
+        "logical_aliases": false,
+        "candidate_core_load": 1582213,
+        "candidate_communication": 246448,
+        "candidate_io": 13659.533333333333,
+        "pre_spill_read_bytes": 2457970,
+        "pre_spill_write_bytes": 819572,
+        "candidate_lower": 1582213,
+        "feasible_upper": 2227340,
+        "approximation_ratio_upper": 4.359136447347048,
+        "absolute_optimality_gap_upper": 1716381.0
+      },
+      "cache_hit_rate": 0.46663873033438164,
+      "original_graph_copy_bytes": 393218,
+      "scheduled_copy_bytes": 3277542,
+      "added_copy_bytes": 2884324,
+      "partition_added_copy_bytes": 2884324,
+      "spill_added_copy_bytes": 0,
+      "prefix3_makespan": 2243194,
+      "completed_evaluations": 10,
+      "official_eval_seconds": 8.104296300036367,
+      "first_valid_seconds": 4.421999999991385,
+      "expanded_construction_seconds": 2.547000000020489,
+      "coverage_seconds": 4.625,
+      "end_to_end_solve_seconds": 34.65700000000652
+    },
+    "pair_summary": {
+      "case": "case_024",
+      "q": 2,
+      "n": 5,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_024_q2_n5",
+      "job_identity": "d700fd06602e6f4bfaf7c39a68b7df4b4691803ef192c5f80a73e12d1c490084",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "f974fbf1a23b4a145b5f8c9c691eb1b247f93d8785d98bb46a9cdd8626399aec",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 2,
+        "n": 5,
+        "seconds": 12,
+        "max_evaluations": 1,
+        "strategy": "anytime",
+        "gap_tolerance": 0,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": false,
+      "process_seconds": 1.1099999999860302,
+      "total_job_seconds": 1.125,
+      "construction_seconds": 0.09399999998277053,
+      "evaluations": 1,
+      "exit_code": 0,
+      "stopped": "single_official_evaluation",
+      "features": {
+        "ops": 5959,
+        "components": 1,
+        "max_component": 5959
+      },
+      "makespan": 2229400,
+      "plan_hash": "ce28fb6c4230ed123dc2e8b32996de83d49d43dc5ac3c839180894c670093749",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_024_q2_n5/incumbents/e0001_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_024_q2_n5/incumbents/e0001_result.json.gz",
+      "certificate": {
+        "compute_path": 216948,
+        "compute_load": 510959.0,
+        "compulsory_ddr": 6553.633333333333,
+        "global_lower": 510959.0,
+        "logical_aliases": false,
+        "candidate_core_load": 1582213,
+        "candidate_communication": 246448,
+        "candidate_io": 54625.7,
+        "pre_spill_read_bytes": 2457970,
+        "pre_spill_write_bytes": 819572,
+        "candidate_lower": 1582213,
+        "feasible_upper": 2229400,
+        "approximation_ratio_upper": 4.363168081979181,
+        "absolute_optimality_gap_upper": 1718441.0
+      },
+      "cache_hit_rate": null,
+      "original_graph_copy_bytes": 393218,
+      "scheduled_copy_bytes": 3277542,
+      "added_copy_bytes": 2884324,
+      "partition_added_copy_bytes": 2884324,
+      "spill_added_copy_bytes": 0,
+      "prefix3_makespan": 2229400,
+      "completed_evaluations": 1,
+      "official_eval_seconds": 0.8086615999927744,
+      "first_valid_seconds": 0.9379999999946449,
+      "expanded_construction_seconds": 0
+    },
+    "cache_stats": {
+      "copy_in_hits": 87,
+      "copy_in_misses": 173,
+      "hit_bytes": 1146984,
+      "miss_bytes": 1310986,
+      "hits": 87,
+      "accesses": 260,
+      "hit_rate": 0.46663873033438164
+    },
+    "with_data_movement": {
+      "original_graph_copy_bytes": 393218,
+      "scheduled_copy_bytes": 3277542,
+      "added_copy_bytes": 2884324,
+      "partition_added_copy_bytes": 2884324,
+      "spill_added_copy_bytes": 0
+    },
+    "without_data_movement": {
+      "original_graph_copy_bytes": 393218,
+      "scheduled_copy_bytes": 3277542,
+      "added_copy_bytes": 2884324,
+      "partition_added_copy_bytes": 2884324,
+      "spill_added_copy_bytes": 0
+    },
+    "with_memory_peak": {
+      "0": {
+        "L1": 393216,
+        "UB": 98314
+      },
+      "1": {
+        "L1": 163840,
+        "UB": 98306
+      },
+      "2": {
+        "L1": 131072,
+        "UB": 65538
+      },
+      "3": {
+        "L1": 393216,
+        "UB": 98314
+      },
+      "4": {
+        "L1": 196608,
+        "UB": 98306
+      }
+    },
+    "without_memory_peak": {
+      "0": {
+        "L1": 393216,
+        "UB": 98314
+      },
+      "1": {
+        "L1": 163840,
+        "UB": 98306
+      },
+      "2": {
+        "L1": 131072,
+        "UB": 65538
+      },
+      "3": {
+        "L1": 393216,
+        "UB": 98314
+      },
+      "4": {
+        "L1": 196608,
+        "UB": 98306
+      }
+    },
+    "with_core_ends": [
+      2147212,
+      2078199,
+      2144043,
+      2227340,
+      2053292
+    ],
+    "without_core_ends": [
+      2149272,
+      2080259,
+      2146103,
+      2229400,
+      2054937
+    ],
+    "cache_capacity": 1048576,
+    "cache_bandwidth": 250,
+    "ddr_bandwidth": 60
+  },
+  {
+    "key": [
+      "case_090",
+      3,
+      5
+    ],
+    "main_summary": {
+      "case": "case_090",
+      "q": 3,
+      "n": 5,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_090_q3_n5",
+      "job_identity": "ff9f0e5831edfc439a35ff037dee306fda999c112de0d4d8094c9fff8c79bddd",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "a91d3ad4c40e53d5731b81b3eb72bcf922f5ef06094e860b5c5729619cb2d312",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 3,
+        "n": 5,
+        "seconds": 30,
+        "max_evaluations": 256,
+        "strategy": "anytime",
+        "gap_tolerance": 0.005,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": true,
+      "process_seconds": 30.01500000001397,
+      "total_job_seconds": 30.01500000001397,
+      "construction_seconds": 0.8120000000053551,
+      "evaluations": 45,
+      "exit_code": 1,
+      "stopped": "hard_job_deadline",
+      "features": {
+        "ops": 1664,
+        "components": 13,
+        "max_component": 128
+      },
+      "makespan": 208497,
+      "plan_hash": "35f8ec6cc61e854a02a6b7735980794f9ada03d9c377a0c1c5bb1db21771bf55",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_090_q3_n5/incumbents/e0029_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/refinement/case_090_q3_n5/incumbents/e0029_result.json.gz",
+      "certificate": {
+        "compute_path": 63936,
+        "compute_load": 168105.6,
+        "compulsory_ddr": 37139.2,
+        "global_lower": 168105.6,
+        "logical_aliases": false,
+        "candidate_core_load": 175200,
+        "candidate_communication": 71436,
+        "candidate_io": 37472.2064516129,
+        "pre_spill_read_bytes": 11179392,
+        "pre_spill_write_bytes": 436992,
+        "candidate_lower": 175200,
+        "feasible_upper": 208497,
+        "approximation_ratio_upper": 1.2402739706470218,
+        "absolute_optimality_gap_upper": 40391.399999999994
+      },
+      "cache_hit_rate": 0.7606875445685762,
+      "original_graph_copy_bytes": 2228352,
+      "scheduled_copy_bytes": 16595328,
+      "added_copy_bytes": 14366976,
+      "partition_added_copy_bytes": 9388032,
+      "spill_added_copy_bytes": 4978944,
+      "prefix3_makespan": 260711,
+      "completed_evaluations": 44,
+      "official_eval_seconds": 10.650161099940306,
+      "first_valid_seconds": 1.9059999999881256,
+      "expanded_construction_seconds": 0.8599999999860302,
+      "coverage_seconds": 2.5469999999913853,
+      "end_to_end_solve_seconds": 32.562000000005355
+    },
+    "pair_summary": {
+      "case": "case_090",
+      "q": 2,
+      "n": 5,
+      "job": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_090_q2_n5",
+      "job_identity": "2371f0113c0fec16e92f90ef4fe8a5370e687e005358eba3448a69da610bb286",
+      "signature": {
+        "algorithm": "70bc69be2770fd9b9f990f4c3d3f726e8f4f12ce121305b0df2221a3f985c087",
+        "official": "d8e09c792cd35ec8835dd914bde5d9bc21393d69dff27de8ffc3fd065572322d",
+        "config": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+        "graph": "a91d3ad4c40e53d5731b81b3eb72bcf922f5ef06094e860b5c5729619cb2d312",
+        "python": [
+          3,
+          12,
+          14
+        ]
+      },
+      "policy": {
+        "q": 2,
+        "n": 5,
+        "seconds": 8,
+        "max_evaluations": 1,
+        "strategy": "anytime",
+        "gap_tolerance": 0,
+        "flags": {},
+        "cache_overrides": null
+      },
+      "status": "ok",
+      "hard_timeout": false,
+      "process_seconds": 0.42199999999138527,
+      "total_job_seconds": 0.42199999999138527,
+      "construction_seconds": 0.031000000017229468,
+      "evaluations": 1,
+      "exit_code": 0,
+      "stopped": "single_official_evaluation",
+      "features": {
+        "ops": 1664,
+        "components": 13,
+        "max_component": 128
+      },
+      "makespan": 369470,
+      "plan_hash": "35f8ec6cc61e854a02a6b7735980794f9ada03d9c377a0c1c5bb1db21771bf55",
+      "plan": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_090_q2_n5/incumbents/e0001_plan.json",
+      "result": "E:/handoff_20260924/orion_team_run_20260924/research_a_orion_anytime/runs/team_day01_shard1/snapshots/final/auto/pairs/case_090_q2_n5/incumbents/e0001_result.json.gz",
+      "certificate": {
+        "compute_path": 63936,
+        "compute_load": 168105.6,
+        "compulsory_ddr": 37139.2,
+        "global_lower": 168105.6,
+        "logical_aliases": false,
+        "candidate_core_load": 175200,
+        "candidate_communication": 71436,
+        "candidate_io": 193606.4,
+        "pre_spill_read_bytes": 11179392,
+        "pre_spill_write_bytes": 436992,
+        "candidate_lower": 193606.4,
+        "feasible_upper": 369470,
+        "approximation_ratio_upper": 2.1978446881008127,
+        "absolute_optimality_gap_upper": 201364.4
+      },
+      "cache_hit_rate": null,
+      "original_graph_copy_bytes": 2228352,
+      "scheduled_copy_bytes": 16595328,
+      "added_copy_bytes": 14366976,
+      "partition_added_copy_bytes": 9388032,
+      "spill_added_copy_bytes": 4978944,
+      "prefix3_makespan": 369470,
+      "completed_evaluations": 1,
+      "official_eval_seconds": 0.2372400999884121,
+      "first_valid_seconds": 0.28100000001722947,
+      "expanded_construction_seconds": 0
+    },
+    "cache_stats": {
+      "copy_in_hits": 208,
+      "copy_in_misses": 467,
+      "hit_bytes": 12288816,
+      "miss_bytes": 3866064,
+      "hits": 208,
+      "accesses": 675,
+      "hit_rate": 0.7606875445685762
+    },
+    "with_data_movement": {
+      "original_graph_copy_bytes": 2228352,
+      "scheduled_copy_bytes": 16595328,
+      "added_copy_bytes": 14366976,
+      "partition_added_copy_bytes": 9388032,
+      "spill_added_copy_bytes": 4978944
+    },
+    "without_data_movement": {
+      "original_graph_copy_bytes": 2228352,
+      "scheduled_copy_bytes": 16595328,
+      "added_copy_bytes": 14366976,
+      "partition_added_copy_bytes": 9388032,
+      "spill_added_copy_bytes": 4978944
+    },
+    "with_memory_peak": {
+      "0": {
+        "L1": 498624,
+        "UB": 0
+      },
+      "1": {
+        "L1": 498624,
+        "UB": 0
+      },
+      "2": {
+        "L1": 498432,
+        "UB": 0
+      },
+      "3": {
+        "L1": 498240,
+        "UB": 0
+      },
+      "4": {
+        "L1": 498240,
+        "UB": 0
+      }
+    },
+    "without_memory_peak": {
+      "0": {
+        "L1": 498624,
+        "UB": 0
+      },
+      "1": {
+        "L1": 498624,
+        "UB": 0
+      },
+      "2": {
+        "L1": 498432,
+        "UB": 0
+      },
+      "3": {
+        "L1": 498240,
+        "UB": 0
+      },
+      "4": {
+        "L1": 498240,
+        "UB": 0
+      }
+    },
+    "with_core_ends": [
+      201873,
+      208497,
+      206611,
+      206247,
+      203475
+    ],
+    "without_core_ends": [
+      365521,
+      364272,
+      369470,
+      362922,
+      366470
+    ],
+    "cache_capacity": 1048576,
+    "cache_bandwidth": 250,
+    "ddr_bandwidth": 60
+  }
+]

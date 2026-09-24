@@ -1,0 +1,14 @@
+{
+  "expected_main": 700,
+  "valid_main": 700,
+  "expected_pairs": 250,
+  "valid_same_plan_pairs": 250,
+  "fully_covered_even_graphs": 50,
+  "missing_main": [],
+  "missing_pairs": [],
+  "duplicate_index_keys": 0,
+  "summary_plan_result_references": 2850,
+  "original_unique_verification_keys": 700,
+  "original_verification_ok": 700,
+  "method": "Read existing index/status/check entries and file references; no recomputed hashes, evaluator runs or checksum tests."
+}
