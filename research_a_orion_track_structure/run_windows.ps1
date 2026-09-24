@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$Cases = '001,016,024,044,048,064',
+    [string]$Cases = '016,024,044,048,064,059',
     [string]$Questions = '1,2,3',
     [string]$Cores = '2,5',
     [double]$Seconds = 300,
