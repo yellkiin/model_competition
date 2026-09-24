@@ -2,7 +2,11 @@
 
 新增自包含目录 `research_a_orion_anytime`，不依赖旧 Draft PR #14 或 `research_a_orion_frontier` 是否合并。只新增本目录；不改变其他 AI 工作区、原题、输入图、config、官方评估器或 Step1/2/3。
 
-本地 `publish_pr.ps1` 将完整目录放入独立 worktree/分支并实际创建本 PR。云端会话的 GitHub 连接器仅有读取动作，文档没有伪称提前创建了远端 PR。实验输出、官方图、文献 PDF 不自动提交。
+本 PR 直接提交完整 `research_a_orion_anytime` 目录。实验输出、官方图、文献 PDF 不自动提交。
+
+## 本地执行边界
+
+用户明确要求本轮本地 Agent **不要做冒烟测试、哈希/文件指纹测试、pytest、unittest、全仓审计或环境 benchmark**。只做启动所需最小环境检查后直接运行真实官方算例。官方评估器自身的覆盖、无环、容量、Pipe/FIFO 与事件执行合法性检查仍必须正常保留。
 
 ## 方法
 
