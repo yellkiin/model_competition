@@ -1,0 +1,33 @@
+name: ORION memory unseen-case transfer
+on:
+  push:
+    branches: [orion/track-memory]
+    paths: [.github/workflows/orion-memory-unseen-transfer.yml]
+permissions:
+  contents: read
+jobs:
+  inputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_036.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_048.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_068.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_084.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_085.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_086.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_097.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/config.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-memory-unseen-inputs
+          path: |
+            题目/A题/通用神经网络处理器下的多核调度问题  附件/data/
+          if-no-files-found: error
+          retention-days: 2
