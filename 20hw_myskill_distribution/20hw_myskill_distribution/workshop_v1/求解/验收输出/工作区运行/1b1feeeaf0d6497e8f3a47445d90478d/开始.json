@@ -1,0 +1,21 @@
+{
+  "command": [
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\workspace_execution.py",
+    "--child",
+    "E:\\20hw_myskill_distribution\\workshop_v1",
+    "E:\\20hw_myskill_distribution\\华为杯_论文规范模板\\tools\\collect_reference_source.py",
+    "--paper-root",
+    "论文",
+    "--url",
+    "https://arxiv.org/abs/1703.09039",
+    "--output",
+    "参考来源/sze2017_author",
+    "--format",
+    "field_quotes"
+  ],
+  "started_at": "2026-09-23T09:39:50.750430+00:00",
+  "workspace_root": "E:\\20hw_myskill_distribution\\workshop_v1",
+  "tool": "华为杯_论文规范模板/tools/collect_reference_source.py"
+}

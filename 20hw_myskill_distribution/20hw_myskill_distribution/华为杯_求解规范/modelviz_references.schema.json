@@ -1,0 +1,230 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "runtime": {
+      "enum": [
+        "codex",
+        "claude"
+      ]
+    },
+    "purpose": {
+      "enum": [
+        "production",
+        "demo"
+      ]
+    },
+    "figures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "figure_id": {
+            "type": "string"
+          },
+          "source_skill": {
+            "const": "modelviz-skill"
+          },
+          "skill_root": {
+            "type": "string"
+          },
+          "resource_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "job_dir": {
+            "type": "string"
+          },
+          "target_width_mm": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "paper_geometry": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source_tex": {
+                "type": "string"
+              },
+              "source_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "basis": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_tex",
+              "source_sha256",
+              "basis"
+            ]
+          },
+          "panels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "panel_id": {
+                  "type": "string"
+                },
+                "template_id": {
+                  "type": "string"
+                },
+                "source_locator": {
+                  "type": "string"
+                },
+                "reference_review": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "reviewed": {
+                      "type": "boolean"
+                    },
+                    "tool_ref": {
+                      "type": "string"
+                    },
+                    "observation": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "reviewed",
+                    "tool_ref",
+                    "observation"
+                  ]
+                },
+                "template_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "preview_sha256": {
+                  "type": "string"
+                },
+                "field_mapping": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "data_column": {
+                        "type": "string"
+                      },
+                      "template_role": {
+                        "type": "string"
+                      },
+                      "unit": {
+                        "type": "string"
+                      },
+                      "reason": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "data_column",
+                      "template_role",
+                      "unit",
+                      "reason"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "preserved_design": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "adaptation_reason": {
+                  "type": "string"
+                },
+                "limitations": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "panel_id",
+                "template_id",
+                "source_locator",
+                "reference_review",
+                "template_sha256",
+                "preview_sha256",
+                "field_mapping",
+                "preserved_design",
+                "adaptation_reason",
+                "limitations"
+              ]
+            },
+            "minItems": 1
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "path",
+                "sha256"
+              ]
+            },
+            "minItems": 0
+          },
+          "run_record_path": {
+            "type": "string"
+          },
+          "qa_path": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "rendered",
+              "qa_pass",
+              "incomplete"
+            ]
+          }
+        },
+        "required": [
+          "figure_id",
+          "source_skill",
+          "skill_root",
+          "resource_digest",
+          "job_dir",
+          "target_width_mm",
+          "paper_geometry",
+          "panels",
+          "dependencies",
+          "run_record_path",
+          "qa_path",
+          "status"
+        ]
+      },
+      "minItems": 0
+    },
+    "paper_review_path": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "runtime",
+    "purpose",
+    "figures",
+    "paper_review_path"
+  ]
+}

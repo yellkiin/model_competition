@@ -1,0 +1,629 @@
+{
+  "status": "PASS",
+  "manifest": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文输入.json",
+  "abstract": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\章节内容\\00_摘要.tex",
+  "checks": [
+    {
+      "code": "abstract_fragment_exists_and_is_tex",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\章节内容\\00_摘要.tex"
+    },
+    {
+      "code": "percent_signs_are_tex_escaped",
+      "ok": true,
+      "lines": [],
+      "message": "摘要正文中的百分号必须写成 \\%，否则 LaTeX 会把同行后文当作注释。"
+    },
+    {
+      "code": "fragment_excludes_keywords_and_document_structure",
+      "ok": true,
+      "matches": [],
+      "message": "摘要 fragment 只含摘要正文；关键词由 manifest 唯一生成。"
+    },
+    {
+      "code": "abstract_has_no_placeholders",
+      "ok": true,
+      "matches": []
+    },
+    {
+      "code": "visible_character_target",
+      "ok": true,
+      "actual": 1116,
+      "minimum": 800,
+      "maximum": 1600
+    },
+    {
+      "code": "opening_sentence_is_result_led",
+      "ok": true,
+      "sentence": "本文针对通用神经网络处理器上依赖图切分、同核任务合并与共享只读缓存联动的多核调度问题，建立从合法方案构造到官方事件评估的统一模型，依据操作—张量依赖、私有存储容量、跨核同步和共享带宽约束，采用有限候选划分与逐例成对比较，得到题定配置下最高的五核平均加速比3.6104（无量纲）",
+      "required": [
+        "本文针对",
+        "建立/构建/推导/提出",
+        "采用/运用/依据",
+        "得到/获得/证明/揭示/给出"
+      ]
+    },
+    {
+      "code": "problem_chapters_detected",
+      "ok": true,
+      "actual": 3
+    },
+    {
+      "code": "problem_markers_exact_once_in_order",
+      "ok": true,
+      "actual": [
+        "一",
+        "二",
+        "三"
+      ]
+    },
+    {
+      "code": "one_ordered_paragraph_per_problem",
+      "ok": true,
+      "expected": 3,
+      "found": [
+        1,
+        2,
+        3
+      ],
+      "positions": [
+        222,
+        517,
+        824
+      ],
+      "markers_not_at_paragraph_start": []
+    },
+    {
+      "code": "problem_1_model_method_result_loop",
+      "ok": true,
+      "abstract_type": "optimization",
+      "result_mode": "quantitative",
+      "missing_term_groups": [],
+      "numeric_results": 1,
+      "valid_type": true,
+      "valid_result_mode": true
+    },
+    {
+      "code": "problem_2_model_method_result_loop",
+      "ok": true,
+      "abstract_type": "optimization",
+      "result_mode": "quantitative",
+      "missing_term_groups": [],
+      "numeric_results": 1,
+      "valid_type": true,
+      "valid_result_mode": true
+    },
+    {
+      "code": "problem_2_progression",
+      "ok": true,
+      "message": "仅已声明依赖前问的问题须说明真实递进关系，不为独立问题虚构依赖。"
+    },
+    {
+      "code": "problem_3_model_method_result_loop",
+      "ok": true,
+      "abstract_type": "optimization",
+      "result_mode": "quantitative",
+      "missing_term_groups": [],
+      "numeric_results": 2,
+      "valid_type": true,
+      "valid_result_mode": true
+    },
+    {
+      "code": "problem_3_progression",
+      "ok": true,
+      "message": "仅已声明依赖前问的问题须说明真实递进关系，不为独立问题虚构依赖。"
+    },
+    {
+      "code": "key_methods_are_selectively_bold",
+      "ok": true,
+      "phrases": [
+        "3.6104（无量纲）",
+        "针对问题一",
+        "连通块分核",
+        "3.5093（无量纲）",
+        "多数图可利用多个核心",
+        "针对问题二",
+        "场景B重新择优",
+        "3.5456（无量纲）",
+        "Task合并并不保证逐例加速",
+        "针对问题三",
+        "同方案反事实",
+        "3.6104（无量纲）",
+        "1.0260（无量纲）",
+        "有正向收益的算例过半",
+        "1.0260（无量纲）"
+      ],
+      "method_phrase_count": 0,
+      "message": "逐问四类短加粗；没有固定八处上限，禁止整句整段加粗。"
+    },
+    {
+      "code": "no_separate_validation_or_limitation_closing",
+      "ok": true,
+      "paragraphs": []
+    },
+    {
+      "code": "innovation_is_explicit_and_evidence_backed",
+      "ok": true,
+      "sentence_count": 1,
+      "message": "真实方法差异与对照/解析证据，允许融入逐问段落。"
+    },
+    {
+      "code": "problem_1_scientific_validation_integrated",
+      "ok": true
+    },
+    {
+      "code": "problem_2_scientific_validation_integrated",
+      "ok": true
+    },
+    {
+      "code": "problem_3_scientific_validation_integrated",
+      "ok": true
+    },
+    {
+      "code": "abstract_excludes_limitations_future_and_internal_checks",
+      "ok": true,
+      "matches": {}
+    },
+    {
+      "code": "abstract_evidence_schema",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "abstract_evidence_question_mapping",
+      "ok": true
+    },
+    {
+      "code": "problem_1_lead_is_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_1_has_method_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_1_has_conclusion_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_1_has_validation_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_1_has_numeric_result_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_1_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_1_source_text_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_1_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_1_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_1_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_2_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_2_conclusion_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_2_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_2_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_2_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_3_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_3_value_and_unit_match",
+      "ok": true,
+      "expected": "3.5093（无量纲）",
+      "actual": "3.5093（无量纲）"
+    },
+    {
+      "code": "problem_1_statement_3_result_emphasized",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_3_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_3_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_3_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_4_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_4_source_text_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_4_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_1_statement_4_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_1_numeric_evidence_is_result_not_setting",
+      "ok": true
+    },
+    {
+      "code": "problem_2_lead_is_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_2_has_method_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_2_has_conclusion_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_2_has_validation_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_2_has_numeric_result_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_1_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_1_source_text_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_1_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_1_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_1_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_2_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_2_conclusion_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_2_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_2_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_2_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_3_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_3_value_and_unit_match",
+      "ok": true,
+      "expected": "3.5456（无量纲）",
+      "actual": "3.5456（无量纲）"
+    },
+    {
+      "code": "problem_2_statement_3_result_emphasized",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_3_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_3_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_3_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_4_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_4_source_text_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_4_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_2_statement_4_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_2_numeric_evidence_is_result_not_setting",
+      "ok": true
+    },
+    {
+      "code": "problem_3_lead_is_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_3_has_method_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_3_has_conclusion_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_3_has_validation_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_3_has_numeric_result_evidence",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_1_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_1_source_text_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_1_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_1_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_1_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_2_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_2_conclusion_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_2_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_2_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_2_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_3_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_3_value_and_unit_match",
+      "ok": true,
+      "expected": "3.6104（无量纲）",
+      "actual": "3.6104（无量纲）"
+    },
+    {
+      "code": "problem_3_statement_3_result_emphasized",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_3_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_3_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_3_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_4_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_4_source_text_matches",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_4_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_4_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_5_source_current",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_5_value_and_unit_match",
+      "ok": true,
+      "expected": "1.0260（无量纲）",
+      "actual": "1.0260（无量纲）"
+    },
+    {
+      "code": "problem_3_statement_5_result_emphasized",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_5_in_corresponding_paragraph",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_5_in_corresponding_body",
+      "ok": true
+    },
+    {
+      "code": "problem_3_statement_5_short_span_bold",
+      "ok": true
+    },
+    {
+      "code": "problem_3_numeric_evidence_is_result_not_setting",
+      "ok": true
+    },
+    {
+      "code": "bold_numeric_value_traceable:3.6104（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "bold_numeric_value_traceable:3.5093（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "bold_numeric_value_traceable:3.5456（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "bold_numeric_value_traceable:3.6104（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "bold_numeric_value_traceable:1.0260（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "bold_numeric_value_traceable:1.0260（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "numeric_statement_traceable:3.6104（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "key_value_occurrence_bold:3.6104（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "numeric_statement_traceable:3.5093（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "key_value_occurrence_bold:3.5093（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "numeric_statement_traceable:3.5456（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "key_value_occurrence_bold:3.5456（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "numeric_statement_traceable:3.6104（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "key_value_occurrence_bold:3.6104（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "numeric_statement_traceable:1.0260（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "key_value_occurrence_bold:1.0260（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "numeric_statement_traceable:1.0260（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "key_value_occurrence_bold:1.0260（无量纲）",
+      "ok": true
+    },
+    {
+      "code": "language_is_fact_based",
+      "ok": true,
+      "matches": {}
+    },
+    {
+      "code": "abstract_excludes_delivery_inventory",
+      "ok": true,
+      "matches": {}
+    },
+    {
+      "code": "all_quantitative_values_have_units",
+      "ok": true,
+      "values": []
+    },
+    {
+      "code": "decimal_precision_is_consistent",
+      "ok": true,
+      "decimal_places": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "message": "小数结果统一采用同一种 2--4 位精度；精确整数不强制补零。"
+    },
+    {
+      "code": "keywords_are_unique_and_specific",
+      "ok": true,
+      "count": 5,
+      "duplicates": [],
+      "generic": []
+    }
+  ],
+  "failures": []
+}

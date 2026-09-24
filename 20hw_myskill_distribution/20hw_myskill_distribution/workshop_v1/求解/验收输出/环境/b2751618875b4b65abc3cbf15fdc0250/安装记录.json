@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "events": [
+    {
+      "action": "venv_reuse",
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+      "version": [
+        3,
+        13,
+        15
+      ],
+      "time": "2026-09-23T22:03:41.463143+00:00"
+    },
+    {
+      "action": "user_environment",
+      "status": "blocked",
+      "changes": [],
+      "error": "[WinError 5] 拒绝访问。",
+      "time": "2026-09-23T22:07:53.332058+00:00"
+    }
+  ]
+}

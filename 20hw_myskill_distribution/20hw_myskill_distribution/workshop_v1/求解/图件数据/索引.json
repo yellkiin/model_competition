@@ -1,0 +1,105 @@
+{
+  "status": "data_ready",
+  "cases": 100,
+  "inputs": {
+    "求解/数据审计.csv": "0044366df174280572955a86f398bca6b3a9aa818b702dd3f8c998eebf5522a8",
+    "求解/正式实验/逐例分析.csv": "ab7e31c5aee6ccaa9f3effb2288388e1fbe89763085512466a63481ef71e9c59",
+    "求解/正式实验/场景配对分析.csv": "9f82aa6968412e939ac30355ea52abceafa32d7f3c97c165cb83cb6d8b5a9a8e",
+    "求解/问题一/结果/逐例官方评估.csv": "51d5545e681ebe14557f44d6194b2cc645df6adcdd9f98d0db42480d240a49ae",
+    "求解/问题二/结果/逐例官方评估.csv": "dd0da094b910b255f1699e049dcbe86ac81e8354bbc5829217a0531f7da03dbc",
+    "求解/问题三/结果/逐例官方评估.csv": "f89af6ee18fba7e7aec5345f0a56bb66e7492a71047fc6c87390b50e777c2a56",
+    "求解/正式实验/L2参数敏感性_非官方/逐配置最优.csv": "b299a5689667d17f32da1babfe2e7ae602007017278f5cc35834d6557b61ef7f"
+  },
+  "figures": {
+    "q1-F01": {
+      "path": "求解/图件数据/q1-F01.csv",
+      "rows": 100,
+      "sha256": "acfaff8a33fd8a771600091ed5d86c8aa5945f6330e300c99f75d039b7b83f15"
+    },
+    "q1-F02": {
+      "path": "求解/图件数据/q1-F02.csv",
+      "rows": 500,
+      "sha256": "455cf977fb61efe4d78a30c61a8ee536bfb3943712e95a26509f8f59c3812f5f"
+    },
+    "q1-F03": {
+      "path": "求解/图件数据/q1-F03.csv",
+      "rows": 100,
+      "sha256": "0d64af14636f35ac0cbe6a1515df281ffb09f070b5c7be9849a08f9b5777f1c5"
+    },
+    "q1-F04": {
+      "path": "求解/图件数据/q1-F04.csv",
+      "rows": 100,
+      "sha256": "80c6dc88c5ac247ee7b1f11c3a3b768be0d15a4eb00d45b0fb476724b5135e0e"
+    },
+    "q1-F05": {
+      "path": "求解/图件数据/q1-F05.csv",
+      "rows": 400,
+      "sha256": "e5ca54cd1ca4ccb731be1af1d31a618fb8e2fac83364660cac0524a9668e568a"
+    },
+    "q1-F06": {
+      "path": "求解/图件数据/q1-F06.csv",
+      "rows": 577,
+      "sha256": "4c9f6d44469f4eaa91be1b81371a9ae3e14da3cfbbc70ff817eb9a6587f57ecc"
+    },
+    "q2-F01": {
+      "path": "求解/图件数据/q2-F01.csv",
+      "rows": 400,
+      "sha256": "11278f122e8d441ee80ff476d7952be59baae59834aecb981a44df58e75330d7"
+    },
+    "q2-F02": {
+      "path": "求解/图件数据/q2-F02.csv",
+      "rows": 400,
+      "sha256": "636aa14558004fd7484c302088eb7c26d4e003468741dc0abe45daf0e642177e"
+    },
+    "q2-F03": {
+      "path": "求解/图件数据/q2-F03.csv",
+      "rows": 400,
+      "sha256": "fadc3d29033fb17e63122694451ccf649d3106499b6e71d0e12143d2e1fc8944"
+    },
+    "q2-F04": {
+      "path": "求解/图件数据/q2-F04.csv",
+      "rows": 100,
+      "sha256": "d6d32548cffae0ee2bee60e6659aa95152493f4005283f6651b1e775dbbceb45"
+    },
+    "q2-F05": {
+      "path": "求解/图件数据/q2-F05.csv",
+      "rows": 100,
+      "sha256": "86138611092513ea9a0345f851536b10b022b25bb002cc903bba0e1599530410"
+    },
+    "q2-F06": {
+      "path": "求解/图件数据/q2-F06.csv",
+      "rows": 500,
+      "sha256": "7cb3b68afe0092cad73365dd22ae511007e6f5d2e5b233508ffd31e27b8de2a4"
+    },
+    "q3-F01": {
+      "path": "求解/图件数据/q3-F01.csv",
+      "rows": 500,
+      "sha256": "503d78db5150d3f6d68ea04671927fc308cbb224e91da1c93da2720ab71011c6"
+    },
+    "q3-F02": {
+      "path": "求解/图件数据/q3-F02.csv",
+      "rows": 100,
+      "sha256": "a5d49cfe5e11e091ccf72b8f5d37b27aaf7a12ed6eaf88724f8de268bcd422fd"
+    },
+    "q3-F03": {
+      "path": "求解/图件数据/q3-F03.csv",
+      "rows": 54,
+      "sha256": "0b3f018d08d3c7cae04a561e397f6de9c7a0f0e2f4562624bcc200913083c95e"
+    },
+    "q3-F04": {
+      "path": "求解/图件数据/q3-F04.csv",
+      "rows": 54,
+      "sha256": "6844626940a587a75baca054edc7c2be48b97c58fba3dcf85c55db558f680908"
+    },
+    "q3-F05": {
+      "path": "求解/图件数据/q3-F05.csv",
+      "rows": 500,
+      "sha256": "c693bce8970f0984366ada613aa12ab6e365f483f2338e712dbe7557f348e0a2"
+    },
+    "q3-F06": {
+      "path": "求解/图件数据/q3-F06.csv",
+      "rows": 500,
+      "sha256": "70fd7c2fbede8612a5be896adb2c43ed8cb824b9e83ad5c34d95bc97df2f5ae0"
+    }
+  }
+}

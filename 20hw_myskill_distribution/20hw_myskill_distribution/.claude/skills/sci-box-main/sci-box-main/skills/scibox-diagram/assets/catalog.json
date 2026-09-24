@@ -1,0 +1,1070 @@
+{
+  "version": 1,
+  "scope": "MAINTENANCE_LIBRARY_AND_DUAL_ENDPOINTS_PUBLISHED_NOT_PAPER_APPROVED",
+  "templates": [
+    {
+      "template_id": "roadmap-5band",
+      "name": "五带技术路线图",
+      "layout": "五条带、左旗标及右竖栏",
+      "semantics": "问题、数据、方法、结果对照与评价；含需真实存在的闭环",
+      "capacity": "五带固定，内部数量依字段变化，详见说明",
+      "size_guidance": "954px宽，原版16px文字缩至A4偏小，需精简或更大展示",
+      "status": "published_both_endpoints_existing_regression_passed",
+      "paths": {
+        "example": "assets/roadmap-5band/example.json",
+        "preview": "assets/roadmap-5band/preview.png",
+        "entry": "scripts/roadmap_5band.py",
+        "documentation": "references/roadmap-5band.md"
+      },
+      "file_sha256": {
+        "assets/roadmap-5band/example.json": "c2d964fe0e82bc175fb783690a89bf3e82a58384de2b6e2d8d88990a9cf9af13",
+        "assets/roadmap-5band/preview.png": "d622d70c17051e7547de3a7c58a379235826a1e1b9f9f1080418e51499affe31",
+        "scripts/roadmap_5band.py": "bd87acb2479f3d09b5447dfd5510a3d45d45007fa75ca5ca2a2b8bc9302d0a1d",
+        "references/roadmap-5band.md": "2bd50a6acf550c75836be2d9b6415727ab7fbae93a68edb99faa480b94d95c7e"
+      }
+    },
+    {
+      "template_id": "framework-3col",
+      "name": "三栏研究框架图",
+      "layout": "左阶段链、中研究内容、右方法清单",
+      "semantics": "研究内容全景，可含并列、归纳汇流及方法映射",
+      "capacity": "阶段2–8、方法组2–6、中内容块1–6；分组容量见说明",
+      "size_guidance": "1026px宽、高度自适应；窄竖栏字体较小，须逐次审核论文尺寸",
+      "status": "published_both_endpoints_existing_regression_passed",
+      "paths": {
+        "example": "assets/framework-3col/example.json",
+        "preview": "assets/framework-3col/preview.png",
+        "entry": "scripts/framework_3col.py",
+        "documentation": "references/framework-3col.md"
+      },
+      "file_sha256": {
+        "assets/framework-3col/example.json": "c166285231e951bb1276e0c21ea07487f044aad34ffc5ab1aae0ed42b8585478",
+        "assets/framework-3col/preview.png": "5c10bdeb2d0a1b9833534b7d4d1afb6895faa0e66107fa145a000c20e0993899",
+        "scripts/framework_3col.py": "348f7f7dae40e333ddd197ca75c9fabcb2edca9bbee66a2ea1db9486d9119b47",
+        "references/framework-3col.md": "4c108c2564fdbb9b7ca8343ebb86f04b86da8388233d0a4562800974a6f292aa"
+      }
+    },
+    {
+      "template_id": "stageflow-3col",
+      "name": "三栏阶段流程图",
+      "layout": "中部彩色阶段、左方法链、右输入标签",
+      "semantics": "阶段推进、决策分支与成果分发",
+      "capacity": "阶段及内部子组按生成器校验，分发分支3–6，详见说明",
+      "size_guidance": "1000px宽、高度自适应；卡片小字不能盲目缩到A4",
+      "status": "published_both_endpoints_existing_regression_passed",
+      "paths": {
+        "example": "assets/stageflow-3col/example.json",
+        "preview": "assets/stageflow-3col/preview.png",
+        "entry": "scripts/stageflow_3col.py",
+        "documentation": "references/stageflow-3col.md"
+      },
+      "file_sha256": {
+        "assets/stageflow-3col/example.json": "46888a99e0d1d794d01d3f1df68ffeac719e3f8183ddead6b11a96d449379476",
+        "assets/stageflow-3col/preview.png": "4278cb7818a26d303fe9acb42471ec547492e9cccc1a0adeaf4af6b21757af4b",
+        "scripts/stageflow_3col.py": "b2a5a459b6275d8c584606831035fcd2f915023da57ece49fc7cd137d2684b3f",
+        "references/stageflow-3col.md": "d98bfd0f63e699ecab769d2943aca89d7394c2c750345a3292abb3dc68f8b078"
+      }
+    },
+    {
+      "template_id": "taskflow-land",
+      "name": "横版任务流水线图",
+      "layout": "任务块与横向处理链、下挂方法细节",
+      "semantics": "任务推进与步骤细节，支持并列任务",
+      "capacity": "任务块和三种版式段数量按说明及生成器校验",
+      "size_guidance": "1360px宽、高度自适应，优先横排或答辩，入文重新审核",
+      "status": "published_both_endpoints_existing_regression_passed",
+      "paths": {
+        "example": "assets/taskflow-land/example.json",
+        "preview": "assets/taskflow-land/preview.png",
+        "entry": "scripts/taskflow_land.py",
+        "documentation": "references/taskflow-land.md"
+      },
+      "file_sha256": {
+        "assets/taskflow-land/example.json": "744c0ab6f9cb0577246d7811556210d3d02a3acb22e5261e07fe8e482d0bc664",
+        "assets/taskflow-land/preview.png": "adb999f0215c19107ccb1907da7f751e2e2acc21dd7f1cb21a543d45797044d5",
+        "scripts/taskflow_land.py": "3bb58d1bdb9e51e8b4a96cbd0df07024a7f534cb7f9e16e80c5a1b3eb1baefa6",
+        "references/taskflow-land.md": "967fbbb11a032d098c0daabb5d6e2b34bfa0b01537856e955c095e618b4e4798"
+      }
+    },
+    {
+      "template_id": "behavior-intervention-3column",
+      "name": "行为机制与干预研究四阶段三栏框架图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "三栏对应研究思路、研究内容、研究方法，四阶段分别为背景与三个问题、三类理论与三步框架、四项调查/干预工作、三项综合分析到双输出及末端汇流。保留三理论之间的双细带、左侧下弯曲箭头、综合分析大括号与左右两列阶段箭头。",
+      "capacity": {
+        "node_count": 66,
+        "text_fields": 46,
+        "topology": "fixed",
+        "field_limits": "references/behavior-intervention-3column.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-16",
+      "paths": {
+        "example": "assets/behavior-intervention-3column/example.json",
+        "preview": "assets/behavior-intervention-3column/preview.png",
+        "entry": "scripts/behavior_intervention_3column.py",
+        "documentation": "references/behavior-intervention-3column.md",
+        "editable": "assets/behavior-intervention-3column/example.drawio",
+        "pdf": "assets/behavior-intervention-3column/example.pdf",
+        "review": "assets/behavior-intervention-3column/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/behavior-intervention-3column/example.json": "4bcc01c43b53f7397f1d4fc238a74caed7b6e6c18021cfa0c4d88f389aa7e1e0",
+        "assets/behavior-intervention-3column/preview.png": "e2c85f7274818914478c6baa6e8056fa37241a717858ca936141afc6527ecfba",
+        "scripts/behavior_intervention_3column.py": "96f37a1069942d3394f357039562c6a58a211e15684a3d2281217f088d2329d2",
+        "references/behavior-intervention-3column.md": "27d1cc9f14cc822fd7ba5d4ab6d1b76864491cde20890d45495e8b6863d147d2",
+        "assets/behavior-intervention-3column/example.drawio": "d57754b752942057d3209a9e6fc808f3bd181c39c0628d79c972ca1bd613a94c",
+        "assets/behavior-intervention-3column/example.pdf": "b49d40c63e30bc45bd78f928052fd28a255af59a805e824b4831780b25af611a",
+        "assets/behavior-intervention-3column/qa/visual-review.json": "497b949fd7ffcc25746b2fe9bd0269d976370f34a889d229d22199980e909650",
+        "assets/behavior-intervention-3column/layout.json": "4609354ba1fc12deefa86e16f0516703ad4b02aa8134790d3785fa66e946671c",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "coupled-method-experiment-framework",
+      "name": "耦合方法构建与实验验证五带研究框架图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "五带框架：研究基础与总体方案两卡，双耦合圆分别向左右三项分析扇出，模型开发与技术优化分区，六站实验处理链（包含四项与三项组合卡），成果总结四分支。左右各三条阶段标签跨带对应；模型和技术优化框之间没有凭空新增流程箭头。",
+      "capacity": {
+        "node_count": 69,
+        "text_fields": 53,
+        "topology": "fixed",
+        "field_limits": "references/coupled-method-experiment-framework.md"
+      },
+      "size_guidance": "A4近整页宽160mm可选，不能直接缩成半页；实际论文图题、文字与位置另审。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-14",
+      "paths": {
+        "example": "assets/coupled-method-experiment-framework/example.json",
+        "preview": "assets/coupled-method-experiment-framework/preview.png",
+        "entry": "scripts/coupled_method_experiment_framework.py",
+        "documentation": "references/coupled-method-experiment-framework.md",
+        "editable": "assets/coupled-method-experiment-framework/example.drawio",
+        "pdf": "assets/coupled-method-experiment-framework/example.pdf",
+        "review": "assets/coupled-method-experiment-framework/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/coupled-method-experiment-framework/example.json": "a441a5f7024b8c6a6cc5acae4731828c3dc83a6b7d6a198e0f77027db71f7b51",
+        "assets/coupled-method-experiment-framework/preview.png": "91bf18976fc28e38d268fb8b979a0a35135f4bcaa36a5552106b6e6f1b556713",
+        "scripts/coupled_method_experiment_framework.py": "0d9f16c2a08dcebf9f4abd421ef6120c33340254d45d712080ea24fde8a947dd",
+        "references/coupled-method-experiment-framework.md": "e66cba5f271f0261cbe6f944ca14f391c990ebf8155d1a7b1df44b1fd3fb3a63",
+        "assets/coupled-method-experiment-framework/example.drawio": "09c68b5ebf24f1e3fe6ed6820cad6109d0415be03a78accbc207685e4d0d2808",
+        "assets/coupled-method-experiment-framework/example.pdf": "04c88d9addfc3e8b3d18c3b7d61cc42ba6490e6fb21292e75aac53e14837fb1f",
+        "assets/coupled-method-experiment-framework/qa/visual-review.json": "fe51a75bbfae5b42527cd6a6a522dae2c7fed5d233751e72fd9eba76ee60d033",
+        "assets/coupled-method-experiment-framework/layout.json": "7870b55d9b94e01dc568be8fdaedb1afe7b2469d9d1edfad917066dbc9d30db8",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "cube-venn-model-research",
+      "name": "立方体协作与双圆交叉三任务研究框架图",
+      "layout": "1075×1560，独立实测固定拓扑",
+      "semantics": "上部三类研究现状及两组四支母线汇入三项研究内容；中部三个工作包分别采用嵌套立方体与六支协作、重叠双圆与六支联邦框架、CNN/RNN/GAN三块模型及双侧输出；底部三项预期成果横向推进。保留左右括号、原生小图标、编号圆点和箭头方向，不压成普通矩形流程。",
+      "capacity": {
+        "node_count": 132,
+        "text_fields": 70,
+        "topology": "fixed",
+        "field_limits": "references/cube-venn-model-research.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-12",
+      "paths": {
+        "example": "assets/cube-venn-model-research/example.json",
+        "preview": "assets/cube-venn-model-research/preview.png",
+        "entry": "scripts/cube_venn_model_research.py",
+        "documentation": "references/cube-venn-model-research.md",
+        "editable": "assets/cube-venn-model-research/example.drawio",
+        "pdf": "assets/cube-venn-model-research/example.pdf",
+        "review": "assets/cube-venn-model-research/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/cube-venn-model-research/example.json": "5e3542129811a08be666188947fad7fe87512022a60886e2cc7371e1e7c12d6c",
+        "assets/cube-venn-model-research/preview.png": "4ef30ab08657541c5f6f3c84fffbc97e8cdf6b4b448e4709bfbb9fdf3967205d",
+        "scripts/cube_venn_model_research.py": "d22276b1418127c60cf7c608bf534c52b0d61b1b95bda7db26ae7896cb8d6507",
+        "references/cube-venn-model-research.md": "e1aa56ab8d4d1612b51b0d0b47a9dd1b5eec244cf3ee1038c48443727e74d770",
+        "assets/cube-venn-model-research/example.drawio": "f586c6443544d4a0d0b6a8d9164ac334e37518924c45d6416d2ff8e6d2454f5d",
+        "assets/cube-venn-model-research/example.pdf": "421025e35f1f459f84634202513a36c2870b6ac4b1cc9352a01ed70cbd225322",
+        "assets/cube-venn-model-research/qa/visual-review.json": "57d80be20f4ddc61283e7e0459a7400eeba99cfd7913aef57ee9638057b45e79",
+        "assets/cube-venn-model-research/layout.json": "0def68db818cb72191b981c94f6a07c0018213ade3e729abc16ea116ac7222c9",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "data-model-deployment-5stage",
+      "name": "数据归集建模与系统落地五阶段流程图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "五阶段数据到模型及系统落地路线：四数据库共同连接清洗与标注两个面板；三立体数据封装块；双输入各二分支汇入核心训练并与推理接口双向关联；三项优化与性能评估相连，右侧六模块架构并列展开；最终集成联调分出四项落地活动。阶段之间使用灰色向下箭头，内部黑色无箭头关联不改成单向流程。",
+      "capacity": {
+        "node_count": 79,
+        "text_fields": 47,
+        "topology": "fixed",
+        "field_limits": "references/data-model-deployment-5stage.md"
+      },
+      "size_guidance": "A4近整页宽160mm可选，不能直接缩成半页；实际论文图题、文字与位置另审。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-20",
+      "paths": {
+        "example": "assets/data-model-deployment-5stage/example.json",
+        "preview": "assets/data-model-deployment-5stage/preview.png",
+        "entry": "scripts/data_model_deployment_5stage.py",
+        "documentation": "references/data-model-deployment-5stage.md",
+        "editable": "assets/data-model-deployment-5stage/example.drawio",
+        "pdf": "assets/data-model-deployment-5stage/example.pdf",
+        "review": "assets/data-model-deployment-5stage/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/data-model-deployment-5stage/example.json": "56450c2fe0260af846faa1be5b5c86f9b37b3678bada5e390a3621fc0638fbfe",
+        "assets/data-model-deployment-5stage/preview.png": "bd28677ff189b2542995a66cdfa4c1aa54c162d64a8a65dbdb831477c7610c57",
+        "scripts/data_model_deployment_5stage.py": "e0aefe94c22fb7cc090f583ff2158eb2be68e8090af22c2b8ac91e9763a425d1",
+        "references/data-model-deployment-5stage.md": "fcebdcc2c6d10aa7cd958ca5af3e7cf2894c197336c1488ebff42cce01e52757",
+        "assets/data-model-deployment-5stage/example.drawio": "48db716fe7fc9dc76779d9c2f4d04232356bcd854ec779fc9e4c1d9aa3a56107",
+        "assets/data-model-deployment-5stage/example.pdf": "37530308325778b4bad83cc9458f8128a63629b3938aacba262db92f9c66de58",
+        "assets/data-model-deployment-5stage/qa/visual-review.json": "0e42bd6ae85b59a64c612930a023ee1c74b3263c58354b084ca8c2363aa06e2f",
+        "assets/data-model-deployment-5stage/layout.json": "70b976ce10ba26930e779fea847d2fe59ef2d3ebfbad39c749965fca114f48c2",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "drug-discovery-triad-planes",
+      "name": "三环耦合与三层斜面研究路线图",
+      "layout": "1075×1560，独立实测固定拓扑",
+      "semantics": "顶部三项输出、三环耦合示意与三层斜面工作包：保留蝴蝶形背景、三角关系、三个环形核心、两侧方法卡片、提示符、跨层红箭头和底部双向联系。适合多层研究架构与循环协同概览，不是普通串行算法流程。原图混杂生物医学、强化学习和电网术语，示例不据此承诺科学关系成立。",
+      "capacity": {
+        "node_count": 150,
+        "text_fields": 56,
+        "topology": "fixed",
+        "field_limits": "references/drug-discovery-triad-planes.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-05",
+      "paths": {
+        "example": "assets/drug-discovery-triad-planes/example.json",
+        "preview": "assets/drug-discovery-triad-planes/preview.png",
+        "entry": "scripts/drug_discovery_triad_planes.py",
+        "documentation": "references/drug-discovery-triad-planes.md",
+        "editable": "assets/drug-discovery-triad-planes/example.drawio",
+        "pdf": "assets/drug-discovery-triad-planes/example.pdf",
+        "review": "assets/drug-discovery-triad-planes/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/drug-discovery-triad-planes/example.json": "ad9dc4d494a92f523c84a0c0867d0e5ecbdb83d48d684b569c5d127db5cb0d87",
+        "assets/drug-discovery-triad-planes/preview.png": "2b48f3111fd826562d77c8c48c2cd8c79806d7cf7a5dd642fc25eeea53f5c83f",
+        "scripts/drug_discovery_triad_planes.py": "a7250b1ec2d4eec39348afdf6b465b387ba25f3e51616ec6c1bb9b4a8b7abbe6",
+        "references/drug-discovery-triad-planes.md": "21757bd3bd0fedff245c5ed03fb06616198b61a960e2805410932c01e2fde3ef",
+        "assets/drug-discovery-triad-planes/example.drawio": "e5ad0c0603d77f503a41e8b465de9a7d7577abe3ac2446834adab64d91016352",
+        "assets/drug-discovery-triad-planes/example.pdf": "8e8da437ddd9f73da4f533a40b4f987c0dc25894e10de3581eacc188e928004c",
+        "assets/drug-discovery-triad-planes/qa/visual-review.json": "9a6acec4885f91a9ee5c3c3460b47be3670f8387df65a49fdd167945c2e0e6ae",
+        "assets/drug-discovery-triad-planes/layout.json": "92e4c5caf90aecc792960f6b62ba9e6adc0836f3fcf1ad54c7a706c81e4347d7",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "dual-circle-biological-framework",
+      "name": "双圆机制与双层实验框架图",
+      "layout": "1075×1535，独立实测固定拓扑",
+      "semantics": "上部保留双荧光素酶/靶点抑制双栏、四个实测椭圆轮廓、中央双向强化学习块、三类侧向输入和上下细胞行为胶囊。中部保留蓝色联邦学习框架、蝴蝶结交叉模块、数据/模型半圆、双头标注箭和两侧到达过程。下部保留绿色双层联邦框架与多学科/跨模态中心。所有原图混杂术语均为演示文案，不能直接当作论文科学事实。",
+      "capacity": {
+        "node_count": 76,
+        "text_fields": 71,
+        "topology": "fixed",
+        "field_limits": "references/dual-circle-biological-framework.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-23",
+      "paths": {
+        "example": "assets/dual-circle-biological-framework/example.json",
+        "preview": "assets/dual-circle-biological-framework/preview.png",
+        "entry": "scripts/dual_circle_biological_framework.py",
+        "documentation": "references/dual-circle-biological-framework.md",
+        "editable": "assets/dual-circle-biological-framework/example.drawio",
+        "pdf": "assets/dual-circle-biological-framework/example.pdf",
+        "review": "assets/dual-circle-biological-framework/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/dual-circle-biological-framework/example.json": "c33b78fc00aac92f44d120641a65e995047907b39985368096d61434415599ef",
+        "assets/dual-circle-biological-framework/preview.png": "3f738075cb8ca551940999698fe8b6673b0c11d3602bc99e8e73cd923697d1a8",
+        "scripts/dual_circle_biological_framework.py": "81fe618ab44ea433cb7102ac036d529ce068465a8d7b56a94507882195d87f0e",
+        "references/dual-circle-biological-framework.md": "2351f558bf9bf31039ceda4250dc7aae9c4b90eb16f8fb8303b53f33edc540ad",
+        "assets/dual-circle-biological-framework/example.drawio": "2d495da0454877e47a81bdeeb17aa6e38973420e926a83e4839ccb4af074ce78",
+        "assets/dual-circle-biological-framework/example.pdf": "071d095242dc8d66d7a3430187d3ed3111b3a39dbab73532f084c20c253b7e82",
+        "assets/dual-circle-biological-framework/qa/visual-review.json": "1e8541a8279918634e6be252577c547ed06e259b3345af00144ba15331c10c4a",
+        "assets/dual-circle-biological-framework/layout.json": "cb6ad68886c559e1dfd79aa246520fc9789ff4e3b73c2da9588935b1a365a4e9",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "dual-circle-biological-framework-variant",
+      "name": "双圆机制与实验框架变体图",
+      "layout": "1075×1560，独立实测固定拓扑",
+      "semantics": "独立模板保留参考图的主要分区、标题层级、阶段连接和可替换字段；模板中的示例术语仅用于演示排版，使用前须按实际题意替换并审查。",
+      "capacity": {
+        "node_count": 25,
+        "text_fields": 25,
+        "topology": "fixed",
+        "field_limits": "references/dual-circle-biological-framework-variant.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-28",
+      "paths": {
+        "example": "assets/dual-circle-biological-framework-variant/example.json",
+        "preview": "assets/dual-circle-biological-framework-variant/preview.png",
+        "entry": "scripts/dual_circle_biological_framework_variant.py",
+        "documentation": "references/dual-circle-biological-framework-variant.md",
+        "editable": "assets/dual-circle-biological-framework-variant/example.drawio",
+        "pdf": "assets/dual-circle-biological-framework-variant/example.pdf",
+        "review": "assets/dual-circle-biological-framework-variant/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/dual-circle-biological-framework-variant/example.json": "579dc409b9987a1c767f5c62f3dbfe19a606c51bf0daebe019a627b71f76c374",
+        "assets/dual-circle-biological-framework-variant/preview.png": "b33ec297e7260c59fc0ca777895d1adbd38541e975a141dfb4cb13ee131136c4",
+        "scripts/dual_circle_biological_framework_variant.py": "1df5f699669eeee5478c5f8573f512d183df6c9801bedc4f932f023427893dd7",
+        "references/dual-circle-biological-framework-variant.md": "2fea1267be9cebed25df5f2d7211653a185acf17225510b39efeb1fe6b908e36",
+        "assets/dual-circle-biological-framework-variant/example.drawio": "c6c1217aa5cd62d298520253ad7df33f617f1abaa03aed48d6443979efe72685",
+        "assets/dual-circle-biological-framework-variant/example.pdf": "dca5bbe0b8c2ae088bda451a8e2b9faaf9fdc3e36f3a046904b0e8d50567a96b",
+        "assets/dual-circle-biological-framework-variant/qa/visual-review.json": "8a99368c1c1dd15dae4c180ecaca63adfee4dcba7146f4c06eb6e356f0a7bd0e",
+        "assets/dual-circle-biological-framework-variant/layout.json": "b798d9b4d3725820822882238f2afa971efe8c2cc8f95a6f1ad4dfe9e6041618",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "dual-loop-layered-platform",
+      "name": "双循环算法与三层平台架构图",
+      "layout": "1075×1560，独立实测固定拓扑",
+      "semantics": "上部六组算法模块围绕内循环和经验池展开；中部两个三段环形箭头分别连接强化学习/深度学习核心，并由斜向指令与标注箭头关联；下部三层平台包含成对框架模块、双向数据/指令、分层锥面和三个侧向圆徽。用于复杂算法与系统设计概览，不把混杂的参考术语当成成立的单一算法。",
+      "capacity": {
+        "node_count": 137,
+        "text_fields": 89,
+        "topology": "fixed",
+        "field_limits": "references/dual-loop-layered-platform.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-07",
+      "paths": {
+        "example": "assets/dual-loop-layered-platform/example.json",
+        "preview": "assets/dual-loop-layered-platform/preview.png",
+        "entry": "scripts/dual_loop_layered_platform.py",
+        "documentation": "references/dual-loop-layered-platform.md",
+        "editable": "assets/dual-loop-layered-platform/example.drawio",
+        "pdf": "assets/dual-loop-layered-platform/example.pdf",
+        "review": "assets/dual-loop-layered-platform/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/dual-loop-layered-platform/example.json": "c3a93bb211e6131ec1f5c19339b72227389351895b0e66a3e48ff6146ece003f",
+        "assets/dual-loop-layered-platform/preview.png": "64609a79a39165ea388e46808e2f7b72a5a3ca34eb614a863df701dc0957388b",
+        "scripts/dual_loop_layered_platform.py": "b15f6cbb1754adf7caf697104bff34d6ec912655c7599a45ecc5ec09f244f0bc",
+        "references/dual-loop-layered-platform.md": "8ea6592742cd8653cb6534c0844326bd273b69b45cbbde2e0dc89b2e13217339",
+        "assets/dual-loop-layered-platform/example.drawio": "059679710f00bb6a58a98201b1b5479633f1822b207b8ab9a7568bc557569309",
+        "assets/dual-loop-layered-platform/example.pdf": "4a63d1dc1a4432719abe0fb436523d2a5e37fce2ef49b4fc8e11ef8684b56e0f",
+        "assets/dual-loop-layered-platform/qa/visual-review.json": "f4a3b900fd2ff24c8acbf675ab88c7f621c858215fce76ecd04a295ac2f9f3b6",
+        "assets/dual-loop-layered-platform/layout.json": "66854ac73b7290ef3d243d35d640ff0092951e47ac9d9cb3b01c591dacf59246",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "dual-study-cylinder-roadmap",
+      "name": "双研究模块圆柱模型技术路线图",
+      "layout": "1075×1560，独立实测固定拓扑",
+      "semantics": "背景条件归纳、问题与三分支研究框架、两组重复研究工作包、三项展望。每个工作包有三对圆柱模型，双向块箭头表达配对关系，侧向箭头连到方法说明；这不是六种模型的串行训练顺序。适合双模块研究安排或模型对照的版式展示；示例混有不同课题，不能把截图文案解释为同一真实实验。",
+      "capacity": {
+        "node_count": 97,
+        "text_fields": 66,
+        "topology": "fixed",
+        "field_limits": "references/dual-study-cylinder-roadmap.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-03",
+      "paths": {
+        "example": "assets/dual-study-cylinder-roadmap/example.json",
+        "preview": "assets/dual-study-cylinder-roadmap/preview.png",
+        "entry": "scripts/dual_study_cylinder_roadmap.py",
+        "documentation": "references/dual-study-cylinder-roadmap.md",
+        "editable": "assets/dual-study-cylinder-roadmap/example.drawio",
+        "pdf": "assets/dual-study-cylinder-roadmap/example.pdf",
+        "review": "assets/dual-study-cylinder-roadmap/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/dual-study-cylinder-roadmap/example.json": "d8aca22b98a56ebfe5a9104e3927bd6892f061478f224189f93630b78703b476",
+        "assets/dual-study-cylinder-roadmap/preview.png": "5277196c2c8a5206ed9cad43bf261ff27b0ada5fa1b20d11dc192b6bc91af0f9",
+        "scripts/dual_study_cylinder_roadmap.py": "36383fd326394e7071259b506d91da5fbc0bb54b0a0c0adc19311a1aca79c68e",
+        "references/dual-study-cylinder-roadmap.md": "f723408bb146a97463b0b423ba71e6f1de085236d18322a985dd4f77aec430c8",
+        "assets/dual-study-cylinder-roadmap/example.drawio": "abfef1b942ffafba754f5806de4be50faac53b49a5513ad348b57a1c6a4d3fde",
+        "assets/dual-study-cylinder-roadmap/example.pdf": "da5add9dd3f206d4a1f66ef84fd10629d85837a45a1adb217765769334c4af04",
+        "assets/dual-study-cylinder-roadmap/qa/visual-review.json": "92a5e5c070e1bf46c02f784df722ca83fcb6150de4b44dc3cf22ba9833af6afb",
+        "assets/dual-study-cylinder-roadmap/layout.json": "c0b92fd5b13977ed2d78aa924cf7397db225538f1be20b53c940d1402dae950c",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "ecotourism-integration-3band",
+      "name": "数字生态旅游三带整合框架图",
+      "layout": "1206×999，独立实测固定拓扑",
+      "semantics": "技术—方法—应用三带，每带左侧研究任务通过块箭头关联右侧综合解释。保留三角机制、技术影响矩阵、无刻度示意曲线、定性上升/持平符号表、案例推进及三路政策输出。适合数字技术与领域应用的综合概览；这些示意面板不能替代真实结果图，也不能仅凭此模板抵扣逐问主要综合图要求。",
+      "capacity": {
+        "node_count": 137,
+        "text_fields": 112,
+        "topology": "fixed",
+        "field_limits": "references/ecotourism-integration-3band.md"
+      },
+      "size_guidance": "A4/A3均不推荐原样入文；A2宽370mm大幅展示可读，正文须精简或拆分后重新审查。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-01",
+      "paths": {
+        "example": "assets/ecotourism-integration-3band/example.json",
+        "preview": "assets/ecotourism-integration-3band/preview.png",
+        "entry": "scripts/ecotourism_integration_3band.py",
+        "documentation": "references/ecotourism-integration-3band.md",
+        "editable": "assets/ecotourism-integration-3band/example.drawio",
+        "pdf": "assets/ecotourism-integration-3band/example.pdf",
+        "review": "assets/ecotourism-integration-3band/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/ecotourism-integration-3band/example.json": "94cea1e6145bb410d4fddca6b825a7460e25002f1540ed5021c12ce85d3826ed",
+        "assets/ecotourism-integration-3band/preview.png": "6682ecf475c36b21eabe8eb44c174de705d83715154a9e897c21f1f25a6dcd79",
+        "scripts/ecotourism_integration_3band.py": "32dd844fdb2cea4e28472db8373a30d98424f4cff54a8519c6fd722d066b9a3e",
+        "references/ecotourism-integration-3band.md": "da3d0cc6977c2e7a6fc769a5f9d47bab7bf982039c2dc558391f58516682aa0d",
+        "assets/ecotourism-integration-3band/example.drawio": "f5598e21197926139e7640b9c8c2b6ce8c36f3700e783d0882e49f17a8961962",
+        "assets/ecotourism-integration-3band/example.pdf": "66d216cd9630a2f861ee5de8a3ce3c286265fcaf9c1c15c438ee9f0057933e6d",
+        "assets/ecotourism-integration-3band/qa/visual-review.json": "e40c304a9608a73af4c1de96d057c0fa91005cba6b6d7c24b96420fe1472b49a",
+        "assets/ecotourism-integration-3band/layout.json": "c1c12e159f24e94867fd851259cd9b275ef18a219e7f5597a3e801ad1f05a330",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "feature-detection-research-5band",
+      "name": "多特征融合与目标检测五带研究路线图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "五带研究路线：四阶段总体流程、双栏关键技术路径、核心方法及左圆环/右反馈图、双栏实施验证、四节点双向迭代。左侧四个竖旗为特征提取网络/融合/检测/输出层说明，不擅自增加旗标间流程箭头。保留条件判断三路汇合、双验证合流、结果反馈双平行双向线与原图各虚线箭头方向。",
+      "capacity": {
+        "node_count": 80,
+        "text_fields": 66,
+        "topology": "fixed",
+        "field_limits": "references/feature-detection-research-5band.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-22",
+      "paths": {
+        "example": "assets/feature-detection-research-5band/example.json",
+        "preview": "assets/feature-detection-research-5band/preview.png",
+        "entry": "scripts/feature_detection_research_5band.py",
+        "documentation": "references/feature-detection-research-5band.md",
+        "editable": "assets/feature-detection-research-5band/example.drawio",
+        "pdf": "assets/feature-detection-research-5band/example.pdf",
+        "review": "assets/feature-detection-research-5band/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/feature-detection-research-5band/example.json": "3e028750cf36d413c99ff112e4f0620f8503e10f38d4695a081a6c5b9820317a",
+        "assets/feature-detection-research-5band/preview.png": "a8355d4234d4227f0b3a436a045210862db2307e9b37ef8d1f731076d88eb8ee",
+        "scripts/feature_detection_research_5band.py": "001b5e7adb2deb23aa419058cbdb20a6a471f80a05326b2d654304b73e2b6396",
+        "references/feature-detection-research-5band.md": "71694277e488e8d8fed6de0ef68a5776a8f995a35b11b046ed37123cb863e99b",
+        "assets/feature-detection-research-5band/example.drawio": "abb1c9ab1901088e6401f771cdf8ab67206c415da6ecf383a38841767bceb7a7",
+        "assets/feature-detection-research-5band/example.pdf": "c7cb306dbc01415ee623be97a5629881899fdef4744d9d8244ce761625f13d4a",
+        "assets/feature-detection-research-5band/qa/visual-review.json": "4000d86804f7ac77c01b75cbbce42e8ca34d21aceea4ec97ecba14aeb7f32be9",
+        "assets/feature-detection-research-5band/layout.json": "0262817f7c4df724229d5a69b4067654e841e1ac2f209f7268ca1bd869204a92",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "fieldwork-analysis-3band",
+      "name": "调研采集与实证分析三阶段图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "三个阶段依次推进：筹备、采集、分析产出。每带保留左右两面板，首带文献双列相互参照，方案设计两组扇出；第二带三组双向校核与三路处理汇总核验；第三带要素/路径/模型双向串联、两个分析视角和右侧四步对策链。适合调研类研究安排，不适合简单算法循环或无实地调研的数据分析。",
+      "capacity": {
+        "node_count": 60,
+        "text_fields": 54,
+        "topology": "fixed",
+        "field_limits": "references/fieldwork-analysis-3band.md"
+      },
+      "size_guidance": "A4近整页宽160mm可选，不能直接缩成半页；实际论文图题、文字与位置另审。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-26",
+      "paths": {
+        "example": "assets/fieldwork-analysis-3band/example.json",
+        "preview": "assets/fieldwork-analysis-3band/preview.png",
+        "entry": "scripts/fieldwork_analysis_3band.py",
+        "documentation": "references/fieldwork-analysis-3band.md",
+        "editable": "assets/fieldwork-analysis-3band/example.drawio",
+        "pdf": "assets/fieldwork-analysis-3band/example.pdf",
+        "review": "assets/fieldwork-analysis-3band/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/fieldwork-analysis-3band/example.json": "ffda4167dffd6c57dfc7dcbd192e5d9ee4b3b602f206f5d2c193200399eae55c",
+        "assets/fieldwork-analysis-3band/preview.png": "77b25dfcc18750e13fdef8464a678117f99e61d660cf0c326da49edac5c6ad2b",
+        "scripts/fieldwork_analysis_3band.py": "35e36e5bfc195755616b776fe804a5f7c30f4ac928d0e9c114bc15433868aef1",
+        "references/fieldwork-analysis-3band.md": "104189136323d3e56a47dc2e2d4199800882e8e55b77cd20327809adba80c533",
+        "assets/fieldwork-analysis-3band/example.drawio": "0abbf91f26d7d380ace88eaca9d0899038079d4cd43c6211ec33640cbd73ad0d",
+        "assets/fieldwork-analysis-3band/example.pdf": "b70ce2fd643bbd02aa942369fe1459d4a6a062ffbedb0d0eebc49538b92d1ee4",
+        "assets/fieldwork-analysis-3band/qa/visual-review.json": "ff399509e9e60cb0c7613ba9b88b0120da33d6981d511902ec09f55e681b67d9",
+        "assets/fieldwork-analysis-3band/layout.json": "607b62c3e16a5bc7d12186f51fa7967c5f52771ab13032abedd3be6b8d970336",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "five-chapter-research-roadmap",
+      "name": "五章节研究内容与方法路线图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "独立模板保留参考图的主要分区、标题层级、阶段连接和可替换字段；模板中的示例术语仅用于演示排版，使用前须按实际题意替换并审查。",
+      "capacity": {
+        "node_count": 36,
+        "text_fields": 36,
+        "topology": "fixed",
+        "field_limits": "references/five-chapter-research-roadmap.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-38",
+      "paths": {
+        "example": "assets/five-chapter-research-roadmap/example.json",
+        "preview": "assets/five-chapter-research-roadmap/preview.png",
+        "entry": "scripts/five_chapter_research_roadmap.py",
+        "documentation": "references/five-chapter-research-roadmap.md",
+        "editable": "assets/five-chapter-research-roadmap/example.drawio",
+        "pdf": "assets/five-chapter-research-roadmap/example.pdf",
+        "review": "assets/five-chapter-research-roadmap/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/five-chapter-research-roadmap/example.json": "653a13367eb48d17b56b031764eba12498a47b1a07c2394a8189afdea3473d4f",
+        "assets/five-chapter-research-roadmap/preview.png": "c3b8985b697b4f77b0100713b54f8344f72bc2d5efbcfe0c88bb4bb8d73508ed",
+        "scripts/five_chapter_research_roadmap.py": "2f041ea30a5006693525a5fc244acc06d0b44ff9809e91730b49aa5cae98e458",
+        "references/five-chapter-research-roadmap.md": "b210ed77189cfb21c50f14a985a7038d2abc6d2d992125c0b127b00b2464ce07",
+        "assets/five-chapter-research-roadmap/example.drawio": "d1a4b6c7601cfda4af4adee9de06ac768955555ad98ace9c520009f884959f34",
+        "assets/five-chapter-research-roadmap/example.pdf": "b411ea2505b9ba5a81a0024e30b425e2c24361c65c9674b3451e192ee87df7bc",
+        "assets/five-chapter-research-roadmap/qa/visual-review.json": "65f48549ff91b86df7da2da67b5625231f92b8c8744d37fed42f57c59120c8f8",
+        "assets/five-chapter-research-roadmap/layout.json": "3a138bc9aceeb2a683ae2a2d3c51fd7df20872e9b0200f11bedfc1cd93b5d3c4",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "four-band-method-roadmap",
+      "name": "四阶段研究总体技术路线图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "四个阶段依次向下推进：前期调研、方案拆解、系统实现、测试总结。第一带中央思路向两侧输出；第二带左四项及右三项母线分支，三条带标签箭头对应参数/模型/逻辑；第三带原图无箭头母线连接处理与调试；第四带中栏向左数据归集、向右方案验证，保留巨型箭头和六边形标签。",
+      "capacity": {
+        "node_count": 79,
+        "text_fields": 52,
+        "topology": "fixed",
+        "field_limits": "references/four-band-method-roadmap.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-08",
+      "paths": {
+        "example": "assets/four-band-method-roadmap/example.json",
+        "preview": "assets/four-band-method-roadmap/preview.png",
+        "entry": "scripts/four_band_method_roadmap.py",
+        "documentation": "references/four-band-method-roadmap.md",
+        "editable": "assets/four-band-method-roadmap/example.drawio",
+        "pdf": "assets/four-band-method-roadmap/example.pdf",
+        "review": "assets/four-band-method-roadmap/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/four-band-method-roadmap/example.json": "578c5101df0334efff975890d6850454a435b473d6065d3006e7a0929b30d3e9",
+        "assets/four-band-method-roadmap/preview.png": "28888edd411088a43e1825d038fcf0e5afda93f4de88a3640054b775d325dcca",
+        "scripts/four_band_method_roadmap.py": "4c606ac320a2144a2d6b7479a733665dddfe8c15f4311d29312a09de1f34cca1",
+        "references/four-band-method-roadmap.md": "526dfc4ed701e649f3e8b96e73f78a01a5a37a6759c582b273925d5456d5f580",
+        "assets/four-band-method-roadmap/example.drawio": "704dc07069f824173b1de04363ffb12cf26be683208aa57b8adc38422881ec3a",
+        "assets/four-band-method-roadmap/example.pdf": "e8440e0d782729ee9b6aa1ed62585ad5162188d4dfa014ecd7cd8fb888c2fd60",
+        "assets/four-band-method-roadmap/qa/visual-review.json": "788f8088208a7ba1dd20def67fd4b9295ef1afe1884329caccd0c810f6500be0",
+        "assets/four-band-method-roadmap/layout.json": "e0b46a5d343c9f208e4bb433911514d8f1ba697d5da08fc32e479b1d53d0a957",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "four-content-evidence-roadmap",
+      "name": "四内容模块与证据链研究路线图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "独立模板保留参考图的主要分区、标题层级、阶段连接和可替换字段；模板中的示例术语仅用于演示排版，使用前须按实际题意替换并审查。",
+      "capacity": {
+        "node_count": 33,
+        "text_fields": 33,
+        "topology": "fixed",
+        "field_limits": "references/four-content-evidence-roadmap.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-29",
+      "paths": {
+        "example": "assets/four-content-evidence-roadmap/example.json",
+        "preview": "assets/four-content-evidence-roadmap/preview.png",
+        "entry": "scripts/four_content_evidence_roadmap.py",
+        "documentation": "references/four-content-evidence-roadmap.md",
+        "editable": "assets/four-content-evidence-roadmap/example.drawio",
+        "pdf": "assets/four-content-evidence-roadmap/example.pdf",
+        "review": "assets/four-content-evidence-roadmap/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/four-content-evidence-roadmap/example.json": "3be79cfd9ef9b546527758e16e54950e2165585ec9f6526d84faa86e94743e90",
+        "assets/four-content-evidence-roadmap/preview.png": "33c115660741f1458fbc286d1ec59692193fbe0ad984697720fcb5cf8e0fc98f",
+        "scripts/four_content_evidence_roadmap.py": "aaf1fe2e7462f6ddb86611fd17e8df3d5d54dcee16bb646b4206986c81751f80",
+        "references/four-content-evidence-roadmap.md": "af2f79a4c59a90d921fcc5ae64f8abafd729219bdbed2109f3facbbec77b6a48",
+        "assets/four-content-evidence-roadmap/example.drawio": "4f6ab79454e520c6265ac622149c76ac6b655fc558e94750e1a0544b136682de",
+        "assets/four-content-evidence-roadmap/example.pdf": "8bb5f5f400366a18c61ba1b9785f0de3d1409b7e892e684456465152a5166487",
+        "assets/four-content-evidence-roadmap/qa/visual-review.json": "9a55ca1d83a540f50f01967d9756f4f22ff4f6d26a1173e5a7fcd5672a44594c",
+        "assets/four-content-evidence-roadmap/layout.json": "94d2972b3b7b1ac6c12f8dd049ba38372709e9c956bff30c45ae39fa82fde56d",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "four-stage-research-framework",
+      "name": "四阶段研究内容与成果推广框架图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "独立模板保留参考图的主要分区、标题层级、阶段连接和可替换字段；模板中的示例术语仅用于演示排版，使用前须按实际题意替换并审查。",
+      "capacity": {
+        "node_count": 25,
+        "text_fields": 25,
+        "topology": "fixed",
+        "field_limits": "references/four-stage-research-framework.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-34",
+      "paths": {
+        "example": "assets/four-stage-research-framework/example.json",
+        "preview": "assets/four-stage-research-framework/preview.png",
+        "entry": "scripts/four_stage_research_framework.py",
+        "documentation": "references/four-stage-research-framework.md",
+        "editable": "assets/four-stage-research-framework/example.drawio",
+        "pdf": "assets/four-stage-research-framework/example.pdf",
+        "review": "assets/four-stage-research-framework/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/four-stage-research-framework/example.json": "8ba817c8d552d88de6696f1073dcebf5c8d9cdd92edba9de7e8f25b5d5363e22",
+        "assets/four-stage-research-framework/preview.png": "76da1e7e52b77d15899cbb9f44828b1ccbef7a84a1bb5a4b6bdc7e5643b38839",
+        "scripts/four_stage_research_framework.py": "4141d11efd44efb97558a850331ddb98fc1979129d998822a6f335898c567869",
+        "references/four-stage-research-framework.md": "1e37ace4c45f448f3a48f6fec4ea16c6ad7ed045988e784e775ac576daead9b1",
+        "assets/four-stage-research-framework/example.drawio": "fa05260657aaa27568bcdc1372313c945409824ed3151da384228cb9e1fe6b5c",
+        "assets/four-stage-research-framework/example.pdf": "86b1423ad43371a212b8f8a3281225015cbddbff444899ee3b8d8123c550fe9b",
+        "assets/four-stage-research-framework/qa/visual-review.json": "c053da33be343079995dc60c93870e2c15edb31f104d099c5f989050c2a740d5",
+        "assets/four-stage-research-framework/layout.json": "6e495d1f1bfc533f7b1f6fe9a90f6c50ba3379e00581062de47a0cde8ac39ed6",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "health-system-concentric",
+      "name": "智慧康养同心架构与层级系统图",
+      "layout": "1206×2470，独立实测固定拓扑",
+      "semantics": "同一截图包含顶部教学协作残片、同心环体系架构和椭圆层级系统三部分。中央由核心→目标→功能/协同/效用/要素→模块→细项逐层展开，下方3H与4S为模型类别；底图表达后台—感知—需求三层及四类参与方的协同。适合系统设计架构展示，不等价于顺序算法或全文技术路线；不能默认选作第一章。",
+      "capacity": {
+        "node_count": 174,
+        "text_fields": 106,
+        "topology": "fixed",
+        "field_limits": "references/health-system-concentric.md"
+      },
+      "size_guidance": "A4/A3/A2均不推荐整图入文；420×820mm长页可展示，论文须按真实关系选择面板并重新排版审查。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-02",
+      "paths": {
+        "example": "assets/health-system-concentric/example.json",
+        "preview": "assets/health-system-concentric/preview.png",
+        "entry": "scripts/health_system_concentric.py",
+        "documentation": "references/health-system-concentric.md",
+        "editable": "assets/health-system-concentric/example.drawio",
+        "pdf": "assets/health-system-concentric/example.pdf",
+        "review": "assets/health-system-concentric/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/health-system-concentric/example.json": "7c8a0e17af7b221f98e778e622e9bae1d649eeafc3b9cae79cb9490363e4b503",
+        "assets/health-system-concentric/preview.png": "893142baf36dfada7503aa6bbdba562e2c248184207dfeada25e689fb0537f57",
+        "scripts/health_system_concentric.py": "b769470e1f74638bd89f75f9fd245f2b533a0fee58d653831e51858936ea0e10",
+        "references/health-system-concentric.md": "f21bd592e0d926f3c09f627246f3056c08321ced3bb8cd9ca5e06b9f7c4df0dd",
+        "assets/health-system-concentric/example.drawio": "49a9c43b3885a5a0425ba9d75b206bab8c848b4cfddbed958ac4fc413911e726",
+        "assets/health-system-concentric/example.pdf": "c536d996a42d6031ca4faf32acdc0f2d518562d17c5cd9f3b94fcce156170732",
+        "assets/health-system-concentric/qa/visual-review.json": "7a7f37a94ba802d4a1482558d5ff26635d827be928eb1b5658e03e8743e8d72f",
+        "assets/health-system-concentric/layout.json": "cfcfbfb3d8914bd9299f60985a3a24bcc128b683ada7bd29fcdca09a3e48a5fc",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "hexagon-chain-research-5band",
+      "name": "双侧六边形阶段链五带研究路线图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "五个中心工作包由向下箭头串接，左右为无箭头的六边形阶段/解释链。第一带三组方案横向推进；第二带两组各五个竖排条目通过母线分类；第三、四带各有三列研究维度与下方依据/目标；第五带三项总结推进。保留双侧六边形外轮廓和大范围边界，不将阶段链改为普通矩形列表。",
+      "capacity": {
+        "node_count": 78,
+        "text_fields": 53,
+        "topology": "fixed",
+        "field_limits": "references/hexagon-chain-research-5band.md"
+      },
+      "size_guidance": "A4近整页宽160mm可选，不能直接缩成半页；实际论文图题、文字与位置另审。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-06",
+      "paths": {
+        "example": "assets/hexagon-chain-research-5band/example.json",
+        "preview": "assets/hexagon-chain-research-5band/preview.png",
+        "entry": "scripts/hexagon_chain_research_5band.py",
+        "documentation": "references/hexagon-chain-research-5band.md",
+        "editable": "assets/hexagon-chain-research-5band/example.drawio",
+        "pdf": "assets/hexagon-chain-research-5band/example.pdf",
+        "review": "assets/hexagon-chain-research-5band/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/hexagon-chain-research-5band/example.json": "33ce50f42bc730b9e0fcc9768939c73535c0dc169a8363e91e7ec5ccc88a6bb4",
+        "assets/hexagon-chain-research-5band/preview.png": "a376128010df03bf5b92ce150328638e60b9cbb8dad196013b76b2023aa3c5a8",
+        "scripts/hexagon_chain_research_5band.py": "c39bf4d3711b71faf0260a6b726c2acacc4fa487b185d1d8ecd977c51744a95a",
+        "references/hexagon-chain-research-5band.md": "19040d8ff3600bb411d47d295410628b7a0b8e8588b7a2abe0ef79d078a6caae",
+        "assets/hexagon-chain-research-5band/example.drawio": "81faa3e3845e845dd048cd76472c3eef9b77a640b2d34d02747c4f837739e0dc",
+        "assets/hexagon-chain-research-5band/example.pdf": "06686cf2e590dd1859ab8104798218a4f47184213962596e03a7bdf0ce095903",
+        "assets/hexagon-chain-research-5band/qa/visual-review.json": "d1456c5feda88d79ff5feff71541f1bb1ba32f5e09773a038b451120251837a2",
+        "assets/hexagon-chain-research-5band/layout.json": "6f6406ed5b8d1f3967345d32b1e4039ed84ac6ec76687ef045179e5ff6c43e89",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "innovation-chain-5stage",
+      "name": "创新产业链五阶段研究框架图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "适合同时展示五阶段研究安排、阶段内并列研究内容和右侧方法清单。左侧严格五个阶段，右侧四组方法对应研究范围，第三方法组覆盖机理与路径设计。内部三柱是创新趋势—创新力测度—国际比较的推进关系；结构与风险双栏各自扇入，不能改成跨栏比较；机理区两侧分别进入中心三链，中心再输出影响机理；重构区左侧三要素进入右侧2×3路径，末带为三节点政策链。",
+      "capacity": {
+        "node_count": 84,
+        "text_fields": 70,
+        "topology": "fixed",
+        "field_limits": "references/innovation-chain-5stage.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-21",
+      "paths": {
+        "example": "assets/innovation-chain-5stage/example.json",
+        "preview": "assets/innovation-chain-5stage/preview.png",
+        "entry": "scripts/innovation_chain_5stage.py",
+        "documentation": "references/innovation-chain-5stage.md",
+        "editable": "assets/innovation-chain-5stage/example.drawio",
+        "pdf": "assets/innovation-chain-5stage/example.pdf",
+        "review": "assets/innovation-chain-5stage/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/innovation-chain-5stage/example.json": "cc424bec34685ae63857071919b1f060e4ef37deb5392661c433cceb6bbc2122",
+        "assets/innovation-chain-5stage/preview.png": "4c8b90247d55fd7388451aec393d1b2a11270d5b09711173b1eb3981f3ce26e4",
+        "scripts/innovation_chain_5stage.py": "203424054455c08e7e57d7a209840b1eacc1e81c185f57b586ada896a68bbc48",
+        "references/innovation-chain-5stage.md": "15bbe6c8d83b5772442e897aec80e5e0132b44a4c6292ed2dfbfc61e4b4b2e54",
+        "assets/innovation-chain-5stage/example.drawio": "d724bf6de28e542190e29b17117ca7bc6c831b0f9eba85094d8278ea7af93bb0",
+        "assets/innovation-chain-5stage/example.pdf": "7c456e323bcacc079d2705830cc100799ec83037b182bdfca6e050e368fe165a",
+        "assets/innovation-chain-5stage/qa/visual-review.json": "ac7a8aa13a90f6f20b182c044eda790b30aaa64ca7c985013c2cb97c90264f20",
+        "assets/innovation-chain-5stage/layout.json": "b12ed5a0d927b29a8936f82dfb9813b3d4f402d2f53e03acf2b0c0922e96a0dd",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "model-optimization-6stage",
+      "name": "模型优化六阶段双列技术路线图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "六阶段研究路线：三组调研/采集到产出映射；架构与实现双列分支；A/B测试汇入集成并列性能检验；三方案各三条方法说明；三评价维度各两分支；底部四步整理与输出。保留六个右指侧旗和各层母线，阶段之间不凭空增加箭头。",
+      "capacity": {
+        "node_count": 69,
+        "text_fields": 50,
+        "topology": "fixed",
+        "field_limits": "references/model-optimization-6stage.md"
+      },
+      "size_guidance": "A4近整页宽160mm可选，不能直接缩成半页；实际论文图题、文字与位置另审。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-13",
+      "paths": {
+        "example": "assets/model-optimization-6stage/example.json",
+        "preview": "assets/model-optimization-6stage/preview.png",
+        "entry": "scripts/model_optimization_6stage.py",
+        "documentation": "references/model-optimization-6stage.md",
+        "editable": "assets/model-optimization-6stage/example.drawio",
+        "pdf": "assets/model-optimization-6stage/example.pdf",
+        "review": "assets/model-optimization-6stage/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/model-optimization-6stage/example.json": "ccb120ce121fa9c18066d84fb2d0215f58de9486893f1f9a3c215f979fe9de76",
+        "assets/model-optimization-6stage/preview.png": "7bfef6b8fc8764316eb4b8b860fbffa2ce25496ef80e5c36e736c3a21afa6826",
+        "scripts/model_optimization_6stage.py": "021ea9bce00993e0aabedb542e70d9a2b2d09b7ee098235f30f21960c4ccaba2",
+        "references/model-optimization-6stage.md": "1e64a3fc1e86d931c947117310a42f8f567f874e22abf67a6505a6d43cf23a92",
+        "assets/model-optimization-6stage/example.drawio": "22d665c078932fa22bd92be51381f05422fd83e0919b961e1b952a2cb2036153",
+        "assets/model-optimization-6stage/example.pdf": "8b6d6104da3d2d148fbb724179599046374d9be4715c6939158f506068c32b9e",
+        "assets/model-optimization-6stage/qa/visual-review.json": "d0de3579fc901145cabc1cd8a1057771560f924a98e845f23534e08a04d3033f",
+        "assets/model-optimization-6stage/layout.json": "94b5dfa6b53854adfefce9fe5a65e0e31b228e6185af8f2a63c9ccc570158491",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "port-sustainability-quality-houses",
+      "name": "港口供应链双质量屋与减排策略研究图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "四阶段研究安排：研究基础分发至理论及文献；双质量屋串联技术需求与评价指标；CH-DEA接收内部障碍及外部驱动信息并形成两类可持续性评价；底部静态/动态博弈与系统仿真通过微观向右、宏观向左的箭头交换。保留质量屋屋顶/侧三角矩阵、三向关联块、政策—企业—能源—环境—经济关系及场景指标框。",
+      "capacity": {
+        "node_count": 91,
+        "text_fields": 63,
+        "topology": "fixed",
+        "field_limits": "references/port-sustainability-quality-houses.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-09",
+      "paths": {
+        "example": "assets/port-sustainability-quality-houses/example.json",
+        "preview": "assets/port-sustainability-quality-houses/preview.png",
+        "entry": "scripts/port_sustainability_quality_houses.py",
+        "documentation": "references/port-sustainability-quality-houses.md",
+        "editable": "assets/port-sustainability-quality-houses/example.drawio",
+        "pdf": "assets/port-sustainability-quality-houses/example.pdf",
+        "review": "assets/port-sustainability-quality-houses/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/port-sustainability-quality-houses/example.json": "45d01e225d83f55b962e304dd233928d1b218ae1542b48d2faa48a656222cc74",
+        "assets/port-sustainability-quality-houses/preview.png": "4782392fc7f1217b59bc2528d731634a854c49463bb94b117bd91d254fc910d9",
+        "scripts/port_sustainability_quality_houses.py": "e4cc9621b1c068fac05223b7ee8d46af17671b2755765cc93983cedc27eb5164",
+        "references/port-sustainability-quality-houses.md": "f5d5b2b323dabdd31d54ebf85c3fde531f78a077cb06f0d53794d87a091fd777",
+        "assets/port-sustainability-quality-houses/example.drawio": "d27011b583876dddd255db0b8d24d3bdcb189603b447615d86795d9919dd935f",
+        "assets/port-sustainability-quality-houses/example.pdf": "f3195b274b91f5008006c32e6fa7201c01fd2ceb2b3f0862ebf3585853809423",
+        "assets/port-sustainability-quality-houses/qa/visual-review.json": "8890df86334f36d5f94afbc5e06da3b92470a9718180d316dac298ce673cbd0a",
+        "assets/port-sustainability-quality-houses/layout.json": "76bcac9ff079659c40bcbdf8dfdc441a21acda31a147e264ce522f78001234e5",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "research-columns-evidence-cards",
+      "name": "三列研究路线与基础证据卡框架图",
+      "layout": "1075×1560，独立实测固定拓扑",
+      "semantics": "三带框架：上部国内/国外/趋势三栏现状，中部三列研究内容，底部理论/成果/团队三张基础证据卡。保持上下箭头、右侧对应关系、半圆标题页签、勾星图标、多模态阶梯块与三种原生示意统计图。适合并列研究路线及基础说明；参考的医学标题与AI术语混杂，示例不证明这些科学关系成立。",
+      "capacity": {
+        "node_count": 257,
+        "text_fields": 116,
+        "topology": "fixed",
+        "field_limits": "references/research-columns-evidence-cards.md"
+      },
+      "size_guidance": "A4/A3均不推荐原样入文；A2宽370mm大幅展示可读，正文须精简或拆分后重新审查。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-10",
+      "paths": {
+        "example": "assets/research-columns-evidence-cards/example.json",
+        "preview": "assets/research-columns-evidence-cards/preview.png",
+        "entry": "scripts/research_columns_evidence_cards.py",
+        "documentation": "references/research-columns-evidence-cards.md",
+        "editable": "assets/research-columns-evidence-cards/example.drawio",
+        "pdf": "assets/research-columns-evidence-cards/example.pdf",
+        "review": "assets/research-columns-evidence-cards/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/research-columns-evidence-cards/example.json": "816ca965f9797b22d443d9a9be2f22966c4b0cd218697cd2f6c8d4c6e1460224",
+        "assets/research-columns-evidence-cards/preview.png": "654c41334158851d995c661821ec9aea0ce8db9bda80436209d284680c13f18d",
+        "scripts/research_columns_evidence_cards.py": "9945ffd5b9c29c320e5c68cdffea9833de86847100920b9e469454734c078686",
+        "references/research-columns-evidence-cards.md": "74e6491f49b9e6d20f35fd06f5e356a32c1a01ced7bfa698929d4888a46ea68e",
+        "assets/research-columns-evidence-cards/example.drawio": "3d486747af555a55d5bb6ebad4cf30b8bbaa9b21cb15623e526419bd78dbb295",
+        "assets/research-columns-evidence-cards/example.pdf": "be8c277dda1d651f0d03e575cb06aa36dfc041eace6383524d6e2dc502bbd206",
+        "assets/research-columns-evidence-cards/qa/visual-review.json": "1ac2ff2223fa866e393dc31d43d9c46984ef685f20d0c45217008df164e6f153",
+        "assets/research-columns-evidence-cards/layout.json": "37e17d3033839ef2b023c9bd241e02f284d3bd5abd60cedb7946d5cc957bedb9",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "research-design-vertical-loop",
+      "name": "纵向研究设计与实证闭环图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "独立模板保留参考图的主要分区、标题层级、阶段连接和可替换字段；模板中的示例术语仅用于演示排版，使用前须按实际题意替换并审查。",
+      "capacity": {
+        "node_count": 20,
+        "text_fields": 20,
+        "topology": "fixed",
+        "field_limits": "references/research-design-vertical-loop.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-24",
+      "paths": {
+        "example": "assets/research-design-vertical-loop/example.json",
+        "preview": "assets/research-design-vertical-loop/preview.png",
+        "entry": "scripts/research_design_vertical_loop.py",
+        "documentation": "references/research-design-vertical-loop.md",
+        "editable": "assets/research-design-vertical-loop/example.drawio",
+        "pdf": "assets/research-design-vertical-loop/example.pdf",
+        "review": "assets/research-design-vertical-loop/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/research-design-vertical-loop/example.json": "c7430dde80bdbee3e1c1d49220befd7fe819d984985bf1373292513705754f7e",
+        "assets/research-design-vertical-loop/preview.png": "cee3f2213f12ec8d69cce68062f8d472578473590983306f6741becaefc417b4",
+        "scripts/research_design_vertical_loop.py": "f73ad8b0505e35ddcfe8d8d1d17436592f8671e109a39d30bcf70b7e514a6930",
+        "references/research-design-vertical-loop.md": "069071df8afb556dafa0f14ae3331e8ff7e6c294555e6ee97059a5ac284eb218",
+        "assets/research-design-vertical-loop/example.drawio": "f9eedf32a5da3353b24838f6017fc984d5c39a6811de86f5ebe820d1704dfdd1",
+        "assets/research-design-vertical-loop/example.pdf": "45e7ead93362e56a10b07a9632ab580afc6af84d3f6fbbd6c6b058d4feb8261d",
+        "assets/research-design-vertical-loop/qa/visual-review.json": "e5dc45252a30b41419698eda02852110737383cec6fe82cb1ce9b297c13d0272",
+        "assets/research-design-vertical-loop/layout.json": "ef08d7d5e9824bd5463c00f972bac8ef12707fb4584f29ada7a2ecc28dc41b31",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "research-framework-5band",
+      "name": "五阶段研究框架与多场景决策流程图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "五个彩色工作包按阶段推进：整体框架、双向关联的三阶段、数据到模型分析、三个相互关联场景及五分支成果。左右分别为独立向下的研究方法链和研究阶段链；不使用ref-04的向内箭头侧栏。首带保留五个立体卡片，场景输入与约束围绕菱形决策，不能解释成串行条目。与ref-04存在相同结构族但侧链、配色和成果节点设计不同，独立ID与配置调用。",
+      "capacity": {
+        "node_count": 110,
+        "text_fields": 75,
+        "topology": "fixed",
+        "field_limits": "references/research-framework-5band.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-19",
+      "paths": {
+        "example": "assets/research-framework-5band/example.json",
+        "preview": "assets/research-framework-5band/preview.png",
+        "entry": "scripts/research_framework_5band.py",
+        "documentation": "references/research-framework-5band.md",
+        "editable": "assets/research-framework-5band/example.drawio",
+        "pdf": "assets/research-framework-5band/example.pdf",
+        "review": "assets/research-framework-5band/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/research-framework-5band/example.json": "139650b47d539415c0c9d08369beed4e83b252162ac0ae92c7b74c613c954752",
+        "assets/research-framework-5band/preview.png": "9480cd93d6ba5d5247985c64abecfe209135a0712de80e985b3d15326130c159",
+        "scripts/research_framework_5band.py": "5c784584816eabbe5b2d284a953028f1de7af723fef4701c964b8f61806b6c8a",
+        "references/research-framework-5band.md": "2a568508cd6149be8be51b75583eff6e6085d1c69a7da0f45b5a46e05781202c",
+        "assets/research-framework-5band/example.drawio": "c587b24197f778b2284969e724c54f80449793971fa96765d4c171f56cc14c15",
+        "assets/research-framework-5band/example.pdf": "d9c4a067cadb255720ed6ce4cc310e8404a7735122014a395bc4705ff1912390",
+        "assets/research-framework-5band/qa/visual-review.json": "73d6939331859a926286ee424885b8e41a011673331897966c138f89d5567d7e",
+        "assets/research-framework-5band/layout.json": "08964fde11d0c47925ca645988e76dc61c80e053ffb11f0f827c85a3e51d639d",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "research-methods-5stage",
+      "name": "研究内容与方法五阶段框架图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "五行研究工作包，左列研究阶段、右列方法分别指向中央内容；行间没有原图不存在的流程箭头。保留第一行三组并列梳理、第二行因子提取与理论论证、第三行四类输入支持技术方案、第四行相向实验与对照分析、第五行双输出。适合多阶段研究安排，不适合需要真实跨阶段变量箭头或算法循环的场景。",
+      "capacity": {
+        "node_count": 69,
+        "text_fields": 67,
+        "topology": "fixed",
+        "field_limits": "references/research-methods-5stage.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-11",
+      "paths": {
+        "example": "assets/research-methods-5stage/example.json",
+        "preview": "assets/research-methods-5stage/preview.png",
+        "entry": "scripts/research_methods_5stage.py",
+        "documentation": "references/research-methods-5stage.md",
+        "editable": "assets/research-methods-5stage/example.drawio",
+        "pdf": "assets/research-methods-5stage/example.pdf",
+        "review": "assets/research-methods-5stage/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/research-methods-5stage/example.json": "170f9c35f71191708e5e491b843c78b0da6c37246d91a4931c5120f48a42390d",
+        "assets/research-methods-5stage/preview.png": "1f80f8d6ca90f0cdce8119ce5199aac89268a25e7f016111b5d0445dbbb54dd3",
+        "scripts/research_methods_5stage.py": "d3bafdbebee4c5ac547084d54432546a8dd3a78cba1ab799bbe14ff52cd4b40c",
+        "references/research-methods-5stage.md": "b163dfdfc4dbad52476d5c708af764cd47cb23a29e5f278104b9da5dea1e2263",
+        "assets/research-methods-5stage/example.drawio": "a1ed26a8a674dd2e89a8e0f32a3a0f46ae73fe0ddd95d5a1e8582e5ea37b2336",
+        "assets/research-methods-5stage/example.pdf": "0e66a3237863a5d2103d05b7c671fed4e4a92ce6e4fe80b64a7a4160eb4f7b99",
+        "assets/research-methods-5stage/qa/visual-review.json": "0b162757a421f414074277517d26ff5f4beb4aebf09fc6e7d1d21b4e5a286c4c",
+        "assets/research-methods-5stage/layout.json": "ea52d4d41d76e8cfbcb187607e2a605801143466496486759d205e0a9917e349",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "stage-design-prism-5band",
+      "name": "五阶段立体卡片与场景决策流程图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "五个彩色工作包按阶段推进：整体框架、可回溯的三阶段、数据到模型分析、三个相互关联场景及五分支成果。左右分别为研究方法链和指入内容的阶段说明。首带保留五个立体卡片；场景输入与约束围绕菱形决策，不能解释成串行条目。与stageflow-3col同族但立体卡片、侧栏箭头和固定实测几何不同，因此独立调用。",
+      "capacity": {
+        "node_count": 111,
+        "text_fields": 75,
+        "topology": "fixed",
+        "field_limits": "references/stage-design-prism-5band.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-04",
+      "paths": {
+        "example": "assets/stage-design-prism-5band/example.json",
+        "preview": "assets/stage-design-prism-5band/preview.png",
+        "entry": "scripts/stage_design_prism_5band.py",
+        "documentation": "references/stage-design-prism-5band.md",
+        "editable": "assets/stage-design-prism-5band/example.drawio",
+        "pdf": "assets/stage-design-prism-5band/example.pdf",
+        "review": "assets/stage-design-prism-5band/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/stage-design-prism-5band/example.json": "f5b97a8fd52ca00aad627bb41051c32f7a84ca6a0257a7d2117e1b7ed43f1842",
+        "assets/stage-design-prism-5band/preview.png": "0558166e364077ea666c370ba421c9d185ef96d04bc8ea583e8b6fb3b63012ed",
+        "scripts/stage_design_prism_5band.py": "70583b28f2177fa7499d20b2454bde0b1db09d8cc4f9699a1d9ff3880ab7ee97",
+        "references/stage-design-prism-5band.md": "ef46d5fb8f3ad87f74efbc9e760464ca17e5d4905a5ba7aba97cd979b098f29a",
+        "assets/stage-design-prism-5band/example.drawio": "9927b05bcfec5a3eb5671fecf9ae00ba74103b1880338d1b79787f824888a45c",
+        "assets/stage-design-prism-5band/example.pdf": "fc5b9f52c95176715080b10069da0e354d06f95332048975725e351212ee81c5",
+        "assets/stage-design-prism-5band/qa/visual-review.json": "f7b9f061b5b1f2441c8d108374b9cfd1d2bad9569c1d77b7a9e7424b299a6848",
+        "assets/stage-design-prism-5band/layout.json": "ed265f1eb9b120bc2ed0dac2b46a06fbc5cbea8d1a3e9d77e28d9e86beab5c8d",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "triple-band-experiment-roadmap",
+      "name": "三阶段联合实验与机制验证图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "独立模板保留参考图的主要分区、标题层级、阶段连接和可替换字段；模板中的示例术语仅用于演示排版，使用前须按实际题意替换并审查。",
+      "capacity": {
+        "node_count": 25,
+        "text_fields": 25,
+        "topology": "fixed",
+        "field_limits": "references/triple-band-experiment-roadmap.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-25",
+      "paths": {
+        "example": "assets/triple-band-experiment-roadmap/example.json",
+        "preview": "assets/triple-band-experiment-roadmap/preview.png",
+        "entry": "scripts/triple_band_experiment_roadmap.py",
+        "documentation": "references/triple-band-experiment-roadmap.md",
+        "editable": "assets/triple-band-experiment-roadmap/example.drawio",
+        "pdf": "assets/triple-band-experiment-roadmap/example.pdf",
+        "review": "assets/triple-band-experiment-roadmap/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/triple-band-experiment-roadmap/example.json": "4139b0d9491e91aa6a9d037e027f18e227b726fa2d80698c3b79154875e97973",
+        "assets/triple-band-experiment-roadmap/preview.png": "5a4a99a97973a8fc61fb43142c412cf8cab465fabc4a4e4e1ad61707c5e331c4",
+        "scripts/triple_band_experiment_roadmap.py": "8dc102629f5e71647849343835355eb0065753051a1be19f030e48ba528c68a0",
+        "references/triple-band-experiment-roadmap.md": "d3d4b8ac2bd2fa3e5f84db73072d141ffcef2eb0fdbdb561e22912c4b38d3b50",
+        "assets/triple-band-experiment-roadmap/example.drawio": "cfb2753b3e30904bbd36042f8b250ace0a555e037d7b165bd3115a1315e7d902",
+        "assets/triple-band-experiment-roadmap/example.pdf": "d3fce3c99986d8ba1394c7e5db7c7c51a9d66641fd7e4b5df041572b2059ee0c",
+        "assets/triple-band-experiment-roadmap/qa/visual-review.json": "b40641259271c57f3aab72da856afdf8797f8a02d33ba6efd9a58afb0ba010f4",
+        "assets/triple-band-experiment-roadmap/layout.json": "ad40547460ab3443194cec57245fc2136802171e948c2bcbb50b660fb7a7a015",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    },
+    {
+      "template_id": "triple-band-research-validation",
+      "name": "三带研究基础实验与联合验证图",
+      "layout": "1206×1743，独立实测固定拓扑",
+      "semantics": "独立模板保留参考图的主要分区、标题层级、阶段连接和可替换字段；模板中的示例术语仅用于演示排版，使用前须按实际题意替换并审查。",
+      "capacity": {
+        "node_count": 25,
+        "text_fields": 25,
+        "topology": "fixed",
+        "field_limits": "references/triple-band-research-validation.md"
+      },
+      "size_guidance": "不推荐默认作为A4第一章图；A3展示可读，正文适配需重新设计和复核。",
+      "status": "published_both_endpoints_template_audited",
+      "source_id": "ref-36",
+      "paths": {
+        "example": "assets/triple-band-research-validation/example.json",
+        "preview": "assets/triple-band-research-validation/preview.png",
+        "entry": "scripts/triple_band_research_validation.py",
+        "documentation": "references/triple-band-research-validation.md",
+        "editable": "assets/triple-band-research-validation/example.drawio",
+        "pdf": "assets/triple-band-research-validation/example.pdf",
+        "review": "assets/triple-band-research-validation/qa/visual-review.json"
+      },
+      "file_sha256": {
+        "assets/triple-band-research-validation/example.json": "5c59471b030e2847cbcd00e399eacf69c03a619d4cf9d11295fea6d9111f9e4f",
+        "assets/triple-band-research-validation/preview.png": "d9187d1d6aa47e25fe95431fa24740976bcc963dfd5bfbedf88e8130f3948348",
+        "scripts/triple_band_research_validation.py": "f7b214606af3d83c1ccf715f10305966b64641bcc3856c8c31a11116feb684c0",
+        "references/triple-band-research-validation.md": "f563eb2d082ef384ec9a820f3ed6cab12a6dd11ef0d3ca20008691c69875e77e",
+        "assets/triple-band-research-validation/example.drawio": "f9dde238e2f126c094084f8e73bbf09347507d78aca654a09016a35f587f010b",
+        "assets/triple-band-research-validation/example.pdf": "78aa1cd31f73c28e7cd5524a3e06f28b91a8d139044b8277357a4f5ac3b3be90",
+        "assets/triple-band-research-validation/qa/visual-review.json": "961d81213367aef0a8f2a2a17db01fc1cde46d1c999ede076a5a13aed594ecb9",
+        "assets/triple-band-research-validation/layout.json": "d9bf827a7ea0faf4e6afb96abafb92c37919f59c2837226eb6fa259b8981cd62",
+        "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd"
+      }
+    }
+  ]
+}

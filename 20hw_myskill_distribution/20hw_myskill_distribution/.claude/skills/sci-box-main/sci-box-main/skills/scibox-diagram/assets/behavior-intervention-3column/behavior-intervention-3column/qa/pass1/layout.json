@@ -1,0 +1,2672 @@
+{
+  "template_id": "behavior-intervention-3column",
+  "name": "行为机制与干预研究四阶段三栏框架图",
+  "canvas": [
+    1206,
+    1743
+  ],
+  "source_id": "ref-16",
+  "nodes": [
+    {
+      "id": "thinking",
+      "bbox": [
+        24,
+        62,
+        183,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#1a4775",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "content",
+      "bbox": [
+        510,
+        62,
+        182,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#1a4775",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "methods",
+      "bbox": [
+        985,
+        61,
+        192,
+        52
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#1a4775",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "demo_note",
+      "bbox": [
+        238,
+        1635,
+        722,
+        40
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontColor": "#555555"
+      }
+    },
+    {
+      "id": "thinking_0",
+      "bbox": [
+        34,
+        180,
+        165,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "thinking_1",
+      "bbox": [
+        34,
+        297,
+        165,
+        52
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "thinking_2",
+      "bbox": [
+        34,
+        448,
+        165,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "thinking_3",
+      "bbox": [
+        34,
+        569,
+        165,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "thinking_4",
+      "bbox": [
+        34,
+        745,
+        165,
+        52
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "thinking_5",
+      "bbox": [
+        34,
+        919,
+        164,
+        52
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "thinking_6",
+      "bbox": [
+        34,
+        1110,
+        164,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "thinking_7",
+      "bbox": [
+        34,
+        1495,
+        164,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "method_0",
+      "bbox": [
+        999,
+        232,
+        165,
+        52
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "method_1",
+      "bbox": [
+        998,
+        510,
+        165,
+        52
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "method_2",
+      "bbox": [
+        998,
+        719,
+        166,
+        52
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5e5e5",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "method_3",
+      "bbox": [
+        999,
+        832,
+        165,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "method_4",
+      "bbox": [
+        999,
+        1322,
+        165,
+        51
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "method_interview",
+      "bbox": [
+        997,
+        945,
+        168,
+        54
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#bad0e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "left_down_0",
+      "bbox": [
+        92,
+        371,
+        48,
+        44
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#8b9fab",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZLLEsIgDEW/hj0SxqnrWv+jD7AdsenQ1urfC8QHdFx03EBuOIFwgUE+tuWgmOALgyMTQmZucLJ9SeklFAxyjVadLc59Q3qcLF5UjQat42kONUxAVh10WYX4FNNL10ytPyzMgRYxNZQ+7aMr3nxXd4J2RPEHSR7XmK6PSNj/SaaNpOjblA2okAlK/v1G+eZNV9dP0drgqD7KBV8TdWcMGR+vrx/SpegTQPEE)"
+      }
+    },
+    {
+      "id": "left_down_1",
+      "bbox": [
+        92,
+        657,
+        48,
+        41
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#8b9fab",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZLbDoMgDIafhnukZtFr594DFYcZswbd3N5+QHdAsyVmN7R/+crhBwbFqOWgmOAzgz0TIs3c4KR+ysRLKBkULVp1tHjpG9LjZPGkajRoHU8x9DABWZW3sgr5Iabnrpm03yzEQIuYGqQv++yMV3+qG0EJUfxOksc9pusjEnZ/kkn+G32ZsgEV6QIl/76jfPOiq+sv0drgqN7KJR8T284YMj6eXz+kK9EngPIB)"
+      }
+    },
+    {
+      "id": "left_down_2",
+      "bbox": [
+        92,
+        1016,
+        48,
+        40
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#8b9fab",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZLbDoMgDIafhnukZHHXzr2HB5xkzBrUub39gO6AJlvMbmj/8rWUAoNsaIteMcFnBgcmhEzd4mT7lNxLyBlkDVp1sjh1NelhtHhWFRq0jicbcpiAtNw3RRn8Y0zPuh5bf1iwgRYx1Rc+7L0LXn1XN4ISovidJI9zjO4iEnZ/kkn6HX0NZQMq5AKVPxrgm4uurr9EK4ODeivnfIbYaGNo8PH++iFdiD4B5A8=)"
+      }
+    },
+    {
+      "id": "right_down_0",
+      "bbox": [
+        1056,
+        371,
+        48,
+        44
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#8b9fab",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZLLEsIgDEW/hj0SxqnrWv+jD7AdsenQ1urfC8QHdFx03EBuOIFwgUE+tuWgmOALgyMTQmZucLJ9SeklFAxyjVadLc59Q3qcLF5UjQat42kONUxAVh10WYX4FNNL10ytPyzMgRYxNZQ+7aMr3nxXd4J2RPEHSR7XmK6PSNj/SaaNpOjblA2okAlK/v1G+eZNV9dP0drgqD7KBV8TdWcMGR+vrx/SpegTQPEE)"
+      }
+    },
+    {
+      "id": "right_down_1",
+      "bbox": [
+        1056,
+        657,
+        48,
+        41
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#8b9fab",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZLbDoMgDIafhnukZtFr594DFYcZswbd3N5+QHdAsyVmN7R/+crhBwbFqOWgmOAzgz0TIs3c4KR+ysRLKBkULVp1tHjpG9LjZPGkajRoHU8x9DABWZW3sgr5Iabnrpm03yzEQIuYGqQv++yMV3+qG0EJUfxOksc9pusjEnZ/kkn+G32ZsgEV6QIl/76jfPOiq+sv0drgqN7KJR8T284YMj6eXz+kK9EngPIB)"
+      }
+    },
+    {
+      "id": "right_down_2",
+      "bbox": [
+        1056,
+        1016,
+        48,
+        40
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#8b9fab",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZLbDoMgDIafhnukZHHXzr2HB5xkzBrUub39gO6AJlvMbmj/8rWUAoNsaIteMcFnBgcmhEzd4mT7lNxLyBlkDVp1sjh1NelhtHhWFRq0jicbcpiAtNw3RRn8Y0zPuh5bf1iwgRYx1Rc+7L0LXn1XN4ISovidJI9zjO4iEnZ/kkn6HX0NZQMq5AKVPxrgm4uurr9EK4ODeivnfIbYaGNo8PH++iFdiD4B5A8=)"
+      }
+    },
+    {
+      "id": "digital_context",
+      "bbox": [
+        394,
+        179,
+        171,
+        48
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#177676",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "usage_context",
+      "bbox": [
+        651,
+        177,
+        174,
+        52
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#177676",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "question_0",
+      "bbox": [
+        273,
+        286,
+        174,
+        63
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b9e6e5",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "question_1",
+      "bbox": [
+        512,
+        286,
+        174,
+        63
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b9e6e5",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "question_2",
+      "bbox": [
+        752,
+        286,
+        173,
+        63
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b9e6e5",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "theory_ribbon_0_0",
+      "bbox": [
+        482,
+        453,
+        30,
+        7
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZBRDoMgDIZP03dHHziAc/cwioPIrAE35+1HqZlkyfawkND/L19DW8A62nY2oKoV8AxKYZWuZK1YzQ4bwHqgYK6B7lMvPi6BRtORp5BwibkEFJ40n6wvJb26frH8V46ZViU1t5xmdaMHN/UUaO9pK91e4t1UgPgvqb+TP8DOUzRvl8QxwOC8l6HL988lppTsH5sX)"
+      }
+    },
+    {
+      "id": "theory_ribbon_0_1",
+      "bbox": [
+        482,
+        466,
+        30,
+        7
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZBRDoMgDIZP03dHHziAc/cwioPIrAE35+1HqZlkyfawkND/L19DW8A62nY2oKoV8AxKYZWuZK1YzQ4bwHqgYK6B7lMvPi6BRtORp5BwibkEFJ40n6wvJb26frH8V46ZViU1t5xmdaMHN/UUaO9pK91e4t1UgPgvqb+TP8DOUzRvl8QxwOC8l6HL988lppTsH5sX)"
+      }
+    },
+    {
+      "id": "theory_ribbon_1_0",
+      "bbox": [
+        713,
+        453,
+        30,
+        7
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZBRDoMgDIZP03dHHziAc/cwioPIrAE35+1HqZlkyfawkND/L19DW8A62nY2oKoV8AxKYZWuZK1YzQ4bwHqgYK6B7lMvPi6BRtORp5BwibkEFJ40n6wvJb26frH8V46ZViU1t5xmdaMHN/UUaO9pK91e4t1UgPgvqb+TP8DOUzRvl8QxwOC8l6HL988lppTsH5sX)"
+      }
+    },
+    {
+      "id": "theory_ribbon_1_1",
+      "bbox": [
+        713,
+        466,
+        30,
+        7
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZBRDoMgDIZP03dHHziAc/cwioPIrAE35+1HqZlkyfawkND/L19DW8A62nY2oKoV8AxKYZWuZK1YzQ4bwHqgYK6B7lMvPi6BRtORp5BwibkEFJ40n6wvJb26frH8V46ZViU1t5xmdaMHN/UUaO9pK91e4t1UgPgvqb+TP8DOUzRvl8QxwOC8l6HL988lppTsH5sX)"
+      }
+    },
+    {
+      "id": "theory_to_framework_curve",
+      "bbox": [
+        247,
+        459,
+        34,
+        124
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#73967b",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jVLbDoMgDP0aHk0odRefd/mPRd00Y7LgLvr3A9o5MNmymEgPPYXDaQVu+uZwrYWST4FboRTm7udgQxBUwLgTuDkaW5+suXcV4f5mzbkujTbWFdAaioRCWPkvxPuY/WyrW+NvC2tgq5h1PfhtH13Mw8saWBaQrJGgjGvKuyUqUDLjJ4wQk+WgZmnGBXIeWQ/jkTEAxLfptot0sfq3LpCL71zElAvL/8+lNnzh5rNzVz/dAZnaUxQzf9apPxmk/kytYJy8uNSmryfkgk9Dj63WNARxfj5UbosmEncv)"
+      }
+    },
+    {
+      "id": "theory_0",
+      "bbox": [
+        279,
+        436,
+        203,
+        50
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "theory_1",
+      "bbox": [
+        510,
+        438,
+        203,
+        50
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "theory_2",
+      "bbox": [
+        743,
+        438,
+        203,
+        50
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "framework_0",
+      "bbox": [
+        294,
+        539,
+        187,
+        68
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d1e6c8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "framework_1",
+      "bbox": [
+        519,
+        538,
+        187,
+        69
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d1e6c8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "framework_2",
+      "bbox": [
+        744,
+        539,
+        187,
+        68
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d1e6c8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "0",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "framework_step_0",
+      "bbox": [
+        482,
+        560,
+        37,
+        26
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZJtDsIgDIZPw39Gk+0Ac95j2ZgQcV1gunl7KfWDmLioIaF9y1PaFATUwbSTFkouAnZCKajiFqVhqUqS0AioB/T64PE89qzD7PGoO3ToI8825QgFRUUr+fucXmw/GyqWLFfIqamlMHknvFBXK0OSm7qyKvMUZ8cMVPAnKT+Tj5HcyQK+vvSH+lsNyA2ycxj0U0XnNcLBOsdjz8/fnzGG+AtAcwM=)"
+      }
+    },
+    {
+      "id": "framework_step_1",
+      "bbox": [
+        708,
+        560,
+        37,
+        26
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#235431",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZJtDsIgDIZPw39Gk+0Ac95j2ZgQcV1gunl7KfWDmLioIaF9y1PaFATUwbSTFkouAnZCKajiFqVhqUqS0AioB/T64PE89qzD7PGoO3ToI8825QgFRUUr+fucXmw/GyqWLFfIqamlMHknvFBXK0OSm7qyKvMUZ8cMVPAnKT+Tj5HcyQK+vvSH+lsNyA2ycxj0U0XnNcLBOsdjz8/fnzGG+AtAcwM=)"
+      }
+    },
+    {
+      "id": "research_title_0",
+      "bbox": [
+        259,
+        718,
+        150,
+        51
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ad9bd2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "research_detail_0",
+      "bbox": [
+        458,
+        718,
+        474,
+        51
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e4daf1",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "research_step_0",
+      "bbox": [
+        416,
+        727,
+        37,
+        26
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#604786",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZJtDsIgDIZPw39Gk+0Ac95j2ZgQcV1gunl7KfWDmLioIaF9y1PaFATUwbSTFkouAnZCKajiFqVhqUqS0AioB/T64PE89qzD7PGoO3ToI8825QgFRUUr+fucXmw/GyqWLFfIqamlMHknvFBXK0OSm7qyKvMUZ8cMVPAnKT+Tj5HcyQK+vvSH+lsNyA2ycxj0U0XnNcLBOsdjz8/fnzGG+AtAcwM=)"
+      }
+    },
+    {
+      "id": "research_title_1",
+      "bbox": [
+        259,
+        793,
+        150,
+        51
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ad9bd2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "research_detail_1",
+      "bbox": [
+        458,
+        793,
+        474,
+        51
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e4daf1",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "research_step_1",
+      "bbox": [
+        416,
+        802,
+        37,
+        26
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#604786",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZJtDsIgDIZPw39Gk+0Ac95j2ZgQcV1gunl7KfWDmLioIaF9y1PaFATUwbSTFkouAnZCKajiFqVhqUqS0AioB/T64PE89qzD7PGoO3ToI8825QgFRUUr+fucXmw/GyqWLFfIqamlMHknvFBXK0OSm7qyKvMUZ8cMVPAnKT+Tj5HcyQK+vvSH+lsNyA2ycxj0U0XnNcLBOsdjz8/fnzGG+AtAcwM=)"
+      }
+    },
+    {
+      "id": "research_title_2",
+      "bbox": [
+        259,
+        868,
+        150,
+        51
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ad9bd2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "research_detail_2",
+      "bbox": [
+        458,
+        868,
+        474,
+        51
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e4daf1",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "research_step_2",
+      "bbox": [
+        416,
+        877,
+        37,
+        26
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#604786",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZJtDsIgDIZPw39Gk+0Ac95j2ZgQcV1gunl7KfWDmLioIaF9y1PaFATUwbSTFkouAnZCKajiFqVhqUqS0AioB/T64PE89qzD7PGoO3ToI8825QgFRUUr+fucXmw/GyqWLFfIqamlMHknvFBXK0OSm7qyKvMUZ8cMVPAnKT+Tj5HcyQK+vvSH+lsNyA2ycxj0U0XnNcLBOsdjz8/fnzGG+AtAcwM=)"
+      }
+    },
+    {
+      "id": "research_title_3",
+      "bbox": [
+        259,
+        945,
+        150,
+        51
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ad9bd2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "research_detail_3",
+      "bbox": [
+        458,
+        945,
+        474,
+        51
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e4daf1",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "research_step_3",
+      "bbox": [
+        416,
+        954,
+        37,
+        26
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#604786",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZJtDsIgDIZPw39Gk+0Ac95j2ZgQcV1gunl7KfWDmLioIaF9y1PaFATUwbSTFkouAnZCKajiFqVhqUqS0AioB/T64PE89qzD7PGoO3ToI8825QgFRUUr+fucXmw/GyqWLFfIqamlMHknvFBXK0OSm7qyKvMUZ8cMVPAnKT+Tj5HcyQK+vvSH+lsNyA2ycxj0U0XnNcLBOsdjz8/fnzGG+AtAcwM=)"
+      }
+    },
+    {
+      "id": "synthesis",
+      "bbox": [
+        494,
+        1077,
+        210,
+        51
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e39634",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "synthesis_brace",
+      "bbox": [
+        247,
+        1134,
+        700,
+        36
+      ],
+      "font_size": 24,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nVLbDoIwDP2avY82MnxG/A8iKERkOEDg791VNh4IMUu2nu60p01LMO2rvCsJ0InghQAwSuUtcWUwxgpiRjC9c1E+BB/bwuB+EPxZ3njDheSbV8cQwIipo+2rz57qYqiUmn41G3xWlyu3sl78o8qaDckWtfhFuZj3mBeKGfn56OKgxTNY7FJB8G9zNXXrqSIkgW7I3ejiie4rrwTwm/o3G4PjjcQJPd5IfGb70r8dcdLhPKSxjtGM3f/brpF0mR3E7As=)"
+      }
+    },
+    {
+      "id": "analysis_0",
+      "bbox": [
+        247,
+        1177,
+        246,
+        65
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae8a3",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "analysis_1",
+      "bbox": [
+        509,
+        1177,
+        245,
+        65
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae8a3",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "analysis_2",
+      "bbox": [
+        772,
+        1177,
+        178,
+        65
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae8a3",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "output_0",
+      "bbox": [
+        351,
+        1309,
+        145,
+        51
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae8a3",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "output_detail_0",
+      "bbox": [
+        258,
+        1390,
+        332,
+        72
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae8a3",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "output_1",
+      "bbox": [
+        703,
+        1309,
+        145,
+        51
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae8a3",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "output_detail_1",
+      "bbox": [
+        610,
+        1390,
+        331,
+        72
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae8a3",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    },
+    {
+      "id": "final_output",
+      "bbox": [
+        258,
+        1523,
+        683,
+        65
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8d67c",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "22"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "left_band_0",
+      "points": [
+        [
+          23,
+          159
+        ],
+        [
+          208,
+          159
+        ],
+        [
+          208,
+          370
+        ],
+        [
+          23,
+          370
+        ],
+        [
+          23,
+          159
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "content_band_0",
+      "points": [
+        [
+          258,
+          159
+        ],
+        [
+          940,
+          159
+        ],
+        [
+          940.0,
+          159.0
+        ],
+        [
+          943.9,
+          159.38
+        ],
+        [
+          947.65,
+          160.52
+        ],
+        [
+          951.11,
+          162.37
+        ],
+        [
+          954.14,
+          164.86
+        ],
+        [
+          956.63,
+          167.89
+        ],
+        [
+          958.48,
+          171.35
+        ],
+        [
+          959.62,
+          175.1
+        ],
+        [
+          960.0,
+          179.0
+        ],
+        [
+          960.0,
+          350.0
+        ],
+        [
+          959.62,
+          353.9
+        ],
+        [
+          958.48,
+          357.65
+        ],
+        [
+          956.63,
+          361.11
+        ],
+        [
+          954.14,
+          364.14
+        ],
+        [
+          951.11,
+          366.63
+        ],
+        [
+          947.65,
+          368.48
+        ],
+        [
+          943.9,
+          369.62
+        ],
+        [
+          940.0,
+          370.0
+        ],
+        [
+          258.0,
+          370.0
+        ],
+        [
+          254.1,
+          369.62
+        ],
+        [
+          250.35,
+          368.48
+        ],
+        [
+          246.89,
+          366.63
+        ],
+        [
+          243.86,
+          364.14
+        ],
+        [
+          241.37,
+          361.11
+        ],
+        [
+          239.52,
+          357.65
+        ],
+        [
+          238.38,
+          353.9
+        ],
+        [
+          238.0,
+          350.0
+        ],
+        [
+          238.0,
+          179.0
+        ],
+        [
+          238.38,
+          175.1
+        ],
+        [
+          239.52,
+          171.35
+        ],
+        [
+          241.37,
+          167.89
+        ],
+        [
+          243.86,
+          164.86
+        ],
+        [
+          246.89,
+          162.37
+        ],
+        [
+          250.35,
+          160.52
+        ],
+        [
+          254.1,
+          159.38
+        ],
+        [
+          258.0,
+          159.0
+        ],
+        [
+          258,
+          159
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "right_band_0",
+      "points": [
+        [
+          985,
+          159
+        ],
+        [
+          1178,
+          159
+        ],
+        [
+          1178,
+          370
+        ],
+        [
+          985,
+          370
+        ],
+        [
+          985,
+          159
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "left_band_1",
+      "points": [
+        [
+          23,
+          416
+        ],
+        [
+          208,
+          416
+        ],
+        [
+          208,
+          656
+        ],
+        [
+          23,
+          656
+        ],
+        [
+          23,
+          416
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "content_band_1",
+      "points": [
+        [
+          258,
+          416
+        ],
+        [
+          940,
+          416
+        ],
+        [
+          940.0,
+          416.0
+        ],
+        [
+          943.9,
+          416.38
+        ],
+        [
+          947.65,
+          417.52
+        ],
+        [
+          951.11,
+          419.37
+        ],
+        [
+          954.14,
+          421.86
+        ],
+        [
+          956.63,
+          424.89
+        ],
+        [
+          958.48,
+          428.35
+        ],
+        [
+          959.62,
+          432.1
+        ],
+        [
+          960.0,
+          436.0
+        ],
+        [
+          960.0,
+          636.0
+        ],
+        [
+          959.62,
+          639.9
+        ],
+        [
+          958.48,
+          643.65
+        ],
+        [
+          956.63,
+          647.11
+        ],
+        [
+          954.14,
+          650.14
+        ],
+        [
+          951.11,
+          652.63
+        ],
+        [
+          947.65,
+          654.48
+        ],
+        [
+          943.9,
+          655.62
+        ],
+        [
+          940.0,
+          656.0
+        ],
+        [
+          258.0,
+          656.0
+        ],
+        [
+          254.1,
+          655.62
+        ],
+        [
+          250.35,
+          654.48
+        ],
+        [
+          246.89,
+          652.63
+        ],
+        [
+          243.86,
+          650.14
+        ],
+        [
+          241.37,
+          647.11
+        ],
+        [
+          239.52,
+          643.65
+        ],
+        [
+          238.38,
+          639.9
+        ],
+        [
+          238.0,
+          636.0
+        ],
+        [
+          238.0,
+          436.0
+        ],
+        [
+          238.38,
+          432.1
+        ],
+        [
+          239.52,
+          428.35
+        ],
+        [
+          241.37,
+          424.89
+        ],
+        [
+          243.86,
+          421.86
+        ],
+        [
+          246.89,
+          419.37
+        ],
+        [
+          250.35,
+          417.52
+        ],
+        [
+          254.1,
+          416.38
+        ],
+        [
+          258.0,
+          416.0
+        ],
+        [
+          258,
+          416
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "right_band_1",
+      "points": [
+        [
+          985,
+          416
+        ],
+        [
+          1178,
+          416
+        ],
+        [
+          1178,
+          656
+        ],
+        [
+          985,
+          656
+        ],
+        [
+          985,
+          416
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "left_band_2",
+      "points": [
+        [
+          23,
+          699
+        ],
+        [
+          208,
+          699
+        ],
+        [
+          208,
+          1015
+        ],
+        [
+          23,
+          1015
+        ],
+        [
+          23,
+          699
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "content_band_2",
+      "points": [
+        [
+          258,
+          699
+        ],
+        [
+          940,
+          699
+        ],
+        [
+          940.0,
+          699.0
+        ],
+        [
+          943.9,
+          699.38
+        ],
+        [
+          947.65,
+          700.52
+        ],
+        [
+          951.11,
+          702.37
+        ],
+        [
+          954.14,
+          704.86
+        ],
+        [
+          956.63,
+          707.89
+        ],
+        [
+          958.48,
+          711.35
+        ],
+        [
+          959.62,
+          715.1
+        ],
+        [
+          960.0,
+          719.0
+        ],
+        [
+          960.0,
+          995.0
+        ],
+        [
+          959.62,
+          998.9
+        ],
+        [
+          958.48,
+          1002.65
+        ],
+        [
+          956.63,
+          1006.11
+        ],
+        [
+          954.14,
+          1009.14
+        ],
+        [
+          951.11,
+          1011.63
+        ],
+        [
+          947.65,
+          1013.48
+        ],
+        [
+          943.9,
+          1014.62
+        ],
+        [
+          940.0,
+          1015.0
+        ],
+        [
+          258.0,
+          1015.0
+        ],
+        [
+          254.1,
+          1014.62
+        ],
+        [
+          250.35,
+          1013.48
+        ],
+        [
+          246.89,
+          1011.63
+        ],
+        [
+          243.86,
+          1009.14
+        ],
+        [
+          241.37,
+          1006.11
+        ],
+        [
+          239.52,
+          1002.65
+        ],
+        [
+          238.38,
+          998.9
+        ],
+        [
+          238.0,
+          995.0
+        ],
+        [
+          238.0,
+          719.0
+        ],
+        [
+          238.38,
+          715.1
+        ],
+        [
+          239.52,
+          711.35
+        ],
+        [
+          241.37,
+          707.89
+        ],
+        [
+          243.86,
+          704.86
+        ],
+        [
+          246.89,
+          702.37
+        ],
+        [
+          250.35,
+          700.52
+        ],
+        [
+          254.1,
+          699.38
+        ],
+        [
+          258.0,
+          699.0
+        ],
+        [
+          258,
+          699
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "right_band_2",
+      "points": [
+        [
+          985,
+          699
+        ],
+        [
+          1178,
+          699
+        ],
+        [
+          1178,
+          1015
+        ],
+        [
+          985,
+          1015
+        ],
+        [
+          985,
+          699
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "left_band_3",
+      "points": [
+        [
+          23,
+          1057
+        ],
+        [
+          208,
+          1057
+        ],
+        [
+          208,
+          1614
+        ],
+        [
+          23,
+          1614
+        ],
+        [
+          23,
+          1057
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "content_band_3",
+      "points": [
+        [
+          258,
+          1057
+        ],
+        [
+          940,
+          1057
+        ],
+        [
+          940.0,
+          1057.0
+        ],
+        [
+          943.9,
+          1057.38
+        ],
+        [
+          947.65,
+          1058.52
+        ],
+        [
+          951.11,
+          1060.37
+        ],
+        [
+          954.14,
+          1062.86
+        ],
+        [
+          956.63,
+          1065.89
+        ],
+        [
+          958.48,
+          1069.35
+        ],
+        [
+          959.62,
+          1073.1
+        ],
+        [
+          960.0,
+          1077.0
+        ],
+        [
+          960.0,
+          1594.0
+        ],
+        [
+          959.62,
+          1597.9
+        ],
+        [
+          958.48,
+          1601.65
+        ],
+        [
+          956.63,
+          1605.11
+        ],
+        [
+          954.14,
+          1608.14
+        ],
+        [
+          951.11,
+          1610.63
+        ],
+        [
+          947.65,
+          1612.48
+        ],
+        [
+          943.9,
+          1613.62
+        ],
+        [
+          940.0,
+          1614.0
+        ],
+        [
+          258.0,
+          1614.0
+        ],
+        [
+          254.1,
+          1613.62
+        ],
+        [
+          250.35,
+          1612.48
+        ],
+        [
+          246.89,
+          1610.63
+        ],
+        [
+          243.86,
+          1608.14
+        ],
+        [
+          241.37,
+          1605.11
+        ],
+        [
+          239.52,
+          1601.65
+        ],
+        [
+          238.38,
+          1597.9
+        ],
+        [
+          238.0,
+          1594.0
+        ],
+        [
+          238.0,
+          1077.0
+        ],
+        [
+          238.38,
+          1073.1
+        ],
+        [
+          239.52,
+          1069.35
+        ],
+        [
+          241.37,
+          1065.89
+        ],
+        [
+          243.86,
+          1062.86
+        ],
+        [
+          246.89,
+          1060.37
+        ],
+        [
+          250.35,
+          1058.52
+        ],
+        [
+          254.1,
+          1057.38
+        ],
+        [
+          258.0,
+          1057.0
+        ],
+        [
+          258,
+          1057
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "right_band_3",
+      "points": [
+        [
+          985,
+          1057
+        ],
+        [
+          1178,
+          1057
+        ],
+        [
+          1178,
+          1614
+        ],
+        [
+          985,
+          1614
+        ],
+        [
+          985,
+          1057
+        ]
+      ],
+      "meaning": "阶段分区外框，不表示任务流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "context_stem_0",
+      "points": [
+        [
+          479,
+          230
+        ],
+        [
+          479,
+          256
+        ]
+      ],
+      "meaning": "研究背景进入共同问题母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "context_stem_1",
+      "points": [
+        [
+          738,
+          230
+        ],
+        [
+          738,
+          256
+        ]
+      ],
+      "meaning": "研究背景进入共同问题母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "questions_bus",
+      "points": [
+        [
+          360,
+          256
+        ],
+        [
+          839,
+          256
+        ]
+      ],
+      "meaning": "共同背景对应三个研究问题",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "question_drop_0",
+      "points": [
+        [
+          360,
+          256
+        ],
+        [
+          360,
+          284
+        ]
+      ],
+      "meaning": "背景引出一个并列研究问题",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "question_drop_1",
+      "points": [
+        [
+          599,
+          256
+        ],
+        [
+          599,
+          284
+        ]
+      ],
+      "meaning": "背景引出一个并列研究问题",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "question_drop_2",
+      "points": [
+        [
+          839,
+          256
+        ],
+        [
+          839,
+          284
+        ]
+      ],
+      "meaning": "背景引出一个并列研究问题",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "framework_frame_0",
+      "points": [
+        [
+          278,
+          519
+        ],
+        [
+          947,
+          519
+        ],
+        [
+          947,
+          630
+        ],
+        [
+          278,
+          630
+        ],
+        [
+          278,
+          519
+        ]
+      ],
+      "meaning": "三步框架的双层组合边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "framework_frame_1",
+      "points": [
+        [
+          285,
+          526
+        ],
+        [
+          940,
+          526
+        ],
+        [
+          940,
+          623
+        ],
+        [
+          285,
+          623
+        ],
+        [
+          285,
+          526
+        ]
+      ],
+      "meaning": "三步框架的双层组合边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "research_sequence_0",
+      "points": [
+        [
+          334,
+          770
+        ],
+        [
+          334,
+          792
+        ]
+      ],
+      "meaning": "左列调查、分析、干预、访谈的顺序衔接，原图无箭尖",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "research_sequence_1",
+      "points": [
+        [
+          334,
+          845
+        ],
+        [
+          334,
+          867
+        ]
+      ],
+      "meaning": "左列调查、分析、干预、访谈的顺序衔接，原图无箭尖",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "research_sequence_2",
+      "points": [
+        [
+          334,
+          920
+        ],
+        [
+          334,
+          944
+        ]
+      ],
+      "meaning": "左列调查、分析、干预、访谈的顺序衔接，原图无箭尖",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "analysis_join_0",
+      "points": [
+        [
+          370,
+          1243
+        ],
+        [
+          370,
+          1275
+        ]
+      ],
+      "meaning": "三项综合分析汇入成果与应用的共同母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "analysis_join_1",
+      "points": [
+        [
+          631,
+          1243
+        ],
+        [
+          631,
+          1275
+        ]
+      ],
+      "meaning": "三项综合分析汇入成果与应用的共同母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "analysis_join_2",
+      "points": [
+        [
+          861,
+          1243
+        ],
+        [
+          861,
+          1275
+        ]
+      ],
+      "meaning": "三项综合分析汇入成果与应用的共同母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "analysis_output_bus",
+      "points": [
+        [
+          370,
+          1275
+        ],
+        [
+          861,
+          1275
+        ]
+      ],
+      "meaning": "共同分析汇入两个成果输出",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "output_drop_0",
+      "points": [
+        [
+          423,
+          1275
+        ],
+        [
+          423,
+          1308
+        ]
+      ],
+      "meaning": "三项分析对应成果发表或策略应用",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "output_detail_drop_0",
+      "points": [
+        [
+          423,
+          1361
+        ],
+        [
+          423,
+          1389
+        ]
+      ],
+      "meaning": "输出类别细化为可执行安排",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "final_join_0",
+      "points": [
+        [
+          423,
+          1463
+        ],
+        [
+          423,
+          1493
+        ]
+      ],
+      "meaning": "两个输出路径汇入末端总结",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "output_drop_1",
+      "points": [
+        [
+          775,
+          1275
+        ],
+        [
+          775,
+          1308
+        ]
+      ],
+      "meaning": "三项分析对应成果发表或策略应用",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "output_detail_drop_1",
+      "points": [
+        [
+          775,
+          1361
+        ],
+        [
+          775,
+          1389
+        ]
+      ],
+      "meaning": "输出类别细化为可执行安排",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "final_join_1",
+      "points": [
+        [
+          775,
+          1463
+        ],
+        [
+          775,
+          1493
+        ]
+      ],
+      "meaning": "两个输出路径汇入末端总结",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "final_bus",
+      "points": [
+        [
+          423,
+          1493
+        ],
+        [
+          775,
+          1493
+        ]
+      ],
+      "meaning": "两个输出路径共同汇流",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "final_drop",
+      "points": [
+        [
+          599,
+          1493
+        ],
+        [
+          599,
+          1521
+        ]
+      ],
+      "meaning": "汇流进入最后学术表达节点",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#111111",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    }
+  ]
+}

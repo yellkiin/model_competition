@@ -1,0 +1,368 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "question_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "purpose": {
+      "enum": [
+        "production",
+        "demo"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "complete"
+      ]
+    },
+    "applicable": {
+      "type": "boolean"
+    },
+    "eligibility": {
+      "type": "object",
+      "properties": {
+        "class": {
+          "enum": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 4
+        },
+        "factors": {
+          "type": "object",
+          "properties": {
+            "task_type": {
+              "type": "string",
+              "minLength": 4
+            },
+            "modality": {
+              "type": "string",
+              "minLength": 4
+            },
+            "sample_size": {
+              "type": "string",
+              "minLength": 4
+            },
+            "feature_dimension": {
+              "type": "string",
+              "minLength": 4
+            },
+            "labels": {
+              "type": "string",
+              "minLength": 4
+            },
+            "quality": {
+              "type": "string",
+              "minLength": 4
+            },
+            "nonlinearity": {
+              "type": "string",
+              "minLength": 4
+            },
+            "structure": {
+              "type": "string",
+              "minLength": 4
+            },
+            "architecture": {
+              "type": "string",
+              "minLength": 4
+            },
+            "advantage": {
+              "type": "string",
+              "minLength": 4
+            },
+            "resources": {
+              "type": "string",
+              "minLength": 4
+            },
+            "time_budget": {
+              "type": "string",
+              "minLength": 4
+            }
+          },
+          "required": [
+            "task_type",
+            "modality",
+            "sample_size",
+            "feature_dimension",
+            "labels",
+            "quality",
+            "nonlinearity",
+            "structure",
+            "architecture",
+            "advantage",
+            "resources",
+            "time_budget"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "class",
+        "reason",
+        "factors"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "type": "string",
+          "minLength": 4
+        },
+        "vram_mb": {
+          "type": "number",
+          "minimum": 1
+        },
+        "seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_trials": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "strategy": {
+          "type": "string",
+          "minLength": 4
+        },
+        "exception_reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "device",
+        "vram_mb",
+        "seconds",
+        "max_trials",
+        "strategy",
+        "exception_reason"
+      ],
+      "additionalProperties": false
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "direction": {
+            "enum": [
+              "min",
+              "max"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "label",
+          "direction"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "family": {
+            "enum": [
+              "baseline",
+              "ml",
+              "dl",
+              "improved"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 4
+          },
+          "decision": {
+            "type": "string",
+            "minLength": 4
+          },
+          "complexity": {
+            "type": "string",
+            "minLength": 4
+          },
+          "runs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "selected_run": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "failures": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "cause": {
+                  "type": "string",
+                  "minLength": 4
+                },
+                "retry": {
+                  "type": "string",
+                  "minLength": 4
+                },
+                "decision": {
+                  "type": "string",
+                  "minLength": 4
+                }
+              },
+              "required": [
+                "cause",
+                "retry",
+                "decision"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "base_candidate": {
+            "type": "string"
+          },
+          "improvement_reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "family",
+          "rationale",
+          "decision",
+          "complexity",
+          "runs",
+          "selected_run",
+          "failures"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "comparison_conditions": {
+      "type": "string",
+      "minLength": 4
+    },
+    "main_model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "improved_model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "selection_reason": {
+      "type": "string",
+      "minLength": 4
+    },
+    "tradeoffs": {
+      "type": "string",
+      "minLength": 4
+    },
+    "ml_omission_reason": {
+      "type": "string"
+    },
+    "pilot_blocked": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "minLength": 4
+        },
+        "lightweight_retry": {
+          "type": "string",
+          "minLength": 4
+        },
+        "cpu_assessment": {
+          "type": "string",
+          "minLength": 4
+        },
+        "cost_evidence": {
+          "type": "string",
+          "minLength": 4
+        }
+      },
+      "required": [
+        "reason",
+        "lightweight_retry",
+        "cpu_assessment",
+        "cost_evidence"
+      ],
+      "additionalProperties": false
+    },
+    "selection_tolerance": {
+      "type": "number",
+      "minimum": 0
+    },
+    "selection_override_reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "question_id",
+    "purpose",
+    "status",
+    "applicable",
+    "eligibility",
+    "evidence",
+    "budget",
+    "metrics",
+    "candidates",
+    "comparison_conditions",
+    "main_model",
+    "improved_model",
+    "selection_reason",
+    "tradeoffs"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "逐问模型选择报告（由支撑材料清单引用）"
+}

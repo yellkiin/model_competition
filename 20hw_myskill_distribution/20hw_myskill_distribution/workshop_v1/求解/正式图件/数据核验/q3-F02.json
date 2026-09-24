@@ -1,0 +1,13 @@
+{
+  "source_path": "求解/图件数据/q3-F02.csv",
+  "sha256": "a5d49cfe5e11e091ccf72b8f5d37b27aaf7a12ed6eaf88724f8de268bcd422fd",
+  "fields": [
+    "case",
+    "internal_ops",
+    "q3_cache_hit_rate",
+    "q3_cache_gain"
+  ],
+  "row_count": 100,
+  "valid": true,
+  "validation_method": "标准CSV解析、非空行与计划字段逐项核对；源表由正式评估结构化结果派生。"
+}

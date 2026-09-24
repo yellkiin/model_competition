@@ -1,0 +1,51 @@
+{
+  "status": "FINAL_AUDIT_FAILED",
+  "run_id": "a5fca18ecbf9486d9b785eb8220e5289",
+  "created_at": "2026-09-23T22:00:43.855586+00:00",
+  "gates": [
+    {
+      "name": "support",
+      "status": "PASS",
+      "run_report": "求解/验收输出/工作区运行/346ead2a46244a238036bf78dd217942/运行.json",
+      "audit_report": "求解/验收输出/完成登记/cf989c6c00be4d9b8e863acedd543a27/support.json",
+      "files": {
+        "求解/验收输出/工作区运行/346ead2a46244a238036bf78dd217942/运行.json": "3b7fa099551c58bd6f27b014fa789db38876bc2ca1f82021c405eadd10db1d8c",
+        "求解/验收输出/完成登记/cf989c6c00be4d9b8e863acedd543a27/support.json": "ca56360eaf72ac3c409206ae006760552c8ecd4c7c514f5aa06715776b308520",
+        "求解/验收输出/工作区运行/346ead2a46244a238036bf78dd217942/stdout.log": "db7eba09391597143ae6400341e909b7f9348b080393b2c4c197e31b79d4bab6",
+        "求解/验收输出/工作区运行/346ead2a46244a238036bf78dd217942/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "appendix",
+      "status": "PASS",
+      "run_report": "求解/验收输出/工作区运行/2d50dfdb2d0f475f9ce7798b0a60a11f/运行.json",
+      "audit_report": "求解/验收输出/完成登记/cf989c6c00be4d9b8e863acedd543a27/appendix.json",
+      "files": {
+        "求解/验收输出/工作区运行/2d50dfdb2d0f475f9ce7798b0a60a11f/运行.json": "50c36b9138bfa710588bbd87e493b20eac8a75c78d820d23e980a32fcbb52c1f",
+        "求解/验收输出/完成登记/cf989c6c00be4d9b8e863acedd543a27/appendix.json": "4ac873843b97469f97c83cf58ba1f0f43cb6b22f8be0860fe47a23435ae88349",
+        "求解/验收输出/工作区运行/2d50dfdb2d0f475f9ce7798b0a60a11f/stdout.log": "35908f7a3c52a9966b9735704eeb49bfa22794f753aff6814fb9bb6f32039563",
+        "求解/验收输出/工作区运行/2d50dfdb2d0f475f9ce7798b0a60a11f/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "tex",
+      "status": "PASS",
+      "run_report": "求解/验收输出/工作区运行/dea63e611a444bf08d43bc7f2bd84fe2/运行.json",
+      "audit_report": "求解/验收输出/完成登记/cf989c6c00be4d9b8e863acedd543a27/tex.json",
+      "files": {
+        "求解/验收输出/工作区运行/dea63e611a444bf08d43bc7f2bd84fe2/运行.json": "b52b9a2b9984231ea6795b48effa2e2898bdaafe08e0aa09fdb1a99f967dd92e",
+        "求解/验收输出/完成登记/cf989c6c00be4d9b8e863acedd543a27/tex.json": "ebc57ff8090348065762631855f6a3d2180d519e82fbef643350ccb8115de495",
+        "求解/验收输出/工作区运行/dea63e611a444bf08d43bc7f2bd84fe2/stdout.log": "2e504e7223bd2654127a4563d7f863e09e9f383bbed59bafd54dee46582f4efc",
+        "求解/验收输出/工作区运行/dea63e611a444bf08d43bc7f2bd84fe2/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "paper",
+      "status": "FAIL",
+      "run_report": "求解/验收输出/工作区运行/0060c9067dab4dd0864c3a2eb84d98ff/运行.json",
+      "audit_report": "求解/验收输出/完成登记/cf989c6c00be4d9b8e863acedd543a27/paper.json"
+    }
+  ],
+  "changed_during_audit": false,
+  "resource_digest": "660f731ea64318ad39a8fd180c82b3d83f0ba3710c19cda342cba066951a23c1"
+}

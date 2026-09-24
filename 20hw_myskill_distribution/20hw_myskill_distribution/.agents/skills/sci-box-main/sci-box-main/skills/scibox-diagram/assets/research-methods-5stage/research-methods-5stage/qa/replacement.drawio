@@ -1,0 +1,608 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="scibox-diagram" version="24.7.17" pages="1">
+  <diagram id="research-methods-5stage" name="研究内容与方法五阶段框架图">
+    <mxGraphModel pageWidth="1206" pageHeight="1743" page="1" pageScale="1" grid="0" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="canvas_background" value="" vertex="1" parent="1" style="fillColor=#ffffff;strokeColor=none;">
+          <mxGeometry as="geometry" x="0" y="0" width="1206" height="1743" />
+        </mxCell>
+        <mxCell id="left_background" value="" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=26;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=#f2f2f2;strokeColor=none;strokeWidth=2;">
+          <mxGeometry as="geometry" x="22" y="104" width="144" height="1590" />
+        </mxCell>
+        <mxCell id="right_background" value="" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=26;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=#f3fafc;strokeColor=none;strokeWidth=2;">
+          <mxGeometry as="geometry" x="1044" y="104" width="144" height="1590" />
+        </mxCell>
+        <mxCell id="framework_heading" value="研究框架" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#d9d9d9;strokeColor=none;strokeWidth=2;">
+          <mxGeometry as="geometry" x="22" y="29" width="144" height="54" />
+        </mxCell>
+        <mxCell id="content_heading" value="研究内容" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#efdbd7;strokeColor=none;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="497" y="28" width="215" height="56" />
+        </mxCell>
+        <mxCell id="method_heading" value="研究方法" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#d9e4f2;strokeColor=none;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="1043" y="28" width="145" height="56" />
+        </mxCell>
+        <mxCell id="stage_1" value="提出&lt;br&gt;问题" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#d9d9d9;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="49" y="193" width="92" height="120" />
+        </mxCell>
+        <mxCell id="method_1" value="文献&lt;br&gt;研究&lt;br&gt;法" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="1070" y="193" width="93" height="120" />
+        </mxCell>
+        <mxCell id="stage_2" value="理论&lt;br&gt;基础" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#d9d9d9;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="49" y="529" width="92" height="120" />
+        </mxCell>
+        <mxCell id="method_2" value="因子&lt;br&gt;分析&lt;br&gt;法" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="1070" y="529" width="93" height="120" />
+        </mxCell>
+        <mxCell id="stage_3" value="分析&lt;br&gt;问题" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#d9d9d9;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="49" y="889" width="92" height="119" />
+        </mxCell>
+        <mxCell id="method_3" value="算法&lt;br&gt;设计&lt;br&gt;法" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="1071" y="888" width="92" height="121" />
+        </mxCell>
+        <mxCell id="stage_4" value="解决&lt;br&gt;问题" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#d9d9d9;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="49" y="1249" width="92" height="120" />
+        </mxCell>
+        <mxCell id="method_4" value="对照&lt;br&gt;试验&lt;br&gt;法" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="1071" y="1249" width="92" height="120" />
+        </mxCell>
+        <mxCell id="stage_5" value="结论&lt;br&gt;建议" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#d9d9d9;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="49" y="1534" width="92" height="119" />
+        </mxCell>
+        <mxCell id="method_5" value="归纳&lt;br&gt;分析&lt;br&gt;法" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=5;">
+          <mxGeometry as="geometry" x="1071" y="1535" width="92" height="120" />
+        </mxCell>
+        <mxCell id="title_1" value="现状梳理与问题识别" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#ececf0;strokeColor=#aea0bc;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="334" y="118" width="533" height="57" />
+        </mxCell>
+        <mxCell id="title_2" value="理论模型构建与机制解析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#ececf0;strokeColor=#aea0bc;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="334" y="432" width="533" height="57" />
+        </mxCell>
+        <mxCell id="title_3" value="优化方法与工艺方案设计" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#ececf0;strokeColor=#aea0bc;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="334" y="791" width="533" height="57" />
+        </mxCell>
+        <mxCell id="title_4" value="实验数据集准备" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#ececf0;strokeColor=#aea0bc;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="205" y="1151" width="381" height="57" />
+        </mxCell>
+        <mxCell id="title_5" value="对比试验方案设计" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#ececf0;strokeColor=#aea0bc;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="613" y="1151" width="381" height="57" />
+        </mxCell>
+        <mxCell id="title_6" value="研究结论与应用展望" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#ececf0;strokeColor=#aea0bc;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="344" y="1510" width="515" height="57" />
+        </mxCell>
+        <mxCell id="question_heading_1" value="研究现状剖析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=none;strokeColor=none;strokeWidth=2;fontStyle=1;">
+          <mxGeometry as="geometry" x="209" y="196" width="240" height="29" />
+        </mxCell>
+        <mxCell id="question_heading_2" value="内在机理探究" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=none;strokeColor=none;strokeWidth=2;fontStyle=1;">
+          <mxGeometry as="geometry" x="481" y="196" width="240" height="29" />
+        </mxCell>
+        <mxCell id="question_heading_3" value="研究目标规划" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=none;strokeColor=none;strokeWidth=2;fontStyle=1;">
+          <mxGeometry as="geometry" x="753" y="196" width="240" height="29" />
+        </mxCell>
+        <mxCell id="question_6" value="研究现状调研" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="227" y="232" width="201" height="39" />
+        </mxCell>
+        <mxCell id="question_11" value="方法优缺点归纳" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="227" y="283" width="201" height="40" />
+        </mxCell>
+        <mxCell id="question_12" value="瓶颈问题总结" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="227" y="333" width="201" height="40" />
+        </mxCell>
+        <mxCell id="question_7" value="理论体系梳理" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fbeada;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="500" y="232" width="201" height="40" />
+        </mxCell>
+        <mxCell id="question_9" value="理论体系梳理" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fbeada;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="500" y="282" width="201" height="41" />
+        </mxCell>
+        <mxCell id="question_13" value="产生机理分析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fbeada;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="500" y="333" width="201" height="41" />
+        </mxCell>
+        <mxCell id="question_8" value="实际需求调研" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="773" y="232" width="201" height="40" />
+        </mxCell>
+        <mxCell id="question_10" value="应用场景分析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="773" y="282" width="201" height="41" />
+        </mxCell>
+        <mxCell id="question_14" value="研究目标确立" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="773" y="333" width="201" height="41" />
+        </mxCell>
+        <mxCell id="parameter_heading" value="参数初始化设置" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=none;strokeColor=none;strokeWidth=2;fontStyle=1;">
+          <mxGeometry as="geometry" x="208" y="512" width="192" height="31" />
+        </mxCell>
+        <mxCell id="theory_heading" value="模型理论分析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=none;strokeColor=none;strokeWidth=2;fontStyle=1;">
+          <mxGeometry as="geometry" x="752" y="512" width="240" height="31" />
+        </mxCell>
+        <mxCell id="data" value="数&lt;br&gt;据&lt;br&gt;筛&lt;br&gt;选" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="213" y="555" width="45" height="172" />
+        </mxCell>
+        <mxCell id="feature" value="特&lt;br&gt;征&lt;br&gt;提&lt;br&gt;取" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="282" y="555" width="45" height="172" />
+        </mxCell>
+        <mxCell id="factor" value="关&lt;br&gt;键&lt;br&gt;因&lt;br&gt;子&lt;br&gt;确&lt;br&gt;定" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="352" y="555" width="45" height="172" />
+        </mxCell>
+        <mxCell id="theory_model" value="构建基础理&lt;br&gt;论模型" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#efdbd7;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="456" y="533" width="152" height="66" />
+        </mxCell>
+        <mxCell id="theory_constraints" value="模型约束条&lt;br&gt;件设定" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#efdbd7;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="456" y="643" width="152" height="66" />
+        </mxCell>
+        <mxCell id="theory_validity" value="模&lt;br&gt;型&lt;br&gt;合&lt;br&gt;理&lt;br&gt;性&lt;br&gt;论&lt;br&gt;证" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="650" y="510" width="50" height="224" />
+        </mxCell>
+        <mxCell id="theory_25" value="参数初始化设置" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="773" y="555" width="201" height="49" />
+        </mxCell>
+        <mxCell id="theory_26" value="机理深入剖析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="773" y="616" width="201" height="49" />
+        </mxCell>
+        <mxCell id="theory_28" value="理论假设有效性" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="772" y="677" width="201" height="49" />
+        </mxCell>
+        <mxCell id="design_33" value="数据集处理" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="205" y="875" width="190" height="45" />
+        </mxCell>
+        <mxCell id="design_37" value="评价指标选定" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="205" y="936" width="190" height="45" />
+        </mxCell>
+        <mxCell id="design_39" value="约束条件设置" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="205" y="992" width="190" height="45" />
+        </mxCell>
+        <mxCell id="design_41" value="对比算法选取" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#daeef3;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="205" y="1051" width="190" height="45" />
+        </mxCell>
+        <mxCell id="strategy_34" value="核心改进策略提出" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#efdbd7;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="451" y="885" width="357" height="55" />
+        </mxCell>
+        <mxCell id="strategy_38" value="整体工艺方案搭建" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#efdbd7;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="451" y="956" width="357" height="55" />
+        </mxCell>
+        <mxCell id="strategy_40" value="算法流程优化设计" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#efdbd7;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="451" y="1024" width="357" height="55" />
+        </mxCell>
+        <mxCell id="simulation" value="方&lt;br&gt;案&lt;br&gt;仿&lt;br&gt;真&lt;br&gt;验&lt;br&gt;证" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#f2f2f2;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="859" y="870" width="51" height="224" />
+        </mxCell>
+        <mxCell id="initial_result" value="初&lt;br&gt;步&lt;br&gt;结&lt;br&gt;果&lt;br&gt;输&lt;br&gt;出" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#f2f2f2;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="944" y="870" width="50" height="224" />
+        </mxCell>
+        <mxCell id="experiment_heading" value="实验数据整理" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=none;strokeColor=none;strokeWidth=2;fontStyle=1;">
+          <mxGeometry as="geometry" x="395" y="1243" width="184" height="32" />
+        </mxCell>
+        <mxCell id="comparison_heading" value="可视化分析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=23;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=0;fillColor=none;strokeColor=none;strokeWidth=2;fontStyle=1;">
+          <mxGeometry as="geometry" x="620" y="1243" width="184" height="32" />
+        </mxCell>
+        <mxCell id="experiment_45" value="仿真实验&lt;br&gt;开展" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="216" y="1235" width="138" height="61" />
+        </mxCell>
+        <mxCell id="experiment_53" value="消融对照&lt;br&gt;试验" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="216" y="1317" width="137" height="61" />
+        </mxCell>
+        <mxCell id="experiment_57" value="多组重复&lt;br&gt;测试" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="216" y="1393" width="137" height="61" />
+        </mxCell>
+        <mxCell id="experiment_48" value="工程实例&lt;br&gt;数据" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="849" y="1236" width="137" height="60" />
+        </mxCell>
+        <mxCell id="experiment_54" value="实地调研&lt;br&gt;样本" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="849" y="1317" width="137" height="61" />
+        </mxCell>
+        <mxCell id="experiment_58" value="真实场景&lt;br&gt;测试数据" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#fff3cc;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="849" y="1393" width="137" height="61" />
+        </mxCell>
+        <mxCell id="evidence_51" value="实验结果统计" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="399" y="1284" width="180" height="45" />
+        </mxCell>
+        <mxCell id="evidence_55" value="可视化分析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="399" y="1340" width="180" height="45" />
+        </mxCell>
+        <mxCell id="evidence_59" value="误差来源分析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="398" y="1397" width="180" height="45" />
+        </mxCell>
+        <mxCell id="evidence_52" value="传统方法对比" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="623" y="1284" width="178" height="45" />
+        </mxCell>
+        <mxCell id="evidence_56" value="性能优劣分析" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="623" y="1340" width="178" height="46" />
+        </mxCell>
+        <mxCell id="evidence_60" value="模型泛化能力" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#eaf0dd;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="622" y="1397" width="178" height="45" />
+        </mxCell>
+        <mxCell id="conclusion" value="研究结论与协同点总结" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#efdbd7;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="244" y="1620" width="320" height="53" />
+        </mxCell>
+        <mxCell id="outlook" value="应用建议与未来研究展望" vertex="1" parent="1" style="html=1;whiteSpace=wrap;fontFamily=SimSun;fontSize=22;fontColor=#171717;align=center;verticalAlign=middle;spacing=0;rounded=1;fillColor=#efdbd7;strokeColor=#606060;strokeWidth=2;arcSize=10;">
+          <mxGeometry as="geometry" x="642" y="1620" width="324" height="53" />
+        </mxCell>
+        <mxCell id="band_1" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=0;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="186" y="105" />
+            <mxPoint as="targetPoint" x="186" y="105" />
+            <Array as="points">
+              <mxPoint x="1015" y="105" />
+              <mxPoint x="1015" y="401" />
+              <mxPoint x="186" y="401" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="band_2" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=0;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="186" y="419" />
+            <mxPoint as="targetPoint" x="186" y="419" />
+            <Array as="points">
+              <mxPoint x="1015" y="419" />
+              <mxPoint x="1015" y="759" />
+              <mxPoint x="186" y="759" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="band_3" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=0;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="186" y="778" />
+            <mxPoint as="targetPoint" x="186" y="778" />
+            <Array as="points">
+              <mxPoint x="1015" y="778" />
+              <mxPoint x="1015" y="1119" />
+              <mxPoint x="186" y="1119" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="band_4" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=0;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="186" y="1139" />
+            <mxPoint as="targetPoint" x="186" y="1139" />
+            <Array as="points">
+              <mxPoint x="1015" y="1139" />
+              <mxPoint x="1015" y="1480" />
+              <mxPoint x="186" y="1480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="band_5" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=0;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="186" y="1498" />
+            <mxPoint as="targetPoint" x="186" y="1498" />
+            <Array as="points">
+              <mxPoint x="1015" y="1498" />
+              <mxPoint x="1015" y="1692" />
+              <mxPoint x="186" y="1692" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="stage_input_1" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="142" y="253.0" />
+            <mxPoint as="targetPoint" x="184" y="253.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="method_input_1" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1069" y="253.0" />
+            <mxPoint as="targetPoint" x="1017" y="253.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="stage_input_2" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="142" y="589.0" />
+            <mxPoint as="targetPoint" x="184" y="589.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="method_input_2" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1069" y="589.0" />
+            <mxPoint as="targetPoint" x="1017" y="589.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="stage_input_3" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="142" y="948.5" />
+            <mxPoint as="targetPoint" x="184" y="948.5" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="method_input_3" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1070" y="948.5" />
+            <mxPoint as="targetPoint" x="1017" y="948.5" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="stage_input_4" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="142" y="1309.0" />
+            <mxPoint as="targetPoint" x="184" y="1309.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="method_input_4" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1070" y="1309.0" />
+            <mxPoint as="targetPoint" x="1017" y="1309.0" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="stage_input_5" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="142" y="1593.5" />
+            <mxPoint as="targetPoint" x="184" y="1593.5" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="method_input_5" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1070" y="1593.5" />
+            <mxPoint as="targetPoint" x="1017" y="1593.5" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="question_group_1" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=1;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="199" y="189" />
+            <mxPoint as="targetPoint" x="199" y="189" />
+            <Array as="points">
+              <mxPoint x="459" y="189" />
+              <mxPoint x="459" y="386" />
+              <mxPoint x="199" y="386" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="question_group_2" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=1;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="471" y="189" />
+            <mxPoint as="targetPoint" x="471" y="189" />
+            <Array as="points">
+              <mxPoint x="731" y="189" />
+              <mxPoint x="731" y="386" />
+              <mxPoint x="471" y="386" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="question_group_3" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=1;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="743" y="189" />
+            <mxPoint as="targetPoint" x="743" y="189" />
+            <Array as="points">
+              <mxPoint x="1003" y="189" />
+              <mxPoint x="1003" y="386" />
+              <mxPoint x="743" y="386" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="parameters_group" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=1;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="199" y="503" />
+            <mxPoint as="targetPoint" x="199" y="503" />
+            <Array as="points">
+              <mxPoint x="409" y="503" />
+              <mxPoint x="409" y="742" />
+              <mxPoint x="199" y="742" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="theory_group" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=1;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="742" y="503" />
+            <mxPoint as="targetPoint" x="742" y="503" />
+            <Array as="points">
+              <mxPoint x="1003" y="503" />
+              <mxPoint x="1003" y="742" />
+              <mxPoint x="742" y="742" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="data_features" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="259" y="642" />
+            <mxPoint as="targetPoint" x="281" y="642" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="features_factors" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="328" y="642" />
+            <mxPoint as="targetPoint" x="351" y="642" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="factor_split" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="398" y="622" />
+            <mxPoint as="targetPoint" x="432" y="622" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="factor_bus" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="432" y="566" />
+            <mxPoint as="targetPoint" x="432" y="677" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="factor_model" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="432" y="566" />
+            <mxPoint as="targetPoint" x="454" y="566" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="model_join" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="609" y="566" />
+            <mxPoint as="targetPoint" x="629" y="566" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="factor_constraints" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="432" y="677" />
+            <mxPoint as="targetPoint" x="454" y="677" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="constraints_join" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="609" y="677" />
+            <mxPoint as="targetPoint" x="629" y="677" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="validity_bus" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="629" y="566" />
+            <mxPoint as="targetPoint" x="629" y="677" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="validity_input" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="629" y="622" />
+            <mxPoint as="targetPoint" x="648" y="622" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="validity_analysis" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="701" y="622" />
+            <mxPoint as="targetPoint" x="740" y="622" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="strategy_group" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=1;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="434" y="864" />
+            <mxPoint as="targetPoint" x="434" y="864" />
+            <Array as="points">
+              <mxPoint x="827" y="864" />
+              <mxPoint x="827" y="1102" />
+              <mxPoint x="434" y="1102" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="design_input_33" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="396" y="897.5" />
+            <mxPoint as="targetPoint" x="432" y="897.5" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="design_input_37" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="396" y="958.5" />
+            <mxPoint as="targetPoint" x="432" y="958.5" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="design_input_39" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="396" y="1014.5" />
+            <mxPoint as="targetPoint" x="432" y="1014.5" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="design_input_41" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="396" y="1073.5" />
+            <mxPoint as="targetPoint" x="432" y="1073.5" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="strategy_simulation" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="829" y="982" />
+            <mxPoint as="targetPoint" x="857" y="982" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="simulation_result" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="911" y="982" />
+            <mxPoint as="targetPoint" x="942" y="982" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="experiment_group" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=1;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="199" y="1223" />
+            <mxPoint as="targetPoint" x="199" y="1223" />
+            <Array as="points">
+              <mxPoint x="594" y="1223" />
+              <mxPoint x="594" y="1465" />
+              <mxPoint x="199" y="1465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comparison_group" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=1;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="606" y="1223" />
+            <mxPoint as="targetPoint" x="606" y="1223" />
+            <Array as="points">
+              <mxPoint x="1003" y="1223" />
+              <mxPoint x="1003" y="1465" />
+              <mxPoint x="606" y="1465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="experiment_container" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=0;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="390" y="1235" />
+            <mxPoint as="targetPoint" x="390" y="1235" />
+            <Array as="points">
+              <mxPoint x="586" y="1235" />
+              <mxPoint x="586" y="1454" />
+              <mxPoint x="390" y="1454" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comparison_container" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;dashed=0;dashPattern=2 2;rounded=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="615" y="1235" />
+            <mxPoint as="targetPoint" x="615" y="1235" />
+            <Array as="points">
+              <mxPoint x="811" y="1235" />
+              <mxPoint x="811" y="1454" />
+              <mxPoint x="615" y="1454" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="experiment_collect_0" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="355" y="1266" />
+            <mxPoint as="targetPoint" x="389" y="1266" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comparison_collect_0" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="847" y="1266" />
+            <mxPoint as="targetPoint" x="812" y="1266" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="experiment_collect_1" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="355" y="1348" />
+            <mxPoint as="targetPoint" x="389" y="1348" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comparison_collect_1" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="847" y="1348" />
+            <mxPoint as="targetPoint" x="812" y="1348" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="experiment_collect_2" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="355" y="1424" />
+            <mxPoint as="targetPoint" x="389" y="1424" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comparison_collect_2" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="847" y="1424" />
+            <mxPoint as="targetPoint" x="812" y="1424" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="outcomes_trunk" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="601" y="1568" />
+            <mxPoint as="targetPoint" x="601" y="1594" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="outcomes_bus" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=none;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="404" y="1594" />
+            <mxPoint as="targetPoint" x="805" y="1594" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conclusion_out" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="404" y="1594" />
+            <mxPoint as="targetPoint" x="404" y="1619" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="outlook_out" value="" edge="1" parent="1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;endSize=8;strokeWidth=2;strokeColor=#202020;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="805" y="1594" />
+            <mxPoint as="targetPoint" x="805" y="1619" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

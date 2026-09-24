@@ -1,0 +1,14 @@
+{
+  "source_path": "求解/图件数据/q2-F04.csv",
+  "sha256": "d6d32548cffae0ee2bee60e6659aa95152493f4005283f6651b1e775dbbceb45",
+  "fields": [
+    "case",
+    "memory_peak_fraction",
+    "q2_speedup",
+    "internal_ops",
+    "largest_component_fraction"
+  ],
+  "row_count": 100,
+  "valid": true,
+  "validation_method": "标准CSV解析、非空行与计划字段逐项核对；源表由正式评估结构化结果派生。"
+}

@@ -1,0 +1,33 @@
+{
+  "source_draft": {
+    "url": "https://api.crossref.org/works/10.1109/71.993206/transform/application/vnd.citationstyles.csl+json",
+    "authority": "",
+    "authority_reason": "",
+    "capture_path": "参考来源/topcuoglu2002/source.json",
+    "capture_sha256": "fb31f8dc34520de3ad5a22a455af04fc2c8d4487c4c4dc1e4afda7c7d0888488",
+    "receipt_path": "参考来源/topcuoglu2002/receipt.json",
+    "receipt_sha256": "e2ea288cd03cf678542bb9e168876761a4263566d359d3f04ee1be6205999271",
+    "format": "csl_json",
+    "review": {
+      "reviewed": false,
+      "tool_ref": "",
+      "observation": ""
+    }
+  },
+  "extracted_metadata": {
+    "title": "Performance-effective and low-complexity task scheduling for heterogeneous computing",
+    "authors": [
+      "H. Topcuoglu",
+      "S. Hariri",
+      "Min-You Wu"
+    ],
+    "year": "2002",
+    "container": "IEEE Transactions on Parallel and Distributed Systems",
+    "pages": "260-274",
+    "volume": "13",
+    "issue": "3",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi": "10.1109/71.993206"
+  },
+  "status": "REVIEW_REQUIRED"
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "fingerprint": {
+    "graph_sha256": "a634cd1151c0e918dd3a143eba421b88907f7f0334bfe6a5ca0412342307f09f",
+    "plan_sha256": "e2bb8a428a6d75bced60f9af54b15e0020d136d82262d4a48d58eb47dc0471a1",
+    "config_sha256": "1dc4fd20bf16f42b4f516f65675a66f1c27e8309dea5bfad0683a071190802de",
+    "official_evaluator_sha256": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0"
+  },
+  "result_sha256": "018017b0639bff72f88c0a09c691440f7a594571723ad0cf98f8ccf254387613",
+  "independent_validation": {
+    "status": "PASS",
+    "internal_op_count": 600,
+    "timeline_op_count": 1005,
+    "makespan": 47502,
+    "num_cores": 5,
+    "checked_pipe_sequences": 20
+  }
+}

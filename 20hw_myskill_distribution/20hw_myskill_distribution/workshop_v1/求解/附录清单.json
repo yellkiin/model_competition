@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0",
+  "runtime": "codex",
+  "paper_manifest": "论文/论文输入.json",
+  "paper_manifest_sha256": "a6b9ec7952b41c63c7c446868b84a6e442f7fd7abe81a59bd86bfb9541ed1058",
+  "supporting_manifest": "求解/支撑材料清单.json",
+  "supporting_manifest_sha256": "37b55888a16c45b74f506cff2d0e5ce2a3d5c22113afa1b68bd1339bf502ce0b",
+  "submission_dir": "提交附件",
+  "problem_count": 3,
+  "appendix_part_count": 4,
+  "attachments": [
+    {
+      "path": "问题一",
+      "kind": "文件夹",
+      "description": "场景A切图与调度源码、逐例官方结果及候选比较"
+    },
+    {
+      "path": "问题二",
+      "kind": "文件夹",
+      "description": "场景B同核Task合并源码、成对对照及候选比较"
+    },
+    {
+      "path": "问题三",
+      "kind": "文件夹",
+      "description": "共享只读L2调度源码、缓存收益及非官方敏感性表"
+    },
+    {
+      "path": "其他数据",
+      "kind": "文件夹",
+      "description": "题目原始100图与固定配置归档"
+    },
+    {
+      "path": "其他支撑材料",
+      "kind": "文件夹",
+      "description": "全部正式候选响应、逐例指标、汇总及非官方网格核验"
+    }
+  ],
+  "problems": [
+    {
+      "index": 1,
+      "appendix_number": 2,
+      "question_id": "q1",
+      "paper_chapter_id": "q1",
+      "paper_title": "问题一求解与分析",
+      "supporting_title": "问题一",
+      "code": [
+        {
+          "source_path": "求解/问题一/问题一.py",
+          "paper_relative_path": "../求解/问题一/问题一.py",
+          "language": "python",
+          "firstline": 1,
+          "lastline": 9,
+          "firstnumber": 1,
+          "caption": "本问唯一复现入口",
+          "selection_mode": "auto_ast",
+          "source_sha256": "92e880feb9592d82a56c458fbcdeea97395ccf76a857890465ab5fe086aadad3"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/contest_io.py",
+          "language": "python",
+          "firstline": 58,
+          "lastline": 170,
+          "firstnumber": 58,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/contest_io.py",
+          "language": "python",
+          "firstline": 195,
+          "lastline": 293,
+          "firstnumber": 195,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 20,
+          "lastline": 24,
+          "firstnumber": 20,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 106,
+          "lastline": 111,
+          "firstnumber": 106,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 171,
+          "lastline": 243,
+          "firstnumber": 171,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+          "language": "python",
+          "firstline": 200,
+          "lastline": 214,
+          "firstnumber": 200,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "2095f188a6c24ce3899f156bef21d50dcd87cbd9368488046b1e77e2bf91af3f"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "appendix_number": 3,
+      "question_id": "q2",
+      "paper_chapter_id": "q2",
+      "paper_title": "问题二求解与分析",
+      "supporting_title": "问题二",
+      "code": [
+        {
+          "source_path": "求解/问题二/问题二.py",
+          "paper_relative_path": "../求解/问题二/问题二.py",
+          "language": "python",
+          "firstline": 1,
+          "lastline": 9,
+          "firstnumber": 1,
+          "caption": "本问唯一复现入口",
+          "selection_mode": "auto_ast",
+          "source_sha256": "92e880feb9592d82a56c458fbcdeea97395ccf76a857890465ab5fe086aadad3"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/contest_io.py",
+          "language": "python",
+          "firstline": 58,
+          "lastline": 170,
+          "firstnumber": 58,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/contest_io.py",
+          "language": "python",
+          "firstline": 195,
+          "lastline": 293,
+          "firstnumber": 195,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 20,
+          "lastline": 24,
+          "firstnumber": 20,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 106,
+          "lastline": 111,
+          "firstnumber": 106,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 171,
+          "lastline": 243,
+          "firstnumber": 171,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+          "language": "python",
+          "firstline": 200,
+          "lastline": 214,
+          "firstnumber": 200,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "2095f188a6c24ce3899f156bef21d50dcd87cbd9368488046b1e77e2bf91af3f"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "appendix_number": 4,
+      "question_id": "q3",
+      "paper_chapter_id": "q3",
+      "paper_title": "问题三求解与分析",
+      "supporting_title": "问题三",
+      "code": [
+        {
+          "source_path": "求解/问题三/问题三.py",
+          "paper_relative_path": "../求解/问题三/问题三.py",
+          "language": "python",
+          "firstline": 1,
+          "lastline": 9,
+          "firstnumber": 1,
+          "caption": "本问唯一复现入口",
+          "selection_mode": "auto_ast",
+          "source_sha256": "92e880feb9592d82a56c458fbcdeea97395ccf76a857890465ab5fe086aadad3"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/contest_io.py",
+          "language": "python",
+          "firstline": 58,
+          "lastline": 170,
+          "firstnumber": 58,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/contest_io.py",
+          "language": "python",
+          "firstline": 195,
+          "lastline": 293,
+          "firstnumber": 195,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 20,
+          "lastline": 24,
+          "firstnumber": 20,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 106,
+          "lastline": 111,
+          "firstnumber": 106,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/evaluation_validation.py",
+          "language": "python",
+          "firstline": 171,
+          "lastline": 243,
+          "firstnumber": 171,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+        },
+        {
+          "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+          "paper_relative_path": "../数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+          "language": "python",
+          "firstline": 200,
+          "lastline": 214,
+          "firstnumber": 200,
+          "caption": "题目提供且未改动的官方评估源码",
+          "selection_mode": "auto_ast",
+          "source_sha256": "2095f188a6c24ce3899f156bef21d50dcd87cbd9368488046b1e77e2bf91af3f"
+        }
+      ]
+    }
+  ],
+  "generated_tex": "论文/章节内容/99_附录.generated.tex",
+  "generated_tex_sha256": "c584b219dc581d20cffe17101240aed65caec1af1e612ef020d54c4be192052d"
+}

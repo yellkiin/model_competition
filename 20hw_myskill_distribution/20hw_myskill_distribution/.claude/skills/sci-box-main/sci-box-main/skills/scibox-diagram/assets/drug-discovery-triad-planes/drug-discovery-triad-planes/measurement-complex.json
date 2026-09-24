@@ -1,0 +1,128 @@
+{
+  "source": "ref-05",
+  "rings": [
+    {
+      "id": "upper_core",
+      "roi": [
+        460,
+        270,
+        600,
+        410
+      ],
+      "target_rgb": [
+        68,
+        84,
+        106
+      ],
+      "bbox": [
+        467,
+        275,
+        128,
+        131
+      ],
+      "center": [
+        530.5,
+        340.0
+      ],
+      "fill_pixels": 12949
+    },
+    {
+      "id": "left_core",
+      "roi": [
+        290,
+        650,
+        430,
+        800
+      ],
+      "target_rgb": [
+        46,
+        117,
+        182
+      ],
+      "bbox": [
+        296,
+        660,
+        128,
+        128
+      ],
+      "center": [
+        359.5,
+        723.5
+      ],
+      "fill_pixels": 12879
+    },
+    {
+      "id": "right_core",
+      "roi": [
+        635,
+        650,
+        780,
+        800
+      ],
+      "target_rgb": [
+        47,
+        85,
+        151
+      ],
+      "bbox": [
+        645,
+        660,
+        128,
+        128
+      ],
+      "center": [
+        708.5,
+        723.5
+      ],
+      "fill_pixels": 12889
+    }
+  ],
+  "samples": {
+    "upper_left_fill": {
+      "x": 100,
+      "y": 245,
+      "rgb": [
+        249,
+        249,
+        251
+      ]
+    },
+    "upper_right_fill": {
+      "x": 980,
+      "y": 245,
+      "rgb": [
+        251,
+        251,
+        252
+      ]
+    },
+    "plane_top": {
+      "x": 500,
+      "y": 980,
+      "rgb": [
+        255,
+        255,
+        255
+      ]
+    },
+    "plane_middle": {
+      "x": 500,
+      "y": 1150,
+      "rgb": [
+        251,
+        251,
+        252
+      ]
+    },
+    "plane_bottom": {
+      "x": 530,
+      "y": 1380,
+      "rgb": [
+        183,
+        185,
+        189
+      ]
+    }
+  },
+  "note": "Ring fill masks establish centres and bounds; polygon vertices separately traced against outline pixels. This measurement is not visual approval."
+}

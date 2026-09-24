@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "events": [
+    {
+      "action": "venv_invalid",
+      "error": "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe: No module named pip",
+      "time": "2026-09-23T05:45:32.960062+00:00"
+    },
+    {
+      "action": "venv_create",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "",
+      "time": "2026-09-23T05:45:36.496721+00:00"
+    },
+    {
+      "action": "pip_offline_cache",
+      "name": "python.exe",
+      "returncode": 1,
+      "output": "Looking in links: c:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\n\nERROR: Could not find a version that satisfies the requirement jsonschema<5,>=4.18 (from versions: none)\nERROR: No matching distribution found for jsonschema<5,>=4.18",
+      "time": "2026-09-23T05:45:38.928614+00:00"
+    },
+    {
+      "action": "pip_download",
+      "source": "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "Looking in indexes: https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple\nCollecting jsonschema<5,>=4.18\n  Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)\nCollecting PyYAML<7,>=6\n  Downloading pyyaml-6.0.3-cp313-cp313-win_amd64.whl (154 kB)\nCollecting pydantic<3,>=2\n  Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)\nCollecting packaging<27,>=23\n  Downloading packaging-26.3-py3-none-any.whl (129 kB)\nCollecting attrs>=22.2.0 (from jsonschema<5,>=4.18)\n  Downloading attrs-26.1.0-py3-none-any.whl (67 kB)\nCollecting jsonschema-specifications>=2023.03.6 (from jsonschema<5,>=4.18)\n  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)\nCollecting referencing>=0.28.4 (from jsonschema<5,>=4.18)\n  Downloading referencing-0.37.0-py3-none-any.whl (26 kB)\nCollecting rpds-py>=0.25.0 (from jsonschema<5,>=4.18)\n  Downloading rpds_py-2026.6.3-cp313-cp313-win_amd64.whl (219 kB)\nCollecting annotated-types>=0.6.0 (from pydantic<3,>=2)\n  Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)\nCollecting pydantic-core==2.46.5 (from pydantic<3,>=2)\n  Downloading pydantic_core-2.46.5-cp313-cp313-win_amd64.whl (2.0 MB)\n     ---------------------------------------- 2.0/2.0 MB 49.8 MB/s  0:00:00\nCollecting typing-extensions>=4.14.1 (from pydantic<3,>=2)\n  Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)\nCollecting typing-inspection>=0.4.2 (from pydantic<3,>=2)\n  Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\jsonschema-4.26.0-py3-none-any.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\pyyaml-6.0.3-cp313-cp313-win_amd64.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\pydantic-2.13.5-py3-none-any.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\pydantic_core-2.46.5-cp313-cp313-win_amd64.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\packaging-26.3-py3-none-any.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\annotated_types-0.8.0-py3-none-any.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\attrs-26.1.0-py3-none-any.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\jsonschema_specifications-2025.9.1-py3-none-any.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\referencing-0.37.0-py3-none-any.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\rpds_py-2026.6.3-cp313-cp313-win_amd64.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\typing_extensions-4.16.0-py3-none-any.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\typing_inspection-0.4.4-py3-none-any.whl",
+      "time": "2026-09-23T05:45:41.786615+00:00"
+    },
+    {
+      "action": "pip_install",
+      "source": "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "Looking in links: c:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\jsonschema-4.26.0-py3-none-any.whl\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\pyyaml-6.0.3-cp313-cp313-win_amd64.whl\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\pydantic-2.13.5-py3-none-any.whl\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\packaging-26.3-py3-none-any.whl\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\attrs-26.1.0-py3-none-any.whl (from jsonschema<5,>=4.18)\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\jsonschema_specifications-2025.9.1-py3-none-any.whl (from jsonschema<5,>=4.18)\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\referencing-0.37.0-py3-none-any.whl (from jsonschema<5,>=4.18)\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\rpds_py-2026.6.3-cp313-cp313-win_amd64.whl (from jsonschema<5,>=4.18)\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\annotated_types-0.8.0-py3-none-any.whl (from pydantic<3,>=2)\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\pydantic_core-2.46.5-cp313-cp313-win_amd64.whl (from pydantic<3,>=2)\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\typing_extensions-4.16.0-py3-none-any.whl (from pydantic<3,>=2)\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\typing_inspection-0.4.4-py3-none-any.whl (from pydantic<3,>=2)\nInstalling collected packages: typing-extensions, rpds-py, PyYAML, packaging, attrs, annotated-types, typing-inspection, referencing, pydantic-core, pydantic, jsonschema-specifications, jsonschema\n\nSuccessfully installed PyYAML-6.0.3 annotated-types-0.8.0 attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 packaging-26.3 pydantic-2.13.5 pydantic-core-2.46.5 referencing-0.37.0 rpds-py-2026.6.3 typing-extensions-4.16.0 typing-inspection-0.4.4",
+      "time": "2026-09-23T05:45:44.627774+00:00"
+    }
+  ]
+}

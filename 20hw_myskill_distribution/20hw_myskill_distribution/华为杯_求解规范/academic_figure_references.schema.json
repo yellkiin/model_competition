@@ -1,0 +1,492 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "figures": {
+      "items": {
+        "properties": {
+          "backend": {
+            "const": "academic-figure-skill"
+          },
+          "backend_reason": {
+            "type": "string"
+          },
+          "core_claim": {
+            "type": "string"
+          },
+          "evidence_role": {
+            "enum": [
+              "mechanism",
+              "main_result",
+              "validation",
+              "error",
+              "sensitivity",
+              "robustness",
+              "scenario"
+            ]
+          },
+          "figure_contract": {
+            "additionalProperties": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "required": [
+              "necessity",
+              "evidence_chain",
+              "review_risks"
+            ],
+            "type": "object"
+          },
+          "figure_id": {
+            "type": "string"
+          },
+          "final_pdf_path": {
+            "type": "string"
+          },
+          "final_png_path": {
+            "type": "string"
+          },
+          "final_svg_path": {
+            "type": "string"
+          },
+          "intended_layout": {
+            "type": "string"
+          },
+          "panel_plan": {
+            "items": {
+              "properties": {
+                "adaptation_mode": {
+                  "enum": [
+                    "native_run",
+                    "visual_adapt",
+                    "cross_type_inherit"
+                  ]
+                },
+                "asset_family": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "atlas_reference": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "candidate_atlas": {
+                  "items": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "candidate_families": {
+                  "items": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "candidate_review": {
+                  "items": {
+                    "properties": {
+                      "method": {
+                        "enum": [
+                          "source_read",
+                          "image_view",
+                          "contact_sheet_view",
+                          "pdf_render_view",
+                          "svg_render_view"
+                        ]
+                      },
+                      "observation": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "path": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "preview_path": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "preview_sha256": {
+                        "pattern": "^[0-9a-f]{64}$",
+                        "type": "string"
+                      },
+                      "reviewed": {
+                        "const": true
+                      },
+                      "sha256": {
+                        "pattern": "^[0-9a-f]{64}$",
+                        "type": "string"
+                      },
+                      "tool_ref": {
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "sha256",
+                      "reviewed",
+                      "method",
+                      "tool_ref",
+                      "observation"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "changed_parameters": {
+                  "type": "object"
+                },
+                "data_schema": {
+                  "properties": {
+                    "fields": {
+                      "items": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array"
+                    },
+                    "groups": {
+                      "type": "array"
+                    },
+                    "shape": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "units": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "fields",
+                    "units",
+                    "shape",
+                    "groups"
+                  ],
+                  "type": "object"
+                },
+                "panel_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "production_asset": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "reason_for_change": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "scientific_question": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "selection_status": {
+                  "const": "reviewed"
+                },
+                "semantic_match": {
+                  "type": "boolean"
+                },
+                "style_parameters_inherited": {
+                  "additionalProperties": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "minProperties": 1,
+                  "type": "object"
+                },
+                "source_example_path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_locator": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "data_state": {
+                  "enum": [
+                    "planned",
+                    "verified"
+                  ]
+                },
+                "data_profile_path": {
+                  "type": "string"
+                },
+                "candidate_search": {
+                  "type": "object",
+                  "required": [
+                    "query",
+                    "scan_digest",
+                    "results",
+                    "reviewed",
+                    "selection_reason",
+                    "single_candidate_reason"
+                  ]
+                },
+                "candidate_comparison": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "family",
+                      "fit",
+                      "conflict",
+                      "decision",
+                      "decision_reason"
+                    ],
+                    "properties": {
+                      "family": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "fit": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "conflict": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "decision": {
+                        "enum": [
+                          "selected",
+                          "rejected"
+                        ]
+                      },
+                      "decision_reason": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "style_contract": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "required": [
+                      "reference_value",
+                      "final_value",
+                      "basis",
+                      "source_path",
+                      "source_locator",
+                      "reason"
+                    ],
+                    "properties": {
+                      "reference_value": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "final_value": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "basis": {
+                        "enum": [
+                          "source",
+                          "image_estimate",
+                          "not_applicable"
+                        ]
+                      },
+                      "source_path": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "source_locator": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reason": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "panel_id",
+                "scientific_question",
+                "atlas_reference",
+                "production_asset",
+                "asset_family",
+                "candidate_families",
+                "candidate_atlas",
+                "adaptation_mode",
+                "data_schema",
+                "style_parameters_inherited",
+                "changed_parameters",
+                "reason_for_change",
+                "candidate_review",
+                "selection_status",
+                "source_example_path",
+                "source_locator",
+                "data_state",
+                "data_profile_path",
+                "candidate_search",
+                "candidate_comparison",
+                "style_contract"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "run_record_path": {
+            "type": "string"
+          },
+          "scientific_question": {
+            "type": "string"
+          },
+          "script": {
+            "type": "string"
+          },
+          "statistics_report_path": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "incomplete",
+              "rendered",
+              "qa_pass"
+            ]
+          },
+          "target_width_mm": {
+            "type": "number"
+          },
+          "visual_qa_path": {
+            "type": "string"
+          },
+          "paper_geometry": {
+            "type": "object",
+            "required": [
+              "source_tex",
+              "source_sha256",
+              "text_width_mm",
+              "width_fraction",
+              "basis"
+            ],
+            "properties": {
+              "source_tex": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "text_width_mm": {
+                "type": "number"
+              },
+              "width_fraction": {
+                "type": "number"
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "required": [
+          "figure_id",
+          "backend",
+          "backend_reason",
+          "scientific_question",
+          "core_claim",
+          "evidence_role",
+          "figure_contract",
+          "intended_layout",
+          "panel_plan",
+          "script",
+          "final_pdf_path",
+          "final_svg_path",
+          "final_png_path",
+          "statistics_report_path",
+          "visual_qa_path",
+          "status",
+          "run_record_path",
+          "target_width_mm",
+          "paper_geometry"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "index_path": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "plan_path": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "purpose": {
+      "enum": [
+        "production",
+        "demo"
+      ]
+    },
+    "review_session_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "scan_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "2.0"
+    },
+    "skill_root": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "runtime": {
+      "enum": [
+        "codex",
+        "claude"
+      ]
+    },
+    "gallery_review_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gallery_review_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "paper_review_path": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "purpose",
+    "plan_path",
+    "index_path",
+    "skill_root",
+    "scan_digest",
+    "review_session_id",
+    "figures",
+    "runtime",
+    "gallery_review_path",
+    "gallery_review_sha256"
+  ],
+  "title": "Academic figure reference sidecar — ready review contract (drafts intentionally fail)",
+  "type": "object"
+}

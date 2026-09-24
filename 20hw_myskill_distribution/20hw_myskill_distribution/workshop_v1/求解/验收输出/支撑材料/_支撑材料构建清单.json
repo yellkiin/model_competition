@@ -1,0 +1,1099 @@
+{
+  "schema_version": "2.0",
+  "project_title": "通用神经网络处理器下的多核调度问题",
+  "package_status": "complete",
+  "built_at": "2026-09-23T15:52:28.174245+00:00",
+  "source_manifest": "求解/支撑材料清单.json",
+  "source_manifest_sha256": "37b55888a16c45b74f506cff2d0e5ce2a3d5c22113afa1b68bd1339bf502ce0b",
+  "completed_questions": [
+    "q1",
+    "q2",
+    "q3"
+  ],
+  "entries": [
+    {
+      "source_path": "求解/正式实验/交叉核查.json",
+      "package_path": "支撑材料文件/其他支撑材料/交叉核查.json",
+      "description": "图结构反例、候选搬运与缓存命中分层交叉核查",
+      "category": "additional",
+      "size_bytes": 5764,
+      "sha256": "3ccefa785abddbe8cb06e2c9160a4b6b3c8aa5d256eb26ebaa2332e3271c7ab4"
+    },
+    {
+      "source_path": "求解/提交源/归档来源.json",
+      "package_path": "支撑材料文件/其他支撑材料/归档来源.json",
+      "description": "官方输入与正式评估归档的来源摘要",
+      "category": "additional",
+      "size_bytes": 409,
+      "sha256": "ee2725098a581632586d4905b05ffbc4e524d6c31a5f7178a2ff3ece391ea626"
+    },
+    {
+      "source_path": "求解/正式实验/总体摘要.json",
+      "package_path": "支撑材料文件/其他支撑材料/总体摘要.json",
+      "description": "三问各核数的100例官方汇总",
+      "category": "additional",
+      "size_bytes": 4882,
+      "sha256": "c544db7733aa7eca6405f1e89362c9202993424e71cb867405214821146a736a"
+    },
+    {
+      "source_path": "求解/提交源/正式候选评估.zip",
+      "package_path": "支撑材料文件/其他支撑材料/正式候选评估.zip",
+      "description": "2005份正式评估收据、原始响应及候选方案，保留原始内部文件名",
+      "category": "official_output",
+      "size_bytes": 261273793,
+      "sha256": "76a02c6b491c4840a8a674ae2c3cf465c26c25493c4f9018064681ac2d33aefc"
+    },
+    {
+      "source_path": "求解/正式实验/深度分析.json",
+      "package_path": "支撑材料文件/其他支撑材料/深度分析.json",
+      "description": "三问逐核、结构分组与参数响应的真实结果复核",
+      "category": "additional",
+      "size_bytes": 7448,
+      "sha256": "6a8091f87302ac30cf4883f3f7463ce87288de56034dc837e8e5ad6680b01242"
+    },
+    {
+      "source_path": "求解/正式实验/结构与缓存交叉核查.json",
+      "package_path": "支撑材料文件/其他支撑材料/结构与缓存交叉核查.json",
+      "description": "五核结构分组与同方案L2收益的全100例核对",
+      "category": "additional",
+      "size_bytes": 1361,
+      "sha256": "f3c56e2e9d65ac9816b21750a5a66242b9ebaaf5222d0275ca41c11238e97276"
+    },
+    {
+      "source_path": "求解/正式实验/统计分析.json",
+      "package_path": "支撑材料文件/其他支撑材料/统计分析.json",
+      "description": "正式分位数及成对机制统计",
+      "category": "additional",
+      "size_bytes": 9284,
+      "sha256": "54625a20d8d26e41977443ad6da277bfe5c85b78a98699cc4195ef1334ad4705"
+    },
+    {
+      "source_path": "求解/问题一/结果/逐例官方评估.csv",
+      "package_path": "支撑材料文件/其他支撑材料/问题一_逐例官方评估.csv",
+      "description": "本问100例×五核数的正式官方指标表",
+      "category": "official_output",
+      "size_bytes": 127635,
+      "sha256": "51d5545e681ebe14557f44d6194b2cc645df6adcdd9f98d0db42480d240a49ae"
+    },
+    {
+      "source_path": "求解/问题三/结果/逐例官方评估.csv",
+      "package_path": "支撑材料文件/其他支撑材料/问题三_逐例官方评估.csv",
+      "description": "本问100例×五核数的正式官方指标表",
+      "category": "official_output",
+      "size_bytes": 186793,
+      "sha256": "f89af6ee18fba7e7aec5345f0a56bb66e7492a71047fc6c87390b50e777c2a56"
+    },
+    {
+      "source_path": "求解/问题二/结果/逐例官方评估.csv",
+      "package_path": "支撑材料文件/其他支撑材料/问题二_逐例官方评估.csv",
+      "description": "本问100例×五核数的正式官方指标表",
+      "category": "official_output",
+      "size_bytes": 127663,
+      "sha256": "dd0da094b910b255f1699e049dcbe86ac81e8354bbc5829217a0531f7da03dbc"
+    },
+    {
+      "source_path": "求解/正式实验/L2参数敏感性_非官方/统计验证.json",
+      "package_path": "支撑材料文件/其他支撑材料/非官方L2网格统计验证.json",
+      "description": "六例非官方网格核验",
+      "category": "additional",
+      "size_bytes": 2441,
+      "sha256": "0b7dadc0a39a260004d28c722ac5c1365e5b54fee0524973ba6558b6047e2e3c"
+    },
+    {
+      "source_path": "求解/提交源/官方输入.zip",
+      "package_path": "支撑材料文件/其他数据/官方输入.zip",
+      "description": "题目原始100图与固定配置，内部文件名未改",
+      "category": "additional",
+      "size_bytes": 15382348,
+      "sha256": "c0591fec679155d1a6e87cbbb7edafb53e461f0bea860eb4f1aeee7cb954077c"
+    },
+    {
+      "source_path": "求解/模型比较/q1.csv",
+      "package_path": "支撑材料文件/问题一/中间图表/q1_候选比较.csv",
+      "description": "同条件候选模型正式比较表",
+      "category": "supplementary_table",
+      "size_bytes": 43,
+      "sha256": "4b1c619b12329934741a7fa1b026e42d7cd7665bdf33548292aec875ce86ae07",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/问题一/代码环境说明.md",
+      "package_path": "支撑材料文件/问题一/代码环境说明.md",
+      "description": "软件环境、输入输出及运行方法",
+      "category": "environment_doc",
+      "size_bytes": 2078,
+      "sha256": "ab2bd83b7792e06b6284356daafd33a12c346d899c5337cb311b829d3db1bc86",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "requirements.lock.txt",
+      "package_path": "支撑材料文件/问题一/源码/requirements.lock.txt",
+      "description": "实际环境依赖清单",
+      "category": "source_code",
+      "size_bytes": 616,
+      "sha256": "382f674f08c996f87d30b8bfa3c1559dacb6f4769bfefed303d68a8e651eab57",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "requirements.txt",
+      "package_path": "支撑材料文件/问题一/源码/requirements.txt",
+      "description": "实际环境依赖清单",
+      "category": "source_code",
+      "size_bytes": 295,
+      "sha256": "4ef23f84cb0043784f67dab3ce0e0e55d30f888d39aee4edfe76a5e8a63df692",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/support_reproduce.py",
+      "package_path": "支撑材料文件/问题一/源码/support_reproduce.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4155,
+      "sha256": "c90b28638b3d86cf22b79fe9b646d1c7c5601ad8e9df4296b96d6b2ec697e707",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/contest_io.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 12491,
+      "sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/evaluation_validation.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 10900,
+      "sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 23213,
+      "sha256": "2095f188a6c24ce3899f156bef21d50dcd87cbd9368488046b1e77e2bf91af3f",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 26123,
+      "sha256": "0b39f84d5ec0a7fba9a4c92a598a9044b97ab79c71393824c1ba130ecfe6c464",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 32112,
+      "sha256": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step1.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/schedule_step1.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 7304,
+      "sha256": "d8fe721ff3dbe036e34a20c00cce6430960860000a49eb467e63465f76b84034",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step2.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/schedule_step2.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 23989,
+      "sha256": "2836baac176f4e0bdd9eec59b8d9ce254e209e5f7a251e23837ab684312fa0c3",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step3.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/schedule_step3.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 30834,
+      "sha256": "50053db0436f1d166dd75436693ba3af49b5c339576beb6e7299477f6b69fc7a",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 4273,
+      "sha256": "446b753ee134ef1fec8e052356bb077a2602fbe95572ccd3dddd7928e894b77a",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "package_path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 12415,
+      "sha256": "0a3a3b79b5173b466fc05fc8d33b72d11d90b4df78995435853d91c632a35892",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/analyze_cache_sensitivity.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/analyze_cache_sensitivity.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 2748,
+      "sha256": "7ddda83953d6113ee104cf4f63d4b5d7328001bba16ed29785a8e32f4b4061e0",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/analyze_official_results.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/analyze_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 6558,
+      "sha256": "affb4ec178082034b49b3db1e6ad811067b000d62bb9908c8386353a8335ece7",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/build_crosscheck_tables.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/build_crosscheck_tables.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4875,
+      "sha256": "ef8eee3f7442d5fd72f3d55c58b7ecb9c57782997dfc4d759cbe891c72d1c93b",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/build_deep_evidence.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/build_deep_evidence.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 9990,
+      "sha256": "cc87d015356c0a919c2d7ea7983be492ea4e2e685431f647dd1cfbc48c185f27",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/build_structure_cache_crosscheck.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/build_structure_cache_crosscheck.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 2701,
+      "sha256": "3905bdaef72c058df103cb7abee68a69138821e0fdcd31d49b5ffd49ae07a5fc",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/cache_sensitivity.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/cache_sensitivity.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 7630,
+      "sha256": "4b212e46b77c9ccf75a3bc91a93b9b328632a440bea009bb5ebc3d0a56977ea6",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/collect_official_results.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/collect_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 7309,
+      "sha256": "f3b739b6b3b6b75e2eae20b5a7a7290fba9a054cf608e94483e352332dafa3fb",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/run_official_experiments.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/run_official_experiments.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 9844,
+      "sha256": "93204bcd97f3e7ffc45409db483151be69eb88e4c961115b7c75d00a19eaecb3",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/solve_bands.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/solve_bands.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 5252,
+      "sha256": "4d69dc5842f57e1c9f27142a513bdf0d013a11db0cf31ce033734ff1e5ca33d5",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/solve_batches.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/solve_batches.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 3009,
+      "sha256": "57c221abf423ff8f73e2ceb83afa4d9c5b99d2dc3eec8079e87f519fb6a33948",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/solve_components.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/solve_components.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4087,
+      "sha256": "488a098ca2048ccbc0bf2db7605caa699998d8b11eb392c252674f470524b2b4",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/summarize_validations.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/summarize_validations.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 1156,
+      "sha256": "6becd8eadbeb7ad8e496f044fe7a1e29ca49f8abe8c83a7da75e1ecb78e7e854",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/verify_official_results.py",
+      "package_path": "支撑材料文件/问题一/源码/求解/verify_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4890,
+      "sha256": "0a3abf03594f78a80eb3964409de84c8b46a2322e242eee4a40134c5af40fc59",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/数据审计.json",
+      "package_path": "支撑材料文件/问题一/源码/求解/数据审计.json",
+      "description": "输入图结构审计结果，供正式候选构造使用",
+      "category": "source_code",
+      "size_bytes": 85303,
+      "sha256": "6ee1625c2299c1d793270788d18d4318035d54d9a3cd7976d47f68622b0fef8e",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/问题一/问题一.py",
+      "package_path": "支撑材料文件/问题一/源码/问题一.py",
+      "description": "本问唯一复现入口",
+      "category": "source_code",
+      "size_bytes": 360,
+      "sha256": "92e880feb9592d82a56c458fbcdeea97395ccf76a857890465ab5fe086aadad3",
+      "question_id": "q1"
+    },
+    {
+      "source_path": "求解/模型比较/q3.csv",
+      "package_path": "支撑材料文件/问题三/中间图表/q3_候选比较.csv",
+      "description": "同条件候选模型正式比较表",
+      "category": "supplementary_table",
+      "size_bytes": 43,
+      "sha256": "4b1c619b12329934741a7fa1b026e42d7cd7665bdf33548292aec875ce86ae07",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/正式实验/L2参数敏感性_非官方/全部候选.csv",
+      "package_path": "支撑材料文件/问题三/中间图表/非官方L2参数_全部候选.csv",
+      "description": "六例非官方L2容量与带宽网格：全部候选.csv",
+      "category": "supplementary_table",
+      "size_bytes": 27532,
+      "sha256": "540df2a23110f5211b59c4cae30c1b197ff6d045a981eed4590f8b015902f00a",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/正式实验/L2参数敏感性_非官方/逐配置最优.csv",
+      "package_path": "支撑材料文件/问题三/中间图表/非官方L2参数_逐配置最优.csv",
+      "description": "六例非官方L2容量与带宽网格：逐配置最优.csv",
+      "category": "supplementary_table",
+      "size_bytes": 18547,
+      "sha256": "b299a5689667d17f32da1babfe2e7ae602007017278f5cc35834d6557b61ef7f",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/问题三/代码环境说明.md",
+      "package_path": "支撑材料文件/问题三/代码环境说明.md",
+      "description": "软件环境、输入输出及运行方法",
+      "category": "environment_doc",
+      "size_bytes": 2125,
+      "sha256": "2a21054d513792a3c8f9b7092fd9b78943db31cd6c36dc25f4bc4e584f8e5724",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "requirements.lock.txt",
+      "package_path": "支撑材料文件/问题三/源码/requirements.lock.txt",
+      "description": "实际环境依赖清单",
+      "category": "source_code",
+      "size_bytes": 616,
+      "sha256": "382f674f08c996f87d30b8bfa3c1559dacb6f4769bfefed303d68a8e651eab57",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "requirements.txt",
+      "package_path": "支撑材料文件/问题三/源码/requirements.txt",
+      "description": "实际环境依赖清单",
+      "category": "source_code",
+      "size_bytes": 295,
+      "sha256": "4ef23f84cb0043784f67dab3ce0e0e55d30f888d39aee4edfe76a5e8a63df692",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/support_reproduce.py",
+      "package_path": "支撑材料文件/问题三/源码/support_reproduce.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4155,
+      "sha256": "c90b28638b3d86cf22b79fe9b646d1c7c5601ad8e9df4296b96d6b2ec697e707",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/contest_io.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 12491,
+      "sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/evaluation_validation.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 10900,
+      "sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 23213,
+      "sha256": "2095f188a6c24ce3899f156bef21d50dcd87cbd9368488046b1e77e2bf91af3f",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 26123,
+      "sha256": "0b39f84d5ec0a7fba9a4c92a598a9044b97ab79c71393824c1ba130ecfe6c464",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 32112,
+      "sha256": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step1.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/schedule_step1.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 7304,
+      "sha256": "d8fe721ff3dbe036e34a20c00cce6430960860000a49eb467e63465f76b84034",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step2.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/schedule_step2.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 23989,
+      "sha256": "2836baac176f4e0bdd9eec59b8d9ce254e209e5f7a251e23837ab684312fa0c3",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step3.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/schedule_step3.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 30834,
+      "sha256": "50053db0436f1d166dd75436693ba3af49b5c339576beb6e7299477f6b69fc7a",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 4273,
+      "sha256": "446b753ee134ef1fec8e052356bb077a2602fbe95572ccd3dddd7928e894b77a",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "package_path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 12415,
+      "sha256": "0a3a3b79b5173b466fc05fc8d33b72d11d90b4df78995435853d91c632a35892",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/analyze_cache_sensitivity.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/analyze_cache_sensitivity.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 2748,
+      "sha256": "7ddda83953d6113ee104cf4f63d4b5d7328001bba16ed29785a8e32f4b4061e0",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/analyze_official_results.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/analyze_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 6558,
+      "sha256": "affb4ec178082034b49b3db1e6ad811067b000d62bb9908c8386353a8335ece7",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/build_crosscheck_tables.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/build_crosscheck_tables.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4875,
+      "sha256": "ef8eee3f7442d5fd72f3d55c58b7ecb9c57782997dfc4d759cbe891c72d1c93b",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/build_deep_evidence.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/build_deep_evidence.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 9990,
+      "sha256": "cc87d015356c0a919c2d7ea7983be492ea4e2e685431f647dd1cfbc48c185f27",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/build_structure_cache_crosscheck.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/build_structure_cache_crosscheck.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 2701,
+      "sha256": "3905bdaef72c058df103cb7abee68a69138821e0fdcd31d49b5ffd49ae07a5fc",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/cache_sensitivity.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/cache_sensitivity.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 7630,
+      "sha256": "4b212e46b77c9ccf75a3bc91a93b9b328632a440bea009bb5ebc3d0a56977ea6",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/collect_official_results.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/collect_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 7309,
+      "sha256": "f3b739b6b3b6b75e2eae20b5a7a7290fba9a054cf608e94483e352332dafa3fb",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/run_official_experiments.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/run_official_experiments.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 9844,
+      "sha256": "93204bcd97f3e7ffc45409db483151be69eb88e4c961115b7c75d00a19eaecb3",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/solve_bands.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/solve_bands.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 5252,
+      "sha256": "4d69dc5842f57e1c9f27142a513bdf0d013a11db0cf31ce033734ff1e5ca33d5",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/solve_batches.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/solve_batches.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 3009,
+      "sha256": "57c221abf423ff8f73e2ceb83afa4d9c5b99d2dc3eec8079e87f519fb6a33948",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/solve_components.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/solve_components.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4087,
+      "sha256": "488a098ca2048ccbc0bf2db7605caa699998d8b11eb392c252674f470524b2b4",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/summarize_validations.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/summarize_validations.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 1156,
+      "sha256": "6becd8eadbeb7ad8e496f044fe7a1e29ca49f8abe8c83a7da75e1ecb78e7e854",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/verify_official_results.py",
+      "package_path": "支撑材料文件/问题三/源码/求解/verify_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4890,
+      "sha256": "0a3abf03594f78a80eb3964409de84c8b46a2322e242eee4a40134c5af40fc59",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/数据审计.json",
+      "package_path": "支撑材料文件/问题三/源码/求解/数据审计.json",
+      "description": "输入图结构审计结果，供正式候选构造使用",
+      "category": "source_code",
+      "size_bytes": 85303,
+      "sha256": "6ee1625c2299c1d793270788d18d4318035d54d9a3cd7976d47f68622b0fef8e",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/问题三/问题三.py",
+      "package_path": "支撑材料文件/问题三/源码/问题三.py",
+      "description": "本问唯一复现入口",
+      "category": "source_code",
+      "size_bytes": 360,
+      "sha256": "92e880feb9592d82a56c458fbcdeea97395ccf76a857890465ab5fe086aadad3",
+      "question_id": "q3"
+    },
+    {
+      "source_path": "求解/模型比较/q2.csv",
+      "package_path": "支撑材料文件/问题二/中间图表/q2_候选比较.csv",
+      "description": "同条件候选模型正式比较表",
+      "category": "supplementary_table",
+      "size_bytes": 43,
+      "sha256": "4b1c619b12329934741a7fa1b026e42d7cd7665bdf33548292aec875ce86ae07",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/问题二/代码环境说明.md",
+      "package_path": "支撑材料文件/问题二/代码环境说明.md",
+      "description": "软件环境、输入输出及运行方法",
+      "category": "environment_doc",
+      "size_bytes": 2078,
+      "sha256": "b2833f696033b401b4841afa3dc68785e2f35e9b8378bb99fdf7af55a243a903",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "requirements.lock.txt",
+      "package_path": "支撑材料文件/问题二/源码/requirements.lock.txt",
+      "description": "实际环境依赖清单",
+      "category": "source_code",
+      "size_bytes": 616,
+      "sha256": "382f674f08c996f87d30b8bfa3c1559dacb6f4769bfefed303d68a8e651eab57",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "requirements.txt",
+      "package_path": "支撑材料文件/问题二/源码/requirements.txt",
+      "description": "实际环境依赖清单",
+      "category": "source_code",
+      "size_bytes": 295,
+      "sha256": "4ef23f84cb0043784f67dab3ce0e0e55d30f888d39aee4edfe76a5e8a63df692",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/support_reproduce.py",
+      "package_path": "支撑材料文件/问题二/源码/support_reproduce.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4155,
+      "sha256": "c90b28638b3d86cf22b79fe9b646d1c7c5601ad8e9df4296b96d6b2ec697e707",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/contest_io.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/contest_io.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 12491,
+      "sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/evaluation_validation.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/evaluation_validation.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 10900,
+      "sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 23213,
+      "sha256": "2095f188a6c24ce3899f156bef21d50dcd87cbd9368488046b1e77e2bf91af3f",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 26123,
+      "sha256": "0b39f84d5ec0a7fba9a4c92a598a9044b97ab79c71393824c1ba130ecfe6c464",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 32112,
+      "sha256": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step1.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/schedule_step1.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 7304,
+      "sha256": "d8fe721ff3dbe036e34a20c00cce6430960860000a49eb467e63465f76b84034",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step2.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/schedule_step2.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 23989,
+      "sha256": "2836baac176f4e0bdd9eec59b8d9ce254e209e5f7a251e23837ab684312fa0c3",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/schedule_step3.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/schedule_step3.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 30834,
+      "sha256": "50053db0436f1d166dd75436693ba3af49b5c339576beb6e7299477f6b69fc7a",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 4273,
+      "sha256": "446b753ee134ef1fec8e052356bb077a2602fbe95572ccd3dddd7928e894b77a",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "package_path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "description": "题目提供且未改动的官方评估源码",
+      "category": "source_code",
+      "size_bytes": 12415,
+      "sha256": "0a3a3b79b5173b466fc05fc8d33b72d11d90b4df78995435853d91c632a35892",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/analyze_cache_sensitivity.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/analyze_cache_sensitivity.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 2748,
+      "sha256": "7ddda83953d6113ee104cf4f63d4b5d7328001bba16ed29785a8e32f4b4061e0",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/analyze_official_results.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/analyze_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 6558,
+      "sha256": "affb4ec178082034b49b3db1e6ad811067b000d62bb9908c8386353a8335ece7",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/build_crosscheck_tables.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/build_crosscheck_tables.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4875,
+      "sha256": "ef8eee3f7442d5fd72f3d55c58b7ecb9c57782997dfc4d759cbe891c72d1c93b",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/build_deep_evidence.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/build_deep_evidence.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 9990,
+      "sha256": "cc87d015356c0a919c2d7ea7983be492ea4e2e685431f647dd1cfbc48c185f27",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/build_structure_cache_crosscheck.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/build_structure_cache_crosscheck.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 2701,
+      "sha256": "3905bdaef72c058df103cb7abee68a69138821e0fdcd31d49b5ffd49ae07a5fc",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/cache_sensitivity.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/cache_sensitivity.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 7630,
+      "sha256": "4b212e46b77c9ccf75a3bc91a93b9b328632a440bea009bb5ebc3d0a56977ea6",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/collect_official_results.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/collect_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 7309,
+      "sha256": "f3b739b6b3b6b75e2eae20b5a7a7290fba9a054cf608e94483e352332dafa3fb",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/run_official_experiments.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/run_official_experiments.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 9844,
+      "sha256": "93204bcd97f3e7ffc45409db483151be69eb88e4c961115b7c75d00a19eaecb3",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/solve_bands.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/solve_bands.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 5252,
+      "sha256": "4d69dc5842f57e1c9f27142a513bdf0d013a11db0cf31ce033734ff1e5ca33d5",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/solve_batches.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/solve_batches.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 3009,
+      "sha256": "57c221abf423ff8f73e2ceb83afa4d9c5b99d2dc3eec8079e87f519fb6a33948",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/solve_components.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/solve_components.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4087,
+      "sha256": "488a098ca2048ccbc0bf2db7605caa699998d8b11eb392c252674f470524b2b4",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/summarize_validations.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/summarize_validations.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 1156,
+      "sha256": "6becd8eadbeb7ad8e496f044fe7a1e29ca49f8abe8c83a7da75e1ecb78e7e854",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/verify_official_results.py",
+      "package_path": "支撑材料文件/问题二/源码/求解/verify_official_results.py",
+      "description": "正式方案构造、全量候选择优或独立核验源码",
+      "category": "source_code",
+      "size_bytes": 4890,
+      "sha256": "0a3abf03594f78a80eb3964409de84c8b46a2322e242eee4a40134c5af40fc59",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/数据审计.json",
+      "package_path": "支撑材料文件/问题二/源码/求解/数据审计.json",
+      "description": "输入图结构审计结果，供正式候选构造使用",
+      "category": "source_code",
+      "size_bytes": 85303,
+      "sha256": "6ee1625c2299c1d793270788d18d4318035d54d9a3cd7976d47f68622b0fef8e",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/问题二/问题二.py",
+      "package_path": "支撑材料文件/问题二/源码/问题二.py",
+      "description": "本问唯一复现入口",
+      "category": "source_code",
+      "size_bytes": 360,
+      "sha256": "92e880feb9592d82a56c458fbcdeea97395ccf76a857890465ab5fe086aadad3",
+      "question_id": "q2"
+    },
+    {
+      "source_path": "求解/支撑材料说明.md",
+      "package_path": "支撑材料说明.md",
+      "description": "材料目录、整体复现顺序与结果位置",
+      "category": "readme",
+      "size_bytes": 1905,
+      "sha256": "6082699baa811fca6ff087abda68f6691b72124377e769523534f034aed9b2d5"
+    }
+  ],
+  "official_outputs": [
+    {
+      "source_path": "求解/提交源/正式候选评估.zip",
+      "package_path": "支撑材料文件/其他支撑材料/正式候选评估.zip",
+      "description": "2005份正式评估收据、原始响应及候选方案，保留原始内部文件名",
+      "category": "official_output",
+      "size_bytes": 261273793,
+      "sha256": "76a02c6b491c4840a8a674ae2c3cf465c26c25493c4f9018064681ac2d33aefc",
+      "status": "pass",
+      "verification_path": "求解/正式实验/逐问核验摘要.json"
+    },
+    {
+      "source_path": "求解/问题一/结果/逐例官方评估.csv",
+      "package_path": "支撑材料文件/其他支撑材料/问题一_逐例官方评估.csv",
+      "description": "本问100例×五核数的正式官方指标表",
+      "category": "official_output",
+      "size_bytes": 127635,
+      "sha256": "51d5545e681ebe14557f44d6194b2cc645df6adcdd9f98d0db42480d240a49ae",
+      "status": "pass",
+      "verification_path": "求解/正式实验/逐问核验摘要.json"
+    },
+    {
+      "source_path": "求解/问题二/结果/逐例官方评估.csv",
+      "package_path": "支撑材料文件/其他支撑材料/问题二_逐例官方评估.csv",
+      "description": "本问100例×五核数的正式官方指标表",
+      "category": "official_output",
+      "size_bytes": 127663,
+      "sha256": "dd0da094b910b255f1699e049dcbe86ac81e8354bbc5829217a0531f7da03dbc",
+      "status": "pass",
+      "verification_path": "求解/正式实验/逐问核验摘要.json"
+    },
+    {
+      "source_path": "求解/问题三/结果/逐例官方评估.csv",
+      "package_path": "支撑材料文件/其他支撑材料/问题三_逐例官方评估.csv",
+      "description": "本问100例×五核数的正式官方指标表",
+      "category": "official_output",
+      "size_bytes": 186793,
+      "sha256": "f89af6ee18fba7e7aec5345f0a56bb66e7492a71047fc6c87390b50e777c2a56",
+      "status": "pass",
+      "verification_path": "求解/正式实验/逐问核验摘要.json"
+    }
+  ],
+  "internal_records": [
+    {
+      "source_path": "求解/问题一/结果/运行验证.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q1/运行验证.json",
+      "category": "run_verification",
+      "sha256": "7732da39ef4fbbb2e01e554d1fc80c1bbd7a5d238b9241e09fb61f11c7550a21"
+    },
+    {
+      "source_path": "求解/问题一/结果/model_selection_report.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q1/model_selection_report.json",
+      "category": "model_selection",
+      "sha256": "5db7a2d042ac73275c2ed63e20247c4b1418049ed24ae7b787f538faacacdbfc"
+    },
+    {
+      "source_path": "求解/验收输出/支撑材料/独立复现/q1.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q1/q1.json",
+      "category": "independent_reproduction",
+      "sha256": "a3627365ffbac0eef79695a956948dbe075e1018e71c9ad6452be719d632d72a"
+    },
+    {
+      "source_path": "求解/问题二/结果/运行验证.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q2/运行验证.json",
+      "category": "run_verification",
+      "sha256": "dd994cd22c428626471aa430b399175e8230403ae5ea1f1fc9c20f16d731f18e"
+    },
+    {
+      "source_path": "求解/问题二/结果/model_selection_report.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q2/model_selection_report.json",
+      "category": "model_selection",
+      "sha256": "70253fd5f93588af5f9379948b5a72c73151b38960dfa0a28f947fbcd9337511"
+    },
+    {
+      "source_path": "求解/验收输出/支撑材料/独立复现/q2.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q2/q2.json",
+      "category": "independent_reproduction",
+      "sha256": "8f4ba169e765671a78830961d6d5701e1c8e11e54a4e770cbf58c4df9f8f8a7e"
+    },
+    {
+      "source_path": "求解/问题三/结果/运行验证.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q3/运行验证.json",
+      "category": "run_verification",
+      "sha256": "c7fdfeaea686588716c3da356ec7693bd522ebb5218b5fb648176ade4f070eec"
+    },
+    {
+      "source_path": "求解/问题三/结果/model_selection_report.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q3/model_selection_report.json",
+      "category": "model_selection",
+      "sha256": "b40dffbba2f9ca136d21ebb47c55b46e1b5c6b574f6631bf172e71a77a216eb6"
+    },
+    {
+      "source_path": "求解/验收输出/支撑材料/独立复现/q3.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/q3/q3.json",
+      "category": "independent_reproduction",
+      "sha256": "af33eb14e990c269975f1e67b4985c79f3e0f9b93c7891ff82a05198a55ac51d"
+    },
+    {
+      "source_path": "求解/正式实验/逐问核验摘要.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/公共/逐问核验摘要.json",
+      "category": "official_output_verification",
+      "sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a"
+    },
+    {
+      "source_path": "求解/正式实验/逐问核验摘要.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/公共/逐问核验摘要.json",
+      "category": "official_output_verification",
+      "sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a"
+    },
+    {
+      "source_path": "求解/正式实验/逐问核验摘要.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/公共/逐问核验摘要.json",
+      "category": "official_output_verification",
+      "sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a"
+    },
+    {
+      "source_path": "求解/正式实验/逐问核验摘要.json",
+      "record_path": "求解/验收输出/支撑材料/运行记录/公共/逐问核验摘要.json",
+      "category": "official_output_verification",
+      "sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a"
+    }
+  ],
+  "attachment_summary": [
+    {
+      "path": "问题一",
+      "kind": "文件夹",
+      "description": "场景A切图与调度源码、逐例官方结果及候选比较"
+    },
+    {
+      "path": "问题二",
+      "kind": "文件夹",
+      "description": "场景B同核Task合并源码、成对对照及候选比较"
+    },
+    {
+      "path": "问题三",
+      "kind": "文件夹",
+      "description": "共享只读L2调度源码、缓存收益及非官方敏感性表"
+    },
+    {
+      "path": "其他数据",
+      "kind": "文件夹",
+      "description": "题目原始100图与固定配置归档"
+    },
+    {
+      "path": "其他支撑材料",
+      "kind": "文件夹",
+      "description": "全部正式候选响应、逐例指标、汇总及非官方网格核验"
+    }
+  ],
+  "output_root": "提交附件",
+  "unregistered_files": [],
+  "previous_package": "求解/验收输出/支撑材料/历史包/20260923T155227_98c9e08a"
+}

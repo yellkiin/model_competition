@@ -1,0 +1,1089 @@
+{
+  "template_id": "four-band-method-roadmap",
+  "name": "四阶段研究总体技术路线图",
+  "canvas": [
+    1206,
+    1743
+  ],
+  "source_id": "ref-08",
+  "nodes": [
+    {
+      "id": "title",
+      "bbox": [
+        20,
+        14,
+        1166,
+        64
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d8c9ba",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "side_0",
+      "bbox": [
+        19,
+        109,
+        69,
+        312
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#feeee1",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "band_title_0",
+      "bbox": [
+        170,
+        111,
+        960,
+        28
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "side_1",
+      "bbox": [
+        19,
+        496,
+        69,
+        327
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d8e0f3",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "band_title_1",
+      "bbox": [
+        170,
+        498,
+        960,
+        28
+      ],
+      "font_size": 20,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "side_2",
+      "bbox": [
+        19,
+        901,
+        69,
+        322
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "band_title_2",
+      "bbox": [
+        170,
+        903,
+        960,
+        28
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "side_3",
+      "bbox": [
+        19,
+        1309,
+        69,
+        404
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e8dbee",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "band_title_3",
+      "bbox": [
+        170,
+        1311,
+        960,
+        28
+      ],
+      "font_size": 20,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "b0_center",
+      "bbox": [
+        455,
+        170,
+        399,
+        49
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f6ccab",
+        "strokeColor": "#8a4c1f",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b0_0",
+      "bbox": [
+        180,
+        206,
+        272,
+        49
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f6ccab",
+        "strokeColor": "#8a4c1f",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b0_1",
+      "bbox": [
+        180,
+        287,
+        272,
+        113
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f6ccab",
+        "strokeColor": "#8a4c1f",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b0_2",
+      "bbox": [
+        864,
+        206,
+        272,
+        49
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f6ccab",
+        "strokeColor": "#8a4c1f",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b0_3",
+      "bbox": [
+        864,
+        287,
+        272,
+        113
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f6ccab",
+        "strokeColor": "#8a4c1f",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_left",
+      "bbox": [
+        177,
+        590,
+        120,
+        138
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b5c6e9",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_algo",
+      "bbox": [
+        576,
+        570,
+        229,
+        60
+      ],
+      "font_size": 24,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#1c366a",
+        "strokeColor": "#1c366a",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontColor": "#fff",
+        "rounded": "1",
+        "arcSize": "25"
+      }
+    },
+    {
+      "id": "b1_req_0",
+      "bbox": [
+        362,
+        510,
+        175,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b5c6e9",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_req_1",
+      "bbox": [
+        362,
+        588,
+        175,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b5c6e9",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_req_2",
+      "bbox": [
+        362,
+        667,
+        175,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b5c6e9",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_req_3",
+      "bbox": [
+        362,
+        746,
+        175,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b5c6e9",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_right_0",
+      "bbox": [
+        968,
+        510,
+        165,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b5c6e9",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_right_1",
+      "bbox": [
+        968,
+        593,
+        165,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b5c6e9",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_right_2",
+      "bbox": [
+        968,
+        670,
+        165,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b5c6e9",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b1_mid_0",
+      "bbox": [
+        674,
+        640,
+        130,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#4472c4",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontColor": "#fff"
+      }
+    },
+    {
+      "id": "b1_mid_1",
+      "bbox": [
+        674,
+        700,
+        130,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#4472c4",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontColor": "#fff"
+      }
+    },
+    {
+      "id": "b1_mid_2",
+      "bbox": [
+        674,
+        760,
+        130,
+        58
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#4472c4",
+        "strokeColor": "#34518d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontColor": "#fff"
+      }
+    },
+    {
+      "id": "b2_source",
+      "bbox": [
+        177,
+        993,
+        65,
+        206
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b2_clean",
+      "bbox": [
+        282,
+        991,
+        211,
+        59
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b2_norm",
+      "bbox": [
+        282,
+        1066,
+        211,
+        59
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b2_split",
+      "bbox": [
+        282,
+        1140,
+        211,
+        59
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b2_train",
+      "bbox": [
+        565,
+        1019,
+        195,
+        149
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b2_tune",
+      "bbox": [
+        821,
+        991,
+        210,
+        59
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b2_fix",
+      "bbox": [
+        820,
+        1066,
+        210,
+        59
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b2_test",
+      "bbox": [
+        821,
+        1140,
+        210,
+        59
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b2_deploy",
+      "bbox": [
+        1065,
+        991,
+        64,
+        208
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#87bda6",
+        "strokeColor": "#2b6e5b",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_head_0",
+      "bbox": [
+        179,
+        1340,
+        209,
+        35
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1",
+        "fontColor": "#6a3b91"
+      }
+    },
+    {
+      "id": "b3_card_0_0",
+      "bbox": [
+        189,
+        1422,
+        189,
+        85
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_card_0_1",
+      "bbox": [
+        189,
+        1530,
+        189,
+        85
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_card_0_2",
+      "bbox": [
+        189,
+        1639,
+        189,
+        57
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_head_1",
+      "bbox": [
+        576,
+        1340,
+        209,
+        35
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1",
+        "fontColor": "#6a3b91"
+      }
+    },
+    {
+      "id": "b3_card_1_0",
+      "bbox": [
+        586,
+        1422,
+        189,
+        85
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_card_1_1",
+      "bbox": [
+        586,
+        1530,
+        189,
+        85
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_card_1_2",
+      "bbox": [
+        586,
+        1639,
+        189,
+        57
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_head_2",
+      "bbox": [
+        927,
+        1340,
+        209,
+        35
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1",
+        "fontColor": "#6a3b91"
+      }
+    },
+    {
+      "id": "b3_card_2_0",
+      "bbox": [
+        937,
+        1422,
+        189,
+        85
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_card_2_1",
+      "bbox": [
+        937,
+        1530,
+        189,
+        85
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_card_2_2",
+      "bbox": [
+        937,
+        1639,
+        189,
+        57
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#cabcdd",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "b3_arrow_0",
+      "bbox": [
+        390,
+        1450,
+        130,
+        74
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#8053a0",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".65",
+        "arrowSize": ".28",
+        "fontColor": "#fff"
+      }
+    },
+    {
+      "id": "b3_arrow_1",
+      "bbox": [
+        785,
+        1450,
+        130,
+        74
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#8053a0",
+        "strokeColor": "#8053a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".65",
+        "arrowSize": ".28",
+        "fontColor": "#fff"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "band_0",
+      "points": [
+        [
+          143,
+          109
+        ],
+        [
+          1167,
+          109
+        ],
+        [
+          1167,
+          421
+        ],
+        [
+          143,
+          421
+        ],
+        [
+          143,
+          109
+        ]
+      ],
+      "meaning": "阶段容器，不表示因果数据",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#333333",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "flow_0",
+      "points": [
+        [
+          605,
+          429
+        ],
+        [
+          605,
+          488
+        ]
+      ],
+      "meaning": "阶段向下推进",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#d26a13",
+        "strokeWidth": "4",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band_1",
+      "points": [
+        [
+          143,
+          496
+        ],
+        [
+          1167,
+          496
+        ],
+        [
+          1167,
+          823
+        ],
+        [
+          143,
+          823
+        ],
+        [
+          143,
+          496
+        ]
+      ],
+      "meaning": "阶段容器，不表示因果数据",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#333333",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "flow_1",
+      "points": [
+        [
+          605,
+          831
+        ],
+        [
+          605,
+          893
+        ]
+      ],
+      "meaning": "阶段向下推进",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#d26a13",
+        "strokeWidth": "4",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band_2",
+      "points": [
+        [
+          143,
+          901
+        ],
+        [
+          1167,
+          901
+        ],
+        [
+          1167,
+          1223
+        ],
+        [
+          143,
+          1223
+        ],
+        [
+          143,
+          901
+        ]
+      ],
+      "meaning": "阶段容器，不表示因果数据",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#333333",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "flow_2",
+      "points": [
+        [
+          605,
+          1231
+        ],
+        [
+          605,
+          1301
+        ]
+      ],
+      "meaning": "阶段向下推进",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#d26a13",
+        "strokeWidth": "4",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band_3",
+      "points": [
+        [
+          143,
+          1309
+        ],
+        [
+          1167,
+          1309
+        ],
+        [
+          1167,
+          1713
+        ],
+        [
+          143,
+          1713
+        ],
+        [
+          143,
+          1309
+        ]
+      ],
+      "meaning": "阶段容器，不表示因果数据",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#333333",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "b3_down",
+      "points": [
+        [
+          605,
+          1228
+        ],
+        [
+          605,
+          1301
+        ]
+      ],
+      "meaning": "系统实现进入测试分析",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#d26a13",
+        "strokeWidth": "4",
+        "rounded": "0"
+      }
+    }
+  ]
+}

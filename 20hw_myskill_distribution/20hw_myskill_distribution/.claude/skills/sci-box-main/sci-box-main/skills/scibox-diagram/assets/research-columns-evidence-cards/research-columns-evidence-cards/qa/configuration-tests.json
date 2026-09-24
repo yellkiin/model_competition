@@ -1,0 +1,183 @@
+{
+  "template_id": "research-columns-evidence-cards",
+  "visual_status": "REVIEW_REQUIRED",
+  "checks": [
+    {
+      "case": "missing-field",
+      "ok": true,
+      "diagnostic": "texts 字段/固定节点数量不符；缺少 ['title']；多余 []"
+    },
+    {
+      "case": "extra-node",
+      "ok": true,
+      "diagnostic": "texts 字段/固定节点数量不符；缺少 []；多余 ['unexpected_node']"
+    },
+    {
+      "case": "long-text",
+      "ok": true,
+      "diagnostic": "texts.title 第1行: 宽12000.0px > 997.0px；约41个全角字，请手动断行"
+    },
+    {
+      "case": "wrong-type",
+      "ok": true,
+      "diagnostic": "texts.title: 须为非空字符串或字符串数组"
+    },
+    {
+      "case": "wrong-template",
+      "ok": true,
+      "diagnostic": "template_id: 本入口只接受 research-columns-evidence-cards"
+    },
+    {
+      "case": "replacement",
+      "ok": true,
+      "visual_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case": "capacity-boundary",
+      "ok": true,
+      "visual_status": "REVIEW_REQUIRED"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_columns_evidence_cards.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\missing-field.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts 字段/固定节点数量不符；缺少 ['title']；多余 []\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_columns_evidence_cards.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\extra-node.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts 字段/固定节点数量不符；缺少 []；多余 ['unexpected_node']\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_columns_evidence_cards.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\long-text.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts.title 第1行: 宽12000.0px > 997.0px；约41个全角字，请手动断行\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_columns_evidence_cards.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\wrong-type.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts.title: 须为非空字符串或字符串数组\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_columns_evidence_cards.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\wrong-template.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "template_id: 本入口只接受 research-columns-evidence-cards\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_columns_evidence_cards.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\replacement.json",
+        "-o",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\replacement.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "research-columns-evidence-cards: D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\replacement.drawio\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\check_layout.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\replacement.drawio",
+        "--strict"
+      ],
+      "exit_code": 0,
+      "stdout": "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\replacement.drawio: 顶点 258 / 连接器 51  FAIL 0  WARN 0\nPASS: 版式体检通过\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\export_figure.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\replacement.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\replacement.png\n✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\replacement.pdf\n接下来务必打开 PNG 逐块核对：文字有无溢出/压线、箭头方向、数值有没有抄错。\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_columns_evidence_cards.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\capacity-boundary.json",
+        "-o",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\capacity-boundary.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "research-columns-evidence-cards: D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\capacity-boundary.drawio\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\check_layout.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\capacity-boundary.drawio",
+        "--strict"
+      ],
+      "exit_code": 0,
+      "stdout": "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\capacity-boundary.drawio: 顶点 258 / 连接器 51  FAIL 0  WARN 0\nPASS: 版式体检通过\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\export_figure.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\capacity-boundary.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\capacity-boundary.png\n✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-columns-evidence-cards\\qa\\capacity-boundary.pdf\n接下来务必打开 PNG 逐块核对：文字有无溢出/压线、箭头方向、数值有没有抄错。\n",
+      "stderr": ""
+    }
+  ],
+  "replacement_changed_fields": [
+    "content_number_0",
+    "content_number_1",
+    "content_number_2",
+    "attention",
+    "demo_note"
+  ],
+  "machine_status": "PASS"
+}

@@ -1,0 +1,52 @@
+{
+  "status": "VISUALLY_REVIEWED_STAGING",
+  "publication_status": "not_published",
+  "template_id": "research-methods-5stage",
+  "observations": "defect-log.md",
+  "score": 45,
+  "reviewed_outputs": [
+    "example.json",
+    "layout.json",
+    "example.drawio",
+    "example.png",
+    "example.pdf",
+    "preview.png",
+    "reference.png",
+    "reference-crop.png",
+    "defect-log.md",
+    "qa/replacement.png",
+    "qa/capacity-boundary.png",
+    "qa/configuration-tests.json",
+    "qa/pdf-render.png",
+    "qa/grayscale.png",
+    "qa/a4-size.png",
+    "qa/a3-size.png",
+    "qa/difference-mask.png"
+  ],
+  "hashes": {
+    "example.json": "170f9c35f71191708e5e491b843c78b0da6c37246d91a4931c5120f48a42390d",
+    "layout.json": "ea52d4d41d76e8cfbcb187607e2a605801143466496486759d205e0a9917e349",
+    "example.drawio": "a1ed26a8a674dd2e89a8e0f32a3a0f46ae73fe0ddd95d5a1e8582e5ea37b2336",
+    "example.png": "1f80f8d6ca90f0cdce8119ce5199aac89268a25e7f016111b5d0445dbbb54dd3",
+    "example.pdf": "0e66a3237863a5d2103d05b7c671fed4e4a92ce6e4fe80b64a7a4160eb4f7b99",
+    "preview.png": "1f80f8d6ca90f0cdce8119ce5199aac89268a25e7f016111b5d0445dbbb54dd3",
+    "reference.png": "b4be6074b0517f57bb36d160a6cde1126c11cf3ec8b56612aa105262e73e13e4",
+    "reference-crop.png": "8bc374e6126760ccd9033200d41df78e3e8b2dca314634c829ff351b57d916de",
+    "defect-log.md": "fcaee7bbb91063a77c27a6d5c4601da6cabd588948f44c8ea1c498a47904d0da",
+    "qa/replacement.png": "f6c65d6f922b65586717799952da34f4e2c2c5cea9b0611d898ed77e57dea91c",
+    "qa/capacity-boundary.png": "757ccbd01463b952333ece5498a74f1a6063a18ab0680070853bb859f295a7c4",
+    "qa/configuration-tests.json": "7260a8edfad863e8f13bb1c2d2f5287063da053975a673a8e502331626432a50",
+    "qa/pdf-render.png": "e34522f98ea13494468764f5f6abf8eaca6679e23ec3f4f537edef975036c461",
+    "qa/grayscale.png": "4d5c6244796a6d3a5dd0c281abb72c6296e32f87ce59f972dc479bff382875b8",
+    "qa/a4-size.png": "fe61a1cd91ef3376ba315a0005cb8e1a4918da1feb94d9f70766bb2c49da2731",
+    "qa/a3-size.png": "d9c8258eb58756bcca1c98a2150b02f7442e84e1924dceb63be03db408a98f7a",
+    "qa/difference-mask.png": "19881dd76e8dc201cfb0bd45454c8d5645549f984b98f0420b15db3f515907c3"
+  },
+  "source_dependencies": {
+    "scripts\\measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd",
+    "scripts\\research_methods_5stage.py": "d3bafdbebee4c5ac547084d54432546a8dd3a78cba1ab799bbe14ff52cd4b40c"
+  },
+  "a4_body_suitability": false,
+  "a3_display_suitability": true,
+  "evidence_scope": "Template reproduction and bounded text replacement only; actual paper inclusion requires fresh review."
+}

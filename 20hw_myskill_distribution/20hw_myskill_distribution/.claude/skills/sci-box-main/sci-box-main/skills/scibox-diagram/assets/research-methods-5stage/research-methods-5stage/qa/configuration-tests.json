@@ -1,0 +1,176 @@
+{
+  "template_id": "research-methods-5stage",
+  "visual_status": "REVIEW_REQUIRED",
+  "checks": [
+    {
+      "case": "missing-field",
+      "ok": true,
+      "diagnostic": "texts 字段/固定节点数量不符；缺少 ['framework_heading']；多余 []"
+    },
+    {
+      "case": "extra-node",
+      "ok": true,
+      "diagnostic": "texts 字段/固定节点数量不符；缺少 []；多余 ['unexpected_node']"
+    },
+    {
+      "case": "long-text",
+      "ok": true,
+      "diagnostic": "texts.framework_heading 第1行: 宽11500.0px > 136.0px；约5个全角字，请手动断行"
+    },
+    {
+      "case": "wrong-type",
+      "ok": true,
+      "diagnostic": "texts.framework_heading: 须为非空字符串或字符串数组"
+    },
+    {
+      "case": "wrong-template",
+      "ok": true,
+      "diagnostic": "template_id: 本入口只接受 research-methods-5stage"
+    },
+    {
+      "case": "replacement",
+      "ok": true,
+      "visual_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case": "capacity-boundary",
+      "ok": true,
+      "visual_status": "REVIEW_REQUIRED"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_methods_5stage.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\missing-field.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts 字段/固定节点数量不符；缺少 ['framework_heading']；多余 []\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_methods_5stage.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\extra-node.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts 字段/固定节点数量不符；缺少 []；多余 ['unexpected_node']\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_methods_5stage.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\long-text.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts.framework_heading 第1行: 宽11500.0px > 136.0px；约5个全角字，请手动断行\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_methods_5stage.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\wrong-type.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts.framework_heading: 须为非空字符串或字符串数组\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_methods_5stage.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\wrong-template.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "template_id: 本入口只接受 research-methods-5stage\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_methods_5stage.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\replacement.json",
+        "-o",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\replacement.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "research-methods-5stage: D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\replacement.drawio\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\check_layout.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\replacement.drawio",
+        "--strict"
+      ],
+      "exit_code": 0,
+      "stdout": "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\replacement.drawio: 顶点 70 / 连接器 52  FAIL 0  WARN 0\nPASS: 版式体检通过\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\export_figure.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\replacement.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\replacement.png\n✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\replacement.pdf\n接下来务必打开 PNG 逐块核对：文字有无溢出/压线、箭头方向、数值有没有抄错。\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\research_methods_5stage.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\capacity-boundary.json",
+        "-o",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\capacity-boundary.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "research-methods-5stage: D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\capacity-boundary.drawio\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\check_layout.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\capacity-boundary.drawio",
+        "--strict"
+      ],
+      "exit_code": 0,
+      "stdout": "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\capacity-boundary.drawio: 顶点 70 / 连接器 52  FAIL 0  WARN 0\nPASS: 版式体检通过\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\export_figure.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\capacity-boundary.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\capacity-boundary.png\n✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\research-methods-5stage\\qa\\capacity-boundary.pdf\n接下来务必打开 PNG 逐块核对：文字有无溢出/压线、箭头方向、数值有没有抄错。\n",
+      "stderr": ""
+    }
+  ],
+  "machine_status": "PASS"
+}

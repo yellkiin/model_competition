@@ -1,0 +1,10 @@
+{
+  "scope": "Supplement source dependency binding only after exact XML reproduction; existing visual observations unchanged",
+  "template_id": "innovation-chain-5stage",
+  "reviewed_xml_sha256": "d724bf6de28e542190e29b17117ca7bc6c831b0f9eba85094d8278ea7af93bb0",
+  "current_generator_reproduces_reviewed_xml": true,
+  "source_dependencies": {
+    "scripts/measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd",
+    "scripts/innovation_chain_5stage.py": "203424054455c08e7e57d7a209840b1eacc1e81c185f57b586ada896a68bbc48"
+  }
+}

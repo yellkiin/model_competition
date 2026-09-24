@@ -1,0 +1,4299 @@
+{
+  "template_id": "cube-venn-model-research",
+  "name": "立方体协作与双圆交叉三任务研究框架图",
+  "canvas": [
+    1075,
+    1560
+  ],
+  "source_id": "ref-12",
+  "nodes": [
+    {
+      "id": "title_background",
+      "bbox": [
+        46,
+        14,
+        993,
+        48
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#8faadc",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZLhDoIgEMefhq8N77LlZ6v3cIrpIjHUzLcPOGfgXKuxwf2PH9xxHMO0q7JWMOAjwxMDSBI0s9EV6f3RSjwzTEulxVWroSlId71WN5ErqbThaXVnGGDM7XD2xafHuugrG82tjo52sc+1md2w1l09bWIvwoAoPpEM7pZ145HLE/5HAX32MWSFZaM1HPm1MQDMwGF2TBAAm6F5EPh3EuIvKfIwQR7mt5QQNgqTS9WJRRnj8xFlLSV9n7+/bgfjol7C8xs=)"
+      }
+    },
+    {
+      "id": "title",
+      "bbox": [
+        100,
+        23,
+        893,
+        34
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      },
+      "text_height": 32
+    },
+    {
+      "id": "side_0",
+      "bbox": [
+        47,
+        132,
+        53,
+        166
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b4c7e7",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "dashed": "1",
+        "dashPattern": "1 1",
+        "fontStyle": "1"
+      },
+      "text_width": 25
+    },
+    {
+      "id": "side_1",
+      "bbox": [
+        47,
+        398,
+        53,
+        166
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b1e0cf",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "dashed": "1",
+        "dashPattern": "1 1",
+        "fontStyle": "1"
+      },
+      "text_width": 25
+    },
+    {
+      "id": "side_2",
+      "bbox": [
+        47,
+        1372,
+        53,
+        156
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8cbad",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "dashed": "1",
+        "dashPattern": "1 1",
+        "fontStyle": "0"
+      },
+      "text_width": 25
+    },
+    {
+      "id": "task_flag_0",
+      "bbox": [
+        47,
+        693,
+        67,
+        185
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#fff2cc",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZFRDsIgDIZPw6th4DZ9nts9lo0JEdcFptPbCxQVjVkMCe1Pv9JSCK+sbCdBGF0IPxDGitJtTkqU2S73mteEVwMYcTRwGXvUdjZwEh1oMC4BbUgijGelX8FvUnpR/Sx9tWCxxCZPuan1Ae+d4eobuyFGsa97qmKKVmMCbot/yedbI7lnn52sXhsH85ula2inwYqXcs77xYPSGueUxr/n7o7w03j9AA==)",
+        "dashed": "1",
+        "dashPattern": "1 1"
+      }
+    },
+    {
+      "id": "task_flag_label_0",
+      "bbox": [
+        54,
+        718,
+        31,
+        140
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      },
+      "text_width": 23
+    },
+    {
+      "id": "task_flag_1",
+      "bbox": [
+        47,
+        911,
+        67,
+        184
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#fff2cc",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZHhDoIgEMefhq8OwbQ+m76HUwwWeQ4s6+0Djoq11hwbd3/ud9xxEF5b2c2CMLoSfiSMlZXbnJQo833hNW8Ir0cw4mTgOg2o7WLgLHrQYFwC2pBEGM8rv4LfpvSqhkX6asFiiWyXcnPnA967wM03dkeMYl+PVMUUraYELMqt5OutkTywbPu1cTC/WfoP7TVY8VbO+bx4VFrjnNL499zdEX4ab54=)",
+        "dashed": "1",
+        "dashPattern": "1 1"
+      }
+    },
+    {
+      "id": "task_flag_label_1",
+      "bbox": [
+        54,
+        936,
+        31,
+        139
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      },
+      "text_width": 23
+    },
+    {
+      "id": "task_flag_2",
+      "bbox": [
+        47,
+        1128,
+        67,
+        185
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#fff2cc",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZFRDsIgDIZPw6th4DZ9nts9lo0JEdcFptPbCxQVjVkMCe1Pv9JSCK+sbCdBGF0IPxDGitJtTkqU2S73mteEVwMYcTRwGXvUdjZwEh1oMC4BbUgijGelX8FvUnpR/Sx9tWCxxCZPuan1Ae+d4eobuyFGsa97qmKKVmMCbot/yedbI7lnn52sXhsH85ula2inwYqXcs77xYPSGueUxr/n7o7w03j9AA==)",
+        "dashed": "1",
+        "dashPattern": "1 1"
+      }
+    },
+    {
+      "id": "task_flag_label_2",
+      "bbox": [
+        54,
+        1153,
+        31,
+        140
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      },
+      "text_width": 23
+    },
+    {
+      "id": "side_down_0",
+      "bbox": [
+        62,
+        318,
+        31,
+        58
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": ".5",
+        "arrowSize": ".4",
+        "gradientColor": "#ffffff",
+        "gradientDirection": "north"
+      }
+    },
+    {
+      "id": "side_down_1",
+      "bbox": [
+        62,
+        599,
+        31,
+        58
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": ".5",
+        "arrowSize": ".4",
+        "gradientColor": "#ffffff",
+        "gradientDirection": "north"
+      }
+    },
+    {
+      "id": "side_down_2",
+      "bbox": [
+        62,
+        1332,
+        31,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": ".5",
+        "arrowSize": ".4",
+        "gradientColor": "#ffffff",
+        "gradientDirection": "north"
+      }
+    },
+    {
+      "id": "center_down_0",
+      "bbox": [
+        550,
+        581,
+        56,
+        30
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": ".5",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "center_down_1",
+      "bbox": [
+        550,
+        1337,
+        56,
+        30
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": ".5",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "background_header",
+      "bbox": [
+        160,
+        104,
+        834,
+        41
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b4c7e7",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "status_header_0",
+      "bbox": [
+        185,
+        174,
+        209,
+        37
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b4c7e7",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "status_header_1",
+      "bbox": [
+        468,
+        176,
+        223,
+        37
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b4c7e7",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "status_header_2",
+      "bbox": [
+        767,
+        174,
+        208,
+        37
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b4c7e7",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "frontier_0",
+      "bbox": [
+        185,
+        239,
+        38,
+        170
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 24
+    },
+    {
+      "id": "frontier_1",
+      "bbox": [
+        242,
+        239,
+        38,
+        170
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 24
+    },
+    {
+      "id": "frontier_2",
+      "bbox": [
+        299,
+        239,
+        38,
+        170
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 24
+    },
+    {
+      "id": "frontier_3",
+      "bbox": [
+        356,
+        239,
+        38,
+        170
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 24
+    },
+    {
+      "id": "frontier_4",
+      "bbox": [
+        767,
+        239,
+        37,
+        170
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 24
+    },
+    {
+      "id": "frontier_5",
+      "bbox": [
+        824,
+        239,
+        37,
+        170
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 24
+    },
+    {
+      "id": "frontier_6",
+      "bbox": [
+        881,
+        239,
+        38,
+        170
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 24
+    },
+    {
+      "id": "frontier_7",
+      "bbox": [
+        938,
+        239,
+        38,
+        170
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 24
+    },
+    {
+      "id": "knowledge_distillation",
+      "bbox": [
+        468,
+        224,
+        223,
+        86
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "self_supervision",
+      "bbox": [
+        469,
+        324,
+        221,
+        87
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#dae3f3",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "status_to_foreign",
+      "bbox": [
+        414,
+        258,
+        27,
+        29
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".5",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "foreign_to_trend",
+      "bbox": [
+        720,
+        258,
+        27,
+        29
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".5",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "contents_header",
+      "bbox": [
+        160,
+        459,
+        834,
+        31
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b1e0cf",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12",
+        "fontStyle": "1"
+      },
+      "text_height": 32
+    },
+    {
+      "id": "content_0",
+      "bbox": [
+        159,
+        522,
+        261,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d9f0e7",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "content_1",
+      "bbox": [
+        446,
+        522,
+        261,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d9f0e7",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "content_2",
+      "bbox": [
+        733,
+        522,
+        261,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d9f0e7",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "main_topic",
+      "bbox": [
+        302,
+        638,
+        569,
+        36
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      },
+      "text_height": 32
+    },
+    {
+      "id": "left_topic",
+      "bbox": [
+        176,
+        632,
+        82,
+        49
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "right_topic",
+      "bbox": [
+        918,
+        632,
+        81,
+        49
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "task_heading_0",
+      "bbox": [
+        167,
+        692,
+        827,
+        29
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12",
+        "fontStyle": "1"
+      },
+      "text_height": 23
+    },
+    {
+      "id": "task_heading_1",
+      "bbox": [
+        167,
+        906,
+        827,
+        28
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12",
+        "fontStyle": "1"
+      },
+      "text_height": 23
+    },
+    {
+      "id": "task_heading_2",
+      "bbox": [
+        167,
+        1118,
+        827,
+        28
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12",
+        "fontStyle": "1"
+      },
+      "text_height": 23
+    },
+    {
+      "id": "unlabeled_bg_left",
+      "bbox": [
+        148,
+        745,
+        101,
+        119
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "38",
+        "gradientColor": "#ffffff",
+        "gradientDirection": "east"
+      }
+    },
+    {
+      "id": "unlabeled_text_left",
+      "bbox": [
+        158,
+        757,
+        80,
+        95
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "unlabeled_bg_right",
+      "bbox": [
+        906,
+        745,
+        101,
+        119
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "38",
+        "gradientColor": "#ffffff",
+        "gradientDirection": "east"
+      }
+    },
+    {
+      "id": "unlabeled_text_right",
+      "bbox": [
+        916,
+        757,
+        80,
+        95
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "federated_cube_0",
+      "bbox": [
+        303,
+        745,
+        190,
+        30
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_cube_1",
+      "bbox": [
+        303,
+        788,
+        190,
+        31
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_cube_2",
+      "bbox": [
+        303,
+        832,
+        190,
+        31
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_cube_3",
+      "bbox": [
+        663,
+        745,
+        193,
+        30
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_cube_4",
+      "bbox": [
+        663,
+        788,
+        193,
+        31
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_cube_5",
+      "bbox": [
+        663,
+        832,
+        193,
+        31
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "brace_left",
+      "bbox": [
+        271,
+        744,
+        22,
+        120
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lVLbEoIgEP2afWeh0Xo2+w9HLZ1MDDXt72NdLOQpgRn2wFnOXgCV9FXWlSDFBOoM0g6gJSqGKAVhlYJKrtqUN6PHtmDcD0bfy1w32lgH3hcnkApjmot98dlTXQwVqS07K/qsLqNjsh76RWHNTBIc1dtHzuU5ZgUR0UWMjoobz1kG11vs3mrq1hP9chkejjtko0B3reuqG+3JIXwsTCKWfyeB4rRDGMPyiaB621ZY49dAbrh/F34ge8S/T6Uf)",
+        "flipH": "0"
+      }
+    },
+    {
+      "id": "brace_right",
+      "bbox": [
+        867,
+        744,
+        22,
+        120
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lVLbEoIgEP2afWeh0Xo2+w9HLZ1MDDXt72NdLOQpgRn2wFnOXgCV9FXWlSDFBOoM0g6gJSqGKAVhlYJKrtqUN6PHtmDcD0bfy1w32lgH3hcnkApjmot98dlTXQwVqS07K/qsLqNjsh76RWHNTBIc1dtHzuU5ZgUR0UWMjoobz1kG11vs3mrq1hP9chkejjtko0B3reuqG+3JIXwsTCKWfyeB4rRDGMPyiaB621ZY49dAbrh/F34ge8S/T6Uf)",
+        "flipH": "1"
+      }
+    },
+    {
+      "id": "cube_top",
+      "bbox": [
+        517,
+        735,
+        120,
+        47
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d3e7c5",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZFRDoIwDIZPs1cD7XDxGfEeBIYQJyUDRG/vRglOEoxZsvVfv65dKzDt67zTAqJJ4FkAxBC53ematVReYiYwrcjqq6WxLVn3g6WbLsiQdTyfc4wAjJVfs30J6akph9pnm0/OeEhCrsu9w1t3evjCnowdl7peLKMwxjRtQK5fWFCU++xJfaFS7aObAiDZR0H+/eqvUgtDvV6VMz69qRpjuKOhfzshd8XjxewN)"
+      }
+    },
+    {
+      "id": "cube_left",
+      "bbox": [
+        517,
+        769,
+        60,
+        100
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#a9d18e",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZFRDoIwDIZPs1fDVhgHQLwHgeEWJyUDRW/vthIdxhiypO2/fk2blkE16WZUTGQLgyMTQmbeeKlJ8ixqqBlUPTp1dngbOtLT7PCiWrTofAH5WMQE8DK8GJ9SejHdrEO36KnFoUi5sQmJEF3xHgZ7ELbO9UzVWmLNkIAi35AcdqPFH1Ru+5f5bnRd4W92i0qZkq3FSb2VDz6r6Y21tNA0/30g/0XXhfoF)"
+      }
+    },
+    {
+      "id": "cube_right",
+      "bbox": [
+        577,
+        769,
+        60,
+        100
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZFRDoMgDIZPw+sCdOoBnLuHURxmzBrUud1+QJcNzLIYEtqffk1Ly6CcdD0qJvnK4MSkzLm7nNQkBQ8aKgZlh1ZdLC5DS3qaLV5VgwatSyAbkpgEUfgT/HNMr307a18tWCpxyGJurH3Aeze8+8YeaWNPkjzOMf0QkVAkpIDdaPYHTcsXx73ke4K/0c2n8jxGG4OT+ijnfEfT9cbQQOP4dkHuibYL1Qs=)"
+      }
+    },
+    {
+      "id": "inner_left",
+      "bbox": [
+        541,
+        760,
+        36,
+        62
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZFtDsIgDIZP07+GtYoHmPMey8aEiOvCptPby0eiYLLEkND3pU9DC0D1rNtJAYoV6ASIJP3mrU5WYrDUANUDO3VxfB/75OfF8VV1bNl5PsVYA0jVMayozzm9mn7R4bIYI13tDjk3tSER1I0foa9n2dcrWZHXWDNuk3vcRkVByr9JLMjO8qw+zovvDIOxNk2e539f0h+lX6DmDQ==)"
+      }
+    },
+    {
+      "id": "inner_right",
+      "bbox": [
+        577,
+        760,
+        37,
+        62
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#a9d18e",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZFRDoIwDIZPs1cDrcIBEO9BYLjFSckGord3W1GHD8YsafuvX9N2E1g51YxSQLYIPAoALL3xUrEsIEisBVY9WXm2NA8dazdZusiWDFnPs481AjAvw4nxKaUX3U0qNIs+0vnukHJjExIhutItzHVnLOOxHqlaS4weEvC1wEoC/I0WP9Bt+/2GbA05+VY++OzQa2N48zT//ZL+in8B6yc=)"
+      }
+    },
+    {
+      "id": "inner_bottom",
+      "bbox": [
+        541,
+        802,
+        73,
+        41
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZFRDsIgDIZP01czqLoDzHmPZWNCxHWB6fT2At0UfTAxJLQ//QptAay8bkYFspgBDyBliWELUrPciiixBqx6curk6Dp0rP3k6KxasuQCzzblgERRxpX8Y07Pppt0fCzZRIvNLufGJgaid6FbrOvOWMFlPVgtcsmxZshI3H+gP8i11/8v5bGsaGvJq5cKzruJ3ljLrefx71GGI/4GrJ8=)"
+      }
+    },
+    {
+      "id": "cube_plane",
+      "bbox": [
+        552,
+        786,
+        13,
+        13
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZHbDoIwDIafZrcGVhXuEd+DwJDFSckGIm/vDqidwcSbtf/6de1aBoXpqkEwnswMTozzFOxhZUcllAyKFrW4aJz6JmgzaryKGhVqywfrcxiHQ57BPvH+mdKzbMbOFfPW08kuo9xQuYDzbnh3fT1WLLS1BHWkKUr2BHx9YKF522T85pq4iWYRmf8G4+Jp+i8ZzaBWaMRbWeczlFYqFUZJ49+rsVdhrVA+AQ==)"
+      }
+    },
+    {
+      "id": "person_head_0",
+      "bbox": [
+        587,
+        790,
+        4,
+        4
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "person_body_0",
+      "bbox": [
+        586,
+        794,
+        6,
+        5
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZBRDsIgDIZPw6tBcLvAnPdYNibESheYm95eSqOiyRIfSPvTr+2fCt1E201GKLkKfRRK1eklZVlVpHQrdDNiMOeANz+wjnPAi+kRMCScY27x6E2ecSrB1Q2zpS05ZnC/q0pu6qhA2RUXMnRnTLKhR2Ho1QLOF6D6AuU2ePgXrLdX94DRvFVKPvZHB1BWfi+Xvvjmun0C)"
+      }
+    },
+    {
+      "id": "person_head_1",
+      "bbox": [
+        594,
+        788,
+        4,
+        4
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "person_body_1",
+      "bbox": [
+        593,
+        792,
+        6,
+        5
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZBRDsIgDIZPw6tBcLvAnPdYNibESheYm95eSqOiyRIfSPvTr+2fCt1E201GKLkKfRRK1eklZVlVpHQrdDNiMOeANz+wjnPAi+kRMCScY27x6E2ecSrB1Q2zpS05ZnC/q0pu6qhA2RUXMnRnTLKhR2Ho1QLOF6D6AuU2ePgXrLdX94DRvFVKPvZHB1BWfi+Xvvjmun0C)"
+      }
+    },
+    {
+      "id": "person_head_2",
+      "bbox": [
+        601,
+        790,
+        4,
+        4
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "person_body_2",
+      "bbox": [
+        600,
+        794,
+        6,
+        5
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZBRDsIgDIZPw6tBcLvAnPdYNibESheYm95eSqOiyRIfSPvTr+2fCt1E201GKLkKfRRK1eklZVlVpHQrdDNiMOeANz+wjnPAi+kRMCScY27x6E2ecSrB1Q2zpS05ZnC/q0pu6qhA2RUXMnRnTLKhR2Ho1QLOF6D6AuU2ePgXrLdX94DRvFVKPvZHB1BWfi+Xvvjmun0C)"
+      }
+    },
+    {
+      "id": "cube_cloud_0",
+      "bbox": [
+        570,
+        819,
+        6,
+        6
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "cube_cloud_1",
+      "bbox": [
+        574,
+        816,
+        8,
+        8
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "cube_cloud_2",
+      "bbox": [
+        579,
+        820,
+        6,
+        6
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#466a30",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "gradcam_0",
+      "bbox": [
+        167,
+        953,
+        113,
+        140
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "gradcam_1",
+      "bbox": [
+        882,
+        954,
+        114,
+        139
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "federated_venn_0",
+      "bbox": [
+        290,
+        956,
+        165,
+        35
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_venn_1",
+      "bbox": [
+        290,
+        1006,
+        165,
+        34
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_venn_2",
+      "bbox": [
+        290,
+        1055,
+        165,
+        35
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_venn_3",
+      "bbox": [
+        706,
+        956,
+        165,
+        35
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_venn_4",
+      "bbox": [
+        706,
+        1006,
+        165,
+        34
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_venn_5",
+      "bbox": [
+        706,
+        1055,
+        165,
+        35
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "discipline",
+      "bbox": [
+        476,
+        964,
+        114,
+        114
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "modality",
+      "bbox": [
+        572,
+        964,
+        114,
+        114
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "discipline_outline",
+      "bbox": [
+        476,
+        964,
+        114,
+        114
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMXPyAOf+DbOwS57oUdPj3wmoizMRnQwI9PaeXtDBV2UEvhkmxMnVmUhbFMdwBDxlWNVNVB2h6hPvcErYO4WoamABDAL1bEJOqOMWz2ZdUvY6tG2K57aUShzLVLToS0brBI3bmSSaoryehMsutsQkU+owTmGuF59qPliM47UaYs7STxt7wkId3k+7fjRFlV2OWb7ffDezfGvs1r2B8xkyLSbn9ooOLvomqXw==)"
+      }
+    },
+    {
+      "id": "modality_outline",
+      "bbox": [
+        572,
+        964,
+        114,
+        114
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMXPyAOf+DbOwS57oUdPj3wmoizMRnQwI9PaeXtDBV2UEvhkmxMnVmUhbFMdwBDxlWNVNVB2h6hPvcErYO4WoamABDAL1bEJOqOMWz2ZdUvY6tG2K57aUShzLVLToS0brBI3bmSSaoryehMsutsQkU+owTmGuF59qPliM47UaYs7STxt7wkId3k+7fjRFlV2OWb7ffDezfGvs1r2B8xkyLSbn9ooOLvomqXw==)"
+      }
+    },
+    {
+      "id": "discipline_text",
+      "bbox": [
+        495,
+        988,
+        74,
+        49
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "modality_text",
+      "bbox": [
+        594,
+        988,
+        74,
+        49
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "upload_cloud_0",
+      "bbox": [
+        523,
+        1048,
+        12,
+        12
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#111111",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "upload_cloud_1",
+      "bbox": [
+        528,
+        1044,
+        14,
+        14
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#111111",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "upload_cloud_2",
+      "bbox": [
+        535,
+        1050,
+        10,
+        10
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#111111",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "upload_icon",
+      "bbox": [
+        530,
+        1046,
+        10,
+        12
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "north",
+        "arrowWidth": ".5",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "target_ring_0",
+      "bbox": [
+        620,
+        1044,
+        18,
+        18
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "target_ring_0_outline",
+      "bbox": [
+        620,
+        1044,
+        18,
+        18
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMYtTnqf/RbOwS57oUdPj3wmoi08RnQwJtz2l70iJM6TqYrNBqFuYotC728Ypul7vmJEzZINmW8DbW7DtPeLEVDkiRz++SI7Qpduks9jlnz33tu9RsebnDZpvzJkhAsq54T7oC0xTLerB3yFOAqohQyCFFK6YKEkLvJKEH3+O4qjkAtVbGKrIZoH2pYsjN1k7f4bCe1V+J+jGoaLzHywvJsc8FxxB/DnN6Ag==)"
+      }
+    },
+    {
+      "id": "target_ring_1",
+      "bbox": [
+        623,
+        1047,
+        12,
+        12
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "target_ring_1_outline",
+      "bbox": [
+        623,
+        1047,
+        12,
+        12
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVJtDsIgDD0NPzEMoh5gznuQjX3EuS4FHd7esprINPG3IYG277V9aRGm9L2dndBqEeYktC40XeT2uWsqYcoW0HUIt6lh3weEi6thBCQ+v2uO0KY4prPa55y9DE3oU7P15Q67fc6bbQKSdYV70hWZpljWg71DnmKxJgRjDincMFWUNg5eIgQbBpg2NUeLnZNURbaj7V6qGPKLc/N3OG5n9VeifgyKjPd4eSE59rlgCvHnMNUT)"
+      }
+    },
+    {
+      "id": "target_ring_2",
+      "bbox": [
+        626,
+        1050,
+        6,
+        6
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "target_ring_2_outline",
+      "bbox": [
+        626,
+        1050,
+        6,
+        6
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVJtDsIgDD0NPzEMoh5gznuQjY3FuS4FHd5eoCYyTfxtCOnHey0vLUzVzurFMClWpk5MykO8MbJFpBqm6h7QDAi3uaPYeYSLaWECjHSyuYRJVR3Tyf65ZK9j5216KtvMrnb7krfoBCTvCvekKhBNkKoHRaos0dhGBEMJCdwwReA6jI4jeO1HmDc9J42D4bEL7yc9vFQR5FZjlu902EzqrzT9mFN03tOlfZTY535jin6Gap4=)"
+      }
+    },
+    {
+      "id": "generative_left",
+      "bbox": [
+        168,
+        1172,
+        36,
+        137
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 20
+    },
+    {
+      "id": "generative_right",
+      "bbox": [
+        959,
+        1172,
+        36,
+        137
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_width": 20
+    },
+    {
+      "id": "federated_models_0",
+      "bbox": [
+        226,
+        1173,
+        254,
+        31
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_models_1",
+      "bbox": [
+        226,
+        1225,
+        219,
+        31
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_models_2",
+      "bbox": [
+        226,
+        1277,
+        186,
+        30
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_models_3",
+      "bbox": [
+        682,
+        1173,
+        254,
+        31
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_models_4",
+      "bbox": [
+        717,
+        1225,
+        219,
+        31
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "federated_models_5",
+      "bbox": [
+        750,
+        1277,
+        186,
+        30
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "step_left_0",
+      "bbox": [
+        494,
+        1172,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "step_left_0_outline",
+      "bbox": [
+        494,
+        1172,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMNH7A1P9oNnaJc10KOvx7uSwRNPHZkNDLOac0LUzVZoBFMylWpk5MSrX3lw+HPFRnpuoOSfeE97lNsbGEV93ghOT5yUYNk6o6hhP9S85ex9YO4bFoI7vaHXLeAgEI3g0foS+XaCK19dxERW2gxkPkCkxQyRWOgxsNJ7RgR5yLshNQr7mvw7sJ+k2XILNqvXynXTmuf+vr17i8855y2kuOfe7Zp9IfUecX)"
+      }
+    },
+    {
+      "id": "step_label_left_0",
+      "bbox": [
+        498,
+        1175,
+        26,
+        28
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "step_left_1",
+      "bbox": [
+        459,
+        1224,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "step_left_1_outline",
+      "bbox": [
+        459,
+        1224,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMNH7A1P9oNnaJc10KOvx7uSwRNPHZkNDLOac0LUzVZoBFMylWpk5MSrX3lw+HPFRnpuoOSfeE97lNsbGEV93ghOT5yUYNk6o6hhP9S85ex9YO4bFoI7vaHXLeAgEI3g0foS+XaCK19dxERW2gxkPkCkxQyRWOgxsNJ7RgR5yLshNQr7mvw7sJ+k2XILNqvXynXTmuf+vr17i8855y2kuOfe7Zp9IfUecX)"
+      }
+    },
+    {
+      "id": "step_label_left_1",
+      "bbox": [
+        463,
+        1227,
+        26,
+        28
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "step_left_2",
+      "bbox": [
+        426,
+        1276,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "step_left_2_outline",
+      "bbox": [
+        426,
+        1276,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMNH7A1P9oNnaJc10KOvx7uSwRNPHZkNDLOac0LUzVZoBFMylWpk5MSrX3lw+HPFRnpuoOSfeE97lNsbGEV93ghOT5yUYNk6o6hhP9S85ex9YO4bFoI7vaHXLeAgEI3g0foS+XaCK19dxERW2gxkPkCkxQyRWOgxsNJ7RgR5yLshNQr7mvw7sJ+k2XILNqvXynXTmuf+vr17i8855y2kuOfe7Zp9IfUecX)"
+      }
+    },
+    {
+      "id": "step_label_left_2",
+      "bbox": [
+        430,
+        1279,
+        26,
+        28
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "step_right_0",
+      "bbox": [
+        634,
+        1172,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "step_right_0_outline",
+      "bbox": [
+        634,
+        1172,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMNH7A1P9oNnaJc10KOvx7uSwRNPHZkNDLOac0LUzVZoBFMylWpk5MSrX3lw+HPFRnpuoOSfeE97lNsbGEV93ghOT5yUYNk6o6hhP9S85ex9YO4bFoI7vaHXLeAgEI3g0foS+XaCK19dxERW2gxkPkCkxQyRWOgxsNJ7RgR5yLshNQr7mvw7sJ+k2XILNqvXynXTmuf+vr17i8855y2kuOfe7Zp9IfUecX)"
+      }
+    },
+    {
+      "id": "step_label_right_0",
+      "bbox": [
+        638,
+        1175,
+        26,
+        28
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "step_right_1",
+      "bbox": [
+        670,
+        1224,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "step_right_1_outline",
+      "bbox": [
+        670,
+        1224,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMNH7A1P9oNnaJc10KOvx7uSwRNPHZkNDLOac0LUzVZoBFMylWpk5MSrX3lw+HPFRnpuoOSfeE97lNsbGEV93ghOT5yUYNk6o6hhP9S85ex9YO4bFoI7vaHXLeAgEI3g0foS+XaCK19dxERW2gxkPkCkxQyRWOgxsNJ7RgR5yLshNQr7mvw7sJ+k2XILNqvXynXTmuf+vr17i8855y2kuOfe7Zp9IfUecX)"
+      }
+    },
+    {
+      "id": "step_label_right_1",
+      "bbox": [
+        674,
+        1227,
+        26,
+        28
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "step_right_2",
+      "bbox": [
+        702,
+        1276,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "step_right_2_outline",
+      "bbox": [
+        702,
+        1276,
+        34,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(zVLbDsIgDP0aHjEMNH7A1P9oNnaJc10KOvx7uSwRNPHZkNDLOac0LUzVZoBFMylWpk5MSrX3lw+HPFRnpuoOSfeE97lNsbGEV93ghOT5yUYNk6o6hhP9S85ex9YO4bFoI7vaHXLeAgEI3g0foS+XaCK19dxERW2gxkPkCkxQyRWOgxsNJ7RgR5yLshNQr7mvw7sJ+k2XILNqvXynXTmuf+vr17i8855y2kuOfe7Zp9IfUecX)"
+      }
+    },
+    {
+      "id": "step_label_right_2",
+      "bbox": [
+        706,
+        1279,
+        26,
+        28
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "cnn",
+      "bbox": [
+        525,
+        1169,
+        112,
+        65
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZHRDsIgDEW/hlcDNFPf5/yPZWNCxHWB6dzfCzSZjTHGkEAvPU17QUAdbTsZoeUi4CS0VkqnPWlLel9lCY2AesBgLgHvY086zgGvpkOPIfF0lhqhQR3yKvGZ04vrZ5u7lZM67irOTW1O5OiGjzzYkzBQNNdKUvIa70ZGHv8mN7MrN/udlT/IzmM0m0rB28TgvCfrPP/5lOmK/gGaFw==)"
+      }
+    },
+    {
+      "id": "rnn",
+      "bbox": [
+        488,
+        1243,
+        87,
+        65
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2f0d9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(hZHRDsIgDEW/hlczaGB7n/M/lo0JEdeFbU7/XqBR0UQNCb2XnoYWGNSzaSfNRLEx2DMhqjJswRqySkYLDYN6QK+PHtexJz8vHk+6Q4c+8BRTDRPAy7iSPuT0ZvvFxMtSTDTfyZyb2piI6oyX2NeVMODU141skdc4O2bkY4L/pKreSCW/o8UPsnM466cL4jXDYJ2jyfP850uGI/oFaO4=)"
+      }
+    },
+    {
+      "id": "gan",
+      "bbox": [
+        587,
+        1243,
+        87,
+        65
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#a9d18e",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZHRDsIgDEW/hlczIAze5/yPZWNCxHWBzenfC9QommgMCb2XnoYWCG+C6WZNWLURvieMKRm3aA3aWiTLW8KbEbw+elinAX1YPJx0Dw585DHmGsI4lWllfSjpzQ6LSZflmGm6EyU3dymR1Bkuqa8rYhW2dSvdo8TZqQCF/JdU72QtvqNU/UB7B0E/XRSvGUbrHE5e5j9fMh7hL/D2Dg==)"
+      }
+    },
+    {
+      "id": "cnn_text",
+      "bbox": [
+        551,
+        1192,
+        60,
+        28
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      },
+      "text_height": 23
+    },
+    {
+      "id": "rnn_text",
+      "bbox": [
+        507,
+        1263,
+        61,
+        28
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      },
+      "text_height": 23
+    },
+    {
+      "id": "gan_text",
+      "bbox": [
+        605,
+        1263,
+        61,
+        28
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      },
+      "text_height": 23
+    },
+    {
+      "id": "outcome_title",
+      "bbox": [
+        159,
+        1391,
+        850,
+        41
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8cbad",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "outcome_0",
+      "bbox": [
+        158,
+        1452,
+        199,
+        56
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fbe5d6",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "outcome_1",
+      "bbox": [
+        469,
+        1452,
+        214,
+        56
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fbe5d6",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "outcome_2",
+      "bbox": [
+        795,
+        1452,
+        214,
+        56
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fbe5d6",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "outcome_arrow_0",
+      "bbox": [
+        379,
+        1468,
+        68,
+        27
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".5",
+        "arrowSize": ".4",
+        "gradientColor": "#ffffff",
+        "gradientDirection": "west"
+      }
+    },
+    {
+      "id": "outcome_arrow_1",
+      "bbox": [
+        707,
+        1468,
+        68,
+        27
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c5e0b4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".5",
+        "arrowSize": ".4",
+        "gradientColor": "#ffffff",
+        "gradientDirection": "west"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "overview",
+      "points": [
+        [
+          145,
+          79
+        ],
+        [
+          1027,
+          79
+        ],
+        [
+          1027.0,
+          79.0
+        ],
+        [
+          1030.11,
+          79.41
+        ],
+        [
+          1033.0,
+          80.61
+        ],
+        [
+          1035.49,
+          82.51
+        ],
+        [
+          1037.39,
+          85.0
+        ],
+        [
+          1038.59,
+          87.89
+        ],
+        [
+          1039.0,
+          91.0
+        ],
+        [
+          1039.0,
+          569.0
+        ],
+        [
+          1038.59,
+          572.11
+        ],
+        [
+          1037.39,
+          575.0
+        ],
+        [
+          1035.49,
+          577.49
+        ],
+        [
+          1033.0,
+          579.39
+        ],
+        [
+          1030.11,
+          580.59
+        ],
+        [
+          1027.0,
+          581.0
+        ],
+        [
+          145.0,
+          581.0
+        ],
+        [
+          141.89,
+          580.59
+        ],
+        [
+          139.0,
+          579.39
+        ],
+        [
+          136.51,
+          577.49
+        ],
+        [
+          134.61,
+          575.0
+        ],
+        [
+          133.41,
+          572.11
+        ],
+        [
+          133.0,
+          569.0
+        ],
+        [
+          133.0,
+          91.0
+        ],
+        [
+          133.41,
+          87.89
+        ],
+        [
+          134.61,
+          85.0
+        ],
+        [
+          136.51,
+          82.51
+        ],
+        [
+          139.0,
+          80.61
+        ],
+        [
+          141.89,
+          79.41
+        ],
+        [
+          145.0,
+          79.0
+        ],
+        [
+          145,
+          79
+        ]
+      ],
+      "meaning": "分区边界，不表示科学连接",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "4 3"
+      }
+    },
+    {
+      "id": "tasks",
+      "points": [
+        [
+          145,
+          613
+        ],
+        [
+          1027,
+          613
+        ],
+        [
+          1027.0,
+          613.0
+        ],
+        [
+          1030.11,
+          613.41
+        ],
+        [
+          1033.0,
+          614.61
+        ],
+        [
+          1035.49,
+          616.51
+        ],
+        [
+          1037.39,
+          619.0
+        ],
+        [
+          1038.59,
+          621.89
+        ],
+        [
+          1039.0,
+          625.0
+        ],
+        [
+          1039.0,
+          1324.0
+        ],
+        [
+          1038.59,
+          1327.11
+        ],
+        [
+          1037.39,
+          1330.0
+        ],
+        [
+          1035.49,
+          1332.49
+        ],
+        [
+          1033.0,
+          1334.39
+        ],
+        [
+          1030.11,
+          1335.59
+        ],
+        [
+          1027.0,
+          1336.0
+        ],
+        [
+          145.0,
+          1336.0
+        ],
+        [
+          141.89,
+          1335.59
+        ],
+        [
+          139.0,
+          1334.39
+        ],
+        [
+          136.51,
+          1332.49
+        ],
+        [
+          134.61,
+          1330.0
+        ],
+        [
+          133.41,
+          1327.11
+        ],
+        [
+          133.0,
+          1324.0
+        ],
+        [
+          133.0,
+          625.0
+        ],
+        [
+          133.41,
+          621.89
+        ],
+        [
+          134.61,
+          619.0
+        ],
+        [
+          136.51,
+          616.51
+        ],
+        [
+          139.0,
+          614.61
+        ],
+        [
+          141.89,
+          613.41
+        ],
+        [
+          145.0,
+          613.0
+        ],
+        [
+          145,
+          613
+        ]
+      ],
+      "meaning": "分区边界，不表示科学连接",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "4 3"
+      }
+    },
+    {
+      "id": "outcomes",
+      "points": [
+        [
+          145,
+          1372
+        ],
+        [
+          1027,
+          1372
+        ],
+        [
+          1027.0,
+          1372.0
+        ],
+        [
+          1030.11,
+          1372.41
+        ],
+        [
+          1033.0,
+          1373.61
+        ],
+        [
+          1035.49,
+          1375.51
+        ],
+        [
+          1037.39,
+          1378.0
+        ],
+        [
+          1038.59,
+          1380.89
+        ],
+        [
+          1039.0,
+          1384.0
+        ],
+        [
+          1039.0,
+          1516.0
+        ],
+        [
+          1038.59,
+          1519.11
+        ],
+        [
+          1037.39,
+          1522.0
+        ],
+        [
+          1035.49,
+          1524.49
+        ],
+        [
+          1033.0,
+          1526.39
+        ],
+        [
+          1030.11,
+          1527.59
+        ],
+        [
+          1027.0,
+          1528.0
+        ],
+        [
+          145.0,
+          1528.0
+        ],
+        [
+          141.89,
+          1527.59
+        ],
+        [
+          139.0,
+          1526.39
+        ],
+        [
+          136.51,
+          1524.49
+        ],
+        [
+          134.61,
+          1522.0
+        ],
+        [
+          133.41,
+          1519.11
+        ],
+        [
+          133.0,
+          1516.0
+        ],
+        [
+          133.0,
+          1384.0
+        ],
+        [
+          133.41,
+          1380.89
+        ],
+        [
+          134.61,
+          1378.0
+        ],
+        [
+          136.51,
+          1375.51
+        ],
+        [
+          139.0,
+          1373.61
+        ],
+        [
+          141.89,
+          1372.41
+        ],
+        [
+          145.0,
+          1372.0
+        ],
+        [
+          145,
+          1372
+        ]
+      ],
+      "meaning": "分区边界，不表示科学连接",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "4 3"
+      }
+    },
+    {
+      "id": "status_frame_0",
+      "points": [
+        [
+          179,
+          160
+        ],
+        [
+          401,
+          160
+        ],
+        [
+          401.0,
+          160.0
+        ],
+        [
+          404.11,
+          160.41
+        ],
+        [
+          407.0,
+          161.61
+        ],
+        [
+          409.49,
+          163.51
+        ],
+        [
+          411.39,
+          166.0
+        ],
+        [
+          412.59,
+          168.89
+        ],
+        [
+          413.0,
+          172.0
+        ],
+        [
+          413.0,
+          410.0
+        ],
+        [
+          412.59,
+          413.11
+        ],
+        [
+          411.39,
+          416.0
+        ],
+        [
+          409.49,
+          418.49
+        ],
+        [
+          407.0,
+          420.39
+        ],
+        [
+          404.11,
+          421.59
+        ],
+        [
+          401.0,
+          422.0
+        ],
+        [
+          179.0,
+          422.0
+        ],
+        [
+          175.89,
+          421.59
+        ],
+        [
+          173.0,
+          420.39
+        ],
+        [
+          170.51,
+          418.49
+        ],
+        [
+          168.61,
+          416.0
+        ],
+        [
+          167.41,
+          413.11
+        ],
+        [
+          167.0,
+          410.0
+        ],
+        [
+          167.0,
+          172.0
+        ],
+        [
+          167.41,
+          168.89
+        ],
+        [
+          168.61,
+          166.0
+        ],
+        [
+          170.51,
+          163.51
+        ],
+        [
+          173.0,
+          161.61
+        ],
+        [
+          175.89,
+          160.41
+        ],
+        [
+          179.0,
+          160.0
+        ],
+        [
+          179,
+          160
+        ]
+      ],
+      "meaning": "分区边界，不表示科学连接",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "4 3"
+      }
+    },
+    {
+      "id": "status_frame_1",
+      "points": [
+        [
+          455,
+          160
+        ],
+        [
+          706,
+          160
+        ],
+        [
+          706.0,
+          160.0
+        ],
+        [
+          709.11,
+          160.41
+        ],
+        [
+          712.0,
+          161.61
+        ],
+        [
+          714.49,
+          163.51
+        ],
+        [
+          716.39,
+          166.0
+        ],
+        [
+          717.59,
+          168.89
+        ],
+        [
+          718.0,
+          172.0
+        ],
+        [
+          718.0,
+          410.0
+        ],
+        [
+          717.59,
+          413.11
+        ],
+        [
+          716.39,
+          416.0
+        ],
+        [
+          714.49,
+          418.49
+        ],
+        [
+          712.0,
+          420.39
+        ],
+        [
+          709.11,
+          421.59
+        ],
+        [
+          706.0,
+          422.0
+        ],
+        [
+          455.0,
+          422.0
+        ],
+        [
+          451.89,
+          421.59
+        ],
+        [
+          449.0,
+          420.39
+        ],
+        [
+          446.51,
+          418.49
+        ],
+        [
+          444.61,
+          416.0
+        ],
+        [
+          443.41,
+          413.11
+        ],
+        [
+          443.0,
+          410.0
+        ],
+        [
+          443.0,
+          172.0
+        ],
+        [
+          443.41,
+          168.89
+        ],
+        [
+          444.61,
+          166.0
+        ],
+        [
+          446.51,
+          163.51
+        ],
+        [
+          449.0,
+          161.61
+        ],
+        [
+          451.89,
+          160.41
+        ],
+        [
+          455.0,
+          160.0
+        ],
+        [
+          455,
+          160
+        ]
+      ],
+      "meaning": "分区边界，不表示科学连接",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "4 3"
+      }
+    },
+    {
+      "id": "status_frame_2",
+      "points": [
+        [
+          761,
+          160
+        ],
+        [
+          983,
+          160
+        ],
+        [
+          983.0,
+          160.0
+        ],
+        [
+          986.11,
+          160.41
+        ],
+        [
+          989.0,
+          161.61
+        ],
+        [
+          991.49,
+          163.51
+        ],
+        [
+          993.39,
+          166.0
+        ],
+        [
+          994.59,
+          168.89
+        ],
+        [
+          995.0,
+          172.0
+        ],
+        [
+          995.0,
+          410.0
+        ],
+        [
+          994.59,
+          413.11
+        ],
+        [
+          993.39,
+          416.0
+        ],
+        [
+          991.49,
+          418.49
+        ],
+        [
+          989.0,
+          420.39
+        ],
+        [
+          986.11,
+          421.59
+        ],
+        [
+          983.0,
+          422.0
+        ],
+        [
+          761.0,
+          422.0
+        ],
+        [
+          757.89,
+          421.59
+        ],
+        [
+          755.0,
+          420.39
+        ],
+        [
+          752.51,
+          418.49
+        ],
+        [
+          750.61,
+          416.0
+        ],
+        [
+          749.41,
+          413.11
+        ],
+        [
+          749.0,
+          410.0
+        ],
+        [
+          749.0,
+          172.0
+        ],
+        [
+          749.41,
+          168.89
+        ],
+        [
+          750.61,
+          166.0
+        ],
+        [
+          752.51,
+          163.51
+        ],
+        [
+          755.0,
+          161.61
+        ],
+        [
+          757.89,
+          160.41
+        ],
+        [
+          761.0,
+          160.0
+        ],
+        [
+          761,
+          160
+        ]
+      ],
+      "meaning": "分区边界，不表示科学连接",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "4 3"
+      }
+    },
+    {
+      "id": "domestic_stem",
+      "points": [
+        [
+          289,
+          214
+        ],
+        [
+          289,
+          225
+        ]
+      ],
+      "meaning": "现状类别分发至四项前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "domestic_bus",
+      "points": [
+        [
+          203,
+          225
+        ],
+        [
+          374,
+          225
+        ]
+      ],
+      "meaning": "四项前沿学科共用母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "domestic_branch_0",
+      "points": [
+        [
+          203,
+          225
+        ],
+        [
+          203,
+          237
+        ]
+      ],
+      "meaning": "现状类别对应前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "domestic_branch_1",
+      "points": [
+        [
+          260,
+          225
+        ],
+        [
+          260,
+          237
+        ]
+      ],
+      "meaning": "现状类别对应前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "domestic_branch_2",
+      "points": [
+        [
+          317,
+          225
+        ],
+        [
+          317,
+          237
+        ]
+      ],
+      "meaning": "现状类别对应前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "domestic_branch_3",
+      "points": [
+        [
+          374,
+          225
+        ],
+        [
+          374,
+          237
+        ]
+      ],
+      "meaning": "现状类别对应前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "trend_stem",
+      "points": [
+        [
+          871,
+          214
+        ],
+        [
+          871,
+          225
+        ]
+      ],
+      "meaning": "现状类别分发至四项前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "trend_bus",
+      "points": [
+        [
+          785,
+          225
+        ],
+        [
+          956,
+          225
+        ]
+      ],
+      "meaning": "四项前沿学科共用母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "trend_branch_0",
+      "points": [
+        [
+          785,
+          225
+        ],
+        [
+          785,
+          237
+        ]
+      ],
+      "meaning": "现状类别对应前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "trend_branch_1",
+      "points": [
+        [
+          842,
+          225
+        ],
+        [
+          842,
+          237
+        ]
+      ],
+      "meaning": "现状类别对应前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "trend_branch_2",
+      "points": [
+        [
+          899,
+          225
+        ],
+        [
+          899,
+          237
+        ]
+      ],
+      "meaning": "现状类别对应前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "trend_branch_3",
+      "points": [
+        [
+          956,
+          225
+        ],
+        [
+          956,
+          237
+        ]
+      ],
+      "meaning": "现状类别对应前沿学科",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "background_to_content_0",
+      "points": [
+        [
+          295,
+          423
+        ],
+        [
+          295,
+          456
+        ]
+      ],
+      "meaning": "三类研究现状汇入研究内容",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "background_to_content_1",
+      "points": [
+        [
+          577,
+          423
+        ],
+        [
+          577,
+          456
+        ]
+      ],
+      "meaning": "三类研究现状汇入研究内容",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "background_to_content_2",
+      "points": [
+        [
+          878,
+          423
+        ],
+        [
+          878,
+          456
+        ]
+      ],
+      "meaning": "三类研究现状汇入研究内容",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "content_stem",
+      "points": [
+        [
+          577,
+          492
+        ],
+        [
+          577,
+          509
+        ]
+      ],
+      "meaning": "研究内容分为三项任务",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "content_bus",
+      "points": [
+        [
+          290,
+          509
+        ],
+        [
+          875,
+          509
+        ]
+      ],
+      "meaning": "三项研究任务母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "content_branch_0",
+      "points": [
+        [
+          290,
+          509
+        ],
+        [
+          290,
+          520
+        ]
+      ],
+      "meaning": "总研究内容对应一项并列任务",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "content_branch_1",
+      "points": [
+        [
+          577,
+          509
+        ],
+        [
+          577,
+          520
+        ]
+      ],
+      "meaning": "总研究内容对应一项并列任务",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "content_branch_2",
+      "points": [
+        [
+          875,
+          509
+        ],
+        [
+          875,
+          520
+        ]
+      ],
+      "meaning": "总研究内容对应一项并列任务",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_left_bus",
+      "points": [
+        [
+          506,
+          760
+        ],
+        [
+          506,
+          848
+        ]
+      ],
+      "meaning": "三个联邦框架共用连接母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_left_branch_0",
+      "points": [
+        [
+          495,
+          760
+        ],
+        [
+          506,
+          760
+        ]
+      ],
+      "meaning": "一个联邦框架连接协作中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_left_branch_1",
+      "points": [
+        [
+          495,
+          804
+        ],
+        [
+          506,
+          804
+        ]
+      ],
+      "meaning": "一个联邦框架连接协作中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_left_branch_2",
+      "points": [
+        [
+          495,
+          848
+        ],
+        [
+          506,
+          848
+        ]
+      ],
+      "meaning": "一个联邦框架连接协作中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_left_center",
+      "points": [
+        [
+          506,
+          804
+        ],
+        [
+          515,
+          804
+        ]
+      ],
+      "meaning": "三路框架汇入立方体协作中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_right_bus",
+      "points": [
+        [
+          649,
+          760
+        ],
+        [
+          649,
+          848
+        ]
+      ],
+      "meaning": "三个联邦框架共用连接母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_right_branch_0",
+      "points": [
+        [
+          661,
+          760
+        ],
+        [
+          649,
+          760
+        ]
+      ],
+      "meaning": "一个联邦框架连接协作中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_right_branch_1",
+      "points": [
+        [
+          661,
+          804
+        ],
+        [
+          649,
+          804
+        ]
+      ],
+      "meaning": "一个联邦框架连接协作中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_right_branch_2",
+      "points": [
+        [
+          661,
+          848
+        ],
+        [
+          649,
+          848
+        ]
+      ],
+      "meaning": "一个联邦框架连接协作中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "cube_right_center",
+      "points": [
+        [
+          649,
+          804
+        ],
+        [
+          639,
+          804
+        ]
+      ],
+      "meaning": "三路框架汇入立方体协作中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_left_bus",
+      "points": [
+        [
+          467,
+          974
+        ],
+        [
+          467,
+          1073
+        ]
+      ],
+      "meaning": "三项框架共用母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_left_branch_0",
+      "points": [
+        [
+          457,
+          974
+        ],
+        [
+          467,
+          974
+        ]
+      ],
+      "meaning": "框架关联交叉/融合",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_left_branch_1",
+      "points": [
+        [
+          457,
+          1023
+        ],
+        [
+          467,
+          1023
+        ]
+      ],
+      "meaning": "框架关联交叉/融合",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_left_branch_2",
+      "points": [
+        [
+          457,
+          1073
+        ],
+        [
+          467,
+          1073
+        ]
+      ],
+      "meaning": "框架关联交叉/融合",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_left_center",
+      "points": [
+        [
+          467,
+          1023
+        ],
+        [
+          475,
+          1023
+        ]
+      ],
+      "meaning": "母线关联双圆中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_right_bus",
+      "points": [
+        [
+          695,
+          974
+        ],
+        [
+          695,
+          1073
+        ]
+      ],
+      "meaning": "三项框架共用母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_right_branch_0",
+      "points": [
+        [
+          704,
+          974
+        ],
+        [
+          695,
+          974
+        ]
+      ],
+      "meaning": "框架关联交叉/融合",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_right_branch_1",
+      "points": [
+        [
+          704,
+          1023
+        ],
+        [
+          695,
+          1023
+        ]
+      ],
+      "meaning": "框架关联交叉/融合",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_right_branch_2",
+      "points": [
+        [
+          704,
+          1073
+        ],
+        [
+          695,
+          1073
+        ]
+      ],
+      "meaning": "框架关联交叉/融合",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "venn_right_center",
+      "points": [
+        [
+          695,
+          1023
+        ],
+        [
+          687,
+          1023
+        ]
+      ],
+      "meaning": "母线关联双圆中心",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "target_arrow",
+      "points": [
+        [
+          629,
+          1053
+        ],
+        [
+          637,
+          1043
+        ]
+      ],
+      "meaning": "靶心小图标",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1",
+        "rounded": "0",
+        "endSize": "3"
+      }
+    },
+    {
+      "id": "model_to_left_0",
+      "points": [
+        [
+          224,
+          1189
+        ],
+        [
+          206,
+          1189
+        ]
+      ],
+      "meaning": "左侧联邦框架输出至生成式网络",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "model_to_right_0",
+      "points": [
+        [
+          938,
+          1189
+        ],
+        [
+          957,
+          1189
+        ]
+      ],
+      "meaning": "右侧联邦框架输出至生成式网络",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "model_to_left_1",
+      "points": [
+        [
+          224,
+          1241
+        ],
+        [
+          206,
+          1241
+        ]
+      ],
+      "meaning": "左侧联邦框架输出至生成式网络",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "model_to_right_1",
+      "points": [
+        [
+          938,
+          1241
+        ],
+        [
+          957,
+          1241
+        ]
+      ],
+      "meaning": "右侧联邦框架输出至生成式网络",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "model_to_left_2",
+      "points": [
+        [
+          224,
+          1293
+        ],
+        [
+          206,
+          1293
+        ]
+      ],
+      "meaning": "左侧联邦框架输出至生成式网络",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "model_to_right_2",
+      "points": [
+        [
+          938,
+          1293
+        ],
+        [
+          957,
+          1293
+        ]
+      ],
+      "meaning": "右侧联邦框架输出至生成式网络",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#171717",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    }
+  ]
+}

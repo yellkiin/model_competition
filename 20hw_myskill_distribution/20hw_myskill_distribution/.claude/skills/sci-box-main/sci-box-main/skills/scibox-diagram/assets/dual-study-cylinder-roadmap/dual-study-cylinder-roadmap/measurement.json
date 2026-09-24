@@ -1,0 +1,651 @@
+{
+  "source_id": "ref-03",
+  "source_sha256": "af06ad02d295dc2da7af4027d0ed5d01045de51274d66833154c8e357d123249",
+  "crop_box": [
+    65,
+    420,
+    1140,
+    1980
+  ],
+  "canvas": [
+    1075,
+    1560
+  ],
+  "status": "measured_candidates_require_semantic_mapping",
+  "boxes": [
+    {
+      "bbox": [
+        85,
+        15,
+        911,
+        65
+      ],
+      "fill": "#4472c4",
+      "occupancy": 0.9951194798615216,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        562,
+        40,
+        28,
+        29
+      ],
+      "fill": "#ffffff",
+      "occupancy": 0.9753694581280788
+    },
+    {
+      "bbox": [
+        620,
+        108,
+        67,
+        183
+      ],
+      "fill": "#d9e2f3",
+      "occupancy": 0.8796998613489927,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        466,
+        216,
+        67,
+        75
+      ],
+      "fill": "#c8d6ed",
+      "occupancy": 0.8407960199004975,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        85,
+        242,
+        266,
+        54
+      ],
+      "fill": "#cedbef",
+      "occupancy": 1.0
+    },
+    {
+      "bbox": [
+        731,
+        242,
+        265,
+        54
+      ],
+      "fill": "#cedbef",
+      "occupancy": 1.0
+    },
+    {
+      "bbox": [
+        530,
+        348,
+        138,
+        117
+      ],
+      "fill": "#d7e9ce",
+      "occupancy": 0.9116189768363682,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        576,
+        348,
+        138,
+        117
+      ],
+      "fill": "#d2e6c7",
+      "occupancy": 0.8940914158305463,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        88,
+        352,
+        262,
+        84
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9918211559432933
+    },
+    {
+      "bbox": [
+        734,
+        352,
+        261,
+        84
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9929301222404671
+    },
+    {
+      "bbox": [
+        533,
+        482,
+        135,
+        83
+      ],
+      "fill": "#d7e9ce",
+      "occupancy": 0.867202141900937,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        575,
+        482,
+        139,
+        83
+      ],
+      "fill": "#d2e6c7",
+      "occupancy": 0.8644361619138424,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        87,
+        486,
+        71,
+        82
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9824802473376847
+    },
+    {
+      "bbox": [
+        183,
+        486,
+        72,
+        82
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9706978319783198
+    },
+    {
+      "bbox": [
+        279,
+        486,
+        71,
+        82
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9833390587427001
+    },
+    {
+      "bbox": [
+        733,
+        486,
+        71,
+        82
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9833390587427001
+    },
+    {
+      "bbox": [
+        829,
+        486,
+        71,
+        82
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9833390587427001
+    },
+    {
+      "bbox": [
+        925,
+        486,
+        71,
+        82
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9826520096186877
+    },
+    {
+      "bbox": [
+        86,
+        597,
+        35,
+        48
+      ],
+      "fill": "#91acdd",
+      "occupancy": 0.8696428571428572,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        323,
+        597,
+        191,
+        48
+      ],
+      "fill": "#b8c9e9",
+      "occupancy": 0.8550392670157068,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        387,
+        597,
+        193,
+        48
+      ],
+      "fill": "#c0cfeb",
+      "occupancy": 0.8598877374784111,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        453,
+        597,
+        164,
+        48
+      ],
+      "fill": "#c5d3ed",
+      "occupancy": 0.8475609756097561,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        455,
+        597,
+        189,
+        48
+      ],
+      "fill": "#c7d5ee",
+      "occupancy": 0.8791887125220459,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        110,
+        718,
+        203,
+        59
+      ],
+      "fill": "#ecf5e6",
+      "occupancy": 0.9957418385238374
+    },
+    {
+      "bbox": [
+        768,
+        718,
+        203,
+        59
+      ],
+      "fill": "#ecf5e6",
+      "occupancy": 0.9958253318861151
+    },
+    {
+      "bbox": [
+        376,
+        785,
+        131,
+        52
+      ],
+      "fill": "#deebf7",
+      "occupancy": 0.8408690546095127,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        110,
+        796,
+        203,
+        59
+      ],
+      "fill": "#eaf2fa",
+      "occupancy": 0.9980796526676129
+    },
+    {
+      "bbox": [
+        768,
+        796,
+        203,
+        59
+      ],
+      "fill": "#eaf2fa",
+      "occupancy": 0.9979961593053353
+    },
+    {
+      "bbox": [
+        110,
+        874,
+        203,
+        59
+      ],
+      "fill": "#e7edf7",
+      "occupancy": 0.9980796526676129
+    },
+    {
+      "bbox": [
+        768,
+        874,
+        203,
+        59
+      ],
+      "fill": "#e7edf7",
+      "occupancy": 0.9979961593053353
+    },
+    {
+      "bbox": [
+        110,
+        1052,
+        203,
+        59
+      ],
+      "fill": "#ecf5e6",
+      "occupancy": 0.9980796526676129
+    },
+    {
+      "bbox": [
+        768,
+        1052,
+        203,
+        59
+      ],
+      "fill": "#ecf5e6",
+      "occupancy": 0.9978291725807799
+    },
+    {
+      "bbox": [
+        573,
+        1074,
+        131,
+        31
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.8411721250923417,
+      "color_mask": true
+    },
+    {
+      "bbox": [
+        110,
+        1130,
+        203,
+        59
+      ],
+      "fill": "#eaf2fa",
+      "occupancy": 0.9980796526676129
+    },
+    {
+      "bbox": [
+        768,
+        1130,
+        203,
+        59
+      ],
+      "fill": "#eaf2fa",
+      "occupancy": 0.9979961593053353
+    },
+    {
+      "bbox": [
+        110,
+        1207,
+        203,
+        59
+      ],
+      "fill": "#e7edf7",
+      "occupancy": 0.9932370376555064
+    },
+    {
+      "bbox": [
+        768,
+        1207,
+        203,
+        59
+      ],
+      "fill": "#e7edf7",
+      "occupancy": 0.9933205310177841
+    },
+    {
+      "bbox": [
+        116,
+        1342,
+        852,
+        38
+      ],
+      "fill": "#deebf7",
+      "occupancy": 1.0
+    },
+    {
+      "bbox": [
+        131,
+        1416,
+        259,
+        51
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9961389961389961
+    },
+    {
+      "bbox": [
+        414,
+        1416,
+        259,
+        51
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9965175259292907
+    },
+    {
+      "bbox": [
+        700,
+        1416,
+        258,
+        51
+      ],
+      "fill": "#e2f0d9",
+      "occupancy": 0.9971120231038152
+    }
+  ],
+  "palette": [
+    {
+      "hex": "#f8f8f8",
+      "pixel_count": 837689
+    },
+    {
+      "hex": "#e0f0d8",
+      "pixel_count": 106281
+    },
+    {
+      "hex": "#e0e8f0",
+      "pixel_count": 77894
+    },
+    {
+      "hex": "#d8e8f0",
+      "pixel_count": 63225
+    },
+    {
+      "hex": "#000000",
+      "pixel_count": 58293
+    },
+    {
+      "hex": "#4070c0",
+      "pixel_count": 44940
+    },
+    {
+      "hex": "#e8f0f8",
+      "pixel_count": 43277
+    },
+    {
+      "hex": "#d8e0f0",
+      "pixel_count": 42364
+    },
+    {
+      "hex": "#e8f0e0",
+      "pixel_count": 33751
+    },
+    {
+      "hex": "#c8d8e8",
+      "pixel_count": 27853
+    },
+    {
+      "hex": "#404040",
+      "pixel_count": 10467
+    },
+    {
+      "hex": "#f0f0f8",
+      "pixel_count": 10159
+    },
+    {
+      "hex": "#d8e8d0",
+      "pixel_count": 9704
+    },
+    {
+      "hex": "#f0f0f0",
+      "pixel_count": 8988
+    },
+    {
+      "hex": "#e8f0e8",
+      "pixel_count": 8185
+    },
+    {
+      "hex": "#c0d0e8",
+      "pixel_count": 7606
+    },
+    {
+      "hex": "#c8e0b8",
+      "pixel_count": 7257
+    },
+    {
+      "hex": "#b8c8e8",
+      "pixel_count": 7137
+    },
+    {
+      "hex": "#88a8d8",
+      "pixel_count": 6380
+    },
+    {
+      "hex": "#d0d8f0",
+      "pixel_count": 5887
+    },
+    {
+      "hex": "#f8c8a8",
+      "pixel_count": 5817
+    },
+    {
+      "hex": "#101010",
+      "pixel_count": 5783
+    },
+    {
+      "hex": "#f8e098",
+      "pixel_count": 5722
+    },
+    {
+      "hex": "#d8d8d8",
+      "pixel_count": 5393
+    },
+    {
+      "hex": "#e0e8d8",
+      "pixel_count": 5335
+    },
+    {
+      "hex": "#080808",
+      "pixel_count": 5103
+    },
+    {
+      "hex": "#c8e0c0",
+      "pixel_count": 4526
+    },
+    {
+      "hex": "#d0e8c8",
+      "pixel_count": 4486
+    },
+    {
+      "hex": "#d0e0c0",
+      "pixel_count": 4308
+    },
+    {
+      "hex": "#e0f0e0",
+      "pixel_count": 4269
+    },
+    {
+      "hex": "#d0e0c8",
+      "pixel_count": 4130
+    },
+    {
+      "hex": "#e8e8e8",
+      "pixel_count": 4057
+    },
+    {
+      "hex": "#181818",
+      "pixel_count": 3610
+    },
+    {
+      "hex": "#f0f8f8",
+      "pixel_count": 3441
+    },
+    {
+      "hex": "#303030",
+      "pixel_count": 3429
+    },
+    {
+      "hex": "#202020",
+      "pixel_count": 3334
+    },
+    {
+      "hex": "#505050",
+      "pixel_count": 3324
+    },
+    {
+      "hex": "#e8f0f0",
+      "pixel_count": 3258
+    },
+    {
+      "hex": "#c8d0e8",
+      "pixel_count": 3251
+    },
+    {
+      "hex": "#d8e8d8",
+      "pixel_count": 2862
+    }
+  ],
+  "horizontal_stroke_rows": [
+    104,
+    105,
+    146,
+    147,
+    172,
+    173,
+    214,
+    215,
+    240,
+    241,
+    296,
+    297,
+    314,
+    315,
+    350,
+    351,
+    436,
+    437,
+    661,
+    662,
+    795,
+    856,
+    873,
+    955,
+    956,
+    994,
+    995,
+    1128,
+    1189,
+    1206,
+    1288,
+    1289,
+    1340,
+    1341,
+    1380,
+    1381,
+    1400,
+    1401,
+    1414,
+    1415,
+    1468,
+    1469,
+    1547
+  ],
+  "vertical_stroke_columns": [
+    24
+  ]
+}

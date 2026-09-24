@@ -1,0 +1,189 @@
+{
+  "template_id": "cube-venn-model-research",
+  "visual_status": "REVIEW_REQUIRED",
+  "checks": [
+    {
+      "case": "missing-field",
+      "ok": true,
+      "diagnostic": "texts 字段/固定节点数量不符；缺少 ['title']；多余 []"
+    },
+    {
+      "case": "extra-node",
+      "ok": true,
+      "diagnostic": "texts 字段/固定节点数量不符；缺少 []；多余 ['unexpected_node']"
+    },
+    {
+      "case": "long-text",
+      "ok": true,
+      "diagnostic": "texts.title 第1行: 宽13000.0px > 885.0px；约34个全角字，请手动断行"
+    },
+    {
+      "case": "wrong-type",
+      "ok": true,
+      "diagnostic": "texts.title: 须为非空字符串或字符串数组"
+    },
+    {
+      "case": "wrong-template",
+      "ok": true,
+      "diagnostic": "template_id: 本入口只接受 cube-venn-model-research"
+    },
+    {
+      "case": "replacement",
+      "ok": true,
+      "visual_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case": "capacity-boundary",
+      "ok": true,
+      "visual_status": "REVIEW_REQUIRED"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\cube_venn_model_research.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\missing-field.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts 字段/固定节点数量不符；缺少 ['title']；多余 []\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\cube_venn_model_research.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\extra-node.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts 字段/固定节点数量不符；缺少 []；多余 ['unexpected_node']\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\cube_venn_model_research.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\long-text.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts.title 第1行: 宽13000.0px > 885.0px；约34个全角字，请手动断行\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\cube_venn_model_research.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\wrong-type.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts.title: 须为非空字符串或字符串数组\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\cube_venn_model_research.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\wrong-template.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "template_id: 本入口只接受 cube-venn-model-research\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\cube_venn_model_research.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\replacement.json",
+        "-o",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\replacement.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "cube-venn-model-research: D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\replacement.drawio\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\check_layout.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\replacement.drawio",
+        "--strict"
+      ],
+      "exit_code": 0,
+      "stdout": "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\replacement.drawio: 顶点 133 / 连接器 53  FAIL 0  WARN 0\nPASS: 版式体检通过\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\export_figure.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\replacement.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\replacement.png\n✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\replacement.pdf\n接下来务必打开 PNG 逐块核对：文字有无溢出/压线、箭头方向、数值有没有抄错。\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\cube_venn_model_research.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\capacity-boundary.json",
+        "-o",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\capacity-boundary.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "cube-venn-model-research: D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\capacity-boundary.drawio\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\check_layout.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\capacity-boundary.drawio",
+        "--strict"
+      ],
+      "exit_code": 0,
+      "stdout": "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\capacity-boundary.drawio: 顶点 133 / 连接器 53  FAIL 0  WARN 0\nPASS: 版式体检通过\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\export_figure.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\capacity-boundary.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\capacity-boundary.png\n✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\cube-venn-model-research\\qa\\capacity-boundary.pdf\n接下来务必打开 PNG 逐块核对：文字有无溢出/压线、箭头方向、数值有没有抄错。\n",
+      "stderr": ""
+    }
+  ],
+  "replacement_changed_fields": [
+    "title",
+    "background_header",
+    "knowledge_distillation",
+    "contents_header",
+    "content_0",
+    "content_1",
+    "content_2",
+    "main_topic",
+    "task_heading_0",
+    "task_heading_1",
+    "task_heading_2"
+  ],
+  "machine_status": "PASS"
+}

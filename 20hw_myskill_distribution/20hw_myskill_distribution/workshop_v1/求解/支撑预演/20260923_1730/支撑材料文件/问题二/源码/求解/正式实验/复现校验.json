@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "candidate_receipts": 2005,
+  "candidate_counts": {
+    "0": 100,
+    "1": 577,
+    "2": 664,
+    "3": 664
+  },
+  "selected_configs_per_question": 500,
+  "aggregate_rows": 15,
+  "official_inputs": "官方输入.zip",
+  "formal_candidate_archive": "正式候选评估.zip",
+  "limitation": "完整回放选择与独立核验；官方事件模拟的全部响应沿用正式运行保存的原始输出。"
+}

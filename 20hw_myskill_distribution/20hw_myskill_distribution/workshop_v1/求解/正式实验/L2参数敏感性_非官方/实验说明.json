@@ -1,0 +1,24 @@
+{
+  "status": "non_official_sensitivity_only",
+  "main_config": "数据/原始/A题官方附件/data/config.txt",
+  "cases": [
+    "case_001",
+    "case_002",
+    "case_044",
+    "case_050",
+    "case_056",
+    "case_083"
+  ],
+  "selection": "5核官方Cache收益升序第1、2、49、51、99、100位，按案例名打破并列",
+  "capacity_bytes": [
+    262144,
+    1048576,
+    4194304
+  ],
+  "bandwidth_bytes_per_cycle": [
+    60,
+    250,
+    500
+  ],
+  "scope": "用途是条件响应和候选方案切换；六个目的抽样案例不代表100例均值。"
+}

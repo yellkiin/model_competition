@@ -1,0 +1,376 @@
+{
+  "template_id": "research-columns-evidence-cards",
+  "texts": {
+    "title": [
+      "探究特定疗法对早期发生型侧弯的病理机制影响（示例）"
+    ],
+    "side_0": [
+      "研",
+      "究",
+      "现",
+      "状"
+    ],
+    "side_1": [
+      "技",
+      "术",
+      "路",
+      "线"
+    ],
+    "side_2": [
+      "研",
+      "究",
+      "基",
+      "础"
+    ],
+    "status_heading_0": [
+      "国内现状"
+    ],
+    "status_heading_1": [
+      "国外现状"
+    ],
+    "status_heading_2": [
+      "发展趋势"
+    ],
+    "domestic_text_0": [
+      "CNN 在图像领域"
+    ],
+    "domestic_text_1": [
+      "RNN 在文字序列"
+    ],
+    "domestic_text_2": [
+      "GAN 在图神经网络"
+    ],
+    "foreign_text_0": [
+      "小样本学习中的模型压",
+      "缩方法"
+    ],
+    "foreign_text_1": [
+      "无标注数据下的特征表",
+      "示优化方法"
+    ],
+    "trend_text_0": [
+      "神经网络",
+      "集成化平台"
+    ],
+    "trend_text_1": [
+      "大模型与",
+      "多模态融合"
+    ],
+    "content_number_0": [
+      "研究内容 1"
+    ],
+    "content_title_0": [
+      "小样本学习中的模",
+      "型压缩方法"
+    ],
+    "content_number_1": [
+      "研究内容 2"
+    ],
+    "content_title_1": [
+      "自然语言处理中优化",
+      "策略分析"
+    ],
+    "content_number_2": [
+      "研究内容 3"
+    ],
+    "content_title_2": [
+      "动态神经网络",
+      "实时视频分析"
+    ],
+    "gradcam": [
+      "梯度加权类激活映射",
+      "Grad-CAM 优化"
+    ],
+    "network_name_0": [
+      "CNN 架构"
+    ],
+    "network_name_1": [
+      "RNN 架构"
+    ],
+    "multimodal": [
+      "多模态融合"
+    ],
+    "modal_face_0": [
+      "图像"
+    ],
+    "modal_face_1": [
+      "文本"
+    ],
+    "modal_face_2": [
+      "视频"
+    ],
+    "attention": [
+      "Attention 机制研究"
+    ],
+    "attention_name_0": [
+      "GRU 单元"
+    ],
+    "attention_name_1": [
+      "Transformer 架构"
+    ],
+    "attention_name_2": [
+      "残差连接"
+    ],
+    "attention_name_3": [
+      "正则化策略"
+    ],
+    "attention_name_4": [
+      "超参数优化"
+    ],
+    "accuracy": [
+      "99.56"
+    ],
+    "accuracy_unit": [
+      "%"
+    ],
+    "improvement": [
+      "35.32"
+    ],
+    "improvement_unit": [
+      "%"
+    ],
+    "prediction": [
+      "预测精度提升"
+    ],
+    "ablation": [
+      "消融实验"
+    ],
+    "ablation_0": [
+      "FFN 层"
+    ],
+    "ablation_1": [
+      "残差链接"
+    ],
+    "ablation_2": [
+      "正则化策略"
+    ],
+    "ablation_3": [
+      "超参数优化"
+    ],
+    "method_correspondence": [
+      "方",
+      "法",
+      "对",
+      "应"
+    ],
+    "basis_correspondence": [
+      "研",
+      "究",
+      "基",
+      "础"
+    ],
+    "evidence_heading_0": [
+      "理论基础"
+    ],
+    "detail_heading_0": [
+      "神经网络理论基础"
+    ],
+    "detail_subheading_0": [
+      "论文专著"
+    ],
+    "detail_label_0_0": [
+      "专利数量"
+    ],
+    "detail_value_0_0": [
+      "42"
+    ],
+    "detail_label_0_1": [
+      "论文数量"
+    ],
+    "detail_value_0_1": [
+      "56"
+    ],
+    "detail_label_0_2": [
+      "专著数量"
+    ],
+    "detail_value_0_2": [
+      "3"
+    ],
+    "evidence_heading_1": [
+      "成果基础"
+    ],
+    "detail_heading_1": [
+      "科创竞赛获奖奖"
+    ],
+    "detail_subheading_1": [
+      "获奖数量"
+    ],
+    "detail_label_1_0": [
+      "国际级"
+    ],
+    "detail_value_1_0": [
+      "5"
+    ],
+    "detail_label_1_1": [
+      "国家级"
+    ],
+    "detail_value_1_1": [
+      "18"
+    ],
+    "detail_label_1_2": [
+      "省市级"
+    ],
+    "detail_value_1_2": [
+      "32"
+    ],
+    "evidence_heading_2": [
+      "团队基础"
+    ],
+    "detail_heading_2": [
+      "团队组成"
+    ],
+    "detail_subheading_2": [
+      "多学科交叉"
+    ],
+    "detail_label_2_0": [
+      "杰青数量"
+    ],
+    "detail_value_2_0": [
+      "3"
+    ],
+    "detail_label_2_1": [
+      "教授数量"
+    ],
+    "detail_value_2_1": [
+      "12"
+    ],
+    "detail_label_2_2": [
+      "博士数量"
+    ],
+    "detail_value_2_2": [
+      "6"
+    ],
+    "tick_0_0": [
+      "0"
+    ],
+    "tick_0_1": [
+      "2"
+    ],
+    "tick_0_2": [
+      "4"
+    ],
+    "tick_0_3": [
+      "6"
+    ],
+    "month_0_0": [
+      "Jan"
+    ],
+    "month_0_1": [
+      "Feb"
+    ],
+    "month_0_2": [
+      "Mar"
+    ],
+    "month_0_3": [
+      "Apr"
+    ],
+    "month_0_4": [
+      "may"
+    ],
+    "month_0_5": [
+      "Jun"
+    ],
+    "month_0_6": [
+      "Jul"
+    ],
+    "month_0_7": [
+      "Aug"
+    ],
+    "month_0_8": [
+      "Sep"
+    ],
+    "month_0_9": [
+      "Nov"
+    ],
+    "month_0_10": [
+      "Des"
+    ],
+    "tick_1_0": [
+      "0"
+    ],
+    "tick_1_1": [
+      "10"
+    ],
+    "tick_1_2": [
+      "20"
+    ],
+    "tick_1_3": [
+      "30"
+    ],
+    "tick_1_4": [
+      "40"
+    ],
+    "tick_1_5": [
+      "50"
+    ],
+    "month_1_0": [
+      "Jau"
+    ],
+    "month_1_1": [
+      "Mar"
+    ],
+    "month_1_2": [
+      "May"
+    ],
+    "month_1_3": [
+      "Jul"
+    ],
+    "month_1_4": [
+      "Sep"
+    ],
+    "month_1_5": [
+      "Nov"
+    ],
+    "tick_2_0": [
+      "0"
+    ],
+    "tick_2_1": [
+      "2"
+    ],
+    "tick_2_2": [
+      "4"
+    ],
+    "tick_2_3": [
+      "6"
+    ],
+    "month_2_0": [
+      "Jan"
+    ],
+    "month_2_1": [
+      "Feb"
+    ],
+    "month_2_2": [
+      "Mar"
+    ],
+    "month_2_3": [
+      "Apr"
+    ],
+    "month_2_4": [
+      "may"
+    ],
+    "month_2_5": [
+      "Jun"
+    ],
+    "month_2_6": [
+      "Jul"
+    ],
+    "month_2_7": [
+      "Aug"
+    ],
+    "month_2_8": [
+      "Sep"
+    ],
+    "month_2_9": [
+      "Nov"
+    ],
+    "month_2_10": [
+      "Des"
+    ],
+    "bar_annotation": [
+      "+56%"
+    ],
+    "demo_note": [
+      "版式演示：百分比、折线、柱形、面积及基础数量均来自参考图示意，不是当前研究结果。"
+    ]
+  }
+}

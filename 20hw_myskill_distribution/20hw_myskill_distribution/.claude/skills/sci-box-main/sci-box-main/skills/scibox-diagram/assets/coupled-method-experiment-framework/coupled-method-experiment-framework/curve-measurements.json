@@ -1,0 +1,41 @@
+{
+  "source_id": "ref-14",
+  "method": "dark-pixel ellipse fit restricted to outer boundary annulus; text and most watermarks excluded",
+  "ellipses": [
+    {
+      "id": "left",
+      "initial_region": [
+        504,
+        465,
+        231,
+        131
+      ],
+      "dark_outline_pixels": 894,
+      "cx_cy_rx_ry": [
+        572.169,
+        529.119,
+        63.17,
+        60.215
+      ],
+      "residual_rms": 0.02590155216158623
+    },
+    {
+      "id": "right",
+      "initial_region": [
+        504,
+        465,
+        231,
+        131
+      ],
+      "dark_outline_pixels": 899,
+      "cx_cy_rx_ry": [
+        665.423,
+        529.158,
+        63.123,
+        60.159
+      ],
+      "residual_rms": 0.026363047523698963
+    }
+  ],
+  "lens": "white overlap in the reference, explicitly preserved"
+}

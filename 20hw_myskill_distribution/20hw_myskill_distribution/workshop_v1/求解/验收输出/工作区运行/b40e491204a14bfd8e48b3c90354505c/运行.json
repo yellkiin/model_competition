@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "error": null,
+  "started_at": "2026-09-23T15:35:27.759341+00:00",
+  "finished_at": "2026-09-23T15:41:35.965224+00:00",
+  "tool": "华为杯_求解规范/tools/reproduce_supporting_materials.py",
+  "command": [
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\workspace_execution.py",
+    "--child",
+    "E:\\20hw_myskill_distribution\\workshop_v1",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\reproduce_supporting_materials.py",
+    "--project-root",
+    ".",
+    "--manifest",
+    "求解/支撑材料清单.json",
+    "--output",
+    "提交附件",
+    "--work-root",
+    "E:\\20hw_workshop_v1_reproduction_final_v2_20260923",
+    "--python",
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "--timeout",
+    "3600"
+  ],
+  "runtime": "codex",
+  "cwd": "E:\\20hw_myskill_distribution\\workshop_v1",
+  "shared_changes": [],
+  "inputs": {
+    "status": "PASS",
+    "changed_inputs": []
+  },
+  "independent_reproduction_root": "E:\\20hw_workshop_v1_reproduction_final_v2_20260923",
+  "stdout": "求解/验收输出/工作区运行/b40e491204a14bfd8e48b3c90354505c/stdout.log",
+  "stderr": "求解/验收输出/工作区运行/b40e491204a14bfd8e48b3c90354505c/stderr.log",
+  "assurance": "真实子进程和文件一致性检查；不代表科学或视觉审阅，不是 OS 沙箱。"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "FURTHER_FIDELITY_REPAIR_REQUIRED",
+  "template_id": "health-system-concentric",
+  "publication_status": "not_published",
+  "iteration": 4,
+  "actual_viewed_outputs": [
+    "example.png",
+    "qa/pass4-ring-detail.png"
+  ],
+  "observations": "defect-log.md",
+  "hashes": {
+    "example.json": "e54499a09dc528683189bfade38974a7e6824e45c2ab51fdce7ccd3c104c28ab",
+    "layout.json": "5605f5f85ef8504ec1a4c3f045d60007aac4d011d6a5b94fa290ad80f379bf40",
+    "example.drawio": "046f832e13551105fb56f215bfa51ce3012eca45eb138b7be1d82503c2c662fa",
+    "example.png": "9a52b57309b7167c52e4c87ca642ca93a95e1f2fc906aca5382ddbb5da078092",
+    "example.pdf": "47739c6a352c56993144eab7270f6540fd21ec4177e86d243aedb8b0c8e00d52",
+    "defect-log.md": "18c3011c4386607b0b58cad660e3ff402f1ce3be4f009702803c136b4a7efeba",
+    "qa/example-run.json": "f0de2b5d072f2a294de80f7bb5bf0733fdabcceaab7b522c3391ce42a6feb761",
+    "qa/pass4-ring-detail.png": "d4a9f34ee04aa37df0542dd4494042430ba6e6f4f2eb2d4946940c806a23215f"
+  },
+  "author_source_sha256": "27d3e01be9dfeb52d8600891411f209593916c5ca5ed85c01f8c9ff258fb5d2b",
+  "current_configuration_tests": "REQUIRED_AFTER_PASS4_CONTENT_CHANGE",
+  "current_pdf_gray_physical_review": "REVIEW_REQUIRED",
+  "unresolved": [
+    "teaching three-lobe geometry",
+    "outer arc text accuracy",
+    "complete environmental paired paths and direction"
+  ],
+  "scope": "Pass4 content correction and actual PNG inspection, not final acceptance"
+}

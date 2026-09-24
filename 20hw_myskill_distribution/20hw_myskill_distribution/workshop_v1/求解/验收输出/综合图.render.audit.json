@@ -1,0 +1,2428 @@
+{
+  "status": "PASS",
+  "stage": "render",
+  "checks": [
+    {
+      "code": "diagram_schema",
+      "ok": true
+    },
+    {
+      "code": "runtime_explicit",
+      "ok": true
+    },
+    {
+      "code": "demo_isolation",
+      "ok": true
+    },
+    {
+      "code": "figure_accounting_gate",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "figure_accounting_publications",
+      "ok": true,
+      "errors": [],
+      "figure_list": "论文/图表清单.json",
+      "result_index": "求解/结果索引.md"
+    },
+    {
+      "code": "question_mapping_exact",
+      "ok": true
+    },
+    {
+      "code": "diagram_ids_unique",
+      "ok": true
+    },
+    {
+      "code": "overview_ids_unique",
+      "ok": true
+    },
+    {
+      "code": "diagram_labels_unique",
+      "ok": true
+    },
+    {
+      "code": "diagram_dependencies_acyclic",
+      "ok": true
+    },
+    {
+      "code": "paper_problem_mapping",
+      "ok": true
+    },
+    {
+      "code": "q1:overview_exists",
+      "ok": true
+    },
+    {
+      "code": "q1:chapter_declared",
+      "ok": true
+    },
+    {
+      "code": "q2:overview_exists",
+      "ok": true
+    },
+    {
+      "code": "q2:chapter_declared",
+      "ok": true
+    },
+    {
+      "code": "q3:overview_exists",
+      "ok": true
+    },
+    {
+      "code": "q3:chapter_declared",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:kind",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:owner",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:backend",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:science",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:reference_selection",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_record_required",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_identity",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_catalog_current",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_contract_current",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_selection_reviewed",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_full_gallery",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_roadmap-5band",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_framework-3col",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_stageflow-3col",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_taskflow-land",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_behavior-intervention-3column",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_coupled-method-experiment-framework",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_cube-venn-model-research",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_data-model-deployment-5stage",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_drug-discovery-triad-planes",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_dual-circle-biological-framework",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_dual-circle-biological-framework-variant",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_dual-loop-layered-platform",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_dual-study-cylinder-roadmap",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_ecotourism-integration-3band",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_feature-detection-research-5band",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_fieldwork-analysis-3band",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_five-chapter-research-roadmap",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_four-band-method-roadmap",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_four-content-evidence-roadmap",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_four-stage-research-framework",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_health-system-concentric",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_hexagon-chain-research-5band",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_innovation-chain-5stage",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_model-optimization-6stage",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_port-sustainability-quality-houses",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_research-columns-evidence-cards",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_research-design-vertical-loop",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_research-framework-5band",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_research-methods-5stage",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_stage-design-prism-5band",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_triple-band-experiment-roadmap",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_preview_triple-band-research-validation",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_candidate_comparison",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_selected_from_assets",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_selected_sources_current",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_selected_preview_in_references",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_adaptation_reasoned",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_real_panel_mapping",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_adaptation_visual_review",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:roadmap_template_review_views",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:panels_unique",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:connections_traceable",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:flow_semantics_supported",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:input:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:input:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:scene_a:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:scene_a:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:scene_b:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:scene_b:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:cache:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:cache:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:paper_contract",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:sources_current",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:artifacts_exist",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:resource_dependencies_current",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:qa_inputs_current",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:qa_pass",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:actual_visual_review",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:views_derived_from_current_outputs",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:pdf_vector_content",
+      "ok": true,
+      "assurance": "Vector primitives present; not a proof of full vector purity"
+    },
+    {
+      "code": "GLOBAL-ROADMAP:pdf_width",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:embedded_images_at_final_size",
+      "ok": true
+    },
+    {
+      "code": "GLOBAL-ROADMAP:drawio_layout",
+      "ok": true,
+      "output": "E:\\20hw_myskill_distribution\\workshop_v1\\求解\\总体路线图_紧凑.drawio: 顶点 34 / 连接器 8  FAIL 0  WARN 0\nPASS: 版式体检通过\n"
+    },
+    {
+      "code": "q1-OVERVIEW:kind",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:owner",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:backend",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:science",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:reference_selection",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:panels_unique",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:connections_traceable",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:flow_semantics_supported",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:physical_size_plan",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q1-OVERVIEW:substantive_graphic",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:task_method_flow",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:optional_narrative_substantive",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_detail",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_content_schema",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q1-OVERVIEW:overview_content_ready",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:science_verification_before_composition",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:verification_evidence_current",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:result_candidates_exact",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:result_selection_reasoned",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:selected_results_in_panels",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:results_reused_or_specific_exception",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:selected_results_verified",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:thumbnail_detail_links",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:mechanism_assessment_specific",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:mechanism_panels_linked",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:mechanism_category",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:mechanism_skill_references",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:rectangular_layout_planned",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:theme_and_connectors_declared",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:production_not_demo_evidence",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_semantics_current",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_review_schema",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q1-OVERVIEW:overview_review_result_integration",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_review_mechanism_value",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_review_rectangular_composition",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_review_palette",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_review_navigation",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_review_non_text_graphics",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:overview_review_thumbnail_detail_link",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:mechanism:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:mechanism:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:method:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:method:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resulta:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resulta:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resulta:result_owner_or_explicit_input",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resulta:result_not_demo",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resulta:result_plan_tracked",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resulta:canonical_figure_source",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resulta:visual_gate",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "q1-OVERVIEW:resultb:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resultb:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resultb:result_owner_or_explicit_input",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resultb:result_not_demo",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resultb:result_plan_tracked",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resultb:canonical_figure_source",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resultb:visual_gate",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "q1-OVERVIEW:validation:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:validation:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:paper_contract",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:sources_current",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:artifacts_exist",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:resource_dependencies_current",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:qa_inputs_current",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:qa_pass",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:actual_visual_review",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:views_derived_from_current_outputs",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:pdf_vector_content",
+      "ok": true,
+      "assurance": "Vector primitives present; not a proof of full vector purity"
+    },
+    {
+      "code": "q1-OVERVIEW:pdf_width",
+      "ok": true
+    },
+    {
+      "code": "q1-OVERVIEW:embedded_images_at_final_size",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:kind",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:owner",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:backend",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:science",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:reference_selection",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:panels_unique",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:connections_traceable",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:flow_semantics_supported",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:physical_size_plan",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q2-OVERVIEW:substantive_graphic",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:task_method_flow",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:optional_narrative_substantive",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_detail",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_content_schema",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q2-OVERVIEW:overview_content_ready",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:science_verification_before_composition",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:verification_evidence_current",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:result_candidates_exact",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:result_selection_reasoned",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:selected_results_in_panels",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:results_reused_or_specific_exception",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:selected_results_verified",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:thumbnail_detail_links",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:mechanism_assessment_specific",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:mechanism_panels_linked",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:mechanism_category",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:mechanism_skill_references",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:rectangular_layout_planned",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:theme_and_connectors_declared",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:production_not_demo_evidence",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_semantics_current",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_review_schema",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q2-OVERVIEW:overview_review_result_integration",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_review_mechanism_value",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_review_rectangular_composition",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_review_palette",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_review_navigation",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_review_non_text_graphics",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:overview_review_thumbnail_detail_link",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:mechanism:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:mechanism:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:method:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:method:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resulta:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resulta:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resulta:result_owner_or_explicit_input",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resulta:result_not_demo",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resulta:result_plan_tracked",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resulta:canonical_figure_source",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resulta:visual_gate",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "q2-OVERVIEW:resultb:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resultb:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resultb:result_owner_or_explicit_input",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resultb:result_not_demo",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resultb:result_plan_tracked",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resultb:canonical_figure_source",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resultb:visual_gate",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "q2-OVERVIEW:validation:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:validation:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:paper_contract",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:sources_current",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:artifacts_exist",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:resource_dependencies_current",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:qa_inputs_current",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:qa_pass",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:actual_visual_review",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:views_derived_from_current_outputs",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:pdf_vector_content",
+      "ok": true,
+      "assurance": "Vector primitives present; not a proof of full vector purity"
+    },
+    {
+      "code": "q2-OVERVIEW:pdf_width",
+      "ok": true
+    },
+    {
+      "code": "q2-OVERVIEW:embedded_images_at_final_size",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:kind",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:owner",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:backend",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:science",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:reference_selection",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:panels_unique",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:connections_traceable",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:flow_semantics_supported",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:physical_size_plan",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q3-OVERVIEW:substantive_graphic",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:task_method_flow",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:optional_narrative_substantive",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_detail",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_content_schema",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q3-OVERVIEW:overview_content_ready",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:science_verification_before_composition",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:verification_evidence_current",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:result_candidates_exact",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:result_selection_reasoned",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:selected_results_in_panels",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:results_reused_or_specific_exception",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:selected_results_verified",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:thumbnail_detail_links",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:mechanism_assessment_specific",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:mechanism_panels_linked",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:mechanism_category",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:mechanism_skill_references",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:rectangular_layout_planned",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:theme_and_connectors_declared",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:production_not_demo_evidence",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_semantics_current",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_review_schema",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "q3-OVERVIEW:overview_review_result_integration",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_review_mechanism_value",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_review_rectangular_composition",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_review_palette",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_review_navigation",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_review_non_text_graphics",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:overview_review_thumbnail_detail_link",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:mechanism:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:mechanism:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:method:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:method:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resulta:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resulta:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resulta:result_owner_or_explicit_input",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resulta:result_not_demo",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resulta:result_plan_tracked",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resulta:canonical_figure_source",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resulta:visual_gate",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "q3-OVERVIEW:resultb:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resultb:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resultb:result_owner_or_explicit_input",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resultb:result_not_demo",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resultb:result_plan_tracked",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resultb:canonical_figure_source",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resultb:visual_gate",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "q3-OVERVIEW:validation:semantic_source",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:validation:operation_shapes",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:paper_contract",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:sources_current",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:artifacts_exist",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:resource_dependencies_current",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:qa_inputs_current",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:qa_pass",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:actual_visual_review",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:views_derived_from_current_outputs",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:pdf_vector_content",
+      "ok": true,
+      "assurance": "Vector primitives present; not a proof of full vector purity"
+    },
+    {
+      "code": "q3-OVERVIEW:pdf_width",
+      "ok": true
+    },
+    {
+      "code": "q3-OVERVIEW:embedded_images_at_final_size",
+      "ok": true
+    },
+    {
+      "code": "global_roadmap_present",
+      "ok": true
+    },
+    {
+      "code": "two_real_flowcharts",
+      "ok": true
+    },
+    {
+      "code": "flowchart_plan_links",
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "figure_accounting": {
+    "status": "PASS",
+    "checks": [
+      {
+        "code": "body_chart_family_diversity",
+        "ok": true,
+        "errors": []
+      },
+      {
+        "code": "accounting_object_ids_unique",
+        "ok": true
+      },
+      {
+        "code": "accounting_schema",
+        "ok": true,
+        "errors": []
+      },
+      {
+        "code": "accounting_declared_for_every_object",
+        "ok": true
+      },
+      {
+        "code": "accounting_overview_mapping_unique",
+        "ok": true
+      },
+      {
+        "code": "q1-F01:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F01:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F01:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F01:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F01:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F01:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F02:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F02:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F02:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F02:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F02:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F02:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F03:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F03:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F03:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F03:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F03:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F03:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F04:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F04:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F04:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F04:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F04:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F04:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F05:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F05:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F05:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F05:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F05:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F05:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F06:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F06:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F06:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F06:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F06:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F06:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F01:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F01:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F01:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F01:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F01:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F01:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F02:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F02:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F02:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F02:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F02:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F02:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F03:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F03:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F03:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F03:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F03:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F03:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F04:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F04:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F04:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F04:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F04:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F04:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F05:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F05:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F05:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F05:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F05:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F05:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F06:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F06:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F06:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F06:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F06:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F06:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F01:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F01:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F01:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F01:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F01:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F01:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F02:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F02:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F02:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F02:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F02:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F02:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F03:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F03:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F03:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F03:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F03:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F03:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F04:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F04:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F04:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F04:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F04:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F04:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F05:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F05:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F05:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F05:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F05:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F05:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F06:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F06:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F06:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F06:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F06:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F06:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:per_question_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "GLOBAL-ROADMAP:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:flow_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:roadmap_is_global_flow",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-OVERVIEW:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-OVERVIEW:per_question_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-OVERVIEW:paper_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-OVERVIEW:flow_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-OVERVIEW:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-OVERVIEW:mapped_overview_is_comprehensive",
+        "ok": true
+      },
+      {
+        "code": "q1-OVERVIEW:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-OVERVIEW:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-OVERVIEW:per_question_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-OVERVIEW:paper_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-OVERVIEW:flow_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-OVERVIEW:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-OVERVIEW:mapped_overview_is_comprehensive",
+        "ok": true
+      },
+      {
+        "code": "q2-OVERVIEW:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-OVERVIEW:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-OVERVIEW:per_question_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-OVERVIEW:paper_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-OVERVIEW:flow_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-OVERVIEW:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-OVERVIEW:mapped_overview_is_comprehensive",
+        "ok": true
+      },
+      {
+        "code": "q3-OVERVIEW:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1:independent_science_4_to_6",
+        "ok": true,
+        "count": 6
+      },
+      {
+        "code": "q1:one_extra_overview",
+        "ok": true,
+        "ids": [
+          "q1-OVERVIEW"
+        ]
+      },
+      {
+        "code": "q2:independent_science_4_to_6",
+        "ok": true,
+        "count": 6
+      },
+      {
+        "code": "q2:one_extra_overview",
+        "ok": true,
+        "ids": [
+          "q2-OVERVIEW"
+        ]
+      },
+      {
+        "code": "q3:independent_science_4_to_6",
+        "ok": true,
+        "count": 6
+      },
+      {
+        "code": "q3:one_extra_overview",
+        "ok": true,
+        "ids": [
+          "q3-OVERVIEW"
+        ]
+      },
+      {
+        "code": "paper_16_excluding_question_overviews",
+        "ok": true,
+        "count": 19
+      },
+      {
+        "code": "two_figures_with_real_flow_semantics",
+        "ok": true,
+        "count": 4
+      },
+      {
+        "code": "one_global_roadmap",
+        "ok": true
+      },
+      {
+        "code": "independent_contributions_not_repeated",
+        "ok": true
+      },
+      {
+        "code": "q1-F01:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F02:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F03:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F04:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F05:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F06:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F01:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F02:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F03:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F04:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F05:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F06:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F01:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F02:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F03:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F04:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F05:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F06:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "independent_vectors_not_duplicates",
+        "ok": true,
+        "duplicates": []
+      }
+    ],
+    "failures": [],
+    "figures": [
+      {
+        "figure_id": "q1-F01",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F01.pdf",
+        "scientific_question": "图规模与最大连通块占比如何联合分布？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：图规模与最大连通块占比如何联合分布？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F02",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F02.pdf",
+        "scientific_question": "核数扩展如何改变加速比的中心与离散范围？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：核数扩展如何改变加速比的中心与离散范围？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F03",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F03.pdf",
+        "scientific_question": "最大连通块占比不同的图有何加速差异？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：最大连通块占比不同的图有何加速差异？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F04",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F04.pdf",
+        "scientific_question": "五核新增DDR搬运与加速之间有何权衡？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：五核新增DDR搬运与加速之间有何权衡？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F05",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F05.pdf",
+        "scientific_question": "何种结构条件下深度分段候选胜出？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：何种结构条件下深度分段候选胜出？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F06",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F06.pdf",
+        "scientific_question": "候选评估时间与候选质量怎样权衡？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：候选评估时间与候选质量怎样权衡？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F01",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F01.pdf",
+        "scientific_question": "同方案的场景A/B时长比如何随核数变化？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：同方案的场景A/B时长比如何随核数变化？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F02",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F02.pdf",
+        "scientific_question": "场景B内重新择优的附加收益有多大？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：场景B内重新择优的附加收益有多大？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F03",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F03.pdf",
+        "scientific_question": "新增DDR搬运中的边界COPY与Spill各占多少？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：新增DDR搬运中的边界COPY与Spill各占多少？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F04",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F04.pdf",
+        "scientific_question": "容量压力与五核收益如何共同变化？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：容量压力与五核收益如何共同变化？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F05",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F05.pdf",
+        "scientific_question": "场景切换后的速度与搬运变化是否同向？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：场景切换后的速度与搬运变化是否同向？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F06",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F06.pdf",
+        "scientific_question": "场景B从1核至5核的平均加速比如何变化？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：场景B从1核至5核的平均加速比如何变化？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F01",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F01.pdf",
+        "scientific_question": "题定L2配置下同方案Cache收益的经验分布如何？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：题定L2配置下同方案Cache收益的经验分布如何？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F02",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F02.pdf",
+        "scientific_question": "命中字节率与同方案收益如何关联？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：命中字节率与同方案收益如何关联？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F03",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F03.pdf",
+        "scientific_question": "六例非官方容量带宽网格的实测响应面如何？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：六例非官方容量带宽网格的实测响应面如何？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F04",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F04.pdf",
+        "scientific_question": "容量变化如何改变六例的命中字节率？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：容量变化如何改变六例的命中字节率？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F05",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F05.pdf",
+        "scientific_question": "各核数的命中和未命中查询字节如何构成？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：各核数的命中和未命中查询字节如何构成？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F06",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F06.pdf",
+        "scientific_question": "固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "GLOBAL-ROADMAP",
+        "problem_id": null,
+        "body": true,
+        "flow": true,
+        "vector": "求解/总体路线图_论文宽.pdf",
+        "status": "qa_pass",
+        "scientific_question": "题定三场景如何从共同图结构、合法方案及官方评估形成完整研究路线？",
+        "kind": "flowchart",
+        "purpose": "global_roadmap",
+        "scientific_contribution": "以题定图结构和官方评估为基础，准确串联场景A、同核复用场景B与共享只读L2。",
+        "per_question": false,
+        "paper_total": true,
+        "flow_total": true,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-OVERVIEW",
+        "problem_id": "q1",
+        "body": true,
+        "flow": true,
+        "vector": "求解/综合图/q1-overview.pdf",
+        "status": "qa_pass",
+        "scientific_question": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+        "kind": "comprehensive",
+        "purpose": "question_overview",
+        "scientific_contribution": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+        "per_question": false,
+        "paper_total": false,
+        "flow_total": true,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-OVERVIEW",
+        "problem_id": "q2",
+        "body": true,
+        "flow": true,
+        "vector": "求解/综合图/q2-overview.pdf",
+        "status": "qa_pass",
+        "scientific_question": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+        "kind": "comprehensive",
+        "purpose": "question_overview",
+        "scientific_contribution": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+        "per_question": false,
+        "paper_total": false,
+        "flow_total": true,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-OVERVIEW",
+        "problem_id": "q3",
+        "body": true,
+        "flow": true,
+        "vector": "求解/综合图/q3-overview.pdf",
+        "status": "qa_pass",
+        "scientific_question": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+        "kind": "comprehensive",
+        "purpose": "question_overview",
+        "scientific_contribution": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+        "per_question": false,
+        "paper_total": false,
+        "flow_total": true,
+        "assurance_stage": "render"
+      }
+    ],
+    "questions": [
+      {
+        "problem_id": "q1",
+        "independent_science_count": 6,
+        "independent_science_ids": [
+          "q1-F01",
+          "q1-F02",
+          "q1-F03",
+          "q1-F04",
+          "q1-F05",
+          "q1-F06"
+        ],
+        "overview_count": 1,
+        "overview_ids": [
+          "q1-OVERVIEW"
+        ]
+      },
+      {
+        "problem_id": "q2",
+        "independent_science_count": 6,
+        "independent_science_ids": [
+          "q2-F01",
+          "q2-F02",
+          "q2-F03",
+          "q2-F04",
+          "q2-F05",
+          "q2-F06"
+        ],
+        "overview_count": 1,
+        "overview_ids": [
+          "q2-OVERVIEW"
+        ]
+      },
+      {
+        "problem_id": "q3",
+        "independent_science_count": 6,
+        "independent_science_ids": [
+          "q3-F01",
+          "q3-F02",
+          "q3-F03",
+          "q3-F04",
+          "q3-F05",
+          "q3-F06"
+        ],
+        "overview_count": 1,
+        "overview_ids": [
+          "q3-OVERVIEW"
+        ]
+      }
+    ],
+    "paper_eligible_count": 19,
+    "flow_count": 4,
+    "assurance": "额度与版本检查；不替代独立科学信息、真实来源、实际看图及入文位置门禁。"
+  },
+  "assurance": "文件/哈希/引用检查不证明实际看图或科学判断；DEMO不授予正式论文通过状态。"
+}

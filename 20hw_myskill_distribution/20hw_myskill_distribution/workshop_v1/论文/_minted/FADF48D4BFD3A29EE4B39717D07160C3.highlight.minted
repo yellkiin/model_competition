@@ -1,0 +1,533 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}问题 1：每个子图作为一个 Task，模拟多核、多 Pipe 执行。}
+
+\PYG{l+s+sd}{阅读顺序建议：}
+
+\PYG{l+s+sd}{1. ``\PYGZus{}build\PYGZus{}scene\PYGZus{}a\PYGZus{}tasks`` 按选手方案拆分原图，并补齐 Task 边界 COPY；}
+\PYG{l+s+sd}{2. 每个 Task 依次执行 Step1、Step2、Step3，得到内存补边后的执行图；}
+\PYG{l+s+sd}{3. ``evaluate\PYGZus{}scene\PYGZus{}a`` 装载 Step3 已确定的逐 Pipe 顺序；}
+\PYG{l+s+sd}{4. 事件循环反复执行“退休、推进 Pipe、激活 Task、发射操作”；}
+\PYG{l+s+sd}{5. 最后整理每核时间线、内存峰值和数据搬运量。}
+
+\PYG{l+s+sd}{嵌套小函数只读写 ``evaluate\PYGZus{}scene\PYGZus{}a`` 的模拟状态，不对外提供接口。}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{heapq}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{math}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{collections}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{defaultdict}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{evaluation\PYGZus{}validation}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{validate\PYGZus{}parameters}\PYG{p}{,} \PYG{n}{validate\PYGZus{}task\PYGZus{}order}
+
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{schedule\PYGZus{}step1}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{step1\PYGZus{}schedule}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{schedule\PYGZus{}step2}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{\PYGZus{}build\PYGZus{}extended\PYGZus{}graph}\PYG{p}{,} \PYG{n}{step2\PYGZus{}spill\PYGZus{}insertion}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{schedule\PYGZus{}step3}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{p}{(}
+    \PYG{n}{PIPES}\PYG{p}{,} \PYG{n}{PIPE\PYGZus{}SLOTS}\PYG{p}{,} \PYG{n}{\PYGZus{}build\PYGZus{}graph\PYGZus{}views}\PYG{p}{,} \PYG{n}{\PYGZus{}op\PYGZus{}duration}\PYG{p}{,}
+    \PYG{n}{\PYGZus{}uses\PYGZus{}ddr\PYGZus{}bandwidth}\PYG{p}{,} \PYG{n}{op\PYGZus{}pipe}\PYG{p}{,} \PYG{n}{prepare\PYGZus{}step3\PYGZus{}execution}\PYG{p}{,}
+\PYG{p}{)}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{stub\PYGZus{}multicore\PYGZus{}cut\PYGZus{}and\PYGZus{}schedule}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{derive\PYGZus{}multicore\PYGZus{}plan}
+
+\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{SceneAEvaluationError}\PYG{p}{(}\PYG{n+ne}{RuntimeError}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}场景 A 输入、Task 图或模拟状态不合法。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{read\PYGZus{}scene\PYGZus{}a\PYGZus{}config}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Task 等待周期来自 config.txt 的 [multicore\PYGZus{}scene\PYGZus{}a]，无代码默认值。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{evaluation\PYGZus{}validation}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{read\PYGZus{}required\PYGZus{}settings}
+    \PYG{k}{return} \PYG{n}{read\PYGZus{}required\PYGZus{}settings}\PYG{p}{(}
+        \PYG{n}{config\PYGZus{}path}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}multicore\PYGZus{}scene\PYGZus{}a\PYGZsq{}}\PYG{p}{,}
+        \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}cross\PYGZus{}core\PYGZus{}wait\PYGZus{}cycles\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}same\PYGZus{}core\PYGZus{}wait\PYGZus{}cycles\PYGZsq{}}\PYG{p}{))}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}original\PYGZus{}tensor\PYGZus{}views}\PYG{p}{(}\PYG{n}{graph\PYGZus{}json}\PYG{p}{):}
+    \PYG{n}{op\PYGZus{}ids} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{graph\PYGZus{}json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{]\PYGZcb{}}
+    \PYG{n}{producers}\PYG{p}{,} \PYG{n}{consumers} \PYG{o}{=} \PYG{n}{defaultdict}\PYG{p}{(}\PYG{n+nb}{set}\PYG{p}{),} \PYG{n}{defaultdict}\PYG{p}{(}\PYG{n+nb}{set}\PYG{p}{)}
+    \PYG{n}{direct\PYGZus{}edges} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{k}{for} \PYG{n}{edge} \PYG{o+ow}{in} \PYG{n}{graph\PYGZus{}json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}edges\PYGZsq{}}\PYG{p}{]:}
+        \PYG{n}{src}\PYG{p}{,} \PYG{n}{dst} \PYG{o}{=} \PYG{n}{edge}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{],} \PYG{n}{edge}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{]}
+        \PYG{k}{if} \PYG{n}{src} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}ids} \PYG{o+ow}{and} \PYG{n}{dst} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}ids}\PYG{p}{:}
+            \PYG{n}{producers}\PYG{p}{[}\PYG{n}{dst}\PYG{p}{]}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{src}\PYG{p}{)}
+        \PYG{k}{elif} \PYG{n}{src} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}ids} \PYG{o+ow}{and} \PYG{n}{dst} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}ids}\PYG{p}{:}
+            \PYG{n}{consumers}\PYG{p}{[}\PYG{n}{src}\PYG{p}{]}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{dst}\PYG{p}{)}
+        \PYG{k}{elif} \PYG{n}{src} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}ids} \PYG{o+ow}{and} \PYG{n}{dst} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}ids} \PYG{o+ow}{and} \PYG{n}{src} \PYG{o}{!=} \PYG{n}{dst}\PYG{p}{:}
+            \PYG{n}{direct\PYGZus{}edges}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{edge}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{producers}\PYG{p}{,} \PYG{n}{consumers}\PYG{p}{,} \PYG{n}{direct\PYGZus{}edges}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}copy\PYGZus{}traffic\PYGZus{}bytes}\PYG{p}{(}\PYG{n}{graph\PYGZus{}json}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}按 COPY\PYGZus{}IN 输出 / COPY\PYGZus{}OUT 输入 tensor 大小统计总搬运量。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{ops} \PYG{o}{=} \PYG{n}{graph\PYGZus{}json}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{,} \PYG{p}{[])}
+    \PYG{n}{tensors} \PYG{o}{=} \PYG{n}{graph\PYGZus{}json}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}tensors\PYGZsq{}}\PYG{p}{,} \PYG{p}{[])}
+    \PYG{n}{in\PYGZus{}tids}\PYG{p}{,} \PYG{n}{out\PYGZus{}tids}\PYG{p}{,} \PYG{n}{\PYGZus{}}\PYG{p}{,} \PYG{n}{\PYGZus{}} \PYG{o}{=} \PYG{n}{\PYGZus{}build\PYGZus{}graph\PYGZus{}views}\PYG{p}{(}
+        \PYG{n}{ops}\PYG{p}{,} \PYG{n}{graph\PYGZus{}json}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}edges\PYGZsq{}}\PYG{p}{,} \PYG{p}{[]))}
+    \PYG{n}{tensor\PYGZus{}by\PYGZus{}id} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]:} \PYG{n}{tensor} \PYG{k}{for} \PYG{n}{tensor} \PYG{o+ow}{in} \PYG{n}{tensors}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{total} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{ops}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{op}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{)} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}COPY\PYGZus{}IN\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{tids} \PYG{o}{=} \PYG{n}{out\PYGZus{}tids}\PYG{p}{[}\PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]]}
+        \PYG{k}{elif} \PYG{n}{op}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{)} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}COPY\PYGZus{}OUT\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{tids} \PYG{o}{=} \PYG{n}{in\PYGZus{}tids}\PYG{p}{[}\PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]]}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{k}{continue}
+        \PYG{n}{total} \PYG{o}{+=} \PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}by\PYGZus{}id}\PYG{p}{[}\PYG{n}{tid}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{tid} \PYG{o+ow}{in} \PYG{n}{tids}
+                     \PYG{k}{if} \PYG{n}{tid} \PYG{o+ow}{in} \PYG{n}{tensor\PYGZus{}by\PYGZus{}id}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{total}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}build\PYGZus{}scene\PYGZus{}a\PYGZus{}tasks}\PYG{p}{(}\PYG{n}{graph\PYGZus{}json}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{,} \PYG{n}{bandwidth}\PYG{p}{,} \PYG{n}{capacity}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}将每个子图封装为独立 Task，并为所有 Task 边界插入 DDR COPY。}
+
+\PYG{l+s+sd}{    输入：原图/方案来自选手，故derive\PYGZus{}multicore\PYGZus{}plan负责入口校验；参数}
+\PYG{l+s+sd}{    已由evaluate\PYGZus{}scene\PYGZus{}a校验。串行Task顺序是新增约束，需合并检查环。}
+\PYG{l+s+sd}{    输出给Step1的局部图只保留原依赖、插入源/汇COPY，仍为DAG。}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{plan\PYGZus{}view} \PYG{o}{=} \PYG{n}{derive\PYGZus{}multicore\PYGZus{}plan}\PYG{p}{(}\PYG{n}{graph\PYGZus{}json}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{)}
+    \PYG{n}{validate\PYGZus{}task\PYGZus{}order}\PYG{p}{(}\PYG{n}{plan\PYGZus{}view}\PYG{p}{)}
+    \PYG{n}{op\PYGZus{}by\PYGZus{}id} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]:} \PYG{n}{op} \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{graph\PYGZus{}json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{]\PYGZcb{}}
+    \PYG{n}{tensor\PYGZus{}by\PYGZus{}id} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]:} \PYG{n}{tensor} \PYG{k}{for} \PYG{n}{tensor} \PYG{o+ow}{in} \PYG{n}{graph\PYGZus{}json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}tensors\PYGZsq{}}\PYG{p}{]\PYGZcb{}}
+    \PYG{n}{mapping} \PYG{o}{=} \PYG{n}{plan\PYGZus{}view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}mapping\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{producers}\PYG{p}{,} \PYG{n}{consumers}\PYG{p}{,} \PYG{n}{direct\PYGZus{}edges} \PYG{o}{=} \PYG{n}{\PYGZus{}original\PYGZus{}tensor\PYGZus{}views}\PYG{p}{(}\PYG{n}{graph\PYGZus{}json}\PYG{p}{)}
+    \PYG{n}{core\PYGZus{}by\PYGZus{}task} \PYG{o}{=} \PYG{n}{plan\PYGZus{}view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}by\PYGZus{}subgraph\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{pred\PYGZus{}tasks} \PYG{o}{=} \PYG{n}{plan\PYGZus{}view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}preds\PYGZsq{}}\PYG{p}{]}
+
+    \PYG{n}{next\PYGZus{}op\PYGZus{}id} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{([}\PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{graph\PYGZus{}json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{]]} \PYG{o}{+} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])} \PYG{o}{+} \PYG{l+m+mi}{1}
+    \PYG{n}{next\PYGZus{}tensor\PYGZus{}id} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}
+        \PYG{p}{[}\PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{tensor} \PYG{o+ow}{in} \PYG{n}{graph\PYGZus{}json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}tensors\PYGZsq{}}\PYG{p}{]]} \PYG{o}{+} \PYG{p}{[}\PYG{l+m+mi}{10000}\PYG{p}{])} \PYG{o}{+} \PYG{l+m+mi}{1}
+    \PYG{n}{used\PYGZus{}ids} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{op\PYGZus{}by\PYGZus{}id}\PYG{p}{)} \PYG{o}{|} \PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}by\PYGZus{}id}\PYG{p}{)}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{new\PYGZus{}boundary\PYGZus{}ids}\PYG{p}{():}
+        \PYG{c+c1}{\PYGZsh{} 原图两类ID已唯一；新ID同时避开两类已占用空间，不能只取各自max。}
+        \PYG{k}{nonlocal} \PYG{n}{next\PYGZus{}op\PYGZus{}id}\PYG{p}{,} \PYG{n}{next\PYGZus{}tensor\PYGZus{}id}
+        \PYG{k}{while} \PYG{n}{next\PYGZus{}tensor\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{used\PYGZus{}ids}\PYG{p}{:}
+            \PYG{n}{next\PYGZus{}tensor\PYGZus{}id} \PYG{o}{+=} \PYG{l+m+mi}{1}
+        \PYG{n}{ddr\PYGZus{}id} \PYG{o}{=} \PYG{n}{next\PYGZus{}tensor\PYGZus{}id}
+        \PYG{n}{used\PYGZus{}ids}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{ddr\PYGZus{}id}\PYG{p}{)}
+        \PYG{n}{next\PYGZus{}tensor\PYGZus{}id} \PYG{o}{+=} \PYG{l+m+mi}{1}
+        \PYG{k}{while} \PYG{n}{next\PYGZus{}op\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{used\PYGZus{}ids}\PYG{p}{:}
+            \PYG{n}{next\PYGZus{}op\PYGZus{}id} \PYG{o}{+=} \PYG{l+m+mi}{1}
+        \PYG{n}{copy\PYGZus{}id} \PYG{o}{=} \PYG{n}{next\PYGZus{}op\PYGZus{}id}
+        \PYG{n}{used\PYGZus{}ids}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{copy\PYGZus{}id}\PYG{p}{)}
+        \PYG{n}{next\PYGZus{}op\PYGZus{}id} \PYG{o}{+=} \PYG{l+m+mi}{1}
+        \PYG{k}{return} \PYG{n}{ddr\PYGZus{}id}\PYG{p}{,} \PYG{n}{copy\PYGZus{}id}
+    \PYG{n}{tasks} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{n}{cross\PYGZus{}task\PYGZus{}traffic} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{task\PYGZus{}graph\PYGZus{}copy\PYGZus{}traffic} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{spill\PYGZus{}copy\PYGZus{}traffic} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+    \PYG{k}{for} \PYG{n}{task\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{plan\PYGZus{}view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}ids\PYGZsq{}}\PYG{p}{]:}
+        \PYG{n}{task\PYGZus{}op\PYGZus{}ids} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{plan\PYGZus{}view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}nodes\PYGZus{}by\PYGZus{}subgraph\PYGZsq{}}\PYG{p}{][}\PYG{n}{task\PYGZus{}id}\PYG{p}{])}
+        \PYG{n}{ops} \PYG{o}{=} \PYG{p}{[}\PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{op\PYGZus{}by\PYGZus{}id}\PYG{p}{[}\PYG{n}{op\PYGZus{}id}\PYG{p}{])} \PYG{k}{for} \PYG{n}{op\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{task\PYGZus{}op\PYGZus{}ids}\PYG{p}{)]}
+        \PYG{n}{tensors}\PYG{p}{,} \PYG{n}{edges} \PYG{o}{=} \PYG{p}{[],} \PYG{p}{[]}
+        \PYG{n}{local\PYGZus{}tensor\PYGZus{}ids} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+
+        \PYG{n}{touched\PYGZus{}tensors} \PYG{o}{=} \PYG{n+nb}{sorted}\PYG{p}{(}
+            \PYG{n}{tensor\PYGZus{}id} \PYG{k}{for} \PYG{n}{tensor\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{tensor\PYGZus{}by\PYGZus{}id}
+            \PYG{k}{if} \PYG{n}{producers}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{n+nb}{set}\PYG{p}{())} \PYG{o}{\PYGZam{}} \PYG{n}{task\PYGZus{}op\PYGZus{}ids}
+            \PYG{o+ow}{or} \PYG{n}{consumers}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{n+nb}{set}\PYG{p}{())} \PYG{o}{\PYGZam{}} \PYG{n}{task\PYGZus{}op\PYGZus{}ids}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{tensor\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{touched\PYGZus{}tensors}\PYG{p}{:}
+            \PYG{n}{tensor} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}by\PYGZus{}id}\PYG{p}{[}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{])}
+            \PYG{n}{local\PYGZus{}producers} \PYG{o}{=} \PYG{n}{producers}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{n+nb}{set}\PYG{p}{())} \PYG{o}{\PYGZam{}} \PYG{n}{task\PYGZus{}op\PYGZus{}ids}
+            \PYG{n}{local\PYGZus{}consumers} \PYG{o}{=} \PYG{n}{consumers}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{n+nb}{set}\PYG{p}{())} \PYG{o}{\PYGZam{}} \PYG{n}{task\PYGZus{}op\PYGZus{}ids}
+            \PYG{n}{eligible\PYGZus{}producers} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{op} \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{producers}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{p}{())} \PYG{k}{if} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{mapping}\PYG{p}{\PYGZcb{}}
+            \PYG{n}{eligible\PYGZus{}consumers} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{op} \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{consumers}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{p}{())} \PYG{k}{if} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{mapping}\PYG{p}{\PYGZcb{}}
+            \PYG{n}{has\PYGZus{}original\PYGZus{}copy\PYGZus{}out} \PYG{o}{=} \PYG{n+nb}{any}\PYG{p}{(}
+                \PYG{n}{op\PYGZus{}by\PYGZus{}id}\PYG{p}{[}\PYG{n}{op\PYGZus{}id}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{)} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}COPY\PYGZus{}OUT\PYGZsq{}}
+                \PYG{k}{for} \PYG{n}{op\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{consumers}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{p}{())}
+                \PYG{k}{if} \PYG{n}{op\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}by\PYGZus{}id}\PYG{p}{)}
+            \PYG{n}{input\PYGZus{}boundary} \PYG{o}{=} \PYG{n+nb}{bool}\PYG{p}{(}\PYG{n}{local\PYGZus{}consumers}\PYG{p}{)} \PYG{o+ow}{and} \PYG{o+ow}{not} \PYG{n+nb}{bool}\PYG{p}{(}\PYG{n}{local\PYGZus{}producers}\PYG{p}{)}
+            \PYG{n}{output\PYGZus{}boundary} \PYG{o}{=} \PYG{n+nb}{bool}\PYG{p}{(}\PYG{n}{local\PYGZus{}producers}\PYG{p}{)} \PYG{o+ow}{and} \PYG{p}{(}
+                \PYG{n}{has\PYGZus{}original\PYGZus{}copy\PYGZus{}out} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{eligible\PYGZus{}consumers}
+                \PYG{o+ow}{or} \PYG{n+nb}{bool}\PYG{p}{(}\PYG{n}{eligible\PYGZus{}consumers} \PYG{o}{\PYGZhy{}} \PYG{n}{task\PYGZus{}op\PYGZus{}ids}\PYG{p}{))}
+
+            \PYG{c+c1}{\PYGZsh{} Task 内 Tensor 必须在私有缓存；原 DDR Tensor 仅作为边界副本。}
+            \PYG{k}{if} \PYG{n}{tensor}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}pos\PYGZsq{}}\PYG{p}{)} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}DDR\PYGZsq{}}\PYG{p}{:}
+                \PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pos\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}UB\PYGZsq{}}
+            \PYG{n}{tensors}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{tensor}\PYG{p}{)}
+            \PYG{n}{local\PYGZus{}tensor\PYGZus{}ids}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{tensor\PYGZus{}id}\PYG{p}{)}
+            \PYG{k}{for} \PYG{n}{producer\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{local\PYGZus{}producers}\PYG{p}{):}
+                \PYG{n}{edges}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{:} \PYG{n}{producer\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{:} \PYG{n}{tensor\PYGZus{}id}\PYG{p}{\PYGZcb{})}
+            \PYG{k}{for} \PYG{n}{consumer\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{local\PYGZus{}consumers}\PYG{p}{):}
+                \PYG{n}{edges}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{:} \PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{:} \PYG{n}{consumer\PYGZus{}id}\PYG{p}{\PYGZcb{})}
+
+            \PYG{k}{if} \PYG{n}{input\PYGZus{}boundary}\PYG{p}{:}
+                \PYG{n}{ddr\PYGZus{}id}\PYG{p}{,} \PYG{n}{copy\PYGZus{}id} \PYG{o}{=} \PYG{n}{new\PYGZus{}boundary\PYGZus{}ids}\PYG{p}{()}
+                \PYG{n}{tensors}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{ddr\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pos\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}DDR\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{:} \PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{]\PYGZcb{})}
+                \PYG{n}{ops}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{copy\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}COPY\PYGZus{}IN\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pipe\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}MTE2\PYGZsq{}}\PYG{p}{,}
+                            \PYG{l+s+s1}{\PYGZsq{}cycles\PYGZsq{}}\PYG{p}{:} \PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{math}\PYG{o}{.}\PYG{n}{ceil}\PYG{p}{(}\PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{]} \PYG{o}{/} \PYG{n}{bandwidth}\PYG{p}{))\PYGZcb{})}
+                \PYG{n}{edges}\PYG{o}{.}\PYG{n}{extend}\PYG{p}{([}
+                    \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{:} \PYG{n}{ddr\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{:} \PYG{n}{copy\PYGZus{}id}\PYG{p}{\PYGZcb{},}
+                    \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{:} \PYG{n}{copy\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{:} \PYG{n}{tensor\PYGZus{}id}\PYG{p}{\PYGZcb{},}
+                \PYG{p}{])}
+            \PYG{k}{if} \PYG{n}{output\PYGZus{}boundary}\PYG{p}{:}
+                \PYG{n}{ddr\PYGZus{}id}\PYG{p}{,} \PYG{n}{copy\PYGZus{}id} \PYG{o}{=} \PYG{n}{new\PYGZus{}boundary\PYGZus{}ids}\PYG{p}{()}
+                \PYG{n}{tensors}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{ddr\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pos\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}DDR\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{:} \PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{]\PYGZcb{})}
+                \PYG{n}{ops}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{copy\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}COPY\PYGZus{}OUT\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pipe\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}MTE3\PYGZsq{}}\PYG{p}{,}
+                            \PYG{l+s+s1}{\PYGZsq{}cycles\PYGZsq{}}\PYG{p}{:} \PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{math}\PYG{o}{.}\PYG{n}{ceil}\PYG{p}{(}\PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{]} \PYG{o}{/} \PYG{n}{bandwidth}\PYG{p}{))\PYGZcb{})}
+                \PYG{n}{edges}\PYG{o}{.}\PYG{n}{extend}\PYG{p}{([}
+                    \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{:} \PYG{n}{tensor\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{:} \PYG{n}{copy\PYGZus{}id}\PYG{p}{\PYGZcb{},}
+                    \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{:} \PYG{n}{copy\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{:} \PYG{n}{ddr\PYGZus{}id}\PYG{p}{\PYGZcb{},}
+                \PYG{p}{])}
+                \PYG{n}{remote\PYGZus{}consumer\PYGZus{}tasks} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+                    \PYG{n}{mapping}\PYG{p}{[}\PYG{n}{op\PYGZus{}id}\PYG{p}{]} \PYG{k}{for} \PYG{n}{op\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{eligible\PYGZus{}consumers}
+                    \PYG{k}{if} \PYG{n}{mapping}\PYG{p}{[}\PYG{n}{op\PYGZus{}id}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{task\PYGZus{}id}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cross\PYGZus{}task\PYGZus{}traffic} \PYG{o}{+=} \PYG{n}{tensor}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{]} \PYG{o}{*} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{remote\PYGZus{}consumer\PYGZus{}tasks}\PYG{p}{)}
+
+        \PYG{k}{for} \PYG{n}{edge} \PYG{o+ow}{in} \PYG{n}{direct\PYGZus{}edges}\PYG{p}{:}
+            \PYG{k}{if} \PYG{n}{edge}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{]} \PYG{o+ow}{in} \PYG{n}{task\PYGZus{}op\PYGZus{}ids} \PYG{o+ow}{and} \PYG{n}{edge}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{]} \PYG{o+ow}{in} \PYG{n}{task\PYGZus{}op\PYGZus{}ids}\PYG{p}{:}
+                \PYG{n}{edges}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{edge}\PYG{p}{))}
+
+        \PYG{n}{graph} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{:} \PYG{n}{ops}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}tensors\PYGZsq{}}\PYG{p}{:} \PYG{n}{tensors}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}edges\PYGZsq{}}\PYG{p}{:} \PYG{n}{edges}\PYG{p}{\PYGZcb{}}
+        \PYG{n}{task\PYGZus{}graph\PYGZus{}copy\PYGZus{}traffic} \PYG{o}{+=} \PYG{n}{\PYGZus{}copy\PYGZus{}traffic\PYGZus{}bytes}\PYG{p}{(}\PYG{n}{graph}\PYG{p}{)}
+        \PYG{n}{seq} \PYG{o}{=} \PYG{n}{step1\PYGZus{}schedule}\PYG{p}{(}\PYG{n}{graph}\PYG{p}{)}
+        \PYG{n}{result2} \PYG{o}{=} \PYG{n}{step2\PYGZus{}spill\PYGZus{}insertion}\PYG{p}{(}\PYG{n}{graph}\PYG{p}{,} \PYG{n}{seq}\PYG{p}{,} \PYG{n}{capacity}\PYG{o}{=}\PYG{n}{capacity}\PYG{p}{)}
+        \PYG{n}{spill\PYGZus{}copy\PYGZus{}traffic} \PYG{o}{+=} \PYG{n+nb}{sum}\PYG{p}{(}
+            \PYG{n}{spill}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{spill}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}spill\PYGZus{}out\PYGZus{}copies\PYGZus{}data\PYGZsq{}}\PYG{p}{]))}
+            \PYG{k}{for} \PYG{n}{spill} \PYG{o+ow}{in} \PYG{n}{result2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}spill\PYGZus{}records\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{ext\PYGZus{}graph} \PYG{o}{=} \PYG{n}{\PYGZus{}build\PYGZus{}extended\PYGZus{}graph}\PYG{p}{(}\PYG{n}{graph}\PYG{p}{,} \PYG{n}{result2}\PYG{p}{)}
+        \PYG{n}{prepared} \PYG{o}{=} \PYG{n}{prepare\PYGZus{}step3\PYGZus{}execution}\PYG{p}{(}
+            \PYG{n}{ext\PYGZus{}graph}\PYG{p}{,} \PYG{n}{capacity}\PYG{o}{=}\PYG{n}{capacity}\PYG{p}{,} \PYG{n}{bandwidth}\PYG{o}{=}\PYG{n}{bandwidth}\PYG{p}{)}
+        \PYG{n}{prepared}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(\PYGZob{}}
+            \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}id}\PYG{p}{,}
+            \PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{core\PYGZus{}by\PYGZus{}task}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{],}
+            \PYG{l+s+s1}{\PYGZsq{}pred\PYGZus{}tasks\PYGZsq{}}\PYG{p}{:} \PYG{n}{pred\PYGZus{}tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{],}
+        \PYG{p}{\PYGZcb{})}
+        \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{n}{prepared}
+    \PYG{n}{original\PYGZus{}copy\PYGZus{}traffic} \PYG{o}{=} \PYG{n}{\PYGZus{}copy\PYGZus{}traffic\PYGZus{}bytes}\PYG{p}{(}\PYG{n}{graph\PYGZus{}json}\PYG{p}{)}
+    \PYG{n}{partition\PYGZus{}added\PYGZus{}traffic} \PYG{o}{=} \PYG{n}{task\PYGZus{}graph\PYGZus{}copy\PYGZus{}traffic} \PYG{o}{\PYGZhy{}} \PYG{n}{original\PYGZus{}copy\PYGZus{}traffic}
+    \PYG{n}{traffic} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}original\PYGZus{}graph\PYGZus{}copy\PYGZus{}bytes\PYGZsq{}}\PYG{p}{:} \PYG{n}{original\PYGZus{}copy\PYGZus{}traffic}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}scheduled\PYGZus{}copy\PYGZus{}bytes\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}graph\PYGZus{}copy\PYGZus{}traffic} \PYG{o}{+} \PYG{n}{spill\PYGZus{}copy\PYGZus{}traffic}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}added\PYGZus{}copy\PYGZus{}bytes\PYGZsq{}}\PYG{p}{:} \PYG{n}{partition\PYGZus{}added\PYGZus{}traffic} \PYG{o}{+} \PYG{n}{spill\PYGZus{}copy\PYGZus{}traffic}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}partition\PYGZus{}added\PYGZus{}copy\PYGZus{}bytes\PYGZsq{}}\PYG{p}{:} \PYG{n}{partition\PYGZus{}added\PYGZus{}traffic}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}spill\PYGZus{}added\PYGZus{}copy\PYGZus{}bytes\PYGZsq{}}\PYG{p}{:} \PYG{n}{spill\PYGZus{}copy\PYGZus{}traffic}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{tasks}\PYG{p}{,} \PYG{n}{cross\PYGZus{}task\PYGZus{}traffic}\PYG{p}{,} \PYG{n}{traffic}\PYG{p}{,} \PYG{n}{plan\PYGZus{}view}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{evaluate\PYGZus{}scene\PYGZus{}a}\PYG{p}{(}\PYG{n}{graph\PYGZus{}json}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{,} \PYG{n}{bandwidth}\PYG{p}{,} \PYG{n}{capacity}\PYG{p}{,}
+                     \PYG{n}{cross\PYGZus{}core\PYGZus{}wait}\PYG{p}{,} \PYG{n}{same\PYGZus{}core\PYGZus{}wait}\PYG{p}{,} \PYG{n}{max\PYGZus{}iter}\PYG{o}{=}\PYG{l+m+mi}{1000000}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}执行场景 A 多核事件模拟并返回 makespan 与完整时间线。}
+
+\PYG{l+s+sd}{    带宽、容量与两类等待周期都由 CLI 从 config.txt 读出后传入，本函数不再}
+\PYG{l+s+sd}{    提供配置默认值；每条 Pipe 同一时刻只有 PIPE\PYGZus{}SLOTS 个在飞指令，不对外开放。}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{capacity} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{capacity}\PYG{p}{)}
+    \PYG{n}{validate\PYGZus{}parameters}\PYG{p}{(}\PYG{n}{bandwidth}\PYG{p}{,} \PYG{n}{capacity}\PYG{p}{,} \PYG{n}{max\PYGZus{}iter}\PYG{p}{,}
+                        \PYG{n}{cross\PYGZus{}core\PYGZus{}wait}\PYG{o}{=}\PYG{n}{cross\PYGZus{}core\PYGZus{}wait}\PYG{p}{,} \PYG{n}{same\PYGZus{}core\PYGZus{}wait}\PYG{o}{=}\PYG{n}{same\PYGZus{}core\PYGZus{}wait}\PYG{p}{)}
+    \PYG{n}{tasks}\PYG{p}{,} \PYG{n}{cross\PYGZus{}task\PYGZus{}traffic}\PYG{p}{,} \PYG{n}{data\PYGZus{}movement}\PYG{p}{,} \PYG{n}{plan\PYGZus{}view} \PYG{o}{=} \PYG{n}{\PYGZus{}build\PYGZus{}scene\PYGZus{}a\PYGZus{}tasks}\PYG{p}{(}
+        \PYG{n}{graph\PYGZus{}json}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{,} \PYG{n}{bandwidth}\PYG{p}{,} \PYG{n}{capacity}\PYG{p}{)}
+    \PYG{n}{num\PYGZus{}cores} \PYG{o}{=} \PYG{n}{plan\PYGZus{}view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}num\PYGZus{}cores\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{core\PYGZus{}orders} \PYG{o}{=} \PYG{n}{plan\PYGZus{}view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}orders\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{task\PYGZus{}status} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{task\PYGZus{}id}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}waiting\PYGZsq{}} \PYG{k}{for} \PYG{n}{task\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{tasks}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{task\PYGZus{}start}\PYG{p}{,} \PYG{n}{task\PYGZus{}end} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{},} \PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{n}{core\PYGZus{}index} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{core\PYGZus{}id}\PYG{p}{:} \PYG{l+m+mi}{0} \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{)\PYGZcb{}}
+    \PYG{n}{core\PYGZus{}active\PYGZus{}task} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{core\PYGZus{}id}\PYG{p}{:} \PYG{k+kc}{None} \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{)\PYGZcb{}}
+    \PYG{n}{core\PYGZus{}previous\PYGZus{}end} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{core\PYGZus{}id}\PYG{p}{:} \PYG{k+kc}{None} \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{)\PYGZcb{}}
+    \PYG{n}{executors} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{n}{pipe}\PYG{p}{):} \PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{)} \PYG{k}{for} \PYG{n}{pipe} \PYG{o+ow}{in} \PYG{n}{PIPES}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{issue\PYGZus{}queues} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{n}{pipe}\PYG{p}{):} \PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{)} \PYG{k}{for} \PYG{n}{pipe} \PYG{o+ow}{in} \PYG{n}{PIPES}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{op\PYGZus{}status}\PYG{p}{,} \PYG{n}{pred\PYGZus{}remaining}\PYG{p}{,} \PYG{n}{op\PYGZus{}start}\PYG{p}{,} \PYG{n}{op\PYGZus{}end} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{},} \PYG{p}{\PYGZob{}\PYGZcb{},} \PYG{p}{\PYGZob{}\PYGZcb{},} \PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{,} \PYG{n}{ddr\PYGZus{}contention\PYGZus{}log} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{},} \PYG{p}{[]}
+    \PYG{n}{ddr\PYGZus{}last\PYGZus{}update} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{key}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{):}
+        \PYG{k}{return} \PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{)}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{init\PYGZus{}pipe\PYGZus{}queues}\PYG{p}{(}\PYG{n}{task}\PYG{p}{):}
+\PYG{+w}{        }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}装载 Step3 已确定的逐 Pipe 顺序。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}cursor\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{pipe}\PYG{p}{:} \PYG{l+m+mi}{0} \PYG{k}{for} \PYG{n}{pipe} \PYG{o+ow}{in} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}ops\PYGZsq{}}\PYG{p}{]\PYGZcb{}}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{advance\PYGZus{}ddr\PYGZus{}work}\PYG{p}{(}\PYG{n}{now}\PYG{p}{):}
+        \PYG{k}{nonlocal} \PYG{n}{ddr\PYGZus{}last\PYGZus{}update}
+        \PYG{n}{elapsed} \PYG{o}{=} \PYG{n}{now} \PYG{o}{\PYGZhy{}} \PYG{n}{ddr\PYGZus{}last\PYGZus{}update}
+        \PYG{k}{while} \PYG{n}{elapsed} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{:}
+            \PYG{n}{active} \PYG{o}{=} \PYG{p}{[}\PYG{n}{item} \PYG{k}{for} \PYG{n}{item}\PYG{p}{,} \PYG{n}{work} \PYG{o+ow}{in} \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()} \PYG{k}{if} \PYG{n}{work} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{]}
+            \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{active}\PYG{p}{:}
+                \PYG{k}{break}
+            \PYG{n}{min\PYGZus{}work} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{active}\PYG{p}{)}
+            \PYG{n}{finish\PYGZus{}delta} \PYG{o}{=} \PYG{n}{min\PYGZus{}work} \PYG{o}{*} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{active}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{finish\PYGZus{}delta} \PYG{o}{\PYGZgt{}=} \PYG{n}{elapsed} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{:}
+                \PYG{n}{share} \PYG{o}{=} \PYG{n}{elapsed} \PYG{o}{/} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{active}\PYG{p}{)}
+                \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{active}\PYG{p}{:}
+                    \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{share}\PYG{p}{)}
+                \PYG{k}{break}
+            \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{active}\PYG{p}{:}
+                \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{min\PYGZus{}work}\PYG{p}{)}
+            \PYG{n}{elapsed} \PYG{o}{\PYGZhy{}=} \PYG{n}{finish\PYGZus{}delta}
+        \PYG{n}{ddr\PYGZus{}last\PYGZus{}update} \PYG{o}{=} \PYG{n}{now}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{reschedule\PYGZus{}ddr}\PYG{p}{(}\PYG{n}{now}\PYG{p}{):}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{:}
+            \PYG{k}{return} \PYG{p}{\PYGZob{}\PYGZcb{}}
+        \PYG{n}{ordered} \PYG{o}{=} \PYG{n+nb}{sorted}\PYG{p}{((}\PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{work}\PYG{p}{),} \PYG{n}{item}\PYG{p}{)}
+                         \PYG{k}{for} \PYG{n}{item}\PYG{p}{,} \PYG{n}{work} \PYG{o+ow}{in} \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{o}{.}\PYG{n}{items}\PYG{p}{())}
+        \PYG{n}{projected}\PYG{p}{,} \PYG{n}{cursor}\PYG{p}{,} \PYG{n}{previous}\PYG{p}{,} \PYG{n}{active\PYGZus{}count} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{},} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{now}\PYG{p}{),} \PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ordered}\PYG{p}{)}
+        \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{k}{while} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ordered}\PYG{p}{):}
+            \PYG{n}{work} \PYG{o}{=} \PYG{n}{ordered}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}
+            \PYG{n}{cursor} \PYG{o}{+=} \PYG{p}{(}\PYG{n}{work} \PYG{o}{\PYGZhy{}} \PYG{n}{previous}\PYG{p}{)} \PYG{o}{*} \PYG{n}{active\PYGZus{}count}
+            \PYG{n}{j} \PYG{o}{=} \PYG{n}{i}
+            \PYG{k}{while} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ordered}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{ordered}\PYG{p}{[}\PYG{n}{j}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{work}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{:}
+                \PYG{n}{projected}\PYG{p}{[}\PYG{n}{ordered}\PYG{p}{[}\PYG{n}{j}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]]} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{math}\PYG{o}{.}\PYG{n}{ceil}\PYG{p}{(}\PYG{n}{cursor} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{))}
+                \PYG{n}{j} \PYG{o}{+=} \PYG{l+m+mi}{1}
+            \PYG{n}{active\PYGZus{}count} \PYG{o}{\PYGZhy{}=} \PYG{n}{j} \PYG{o}{\PYGZhy{}} \PYG{n}{i}
+            \PYG{n}{previous} \PYG{o}{=} \PYG{n}{work}
+            \PYG{n}{i} \PYG{o}{=} \PYG{n}{j}
+        \PYG{k}{for} \PYG{n}{item}\PYG{p}{,} \PYG{n}{end} \PYG{o+ow}{in} \PYG{n}{projected}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+            \PYG{n}{op\PYGZus{}end}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{n}{end}
+        \PYG{k}{for} \PYG{n}{executor\PYGZus{}key}\PYG{p}{,} \PYG{n}{running} \PYG{o+ow}{in} \PYG{n}{executors}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+            \PYG{n}{executors}\PYG{p}{[}\PYG{n}{executor\PYGZus{}key}\PYG{p}{]} \PYG{o}{=} \PYG{p}{[}
+                \PYG{p}{(}\PYG{n}{item}\PYG{p}{,} \PYG{n}{projected}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{item}\PYG{p}{,} \PYG{n}{end}\PYG{p}{))} \PYG{k}{for} \PYG{n}{item}\PYG{p}{,} \PYG{n}{end} \PYG{o+ow}{in} \PYG{n}{running}\PYG{p}{]}
+        \PYG{k}{return} \PYG{n}{projected}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{queue\PYGZus{}if\PYGZus{}ready}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{):}
+        \PYG{n}{item} \PYG{o}{=} \PYG{n}{key}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{op\PYGZus{}status}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{!=} \PYG{l+s+s1}{\PYGZsq{}pending\PYGZsq{}} \PYG{o+ow}{or} \PYG{n}{pred\PYGZus{}remaining}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{return}
+        \PYG{n}{task} \PYG{o}{=} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]}
+        \PYG{n}{pipe} \PYG{o}{=} \PYG{n}{op\PYGZus{}pipe}\PYG{p}{(}\PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}by\PYGZus{}id\PYGZsq{}}\PYG{p}{][}\PYG{n}{op\PYGZus{}id}\PYG{p}{])}
+        \PYG{n}{order} \PYG{o}{=} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}ops\PYGZsq{}}\PYG{p}{][}\PYG{n}{pipe}\PYG{p}{]}
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}cursor\PYGZsq{}}\PYG{p}{][}\PYG{n}{pipe}\PYG{p}{]}
+        \PYG{k}{if} \PYG{n}{cursor} \PYG{o}{\PYGZgt{}=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{order}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n}{order}\PYG{p}{[}\PYG{n}{cursor}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{op\PYGZus{}id}\PYG{p}{:}
+            \PYG{k}{return}
+        \PYG{n}{op\PYGZus{}status}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}ready\PYGZsq{}}
+        \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{heappush}\PYG{p}{(}\PYG{n}{issue\PYGZus{}queues}\PYG{p}{[(}\PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{],} \PYG{n}{pipe}\PYG{p}{)],}
+                       \PYG{p}{(}\PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}seq\PYGZus{}pos\PYGZsq{}}\PYG{p}{][}\PYG{n}{op\PYGZus{}id}\PYG{p}{],} \PYG{n}{item}\PYG{p}{))}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{activate\PYGZus{}task}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{now}\PYG{p}{):}
+        \PYG{n}{task} \PYG{o}{=} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]}
+        \PYG{n}{init\PYGZus{}pipe\PYGZus{}queues}\PYG{p}{(}\PYG{n}{task}\PYG{p}{)}
+        \PYG{n}{task\PYGZus{}status}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}
+        \PYG{n}{task\PYGZus{}start}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{n}{now}
+        \PYG{n}{core\PYGZus{}active\PYGZus{}task}\PYG{p}{[}\PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{task\PYGZus{}id}
+        \PYG{k}{for} \PYG{n}{op\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}seq\PYGZsq{}}\PYG{p}{]:}
+            \PYG{n}{item} \PYG{o}{=} \PYG{n}{key}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{)}
+            \PYG{n}{op\PYGZus{}status}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}pending\PYGZsq{}}
+            \PYG{n}{pred\PYGZus{}remaining}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}preds\PYGZsq{}}\PYG{p}{][}\PYG{n}{op\PYGZus{}id}\PYG{p}{])}
+        \PYG{k}{for} \PYG{n}{op\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}seq\PYGZsq{}}\PYG{p}{]:}
+            \PYG{n}{queue\PYGZus{}if\PYGZus{}ready}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{)}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{advance\PYGZus{}pipe}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{):}
+\PYG{+w}{        }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}操作完成后推进所在 Pipe，并尝试唤醒下一操作。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{n}{task} \PYG{o}{=} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]}
+        \PYG{n}{pipe} \PYG{o}{=} \PYG{n}{op\PYGZus{}pipe}\PYG{p}{(}\PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}by\PYGZus{}id\PYGZsq{}}\PYG{p}{][}\PYG{n}{op\PYGZus{}id}\PYG{p}{])}
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}cursor\PYGZsq{}}\PYG{p}{][}\PYG{n}{pipe}\PYG{p}{]}
+        \PYG{n}{order} \PYG{o}{=} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}ops\PYGZsq{}}\PYG{p}{][}\PYG{n}{pipe}\PYG{p}{]}
+        \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}cursor\PYGZsq{}}\PYG{p}{][}\PYG{n}{pipe}\PYG{p}{]} \PYG{o}{+=} \PYG{l+m+mi}{1}
+        \PYG{k}{if} \PYG{n}{cursor} \PYG{o}{+} \PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{order}\PYG{p}{):}
+            \PYG{n}{queue\PYGZus{}if\PYGZus{}ready}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{order}\PYG{p}{[}\PYG{n}{cursor} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{])}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{task\PYGZus{}release\PYGZus{}time}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{):}
+        \PYG{n}{task} \PYG{o}{=} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]}
+        \PYG{n}{core\PYGZus{}id} \PYG{o}{=} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{]}
+        \PYG{k}{if} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n}{task\PYGZus{}status}\PYG{p}{[}\PYG{n}{pred}\PYG{p}{]} \PYG{o}{!=} \PYG{l+s+s1}{\PYGZsq{}done\PYGZsq{}} \PYG{k}{for} \PYG{n}{pred} \PYG{o+ow}{in} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pred\PYGZus{}tasks\PYGZsq{}}\PYG{p}{]):}
+            \PYG{k}{return} \PYG{k+kc}{None}
+        \PYG{n}{release} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{k}{if} \PYG{n}{core\PYGZus{}previous\PYGZus{}end}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{n}{release} \PYG{o}{=} \PYG{n}{core\PYGZus{}previous\PYGZus{}end}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o}{+} \PYG{n}{same\PYGZus{}core\PYGZus{}wait}
+        \PYG{k}{for} \PYG{n}{pred} \PYG{o+ow}{in} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pred\PYGZus{}tasks\PYGZsq{}}\PYG{p}{]:}
+            \PYG{k}{if} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{pred}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{core\PYGZus{}id}\PYG{p}{:}
+                \PYG{n}{release} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{release}\PYG{p}{,} \PYG{n}{task\PYGZus{}end}\PYG{p}{[}\PYG{n}{pred}\PYG{p}{]} \PYG{o}{+} \PYG{n}{cross\PYGZus{}core\PYGZus{}wait}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{release}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{activate\PYGZus{}ready\PYGZus{}tasks}\PYG{p}{(}\PYG{n}{now}\PYG{p}{):}
+        \PYG{n}{changed} \PYG{o}{=} \PYG{k+kc}{False}
+        \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{):}
+            \PYG{k}{if} \PYG{n}{core\PYGZus{}active\PYGZus{}task}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{k}{continue}
+            \PYG{n}{order} \PYG{o}{=} \PYG{n}{core\PYGZus{}orders}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{p}{[])}
+            \PYG{k}{if} \PYG{n}{core\PYGZus{}index}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o}{\PYGZgt{}=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{order}\PYG{p}{):}
+                \PYG{k}{continue}
+            \PYG{n}{task\PYGZus{}id} \PYG{o}{=} \PYG{n}{order}\PYG{p}{[}\PYG{n}{core\PYGZus{}index}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]]}
+            \PYG{n}{release} \PYG{o}{=} \PYG{n}{task\PYGZus{}release\PYGZus{}time}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{release} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None} \PYG{o+ow}{and} \PYG{n}{release} \PYG{o}{\PYGZlt{}=} \PYG{n}{now}\PYG{p}{:}
+                \PYG{n}{activate\PYGZus{}task}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{now}\PYG{p}{)}
+                \PYG{n}{changed} \PYG{o}{=} \PYG{k+kc}{True}
+        \PYG{k}{return} \PYG{n}{changed}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{retire}\PYG{p}{(}\PYG{n}{now}\PYG{p}{):}
+        \PYG{n}{advance\PYGZus{}ddr\PYGZus{}work}\PYG{p}{(}\PYG{n}{now}\PYG{p}{)}
+        \PYG{n}{retired\PYGZus{}ddr} \PYG{o}{=} \PYG{k+kc}{False}
+        \PYG{k}{for} \PYG{n}{executor\PYGZus{}key}\PYG{p}{,} \PYG{n}{running} \PYG{o+ow}{in} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{executors}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()):}
+            \PYG{n}{keep} \PYG{o}{=} \PYG{p}{[]}
+            \PYG{k}{for} \PYG{n}{item}\PYG{p}{,} \PYG{n}{end} \PYG{o+ow}{in} \PYG{n}{running}\PYG{p}{:}
+                \PYG{k}{if} \PYG{n}{end} \PYG{o}{\PYGZgt{}} \PYG{n}{now}\PYG{p}{:}
+                    \PYG{n}{keep}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{item}\PYG{p}{,} \PYG{n}{end}\PYG{p}{))}
+                    \PYG{k}{continue}
+                \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id} \PYG{o}{=} \PYG{n}{item}
+                \PYG{n}{op\PYGZus{}status}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}done\PYGZsq{}}
+                \PYG{n}{advance\PYGZus{}pipe}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{)}
+                \PYG{k}{if} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{:}
+                    \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{n}{item}\PYG{p}{)}
+                    \PYG{n}{retired\PYGZus{}ddr} \PYG{o}{=} \PYG{k+kc}{True}
+                \PYG{k}{for} \PYG{n}{succ\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}succs\PYGZsq{}}\PYG{p}{][}\PYG{n}{op\PYGZus{}id}\PYG{p}{]:}
+                    \PYG{n}{succ\PYGZus{}item} \PYG{o}{=} \PYG{n}{key}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{succ\PYGZus{}id}\PYG{p}{)}
+                    \PYG{n}{pred\PYGZus{}remaining}\PYG{p}{[}\PYG{n}{succ\PYGZus{}item}\PYG{p}{]} \PYG{o}{\PYGZhy{}=} \PYG{l+m+mi}{1}
+                    \PYG{n}{queue\PYGZus{}if\PYGZus{}ready}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{succ\PYGZus{}id}\PYG{p}{)}
+            \PYG{n}{executors}\PYG{p}{[}\PYG{n}{executor\PYGZus{}key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{keep}
+        \PYG{k}{if} \PYG{n}{retired\PYGZus{}ddr}\PYG{p}{:}
+            \PYG{n}{reschedule\PYGZus{}ddr}\PYG{p}{(}\PYG{n}{now}\PYG{p}{)}
+
+        \PYG{k}{for} \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{status} \PYG{o+ow}{in} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{task\PYGZus{}status}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()):}
+            \PYG{k}{if} \PYG{n}{status} \PYG{o}{!=} \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{p}{:}
+                \PYG{k}{continue}
+            \PYG{n}{task\PYGZus{}items} \PYG{o}{=} \PYG{p}{[}\PYG{n}{key}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id}\PYG{p}{)} \PYG{k}{for} \PYG{n}{op\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}seq\PYGZsq{}}\PYG{p}{]]}
+            \PYG{k}{if} \PYG{n+nb}{all}\PYG{p}{(}\PYG{n}{op\PYGZus{}status}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}done\PYGZsq{}} \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{task\PYGZus{}items}\PYG{p}{):}
+                \PYG{n}{core\PYGZus{}id} \PYG{o}{=} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{]}
+                \PYG{n}{task\PYGZus{}status}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}done\PYGZsq{}}
+                \PYG{n}{task\PYGZus{}end}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{n}{now}
+                \PYG{n}{core\PYGZus{}active\PYGZus{}task}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{None}
+                \PYG{n}{core\PYGZus{}previous\PYGZus{}end}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{n}{now}
+                \PYG{n}{core\PYGZus{}index}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o}{+=} \PYG{l+m+mi}{1}
+
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{issue}\PYG{p}{(}\PYG{n}{now}\PYG{p}{):}
+        \PYG{n}{issued\PYGZus{}in\PYGZus{}pass} \PYG{o}{=} \PYG{k+kc}{True}
+        \PYG{k}{while} \PYG{n}{issued\PYGZus{}in\PYGZus{}pass}\PYG{p}{:}
+            \PYG{n}{issued\PYGZus{}in\PYGZus{}pass} \PYG{o}{=} \PYG{k+kc}{False}
+            \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{):}
+                \PYG{k}{for} \PYG{n}{pipe} \PYG{o+ow}{in} \PYG{n}{PIPES}\PYG{p}{:}
+                    \PYG{n}{executor\PYGZus{}key} \PYG{o}{=} \PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{n}{pipe}\PYG{p}{)}
+                    \PYG{n}{queue} \PYG{o}{=} \PYG{n}{issue\PYGZus{}queues}\PYG{p}{[}\PYG{n}{executor\PYGZus{}key}\PYG{p}{]}
+                    \PYG{k}{while} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{executors}\PYG{p}{[}\PYG{n}{executor\PYGZus{}key}\PYG{p}{])} \PYG{o}{\PYGZlt{}} \PYG{n}{PIPE\PYGZus{}SLOTS}\PYG{p}{:}
+                        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{queue}\PYG{p}{:}
+                            \PYG{k}{break}
+                        \PYG{n}{\PYGZus{}}\PYG{p}{,} \PYG{n}{item} \PYG{o}{=} \PYG{n}{heapq}\PYG{o}{.}\PYG{n}{heappop}\PYG{p}{(}\PYG{n}{queue}\PYG{p}{)}
+                        \PYG{n}{issued\PYGZus{}in\PYGZus{}pass} \PYG{o}{=} \PYG{k+kc}{True}
+                        \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id} \PYG{o}{=} \PYG{n}{item}
+                        \PYG{n}{task} \PYG{o}{=} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]}
+                        \PYG{n}{op} \PYG{o}{=} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}by\PYGZus{}id\PYGZsq{}}\PYG{p}{][}\PYG{n}{op\PYGZus{}id}\PYG{p}{]}
+                        \PYG{n}{duration} \PYG{o}{=} \PYG{n}{\PYGZus{}op\PYGZus{}duration}\PYG{p}{(}
+                            \PYG{n}{op}\PYG{p}{,} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}in\PYGZus{}tids\PYGZsq{}}\PYG{p}{],} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}out\PYGZus{}tids\PYGZsq{}}\PYG{p}{],}
+                            \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}tensor\PYGZus{}by\PYGZus{}id\PYGZsq{}}\PYG{p}{],} \PYG{n}{bandwidth}\PYG{p}{)}
+                        \PYG{n}{op\PYGZus{}status}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}running\PYGZsq{}}
+                        \PYG{n}{op\PYGZus{}start}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{n}{now}
+                        \PYG{n}{op\PYGZus{}end}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{n}{now} \PYG{o}{+} \PYG{n}{duration}
+                        \PYG{n}{executors}\PYG{p}{[}\PYG{n}{executor\PYGZus{}key}\PYG{p}{]}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{item}\PYG{p}{,} \PYG{n}{op\PYGZus{}end}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]))}
+                        \PYG{k}{if} \PYG{n}{\PYGZus{}uses\PYGZus{}ddr\PYGZus{}bandwidth}\PYG{p}{(}
+                                \PYG{n}{op}\PYG{p}{,} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}in\PYGZus{}tids\PYGZsq{}}\PYG{p}{],} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}out\PYGZus{}tids\PYGZsq{}}\PYG{p}{],}
+                                \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}tensor\PYGZus{}by\PYGZus{}id\PYGZsq{}}\PYG{p}{]):}
+                            \PYG{n}{advance\PYGZus{}ddr\PYGZus{}work}\PYG{p}{(}\PYG{n}{now}\PYG{p}{)}
+                            \PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{duration}\PYG{p}{)}
+                            \PYG{n}{projected} \PYG{o}{=} \PYG{n}{reschedule\PYGZus{}ddr}\PYG{p}{(}\PYG{n}{now}\PYG{p}{)}
+                            \PYG{n}{ddr\PYGZus{}contention\PYGZus{}log}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}
+                                \PYG{l+s+s1}{\PYGZsq{}time\PYGZsq{}}\PYG{p}{:} \PYG{n}{now}\PYG{p}{,}
+                                \PYG{l+s+s1}{\PYGZsq{}issued\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{op\PYGZus{}id}\PYG{p}{,}
+                                           \PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pipe\PYGZsq{}}\PYG{p}{:} \PYG{n}{pipe}\PYG{p}{\PYGZcb{},}
+                                \PYG{l+s+s1}{\PYGZsq{}active\PYGZus{}count\PYGZsq{}}\PYG{p}{:} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ddr\PYGZus{}remaining\PYGZus{}work}\PYG{p}{),}
+                                \PYG{l+s+s1}{\PYGZsq{}projected\PYGZus{}ends\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}
+                                    \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{active}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{active}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{:} \PYG{n}{end}\PYG{p}{\PYGZcb{}}
+                                    \PYG{k}{for} \PYG{n}{active}\PYG{p}{,} \PYG{n}{end} \PYG{o+ow}{in} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{projected}\PYG{o}{.}\PYG{n}{items}\PYG{p}{())}
+                                \PYG{p}{],}
+                            \PYG{p}{\PYGZcb{})}
+
+    \PYG{n}{now} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{iteration} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{max\PYGZus{}iter}\PYG{p}{):}
+        \PYG{n}{retire}\PYG{p}{(}\PYG{n}{now}\PYG{p}{)}
+        \PYG{n}{activate\PYGZus{}ready\PYGZus{}tasks}\PYG{p}{(}\PYG{n}{now}\PYG{p}{)}
+        \PYG{n}{issue}\PYG{p}{(}\PYG{n}{now}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n+nb}{all}\PYG{p}{(}\PYG{n}{status} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}done\PYGZsq{}} \PYG{k}{for} \PYG{n}{status} \PYG{o+ow}{in} \PYG{n}{task\PYGZus{}status}\PYG{o}{.}\PYG{n}{values}\PYG{p}{()):}
+            \PYG{k}{break}
+        \PYG{n}{next\PYGZus{}times} \PYG{o}{=} \PYG{p}{[}\PYG{n}{end} \PYG{k}{for} \PYG{n}{running} \PYG{o+ow}{in} \PYG{n}{executors}\PYG{o}{.}\PYG{n}{values}\PYG{p}{()} \PYG{k}{for} \PYG{n}{\PYGZus{}}\PYG{p}{,} \PYG{n}{end} \PYG{o+ow}{in} \PYG{n}{running}\PYG{p}{]}
+        \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{):}
+            \PYG{k}{if} \PYG{n}{core\PYGZus{}active\PYGZus{}task}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{k}{continue}
+            \PYG{n}{order} \PYG{o}{=} \PYG{n}{core\PYGZus{}orders}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{p}{[])}
+            \PYG{k}{if} \PYG{n}{core\PYGZus{}index}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{order}\PYG{p}{):}
+                \PYG{n}{release} \PYG{o}{=} \PYG{n}{task\PYGZus{}release\PYGZus{}time}\PYG{p}{(}\PYG{n}{order}\PYG{p}{[}\PYG{n}{core\PYGZus{}index}\PYG{p}{[}\PYG{n}{core\PYGZus{}id}\PYG{p}{]])}
+                \PYG{k}{if} \PYG{n}{release} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None} \PYG{o+ow}{and} \PYG{n}{release} \PYG{o}{\PYGZgt{}} \PYG{n}{now}\PYG{p}{:}
+                    \PYG{n}{next\PYGZus{}times}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{release}\PYG{p}{)}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{next\PYGZus{}times}\PYG{p}{:}
+            \PYG{n}{waiting} \PYG{o}{=} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{task\PYGZus{}id} \PYG{k}{for} \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{status} \PYG{o+ow}{in} \PYG{n}{task\PYGZus{}status}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()}
+                             \PYG{k}{if} \PYG{n}{status} \PYG{o}{!=} \PYG{l+s+s1}{\PYGZsq{}done\PYGZsq{}}\PYG{p}{)}
+            \PYG{k}{raise} \PYG{n}{SceneAEvaluationError}\PYG{p}{(}
+                \PYG{l+s+s1}{\PYGZsq{}multicore scheduler deadlock at t=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{; waiting\PYGZus{}tasks=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}
+                    \PYG{n}{now}\PYG{p}{,} \PYG{n}{waiting}\PYG{p}{))}
+        \PYG{n}{next\PYGZus{}now} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{next\PYGZus{}times}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{next\PYGZus{}now} \PYG{o}{\PYGZlt{}=} \PYG{n}{now}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{SceneAEvaluationError}\PYG{p}{(}
+                \PYG{l+s+s1}{\PYGZsq{}multicore scheduler made no progress at t=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{now}\PYG{p}{))}
+        \PYG{n}{now} \PYG{o}{=} \PYG{n}{next\PYGZus{}now}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n}{SceneAEvaluationError}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}max\PYGZus{}iter exceeded\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{n}{per\PYGZus{}core\PYGZus{}timeline} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{):}
+        \PYG{n}{task\PYGZus{}entries} \PYG{o}{=} \PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{task\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{core\PYGZus{}orders}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{p}{[]):}
+            \PYG{n}{task\PYGZus{}entries}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}
+                \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}id}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}start}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{],} \PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}end}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{],}
+                \PYG{l+s+s1}{\PYGZsq{}duration\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}end}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{task\PYGZus{}start}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{],}
+            \PYG{p}{\PYGZcb{})}
+        \PYG{n}{op\PYGZus{}entries} \PYG{o}{=} \PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{item}\PYG{p}{,} \PYG{n}{start} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}start}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+            \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{op\PYGZus{}id} \PYG{o}{=} \PYG{n}{item}
+            \PYG{k}{if} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{core\PYGZus{}id}\PYG{p}{:}
+                \PYG{k}{continue}
+            \PYG{n}{op} \PYG{o}{=} \PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}by\PYGZus{}id\PYGZsq{}}\PYG{p}{][}\PYG{n}{op\PYGZus{}id}\PYG{p}{]}
+            \PYG{n}{op\PYGZus{}entries}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}
+                \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{op\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{],}
+                \PYG{l+s+s1}{\PYGZsq{}pipe\PYGZsq{}}\PYG{p}{:} \PYG{n}{op\PYGZus{}pipe}\PYG{p}{(}\PYG{n}{op}\PYG{p}{),}
+                \PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{:} \PYG{n}{start}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{:} \PYG{n}{op\PYGZus{}end}\PYG{p}{[}\PYG{n}{item}\PYG{p}{],}
+                \PYG{l+s+s1}{\PYGZsq{}duration\PYGZsq{}}\PYG{p}{:} \PYG{n}{op\PYGZus{}end}\PYG{p}{[}\PYG{n}{item}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{start}\PYG{p}{,}
+            \PYG{p}{\PYGZcb{})}
+        \PYG{n}{op\PYGZus{}entries}\PYG{o}{.}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{key}\PYG{o}{=}\PYG{k}{lambda} \PYG{n}{entry}\PYG{p}{:} \PYG{p}{(}\PYG{n}{entry}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{],} \PYG{n}{entry}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{],} \PYG{n}{entry}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}id\PYGZsq{}}\PYG{p}{]))}
+        \PYG{n}{subgraph\PYGZus{}entries} \PYG{o}{=} \PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{task\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{core\PYGZus{}orders}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{p}{[]):}
+            \PYG{n}{subgraph\PYGZus{}ops} \PYG{o}{=} \PYG{p}{[}\PYG{n}{entry} \PYG{k}{for} \PYG{n}{entry} \PYG{o+ow}{in} \PYG{n}{op\PYGZus{}entries}
+                            \PYG{k}{if} \PYG{n}{entry}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{task\PYGZus{}id}\PYG{p}{]}
+            \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{subgraph\PYGZus{}ops}\PYG{p}{:}
+                \PYG{k}{raise} \PYG{n}{SceneAEvaluationError}\PYG{p}{(}
+                    \PYG{l+s+s1}{\PYGZsq{}subgraph }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ has no scheduled op\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{task\PYGZus{}id}\PYG{p}{))}
+            \PYG{n}{start} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{entry}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{entry} \PYG{o+ow}{in} \PYG{n}{subgraph\PYGZus{}ops}\PYG{p}{)}
+            \PYG{n}{end} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{entry}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{entry} \PYG{o+ow}{in} \PYG{n}{subgraph\PYGZus{}ops}\PYG{p}{)}
+            \PYG{n}{subgraph\PYGZus{}entries}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}
+                \PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}id}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{:} \PYG{n}{start}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{:} \PYG{n}{end}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}duration\PYGZsq{}}\PYG{p}{:} \PYG{n}{end} \PYG{o}{\PYGZhy{}} \PYG{n}{start}\PYG{p}{,}
+            \PYG{p}{\PYGZcb{})}
+        \PYG{n}{per\PYGZus{}core\PYGZus{}timeline}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}
+            \PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}tasks\PYGZsq{}}\PYG{p}{:} \PYG{n}{task\PYGZus{}entries}\PYG{p}{,}
+            \PYG{l+s+s1}{\PYGZsq{}subgraphs\PYGZsq{}}\PYG{p}{:} \PYG{n}{subgraph\PYGZus{}entries}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{:} \PYG{n}{op\PYGZus{}entries}\PYG{p}{\PYGZcb{})}
+
+    \PYG{n}{makespan} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{task\PYGZus{}end}\PYG{o}{.}\PYG{n}{values}\PYG{p}{(),} \PYG{n}{default}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{n}{memory\PYGZus{}peak\PYGZus{}by\PYGZus{}core} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{n}{core\PYGZus{}id}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+            \PYG{n}{pos}\PYG{p}{:} \PYG{n+nb}{max}\PYG{p}{((}\PYG{n}{tasks}\PYG{p}{[}\PYG{n}{task\PYGZus{}id}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}step3\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}memory\PYGZus{}peak\PYGZsq{}}\PYG{p}{][}\PYG{n}{pos}\PYG{p}{]}
+                      \PYG{k}{for} \PYG{n}{task\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{core\PYGZus{}orders}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{p}{[])),} \PYG{n}{default}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
+            \PYG{k}{for} \PYG{n}{pos} \PYG{o+ow}{in} \PYG{n}{capacity}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{for} \PYG{n}{core\PYGZus{}id} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}cores}\PYG{p}{)}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}scene\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}A\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}makespan\PYGZsq{}}\PYG{p}{:} \PYG{n}{makespan}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}num\PYGZus{}cores\PYGZsq{}}\PYG{p}{:} \PYG{n}{num\PYGZus{}cores}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZus{}bytes\PYGZus{}per\PYGZus{}cycle\PYGZsq{}}\PYG{p}{:} \PYG{n}{bandwidth}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}capacity\PYGZus{}bytes\PYGZsq{}}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{capacity}\PYG{p}{),}
+        \PYG{l+s+s1}{\PYGZsq{}memory\PYGZus{}peak\PYGZus{}by\PYGZus{}core\PYGZsq{}}\PYG{p}{:} \PYG{n}{memory\PYGZus{}peak\PYGZus{}by\PYGZus{}core}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}step3\PYGZus{}by\PYGZus{}task\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+            \PYG{n}{task\PYGZus{}id}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s1}{\PYGZsq{}local\PYGZus{}makespan\PYGZsq{}}\PYG{p}{:} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}step3\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}makespan\PYGZsq{}}\PYG{p}{],}
+                \PYG{l+s+s1}{\PYGZsq{}memory\PYGZus{}dependency\PYGZus{}count\PYGZsq{}}\PYG{p}{:} \PYG{n+nb}{len}\PYG{p}{(}
+                    \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}step3\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}memory\PYGZus{}dependencies\PYGZsq{}}\PYG{p}{]),}
+                \PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}op\PYGZus{}counts\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{n}{pipe}\PYG{p}{:} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{order}\PYG{p}{)} \PYG{k}{for} \PYG{n}{pipe}\PYG{p}{,} \PYG{n}{order} \PYG{o+ow}{in} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}ops\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()}
+                \PYG{p}{\PYGZcb{},}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{for} \PYG{n}{task\PYGZus{}id}\PYG{p}{,} \PYG{n}{task} \PYG{o+ow}{in} \PYG{n}{tasks}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}cross\PYGZus{}core\PYGZus{}wait\PYGZus{}cycles\PYGZsq{}}\PYG{p}{:} \PYG{n}{cross\PYGZus{}core\PYGZus{}wait}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}same\PYGZus{}core\PYGZus{}wait\PYGZus{}cycles\PYGZsq{}}\PYG{p}{:} \PYG{n}{same\PYGZus{}core\PYGZus{}wait}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}cross\PYGZus{}task\PYGZus{}traffic\PYGZsq{}}\PYG{p}{:} \PYG{n}{cross\PYGZus{}task\PYGZus{}traffic}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}data\PYGZus{}movement\PYGZus{}bytes\PYGZsq{}}\PYG{p}{:} \PYG{n}{data\PYGZus{}movement}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}dependencies\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}
+            \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{:} \PYG{n}{source}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{:} \PYG{n}{target}\PYG{p}{\PYGZcb{}}
+            \PYG{k}{for} \PYG{n}{source}\PYG{p}{,} \PYG{n}{target} \PYG{o+ow}{in} \PYG{n}{plan\PYGZus{}view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}dependency\PYGZus{}pairs\PYGZsq{}}\PYG{p}{]}
+        \PYG{p}{],}
+        \PYG{l+s+s1}{\PYGZsq{}per\PYGZus{}core\PYGZus{}timeline\PYGZsq{}}\PYG{p}{:} \PYG{n}{per\PYGZus{}core\PYGZus{}timeline}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}ddr\PYGZus{}contention\PYGZus{}log\PYGZsq{}}\PYG{p}{:} \PYG{n}{ddr\PYGZus{}contention\PYGZus{}log}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{:}
+    \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{contest\PYGZus{}io}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{run\PYGZus{}problem\PYGZus{}cli}
+    \PYG{k}{raise} \PYG{n+ne}{SystemExit}\PYG{p}{(}\PYG{n}{run\PYGZus{}problem\PYGZus{}cli}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{))}
+\end{MintedVerbatim}

@@ -1,0 +1,27 @@
+\section{关键性符号说明}
+
+下表汇集贯穿三个问题的对象、容量及评价量；局部启发式参数在首次使用处说明。
+\begin{GMCMSymbolTable}{符号中 $i$ 表示操作，$j$ 表示张量，$k$ 表示核心数。}
+\GMCMSymbolRow{集合}{G}{输入的有向无环二部计算图}{—}
+\GMCMSymbolRow{集合}{\mathcal{O}}{计算图中的操作节点集合}{—}
+\GMCMSymbolRow{集合}{\mathcal{T}}{计算图中的张量节点集合}{—}
+\GMCMSymbolRow{集合}{E}{计算图的有向依赖边集合}{—}
+\GMCMSymbolRow{索引}{i}{操作节点的索引}{1}
+\GMCMSymbolRow{索引}{j}{张量节点的索引}{1}
+\GMCMSymbolRow{索引}{k}{参与调度的核心数}{1}
+\GMCMSymbolRow{参数}{c_i}{操作 $i$ 的题定计算周期}{cycle}
+\GMCMSymbolRow{参数}{s_j}{张量 $j$ 占用的字节数}{byte}
+\GMCMSymbolRow{变量}{g(i)}{非 COPY 操作 $i$ 所属的子图编号}{1}
+\GMCMSymbolRow{变量}{a(g)}{子图 $g$ 被分配的核心编号}{1}
+\GMCMSymbolRow{参数}{C_{\mathrm{L1}}}{每个核心的 L1 容量}{byte}
+\GMCMSymbolRow{参数}{C_{\mathrm{UB}}}{每个核心的 UB 容量}{byte}
+\GMCMSymbolRow{参数}{B_{\mathrm{DDR}}}{全部核心共享的 DDR 总带宽}{byte/cycle}
+\GMCMSymbolRow{参数}{C_{\mathrm{L2}}}{共享只读 L2 容量}{byte}
+\GMCMSymbolRow{参数}{B_{\mathrm{L2}}}{共享只读 L2 读带宽}{byte/cycle}
+\GMCMSymbolRow{指标}{T_k}{$k$ 核方案的全局 Makespan}{cycle}
+\GMCMSymbolRow{指标}{T_1}{原始整图单核基准 Makespan}{cycle}
+\GMCMSymbolRow{指标}{S_k}{相对于整图单核基准的加速比}{1}
+\GMCMSymbolRow{指标}{D_k}{相对原图新增的 DDR 搬运量}{byte}
+\GMCMSymbolRow{指标}{H_k}{可由 L2 服务的 COPY\_IN 字节命中率}{1}
+\end{GMCMSymbolTable}
+

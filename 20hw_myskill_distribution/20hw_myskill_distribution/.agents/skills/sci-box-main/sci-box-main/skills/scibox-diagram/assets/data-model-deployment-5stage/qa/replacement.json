@@ -1,0 +1,221 @@
+{
+  "template_id": "data-model-deployment-5stage",
+  "texts": {
+    "flag_text_0": [
+      "数",
+      "据",
+      "源",
+      "头",
+      "归",
+      "集",
+      "与",
+      "预",
+      "处",
+      "理"
+    ],
+    "flag_text_1": [
+      "数",
+      "据",
+      "集",
+      "成",
+      "型"
+    ],
+    "flag_text_2": [
+      "模",
+      "型",
+      "搭",
+      "建",
+      "与",
+      "训",
+      "练"
+    ],
+    "flag_text_3": [
+      "模",
+      "型",
+      "优",
+      "化"
+    ],
+    "flag_text_4": [
+      "成",
+      "果",
+      "落",
+      "地"
+    ],
+    "database_name_0": [
+      "工况实测信息库"
+    ],
+    "database_name_1": [
+      "仿真样本信息库"
+    ],
+    "database_name_2": [
+      "文献标准信息库"
+    ],
+    "database_name_3": [
+      "故障案例信息库"
+    ],
+    "prepare_title_0": [
+      "多源信息清洗处理"
+    ],
+    "prepare_detail_0_0": [
+      "缺失值填充、异常值剔除、"
+    ],
+    "prepare_detail_0_1": [
+      "信息降噪、归一化处理"
+    ],
+    "prepare_title_1": [
+      "信息特征标注划分"
+    ],
+    "prepare_detail_1_0": [
+      "样本标签标定、信息集分层、"
+    ],
+    "prepare_detail_1_1": [
+      "训练 / 验证 / 测试集拆分"
+    ],
+    "package_title_0": [
+      "结构化信息集构建"
+    ],
+    "package_detail_0": [
+      "整理规整原始信息，",
+      "划分训练 / 验证 /",
+      "测试集"
+    ],
+    "package_title_1": [
+      "特征库矩阵封装"
+    ],
+    "package_detail_1": [
+      "把提取的各类特征封",
+      "装为矩阵格式，适配",
+      "模型输入计算"
+    ],
+    "package_title_2": [
+      "信息脱敏与格式适配"
+    ],
+    "package_detail_2": [
+      "去除涉密敏感信息、",
+      "统一文件格式"
+    ],
+    "model_input_0": [
+      "模型输",
+      "入模块"
+    ],
+    "model_input_1": [
+      "参数配",
+      "置模块"
+    ],
+    "training_branch_0": [
+      "特征提取分支1"
+    ],
+    "training_branch_1": [
+      "特征提取分支2"
+    ],
+    "training_branch_2": [
+      "超参初始化设定"
+    ],
+    "training_branch_3": [
+      "训练策略调控"
+    ],
+    "core_training": [
+      "核心算法模",
+      "型训练"
+    ],
+    "weight_interface": [
+      "模型权重文",
+      "件与推理接",
+      "口"
+    ],
+    "optimization": [
+      "模",
+      "型",
+      "迭",
+      "代",
+      "优",
+      "化"
+    ],
+    "evaluation": [
+      "模",
+      "型",
+      "性",
+      "能",
+      "评",
+      "估"
+    ],
+    "optimization_axis_0": [
+      "精度优化"
+    ],
+    "optimization_axis_1": [
+      "收敛提速"
+    ],
+    "optimization_axis_2": [
+      "鲁棒性增强"
+    ],
+    "model_deployment": [
+      "模型轻量化与算法固化"
+    ],
+    "system_architecture": [
+      "系统总体架构设计"
+    ],
+    "system_module_0": [
+      "人",
+      "机",
+      "交",
+      "互",
+      "界",
+      "面"
+    ],
+    "system_module_1": [
+      "数",
+      "据",
+      "通",
+      "讯",
+      "模",
+      "块"
+    ],
+    "system_module_2": [
+      "采",
+      "集",
+      "驱",
+      "动",
+      "模",
+      "块"
+    ],
+    "system_module_3": [
+      "预",
+      "警",
+      "判",
+      "别",
+      "模",
+      "块"
+    ],
+    "system_module_4": [
+      "存",
+      "储",
+      "管",
+      "理",
+      "模",
+      "块"
+    ],
+    "system_module_5": [
+      "输",
+      "出",
+      "执",
+      "行",
+      "模",
+      "块"
+    ],
+    "integration": [
+      "系统集成联调与整体验证"
+    ],
+    "implementation_0": [
+      "仿真试验验证"
+    ],
+    "implementation_1": [
+      "实物样机测试"
+    ],
+    "implementation_2": [
+      "工程现场试运行"
+    ],
+    "implementation_3": [
+      "成果总结（示例）"
+    ]
+  }
+}

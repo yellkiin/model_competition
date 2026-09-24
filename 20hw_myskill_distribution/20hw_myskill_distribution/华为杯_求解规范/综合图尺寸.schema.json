@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "主要综合图物理尺寸计划（最终PDF实测独立执行）",
+  "type": "object",
+  "required": ["target_body_height_mm", "minimum_body_height_mm", "minimum_text_width_fraction", "measurement", "density_review"],
+  "additionalProperties": false,
+  "properties": {
+    "target_body_height_mm": {"type": "number", "minimum": 150},
+    "minimum_body_height_mm": {"const": 148.5},
+    "minimum_text_width_fraction": {"const": 0.9},
+    "measurement": {"const": "actual_pdf_ink_excluding_caption"},
+    "density_review": {"type": "string", "minLength": 12}
+  }
+}

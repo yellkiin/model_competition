@@ -1,0 +1,286 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "supported_platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reviewed_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "python": {
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "type": "string",
+          "minLength": 1
+        },
+        "maximum_exclusive": {
+          "type": "string",
+          "minLength": 1
+        },
+        "new_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact": {
+          "type": "object",
+          "properties": {
+            "filename": {
+              "type": "string",
+              "minLength": 1
+            },
+            "urls": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^https://[^\\s]+$"
+              }
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "enum": [
+                "exe",
+                "zip"
+              ]
+            },
+            "publisher_reference": {
+              "type": "string",
+              "pattern": "^https://[^\\s]+$"
+            }
+          },
+          "required": [
+            "filename",
+            "urls",
+            "sha256",
+            "format",
+            "publisher_reference"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "minimum",
+        "maximum_exclusive",
+        "new_version",
+        "artifact"
+      ],
+      "additionalProperties": false
+    },
+    "pip_indexes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https://[^\\s]+$"
+      }
+    },
+    "tex_repositories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https://[^\\s]+$"
+      }
+    },
+    "tex_packages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "adapter": {
+            "enum": [
+              "python_packages",
+              "texlive",
+              "miktex",
+              "drawio",
+              "font",
+              "python_bootstrap"
+            ]
+          },
+          "version_constraint": {
+            "type": "string",
+            "minLength": 1
+          },
+          "platforms": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "windows-x64"
+              ]
+            }
+          },
+          "detect": {
+            "enum": [
+              "python",
+              "imports",
+              "latex_smoke",
+              "drawio_export",
+              "font_compile"
+            ]
+          },
+          "functional_test": {
+            "type": "string",
+            "minLength": 1
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "requirement": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "module": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "requirement",
+                "module"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "artifact": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "filename": {
+                "type": "string",
+                "minLength": 1
+              },
+              "urls": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^https://[^\\s]+$"
+                }
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "format": {
+                "enum": [
+                  "exe",
+                  "zip"
+                ]
+              },
+              "publisher_reference": {
+                "type": "string",
+                "pattern": "^https://[^\\s]+$"
+              }
+            },
+            "required": [
+              "filename",
+              "urls",
+              "sha256",
+              "format",
+              "publisher_reference"
+            ],
+            "additionalProperties": false
+          },
+          "environment": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "PATH",
+                "DRAWIO_CLI"
+              ]
+            }
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^https://[^\\s]+$"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "adapter",
+          "version_constraint",
+          "platforms",
+          "detect",
+          "functional_test",
+          "packages",
+          "artifact",
+          "environment",
+          "references"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_.-]*$"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "providers"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "supported_platforms",
+    "reviewed_at",
+    "python",
+    "pip_indexes",
+    "tex_repositories",
+    "tex_packages",
+    "providers",
+    "capabilities"
+  ],
+  "additionalProperties": false
+}

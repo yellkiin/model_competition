@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "共享模板论文工作区",
+  "type": "object",
+  "required": ["schema_version", "mode", "run_id", "run_number", "runtime", "purpose", "created_at", "status", "completed_at", "template", "shared_resources", "inputs"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "mode": {"const": "shared"},
+    "run_id": {"type": "string", "pattern": "^[a-f0-9]{32}$"},
+    "run_number": {"type": "integer", "minimum": 1},
+    "runtime": {"enum": ["codex", "claude"]},
+    "purpose": {"enum": ["production", "demo"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["initializing", "initialization_failed", "ready", "running", "incomplete", "complete"]},
+    "completed_at": {"type": ["string", "null"], "format": "date-time"},
+    "completion": {
+      "type": "object", "required": ["report_path", "sha256"], "additionalProperties": false,
+      "properties": {
+        "report_path": {"type": "string", "pattern": "^求解/验收输出/完成登记/[a-f0-9]{32}/完成报告\\.json$"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "environment": {
+      "type": "object", "required": ["schema_version", "requirements_path", "report_path", "status"], "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "requirements_path": {"const": "求解/软件需求.json"},
+        "report_path": {"const": "求解/环境检测.json"},
+        "status": {"enum": ["satisfied", "missing", "blocked", "failed"]}
+      }
+    },
+    "error": {"type": "string"},
+    "template": {
+      "type": "object", "required": ["relative_path"], "additionalProperties": false,
+      "properties": {"relative_path": {"type": "string", "minLength": 1}}
+    },
+    "shared_resources": {
+      "type": "object", "required": ["digest", "files"], "additionalProperties": false,
+      "properties": {
+        "digest": {"$ref": "#/$defs/hash"},
+        "files": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/hash"}}
+      }
+    },
+    "inputs": {"type": "array", "items": {
+      "type": "object", "required": ["source_path", "workspace_path", "size_bytes", "sha256", "copied_at"],
+      "additionalProperties": false,
+      "properties": {
+        "source_path": {"type": "string", "pattern": "^(题目|数据)/.+"},
+        "workspace_path": {"type": "string", "pattern": "^(题目/|数据/原始/).+"},
+        "size_bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "copied_at": {"type": "string", "format": "date-time"}
+      }
+    }}
+  },
+  "additionalProperties": false,
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

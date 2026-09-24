@@ -1,0 +1,27 @@
+{
+  "status": "FINAL_AUDIT_FAILED",
+  "run_id": "a5fca18ecbf9486d9b785eb8220e5289",
+  "created_at": "2026-09-23T21:29:24.220619+00:00",
+  "gates": [
+    {
+      "name": "support",
+      "status": "PASS",
+      "run_report": "求解/验收输出/工作区运行/2db54b6e456749e38acd5a9b458fd6aa/运行.json",
+      "audit_report": "求解/验收输出/完成登记/6346b5a5ddd943c6970f1e0ca761d7f6/support.json",
+      "files": {
+        "求解/验收输出/工作区运行/2db54b6e456749e38acd5a9b458fd6aa/运行.json": "2ee2668cb018d4f52ced242847b1d5b5b6e77df9562421f8776775894d34d074",
+        "求解/验收输出/完成登记/6346b5a5ddd943c6970f1e0ca761d7f6/support.json": "ca56360eaf72ac3c409206ae006760552c8ecd4c7c514f5aa06715776b308520",
+        "求解/验收输出/工作区运行/2db54b6e456749e38acd5a9b458fd6aa/stdout.log": "db7eba09391597143ae6400341e909b7f9348b080393b2c4c197e31b79d4bab6",
+        "求解/验收输出/工作区运行/2db54b6e456749e38acd5a9b458fd6aa/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "appendix",
+      "status": "FAIL",
+      "run_report": "求解/验收输出/工作区运行/14a631f28e7f452b994f2854c7af9e86/运行.json",
+      "audit_report": "求解/验收输出/完成登记/6346b5a5ddd943c6970f1e0ca761d7f6/appendix.json"
+    }
+  ],
+  "changed_during_audit": false,
+  "resource_digest": "660f731ea64318ad39a8fd180c82b3d83f0ba3710c19cda342cba066951a23c1"
+}

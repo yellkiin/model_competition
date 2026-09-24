@@ -1,0 +1,161 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "runtime": {
+      "enum": [
+        "codex",
+        "claude"
+      ]
+    },
+    "figure_id": {
+      "type": "string"
+    },
+    "resource_dependencies": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "1.0"
+            },
+            "runtime": {
+              "enum": [
+                "codex",
+                "claude"
+              ]
+            },
+            "scope": {
+              "const": "modelviz"
+            },
+            "files": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "schema_version",
+            "runtime",
+            "scope",
+            "files",
+            "digest"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "command": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cwd": {
+      "type": "string"
+    },
+    "started_at_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "finished_at_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "returncode": {
+      "type": "integer"
+    },
+    "inputs_before": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "inputs_after": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "output_mtime_ns": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "log_path": {
+      "type": "string"
+    },
+    "log_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "failures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "FAIL",
+        "EXECUTED_REVIEW_REQUIRED"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "runtime",
+    "figure_id",
+    "resource_dependencies",
+    "contract_sha256",
+    "command",
+    "cwd",
+    "started_at_ns",
+    "finished_at_ns",
+    "started_at",
+    "finished_at",
+    "returncode",
+    "inputs_before",
+    "inputs_after",
+    "outputs",
+    "output_mtime_ns",
+    "log_path",
+    "log_sha256",
+    "failures",
+    "status"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

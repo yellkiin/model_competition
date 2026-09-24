@@ -1,0 +1,25 @@
+{
+  "command": [
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\workspace_execution.py",
+    "--child",
+    "E:\\20hw_myskill_distribution\\workshop_v1",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\audit_supporting_materials.py",
+    "--manifest",
+    "求解/支撑材料清单.json",
+    "--stage",
+    "final",
+    "--project-root",
+    ".",
+    "--output",
+    "提交附件",
+    "--runtime",
+    "codex",
+    "--report",
+    "求解/验收输出/完成登记/6346b5a5ddd943c6970f1e0ca761d7f6/support.json"
+  ],
+  "started_at": "2026-09-23T21:19:05.179730+00:00",
+  "workspace_root": "E:\\20hw_myskill_distribution\\workshop_v1",
+  "tool": "华为杯_求解规范/tools/audit_supporting_materials.py"
+}

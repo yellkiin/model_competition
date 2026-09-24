@@ -1,0 +1,157 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "runtime": {
+      "enum": [
+        "codex",
+        "claude"
+      ]
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_skill": {
+            "enum": [
+              "academic-figure-skill",
+              "modelviz-skill"
+            ]
+          },
+          "skill_root": {
+            "type": "string"
+          },
+          "resource_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "capability_review": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "reviewed": {
+                "type": "boolean"
+              },
+              "tool_ref": {
+                "type": "string"
+              },
+              "observation": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "reviewed",
+              "tool_ref",
+              "observation"
+            ]
+          },
+          "capabilities": {
+            "type": "string"
+          },
+          "data_structures": {
+            "type": "string"
+          },
+          "limitations": {
+            "type": "string"
+          },
+          "gallery_review_path": {
+            "type": "string"
+          },
+          "previews": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "template_id": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "unavailable_reason": {
+                  "type": "string"
+                },
+                "views": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "page": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "reviewed": {
+                        "type": "boolean"
+                      },
+                      "tool_ref": {
+                        "type": "string"
+                      },
+                      "observation": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "sha256",
+                      "page",
+                      "reviewed",
+                      "tool_ref",
+                      "observation"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "template_id",
+                "path",
+                "sha256",
+                "error",
+                "unavailable_reason",
+                "views"
+              ]
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "source_skill",
+          "skill_root",
+          "resource_digest",
+          "capability_review",
+          "capabilities",
+          "data_structures",
+          "limitations",
+          "gallery_review_path",
+          "previews"
+        ]
+      },
+      "minItems": 2
+    }
+  },
+  "required": [
+    "schema_version",
+    "runtime",
+    "providers"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "source_path": "求解/图件数据/q3-F04.csv",
+  "sha256": "6844626940a587a75baca054edc7c2be48b97c58fba3dcf85c55db558f680908",
+  "fields": [
+    "case",
+    "capacity_bytes",
+    "bandwidth_bytes_per_cycle",
+    "hit_rate"
+  ],
+  "row_count": 54,
+  "valid": true,
+  "validation_method": "标准CSV解析、非空行与计划字段逐项核对；源表由正式评估结构化结果派生。"
+}

@@ -1,0 +1,14 @@
+{
+  "source_path": "求解/图件数据/q1-F06.csv",
+  "sha256": "4c9f6d44469f4eaa91be1b81371a9ae3e14da3cfbbc70ff817eb9a6587f57ecc",
+  "fields": [
+    "case",
+    "cores",
+    "candidate",
+    "makespan_cycles",
+    "evaluation_seconds"
+  ],
+  "row_count": 577,
+  "valid": true,
+  "validation_method": "标准CSV解析、非空行与计划字段逐项核对；源表由正式评估结构化结果派生。"
+}

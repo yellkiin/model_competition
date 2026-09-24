@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.0",
+  "supported_platforms": [
+    "Windows 10/11 x64；PowerShell 5.1+；Python >=3.10,<3.14"
+  ],
+  "reviewed_at": "2026-09-22",
+  "python": {
+    "minimum": "3.10",
+    "maximum_exclusive": "3.14",
+    "new_version": "3.13.15",
+    "artifact": {
+      "filename": "python-3.13.15-amd64.exe",
+      "urls": [
+        "https://mirrors.tuna.tsinghua.edu.cn/python/3.13.15/python-3.13.15-amd64.exe",
+        "https://www.python.org/ftp/python/3.13.15/python-3.13.15-amd64.exe"
+      ],
+      "sha256": "edec09c4853aeae9ac36efb8c9f95b6b8e2fee65eee56d9767a8b7c69c574403",
+      "format": "exe",
+      "publisher_reference": "https://www.python.org/downloads/release/python-31315/"
+    }
+  },
+  "pip_indexes": [
+    "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+    "https://pypi.org/simple"
+  ],
+  "tex_repositories": [
+    "https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet",
+    "https://mirrors.ctan.org/systems/texlive/tlnet"
+  ],
+  "tex_packages": [
+    "xetex",
+    "ctex",
+    "fontspec",
+    "pgf",
+    "bibtex",
+    "natbib",
+    "minted",
+    "latexmk",
+    "geometry",
+    "hyperref",
+    "fancyhdr",
+    "titlesec",
+    "titletoc",
+    "enumitem",
+    "booktabs",
+    "tabularx",
+    "longtable",
+    "xcolor",
+    "caption",
+    "float",
+    "setspace",
+    "etoolbox",
+    "fvextra",
+    "upquote",
+    "amsmath",
+    "amsfonts",
+    "listings",
+    "tools",
+    "unicode-math",
+    "ulem",
+    "multirow",
+    "makecell",
+    "xstring",
+    "zhnumber",
+    "fandol"
+  ],
+  "providers": [
+    {
+      "id": "workflow-core-python",
+      "name": "工作流与结构校验",
+      "adapter": "python_packages",
+      "version_constraint": "按 packages 约束",
+      "platforms": [
+        "windows-x64"
+      ],
+      "detect": "imports",
+      "functional_test": "工作区解释器逐包导入、版本约束与 pip check；PDF/表格/绘图另执行最小真实功能测试",
+      "packages": [
+        {
+          "requirement": "jsonschema>=4.18,<5",
+          "module": "jsonschema"
+        },
+        {
+          "requirement": "PyYAML>=6,<7",
+          "module": "yaml"
+        },
+        {
+          "requirement": "pydantic>=2,<3",
+          "module": "pydantic"
+        },
+        {
+          "requirement": "packaging>=23,<27",
+          "module": "packaging"
+        }
+      ],
+      "artifact": null,
+      "environment": [],
+      "references": [
+        "https://pypi.org/"
+      ]
+    },
+    {
+      "id": "pdf-python",
+      "name": "PDF 读取、渲染与页面检查",
+      "adapter": "python_packages",
+      "version_constraint": "按 packages 约束",
+      "platforms": [
+        "windows-x64"
+      ],
+      "detect": "imports",
+      "functional_test": "工作区解释器逐包导入、版本约束与 pip check；PDF/表格/绘图另执行最小真实功能测试",
+      "packages": [
+        {
+          "requirement": "PyMuPDF>=1.24,<2",
+          "module": "pymupdf"
+        },
+        {
+          "requirement": "Pillow>=10,<13",
+          "module": "PIL"
+        }
+      ],
+      "artifact": null,
+      "environment": [],
+      "references": [
+        "https://pypi.org/"
+      ]
+    },
+    {
+      "id": "tables-python",
+      "name": "CSV/XLSX/XLS 表格读取",
+      "adapter": "python_packages",
+      "version_constraint": "按 packages 约束",
+      "platforms": [
+        "windows-x64"
+      ],
+      "detect": "imports",
+      "functional_test": "工作区解释器逐包导入、版本约束与 pip check；PDF/表格/绘图另执行最小真实功能测试",
+      "packages": [
+        {
+          "requirement": "numpy>=1.26,<3",
+          "module": "numpy"
+        },
+        {
+          "requirement": "pandas>=2.2,<4",
+          "module": "pandas"
+        },
+        {
+          "requirement": "openpyxl>=3.1,<4",
+          "module": "openpyxl"
+        },
+        {
+          "requirement": "xlrd>=2,<3",
+          "module": "xlrd"
+        }
+      ],
+      "artifact": null,
+      "environment": [],
+      "references": [
+        "https://pypi.org/"
+      ]
+    },
+    {
+      "id": "science-python",
+      "name": "数值计算与静态绘图",
+      "adapter": "python_packages",
+      "version_constraint": "按 packages 约束",
+      "platforms": [
+        "windows-x64"
+      ],
+      "detect": "imports",
+      "functional_test": "工作区解释器逐包导入、版本约束与 pip check；PDF/表格/绘图另执行最小真实功能测试",
+      "packages": [
+        {
+          "requirement": "numpy>=1.26,<3",
+          "module": "numpy"
+        },
+        {
+          "requirement": "scipy>=1.13,<2",
+          "module": "scipy"
+        },
+        {
+          "requirement": "matplotlib>=3.9,<4",
+          "module": "matplotlib"
+        }
+      ],
+      "artifact": null,
+      "environment": [],
+      "references": [
+        "https://pypi.org/"
+      ]
+    },
+    {
+      "id": "machine-learning-python",
+      "name": "传统机器学习",
+      "adapter": "python_packages",
+      "version_constraint": "按 packages 约束",
+      "platforms": [
+        "windows-x64"
+      ],
+      "detect": "imports",
+      "functional_test": "工作区解释器逐包导入、版本约束与 pip check；PDF/表格/绘图另执行最小真实功能测试",
+      "packages": [
+        {
+          "requirement": "scikit-learn>=1.5,<2",
+          "module": "sklearn"
+        }
+      ],
+      "artifact": null,
+      "environment": [],
+      "references": [
+        "https://pypi.org/"
+      ]
+    },
+    {
+      "id": "paper-python-python",
+      "name": "论文解析与代码排版",
+      "adapter": "python_packages",
+      "version_constraint": "按 packages 约束",
+      "platforms": [
+        "windows-x64"
+      ],
+      "detect": "imports",
+      "functional_test": "工作区解释器逐包导入、版本约束与 pip check；PDF/表格/绘图另执行最小真实功能测试",
+      "packages": [
+        {
+          "requirement": "bibtexparser==1.4.3",
+          "module": "bibtexparser"
+        },
+        {
+          "requirement": "pylatexenc==2.10",
+          "module": "pylatexenc"
+        },
+        {
+          "requirement": "Pygments>=2.18,<3",
+          "module": "pygments"
+        }
+      ],
+      "artifact": null,
+      "environment": [],
+      "references": [
+        "https://pypi.org/"
+      ]
+    },
+    {
+      "id": "word-python",
+      "name": "可选 Word 文档生成",
+      "adapter": "python_packages",
+      "version_constraint": "按 packages 约束",
+      "platforms": [
+        "windows-x64"
+      ],
+      "detect": "imports",
+      "functional_test": "工作区解释器逐包导入、版本约束与 pip check；PDF/表格/绘图另执行最小真实功能测试",
+      "packages": [
+        {
+          "requirement": "python-docx>=1.1,<2",
+          "module": "docx"
+        },
+        {
+          "requirement": "lxml>=5,<7",
+          "module": "lxml"
+        }
+      ],
+      "artifact": null,
+      "environment": [],
+      "references": [
+        "https://pypi.org/"
+      ]
+    },
+    {
+      "id": "texlive",
+      "name": "TeX Live / TinyTeX",
+      "adapter": "texlive",
+      "detect": "latex_smoke",
+      "functional_test": "中文 + TikZ + BibTeX + minted + 项目标题组件实际编译",
+      "environment": [
+        "PATH"
+      ],
+      "references": [
+        "https://yihui.org/tinytex/",
+        "https://tug.org/texlive/tlmgr.html"
+      ],
+      "packages": [],
+      "artifact": {
+        "filename": "TinyTeX-1-windows-v2026.09.exe",
+        "urls": [
+          "https://github.com/rstudio/tinytex-releases/releases/download/v2026.09/TinyTeX-1-windows-v2026.09.exe"
+        ],
+        "sha256": "eea6a6e5f97d44416ca9ea974385af1ffd3fa119be19d34cdaf2abc85775d374",
+        "format": "exe",
+        "publisher_reference": "https://github.com/rstudio/tinytex-releases/releases/tag/v2026.09"
+      },
+      "version_constraint": "通过项目真实功能测试",
+      "platforms": [
+        "windows-x64"
+      ]
+    },
+    {
+      "id": "miktex",
+      "name": "MiKTeX",
+      "adapter": "miktex",
+      "detect": "latex_smoke",
+      "functional_test": "与 TeX Live 相同项目测试；缺包使用 MiKTeX 包管理器",
+      "environment": [
+        "PATH"
+      ],
+      "references": [
+        "https://docs.miktex.org/manual/mpm.html"
+      ],
+      "packages": [],
+      "artifact": null,
+      "version_constraint": "通过项目真实功能测试",
+      "platforms": [
+        "windows-x64"
+      ]
+    },
+    {
+      "id": "drawio",
+      "name": "draw.io Desktop",
+      "adapter": "drawio",
+      "detect": "drawio_export",
+      "functional_test": "最小 drawio 实际导出 PNG/PDF 并解码",
+      "environment": [
+        "PATH",
+        "DRAWIO_CLI"
+      ],
+      "references": [
+        "https://github.com/jgraph/drawio-desktop"
+      ],
+      "packages": [],
+      "artifact": {
+        "filename": "draw.io-31.4.5-windows.zip",
+        "urls": [
+          "https://github.com/jgraph/drawio-desktop/releases/download/v31.4.5/draw.io-31.4.5-windows.zip"
+        ],
+        "sha256": "d2c6f1eb4ed39fac9bb70fe6a1d359b8b9b01778145d65a68d29554994414207",
+        "format": "zip",
+        "publisher_reference": "https://github.com/jgraph/drawio-desktop/releases/tag/v31.4.5"
+      },
+      "version_constraint": "通过项目真实功能测试",
+      "platforms": [
+        "windows-x64"
+      ]
+    },
+    {
+      "id": "system-fonts",
+      "name": "系统合法字体",
+      "adapter": "font",
+      "detect": "font_compile",
+      "functional_test": "fontspec 检查 STXinwei、SimSun、SimHei、KaiTi、Times New Roman，不替换官方样式",
+      "environment": [],
+      "references": [
+        "https://learn.microsoft.com/typography/fonts/windows_11_font_list"
+      ],
+      "packages": [],
+      "artifact": null,
+      "version_constraint": "通过项目真实功能测试",
+      "platforms": [
+        "windows-x64"
+      ]
+    },
+    {
+      "id": "cpython",
+      "name": "兼容 Python",
+      "adapter": "python_bootstrap",
+      "detect": "python",
+      "functional_test": "sys.executable、版本、64位、venv、pip 与隔离环境",
+      "environment": [
+        "PATH"
+      ],
+      "references": [
+        "https://docs.python.org/3.13/using/windows.html"
+      ],
+      "packages": [],
+      "artifact": null,
+      "version_constraint": "通过项目真实功能测试",
+      "platforms": [
+        "windows-x64"
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "python",
+      "name": "Python 工作区虚拟环境",
+      "providers": [
+        "cpython"
+      ]
+    },
+    {
+      "id": "workflow-core",
+      "name": "工作流与结构校验",
+      "providers": [
+        "workflow-core-python"
+      ]
+    },
+    {
+      "id": "pdf",
+      "name": "PDF 读取、渲染与页面检查",
+      "providers": [
+        "pdf-python"
+      ]
+    },
+    {
+      "id": "tables",
+      "name": "CSV/XLSX/XLS 表格读取",
+      "providers": [
+        "tables-python"
+      ]
+    },
+    {
+      "id": "science",
+      "name": "数值计算与静态绘图",
+      "providers": [
+        "science-python"
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "name": "传统机器学习",
+      "providers": [
+        "machine-learning-python"
+      ]
+    },
+    {
+      "id": "paper-python",
+      "name": "论文解析与代码排版",
+      "providers": [
+        "paper-python-python"
+      ]
+    },
+    {
+      "id": "word",
+      "name": "可选 Word 文档生成",
+      "providers": [
+        "word-python"
+      ]
+    },
+    {
+      "id": "latex",
+      "name": "XeLaTeX 论文编译",
+      "providers": [
+        "texlive",
+        "miktex"
+      ]
+    },
+    {
+      "id": "drawio",
+      "name": "可编辑结构图导出",
+      "providers": [
+        "drawio"
+      ]
+    },
+    {
+      "id": "fonts",
+      "name": "官方标题及中文正文字体",
+      "providers": [
+        "system-fonts"
+      ]
+    }
+  ]
+}

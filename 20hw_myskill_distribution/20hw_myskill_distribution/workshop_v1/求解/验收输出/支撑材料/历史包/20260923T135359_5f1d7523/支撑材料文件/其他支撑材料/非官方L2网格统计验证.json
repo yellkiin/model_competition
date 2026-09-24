@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "study": "non_official_parameter_sensitivity",
+  "grid_rows": 54,
+  "official_default_crosscheck": "all six default 1 MiB/250-byte-per-cycle outcomes match the formal five-core rows",
+  "cases": {
+    "case_001": {
+      "default_cycles": 47502,
+      "min_cycles": 47502,
+      "max_cycles": 47502,
+      "min_hit_rate": 0.0,
+      "max_hit_rate": 0.0,
+      "selected_candidates": [
+        "components"
+      ],
+      "capacity_gain_4mib_vs_1mib_at_250": 1.0,
+      "bandwidth_gain_500_vs_250_at_1mib": 1.0
+    },
+    "case_002": {
+      "default_cycles": 55099,
+      "min_cycles": 55099,
+      "max_cycles": 55108,
+      "min_hit_rate": 0.021044427123928292,
+      "max_hit_rate": 0.2338269680436477,
+      "selected_candidates": [
+        "bands8"
+      ],
+      "capacity_gain_4mib_vs_1mib_at_250": 1.0,
+      "bandwidth_gain_500_vs_250_at_1mib": 1.0
+    },
+    "case_044": {
+      "default_cycles": 102921,
+      "min_cycles": 98948,
+      "max_cycles": 132892,
+      "min_hit_rate": 0.0054698865289496655,
+      "max_hit_rate": 0.3461247510127347,
+      "selected_candidates": [
+        "components"
+      ],
+      "capacity_gain_4mib_vs_1mib_at_250": 1.0,
+      "bandwidth_gain_500_vs_250_at_1mib": 1.0401524032825322
+    },
+    "case_050": {
+      "default_cycles": 84038,
+      "min_cycles": 84036,
+      "max_cycles": 84047,
+      "min_hit_rate": 0.12831282603233415,
+      "max_hit_rate": 0.1494414088722047,
+      "selected_candidates": [
+        "bands8"
+      ],
+      "capacity_gain_4mib_vs_1mib_at_250": 1.0,
+      "bandwidth_gain_500_vs_250_at_1mib": 1.0000237993240992
+    },
+    "case_056": {
+      "default_cycles": 219072,
+      "min_cycles": 219072,
+      "max_cycles": 219072,
+      "min_hit_rate": 0.104321529242659,
+      "max_hit_rate": 0.1043289962478299,
+      "selected_candidates": [
+        "bands8"
+      ],
+      "capacity_gain_4mib_vs_1mib_at_250": 1.0,
+      "bandwidth_gain_500_vs_250_at_1mib": 1.0
+    },
+    "case_083": {
+      "default_cycles": 310731,
+      "min_cycles": 287606,
+      "max_cycles": 442480,
+      "min_hit_rate": 0.00048108109173861525,
+      "max_hit_rate": 0.6969682033001374,
+      "selected_candidates": [
+        "components"
+      ],
+      "capacity_gain_4mib_vs_1mib_at_250": 1.0090995002094638,
+      "bandwidth_gain_500_vs_250_at_1mib": 1.0683584953016858
+    }
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "keys": [
+    "sze2017",
+    "eyeriss2017",
+    "jouppi2017",
+    "hongkung1981",
+    "perotin2021",
+    "topcuoglu2002",
+    "kernighan1970",
+    "karypis1998",
+    "chen2018tvm",
+    "mattson1970"
+  ],
+  "ordinary_keys": [
+    "sze2017",
+    "eyeriss2017",
+    "jouppi2017",
+    "hongkung1981",
+    "perotin2021",
+    "topcuoglu2002",
+    "kernighan1970",
+    "karypis1998",
+    "chen2018tvm",
+    "mattson1970"
+  ],
+  "calls": [
+    {
+      "chapter_id": "pre1",
+      "keys": [
+        "sze2017"
+      ]
+    },
+    {
+      "chapter_id": "pre1",
+      "keys": [
+        "eyeriss2017"
+      ]
+    },
+    {
+      "chapter_id": "pre1",
+      "keys": [
+        "jouppi2017"
+      ]
+    },
+    {
+      "chapter_id": "pre1",
+      "keys": [
+        "hongkung1981"
+      ]
+    },
+    {
+      "chapter_id": "q1",
+      "keys": [
+        "perotin2021"
+      ]
+    },
+    {
+      "chapter_id": "q1",
+      "keys": [
+        "topcuoglu2002"
+      ]
+    },
+    {
+      "chapter_id": "q1",
+      "keys": [
+        "kernighan1970"
+      ]
+    },
+    {
+      "chapter_id": "q1",
+      "keys": [
+        "karypis1998"
+      ]
+    },
+    {
+      "chapter_id": "q2",
+      "keys": [
+        "chen2018tvm"
+      ]
+    },
+    {
+      "chapter_id": "q3",
+      "keys": [
+        "mattson1970"
+      ]
+    }
+  ],
+  "scope": "Body citation keys and current source/metadata/relevance evidence; actual PDF rendering checked separately.",
+  "reference_evidence": {
+    "status": "PASS",
+    "failures": [],
+    "references": [
+      {
+        "key": "sze2017",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "article",
+          "title": "Efficient Processing of Deep Neural Networks: A Tutorial and Survey",
+          "authors": [
+            "Vivienne Sze",
+            "Yu-Hsin Chen",
+            "Tien-Ju Yang",
+            "Joel S. Emer"
+          ],
+          "year": "2017",
+          "container": "Proceedings of the IEEE",
+          "volume": "105",
+          "issue": "12",
+          "pages": "2295-2329"
+        },
+        "failures": []
+      },
+      {
+        "key": "eyeriss2017",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "article",
+          "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
+          "authors": [
+            "Yu-Hsin Chen",
+            "Tushar Krishna",
+            "Joel S. Emer",
+            "Vivienne Sze"
+          ],
+          "year": "2017",
+          "container": "IEEE Journal of Solid-State Circuits",
+          "volume": "52",
+          "issue": "1",
+          "pages": "127-138"
+        },
+        "failures": []
+      },
+      {
+        "key": "jouppi2017",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "inproceedings",
+          "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit",
+          "authors": [
+            "Norman P. Jouppi",
+            "Cliff Young",
+            "Nishant Patil"
+          ],
+          "year": "2017",
+          "container": "Proceedings of the 44th Annual International Symposium on Computer Architecture",
+          "pages": "1-12"
+        },
+        "failures": []
+      },
+      {
+        "key": "hongkung1981",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "inproceedings",
+          "title": "I/O Complexity: The Red-Blue Pebble Game",
+          "authors": [
+            "Hong, J-W",
+            "Kung, H T"
+          ],
+          "year": "1981",
+          "container": "STOC 1981",
+          "pages": "326-333"
+        },
+        "failures": []
+      },
+      {
+        "key": "perotin2021",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "preprint",
+          "title": "Multi-Resource List Scheduling of Moldable Parallel Jobs under Precedence Constraints",
+          "authors": [
+            "Lucas Perotin",
+            "Hongyang Sun",
+            "Padma Raghavan"
+          ],
+          "year": "2021",
+          "container": "arXiv:2106.07059"
+        },
+        "failures": []
+      },
+      {
+        "key": "topcuoglu2002",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "article",
+          "title": "Performance-Effective and Low-Complexity Task Scheduling for Heterogeneous Computing",
+          "authors": [
+            "H. Topcuoglu",
+            "S. Hariri",
+            "Min-You Wu"
+          ],
+          "year": "2002",
+          "container": "IEEE Transactions on Parallel and Distributed Systems",
+          "volume": "13",
+          "issue": "3",
+          "pages": "260-274"
+        },
+        "failures": []
+      },
+      {
+        "key": "kernighan1970",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "article",
+          "title": "An Efficient Heuristic Procedure for Partitioning Graphs",
+          "authors": [
+            "B. W. Kernighan",
+            "S. Lin"
+          ],
+          "year": "1970",
+          "container": "Bell System Technical Journal",
+          "volume": "49",
+          "issue": "2",
+          "pages": "291-307"
+        },
+        "failures": []
+      },
+      {
+        "key": "karypis1998",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "article",
+          "title": "A Fast and High Quality Multilevel Scheme for Partitioning Irregular Graphs",
+          "authors": [
+            "George Karypis",
+            "Vipin Kumar"
+          ],
+          "year": "1998",
+          "container": "SIAM Journal on Scientific Computing",
+          "volume": "20",
+          "issue": "1",
+          "pages": "359-392"
+        },
+        "failures": []
+      },
+      {
+        "key": "chen2018tvm",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "inproceedings",
+          "title": "TVM: An Automated End-to-End Optimizing Compiler for Deep Learning",
+          "authors": [
+            "Tianqi Chen",
+            "Thierry Moreau",
+            "Ziheng Jiang"
+          ],
+          "year": "2018",
+          "container": "13th USENIX Symposium on Operating Systems Design and Implementation (OSDI 18)",
+          "pages": "578-594"
+        },
+        "failures": []
+      },
+      {
+        "key": "mattson1970",
+        "reference_type": "ordinary",
+        "metadata": {
+          "kind": "article",
+          "title": "Evaluation Techniques for Storage Hierarchies",
+          "authors": [
+            "R.L. Mattson",
+            "J. Gecsei",
+            "D. R. Slutz",
+            "I. L. Traiger"
+          ],
+          "year": "1970",
+          "container": "IBM Systems Journal",
+          "volume": "9",
+          "issue": "2",
+          "pages": "78-117"
+        },
+        "failures": []
+      },
+      {
+        "key": "ai_tool_disclosure",
+        "reference_type": "ai_tool",
+        "metadata": {
+          "tool_name": "DeepSeek",
+          "version": "DeepSeek-V4.1-Flash",
+          "organization": "深度求索（DeepSeek）",
+          "date": "2026-09-23"
+        },
+        "failures": []
+      }
+    ],
+    "assurance": "Checks current bibliography fields, capture/receipt hashes, duplicate works and cited excerpts. Does not prove remote authenticity or human cognition from editable records; actual source reading and review are mandatory."
+  }
+}

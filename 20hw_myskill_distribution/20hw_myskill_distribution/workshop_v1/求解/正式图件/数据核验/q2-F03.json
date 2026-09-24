@@ -1,0 +1,15 @@
+{
+  "source_path": "求解/图件数据/q2-F03.csv",
+  "sha256": "fadc3d29033fb17e63122694451ccf649d3106499b6e71d0e12143d2e1fc8944",
+  "fields": [
+    "case",
+    "cores",
+    "candidate",
+    "partition_added_copy_bytes",
+    "spill_added_copy_bytes",
+    "added_copy_bytes"
+  ],
+  "row_count": 400,
+  "valid": true,
+  "validation_method": "标准CSV解析、非空行与计划字段逐项核对；源表由正式评估结构化结果派生。"
+}

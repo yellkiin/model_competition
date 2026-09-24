@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "error": null,
+  "started_at": "2026-09-23T13:53:25.848385+00:00",
+  "finished_at": "2026-09-23T13:54:36.557249+00:00",
+  "tool": "华为杯_求解规范/tools/build_supporting_materials.py",
+  "command": [
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\workspace_execution.py",
+    "--child",
+    "E:\\20hw_myskill_distribution\\workshop_v1",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\build_supporting_materials.py",
+    "--manifest",
+    "求解/支撑材料清单.json",
+    "--project-root",
+    ".",
+    "--runtime",
+    "codex",
+    "--package-only"
+  ],
+  "runtime": "codex",
+  "cwd": "E:\\20hw_myskill_distribution\\workshop_v1",
+  "shared_changes": [],
+  "inputs": {
+    "status": "PASS",
+    "changed_inputs": []
+  },
+  "independent_reproduction_root": null,
+  "stdout": "求解/验收输出/工作区运行/f79fde034d6a45279091d3392882643f/stdout.log",
+  "stderr": "求解/验收输出/工作区运行/f79fde034d6a45279091d3392882643f/stderr.log",
+  "assurance": "真实子进程和文件一致性检查；不代表科学或视觉审阅，不是 OS 沙箱。"
+}

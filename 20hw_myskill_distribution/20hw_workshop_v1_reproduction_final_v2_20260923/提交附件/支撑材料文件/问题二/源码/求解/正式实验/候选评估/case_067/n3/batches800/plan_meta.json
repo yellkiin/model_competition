@@ -1,0 +1,9 @@
+{
+  "method": "independent_component_batches",
+  "num_cores": 3,
+  "target_ops": 800,
+  "subgraphs": 12,
+  "max_batch_ops": 744,
+  "components": 71,
+  "component_size_max": 124
+}

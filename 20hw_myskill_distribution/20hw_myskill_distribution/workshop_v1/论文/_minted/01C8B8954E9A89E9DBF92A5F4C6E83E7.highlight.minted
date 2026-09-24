@@ -1,0 +1,295 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}赛题脚本共用的命令行输入输出。}
+
+\PYG{l+s+sd}{本文件只处理四件事：读取 JSON、读取固定配置、调用评估函数、写出结果。}
+\PYG{l+s+sd}{算法本身全部留在 ``schedule\PYGZus{}step*.py`` 和三个问题评估器中。这样阅读算法}
+\PYG{l+s+sd}{时不需要穿过大量日志与调试代码。}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{\PYGZus{}\PYGZus{}future\PYGZus{}\PYGZus{}}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{annotations}
+
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{argparse}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{json}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{sys}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{pathlib}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{Path}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{functools}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{wraps}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{cli\PYGZus{}errors}\PYG{p}{(}\PYG{n}{function}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Report invalid input/scheduling errors without exposing a Python traceback.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n+nd}{@wraps}\PYG{p}{(}\PYG{n}{function}\PYG{p}{)}
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{run}\PYG{p}{(}\PYG{o}{*}\PYG{n}{args}\PYG{p}{,} \PYG{o}{**}\PYG{n}{kwargs}\PYG{p}{):}
+        \PYG{k}{try}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n}{function}\PYG{p}{(}\PYG{o}{*}\PYG{n}{args}\PYG{p}{,} \PYG{o}{**}\PYG{n}{kwargs}\PYG{p}{)}
+        \PYG{k}{except} \PYG{p}{(}\PYG{n+ne}{ValueError}\PYG{p}{,} \PYG{n+ne}{RuntimeError}\PYG{p}{,} \PYG{n+ne}{OSError}\PYG{p}{)} \PYG{k}{as} \PYG{n}{error}\PYG{p}{:}
+            \PYG{n}{emit\PYGZus{}error}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}[EVALUATION ERROR] }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{error}\PYG{p}{))}
+            \PYG{k}{return} \PYG{l+m+mi}{1}
+    \PYG{k}{return} \PYG{n}{run}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{emit}\PYG{p}{(}\PYG{n}{message}\PYG{p}{):}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{message}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{emit\PYGZus{}error}\PYG{p}{(}\PYG{n}{message}\PYG{p}{):}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{message}\PYG{p}{,} \PYG{n}{file}\PYG{o}{=}\PYG{n}{sys}\PYG{o}{.}\PYG{n}{stderr}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{write\PYGZus{}text}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{n}{text}\PYG{p}{):}
+    \PYG{n}{path} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{path}\PYG{p}{)}
+    \PYG{n}{path}\PYG{o}{.}\PYG{n}{parent}\PYG{o}{.}\PYG{n}{mkdir}\PYG{p}{(}\PYG{n}{parents}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,} \PYG{n}{exist\PYGZus{}ok}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{path}\PYG{o}{.}\PYG{n}{write\PYGZus{}text}\PYG{p}{(}\PYG{n}{text}\PYG{p}{,} \PYG{n}{encoding}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}utf\PYGZhy{}8\PYGZsq{}}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}read\PYGZus{}json}\PYG{p}{(}\PYG{n}{path}\PYG{p}{):}
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{unique\PYGZus{}object}\PYG{p}{(}\PYG{n}{pairs}\PYG{p}{):}
+        \PYG{n}{value} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+        \PYG{k}{for} \PYG{n}{key}\PYG{p}{,} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{pairs}\PYG{p}{:}
+            \PYG{k}{if} \PYG{n}{key} \PYG{o+ow}{in} \PYG{n}{value}\PYG{p}{:}
+                \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{path}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: duplicate JSON key }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{key}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+            \PYG{n}{value}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{item}
+        \PYG{k}{return} \PYG{n}{value}
+    \PYG{k}{return} \PYG{n}{json}\PYG{o}{.}\PYG{n}{loads}\PYG{p}{(}\PYG{n}{Path}\PYG{p}{(}\PYG{n}{path}\PYG{p}{)}\PYG{o}{.}\PYG{n}{read\PYGZus{}text}\PYG{p}{(}\PYG{n}{encoding}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}utf\PYGZhy{}8\PYGZsq{}}\PYG{p}{),} \PYG{n}{object\PYGZus{}pairs\PYGZus{}hook}\PYG{o}{=}\PYG{n}{unique\PYGZus{}object}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}write\PYGZus{}json}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{n}{value}\PYG{p}{):}
+    \PYG{n}{write\PYGZus{}text}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{n}{json}\PYG{o}{.}\PYG{n}{dumps}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{n}{ensure\PYGZus{}ascii}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{indent}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{format\PYGZus{}data\PYGZus{}movement\PYGZus{}log}\PYG{p}{(}\PYG{n}{result}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}返回一行便于检查的数据搬运摘要。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{movement} \PYG{o}{=} \PYG{n}{result}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}data\PYGZus{}movement\PYGZus{}bytes\PYGZsq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}\PYGZcb{})}
+    \PYG{n}{cache} \PYG{o}{=} \PYG{n}{result}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}cache\PYGZus{}stats\PYGZsq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}\PYGZcb{})}
+    \PYG{n}{parts} \PYG{o}{=} \PYG{p}{[}
+        \PYG{l+s+s1}{\PYGZsq{}scheduled\PYGZus{}copy\PYGZus{}bytes=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}
+            \PYG{n}{movement}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}scheduled\PYGZus{}copy\PYGZus{}bytes\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)),}
+        \PYG{l+s+s1}{\PYGZsq{}physical\PYGZus{}ddr\PYGZus{}bytes=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}
+            \PYG{n}{movement}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}physical\PYGZus{}ddr\PYGZus{}bytes\PYGZsq{}}\PYG{p}{,}
+                         \PYG{n}{movement}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}scheduled\PYGZus{}copy\PYGZus{}bytes\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{))),}
+    \PYG{p}{]}
+    \PYG{k}{if} \PYG{n}{cache}\PYG{p}{:}
+        \PYG{n}{parts}\PYG{o}{.}\PYG{n}{extend}\PYG{p}{([}
+            \PYG{l+s+s1}{\PYGZsq{}cache\PYGZus{}hits=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{/}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}
+                \PYG{n}{cache}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}hits\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{),} \PYG{n}{cache}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}accesses\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)),}
+            \PYG{l+s+s1}{\PYGZsq{}cache\PYGZus{}hit\PYGZus{}bytes=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{cache}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}hit\PYGZus{}bytes\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)),}
+        \PYG{p}{])}
+    \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}data movement: \PYGZsq{}} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}, \PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{parts}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{format\PYGZus{}multicore\PYGZus{}result\PYGZus{}log}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{result}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}生成稳定、简短的人类可读日志。完整细节始终保存在结果 JSON。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{lines} \PYG{o}{=} \PYG{p}{[}
+        \PYG{l+s+s1}{\PYGZsq{}input\PYGZus{}graph: }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{),}
+        \PYG{l+s+s1}{\PYGZsq{}scene: }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{result}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}scene\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}A\PYGZsq{}}\PYG{p}{)),}
+        \PYG{l+s+s1}{\PYGZsq{}makespan: }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}makespan\PYGZsq{}}\PYG{p}{]),}
+        \PYG{l+s+s1}{\PYGZsq{}num\PYGZus{}cores: }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}num\PYGZus{}cores\PYGZsq{}}\PYG{p}{]),}
+        \PYG{n}{format\PYGZus{}data\PYGZus{}movement\PYGZus{}log}\PYG{p}{(}\PYG{n}{result}\PYG{p}{),}
+    \PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{core} \PYG{o+ow}{in} \PYG{n}{result}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}per\PYGZus{}core\PYGZus{}timeline\PYGZsq{}}\PYG{p}{,} \PYG{p}{[]):}
+        \PYG{n}{ops} \PYG{o}{=} \PYG{n}{core}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{,} \PYG{p}{[])}
+        \PYG{n}{end} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{((}\PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{ops}\PYG{p}{),} \PYG{n}{default}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{lines}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}core }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{: ops=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{, end=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}
+            \PYG{n}{core}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{],} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ops}\PYG{p}{),} \PYG{n}{end}\PYG{p}{))}
+    \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{lines}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}trace\PYGZus{}json}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{result}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}把操作时间线转换为 Perfetto/Chrome 可以打开的 Trace JSON。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{events} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{pipe\PYGZus{}order} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}MTE2\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}MTE3\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}M\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}V\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{3}\PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} Use one Perfetto process track per core.  Without explicit metadata the}
+    \PYG{c+c1}{\PYGZsh{} UI labels numeric tids as generic ``Thread`` tracks and loses the core /}
+    \PYG{c+c1}{\PYGZsh{} pipe hierarchy.}
+    \PYG{n}{pid\PYGZus{}base} \PYG{o}{=} \PYG{l+m+mi}{1000}
+    \PYG{k}{for} \PYG{n}{core} \PYG{o+ow}{in} \PYG{n}{result}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}per\PYGZus{}core\PYGZus{}timeline\PYGZsq{}}\PYG{p}{,} \PYG{p}{[]):}
+        \PYG{n}{core\PYGZus{}id} \PYG{o}{=} \PYG{n}{core}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{]}
+        \PYG{n}{pid} \PYG{o}{=} \PYG{n}{pid\PYGZus{}base} \PYG{o}{+} \PYG{n}{core\PYGZus{}id}
+        \PYG{n}{events}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}name\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}process\PYGZus{}name\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}ph\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}M\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pid\PYGZsq{}}\PYG{p}{:} \PYG{n}{pid}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}tid\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{0}\PYG{p}{,}
+                       \PYG{l+s+s1}{\PYGZsq{}args\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}name\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}Core }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{core\PYGZus{}id}\PYG{p}{)\PYGZcb{}\PYGZcb{})}
+        \PYG{k}{for} \PYG{n}{pipe}\PYG{p}{,} \PYG{n}{index} \PYG{o+ow}{in} \PYG{n}{pipe\PYGZus{}order}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+            \PYG{n}{events}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}name\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}thread\PYGZus{}name\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}ph\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}M\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pid\PYGZsq{}}\PYG{p}{:} \PYG{n}{pid}\PYG{p}{,}
+                           \PYG{l+s+s1}{\PYGZsq{}tid\PYGZsq{}}\PYG{p}{:} \PYG{n}{index}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}args\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}name\PYGZsq{}}\PYG{p}{:} \PYG{n}{pipe}\PYG{p}{\PYGZcb{}\PYGZcb{})}
+    \PYG{k}{for} \PYG{n}{core} \PYG{o+ow}{in} \PYG{n}{result}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}per\PYGZus{}core\PYGZus{}timeline\PYGZsq{}}\PYG{p}{,} \PYG{p}{[]):}
+        \PYG{n}{core\PYGZus{}id} \PYG{o}{=} \PYG{n}{core}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{]}
+        \PYG{n}{pid} \PYG{o}{=} \PYG{n}{pid\PYGZus{}base} \PYG{o}{+} \PYG{n}{core\PYGZus{}id}
+        \PYG{c+c1}{\PYGZsh{} Evaluators already publish task/subgraph spans. Keep them as their}
+        \PYG{c+c1}{\PYGZsh{} own category so the core process can be collapsed/expanded while}
+        \PYG{c+c1}{\PYGZsh{} the four pipe tracks remain visible underneath it.}
+        \PYG{n}{subgraphs} \PYG{o}{=} \PYG{n}{core}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}subgraphs\PYGZsq{}}\PYG{p}{,} \PYG{p}{[])}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{subgraphs}\PYG{p}{:}
+            \PYG{n}{grouped} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+            \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{core}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{,} \PYG{p}{[]):}
+                \PYG{n}{sg} \PYG{o}{=} \PYG{n}{op}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}id\PYGZsq{}}\PYG{p}{,} \PYG{n}{op}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{))}
+                \PYG{k}{if} \PYG{n}{sg} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+                    \PYG{k}{continue}
+                \PYG{n}{item} \PYG{o}{=} \PYG{n}{grouped}\PYG{o}{.}\PYG{n}{setdefault}\PYG{p}{(}\PYG{n}{sg}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{sg}\PYG{p}{,}
+                                               \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{),}
+                                               \PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{],}
+                                               \PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{]\PYGZcb{})}
+                \PYG{n}{item}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{item}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{],} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{])}
+                \PYG{n}{item}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{item}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{],} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{])}
+            \PYG{n}{subgraphs} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{grouped}\PYG{o}{.}\PYG{n}{values}\PYG{p}{())}
+        \PYG{k}{for} \PYG{n}{span} \PYG{o+ow}{in} \PYG{n}{subgraphs}\PYG{p}{:}
+            \PYG{n}{start}\PYG{p}{,} \PYG{n}{end} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{span}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{]),} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{span}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{])}
+            \PYG{k}{if} \PYG{n}{end} \PYG{o}{\PYGZlt{}} \PYG{n}{start}\PYG{p}{:}
+                \PYG{k}{continue}
+            \PYG{n}{sg} \PYG{o}{=} \PYG{n}{span}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}id\PYGZsq{}}\PYG{p}{,} \PYG{n}{span}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{))}
+            \PYG{n}{events}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}
+                \PYG{l+s+s1}{\PYGZsq{}name\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}Subgraph }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{sg}\PYG{p}{),} \PYG{l+s+s1}{\PYGZsq{}cat\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}SUBGRAPH\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}ph\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}X\PYGZsq{}}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}ts\PYGZsq{}}\PYG{p}{:} \PYG{n}{start}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}dur\PYGZsq{}}\PYG{p}{:} \PYG{n}{end} \PYG{o}{\PYGZhy{}} \PYG{n}{start}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pid\PYGZsq{}}\PYG{p}{:} \PYG{n}{pid}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}tid\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{100}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}args\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{core\PYGZus{}id}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{span}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{),}
+                         \PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{sg}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{:} \PYG{n}{start}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}end\PYGZsq{}}\PYG{p}{:} \PYG{n}{end}\PYG{p}{\PYGZcb{},}
+            \PYG{p}{\PYGZcb{})}
+        \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n}{core}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{,} \PYG{p}{[]):}
+            \PYG{n}{pipe} \PYG{o}{=} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZsq{}}\PYG{p}{]}
+            \PYG{n}{events}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}
+                \PYG{l+s+s1}{\PYGZsq{}name\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ \PYGZsh{}}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{],} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}id\PYGZsq{}}\PYG{p}{]),}
+                \PYG{l+s+s1}{\PYGZsq{}cat\PYGZsq{}}\PYG{p}{:} \PYG{n}{pipe}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}ph\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}X\PYGZsq{}}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}ts\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}start\PYGZsq{}}\PYG{p}{],}
+                \PYG{l+s+s1}{\PYGZsq{}dur\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}duration\PYGZsq{}}\PYG{p}{],}
+                \PYG{l+s+s1}{\PYGZsq{}pid\PYGZsq{}}\PYG{p}{:} \PYG{n}{pid}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}tid\PYGZsq{}}\PYG{p}{:} \PYG{n}{pipe\PYGZus{}order}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{pipe}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{),}
+                \PYG{l+s+s1}{\PYGZsq{}args\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{core\PYGZus{}id}\PYG{p}{,}
+                    \PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}id\PYGZsq{}}\PYG{p}{),}
+                    \PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}id\PYGZsq{}}\PYG{p}{),}
+                    \PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}id\PYGZsq{}}\PYG{p}{:} \PYG{n}{op}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}id\PYGZsq{}}\PYG{p}{],}
+                    \PYG{l+s+s1}{\PYGZsq{}pipe\PYGZsq{}}\PYG{p}{:} \PYG{n}{pipe}\PYG{p}{,}
+                \PYG{p}{\PYGZcb{},}
+            \PYG{p}{\PYGZcb{})}
+    \PYG{k}{return} \PYG{n}{json}\PYG{o}{.}\PYG{n}{dumps}\PYG{p}{(\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}traceEvents\PYGZsq{}}\PYG{p}{:} \PYG{n}{events}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}displayTimeUnit\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}cycles\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}otherData\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s1}{\PYGZsq{}input\PYGZus{}graph\PYGZsq{}}\PYG{p}{:} \PYG{n}{filename}\PYG{p}{,}
+            \PYG{l+s+s1}{\PYGZsq{}scene\PYGZsq{}}\PYG{p}{:} \PYG{n}{result}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}scene\PYGZsq{}}\PYG{p}{),}
+            \PYG{l+s+s1}{\PYGZsq{}makespan\PYGZsq{}}\PYG{p}{:} \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}makespan\PYGZsq{}}\PYG{p}{],}
+            \PYG{l+s+s1}{\PYGZsq{}track\PYGZus{}layout\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}one Perfetto process group per core; pipe threads are named PIPE\PYGZus{}*\PYGZsq{}}\PYG{p}{,}
+            \PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}spans\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}X events named Subgraph \PYGZlt{}id\PYGZgt{} carry start/end in args\PYGZsq{}}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZcb{},} \PYG{n}{ensure\PYGZus{}ascii}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{indent}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{format\PYGZus{}scene\PYGZus{}a\PYGZus{}trace\PYGZus{}json}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{result}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{\PYGZus{}trace\PYGZus{}json}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{result}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{format\PYGZus{}scene\PYGZus{}b\PYGZus{}trace\PYGZus{}json}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{result}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{\PYGZus{}trace\PYGZus{}json}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{result}\PYG{p}{)}
+
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}common\PYGZus{}paths}\PYG{p}{(}\PYG{n}{args}\PYG{p}{,} \PYG{n}{problem\PYGZus{}name}\PYG{p}{):}
+    \PYG{n}{graph\PYGZus{}path} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{graph}\PYG{p}{)}
+    \PYG{n}{stem} \PYG{o}{=} \PYG{n}{graph\PYGZus{}path}\PYG{o}{.}\PYG{n}{with\PYGZus{}suffix}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{plan} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{plan}\PYG{p}{)} \PYG{k}{if} \PYG{n}{args}\PYG{o}{.}\PYG{n}{plan} \PYG{k}{else} \PYG{n}{Path}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{stem}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}multicore\PYGZus{}res.json\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{config} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{config}\PYG{p}{)} \PYG{k}{if} \PYG{n}{args}\PYG{o}{.}\PYG{n}{config} \PYG{k}{else} \PYG{n}{graph\PYGZus{}path}\PYG{o}{.}\PYG{n}{parent} \PYG{o}{/} \PYG{l+s+s1}{\PYGZsq{}config.txt\PYGZsq{}}
+    \PYG{n}{output} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{output}\PYG{p}{)} \PYG{k}{if} \PYG{n}{args}\PYG{o}{.}\PYG{n}{output} \PYG{k}{else} \PYG{n}{Path}\PYG{p}{(}
+        \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{stem}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZus{}res.json\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{problem\PYGZus{}name}\PYG{p}{))}
+    \PYG{n}{trace} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{trace\PYGZus{}output}\PYG{p}{)} \PYG{k}{if} \PYG{n}{args}\PYG{o}{.}\PYG{n}{trace\PYGZus{}output} \PYG{k}{else} \PYG{n}{Path}\PYG{p}{(}
+        \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{stem}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZus{}trace.json\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{problem\PYGZus{}name}\PYG{p}{))}
+    \PYG{n}{log} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{log\PYGZus{}output}\PYG{p}{)} \PYG{k}{if} \PYG{n}{args}\PYG{o}{.}\PYG{n}{log\PYGZus{}output} \PYG{k}{else} \PYG{n}{Path}\PYG{p}{(}
+        \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{stem}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZus{}log.txt\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{problem\PYGZus{}name}\PYG{p}{))}
+    \PYG{k}{return} \PYG{n}{graph\PYGZus{}path}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{,} \PYG{n}{config}\PYG{p}{,} \PYG{n}{output}\PYG{p}{,} \PYG{n}{trace}\PYG{p}{,} \PYG{n}{log}
+
+
+\PYG{n+nd}{@cli\PYGZus{}errors}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{run\PYGZus{}problem\PYGZus{}cli}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{,} \PYG{n}{argv}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}三个问题共用一个命令行流程，避免维护三份重复代码。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{parser} \PYG{o}{=} \PYG{n}{argparse}\PYG{o}{.}\PYG{n}{ArgumentParser}\PYG{p}{(}
+        \PYG{n}{description}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}评估问题 }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ 的多核执行时间\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{))}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}graph\PYGZsq{}}\PYG{p}{,} \PYG{n}{help}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}原始计算图 JSON\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}plan\PYGZsq{}}\PYG{p}{,} \PYG{n}{nargs}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}?\PYGZsq{}}\PYG{p}{,} \PYG{n}{help}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}多核方案 JSON；默认取同名文件\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}config\PYGZsq{}}\PYG{p}{,} \PYG{n}{help}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}固定评估配置；默认取图所在目录/config.txt\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}o\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}output\PYGZsq{}}\PYG{p}{,} \PYG{n}{help}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}结果 JSON 路径\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}trace\PYGZhy{}output\PYGZsq{}}\PYG{p}{,} \PYG{n}{help}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Perfetto Trace JSON 路径\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}log\PYGZhy{}output\PYGZsq{}}\PYG{p}{,} \PYG{n}{help}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}简短文本日志路径\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{args} \PYG{o}{=} \PYG{n}{parser}\PYG{o}{.}\PYG{n}{parse\PYGZus{}args}\PYG{p}{(}\PYG{n}{argv}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{args}\PYG{o}{.}\PYG{n}{config} \PYG{o+ow}{and} \PYG{o+ow}{not} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{config}\PYG{p}{)}\PYG{o}{.}\PYG{n}{is\PYGZus{}file}\PYG{p}{():}
+        \PYG{k}{raise} \PYG{n+ne}{FileNotFoundError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}configuration file not found: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{args}\PYG{o}{.}\PYG{n}{config}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{n}{name} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}problem\PYGZus{}}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{problem}\PYG{p}{)}
+    \PYG{n}{graph\PYGZus{}path}\PYG{p}{,} \PYG{n}{plan\PYGZus{}path}\PYG{p}{,} \PYG{n}{config\PYGZus{}path}\PYG{p}{,} \PYG{n}{output}\PYG{p}{,} \PYG{n}{trace}\PYG{p}{,} \PYG{n}{log} \PYG{o}{=} \PYG{n}{\PYGZus{}common\PYGZus{}paths}\PYG{p}{(}
+        \PYG{n}{args}\PYG{p}{,} \PYG{n}{name}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} 容量/带宽/Pipe 槽位统一来自 config.txt；没有配置文件就不再评估，}
+    \PYG{c+c1}{\PYGZsh{} 避免用代码内置数值给出错误成绩。}
+    \PYG{k}{if} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{)} \PYG{o}{!=} \PYG{n}{args}\PYG{o}{.}\PYG{n}{config} \PYG{o+ow}{and} \PYG{o+ow}{not} \PYG{n}{config\PYGZus{}path}\PYG{o}{.}\PYG{n}{is\PYGZus{}file}\PYG{p}{():}
+        \PYG{k}{raise} \PYG{n+ne}{FileNotFoundError}\PYG{p}{(}
+            \PYG{l+s+s1}{\PYGZsq{}configuration file not found: }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ (defaults to \PYGZlt{}graph dir\PYGZgt{}/config.txt; \PYGZsq{}}
+            \PYG{l+s+s1}{\PYGZsq{}pass \PYGZhy{}\PYGZhy{}config to choose another file)\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{))}
+    \PYG{n}{graph}\PYG{p}{,} \PYG{n}{plan} \PYG{o}{=} \PYG{n}{\PYGZus{}read\PYGZus{}json}\PYG{p}{(}\PYG{n}{graph\PYGZus{}path}\PYG{p}{),} \PYG{n}{\PYGZus{}read\PYGZus{}json}\PYG{p}{(}\PYG{n}{plan\PYGZus{}path}\PYG{p}{)}
+
+    \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{evaluation\PYGZus{}validation}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{read\PYGZus{}evaluation\PYGZus{}config}
+    \PYG{n}{settings} \PYG{o}{=} \PYG{n}{read\PYGZus{}evaluation\PYGZus{}config}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{))}
+    \PYG{n}{capacity} \PYG{o}{=} \PYG{n}{settings}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}capacity\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{bandwidth} \PYG{o}{=} \PYG{n}{settings}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZsq{}}\PYG{p}{]}
+
+    \PYG{k}{if} \PYG{n}{problem} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
+        \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{multicore\PYGZus{}cut\PYGZus{}evaluate\PYGZus{}problem\PYGZus{}1}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{evaluate\PYGZus{}scene\PYGZus{}a}\PYG{p}{,} \PYG{n}{read\PYGZus{}scene\PYGZus{}a\PYGZus{}config}
+        \PYG{n}{scene} \PYG{o}{=} \PYG{n}{read\PYGZus{}scene\PYGZus{}a\PYGZus{}config}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{))}
+        \PYG{n}{result} \PYG{o}{=} \PYG{n}{evaluate\PYGZus{}scene\PYGZus{}a}\PYG{p}{(}
+            \PYG{n}{graph}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{,} \PYG{n}{bandwidth}\PYG{o}{=}\PYG{n}{bandwidth}\PYG{p}{,} \PYG{n}{capacity}\PYG{o}{=}\PYG{n}{capacity}\PYG{p}{,}
+            \PYG{n}{cross\PYGZus{}core\PYGZus{}wait}\PYG{o}{=}\PYG{n}{scene}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}cross\PYGZus{}core\PYGZus{}wait\PYGZus{}cycles\PYGZsq{}}\PYG{p}{],}
+            \PYG{n}{same\PYGZus{}core\PYGZus{}wait}\PYG{o}{=}\PYG{n}{scene}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}task\PYGZus{}same\PYGZus{}core\PYGZus{}wait\PYGZus{}cycles\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{trace\PYGZus{}text} \PYG{o}{=} \PYG{n}{format\PYGZus{}scene\PYGZus{}a\PYGZus{}trace\PYGZus{}json}\PYG{p}{(}\PYG{n}{graph\PYGZus{}path}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{result}\PYG{p}{)}
+    \PYG{k}{elif} \PYG{n}{problem} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{:}
+        \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{multicore\PYGZus{}cut\PYGZus{}evaluate\PYGZus{}problem\PYGZus{}2}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{evaluate\PYGZus{}scene\PYGZus{}b}\PYG{p}{,} \PYG{n}{read\PYGZus{}scene\PYGZus{}b\PYGZus{}config}
+        \PYG{n}{scene} \PYG{o}{=} \PYG{n}{read\PYGZus{}scene\PYGZus{}b\PYGZus{}config}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{))}
+        \PYG{n}{result} \PYG{o}{=} \PYG{n}{evaluate\PYGZus{}scene\PYGZus{}b}\PYG{p}{(}
+            \PYG{n}{graph}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{,} \PYG{n}{bandwidth}\PYG{o}{=}\PYG{n}{bandwidth}\PYG{p}{,} \PYG{n}{capacity}\PYG{o}{=}\PYG{n}{capacity}\PYG{p}{,}
+            \PYG{n}{cross\PYGZus{}core\PYGZus{}copy\PYGZus{}delay}\PYG{o}{=}\PYG{n}{scene}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}cross\PYGZus{}core\PYGZus{}copy\PYGZus{}delay\PYGZus{}cycles\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{trace\PYGZus{}text} \PYG{o}{=} \PYG{n}{format\PYGZus{}scene\PYGZus{}b\PYGZus{}trace\PYGZus{}json}\PYG{p}{(}\PYG{n}{graph\PYGZus{}path}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{result}\PYG{p}{)}
+    \PYG{k}{elif} \PYG{n}{problem} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{:}
+        \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{multicore\PYGZus{}cut\PYGZus{}evaluate\PYGZus{}problem\PYGZus{}3}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{p}{(}
+            \PYG{n}{evaluate\PYGZus{}problem\PYGZus{}3}\PYG{p}{,} \PYG{n}{read\PYGZus{}cache\PYGZus{}config}\PYG{p}{,} \PYG{n}{read\PYGZus{}scene\PYGZus{}b\PYGZus{}config}\PYG{p}{)}
+        \PYG{n}{scene} \PYG{o}{=} \PYG{n}{read\PYGZus{}scene\PYGZus{}b\PYGZus{}config}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{))}
+        \PYG{n}{cache} \PYG{o}{=} \PYG{n}{read\PYGZus{}cache\PYGZus{}config}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{))}
+        \PYG{n}{result} \PYG{o}{=} \PYG{n}{evaluate\PYGZus{}problem\PYGZus{}3}\PYG{p}{(}
+            \PYG{n}{graph}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{,} \PYG{n}{bandwidth}\PYG{o}{=}\PYG{n}{bandwidth}\PYG{p}{,} \PYG{n}{capacity}\PYG{o}{=}\PYG{n}{capacity}\PYG{p}{,}
+            \PYG{n}{cross\PYGZus{}core\PYGZus{}copy\PYGZus{}delay}\PYG{o}{=}\PYG{n}{scene}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}cross\PYGZus{}core\PYGZus{}copy\PYGZus{}delay\PYGZus{}cycles\PYGZsq{}}\PYG{p}{],}
+            \PYG{o}{**}\PYG{n}{cache}\PYG{p}{)}
+        \PYG{n}{trace\PYGZus{}text} \PYG{o}{=} \PYG{n}{format\PYGZus{}scene\PYGZus{}b\PYGZus{}trace\PYGZus{}json}\PYG{p}{(}\PYG{n}{graph\PYGZus{}path}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{result}\PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}problem must be 1, 2, or 3\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}input\PYGZus{}graph\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{graph\PYGZus{}path}\PYG{o}{.}\PYG{n}{name}
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}input\PYGZus{}plan\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{plan\PYGZus{}path}\PYG{o}{.}\PYG{n}{name}
+    \PYG{n}{\PYGZus{}write\PYGZus{}json}\PYG{p}{(}\PYG{n}{output}\PYG{p}{,} \PYG{n}{result}\PYG{p}{)}
+    \PYG{n}{write\PYGZus{}text}\PYG{p}{(}\PYG{n}{trace}\PYG{p}{,} \PYG{n}{trace\PYGZus{}text} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{write\PYGZus{}text}\PYG{p}{(}\PYG{n}{log}\PYG{p}{,} \PYG{n}{format\PYGZus{}multicore\PYGZus{}result\PYGZus{}log}\PYG{p}{(}\PYG{n}{graph\PYGZus{}path}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{result}\PYG{p}{))}
+    \PYG{n}{emit}\PYG{p}{(}\PYG{n}{format\PYGZus{}data\PYGZus{}movement\PYGZus{}log}\PYG{p}{(}\PYG{n}{result}\PYG{p}{))}
+    \PYG{n}{emit}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}OK: problem }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ makespan=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{; result=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}
+        \PYG{n}{problem}\PYG{p}{,} \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}makespan\PYGZsq{}}\PYG{p}{],} \PYG{n}{output}\PYG{p}{))}
+    \PYG{k}{return} \PYG{l+m+mi}{0}
+
+
+\PYG{n+nd}{@cli\PYGZus{}errors}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{run\PYGZus{}multicore\PYGZus{}stub\PYGZus{}cli}\PYG{p}{(}\PYG{n}{argv}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}生成一份格式合法的随机示例方案；它不是参考优化算法。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{stub\PYGZus{}multicore\PYGZus{}cut\PYGZus{}and\PYGZus{}schedule}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{p}{(}
+        \PYG{n}{DEFAULT\PYGZus{}MAX\PYGZus{}SUBGRAPH\PYGZus{}SIZE}\PYG{p}{,} \PYG{n}{DEFAULT\PYGZus{}MIN\PYGZus{}SUBGRAPH\PYGZus{}SIZE}\PYG{p}{,}
+        \PYG{n}{DEFAULT\PYGZus{}NUM\PYGZus{}CORES}\PYG{p}{,} \PYG{n}{DEFAULT\PYGZus{}SEED}\PYG{p}{,} \PYG{n}{generate\PYGZus{}multicore\PYGZus{}plan}\PYG{p}{)}
+    \PYG{n}{parser} \PYG{o}{=} \PYG{n}{argparse}\PYG{o}{.}\PYG{n}{ArgumentParser}\PYG{p}{(}\PYG{n}{description}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}生成多核方案格式示例\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}graph\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}n\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}num\PYGZhy{}cores\PYGZsq{}}\PYG{p}{,} \PYG{n+nb}{type}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{,} \PYG{n}{default}\PYG{o}{=}\PYG{n}{DEFAULT\PYGZus{}NUM\PYGZus{}CORES}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}seed\PYGZsq{}}\PYG{p}{,} \PYG{n+nb}{type}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{,} \PYG{n}{default}\PYG{o}{=}\PYG{n}{DEFAULT\PYGZus{}SEED}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}min\PYGZhy{}subgraph\PYGZhy{}size\PYGZsq{}}\PYG{p}{,} \PYG{n+nb}{type}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{,}
+                        \PYG{n}{default}\PYG{o}{=}\PYG{n}{DEFAULT\PYGZus{}MIN\PYGZus{}SUBGRAPH\PYGZus{}SIZE}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}max\PYGZhy{}subgraph\PYGZhy{}size\PYGZsq{}}\PYG{p}{,} \PYG{n+nb}{type}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{,}
+                        \PYG{n}{default}\PYG{o}{=}\PYG{n}{DEFAULT\PYGZus{}MAX\PYGZus{}SUBGRAPH\PYGZus{}SIZE}\PYG{p}{)}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}o\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}output\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{args} \PYG{o}{=} \PYG{n}{parser}\PYG{o}{.}\PYG{n}{parse\PYGZus{}args}\PYG{p}{(}\PYG{n}{argv}\PYG{p}{)}
+    \PYG{n}{graph\PYGZus{}path} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{graph}\PYG{p}{)}
+    \PYG{n}{plan} \PYG{o}{=} \PYG{n}{generate\PYGZus{}multicore\PYGZus{}plan}\PYG{p}{(}
+        \PYG{n}{\PYGZus{}read\PYGZus{}json}\PYG{p}{(}\PYG{n}{graph\PYGZus{}path}\PYG{p}{),} \PYG{n}{num\PYGZus{}cores}\PYG{o}{=}\PYG{n}{args}\PYG{o}{.}\PYG{n}{num\PYGZus{}cores}\PYG{p}{,} \PYG{n}{seed}\PYG{o}{=}\PYG{n}{args}\PYG{o}{.}\PYG{n}{seed}\PYG{p}{,}
+        \PYG{n}{min\PYGZus{}subgraph\PYGZus{}size}\PYG{o}{=}\PYG{n}{args}\PYG{o}{.}\PYG{n}{min\PYGZus{}subgraph\PYGZus{}size}\PYG{p}{,}
+        \PYG{n}{max\PYGZus{}subgraph\PYGZus{}size}\PYG{o}{=}\PYG{n}{args}\PYG{o}{.}\PYG{n}{max\PYGZus{}subgraph\PYGZus{}size}\PYG{p}{)}
+    \PYG{n}{output} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{args}\PYG{o}{.}\PYG{n}{output}\PYG{p}{)} \PYG{k}{if} \PYG{n}{args}\PYG{o}{.}\PYG{n}{output} \PYG{k}{else} \PYG{n}{Path}\PYG{p}{(}
+        \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{graph\PYGZus{}path}\PYG{o}{.}\PYG{n}{with\PYGZus{}suffix}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{))} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}multicore\PYGZus{}res.json\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{\PYGZus{}write\PYGZus{}json}\PYG{p}{(}\PYG{n}{output}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{)}
+    \PYG{n}{emit}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}OK: }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ ops \PYGZhy{}\PYGZgt{} }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ subgraphs on }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ cores; output=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}
+        \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{plan}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}node\PYGZus{}to\PYGZus{}subgraph\PYGZsq{}}\PYG{p}{]),}
+        \PYG{n+nb}{len}\PYG{p}{(}\PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{plan}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}node\PYGZus{}to\PYGZus{}subgraph\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{())),}
+        \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{plan}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}schedules\PYGZsq{}}\PYG{p}{]),} \PYG{n}{output}\PYG{p}{))}
+    \PYG{k}{return} \PYG{l+m+mi}{0}
+\end{MintedVerbatim}

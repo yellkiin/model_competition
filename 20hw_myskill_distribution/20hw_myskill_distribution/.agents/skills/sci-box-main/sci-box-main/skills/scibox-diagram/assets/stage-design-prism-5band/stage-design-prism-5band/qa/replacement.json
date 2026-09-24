@@ -1,0 +1,296 @@
+{
+  "template_id": "stage-design-prism-5band",
+  "texts": {
+    "header_framework": [
+      "研究框架"
+    ],
+    "header_content": [
+      "研究内容"
+    ],
+    "header_methods": [
+      "研究方法"
+    ],
+    "band_title_0": [
+      "研究整体框架"
+    ],
+    "left_method_0": [
+      "文",
+      "献",
+      "研",
+      "究",
+      "法"
+    ],
+    "right_text_0": [
+      "总",
+      "体",
+      "设",
+      "计"
+    ],
+    "band_title_1": [
+      "研究阶段流程"
+    ],
+    "left_method_1": [
+      "实",
+      "验",
+      "研",
+      "究",
+      "法"
+    ],
+    "right_text_1": [
+      "阶",
+      "段",
+      "实",
+      "施"
+    ],
+    "band_title_2": [
+      "数据处理与分析流程"
+    ],
+    "left_method_2": [
+      "数",
+      "据",
+      "分",
+      "析",
+      "法"
+    ],
+    "right_text_2": [
+      "数",
+      "据",
+      "处",
+      "理"
+    ],
+    "band_title_3": [
+      "多场景决策与执行流程"
+    ],
+    "left_method_3": [
+      "对",
+      "比",
+      "分",
+      "析",
+      "法"
+    ],
+    "right_text_3": [
+      "场",
+      "景",
+      "验",
+      "证"
+    ],
+    "band_title_4": [
+      "成果与应用方向"
+    ],
+    "left_method_4": [
+      "归",
+      "纳",
+      "总",
+      "结",
+      "法"
+    ],
+    "right_text_4": [
+      "成",
+      "果",
+      "总",
+      "结"
+    ],
+    "framework_header_0": [
+      "理论基础"
+    ],
+    "framework_detail_0": [
+      "文献综述、",
+      "理论梳理与",
+      "概念界定"
+    ],
+    "framework_header_1": [
+      "研究背景"
+    ],
+    "framework_detail_1": [
+      "现状分析、",
+      "问题提出与",
+      "研究意义"
+    ],
+    "framework_header_2": [
+      "核心问题"
+    ],
+    "framework_detail_2": [
+      "关键问题、",
+      "研究假设与",
+      "工艺难点"
+    ],
+    "framework_header_3": [
+      "研究目标"
+    ],
+    "framework_detail_3": [
+      "总体目标、",
+      "分阶段目标",
+      "与研究边界"
+    ],
+    "framework_header_4": [
+      "协同点"
+    ],
+    "framework_detail_4": [
+      "理论协同、",
+      "方法协同与",
+      "应用协同"
+    ],
+    "stage_0_0": [
+      "需求调研"
+    ],
+    "stage_0_1": [
+      "文献梳理"
+    ],
+    "stage_0_2": [
+      "方案设计"
+    ],
+    "stage_0_3": [
+      "可行性分析"
+    ],
+    "stage_1_0": [
+      "系统搭建"
+    ],
+    "stage_1_1": [
+      "数据录入"
+    ],
+    "stage_1_2": [
+      "功能实现"
+    ],
+    "stage_1_3": [
+      "初步测试"
+    ],
+    "stage_2_0": [
+      "优化迭代"
+    ],
+    "stage_2_1": [
+      "性能评估"
+    ],
+    "stage_2_2": [
+      "对比实验"
+    ],
+    "stage_2_3": [
+      "结论整理"
+    ],
+    "data_header": [
+      "数据处理"
+    ],
+    "model_header": [
+      "模型训练与分析"
+    ],
+    "data_0": [
+      "原始数据"
+    ],
+    "data_1": [
+      "特征提取"
+    ],
+    "data_2": [
+      "数据清洗"
+    ],
+    "model_0_0": [
+      "模型初始化"
+    ],
+    "model_0_1": [
+      "参数调优"
+    ],
+    "model_0_2": [
+      "训练执行"
+    ],
+    "model_1_0": [
+      "验证集评估"
+    ],
+    "model_1_1": [
+      "误差分析"
+    ],
+    "model_1_2": [
+      "参数优化"
+    ],
+    "model_2_0": [
+      "结果可视化"
+    ],
+    "model_2_1": [
+      "对比分析"
+    ],
+    "model_2_2": [
+      "结论提炼"
+    ],
+    "scenario_heading_0": [
+      "场景 A"
+    ],
+    "scenario_0_input": [
+      "初",
+      "始",
+      "条",
+      "件"
+    ],
+    "scenario_0_constraint": [
+      "外",
+      "部",
+      "约",
+      "束"
+    ],
+    "decision_0": [
+      "模型",
+      "决策"
+    ],
+    "scenario_output_0": [
+      "决策输出"
+    ],
+    "scenario_heading_1": [
+      "场景 B"
+    ],
+    "scenario_1_input": [
+      "信",
+      "号",
+      "数",
+      "据"
+    ],
+    "scenario_1_constraint": [
+      "规",
+      "则",
+      "约",
+      "束"
+    ],
+    "decision_1": [
+      "响应",
+      "决策"
+    ],
+    "scenario_output_1": [
+      "执行结果"
+    ],
+    "scenario_heading_2": [
+      "场景 C"
+    ],
+    "scenario_2_input": [
+      "状",
+      "态",
+      "评",
+      "估"
+    ],
+    "scenario_2_constraint": [
+      "应",
+      "对",
+      "规",
+      "范"
+    ],
+    "decision_2": [
+      "算法",
+      "调度"
+    ],
+    "scenario_output_2": [
+      "应急措施"
+    ],
+    "core_outcome": [
+      "核心研究成果"
+    ],
+    "outcome_0": [
+      "理论贡献"
+    ],
+    "outcome_1": [
+      "方法协同"
+    ],
+    "outcome_2": [
+      "实践价值"
+    ],
+    "outcome_3": [
+      "推广应用"
+    ],
+    "outcome_4": [
+      "未来展望"
+    ]
+  }
+}

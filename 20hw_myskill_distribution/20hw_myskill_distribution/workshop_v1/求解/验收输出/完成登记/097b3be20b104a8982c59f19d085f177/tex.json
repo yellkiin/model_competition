@@ -1,0 +1,4185 @@
+{
+  "status": "PASS",
+  "manifest": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文输入.json",
+  "main": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文.tex",
+  "checks": [
+    {
+      "code": "fixed_chapter_structure",
+      "ok": true,
+      "audit": {
+        "status": "PASS",
+        "failures": [],
+        "chapters": [
+          {
+            "chapter_id": "pre1",
+            "headings": [
+              {
+                "level": 1,
+                "title": "问题重述"
+              },
+              {
+                "level": 2,
+                "title": "问题背景"
+              },
+              {
+                "level": 2,
+                "title": "问题重述"
+              }
+            ]
+          },
+          {
+            "chapter_id": "pre2",
+            "headings": [
+              {
+                "level": 1,
+                "title": "模型假设"
+              }
+            ]
+          },
+          {
+            "chapter_id": "pre3",
+            "headings": [
+              {
+                "level": 1,
+                "title": "关键性符号说明"
+              }
+            ]
+          },
+          {
+            "chapter_id": "q1",
+            "headings": [
+              {
+                "level": 1,
+                "title": "问题一求解与分析"
+              },
+              {
+                "level": 2,
+                "title": "问题的描述与分析"
+              },
+              {
+                "level": 2,
+                "title": "切图与调度模型"
+              },
+              {
+                "level": 2,
+                "title": "候选构造与合法性"
+              },
+              {
+                "level": 2,
+                "title": "官方算例结果与分析"
+              },
+              {
+                "level": 2,
+                "title": "结构分层的候选适配证据"
+              },
+              {
+                "level": 2,
+                "title": "结构代理量的反例检验"
+              },
+              {
+                "level": 2,
+                "title": "合法性与离散事件目标的连接"
+              },
+              {
+                "level": 2,
+                "title": "增核非单调性与稳健性边界"
+              },
+              {
+                "level": 2,
+                "title": "结果核验与本问结论"
+              }
+            ]
+          },
+          {
+            "chapter_id": "q2",
+            "headings": [
+              {
+                "level": 1,
+                "title": "问题二求解与分析"
+              },
+              {
+                "level": 2,
+                "title": "问题的描述与分析"
+              },
+              {
+                "level": 2,
+                "title": "场景 B 的通信与存储约束"
+              },
+              {
+                "level": 2,
+                "title": "切图复用与候选比较"
+              },
+              {
+                "level": 2,
+                "title": "官方算例结果与分析"
+              },
+              {
+                "level": 2,
+                "title": "规则改变与候选重选的逐核分解"
+              },
+              {
+                "level": 2,
+                "title": "边界搬运、Spill与驻留约束"
+              },
+              {
+                "level": 2,
+                "title": "候选族内的存储代价交叉核查"
+              },
+              {
+                "level": 2,
+                "title": "可迁移结论的范围"
+              },
+              {
+                "level": 2,
+                "title": "容量与时间线核验"
+              }
+            ]
+          },
+          {
+            "chapter_id": "q3",
+            "headings": [
+              {
+                "level": 1,
+                "title": "问题三求解与分析"
+              },
+              {
+                "level": 2,
+                "title": "问题的描述与分析"
+              },
+              {
+                "level": 2,
+                "title": "只读 Cache 与成对评价模型"
+              },
+              {
+                "level": 2,
+                "title": "方案适配与参数响应实验"
+              },
+              {
+                "level": 2,
+                "title": "官方算例结果与分析"
+              },
+              {
+                "level": 2,
+                "title": "逐核成对收益与命中含义"
+              },
+              {
+                "level": 2,
+                "title": "命中率分层的反例与统计边界"
+              },
+              {
+                "level": 2,
+                "title": "图结构与共享缓存收益的交叉核查"
+              },
+              {
+                "level": 2,
+                "title": "参数敏感性与独立核验"
+              },
+              {
+                "level": 2,
+                "title": "有限网格内的条件差分"
+              }
+            ]
+          },
+          {
+            "chapter_id": "evaluation",
+            "headings": [
+              {
+                "level": 1,
+                "title": "模型评价与展望"
+              },
+              {
+                "level": 2,
+                "title": "模型优点"
+              },
+              {
+                "level": 2,
+                "title": "模型缺点"
+              },
+              {
+                "level": 2,
+                "title": "模型的推广与改进"
+              }
+            ]
+          },
+          {
+            "chapter_id": "references",
+            "headings": []
+          }
+        ],
+        "first_chapters": {
+          "status": "PASS",
+          "failures": [],
+          "warnings": [],
+          "assurance": "机械覆盖、源绑定与显式语义审阅记录；记录本身不证明实际阅读或自然度。"
+        },
+        "assurance": "仅验证源结构；实际 PDF 页数、起页、加粗与综合图位置另行核验"
+      }
+    },
+    {
+      "code": "body_citation_source_gate",
+      "ok": true,
+      "audit": {
+        "status": "PASS",
+        "failures": [],
+        "keys": [
+          "sze2017",
+          "eyeriss2017",
+          "jouppi2017",
+          "hongkung1981",
+          "perotin2021",
+          "topcuoglu2002",
+          "kernighan1970",
+          "karypis1998",
+          "chen2018tvm",
+          "mattson1970"
+        ],
+        "ordinary_keys": [
+          "sze2017",
+          "eyeriss2017",
+          "jouppi2017",
+          "hongkung1981",
+          "perotin2021",
+          "topcuoglu2002",
+          "kernighan1970",
+          "karypis1998",
+          "chen2018tvm",
+          "mattson1970"
+        ],
+        "calls": [
+          {
+            "chapter_id": "pre1",
+            "keys": [
+              "sze2017"
+            ]
+          },
+          {
+            "chapter_id": "pre1",
+            "keys": [
+              "eyeriss2017"
+            ]
+          },
+          {
+            "chapter_id": "pre1",
+            "keys": [
+              "jouppi2017"
+            ]
+          },
+          {
+            "chapter_id": "pre1",
+            "keys": [
+              "hongkung1981"
+            ]
+          },
+          {
+            "chapter_id": "q1",
+            "keys": [
+              "perotin2021"
+            ]
+          },
+          {
+            "chapter_id": "q1",
+            "keys": [
+              "topcuoglu2002"
+            ]
+          },
+          {
+            "chapter_id": "q1",
+            "keys": [
+              "kernighan1970"
+            ]
+          },
+          {
+            "chapter_id": "q1",
+            "keys": [
+              "karypis1998"
+            ]
+          },
+          {
+            "chapter_id": "q2",
+            "keys": [
+              "chen2018tvm"
+            ]
+          },
+          {
+            "chapter_id": "q3",
+            "keys": [
+              "mattson1970"
+            ]
+          }
+        ],
+        "scope": "Body citation keys and current source/metadata/relevance evidence; actual PDF rendering checked separately.",
+        "reference_evidence": {
+          "status": "PASS",
+          "failures": [],
+          "references": [
+            {
+              "key": "sze2017",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "article",
+                "title": "Efficient Processing of Deep Neural Networks: A Tutorial and Survey",
+                "authors": [
+                  "Vivienne Sze",
+                  "Yu-Hsin Chen",
+                  "Tien-Ju Yang",
+                  "Joel S. Emer"
+                ],
+                "year": "2017",
+                "container": "Proceedings of the IEEE",
+                "volume": "105",
+                "issue": "12",
+                "pages": "2295-2329"
+              },
+              "failures": []
+            },
+            {
+              "key": "eyeriss2017",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "article",
+                "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
+                "authors": [
+                  "Yu-Hsin Chen",
+                  "Tushar Krishna",
+                  "Joel S. Emer",
+                  "Vivienne Sze"
+                ],
+                "year": "2017",
+                "container": "IEEE Journal of Solid-State Circuits",
+                "volume": "52",
+                "issue": "1",
+                "pages": "127-138"
+              },
+              "failures": []
+            },
+            {
+              "key": "jouppi2017",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "inproceedings",
+                "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit",
+                "authors": [
+                  "Norman P. Jouppi",
+                  "Cliff Young",
+                  "Nishant Patil"
+                ],
+                "year": "2017",
+                "container": "Proceedings of the 44th Annual International Symposium on Computer Architecture",
+                "pages": "1-12"
+              },
+              "failures": []
+            },
+            {
+              "key": "hongkung1981",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "inproceedings",
+                "title": "I/O Complexity: The Red-Blue Pebble Game",
+                "authors": [
+                  "Hong, J-W",
+                  "Kung, H T"
+                ],
+                "year": "1981",
+                "container": "STOC 1981",
+                "pages": "326-333"
+              },
+              "failures": []
+            },
+            {
+              "key": "perotin2021",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "preprint",
+                "title": "Multi-Resource List Scheduling of Moldable Parallel Jobs under Precedence Constraints",
+                "authors": [
+                  "Lucas Perotin",
+                  "Hongyang Sun",
+                  "Padma Raghavan"
+                ],
+                "year": "2021",
+                "container": "arXiv:2106.07059"
+              },
+              "failures": []
+            },
+            {
+              "key": "topcuoglu2002",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "article",
+                "title": "Performance-Effective and Low-Complexity Task Scheduling for Heterogeneous Computing",
+                "authors": [
+                  "H. Topcuoglu",
+                  "S. Hariri",
+                  "Min-You Wu"
+                ],
+                "year": "2002",
+                "container": "IEEE Transactions on Parallel and Distributed Systems",
+                "volume": "13",
+                "issue": "3",
+                "pages": "260-274"
+              },
+              "failures": []
+            },
+            {
+              "key": "kernighan1970",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "article",
+                "title": "An Efficient Heuristic Procedure for Partitioning Graphs",
+                "authors": [
+                  "B. W. Kernighan",
+                  "S. Lin"
+                ],
+                "year": "1970",
+                "container": "Bell System Technical Journal",
+                "volume": "49",
+                "issue": "2",
+                "pages": "291-307"
+              },
+              "failures": []
+            },
+            {
+              "key": "karypis1998",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "article",
+                "title": "A Fast and High Quality Multilevel Scheme for Partitioning Irregular Graphs",
+                "authors": [
+                  "George Karypis",
+                  "Vipin Kumar"
+                ],
+                "year": "1998",
+                "container": "SIAM Journal on Scientific Computing",
+                "volume": "20",
+                "issue": "1",
+                "pages": "359-392"
+              },
+              "failures": []
+            },
+            {
+              "key": "chen2018tvm",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "inproceedings",
+                "title": "TVM: An Automated End-to-End Optimizing Compiler for Deep Learning",
+                "authors": [
+                  "Tianqi Chen",
+                  "Thierry Moreau",
+                  "Ziheng Jiang"
+                ],
+                "year": "2018",
+                "container": "13th USENIX Symposium on Operating Systems Design and Implementation (OSDI 18)",
+                "pages": "578-594"
+              },
+              "failures": []
+            },
+            {
+              "key": "mattson1970",
+              "reference_type": "ordinary",
+              "metadata": {
+                "kind": "article",
+                "title": "Evaluation Techniques for Storage Hierarchies",
+                "authors": [
+                  "R.L. Mattson",
+                  "J. Gecsei",
+                  "D. R. Slutz",
+                  "I. L. Traiger"
+                ],
+                "year": "1970",
+                "container": "IBM Systems Journal",
+                "volume": "9",
+                "issue": "2",
+                "pages": "78-117"
+              },
+              "failures": []
+            },
+            {
+              "key": "ai_tool_disclosure",
+              "reference_type": "ai_tool",
+              "metadata": {
+                "tool_name": "DeepSeek",
+                "version": "DeepSeek-V4.1-Flash",
+                "organization": "深度求索（DeepSeek）",
+                "date": "2026-09-23"
+              },
+              "failures": []
+            }
+          ],
+          "assurance": "Checks current bibliography fields, capture/receipt hashes, duplicate works and cited excerpts. Does not prove remote authenticity or human cognition from editable records; actual source reading and review are mandatory."
+        }
+      }
+    },
+    {
+      "code": "abstract_content_gate",
+      "ok": true,
+      "audit": {
+        "status": "PASS",
+        "manifest": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文输入.json",
+        "abstract": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\章节内容\\00_摘要.tex",
+        "checks": [
+          {
+            "code": "abstract_fragment_exists_and_is_tex",
+            "ok": true,
+            "path": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\章节内容\\00_摘要.tex"
+          },
+          {
+            "code": "percent_signs_are_tex_escaped",
+            "ok": true,
+            "lines": [],
+            "message": "摘要正文中的百分号必须写成 \\%，否则 LaTeX 会把同行后文当作注释。"
+          },
+          {
+            "code": "fragment_excludes_keywords_and_document_structure",
+            "ok": true,
+            "matches": [],
+            "message": "摘要 fragment 只含摘要正文；关键词由 manifest 唯一生成。"
+          },
+          {
+            "code": "abstract_has_no_placeholders",
+            "ok": true,
+            "matches": []
+          },
+          {
+            "code": "visible_character_target",
+            "ok": true,
+            "actual": 1116,
+            "minimum": 800,
+            "maximum": 1600
+          },
+          {
+            "code": "opening_sentence_is_result_led",
+            "ok": true,
+            "sentence": "本文针对通用神经网络处理器上依赖图切分、同核任务合并与共享只读缓存联动的多核调度问题，建立从合法方案构造到官方事件评估的统一模型，依据操作—张量依赖、私有存储容量、跨核同步和共享带宽约束，采用有限候选划分与逐例成对比较，得到题定配置下最高的五核平均加速比3.6104（无量纲）",
+            "required": [
+              "本文针对",
+              "建立/构建/推导/提出",
+              "采用/运用/依据",
+              "得到/获得/证明/揭示/给出"
+            ]
+          },
+          {
+            "code": "problem_chapters_detected",
+            "ok": true,
+            "actual": 3
+          },
+          {
+            "code": "problem_markers_exact_once_in_order",
+            "ok": true,
+            "actual": [
+              "一",
+              "二",
+              "三"
+            ]
+          },
+          {
+            "code": "one_ordered_paragraph_per_problem",
+            "ok": true,
+            "expected": 3,
+            "found": [
+              1,
+              2,
+              3
+            ],
+            "positions": [
+              222,
+              517,
+              824
+            ],
+            "markers_not_at_paragraph_start": []
+          },
+          {
+            "code": "problem_1_model_method_result_loop",
+            "ok": true,
+            "abstract_type": "optimization",
+            "result_mode": "quantitative",
+            "missing_term_groups": [],
+            "numeric_results": 1,
+            "valid_type": true,
+            "valid_result_mode": true
+          },
+          {
+            "code": "problem_2_model_method_result_loop",
+            "ok": true,
+            "abstract_type": "optimization",
+            "result_mode": "quantitative",
+            "missing_term_groups": [],
+            "numeric_results": 1,
+            "valid_type": true,
+            "valid_result_mode": true
+          },
+          {
+            "code": "problem_2_progression",
+            "ok": true,
+            "message": "仅已声明依赖前问的问题须说明真实递进关系，不为独立问题虚构依赖。"
+          },
+          {
+            "code": "problem_3_model_method_result_loop",
+            "ok": true,
+            "abstract_type": "optimization",
+            "result_mode": "quantitative",
+            "missing_term_groups": [],
+            "numeric_results": 2,
+            "valid_type": true,
+            "valid_result_mode": true
+          },
+          {
+            "code": "problem_3_progression",
+            "ok": true,
+            "message": "仅已声明依赖前问的问题须说明真实递进关系，不为独立问题虚构依赖。"
+          },
+          {
+            "code": "key_methods_are_selectively_bold",
+            "ok": true,
+            "phrases": [
+              "3.6104（无量纲）",
+              "针对问题一",
+              "连通块分核",
+              "3.5093（无量纲）",
+              "多数图可利用多个核心",
+              "针对问题二",
+              "场景B重新择优",
+              "3.5456（无量纲）",
+              "Task合并并不保证逐例加速",
+              "针对问题三",
+              "同方案反事实",
+              "3.6104（无量纲）",
+              "1.0260（无量纲）",
+              "有正向收益的算例过半",
+              "1.0260（无量纲）"
+            ],
+            "method_phrase_count": 0,
+            "message": "逐问四类短加粗；没有固定八处上限，禁止整句整段加粗。"
+          },
+          {
+            "code": "no_separate_validation_or_limitation_closing",
+            "ok": true,
+            "paragraphs": []
+          },
+          {
+            "code": "innovation_is_explicit_and_evidence_backed",
+            "ok": true,
+            "sentence_count": 1,
+            "message": "真实方法差异与对照/解析证据，允许融入逐问段落。"
+          },
+          {
+            "code": "problem_1_scientific_validation_integrated",
+            "ok": true
+          },
+          {
+            "code": "problem_2_scientific_validation_integrated",
+            "ok": true
+          },
+          {
+            "code": "problem_3_scientific_validation_integrated",
+            "ok": true
+          },
+          {
+            "code": "abstract_excludes_limitations_future_and_internal_checks",
+            "ok": true,
+            "matches": {}
+          },
+          {
+            "code": "abstract_evidence_schema",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "abstract_evidence_question_mapping",
+            "ok": true
+          },
+          {
+            "code": "problem_1_lead_is_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_1_has_method_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_1_has_conclusion_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_1_has_validation_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_1_has_numeric_result_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_1_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_1_source_text_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_1_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_1_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_1_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_2_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_2_conclusion_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_2_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_2_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_2_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_3_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_3_value_and_unit_match",
+            "ok": true,
+            "expected": "3.5093（无量纲）",
+            "actual": "3.5093（无量纲）"
+          },
+          {
+            "code": "problem_1_statement_3_result_emphasized",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_3_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_3_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_3_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_4_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_4_source_text_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_4_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_1_statement_4_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_1_numeric_evidence_is_result_not_setting",
+            "ok": true
+          },
+          {
+            "code": "problem_2_lead_is_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_2_has_method_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_2_has_conclusion_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_2_has_validation_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_2_has_numeric_result_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_1_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_1_source_text_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_1_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_1_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_1_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_2_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_2_conclusion_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_2_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_2_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_2_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_3_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_3_value_and_unit_match",
+            "ok": true,
+            "expected": "3.5456（无量纲）",
+            "actual": "3.5456（无量纲）"
+          },
+          {
+            "code": "problem_2_statement_3_result_emphasized",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_3_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_3_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_3_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_4_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_4_source_text_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_4_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_2_statement_4_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_2_numeric_evidence_is_result_not_setting",
+            "ok": true
+          },
+          {
+            "code": "problem_3_lead_is_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_3_has_method_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_3_has_conclusion_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_3_has_validation_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_3_has_numeric_result_evidence",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_1_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_1_source_text_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_1_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_1_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_1_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_2_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_2_conclusion_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_2_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_2_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_2_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_3_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_3_value_and_unit_match",
+            "ok": true,
+            "expected": "3.6104（无量纲）",
+            "actual": "3.6104（无量纲）"
+          },
+          {
+            "code": "problem_3_statement_3_result_emphasized",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_3_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_3_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_3_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_4_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_4_source_text_matches",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_4_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_4_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_5_source_current",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_5_value_and_unit_match",
+            "ok": true,
+            "expected": "1.0260（无量纲）",
+            "actual": "1.0260（无量纲）"
+          },
+          {
+            "code": "problem_3_statement_5_result_emphasized",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_5_in_corresponding_paragraph",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_5_in_corresponding_body",
+            "ok": true
+          },
+          {
+            "code": "problem_3_statement_5_short_span_bold",
+            "ok": true
+          },
+          {
+            "code": "problem_3_numeric_evidence_is_result_not_setting",
+            "ok": true
+          },
+          {
+            "code": "bold_numeric_value_traceable:3.6104（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "bold_numeric_value_traceable:3.5093（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "bold_numeric_value_traceable:3.5456（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "bold_numeric_value_traceable:3.6104（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "bold_numeric_value_traceable:1.0260（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "bold_numeric_value_traceable:1.0260（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "numeric_statement_traceable:3.6104（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "key_value_occurrence_bold:3.6104（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "numeric_statement_traceable:3.5093（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "key_value_occurrence_bold:3.5093（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "numeric_statement_traceable:3.5456（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "key_value_occurrence_bold:3.5456（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "numeric_statement_traceable:3.6104（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "key_value_occurrence_bold:3.6104（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "numeric_statement_traceable:1.0260（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "key_value_occurrence_bold:1.0260（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "numeric_statement_traceable:1.0260（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "key_value_occurrence_bold:1.0260（无量纲）",
+            "ok": true
+          },
+          {
+            "code": "language_is_fact_based",
+            "ok": true,
+            "matches": {}
+          },
+          {
+            "code": "abstract_excludes_delivery_inventory",
+            "ok": true,
+            "matches": {}
+          },
+          {
+            "code": "all_quantitative_values_have_units",
+            "ok": true,
+            "values": []
+          },
+          {
+            "code": "decimal_precision_is_consistent",
+            "ok": true,
+            "decimal_places": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "message": "小数结果统一采用同一种 2--4 位精度；精确整数不强制补零。"
+          },
+          {
+            "code": "keywords_are_unique_and_specific",
+            "ok": true,
+            "count": 5,
+            "duplicates": [],
+            "generic": []
+          }
+        ],
+        "failures": []
+      },
+      "message": "摘要须先通过六要素、逐问闭环、数字单位、加粗、关键词与内容边界审计。"
+    },
+    {
+      "code": "fixed_ai_disclosure_generation",
+      "ok": true
+    },
+    {
+      "code": "main_exists",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文.tex"
+    },
+    {
+      "code": "minted_shell_escape_declared",
+      "ok": true,
+      "message": "最终附录使用 minted；XeLaTeX 编译必须显式启用 -shell-escape。"
+    },
+    {
+      "code": "input_order_matches_manifest",
+      "ok": true,
+      "expected": [
+        "附录模板.tex",
+        "章节内容/00_摘要.tex",
+        "章节内容/01_问题重述.tex",
+        "章节内容/02_模型假设.tex",
+        "章节内容/03_关键性符号说明.tex",
+        "章节内容/04_问题一.tex",
+        "章节内容/05_问题二.tex",
+        "章节内容/06_问题三.tex",
+        "章节内容/07_模型评价与展望.tex",
+        "章节内容/08_参考文献.tex",
+        "章节内容/99_附录.generated.tex"
+      ],
+      "actual": [
+        "附录模板.tex",
+        "章节内容/00_摘要.tex",
+        "章节内容/01_问题重述.tex",
+        "章节内容/02_模型假设.tex",
+        "章节内容/03_关键性符号说明.tex",
+        "章节内容/04_问题一.tex",
+        "章节内容/05_问题二.tex",
+        "章节内容/06_问题三.tex",
+        "章节内容/07_模型评价与展望.tex",
+        "章节内容/08_参考文献.tex",
+        "章节内容/99_附录.generated.tex"
+      ]
+    },
+    {
+      "code": "main_has_no_markdown_input",
+      "ok": true,
+      "actual": [
+        "附录模板.tex",
+        "章节内容/00_摘要.tex",
+        "章节内容/01_问题重述.tex",
+        "章节内容/02_模型假设.tex",
+        "章节内容/03_关键性符号说明.tex",
+        "章节内容/04_问题一.tex",
+        "章节内容/05_问题二.tex",
+        "章节内容/06_问题三.tex",
+        "章节内容/07_模型评价与展望.tex",
+        "章节内容/08_参考文献.tex",
+        "章节内容/99_附录.generated.tex"
+      ]
+    },
+    {
+      "code": "toc_command_order",
+      "ok": true,
+      "maketoc_position": 2000,
+      "abstract_end": 1949,
+      "first_body_input": 2036
+    },
+    {
+      "code": "toc_depth_is_three",
+      "ok": true,
+      "values": [
+        3
+      ]
+    },
+    {
+      "code": "toc_hyperlinks_enabled",
+      "ok": true,
+      "message": "hyperref is configured for linked TOC/bookmarks"
+    },
+    {
+      "code": "keyword_command_is_unique",
+      "ok": true,
+      "actual": 1,
+      "required": 1,
+      "message": "关键词只能由主生成器输出一次；摘要 fragment 不得自行写关键词。"
+    },
+    {
+      "code": "all_manifest_fragments_exist_and_are_tex",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "nested_tex_inputs_resolve",
+      "ok": true,
+      "errors": [],
+      "count": 14
+    },
+    {
+      "code": "caption_short_title:附录模板.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:00_摘要.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:01_问题重述.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:02_模型假设.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:03_关键性符号说明.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:04_问题一.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q1-overview.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q1_模型比较.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q1_深度分析.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q1_反例核查.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:05_问题二.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q2-overview.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q2_模型比较.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q2_深度分析.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q2_候选交叉核查.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:06_问题三.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q3-overview.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q3_模型比较.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q3_逐核深度.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q3_命中交叉核查.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q3_结构缓存交叉核查.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:q3_参数深度.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:07_模型评价与展望.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:08_参考文献.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "caption_short_title:99_附录.generated.tex",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "fragments_are_real_latex",
+      "ok": true,
+      "markdown_residue": [],
+      "document_commands": []
+    },
+    {
+      "code": "fragment_braces_balanced",
+      "ok": true,
+      "files": []
+    },
+    {
+      "code": "fragment_environments_balanced",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "code": "toc_auxiliary_content",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文.toc",
+      "expected": {
+        "section": true,
+        "subsection": true,
+        "subsubsection": false
+      },
+      "found": {
+        "section": true,
+        "subsection": true,
+        "subsubsection": false
+      }
+    },
+    {
+      "code": "graphics_paths_exist",
+      "ok": true,
+      "missing": []
+    },
+    {
+      "code": "inputminted_sources_exist_inside_project",
+      "ok": true,
+      "sources": [
+        {
+          "language": "python",
+          "path": "../求解/问题一/问题一.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/contest_io.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/contest_io.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+        },
+        {
+          "language": "python",
+          "path": "../求解/问题二/问题二.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/contest_io.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/contest_io.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+        },
+        {
+          "language": "python",
+          "path": "../求解/问题三/问题三.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/contest_io.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/contest_io.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/evaluation_validation.py"
+        },
+        {
+          "language": "python",
+          "path": "../数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+        }
+      ],
+      "missing": []
+    },
+    {
+      "code": "appendix_uses_inputminted",
+      "ok": true,
+      "count": 21
+    },
+    {
+      "code": "anonymous_source",
+      "ok": true,
+      "matches": []
+    },
+    {
+      "code": "no_markdown_chapter_sources",
+      "ok": true,
+      "files": []
+    },
+    {
+      "code": "labels_are_unique",
+      "ok": true,
+      "duplicates": []
+    },
+    {
+      "code": "references_resolve",
+      "ok": true,
+      "missing": []
+    },
+    {
+      "code": "math_uses_latex_commands",
+      "ok": true,
+      "characters": [],
+      "message": "Unicode 上下标/运算符易落入西文字体并造成缺字；请改用 LaTeX 数学命令。"
+    },
+    {
+      "code": "no_explicit_body_italic",
+      "ok": true,
+      "commands": []
+    },
+    {
+      "code": "dynamic_appendix_gate",
+      "ok": true,
+      "audit": {
+        "status": "PASS",
+        "checks": [
+          {
+            "code": "paper_manifest_exists",
+            "ok": true,
+            "path": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文输入.json"
+          },
+          {
+            "code": "supporting_manifest_exists",
+            "ok": true,
+            "path": "E:\\20hw_myskill_distribution\\workshop_v1\\求解\\支撑材料清单.json"
+          },
+          {
+            "code": "submission_dir_exists",
+            "ok": true,
+            "path": "E:\\20hw_myskill_distribution\\workshop_v1\\提交附件"
+          },
+          {
+            "code": "appendix_manifest_exists",
+            "ok": true,
+            "path": "E:\\20hw_myskill_distribution\\workshop_v1\\求解\\附录清单.json"
+          },
+          {
+            "code": "appendix_tex_exists",
+            "ok": true,
+            "path": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\章节内容\\99_附录.generated.tex"
+          },
+          {
+            "code": "appendix_template_exists",
+            "ok": true,
+            "path": "E:\\20hw_myskill_distribution\\华为杯_论文规范模板\\章节模板\\附录模板.tex"
+          },
+          {
+            "code": "appendix_runtime_current",
+            "ok": true,
+            "requested": "codex",
+            "recorded": "codex"
+          },
+          {
+            "code": "problem_counts_match",
+            "ok": true,
+            "paper": 3,
+            "supporting": 3,
+            "appendix": 3
+          },
+          {
+            "code": "all_supporting_questions_complete",
+            "ok": true
+          },
+          {
+            "code": "appendix_part_count_is_n_plus_one",
+            "ok": true
+          },
+          {
+            "code": "paper_manifest_hash_current",
+            "ok": true
+          },
+          {
+            "code": "supporting_manifest_hash_current",
+            "ok": true
+          },
+          {
+            "code": "generated_tex_hash_current",
+            "ok": true
+          },
+          {
+            "code": "full_submission_inventory_and_sources_current",
+            "ok": true,
+            "failures": []
+          },
+          {
+            "code": "attachment_inventory_matches_submission",
+            "ok": true,
+            "expected_count": 5,
+            "actual_count": 5
+          },
+          {
+            "code": "appendix_code_matches_real_and_packaged_sources",
+            "ok": true,
+            "problems": []
+          },
+          {
+            "code": "generated_content_matches_inventory_and_code",
+            "ok": true
+          },
+          {
+            "code": "appendix_numbers_are_contiguous",
+            "ok": true,
+            "actual": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "code": "appendix_titles_are_dynamic",
+            "ok": true,
+            "expected": [
+              "附件文件及内容",
+              "问题一关键代码",
+              "问题二关键代码",
+              "问题三关键代码"
+            ],
+            "actual": [
+              "附件文件及内容",
+              "问题一关键代码",
+              "问题二关键代码",
+              "问题三关键代码"
+            ]
+          },
+          {
+            "code": "attachment_rows_cover_inventory",
+            "ok": true
+          },
+          {
+            "code": "all_selected_code_is_inputminted_through_template",
+            "ok": true,
+            "expected": 21,
+            "actual": 21
+          },
+          {
+            "code": "generated_tex_has_no_raw_minted_style",
+            "ok": true
+          },
+          {
+            "code": "appendix_template_owns_minted_light_style",
+            "ok": true,
+            "missing": []
+          },
+          {
+            "code": "main_tex_calls_unified_template",
+            "ok": true
+          },
+          {
+            "code": "main_tex_calls_generated_appendix",
+            "ok": true
+          },
+          {
+            "code": "paper_uses_current_unified_template_copy",
+            "ok": true,
+            "copied": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\附录模板.tex"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "code": "question_comprehensive_diagram_gate",
+      "ok": true,
+      "audit": {
+        "status": "PASS",
+        "stage": "tex",
+        "checks": [
+          {
+            "code": "diagram_schema",
+            "ok": true
+          },
+          {
+            "code": "runtime_explicit",
+            "ok": true
+          },
+          {
+            "code": "demo_isolation",
+            "ok": true
+          },
+          {
+            "code": "figure_accounting_gate",
+            "ok": true,
+            "failures": []
+          },
+          {
+            "code": "figure_accounting_publications",
+            "ok": true,
+            "errors": [],
+            "figure_list": "论文/图表清单.json",
+            "result_index": "求解/结果索引.md"
+          },
+          {
+            "code": "question_mapping_exact",
+            "ok": true
+          },
+          {
+            "code": "diagram_ids_unique",
+            "ok": true
+          },
+          {
+            "code": "overview_ids_unique",
+            "ok": true
+          },
+          {
+            "code": "diagram_labels_unique",
+            "ok": true
+          },
+          {
+            "code": "diagram_dependencies_acyclic",
+            "ok": true
+          },
+          {
+            "code": "paper_problem_mapping",
+            "ok": true
+          },
+          {
+            "code": "q1:overview_exists",
+            "ok": true
+          },
+          {
+            "code": "q1:chapter_declared",
+            "ok": true
+          },
+          {
+            "code": "q2:overview_exists",
+            "ok": true
+          },
+          {
+            "code": "q2:chapter_declared",
+            "ok": true
+          },
+          {
+            "code": "q3:overview_exists",
+            "ok": true
+          },
+          {
+            "code": "q3:chapter_declared",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:kind",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:owner",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:backend",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:science",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:reference_selection",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_record_required",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_identity",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_catalog_current",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_contract_current",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_selection_reviewed",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_full_gallery",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_roadmap-5band",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_framework-3col",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_stageflow-3col",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_taskflow-land",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_behavior-intervention-3column",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_coupled-method-experiment-framework",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_cube-venn-model-research",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_data-model-deployment-5stage",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_drug-discovery-triad-planes",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_dual-circle-biological-framework",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_dual-circle-biological-framework-variant",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_dual-loop-layered-platform",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_dual-study-cylinder-roadmap",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_ecotourism-integration-3band",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_feature-detection-research-5band",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_fieldwork-analysis-3band",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_five-chapter-research-roadmap",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_four-band-method-roadmap",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_four-content-evidence-roadmap",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_four-stage-research-framework",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_health-system-concentric",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_hexagon-chain-research-5band",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_innovation-chain-5stage",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_model-optimization-6stage",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_port-sustainability-quality-houses",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_research-columns-evidence-cards",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_research-design-vertical-loop",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_research-framework-5band",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_research-methods-5stage",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_stage-design-prism-5band",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_triple-band-experiment-roadmap",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_preview_triple-band-research-validation",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_candidate_comparison",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_selected_from_assets",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_selected_sources_current",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_selected_preview_in_references",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_adaptation_reasoned",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_real_panel_mapping",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_adaptation_visual_review",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:roadmap_template_review_views",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:panels_unique",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:connections_traceable",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:flow_semantics_supported",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:input:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:input:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:scene_a:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:scene_a:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:scene_b:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:scene_b:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:cache:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:cache:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:paper_contract",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:sources_current",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:artifacts_exist",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:resource_dependencies_current",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:qa_inputs_current",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:qa_pass",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:actual_visual_review",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:views_derived_from_current_outputs",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:pdf_vector_content",
+            "ok": true,
+            "assurance": "Vector primitives present; not a proof of full vector purity"
+          },
+          {
+            "code": "GLOBAL-ROADMAP:pdf_width",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:embedded_images_at_final_size",
+            "ok": true
+          },
+          {
+            "code": "GLOBAL-ROADMAP:drawio_layout",
+            "ok": true,
+            "output": "E:\\20hw_myskill_distribution\\workshop_v1\\求解\\总体路线图_紧凑.drawio: 顶点 34 / 连接器 8  FAIL 0  WARN 0\nPASS: 版式体检通过\n"
+          },
+          {
+            "code": "q1-OVERVIEW:kind",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:owner",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:backend",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:science",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:reference_selection",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:panels_unique",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:connections_traceable",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:flow_semantics_supported",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:physical_size_plan",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q1-OVERVIEW:substantive_graphic",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:task_method_flow",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:optional_narrative_substantive",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_detail",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_content_schema",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q1-OVERVIEW:overview_content_ready",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:science_verification_before_composition",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:verification_evidence_current",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:result_candidates_exact",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:result_selection_reasoned",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:selected_results_in_panels",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:results_reused_or_specific_exception",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:selected_results_verified",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:thumbnail_detail_links",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:mechanism_assessment_specific",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:mechanism_panels_linked",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:mechanism_category",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:mechanism_skill_references",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:rectangular_layout_planned",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:theme_and_connectors_declared",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:production_not_demo_evidence",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_semantics_current",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_review_schema",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q1-OVERVIEW:overview_review_result_integration",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_review_mechanism_value",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_review_rectangular_composition",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_review_palette",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_review_navigation",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_review_non_text_graphics",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:overview_review_thumbnail_detail_link",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:mechanism:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:mechanism:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:method:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:method:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resulta:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resulta:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resulta:result_owner_or_explicit_input",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resulta:result_not_demo",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resulta:result_plan_tracked",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resulta:canonical_figure_source",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resulta:visual_gate",
+            "ok": true,
+            "failures": []
+          },
+          {
+            "code": "q1-OVERVIEW:resultb:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resultb:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resultb:result_owner_or_explicit_input",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resultb:result_not_demo",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resultb:result_plan_tracked",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resultb:canonical_figure_source",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resultb:visual_gate",
+            "ok": true,
+            "failures": []
+          },
+          {
+            "code": "q1-OVERVIEW:validation:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:validation:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:paper_contract",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:sources_current",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:artifacts_exist",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:resource_dependencies_current",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:qa_inputs_current",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:qa_pass",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:actual_visual_review",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:views_derived_from_current_outputs",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:pdf_vector_content",
+            "ok": true,
+            "assurance": "Vector primitives present; not a proof of full vector purity"
+          },
+          {
+            "code": "q1-OVERVIEW:pdf_width",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:embedded_images_at_final_size",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:kind",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:owner",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:backend",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:science",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:reference_selection",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:panels_unique",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:connections_traceable",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:flow_semantics_supported",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:physical_size_plan",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q2-OVERVIEW:substantive_graphic",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:task_method_flow",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:optional_narrative_substantive",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_detail",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_content_schema",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q2-OVERVIEW:overview_content_ready",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:science_verification_before_composition",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:verification_evidence_current",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:result_candidates_exact",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:result_selection_reasoned",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:selected_results_in_panels",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:results_reused_or_specific_exception",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:selected_results_verified",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:thumbnail_detail_links",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:mechanism_assessment_specific",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:mechanism_panels_linked",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:mechanism_category",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:mechanism_skill_references",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:rectangular_layout_planned",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:theme_and_connectors_declared",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:production_not_demo_evidence",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_semantics_current",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_review_schema",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q2-OVERVIEW:overview_review_result_integration",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_review_mechanism_value",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_review_rectangular_composition",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_review_palette",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_review_navigation",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_review_non_text_graphics",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:overview_review_thumbnail_detail_link",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:mechanism:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:mechanism:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:method:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:method:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resulta:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resulta:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resulta:result_owner_or_explicit_input",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resulta:result_not_demo",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resulta:result_plan_tracked",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resulta:canonical_figure_source",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resulta:visual_gate",
+            "ok": true,
+            "failures": []
+          },
+          {
+            "code": "q2-OVERVIEW:resultb:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resultb:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resultb:result_owner_or_explicit_input",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resultb:result_not_demo",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resultb:result_plan_tracked",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resultb:canonical_figure_source",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resultb:visual_gate",
+            "ok": true,
+            "failures": []
+          },
+          {
+            "code": "q2-OVERVIEW:validation:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:validation:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:paper_contract",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:sources_current",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:artifacts_exist",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:resource_dependencies_current",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:qa_inputs_current",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:qa_pass",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:actual_visual_review",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:views_derived_from_current_outputs",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:pdf_vector_content",
+            "ok": true,
+            "assurance": "Vector primitives present; not a proof of full vector purity"
+          },
+          {
+            "code": "q2-OVERVIEW:pdf_width",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:embedded_images_at_final_size",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:kind",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:owner",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:backend",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:science",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:reference_selection",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:panels_unique",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:connections_traceable",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:flow_semantics_supported",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:physical_size_plan",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q3-OVERVIEW:substantive_graphic",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:task_method_flow",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:optional_narrative_substantive",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_detail",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_content_schema",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q3-OVERVIEW:overview_content_ready",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:science_verification_before_composition",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:verification_evidence_current",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:result_candidates_exact",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:result_selection_reasoned",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:selected_results_in_panels",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:results_reused_or_specific_exception",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:selected_results_verified",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:thumbnail_detail_links",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:mechanism_assessment_specific",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:mechanism_panels_linked",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:mechanism_category",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:mechanism_skill_references",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:rectangular_layout_planned",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:theme_and_connectors_declared",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:production_not_demo_evidence",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_semantics_current",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_review_schema",
+            "ok": true,
+            "errors": []
+          },
+          {
+            "code": "q3-OVERVIEW:overview_review_result_integration",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_review_mechanism_value",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_review_rectangular_composition",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_review_palette",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_review_navigation",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_review_non_text_graphics",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:overview_review_thumbnail_detail_link",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:mechanism:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:mechanism:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:method:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:method:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resulta:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resulta:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resulta:result_owner_or_explicit_input",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resulta:result_not_demo",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resulta:result_plan_tracked",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resulta:canonical_figure_source",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resulta:visual_gate",
+            "ok": true,
+            "failures": []
+          },
+          {
+            "code": "q3-OVERVIEW:resultb:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resultb:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resultb:result_owner_or_explicit_input",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resultb:result_not_demo",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resultb:result_plan_tracked",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resultb:canonical_figure_source",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resultb:visual_gate",
+            "ok": true,
+            "failures": []
+          },
+          {
+            "code": "q3-OVERVIEW:validation:semantic_source",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:validation:operation_shapes",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:paper_contract",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:sources_current",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:artifacts_exist",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:resource_dependencies_current",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:qa_inputs_current",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:qa_pass",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:actual_visual_review",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:views_derived_from_current_outputs",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:pdf_vector_content",
+            "ok": true,
+            "assurance": "Vector primitives present; not a proof of full vector purity"
+          },
+          {
+            "code": "q3-OVERVIEW:pdf_width",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:embedded_images_at_final_size",
+            "ok": true
+          },
+          {
+            "code": "global_roadmap_present",
+            "ok": true
+          },
+          {
+            "code": "two_real_flowcharts",
+            "ok": true
+          },
+          {
+            "code": "flowchart_plan_links",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:source_position",
+            "ok": true,
+            "evidence": {
+              "status": "PASS",
+              "failures": [],
+              "lower_anchor": "subsection.4.1",
+              "upper_anchor": "subsection.4.2",
+              "label": "fig:q1-overview",
+              "diagram_id": "q1-OVERVIEW",
+              "source_caption": "问题一求解与核验总览"
+            }
+          },
+          {
+            "code": "q2-OVERVIEW:source_position",
+            "ok": true,
+            "evidence": {
+              "status": "PASS",
+              "failures": [],
+              "lower_anchor": "subsection.5.1",
+              "upper_anchor": "subsection.5.2",
+              "label": "fig:q2-overview",
+              "diagram_id": "q2-OVERVIEW",
+              "source_caption": "问题二求解与核验总览"
+            }
+          },
+          {
+            "code": "q3-OVERVIEW:source_position",
+            "ok": true,
+            "evidence": {
+              "status": "PASS",
+              "failures": [],
+              "lower_anchor": "subsection.6.1",
+              "upper_anchor": "subsection.6.2",
+              "label": "fig:q3-overview",
+              "diagram_id": "q3-OVERVIEW",
+              "source_caption": "问题三求解与核验总览"
+            }
+          },
+          {
+            "code": "GLOBAL-ROADMAP:source_position",
+            "ok": true,
+            "evidence": {
+              "status": "PASS",
+              "failures": [],
+              "lower_anchor": "subsection.1.2",
+              "upper_anchor": "section.2",
+              "label": "fig:roadmap",
+              "diagram_id": "GLOBAL-ROADMAP",
+              "source_caption": "多核调度研究路线"
+            }
+          },
+          {
+            "code": "GLOBAL-ROADMAP:unique_body_label",
+            "ok": true
+          },
+          {
+            "code": "q1-OVERVIEW:unique_body_label",
+            "ok": true
+          },
+          {
+            "code": "q2-OVERVIEW:unique_body_label",
+            "ok": true
+          },
+          {
+            "code": "q3-OVERVIEW:unique_body_label",
+            "ok": true
+          }
+        ],
+        "failures": [],
+        "figure_accounting": {
+          "status": "PASS",
+          "checks": [
+            {
+              "code": "body_chart_family_diversity",
+              "ok": true,
+              "errors": []
+            },
+            {
+              "code": "accounting_object_ids_unique",
+              "ok": true
+            },
+            {
+              "code": "accounting_schema",
+              "ok": true,
+              "errors": []
+            },
+            {
+              "code": "accounting_declared_for_every_object",
+              "ok": true
+            },
+            {
+              "code": "accounting_overview_mapping_unique",
+              "ok": true
+            },
+            {
+              "code": "q1-F01:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q1-F01:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F01:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F01:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q1-F01:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q1-F01:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q1-F02:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q1-F02:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F02:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F02:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q1-F02:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q1-F02:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q1-F03:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q1-F03:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F03:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F03:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q1-F03:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q1-F03:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q1-F04:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q1-F04:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F04:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F04:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q1-F04:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q1-F04:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q1-F05:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q1-F05:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F05:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F05:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q1-F05:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q1-F05:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q1-F06:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q1-F06:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F06:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-F06:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q1-F06:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q1-F06:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q2-F01:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q2-F01:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F01:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F01:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q2-F01:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q2-F01:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q2-F02:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q2-F02:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F02:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F02:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q2-F02:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q2-F02:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q2-F03:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q2-F03:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F03:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F03:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q2-F03:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q2-F03:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q2-F04:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q2-F04:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F04:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F04:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q2-F04:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q2-F04:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q2-F05:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q2-F05:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F05:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F05:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q2-F05:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q2-F05:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q2-F06:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q2-F06:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F06:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-F06:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q2-F06:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q2-F06:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q3-F01:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q3-F01:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F01:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F01:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q3-F01:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q3-F01:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q3-F02:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q3-F02:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F02:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F02:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q3-F02:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q3-F02:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q3-F03:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q3-F03:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F03:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F03:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q3-F03:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q3-F03:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q3-F04:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q3-F04:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F04:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F04:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q3-F04:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q3-F04:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q3-F05:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q3-F05:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F05:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F05:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q3-F05:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q3-F05:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q3-F06:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q3-F06:per_question_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F06:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-F06:flow_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q3-F06:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q3-F06:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "GLOBAL-ROADMAP:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "GLOBAL-ROADMAP:per_question_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "GLOBAL-ROADMAP:paper_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "GLOBAL-ROADMAP:flow_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "GLOBAL-ROADMAP:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "GLOBAL-ROADMAP:roadmap_is_global_flow",
+              "ok": true
+            },
+            {
+              "code": "GLOBAL-ROADMAP:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q1-OVERVIEW:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q1-OVERVIEW:per_question_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q1-OVERVIEW:paper_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q1-OVERVIEW:flow_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q1-OVERVIEW:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q1-OVERVIEW:mapped_overview_is_comprehensive",
+              "ok": true
+            },
+            {
+              "code": "q1-OVERVIEW:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q2-OVERVIEW:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q2-OVERVIEW:per_question_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q2-OVERVIEW:paper_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q2-OVERVIEW:flow_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q2-OVERVIEW:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q2-OVERVIEW:mapped_overview_is_comprehensive",
+              "ok": true
+            },
+            {
+              "code": "q2-OVERVIEW:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q3-OVERVIEW:purpose_and_owner",
+              "ok": true
+            },
+            {
+              "code": "q3-OVERVIEW:per_question_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q3-OVERVIEW:paper_total_derived",
+              "ok": true,
+              "expected": false
+            },
+            {
+              "code": "q3-OVERVIEW:flow_total_derived",
+              "ok": true,
+              "expected": true
+            },
+            {
+              "code": "q3-OVERVIEW:scientific_contribution_declared",
+              "ok": true
+            },
+            {
+              "code": "q3-OVERVIEW:mapped_overview_is_comprehensive",
+              "ok": true
+            },
+            {
+              "code": "q3-OVERVIEW:counted_output_qa_pass",
+              "ok": true
+            },
+            {
+              "code": "q1:independent_science_4_to_6",
+              "ok": true,
+              "count": 6
+            },
+            {
+              "code": "q1:one_extra_overview",
+              "ok": true,
+              "ids": [
+                "q1-OVERVIEW"
+              ]
+            },
+            {
+              "code": "q2:independent_science_4_to_6",
+              "ok": true,
+              "count": 6
+            },
+            {
+              "code": "q2:one_extra_overview",
+              "ok": true,
+              "ids": [
+                "q2-OVERVIEW"
+              ]
+            },
+            {
+              "code": "q3:independent_science_4_to_6",
+              "ok": true,
+              "count": 6
+            },
+            {
+              "code": "q3:one_extra_overview",
+              "ok": true,
+              "ids": [
+                "q3-OVERVIEW"
+              ]
+            },
+            {
+              "code": "paper_16_excluding_question_overviews",
+              "ok": true,
+              "count": 19
+            },
+            {
+              "code": "two_figures_with_real_flow_semantics",
+              "ok": true,
+              "count": 4
+            },
+            {
+              "code": "one_global_roadmap",
+              "ok": true
+            },
+            {
+              "code": "independent_contributions_not_repeated",
+              "ok": true
+            },
+            {
+              "code": "q1-F01:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q1-F02:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q1-F03:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q1-F04:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q1-F05:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q1-F06:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q2-F01:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q2-F02:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q2-F03:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q2-F04:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q2-F05:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q2-F06:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q3-F01:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q3-F02:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q3-F03:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q3-F04:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q3-F05:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "q3-F06:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "GLOBAL-ROADMAP:counted_vector_exists",
+              "ok": true
+            },
+            {
+              "code": "independent_vectors_not_duplicates",
+              "ok": true,
+              "duplicates": []
+            }
+          ],
+          "failures": [],
+          "figures": [
+            {
+              "figure_id": "q1-F01",
+              "problem_id": "q1",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q1-F01.pdf",
+              "scientific_question": "图规模与最大连通块占比如何联合分布？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：图规模与最大连通块占比如何联合分布？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q1-F02",
+              "problem_id": "q1",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q1-F02.pdf",
+              "scientific_question": "核数扩展如何改变加速比的中心与离散范围？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：核数扩展如何改变加速比的中心与离散范围？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q1-F03",
+              "problem_id": "q1",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q1-F03.pdf",
+              "scientific_question": "最大连通块占比不同的图有何加速差异？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：最大连通块占比不同的图有何加速差异？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q1-F04",
+              "problem_id": "q1",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q1-F04.pdf",
+              "scientific_question": "五核新增DDR搬运与加速之间有何权衡？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：五核新增DDR搬运与加速之间有何权衡？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q1-F05",
+              "problem_id": "q1",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q1-F05.pdf",
+              "scientific_question": "何种结构条件下深度分段候选胜出？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：何种结构条件下深度分段候选胜出？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q1-F06",
+              "problem_id": "q1",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q1-F06.pdf",
+              "scientific_question": "候选评估时间与候选质量怎样权衡？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：候选评估时间与候选质量怎样权衡？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q2-F01",
+              "problem_id": "q2",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q2-F01.pdf",
+              "scientific_question": "同方案的场景A/B时长比如何随核数变化？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：同方案的场景A/B时长比如何随核数变化？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q2-F02",
+              "problem_id": "q2",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q2-F02.pdf",
+              "scientific_question": "场景B内重新择优的附加收益有多大？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：场景B内重新择优的附加收益有多大？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q2-F03",
+              "problem_id": "q2",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q2-F03.pdf",
+              "scientific_question": "新增DDR搬运中的边界COPY与Spill各占多少？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：新增DDR搬运中的边界COPY与Spill各占多少？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q2-F04",
+              "problem_id": "q2",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q2-F04.pdf",
+              "scientific_question": "容量压力与五核收益如何共同变化？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：容量压力与五核收益如何共同变化？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q2-F05",
+              "problem_id": "q2",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q2-F05.pdf",
+              "scientific_question": "场景切换后的速度与搬运变化是否同向？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：场景切换后的速度与搬运变化是否同向？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q2-F06",
+              "problem_id": "q2",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q2-F06.pdf",
+              "scientific_question": "场景B从1核至5核的平均加速比如何变化？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：场景B从1核至5核的平均加速比如何变化？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q3-F01",
+              "problem_id": "q3",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q3-F01.pdf",
+              "scientific_question": "题定L2配置下同方案Cache收益的经验分布如何？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：题定L2配置下同方案Cache收益的经验分布如何？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q3-F02",
+              "problem_id": "q3",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q3-F02.pdf",
+              "scientific_question": "命中字节率与同方案收益如何关联？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：命中字节率与同方案收益如何关联？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q3-F03",
+              "problem_id": "q3",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q3-F03.pdf",
+              "scientific_question": "六例非官方容量带宽网格的实测响应面如何？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：六例非官方容量带宽网格的实测响应面如何？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q3-F04",
+              "problem_id": "q3",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q3-F04.pdf",
+              "scientific_question": "容量变化如何改变六例的命中字节率？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：容量变化如何改变六例的命中字节率？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q3-F05",
+              "problem_id": "q3",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q3-F05.pdf",
+              "scientific_question": "各核数的命中和未命中查询字节如何构成？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：各核数的命中和未命中查询字节如何构成？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q3-F06",
+              "problem_id": "q3",
+              "body": true,
+              "flow": false,
+              "vector": "求解/正式图件/q3-F06.pdf",
+              "scientific_question": "固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+              "status": "qa_pass",
+              "kind": "scientific",
+              "purpose": "independent_science",
+              "scientific_contribution": "用当前实测数据回答：固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+              "per_question": true,
+              "paper_total": true,
+              "flow_total": false,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "GLOBAL-ROADMAP",
+              "problem_id": null,
+              "body": true,
+              "flow": true,
+              "vector": "求解/总体路线图_论文宽.pdf",
+              "status": "qa_pass",
+              "scientific_question": "题定三场景如何从共同图结构、合法方案及官方评估形成完整研究路线？",
+              "kind": "flowchart",
+              "purpose": "global_roadmap",
+              "scientific_contribution": "以题定图结构和官方评估为基础，准确串联场景A、同核复用场景B与共享只读L2。",
+              "per_question": false,
+              "paper_total": true,
+              "flow_total": true,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q1-OVERVIEW",
+              "problem_id": "q1",
+              "body": true,
+              "flow": true,
+              "vector": "求解/综合图/q1-overview.pdf",
+              "status": "qa_pass",
+              "scientific_question": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+              "kind": "comprehensive",
+              "purpose": "question_overview",
+              "scientific_contribution": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+              "per_question": false,
+              "paper_total": false,
+              "flow_total": true,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q2-OVERVIEW",
+              "problem_id": "q2",
+              "body": true,
+              "flow": true,
+              "vector": "求解/综合图/q2-overview.pdf",
+              "status": "qa_pass",
+              "scientific_question": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+              "kind": "comprehensive",
+              "purpose": "question_overview",
+              "scientific_contribution": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+              "per_question": false,
+              "paper_total": false,
+              "flow_total": true,
+              "assurance_stage": "tex"
+            },
+            {
+              "figure_id": "q3-OVERVIEW",
+              "problem_id": "q3",
+              "body": true,
+              "flow": true,
+              "vector": "求解/综合图/q3-overview.pdf",
+              "status": "qa_pass",
+              "scientific_question": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+              "kind": "comprehensive",
+              "purpose": "question_overview",
+              "scientific_contribution": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+              "per_question": false,
+              "paper_total": false,
+              "flow_total": true,
+              "assurance_stage": "tex"
+            }
+          ],
+          "questions": [
+            {
+              "problem_id": "q1",
+              "independent_science_count": 6,
+              "independent_science_ids": [
+                "q1-F01",
+                "q1-F02",
+                "q1-F03",
+                "q1-F04",
+                "q1-F05",
+                "q1-F06"
+              ],
+              "overview_count": 1,
+              "overview_ids": [
+                "q1-OVERVIEW"
+              ]
+            },
+            {
+              "problem_id": "q2",
+              "independent_science_count": 6,
+              "independent_science_ids": [
+                "q2-F01",
+                "q2-F02",
+                "q2-F03",
+                "q2-F04",
+                "q2-F05",
+                "q2-F06"
+              ],
+              "overview_count": 1,
+              "overview_ids": [
+                "q2-OVERVIEW"
+              ]
+            },
+            {
+              "problem_id": "q3",
+              "independent_science_count": 6,
+              "independent_science_ids": [
+                "q3-F01",
+                "q3-F02",
+                "q3-F03",
+                "q3-F04",
+                "q3-F05",
+                "q3-F06"
+              ],
+              "overview_count": 1,
+              "overview_ids": [
+                "q3-OVERVIEW"
+              ]
+            }
+          ],
+          "paper_eligible_count": 19,
+          "flow_count": 4,
+          "assurance": "额度与版本检查；不替代独立科学信息、真实来源、实际看图及入文位置门禁。"
+        },
+        "assurance": "文件/哈希/引用检查不证明实际看图或科学判断；DEMO不授予正式论文通过状态。"
+      }
+    }
+  ],
+  "failures": []
+}

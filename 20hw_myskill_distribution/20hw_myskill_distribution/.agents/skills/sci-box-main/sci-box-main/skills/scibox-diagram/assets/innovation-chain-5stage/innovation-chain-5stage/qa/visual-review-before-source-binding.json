@@ -1,0 +1,34 @@
+{
+  "status": "VISUALLY_REVIEWED_STAGING",
+  "publication_status": "not_published",
+  "template_id": "innovation-chain-5stage",
+  "observations": "defect-log.md",
+  "score": 45,
+  "reviewed_outputs": [
+    "example.json",
+    "layout.json",
+    "example.drawio",
+    "example.png",
+    "example.pdf",
+    "preview.png",
+    "reference.png",
+    "reference-crop.png",
+    "qa/replacement.png",
+    "qa/capacity-boundary.png"
+  ],
+  "hashes": {
+    "example.json": "cc424bec34685ae63857071919b1f060e4ef37deb5392661c433cceb6bbc2122",
+    "layout.json": "b12ed5a0d927b29a8936f82dfb9813b3d4f402d2f53e03acf2b0c0922e96a0dd",
+    "example.drawio": "d724bf6de28e542190e29b17117ca7bc6c831b0f9eba85094d8278ea7af93bb0",
+    "example.png": "4c8b90247d55fd7388451aec393d1b2a11270d5b09711173b1eb3981f3ce26e4",
+    "example.pdf": "7c456e323bcacc079d2705830cc100799ec83037b182bdfca6e050e368fe165a",
+    "preview.png": "4c8b90247d55fd7388451aec393d1b2a11270d5b09711173b1eb3981f3ce26e4",
+    "reference.png": "e81f1f53c17a0489aca5f6fe6f032acbf4e468b1bad9cb67df22fa1d7aa2cd54",
+    "reference-crop.png": "ef12aba2cd7d9c2a42469bcb1ec95f4332044ab4c9bdc3c627df51102978bc3b",
+    "qa/replacement.png": "86977ab33a5be420b8d1e8bde4ed13389986a2c7cbccfb053e55d92df90b61ce",
+    "qa/capacity-boundary.png": "86eedf8ed1fa308666b2cdf689df88d98c8375dc4bb4a2333edb760836e1f137"
+  },
+  "a4_body_suitability": false,
+  "a3_display_suitability": true,
+  "evidence_scope": "Template reproduction and bounded text replacement, not scientific or paper acceptance."
+}

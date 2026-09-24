@@ -1,0 +1,91 @@
+{
+  "source_id": "ref-23",
+  "status": "MEASURED_REQUIRES_VISUAL_REVIEW",
+  "method": "RGB contour masks within 7px of observed circular boundaries, foreground exclusions, robust least-squares circle fit",
+  "circles": [
+    {
+      "id": "outer_blue",
+      "initial_search_circle": [
+        453,
+        309,
+        144
+      ],
+      "color_target": [
+        47,
+        85,
+        151
+      ],
+      "point_count": 632,
+      "center": [
+        454.2623893278859,
+        307.5909762633508
+      ],
+      "radius": 145.42104792272917,
+      "median_absolute_residual_px": 1.5081323540640597,
+      "p90_absolute_residual_px": 5.593336855628141
+    },
+    {
+      "id": "outer_green",
+      "initial_search_circle": [
+        628,
+        309,
+        144
+      ],
+      "color_target": [
+        84,
+        130,
+        53
+      ],
+      "point_count": 673,
+      "center": [
+        627.0115376155987,
+        307.6395912720006
+      ],
+      "radius": 146.32814902873082,
+      "median_absolute_residual_px": 1.8947229916054766,
+      "p90_absolute_residual_px": 5.1031333334825275
+    },
+    {
+      "id": "inner_blue",
+      "initial_search_circle": [
+        401,
+        309,
+        99
+      ],
+      "color_target": [
+        47,
+        85,
+        151
+      ],
+      "point_count": 386,
+      "center": [
+        400.4780549221591,
+        307.76554562486865
+      ],
+      "radius": 98.88094048011754,
+      "median_absolute_residual_px": 0.8908486097548973,
+      "p90_absolute_residual_px": 5.313937872417618
+    },
+    {
+      "id": "inner_green",
+      "initial_search_circle": [
+        680,
+        309,
+        99
+      ],
+      "color_target": [
+        84,
+        130,
+        53
+      ],
+      "point_count": 522,
+      "center": [
+        678.7129634259874,
+        307.7959339563418
+      ],
+      "radius": 99.39834609607965,
+      "median_absolute_residual_px": 1.5940752000125542,
+      "p90_absolute_residual_px": 6.2415548243210655
+    }
+  ]
+}

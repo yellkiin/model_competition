@@ -1,0 +1,21 @@
+{
+  "title": "通用神经网络处理器下的多核调度问题",
+  "contest_edition": "二十三",
+  "keywords": ["多核调度", "有向无环图", "子图划分", "共享缓存", "离散事件评估"],
+  "abstract_tex_path": "章节内容/00_摘要.tex",
+  "abstract_evidence_path": "摘要证据.json",
+  "references_evidence_path": "参考文献证据.json",
+  "first_chapters_evidence_path": "../求解/题意写作依据.json",
+  "first_chapters_review_path": "验收输出/前三章.v4.review.json",
+  "chapters": [
+    {"chapter_id": "pre1", "title": "问题重述", "role": "preliminary", "order": 1, "tex_path": "章节内容/01_问题重述.tex"},
+    {"chapter_id": "pre2", "title": "模型假设", "role": "preliminary", "order": 2, "tex_path": "章节内容/02_模型假设.tex"},
+    {"chapter_id": "pre3", "title": "关键性符号说明", "role": "preliminary", "order": 3, "tex_path": "章节内容/03_关键性符号说明.tex"},
+    {"chapter_id": "q1", "title": "问题一求解与分析", "role": "problem", "order": 4, "tex_path": "章节内容/04_问题一.tex", "abstract_type": "optimization", "abstract_result_mode": "quantitative"},
+    {"chapter_id": "q2", "title": "问题二求解与分析", "role": "problem", "order": 5, "tex_path": "章节内容/05_问题二.tex", "abstract_type": "optimization", "abstract_result_mode": "quantitative", "depends_on_previous": true},
+    {"chapter_id": "q3", "title": "问题三求解与分析", "role": "problem", "order": 6, "tex_path": "章节内容/06_问题三.tex", "abstract_type": "optimization", "abstract_result_mode": "quantitative", "depends_on_previous": true},
+    {"chapter_id": "evaluation", "title": "模型评价与展望", "role": "evaluation", "order": 7, "tex_path": "章节内容/07_模型评价与展望.tex"},
+    {"chapter_id": "references", "title": "参考文献", "role": "references", "order": 8, "tex_path": "章节内容/08_参考文献.tex"}
+  ]
+}
+

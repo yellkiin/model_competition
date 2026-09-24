@@ -1,0 +1,753 @@
+{
+  "schema_version": "1.1",
+  "bibliography_files": [
+    {
+      "path": "章节内容/08_参考文献.tex",
+      "sha256": "1d822555f3ca21e7b5670c158878481ee7323d07fe56389496de05b2a8b3c0c9"
+    }
+  ],
+  "references": [
+    {
+      "key": "sze2017",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://api.crossref.org/works/10.1109/JPROC.2017.2761740/transform/application/vnd.citationstyles.csl+json",
+          "authority": "publisher",
+          "authority_reason": "Crossref DOI 注册元数据对应正式期刊或会议记录，作为印刷书目字段的核对来源。",
+          "capture_path": "参考来源/sze2017/source.json",
+          "capture_sha256": "d8bcfe6f2fe7cc45a0cdd62140cbcff5c805f38791e30081cefc3a97ea685d47",
+          "receipt_path": "参考来源/sze2017/receipt.json",
+          "receipt_sha256": "04e344d03f605d20336b20b6468224688d5558c9ced20e60264c6c1dd9e24ca2",
+          "format": "csl_json",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/sze2017/source.* 实际原文或页面",
+            "observation": "逐项核对 Crossref 所存作者、题名、刊名、年份、卷期和页码；书目字段仅据本条原始记录登记。"
+          }
+        },
+        {
+          "url": "https://arxiv.org/abs/1703.09039",
+          "authority": "author",
+          "authority_reason": "作者在 arXiv 发布的预印本摘要，可直接核对硬件平台与体系结构的综述范围。",
+          "capture_path": "参考来源/sze2017_author/source.html",
+          "capture_sha256": "e87d351fa51709bbfb25e5ec0091fec4b25c54bd9a95c9cb9986ede33af38189",
+          "receipt_path": "参考来源/sze2017_author/receipt.json",
+          "receipt_sha256": "6eb79b044da4e23aff92d65f71ecf78f8a17fccaa4b26d23a14b127f429e9a66",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/sze2017_author/source.* 实际原文或页面",
+            "observation": "实读 arXiv 摘要对平台、架构和降低计算成本的讨论，正文没有引用未出现的具体量化结果。"
+          },
+          "field_quotes": {}
+        }
+      ],
+      "manual_metadata": {
+        "kind": "article",
+        "title": "Efficient Processing of Deep Neural Networks: A Tutorial and Survey",
+        "authors": [
+          "Vivienne Sze",
+          "Yu-Hsin Chen",
+          "Tien-Ju Yang",
+          "Joel S. Emer"
+        ],
+        "year": "2017",
+        "container": "Proceedings of the IEEE",
+        "volume": "105",
+        "issue": "12",
+        "pages": "2295-2329"
+      },
+      "usages": [
+        {
+          "chapter_id": "pre1",
+          "body_excerpt": "神经网络处理器研究已有对硬件平台、体系结构及降低计算成本路径的系统综述\\cite{sze2017}。",
+          "source_excerpt": "various hardware platforms and architectures",
+          "relevance": "作者摘要论述硬件平台、体系结构和计算成本路径；正文只概括其综述范围。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/sze2017_author/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "eyeriss2017",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://api.crossref.org/works/10.1109/JSSC.2016.2616357/transform/application/vnd.citationstyles.csl+json",
+          "authority": "publisher",
+          "authority_reason": "Crossref DOI 注册元数据对应正式期刊或会议记录，作为印刷书目字段的核对来源。",
+          "capture_path": "参考来源/eyeriss2017/source.json",
+          "capture_sha256": "7cf5c9bfb042b5fc0059d175cc094ac6c15560b9947a486d699c1e17537c0484",
+          "receipt_path": "参考来源/eyeriss2017/receipt.json",
+          "receipt_sha256": "75137d30135d989a381562ab050eefd6eb0903dabd601c0909121e18f7470947",
+          "format": "csl_json",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/eyeriss2017/source.* 实际原文或页面",
+            "observation": "逐项核对 Crossref 所存作者、题名、刊名、年份、卷期和页码；书目字段仅据本条原始记录登记。"
+          }
+        },
+        {
+          "url": "https://www.rle.mit.edu/eyeriss-an-energy-efficient-reconfigurable-accelerator-for-deep-convolutional-neural-networks/",
+          "authority": "author",
+          "authority_reason": "论文作者所属 MIT 研究机构提供的 Eyeriss 原文摘要及数据流说明。",
+          "capture_path": "参考来源/eyeriss2017_mit/source.html",
+          "capture_sha256": "6064f7c28c873a7fda6deadacf482f82eae4fb8258358f75eb5f6e9b385e9c54",
+          "receipt_path": "参考来源/eyeriss2017_mit/receipt.json",
+          "receipt_sha256": "bd04ecabeb4b66af28259a7208b0055df1585898fbbdfef4529033ed88d833a8",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/eyeriss2017_mit/source.* 实际原文或页面",
+            "observation": "实读 MIT 摘要关于 row-stationary 数据流、局部复用与片外搬运的句子。"
+          },
+          "field_quotes": {}
+        }
+      ],
+      "manual_metadata": {
+        "kind": "article",
+        "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
+        "authors": [
+          "Yu-Hsin Chen",
+          "Tushar Krishna",
+          "Joel S. Emer",
+          "Vivienne Sze"
+        ],
+        "year": "2017",
+        "container": "IEEE Journal of Solid-State Circuits",
+        "volume": "52",
+        "issue": "1",
+        "pages": "127-138"
+      },
+      "usages": [
+        {
+          "chapter_id": "pre1",
+          "body_excerpt": "Eyeriss 对局部复用和片外访存能耗的实证分析说明，数据流设计会显著改变搬运代价\\cite{eyeriss2017}；TPU 的整模型评估则提醒我们，专用矩阵单元的峰值能力不能单独代表应用完成时间\\cite{jouppi2017}。",
+          "source_excerpt": "maximally reusing data locally to reduce expensive data movement",
+          "relevance": "MIT 作者机构摘要直接说明局部复用减少昂贵的数据搬移。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/eyeriss2017_mit/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "jouppi2017",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://research.google/pubs/in-datacenter-performance-analysis-of-a-tensor-processing-unit/",
+          "authority": "author",
+          "authority_reason": "Google Research 作者机构的 TPU 论文页面，提供原始摘要及前三位作者。",
+          "capture_path": "参考来源/jouppi2017_google/source.html",
+          "capture_sha256": "5464d827932653fffb2db1a5c284e8f57497e3659e50a97880d33d2e85f8662a",
+          "receipt_path": "参考来源/jouppi2017_google/receipt.json",
+          "receipt_sha256": "247e168097cdbafca1287331845e004132388f054c700d5d33b1b1e4de65c284",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/jouppi2017_google/source.* 实际原文或页面",
+            "observation": "逐句阅读峰值吞吐、应用利用率和尾部响应时间段落。"
+          },
+          "field_quotes": {
+            "title": [
+              {
+                "value": "In-Datacenter Performance Analysis of a Tensor Processing Unit",
+                "quote": "    \n       \n    \n  \n\n    \n     In-Datacenter Performance Analysis of a Tensor Processing Unit \n    \n     \n\n    \n    \n\n     \n\n    \n     \n     \n     \n     \n     \n   "
+              }
+            ],
+            "authors": [
+              {
+                "value": "Norman P. Jouppi",
+                "quote": "       \n                        Norman P. Jouppi\n                        \n                     \n                    \n "
+              },
+              {
+                "value": "Cliff Young",
+                "quote": "      \n                         Cliff Young \n                        \n                     \n                    \n"
+              },
+              {
+                "value": "Nishant Patil",
+                "quote": "       \n                        Nishant Patil\n                        \n                     \n                    \n "
+              }
+            ],
+            "year": [
+              {
+                "value": "2017",
+                "quote": "       \n                        ISCA (2017) (to appear)\n                     \n                    \n              "
+              }
+            ]
+          }
+        },
+        {
+          "url": "https://api.crossref.org/works/10.1145/3079856.3080246/transform/application/vnd.citationstyles.csl+json",
+          "authority": "publisher",
+          "authority_reason": "Crossref DOI 登记的正式会议题名和页码，可核对印刷书目中会议及页码。",
+          "capture_path": "参考来源/jouppi2017/source.json",
+          "capture_sha256": "c547afd005dedb1b3f5aad9430eb6ecfff162f580327a2e15d2fcbc325bd2504",
+          "receipt_path": "参考来源/jouppi2017/receipt.json",
+          "receipt_sha256": "f4a397480f6a5f222cf86d757333082dc8de773fa2f05bc2269b4807e02aa82d",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/jouppi2017/source.* 实际原文或页面",
+            "observation": "只提取会议名与页码，不用它替代论文方法或性能摘要。"
+          },
+          "field_quotes": {
+            "container": [
+              {
+                "value": "Proceedings of the 44th Annual International Symposium on Computer Architecture",
+                "quote": "rchitecture\",\"container-title\":\"Proceedings of the 44th Annual International Symposium on Computer Architecture\",\"original-title\":[],\"link\":[{\"URL\":\"https:\\/\\/dl.acm.org\\/doi\\/10.11"
+              }
+            ],
+            "pages": [
+              {
+                "value": "1-12",
+                "quote": "mestamp\":1497541201000},\"page\":\"1-12\",\"update-policy\":\"https:\\/\\/doi.org\\/10.1145\\/crossmark-policy\",\"sour"
+              }
+            ]
+          }
+        }
+      ],
+      "manual_metadata": {
+        "kind": "inproceedings",
+        "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit",
+        "authors": [
+          "Norman P. Jouppi",
+          "Cliff Young",
+          "Nishant Patil"
+        ],
+        "year": "2017",
+        "container": "Proceedings of the 44th Annual International Symposium on Computer Architecture",
+        "pages": "1-12"
+      },
+      "usages": [
+        {
+          "chapter_id": "pre1",
+          "body_excerpt": "Eyeriss 对局部复用和片外访存能耗的实证分析说明，数据流设计会显著改变搬运代价\\cite{eyeriss2017}；TPU 的整模型评估则提醒我们，专用矩阵单元的峰值能力不能单独代表应用完成时间\\cite{jouppi2017}。",
+          "source_excerpt": "99th-percentile response-time requirement",
+          "relevance": "作者机构摘要并列给出峰值吞吐与尾部响应时间；正文将其作为应用级评价动机。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/jouppi2017_google/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "hongkung1981",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://eecs.harvard.edu/htk/publications/",
+          "authority": "author",
+          "authority_reason": "Kung 教授公开的个人正式发表论文目录，含本论文完整标题、作者、年份和页码。",
+          "capture_path": "参考来源/hongkung1981_biblio/source.html",
+          "capture_sha256": "5b677aacf34136df9756b1282258340de81bfce1c490c178852b3ab3f8cecda7",
+          "receipt_path": "参考来源/hongkung1981_biblio/receipt.json",
+          "receipt_sha256": "bfeb4ca96718ddd8449b6d76be82cde1e964f4c7d2b8c8e109cf373565401f28",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/hongkung1981_biblio/source.* 实际原文或页面",
+            "observation": "实读该目录中 STOC 1981 的完整题名与页码，避免 DOI 注册题名的截断。"
+          },
+          "field_quotes": {
+            "title": [
+              {
+                "value": "I/O Complexity: The Red-Blue Pebble Game",
+                "quote": "\t\t\t    \n\t\t\t     \n\t\t\t\t \n\t\t\t\t     I/O Complexity: The Red-Blue Pebble Game \n\t\t\t\t    \n\t\t\t\t \n\t\t\t\t Hong J-W, Kung HT \n\t\t\t\t STOC 1981, pp. 326-333 \n"
+              }
+            ],
+            "authors": [
+              {
+                "value": "Hong, J-W",
+                "quote": "ebble Game \n\t\t\t\t    \n\t\t\t\t \n\t\t\t\t Hong J-W, Kung HT \n\t\t\t\t STOC 1981, pp. 326-333 \n\t\t\t\t\n\t\t\t\t (Cited by 725) \n\t\t\t\t"
+              },
+              {
+                "value": "Kung, H T",
+                "quote": "\t\t\t\t    \n\t\t\t\t \n\t\t\t\t Foreland O, Kung HT \n\t\t\t\t ICML 2026 Workshop AdaptFM (Resource-Adaptive Foundation Model "
+              }
+            ],
+            "year": [
+              {
+                "value": "1981",
+                "quote": "\t \n\t\t\t\t Hong J-W, Kung HT \n\t\t\t\t STOC 1981, pp. 326-333 \n\t\t\t\t\n\t\t\t\t (Cited by 725) \n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t     \n\t\t\t  "
+              }
+            ],
+            "container": [
+              {
+                "value": "STOC 1981",
+                "quote": "\t \n\t\t\t\t Hong J-W, Kung HT \n\t\t\t\t STOC 1981, pp. 326-333 \n\t\t\t\t\n\t\t\t\t (Cited by 725) \n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t     \n\t\t\t  "
+              }
+            ],
+            "pages": [
+              {
+                "value": "326-333",
+                "quote": "W, Kung HT \n\t\t\t\t STOC 1981, pp. 326-333 \n\t\t\t\t\n\t\t\t\t (Cited by 725) \n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t     \n\t\t\t    \n\t\t\t    \n\t\t"
+              }
+            ]
+          }
+        },
+        {
+          "url": "https://www.eecs.harvard.edu/~htk/publication/1981-stoc-hong-kung.pdf",
+          "authority": "author",
+          "authority_reason": "Kung 教授个人站点公开的原刊论文扫描件，首页可读摘要与模型定义。",
+          "capture_path": "参考来源/hongkung1981_author/source.pdf",
+          "capture_sha256": "b70147993c1ef70326aae7f1cbfc92ef4851aad3de2abf1f8e16df0afa3218bb",
+          "receipt_path": "参考来源/hongkung1981_author/receipt.json",
+          "receipt_sha256": "2e20a64e9d14543bfcdbb6a940026d97e7de115e373841076f3af605f5e463de",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/hongkung1981_author/source.* 实际原文或页面",
+            "observation": "核对第一页确实提出红蓝卵石游戏刻画 I/O 复杂度。"
+          },
+          "pdf_pages": [
+            1
+          ],
+          "field_quotes": {}
+        }
+      ],
+      "manual_metadata": {
+        "kind": "inproceedings",
+        "title": "I/O Complexity: The Red-Blue Pebble Game",
+        "authors": [
+          "Hong, J-W",
+          "Kung, H T"
+        ],
+        "year": "1981",
+        "container": "STOC 1981",
+        "pages": "326-333"
+      },
+      "usages": [
+        {
+          "chapter_id": "pre1",
+          "body_excerpt": "经典的红蓝卵石模型从理论上刻画有限快存下计算与I/O的牵制\\cite{hongkung1981}。",
+          "source_excerpt": "red-blue pebble game is proposed to model the",
+          "relevance": "原刊首页明确提出红蓝卵石游戏刻画输入输出复杂度，正文不移植其下界数值。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/hongkung1981_author/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "perotin2021",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2106.07059",
+          "authority": "author",
+          "authority_reason": "三位作者在 arXiv 公开的完整预印本摘要及书目页。",
+          "capture_path": "参考来源/perotin2021/source.html",
+          "capture_sha256": "5ba1672e60a215354487d069ade7e80a14b5a77f9a3729d1436321756c0aaafb",
+          "receipt_path": "参考来源/perotin2021/receipt.json",
+          "receipt_sha256": "ee083826d40b59bf9a4876fc5e6f69fea00f8ac43adf167e9c9fbebe83d7dc13",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/perotin2021/source.* 实际原文或页面",
+            "observation": "实读摘要中多资源类型、先后约束和最小化 makespan 的完整语句。"
+          },
+          "field_quotes": {
+            "title": [
+              {
+                "value": "Multi-Resource List Scheduling of Moldable Parallel Jobs under Precedence Constraints",
+                "quote": "\n \n\n    [2106.07059] Multi-Resource List Scheduling of Moldable Parallel Jobs under Precedence Constraints \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n  \n   \n   \n "
+              }
+            ],
+            "authors": [
+              {
+                "value": "Lucas Perotin",
+                "quote": "ence Constraints \n     Authors: Lucas Perotin ,  Hongyang Sun ,  Padma Raghavan              View a PDF of the pape"
+              },
+              {
+                "value": "Hongyang Sun",
+                "quote": "\n     Authors: Lucas Perotin ,  Hongyang Sun ,  Padma Raghavan              View a PDF of the paper titled Multi-R"
+              },
+              {
+                "value": "Padma Raghavan",
+                "quote": "ucas Perotin ,  Hongyang Sun ,  Padma Raghavan              View a PDF of the paper titled Multi-Resource List Sched"
+              }
+            ],
+            "year": [
+              {
+                "value": "2021",
+                "quote": "59  (cs)\n     \n \n \n   \n     \n  [Submitted on 13 Jun 2021] \n     Title: Multi-Resource List Scheduling of Moldable Parallel Job"
+              }
+            ],
+            "container": [
+              {
+                "value": "arXiv:2106.07059",
+                "quote": " Computing \n     \n\n     \n       arXiv:2106.07059  (cs)\n     \n \n \n   \n     \n  [Submitted on 13 Jun 2021] \n     Title: M"
+              }
+            ]
+          }
+        }
+      ],
+      "manual_metadata": {
+        "kind": "preprint",
+        "title": "Multi-Resource List Scheduling of Moldable Parallel Jobs under Precedence Constraints",
+        "authors": [
+          "Lucas Perotin",
+          "Hongyang Sun",
+          "Padma Raghavan"
+        ],
+        "year": "2021",
+        "container": "arXiv:2106.07059"
+      },
+      "usages": [
+        {
+          "chapter_id": "q1",
+          "body_excerpt": "多资源列表调度研究把核心、缓存、内存和I/O与任务先后约束共同纳入完工时间目标\\cite{perotin2021}；针对有向无环任务图的HEFT算法还把执行代价和通信代价共同用于任务排序\\cite{topcuoglu2002}。",
+          "source_excerpt": "multi-resource scheduling to minimize the makespan",
+          "relevance": "预印本摘要明确同时列出多种资源、先后约束及完工时间目标。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/perotin2021/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "topcuoglu2002",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://api.crossref.org/works/10.1109/71.993206/transform/application/vnd.citationstyles.csl+json",
+          "authority": "publisher",
+          "authority_reason": "Crossref DOI 注册元数据对应正式期刊或会议记录，作为印刷书目字段的核对来源。",
+          "capture_path": "参考来源/topcuoglu2002/source.json",
+          "capture_sha256": "fb31f8dc34520de3ad5a22a455af04fc2c8d4487c4c4dc1e4afda7c7d0888488",
+          "receipt_path": "参考来源/topcuoglu2002/receipt.json",
+          "receipt_sha256": "e2ea288cd03cf678542bb9e168876761a4263566d359d3f04ee1be6205999271",
+          "format": "csl_json",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/topcuoglu2002/source.* 实际原文或页面",
+            "observation": "逐项核对 Crossref 所存作者、题名、刊名、年份、卷期和页码；书目字段仅据本条原始记录登记。"
+          }
+        },
+        {
+          "url": "https://experts.arizona.edu/en/publications/performance-effective-and-low-complexity-task-scheduling-for-hete/",
+          "authority": "author",
+          "authority_reason": "合著者所在亚利桑那大学的论文页面，提供完整原摘要和算法描述。",
+          "capture_path": "参考来源/topcuoglu2002_university/source.html",
+          "capture_sha256": "0239e4a6ccc0ddc6d8b858091c11214faca55c6141660feb7f57653bbecf78b1",
+          "receipt_path": "参考来源/topcuoglu2002_university/receipt.json",
+          "receipt_sha256": "d6f662aeabe4d3b095fe244c5e6f74c538ebb175f1ac3e3fbfdcf5792766d1f4",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/topcuoglu2002_university/source.* 实际原文或页面",
+            "observation": "实读 HEFT 的 upward rank 及最早完工处理器选择句。"
+          },
+          "field_quotes": {}
+        }
+      ],
+      "manual_metadata": {
+        "kind": "article",
+        "title": "Performance-Effective and Low-Complexity Task Scheduling for Heterogeneous Computing",
+        "authors": [
+          "H. Topcuoglu",
+          "S. Hariri",
+          "Min-You Wu"
+        ],
+        "year": "2002",
+        "container": "IEEE Transactions on Parallel and Distributed Systems",
+        "volume": "13",
+        "issue": "3",
+        "pages": "260-274"
+      },
+      "usages": [
+        {
+          "chapter_id": "q1",
+          "body_excerpt": "多资源列表调度研究把核心、缓存、内存和I/O与任务先后约束共同纳入完工时间目标\\cite{perotin2021}；针对有向无环任务图的HEFT算法还把执行代价和通信代价共同用于任务排序\\cite{topcuoglu2002}。",
+          "source_excerpt": "The HEFT algorithm selects the task with the highest upward rank",
+          "relevance": "作者所在高校的论文摘要明确说明 HEFT 的优先级与最早完工选择。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/topcuoglu2002_university/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "kernighan1970",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://api.crossref.org/works/10.1002/j.1538-7305.1970.tb01770.x/transform/application/vnd.citationstyles.csl+json",
+          "authority": "publisher",
+          "authority_reason": "Crossref DOI 注册元数据对应正式期刊或会议记录，作为印刷书目字段的核对来源。",
+          "capture_path": "参考来源/kernighan1970/source.json",
+          "capture_sha256": "6eb0174dda44ff813a606fdb702bf4cec822a95fa4ab78578eab585850214163",
+          "receipt_path": "参考来源/kernighan1970/receipt.json",
+          "receipt_sha256": "64ad66944b3874c5b98ae9161d480310f807d86f1d1f2742803bc7b82cd10e15",
+          "format": "csl_json",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/kernighan1970/source.* 实际原文或页面",
+            "observation": "逐项核对 Crossref 所存作者、题名、刊名、年份、卷期和页码；书目字段仅据本条原始记录登记。"
+          }
+        },
+        {
+          "url": "https://www.nokia.com/bell-labs/publications-and-media/publications/an-efficient-heuristic-procedure-for-partitioning-graphs/",
+          "authority": "publisher",
+          "authority_reason": "Nokia Bell Labs 为原作者工作机构与原期刊版权关联机构，提供论文开篇正文。",
+          "capture_path": "参考来源/kernighan1970_author/source.html",
+          "capture_sha256": "3502aca3d5b918df60eff1e8548a7dd21ffdc820e0caf8fe81df0d80453a66cb",
+          "receipt_path": "参考来源/kernighan1970_author/receipt.json",
+          "receipt_sha256": "db338232e6fb77d476f534973cb0fdc32df770fb2a6f5f23f0ef6a5bf294f396",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/kernighan1970_author/source.* 实际原文或页面",
+            "observation": "实读图划分的割边目标及子集大小上限，没有把局部交换细节错引到所摘段落。"
+          },
+          "field_quotes": {}
+        }
+      ],
+      "manual_metadata": {
+        "kind": "article",
+        "title": "An Efficient Heuristic Procedure for Partitioning Graphs",
+        "authors": [
+          "B. W. Kernighan",
+          "S. Lin"
+        ],
+        "year": "1970",
+        "container": "Bell System Technical Journal",
+        "volume": "49",
+        "issue": "2",
+        "pages": "291-307"
+      },
+      "usages": [
+        {
+          "chapter_id": "q1",
+          "body_excerpt": "Kernighan--Lin以给定规模限制下的割边代价为划分目标\\cite{kernighan1970}；多层次方法则通过粗化、粗图划分和细化逐步改善割边\\cite{karypis1998}。",
+          "source_excerpt": "minimize the total cost of the edges cut",
+          "relevance": "原出版机构展示论文开篇定义：给定规模限制下最小化被切边的总成本。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/kernighan1970_author/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "karypis1998",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://api.crossref.org/works/10.1137/S1064827595287997/transform/application/vnd.citationstyles.csl+json",
+          "authority": "publisher",
+          "authority_reason": "Crossref DOI 注册元数据对应正式期刊或会议记录，作为印刷书目字段的核对来源。",
+          "capture_path": "参考来源/karypis1998/source.json",
+          "capture_sha256": "fe5f2df3f4cf29ca03e12b0363d9ba9efc6a75fd491c70b47bb144fb37fbbe01",
+          "receipt_path": "参考来源/karypis1998/receipt.json",
+          "receipt_sha256": "7771ad780cbc9e329bb8189d5258b3872f540b51c6e4114e813af9076afaf547",
+          "format": "csl_json",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/karypis1998/source.* 实际原文或页面",
+            "observation": "逐项核对 Crossref 所存作者、题名、刊名、年份、卷期和页码；书目字段仅据本条原始记录登记。"
+          }
+        },
+        {
+          "url": "https://people.eecs.berkeley.edu/~jordan/sail/readings/karypis-kumar.pdf",
+          "authority": "repository",
+          "authority_reason": "伯克利大学服务器保存原刊排版 PDF，第一页摘要可核实多层次三阶段。",
+          "capture_path": "参考来源/karypis1998_original/source.pdf",
+          "capture_sha256": "d7e1467e4200cbe16cdbb7869cf39928cdd507b1beaf5df2d54e6442413298d8",
+          "receipt_path": "参考来源/karypis1998_original/receipt.json",
+          "receipt_sha256": "473af60e04fa2be40ac4bd31141529dc292ae82b98a6ed8da91d29f543b14cfa",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/karypis1998_original/source.* 实际原文或页面",
+            "observation": "实读原刊 PDF 第一页摘要，核对粗化、粗图划分与细化三个过程。"
+          },
+          "pdf_pages": [
+            1
+          ],
+          "field_quotes": {}
+        }
+      ],
+      "manual_metadata": {
+        "kind": "article",
+        "title": "A Fast and High Quality Multilevel Scheme for Partitioning Irregular Graphs",
+        "authors": [
+          "George Karypis",
+          "Vipin Kumar"
+        ],
+        "year": "1998",
+        "container": "SIAM Journal on Scientific Computing",
+        "volume": "20",
+        "issue": "1",
+        "pages": "359-392"
+      },
+      "usages": [
+        {
+          "chapter_id": "q1",
+          "body_excerpt": "Kernighan--Lin以给定规模限制下的割边代价为划分目标\\cite{kernighan1970}；多层次方法则通过粗化、粗图划分和细化逐步改善割边\\cite{karypis1998}。",
+          "source_excerpt": "all three phases: coarsening, partition",
+          "relevance": "原刊第一页摘要列出粗化、粗图划分与细化三阶段。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/karypis1998_original/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "chen2018tvm",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://www.usenix.org/conference/osdi18/presentation/chen",
+          "authority": "publisher",
+          "authority_reason": "USENIX 会议官网原论文页面，包含作者、正式会议书目与原始摘要。",
+          "capture_path": "参考来源/chen2018tvm/source.html",
+          "capture_sha256": "bd16b1a949902272b83b8ffc30be1251f77de6b578311ed5b57c8815e432d34f",
+          "receipt_path": "参考来源/chen2018tvm/receipt.json",
+          "receipt_sha256": "db9aba8edc8564c9fb3268806f1f9b1396f932b295262f8ca480a1fa2a0900a4",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/chen2018tvm/source.* 实际原文或页面",
+            "observation": "实读摘要关于算子融合和硬件映射，且核对页面 BibTeX 中的年份和页码。"
+          },
+          "field_quotes": {
+            "title": [
+              {
+                "value": "TVM: An Automated End-to-End Optimizing Compiler for Deep Learning",
+                "quote": "\n \n \n \n \n \n \n \n \n \n \n \n \n \n     TVM: An Automated End-to-End Optimizing Compiler for Deep Learning | USENIX \n     \n \n \n \n \n \n \n \n     \n \n \n \n \n \n \n\n   \n   \n     \n \n   \n"
+              }
+            ],
+            "authors": [
+              {
+                "value": "Tianqi Chen",
+                "quote": " \n       \n\n        \n  \n   \n     Tianqi Chen and Thierry Moreau,  University of Washington;  Ziheng Jiang,  Univer"
+              },
+              {
+                "value": "Thierry Moreau",
+                "quote": "   \n  \n   \n     Tianqi Chen and Thierry Moreau,  University of Washington;  Ziheng Jiang,  University of Washington,"
+              },
+              {
+                "value": "Ziheng Jiang",
+                "quote": "au,  University of Washington;  Ziheng Jiang,  University of Washington, AWS;  Lianmin Zheng,  Shanghai Jiao Tong "
+              }
+            ],
+            "year": [
+              {
+                "value": "2018",
+                "quote": "nd Implementation (OSDI 18)}, \n\tyear = {2018}, \n\tisbn = {978-1-939133-08-3}, \n\taddress = {Carlsbad, CA}, \n\tpages = "
+              }
+            ],
+            "container": [
+              {
+                "value": "13th USENIX Symposium on Operating Systems Design and Implementation (OSDI 18)",
+                "quote": " Deep Learning}, \n\tbooktitle = {13th USENIX Symposium on Operating Systems Design and Implementation (OSDI 18)}, \n\tyear = {2018}, \n\tisbn = {978-1-939133-08-3}, \n\taddress = {Carlsba"
+              }
+            ],
+            "pages": [
+              {
+                "value": "578-594",
+                "quote": "ss = {Carlsbad, CA}, \n\tpages = {578--594}, \n\turl = {https://www.usenix.org/conference/osdi18/presentation/chen"
+              }
+            ]
+          }
+        }
+      ],
+      "manual_metadata": {
+        "kind": "inproceedings",
+        "title": "TVM: An Automated End-to-End Optimizing Compiler for Deep Learning",
+        "authors": [
+          "Tianqi Chen",
+          "Thierry Moreau",
+          "Ziheng Jiang"
+        ],
+        "year": "2018",
+        "container": "13th USENIX Symposium on Operating Systems Design and Implementation (OSDI 18)",
+        "pages": "578-594"
+      },
+      "usages": [
+        {
+          "chapter_id": "q2",
+          "body_excerpt": "图级算子融合可改变中间量的产生、驻留和搬运，TVM的端到端优化框架提供了类似的系统动机\\cite{chen2018tvm}。",
+          "source_excerpt": "high-level operator fusion, mapping to arbitrary hardware primitives",
+          "relevance": "USENIX 原论文摘要明确提到算子融合与硬件映射；正文只借鉴系统动机。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/chen2018tvm/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "mattson1970",
+      "reference_type": "ordinary",
+      "sources": [
+        {
+          "url": "https://api.crossref.org/works/10.1147/sj.92.0078/transform/application/vnd.citationstyles.csl+json",
+          "authority": "publisher",
+          "authority_reason": "Crossref DOI 注册元数据对应正式期刊或会议记录，作为印刷书目字段的核对来源。",
+          "capture_path": "参考来源/mattson1970/source.json",
+          "capture_sha256": "78f1e5cdb30560ff588b2c7f8f4e39a3a76a3c0a707a7b1a2bd89608276bde1d",
+          "receipt_path": "参考来源/mattson1970/receipt.json",
+          "receipt_sha256": "1aef07fdd5695f6b7641a60a26f0f1000c75667a170ffca3993116de47de71c9",
+          "format": "csl_json",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/mattson1970/source.* 实际原文或页面",
+            "observation": "逐项核对 Crossref 所存作者、题名、刊名、年份、卷期和页码；书目字段仅据本条原始记录登记。"
+          }
+        },
+        {
+          "url": "https://www.bitsavers.org/pdf/ibm/IBM_Systems_Journal/092/ibmsj0902B.pdf",
+          "authority": "repository",
+          "authority_reason": "保存 IBM Systems Journal 原刊扫描件的公共文献档案，首页有可提取摘要。",
+          "capture_path": "参考来源/mattson1970_original/source.pdf",
+          "capture_sha256": "dccef66b75a4fb4a77eb8a2202fca1c22e3afb788775bfcf4773f1d7dc482e7f",
+          "receipt_path": "参考来源/mattson1970_original/receipt.json",
+          "receipt_sha256": "de87a21f78dd68b05525a2c791830da9de9eb8d3df426f82cf8aa136238ee8ee",
+          "format": "field_quotes",
+          "review": {
+            "reviewed": true,
+            "tool_ref": "论文/参考来源/mattson1970_original/source.* 实际原文或页面",
+            "observation": "实读第一页关于访问轨迹、存储层级与 stack processing 的原始描述。"
+          },
+          "pdf_pages": [
+            1
+          ],
+          "field_quotes": {}
+        }
+      ],
+      "manual_metadata": {
+        "kind": "article",
+        "title": "Evaluation Techniques for Storage Hierarchies",
+        "authors": [
+          "R.L. Mattson",
+          "J. Gecsei",
+          "D. R. Slutz",
+          "I. L. Traiger"
+        ],
+        "year": "1970",
+        "container": "IBM Systems Journal",
+        "volume": "9",
+        "issue": "2",
+        "pages": "78-117"
+      },
+      "usages": [
+        {
+          "chapter_id": "q3",
+          "body_excerpt": "存储层级的经典评价工作通过访问轨迹比较容量与替换策略下的命中行为\\cite{mattson1970}。",
+          "source_excerpt": "an efficient technique called “stack processing”",
+          "relevance": "原刊首页描述基于访问轨迹与栈处理评价存储层级；正文未把其模型套作本题 FIFO。 原文与该句在主题和限定语上对应，未把文献结论作为本题实测成绩。",
+          "reviewed": true,
+          "tool_ref": "论文/参考来源/mattson1970_original/source.* 源句复核"
+        }
+      ]
+    },
+    {
+      "key": "ai_tool_disclosure",
+      "reference_type": "ai_tool",
+      "ai_disclosure": {
+        "tool_name": "DeepSeek",
+        "version": "DeepSeek-V4.1-Flash",
+        "organization": "深度求索（DeepSeek）",
+        "date": "2026-09-23"
+      },
+      "usage_status": "template_only",
+      "sources": [],
+      "usages": []
+    }
+  ]
+}

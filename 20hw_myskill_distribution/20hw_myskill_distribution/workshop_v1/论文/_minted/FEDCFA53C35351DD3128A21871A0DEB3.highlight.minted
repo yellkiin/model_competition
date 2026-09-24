@@ -1,0 +1,245 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{math}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{collections}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{deque}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{pathlib}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{Path}
+
+
+\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{EvaluationValidationError}\PYG{p}{(}\PYG{n+ne}{ValueError}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}An input or fixed execution order cannot be evaluated.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{n}{PIPES} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}MTE2\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}MTE3\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}M\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}PIPE\PYGZus{}V\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{n}{name}\PYG{p}{,} \PYG{n}{minimum}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{value}\PYG{p}{)} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{n+nb}{int} \PYG{o+ow}{or} \PYG{n}{value} \PYG{o}{\PYGZlt{}} \PYG{n}{minimum}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ must be an integer \PYGZgt{}= }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{minimum}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{; got }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{value}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{require\PYGZus{}number}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{n}{name}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{):}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{n+nb}{bool}\PYG{p}{)} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{))}
+            \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{math}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{value}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n}{value} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{p}{(}\PYG{n}{positive} \PYG{o+ow}{and} \PYG{n}{value} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)):}
+        \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ must be finite and }\PYG{l+s+si}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}\PYGZgt{} 0\PYGZdq{}}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{positive}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}\PYGZgt{}= 0\PYGZdq{}}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{; got }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{value}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{validate\PYGZus{}capacity}\PYG{p}{(}\PYG{n}{capacity}\PYG{p}{):}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{capacity}\PYG{p}{,} \PYG{n+nb}{dict}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{capacity}\PYG{p}{)} \PYG{o}{!=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}L1\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}UB\PYGZsq{}}\PYG{p}{\PYGZcb{}:}
+        \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}capacity must contain exactly L1 and UB\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{name}\PYG{p}{,} \PYG{n}{size} \PYG{o+ow}{in} \PYG{n}{capacity}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+        \PYG{n}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{size}\PYG{p}{,} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}capacity.}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{CONFIG\PYGZus{}SECTIONS} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}capacity\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}multicore\PYGZus{}scene\PYGZus{}a\PYGZsq{}}\PYG{p}{,}
+                   \PYG{l+s+s1}{\PYGZsq{}multicore\PYGZus{}scene\PYGZus{}b\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}problem\PYGZus{}3\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{\PYGZus{}iter\PYGZus{}settings}\PYG{p}{(}\PYG{n}{path}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}逐行解析 config.txt，产出 (行号, 段名, 键, 值)。}
+
+\PYG{l+s+sd}{    段名带方括号时必须落在 CONFIG\PYGZus{}SECTIONS 内：这样 `[bandwidht]` 之类的}
+\PYG{l+s+sd}{    拼写错误，以及已经废弃的段（例如早期版本的 `[pipe\PYGZus{}capacity]`）会立刻}
+\PYG{l+s+sd}{    报错，而不是被静默忽略、让选手以为配置生效了。}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{active} \PYG{o}{=} \PYG{k+kc}{None}
+    \PYG{k}{for} \PYG{n}{line\PYGZus{}no}\PYG{p}{,} \PYG{n}{line} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}
+            \PYG{n}{Path}\PYG{p}{(}\PYG{n}{path}\PYG{p}{)}\PYG{o}{.}\PYG{n}{read\PYGZus{}text}\PYG{p}{(}\PYG{n}{encoding}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}utf\PYGZhy{}8\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{splitlines}\PYG{p}{(),} \PYG{l+m+mi}{1}\PYG{p}{):}
+        \PYG{n}{text} \PYG{o}{=} \PYG{n}{line}\PYG{o}{.}\PYG{n}{split}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{strip}\PYG{p}{()}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{text}\PYG{p}{:}
+            \PYG{k}{continue}
+        \PYG{k}{if} \PYG{n}{text}\PYG{o}{.}\PYG{n}{startswith}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}[\PYGZsq{}}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{text}\PYG{o}{.}\PYG{n}{endswith}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}]\PYGZsq{}}\PYG{p}{):}
+            \PYG{n}{name} \PYG{o}{=} \PYG{n}{text}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{strip}\PYG{p}{()}\PYG{o}{.}\PYG{n}{lower}\PYG{p}{()}
+            \PYG{k}{if} \PYG{n}{name} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{CONFIG\PYGZus{}SECTIONS}\PYG{p}{:}
+                \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}
+                    \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{path}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{:}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{line\PYGZus{}no}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: unknown section [}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{]\PYGZsq{}}\PYG{p}{)}
+            \PYG{n}{active} \PYG{o}{=} \PYG{n}{name}
+            \PYG{k}{continue}
+        \PYG{n}{parts} \PYG{o}{=} \PYG{n}{text}\PYG{o}{.}\PYG{n}{split}\PYG{p}{()}
+        \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{parts}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{2} \PYG{o+ow}{or} \PYG{n}{active} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}
+                \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{path}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{:}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{line\PYGZus{}no}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: setting must be \PYGZdq{}\PYGZlt{}key\PYGZgt{} \PYGZlt{}integer\PYGZgt{}\PYGZdq{} \PYGZsq{}}
+                \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}inside one of }\PYG{l+s+si}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}, \PYGZdq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{CONFIG\PYGZus{}SECTIONS}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{text}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{yield} \PYG{n}{line\PYGZus{}no}\PYG{p}{,} \PYG{n}{active}\PYG{p}{,} \PYG{n}{parts}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{parts}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{read\PYGZus{}integer\PYGZus{}settings}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{n}{section}\PYG{p}{,} \PYG{n}{keys}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Missing default config is allowed; invalid settings never silently default.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{result} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{path} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{path}\PYG{p}{)}\PYG{o}{.}\PYG{n}{exists}\PYG{p}{():}
+        \PYG{k}{return} \PYG{n}{result}
+    \PYG{k}{for} \PYG{n}{line\PYGZus{}no}\PYG{p}{,} \PYG{n}{name}\PYG{p}{,} \PYG{n}{key}\PYG{p}{,} \PYG{n}{value} \PYG{o+ow}{in} \PYG{n}{\PYGZus{}iter\PYGZus{}settings}\PYG{p}{(}\PYG{n}{path}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{name} \PYG{o}{!=} \PYG{n}{section}\PYG{p}{:}
+            \PYG{k}{continue}
+        \PYG{k}{if} \PYG{n}{key} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{keys} \PYG{o+ow}{or} \PYG{n}{key} \PYG{o+ow}{in} \PYG{n}{result}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{path}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{:}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{line\PYGZus{}no}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: invalid/duplicate [}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{section}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{] setting: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{key}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{try}\PYG{p}{:}
+            \PYG{n}{result}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{value}\PYG{p}{)}
+        \PYG{k}{except} \PYG{n+ne}{ValueError}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{path}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{:}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{line\PYGZus{}no}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{key}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ must be an integer\PYGZsq{}}\PYG{p}{)} \PYG{k+kn}{from}\PYG{+w}{ }\PYG{k+kc}{None}
+    \PYG{k}{return} \PYG{n}{result}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{read\PYGZus{}required\PYGZus{}settings}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{n}{section}\PYG{p}{,} \PYG{n}{keys}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}读取必需配置段；段缺失或键缺失都直接报错，不使用代码默认值。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{result} \PYG{o}{=} \PYG{n}{read\PYGZus{}integer\PYGZus{}settings}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{n}{section}\PYG{p}{,} \PYG{n}{keys}\PYG{p}{)}
+    \PYG{n}{missing} \PYG{o}{=} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{keys}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{result}\PYG{p}{))}
+    \PYG{k}{if} \PYG{n}{missing}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}
+            \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{path}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: [}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{section}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{] must define }\PYG{l+s+si}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}, \PYGZdq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{missing}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{key}\PYG{p}{,} \PYG{n}{value} \PYG{o+ow}{in} \PYG{n}{result}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+        \PYG{n}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{n}{key}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{result}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{read\PYGZus{}capacity\PYGZus{}config}\PYG{p}{(}\PYG{n}{path}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}读取 [capacity]；该项无代码默认值，必须由 config.txt 给出 L1/UB。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{n}{read\PYGZus{}required\PYGZus{}settings}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}capacity\PYGZsq{}}\PYG{p}{,} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}L1\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}UB\PYGZsq{}}\PYG{p}{))}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{read\PYGZus{}bandwidth\PYGZus{}config}\PYG{p}{(}\PYG{n}{path}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}读取 [bandwidth]；带宽必须为正整数，且不允许回退到代码默认值。\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{value} \PYG{o}{=} \PYG{n}{read\PYGZus{}required\PYGZus{}settings}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZsq{}}\PYG{p}{,} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZsq{}}\PYG{p}{,))[}\PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{require\PYGZus{}number}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZsq{}}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{value}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{read\PYGZus{}evaluation\PYGZus{}config}\PYG{p}{(}\PYG{n}{path}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}评估脚本的统一配置入口：容量与带宽全部来自 config.txt。}
+
+\PYG{l+s+sd}{    显式给出或默认推导出的配置文件都不存在时直接报错，不再回退到代码里的}
+\PYG{l+s+sd}{    默认数值，避免用错误的固定参数评出成绩。}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{path} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{path}\PYG{p}{)}\PYG{o}{.}\PYG{n}{exists}\PYG{p}{():}
+        \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}configuration file not found: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{path}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}capacity\PYGZsq{}}\PYG{p}{:} \PYG{n}{read\PYGZus{}capacity\PYGZus{}config}\PYG{p}{(}\PYG{n}{path}\PYG{p}{),}
+        \PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZsq{}}\PYG{p}{:} \PYG{n}{read\PYGZus{}bandwidth\PYGZus{}config}\PYG{p}{(}\PYG{n}{path}\PYG{p}{),}
+    \PYG{p}{\PYGZcb{}}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{validate\PYGZus{}parameters}\PYG{p}{(}\PYG{n}{bandwidth}\PYG{p}{,} \PYG{n}{capacity}\PYG{p}{,} \PYG{n}{max\PYGZus{}iter}\PYG{p}{,} \PYG{o}{**}\PYG{n}{delays}\PYG{p}{):}
+    \PYG{n}{require\PYGZus{}number}\PYG{p}{(}\PYG{n}{bandwidth}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}bandwidth\PYGZsq{}}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{validate\PYGZus{}capacity}\PYG{p}{(}\PYG{n}{capacity}\PYG{p}{)}
+    \PYG{n}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{max\PYGZus{}iter}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}max\PYGZus{}iter\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{name}\PYG{p}{,} \PYG{n}{delay} \PYG{o+ow}{in} \PYG{n}{delays}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+        \PYG{n}{require\PYGZus{}number}\PYG{p}{(}\PYG{n}{delay}\PYG{p}{,} \PYG{n}{name}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{check\PYGZus{}acyclic}\PYG{p}{(}\PYG{n}{nodes}\PYG{p}{,} \PYG{n}{edges}\PYG{p}{,} \PYG{n}{context}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Linear Kahn check; iterative DFS on failure returns labelled ring edges.}
+
+\PYG{l+s+sd}{    Nodes may be ids or (core, op) pairs. Edges are (source, target, reason).}
+\PYG{l+s+sd}{    Avoid recursion limits on the large official graphs.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{adjacency} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{node}\PYG{p}{:} \PYG{p}{\PYGZob{}\PYGZcb{}} \PYG{k}{for} \PYG{n}{node} \PYG{o+ow}{in} \PYG{n}{nodes}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{indegree} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{o}{.}\PYG{n}{fromkeys}\PYG{p}{(}\PYG{n}{adjacency}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{source}\PYG{p}{,} \PYG{n}{target}\PYG{p}{,} \PYG{n}{reason} \PYG{o+ow}{in} \PYG{n}{edges}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{source} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{adjacency} \PYG{o+ow}{or} \PYG{n}{target} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{adjacency}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{context}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: unknown edge endpoint }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{source}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{ \PYGZhy{}\PYGZgt{} }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{target}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{target} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{adjacency}\PYG{p}{[}\PYG{n}{source}\PYG{p}{]:}
+            \PYG{n}{adjacency}\PYG{p}{[}\PYG{n}{source}\PYG{p}{][}\PYG{n}{target}\PYG{p}{]} \PYG{o}{=} \PYG{n}{reason}
+            \PYG{n}{indegree}\PYG{p}{[}\PYG{n}{target}\PYG{p}{]} \PYG{o}{+=} \PYG{l+m+mi}{1}
+    \PYG{n}{ready} \PYG{o}{=} \PYG{n}{deque}\PYG{p}{(}\PYG{n}{node} \PYG{k}{for} \PYG{n}{node}\PYG{p}{,} \PYG{n}{count} \PYG{o+ow}{in} \PYG{n}{indegree}\PYG{o}{.}\PYG{n}{items}\PYG{p}{()} \PYG{k}{if} \PYG{n}{count} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{n}{count} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{while} \PYG{n}{ready}\PYG{p}{:}
+        \PYG{n}{node} \PYG{o}{=} \PYG{n}{ready}\PYG{o}{.}\PYG{n}{popleft}\PYG{p}{()}
+        \PYG{n}{count} \PYG{o}{+=} \PYG{l+m+mi}{1}
+        \PYG{k}{for} \PYG{n}{nxt} \PYG{o+ow}{in} \PYG{n}{adjacency}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]:}
+            \PYG{n}{indegree}\PYG{p}{[}\PYG{n}{nxt}\PYG{p}{]} \PYG{o}{\PYGZhy{}=} \PYG{l+m+mi}{1}
+            \PYG{k}{if} \PYG{n}{indegree}\PYG{p}{[}\PYG{n}{nxt}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+                \PYG{n}{ready}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{nxt}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{count} \PYG{o}{==} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{adjacency}\PYG{p}{):}
+        \PYG{k}{return}
+    \PYG{n}{colors} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{n}{parent} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{k}{for} \PYG{n}{root} \PYG{o+ow}{in} \PYG{n}{adjacency}\PYG{p}{:}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{indegree}\PYG{p}{[}\PYG{n}{root}\PYG{p}{]} \PYG{o+ow}{or} \PYG{n}{root} \PYG{o+ow}{in} \PYG{n}{colors}\PYG{p}{:}
+            \PYG{k}{continue}
+        \PYG{n}{colors}\PYG{p}{[}\PYG{n}{root}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{n}{stack} \PYG{o}{=} \PYG{p}{[(}\PYG{n}{root}\PYG{p}{,} \PYG{n+nb}{iter}\PYG{p}{(}\PYG{n}{adjacency}\PYG{p}{[}\PYG{n}{root}\PYG{p}{]))]}
+        \PYG{k}{while} \PYG{n}{stack}\PYG{p}{:}
+            \PYG{n}{node}\PYG{p}{,} \PYG{n}{children} \PYG{o}{=} \PYG{n}{stack}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+            \PYG{n}{nxt} \PYG{o}{=} \PYG{n+nb}{next}\PYG{p}{(}\PYG{n}{children}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{nxt} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n}{colors}\PYG{p}{[}\PYG{n}{node}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{2}
+                \PYG{n}{stack}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{()}
+                \PYG{k}{continue}
+            \PYG{k}{if} \PYG{n}{colors}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{nxt}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
+                \PYG{n}{ring} \PYG{o}{=} \PYG{p}{[(}\PYG{n}{node}\PYG{p}{,} \PYG{n}{nxt}\PYG{p}{,} \PYG{n}{adjacency}\PYG{p}{[}\PYG{n}{node}\PYG{p}{][}\PYG{n}{nxt}\PYG{p}{])]}
+                \PYG{n}{cursor} \PYG{o}{=} \PYG{n}{node}
+                \PYG{k}{while} \PYG{n}{cursor} \PYG{o}{!=} \PYG{n}{nxt}\PYG{p}{:}
+                    \PYG{n}{prev} \PYG{o}{=} \PYG{n}{parent}\PYG{p}{[}\PYG{n}{cursor}\PYG{p}{]}
+                    \PYG{n}{ring}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{prev}\PYG{p}{,} \PYG{n}{cursor}\PYG{p}{,} \PYG{n}{adjacency}\PYG{p}{[}\PYG{n}{prev}\PYG{p}{][}\PYG{n}{cursor}\PYG{p}{]))}
+                    \PYG{n}{cursor} \PYG{o}{=} \PYG{n}{prev}
+                \PYG{n}{ring}\PYG{o}{.}\PYG{n}{reverse}\PYG{p}{()}
+                \PYG{n}{text} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}; \PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{ \PYGZhy{}[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{why}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{]\PYGZhy{}\PYGZgt{} }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{b}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}} \PYG{k}{for} \PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{n}{why} \PYG{o+ow}{in} \PYG{n}{ring}\PYG{p}{[:}\PYG{l+m+mi}{16}\PYG{p}{])}
+                \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ring}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{16}\PYG{p}{:}
+                    \PYG{n}{text} \PYG{o}{+=} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}; ... (}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ring}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ edges total)\PYGZsq{}}
+                \PYG{n}{error} \PYG{o}{=} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{context}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: dependency cycle; }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{text}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+                \PYG{n}{error}\PYG{o}{.}\PYG{n}{cycle} \PYG{o}{=} \PYG{n}{ring}
+                \PYG{k}{raise} \PYG{n}{error}
+            \PYG{k}{if} \PYG{n}{nxt} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{colors}\PYG{p}{:}
+                \PYG{n}{colors}\PYG{p}{[}\PYG{n}{nxt}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+                \PYG{n}{parent}\PYG{p}{[}\PYG{n}{nxt}\PYG{p}{]} \PYG{o}{=} \PYG{n}{node}
+                \PYG{n}{stack}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{nxt}\PYG{p}{,} \PYG{n+nb}{iter}\PYG{p}{(}\PYG{n}{adjacency}\PYG{p}{[}\PYG{n}{nxt}\PYG{p}{])))}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{validate\PYGZus{}graph}\PYG{p}{(}\PYG{n}{graph}\PYG{p}{):}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{graph}\PYG{p}{,} \PYG{n+nb}{dict}\PYG{p}{):}
+        \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}graph must be an object\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{field} \PYG{o+ow}{in} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}tensors\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}edges\PYGZsq{}}\PYG{p}{):}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{graph}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{field}\PYG{p}{),} \PYG{n+nb}{list}\PYG{p}{):}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}graph.}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{field}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ must be a list\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{ids}\PYG{p}{,} \PYG{n}{ops} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{(),} \PYG{n+nb}{set}\PYG{p}{()}
+    \PYG{k}{for} \PYG{n}{kind}\PYG{p}{,} \PYG{n}{entries} \PYG{o+ow}{in} \PYG{p}{((}\PYG{l+s+s1}{\PYGZsq{}op\PYGZsq{}}\PYG{p}{,} \PYG{n}{graph}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ops\PYGZsq{}}\PYG{p}{]),} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}tensor\PYGZsq{}}\PYG{p}{,} \PYG{n}{graph}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}tensors\PYGZsq{}}\PYG{p}{,} \PYG{p}{[]))):}
+        \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{entries}\PYG{p}{:}
+            \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{item}\PYG{p}{,} \PYG{n+nb}{dict}\PYG{p}{):}
+                \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{kind}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ must be an object\PYGZsq{}}\PYG{p}{)}
+            \PYG{n}{ident} \PYG{o}{=} \PYG{n}{item}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{)}
+            \PYG{n}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{ident}\PYG{p}{,} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{kind}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.id\PYGZsq{}}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{ident} \PYG{o+ow}{in} \PYG{n}{ids}\PYG{p}{:}
+                \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}duplicate op/tensor id: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{ident}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+            \PYG{n}{ids}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{ident}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{kind} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}tensor\PYGZsq{}}\PYG{p}{:}
+                \PYG{n}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{item}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}size\PYGZsq{}}\PYG{p}{),} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}tensor }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{ident}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ size\PYGZsq{}}\PYG{p}{)}
+                \PYG{k}{if} \PYG{n}{item}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}pos\PYGZsq{}}\PYG{p}{)} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}DDR\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}L1\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}UB\PYGZsq{}}\PYG{p}{):}
+                    \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}tensor }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{ident}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: unsupported memory pos }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{item}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}pos\PYGZdq{}}\PYG{p}{)}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+            \PYG{k}{else}\PYG{p}{:}
+                \PYG{n}{ops}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{ident}\PYG{p}{)}
+                \PYG{c+c1}{\PYGZsh{} op 类型名不做白名单校验，Pipe 直接取节点自带的 pipe 字段。}
+                \PYG{k}{if} \PYG{n}{item}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZsq{}}\PYG{p}{)} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{PIPES}\PYG{p}{:}
+                    \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}
+                        \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}op }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{ident}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{: pipe must be one of }\PYG{l+s+si}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}, \PYGZdq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{PIPES}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{; \PYGZsq{}}
+                        \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}got }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{item}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}pipe\PYGZdq{}}\PYG{p}{)}\PYG{l+s+si}{!r\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+                \PYG{n}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{item}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}cycles\PYGZsq{}}\PYG{p}{),} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}op }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{ident}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ cycles\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{edges} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{seen} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+    \PYG{k}{for} \PYG{n}{edge} \PYG{o+ow}{in} \PYG{n}{graph}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}edges\PYGZsq{}}\PYG{p}{]:}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{edge}\PYG{p}{,} \PYG{n+nb}{dict}\PYG{p}{):}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}edge must be an object\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{n}{edge}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}source\PYGZsq{}}\PYG{p}{),} \PYG{n}{edge}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}target\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}edge.source\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{require\PYGZus{}integer}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}edge.target\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{a} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{ids} \PYG{o+ow}{or} \PYG{n}{b} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{ids}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}edge references unknown id: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ \PYGZhy{}\PYGZgt{} }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{b}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{a} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{ops} \PYG{o+ow}{and} \PYG{n}{b} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{ops}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}tensor\PYGZhy{}to\PYGZhy{}tensor edge is unsupported: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ \PYGZhy{}\PYGZgt{} }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{b}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n}{seen}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{EvaluationValidationError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}duplicate edge: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ \PYGZhy{}\PYGZgt{} }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{b}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{seen}\PYG{o}{.}\PYG{n}{add}\PYG{p}{((}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{))}
+        \PYG{n}{edges}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}graph\PYGZsq{}}\PYG{p}{))}
+    \PYG{n}{check\PYGZus{}acyclic}\PYG{p}{(}\PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{ids}\PYG{p}{),} \PYG{n}{edges}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}input graph\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{validate\PYGZus{}task\PYGZus{}order}\PYG{p}{(}\PYG{n}{view}\PYG{p}{):}
+    \PYG{c+c1}{\PYGZsh{} 无相邻Task顺序边时，没有新增约束；子图DAG已由方案入口保证。}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{order}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1} \PYG{k}{for} \PYG{n}{order} \PYG{o+ow}{in} \PYG{n}{view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}orders\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{()):}
+        \PYG{k}{return}
+    \PYG{n}{edges} \PYG{o}{=} \PYG{p}{[(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}subgraph dependency\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{a}\PYG{p}{,}\PYG{n}{b} \PYG{o+ow}{in} \PYG{n}{view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}dependency\PYGZus{}pairs\PYGZsq{}}\PYG{p}{]]}
+    \PYG{k}{for} \PYG{n}{core}\PYG{p}{,} \PYG{n}{order} \PYG{o+ow}{in} \PYG{n}{view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}core\PYGZus{}orders\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+        \PYG{n}{edges} \PYG{o}{+=} \PYG{p}{[(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}core }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{core}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ task order\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{a}\PYG{p}{,}\PYG{n}{b} \PYG{o+ow}{in} \PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{order}\PYG{p}{,}\PYG{n}{order}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:])]}
+    \PYG{n}{check\PYGZus{}acyclic}\PYG{p}{(}\PYG{n}{view}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}subgraph\PYGZus{}ids\PYGZsq{}}\PYG{p}{],} \PYG{n}{edges}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}task schedule\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{validate\PYGZus{}execution}\PYG{p}{(}\PYG{n}{tasks}\PYG{p}{,} \PYG{n}{cross\PYGZus{}links}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Check actual local dependencies + FIFO + external COPY, not serial tasks.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Step3已保证本地执行图和Pipe覆盖合法；此处只检查跨核组合新增的环。}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{cross\PYGZus{}links}\PYG{p}{:}
+        \PYG{k}{return}
+    \PYG{n}{nodes}\PYG{p}{,} \PYG{n}{edges} \PYG{o}{=} \PYG{p}{[],} \PYG{p}{[]}
+    \PYG{k}{for} \PYG{n}{core}\PYG{p}{,} \PYG{n}{task} \PYG{o+ow}{in} \PYG{n}{tasks}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+        \PYG{n}{ids} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}by\PYGZus{}id\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{nodes}\PYG{o}{.}\PYG{n}{extend}\PYG{p}{((}\PYG{n}{core}\PYG{p}{,}\PYG{n}{op}\PYG{p}{)} \PYG{k}{for} \PYG{n}{op} \PYG{o+ow}{in} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{ids}\PYG{p}{))}
+        \PYG{k}{for} \PYG{n}{op}\PYG{p}{,} \PYG{n}{preds} \PYG{o+ow}{in} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}op\PYGZus{}preds\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+            \PYG{n}{edges}\PYG{o}{.}\PYG{n}{extend}\PYG{p}{(((}\PYG{n}{core}\PYG{p}{,}\PYG{n}{pred}\PYG{p}{),(}\PYG{n}{core}\PYG{p}{,}\PYG{n}{op}\PYG{p}{),}\PYG{l+s+s1}{\PYGZsq{}local data/memory dependency\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{pred} \PYG{o+ow}{in} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{preds}\PYG{p}{))}
+        \PYG{k}{for} \PYG{n}{pipe}\PYG{p}{,} \PYG{n}{order} \PYG{o+ow}{in} \PYG{n}{task}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pipe\PYGZus{}ops\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+            \PYG{n}{edges}\PYG{o}{.}\PYG{n}{extend}\PYG{p}{(((}\PYG{n}{core}\PYG{p}{,}\PYG{n}{a}\PYG{p}{),(}\PYG{n}{core}\PYG{p}{,}\PYG{n}{b}\PYG{p}{),}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{pipe}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ FIFO\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{a}\PYG{p}{,}\PYG{n}{b} \PYG{o+ow}{in} \PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{order}\PYG{p}{,}\PYG{n}{order}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:]))}
+    \PYG{k}{for} \PYG{n}{link} \PYG{o+ow}{in} \PYG{n}{cross\PYGZus{}links}\PYG{p}{:}
+        \PYG{n}{source} \PYG{o}{=} \PYG{p}{(}\PYG{n}{link}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source\PYGZus{}core\PYGZsq{}}\PYG{p}{],}\PYG{n}{link}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}source\PYGZus{}copy\PYGZus{}out\PYGZus{}id\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{target} \PYG{o}{=} \PYG{p}{(}\PYG{n}{link}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}target\PYGZus{}core\PYGZsq{}}\PYG{p}{],}\PYG{n}{link}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}target\PYGZus{}copy\PYGZus{}in\PYGZus{}id\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{edges}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{source}\PYG{p}{,}\PYG{n}{target}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}cross\PYGZhy{}core COPY\PYGZsq{}}\PYG{p}{))}
+    \PYG{n}{check\PYGZus{}acyclic}\PYG{p}{(}\PYG{n}{nodes}\PYG{p}{,} \PYG{n}{edges}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}global execution (core, op)\PYGZsq{}}\PYG{p}{)}
+\end{MintedVerbatim}

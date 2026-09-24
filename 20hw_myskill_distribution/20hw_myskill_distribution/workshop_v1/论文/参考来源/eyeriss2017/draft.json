@@ -1,0 +1,34 @@
+{
+  "source_draft": {
+    "url": "https://api.crossref.org/works/10.1109/JSSC.2016.2616357/transform/application/vnd.citationstyles.csl+json",
+    "authority": "",
+    "authority_reason": "",
+    "capture_path": "参考来源/eyeriss2017/source.json",
+    "capture_sha256": "7cf5c9bfb042b5fc0059d175cc094ac6c15560b9947a486d699c1e17537c0484",
+    "receipt_path": "参考来源/eyeriss2017/receipt.json",
+    "receipt_sha256": "75137d30135d989a381562ab050eefd6eb0903dabd601c0909121e18f7470947",
+    "format": "csl_json",
+    "review": {
+      "reviewed": false,
+      "tool_ref": "",
+      "observation": ""
+    }
+  },
+  "extracted_metadata": {
+    "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
+    "authors": [
+      "Yu-Hsin Chen",
+      "Tushar Krishna",
+      "Joel S. Emer",
+      "Vivienne Sze"
+    ],
+    "year": "2017",
+    "container": "IEEE Journal of Solid-State Circuits",
+    "pages": "127-138",
+    "volume": "52",
+    "issue": "1",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi": "10.1109/jssc.2016.2616357"
+  },
+  "status": "REVIEW_REQUIRED"
+}

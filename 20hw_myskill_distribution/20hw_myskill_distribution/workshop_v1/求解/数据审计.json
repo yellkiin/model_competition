@@ -1,0 +1,3859 @@
+{
+  "summary": {
+    "case_count": 100,
+    "total_bytes": 252791457,
+    "op_range": [
+      766,
+      38666
+    ],
+    "internal_op_range": [
+      552,
+      35705
+    ],
+    "tensor_range": [
+      816,
+      40287
+    ],
+    "max_tensor_bytes": 294912,
+    "op_kinds": {
+      "COPY_IN": 48668,
+      "CONV": 29167,
+      "RELU": 78112,
+      "ADD": 194291,
+      "COPY_OUT": 15944,
+      "MATMUL": 182982,
+      "REDUCE": 54955,
+      "SUB": 28419,
+      "MUL": 16312,
+      "SQRT": 2268,
+      "DIV": 21789,
+      "EXP": 14185,
+      "SIGMOID": 8907,
+      "NEG": 3119
+    }
+  },
+  "cases": [
+    {
+      "case": "case_001",
+      "bytes": 353884,
+      "ops": 1001,
+      "internal_ops": 600,
+      "tensors": 1202,
+      "edges": 2402,
+      "op_edges": 1200,
+      "sources": 201,
+      "sinks": 200,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 401,
+        "L1": 401,
+        "UB": 400
+      },
+      "op_kinds": {
+        "COPY_IN": 201,
+        "CONV": 200,
+        "RELU": 200,
+        "ADD": 200,
+        "COPY_OUT": 200
+      },
+      "pipe_cycles": {
+        "PIPE_M": 232800,
+        "PIPE_V": 30400
+      },
+      "max_fanout": 200,
+      "components": 200,
+      "largest_component": 3,
+      "dag_depth": 4,
+      "max_level_width": 200,
+      "valid_dag": true
+    },
+    {
+      "case": "case_002",
+      "bytes": 784064,
+      "ops": 2197,
+      "internal_ops": 1798,
+      "tensors": 2595,
+      "edges": 5392,
+      "op_edges": 2797,
+      "sources": 398,
+      "sinks": 1,
+      "max_tensor_bytes": 4608,
+      "positions": {
+        "DDR": 399,
+        "L1": 1198,
+        "UB": 998
+      },
+      "op_kinds": {
+        "COPY_IN": 398,
+        "MATMUL": 800,
+        "RELU": 800,
+        "ADD": 198,
+        "COPY_OUT": 1
+      },
+      "pipe_cycles": {
+        "PIPE_M": 240000,
+        "PIPE_V": 35928
+      },
+      "max_fanout": 8,
+      "components": 1,
+      "largest_component": 1798,
+      "dag_depth": 25,
+      "max_level_width": 199,
+      "valid_dag": true
+    },
+    {
+      "case": "case_003",
+      "bytes": 4869895,
+      "ops": 13670,
+      "internal_ops": 13455,
+      "tensors": 13868,
+      "edges": 36295,
+      "op_edges": 22427,
+      "sources": 198,
+      "sinks": 17,
+      "max_tensor_bytes": 32768,
+      "positions": {
+        "DDR": 215,
+        "L1": 2745,
+        "UB": 10908
+      },
+      "op_kinds": {
+        "COPY_IN": 198,
+        "MATMUL": 2550,
+        "REDUCE": 2235,
+        "SUB": 1946,
+        "MUL": 345,
+        "ADD": 3034,
+        "SQRT": 108,
+        "DIV": 1188,
+        "RELU": 946,
+        "EXP": 972,
+        "SIGMOID": 125,
+        "NEG": 6,
+        "COPY_OUT": 17
+      },
+      "pipe_cycles": {
+        "PIPE_M": 438792,
+        "PIPE_V": 325189
+      },
+      "max_fanout": 972,
+      "components": 10,
+      "largest_component": 13194,
+      "dag_depth": 306,
+      "max_level_width": 325,
+      "valid_dag": true
+    },
+    {
+      "case": "case_004",
+      "bytes": 364607,
+      "ops": 1002,
+      "internal_ops": 777,
+      "tensors": 1116,
+      "edges": 2670,
+      "op_edges": 1554,
+      "sources": 114,
+      "sinks": 111,
+      "max_tensor_bytes": 36864,
+      "positions": {
+        "DDR": 225,
+        "L1": 447,
+        "UB": 444
+      },
+      "op_kinds": {
+        "COPY_IN": 114,
+        "MATMUL": 333,
+        "SIGMOID": 111,
+        "MUL": 222,
+        "ADD": 111,
+        "COPY_OUT": 111
+      },
+      "pipe_cycles": {
+        "PIPE_M": 385614,
+        "PIPE_V": 47952
+      },
+      "max_fanout": 111,
+      "components": 111,
+      "largest_component": 7,
+      "dag_depth": 7,
+      "max_level_width": 222,
+      "valid_dag": true
+    },
+    {
+      "case": "case_005",
+      "bytes": 1495150,
+      "ops": 4209,
+      "internal_ops": 4113,
+      "tensors": 4298,
+      "edges": 11187,
+      "op_edges": 6889,
+      "sources": 89,
+      "sinks": 7,
+      "max_tensor_bytes": 9216,
+      "positions": {
+        "DDR": 96,
+        "L1": 902,
+        "UB": 3300
+      },
+      "op_kinds": {
+        "COPY_IN": 89,
+        "MATMUL": 816,
+        "REDUCE": 672,
+        "SUB": 588,
+        "MUL": 126,
+        "ADD": 903,
+        "SQRT": 42,
+        "DIV": 378,
+        "RELU": 252,
+        "EXP": 294,
+        "SIGMOID": 42,
+        "COPY_OUT": 7
+      },
+      "pipe_cycles": {
+        "PIPE_M": 63882,
+        "PIPE_V": 60930
+      },
+      "max_fanout": 294,
+      "components": 1,
+      "largest_component": 4113,
+      "dag_depth": 139,
+      "max_level_width": 196,
+      "valid_dag": true
+    },
+    {
+      "case": "case_006",
+      "bytes": 274573,
+      "ops": 851,
+      "internal_ops": 678,
+      "tensors": 982,
+      "edges": 1995,
+      "op_edges": 1013,
+      "sources": 131,
+      "sinks": 42,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 173,
+        "L1": 177,
+        "UB": 632
+      },
+      "op_kinds": {
+        "COPY_IN": 131,
+        "RELU": 154,
+        "REDUCE": 146,
+        "ADD": 130,
+        "MATMUL": 59,
+        "SIGMOID": 30,
+        "MUL": 58,
+        "DIV": 41,
+        "SUB": 32,
+        "EXP": 4,
+        "SQRT": 6,
+        "NEG": 18,
+        "COPY_OUT": 42
+      },
+      "pipe_cycles": {
+        "PIPE_V": 69000,
+        "PIPE_M": 18660
+      },
+      "max_fanout": 11,
+      "components": 27,
+      "largest_component": 136,
+      "dag_depth": 23,
+      "max_level_width": 116,
+      "valid_dag": true
+    },
+    {
+      "case": "case_007",
+      "bytes": 1832496,
+      "ops": 4998,
+      "internal_ops": 3885,
+      "tensors": 5556,
+      "edges": 13326,
+      "op_edges": 7770,
+      "sources": 558,
+      "sinks": 555,
+      "max_tensor_bytes": 9216,
+      "positions": {
+        "DDR": 1113,
+        "L1": 2223,
+        "UB": 2220
+      },
+      "op_kinds": {
+        "COPY_IN": 558,
+        "MATMUL": 1665,
+        "SIGMOID": 555,
+        "MUL": 1110,
+        "ADD": 555,
+        "COPY_OUT": 555
+      },
+      "pipe_cycles": {
+        "PIPE_M": 979020,
+        "PIPE_V": 253080
+      },
+      "max_fanout": 555,
+      "components": 555,
+      "largest_component": 7,
+      "dag_depth": 7,
+      "max_level_width": 1110,
+      "valid_dag": true
+    },
+    {
+      "case": "case_008",
+      "bytes": 509065,
+      "ops": 1404,
+      "internal_ops": 864,
+      "tensors": 1836,
+      "edges": 3348,
+      "op_edges": 1512,
+      "sources": 432,
+      "sinks": 108,
+      "max_tensor_bytes": 18432,
+      "positions": {
+        "DDR": 540,
+        "L1": 540,
+        "UB": 756
+      },
+      "op_kinds": {
+        "COPY_IN": 432,
+        "MATMUL": 216,
+        "DIV": 216,
+        "REDUCE": 216,
+        "SUB": 108,
+        "EXP": 108,
+        "COPY_OUT": 108
+      },
+      "pipe_cycles": {
+        "PIPE_M": 250128,
+        "PIPE_V": 237168
+      },
+      "max_fanout": 2,
+      "components": 108,
+      "largest_component": 8,
+      "dag_depth": 9,
+      "max_level_width": 108,
+      "valid_dag": true
+    },
+    {
+      "case": "case_009",
+      "bytes": 2146447,
+      "ops": 6058,
+      "internal_ops": 5671,
+      "tensors": 6376,
+      "edges": 15754,
+      "op_edges": 9378,
+      "sources": 318,
+      "sinks": 69,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 387,
+        "L1": 1174,
+        "UB": 4815
+      },
+      "op_kinds": {
+        "COPY_IN": 318,
+        "MATMUL": 966,
+        "REDUCE": 959,
+        "SUB": 690,
+        "MUL": 421,
+        "ADD": 1212,
+        "SQRT": 109,
+        "DIV": 510,
+        "RELU": 359,
+        "EXP": 288,
+        "SIGMOID": 137,
+        "NEG": 20,
+        "COPY_OUT": 69
+      },
+      "pipe_cycles": {
+        "PIPE_M": 65160,
+        "PIPE_V": 119992
+      },
+      "max_fanout": 288,
+      "components": 25,
+      "largest_component": 4774,
+      "dag_depth": 367,
+      "max_level_width": 217,
+      "valid_dag": true
+    },
+    {
+      "case": "case_010",
+      "bytes": 256464,
+      "ops": 796,
+      "internal_ops": 667,
+      "tensors": 889,
+      "edges": 1899,
+      "op_edges": 1010,
+      "sources": 93,
+      "sinks": 36,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 129,
+        "L1": 210,
+        "UB": 550
+      },
+      "op_kinds": {
+        "COPY_IN": 93,
+        "MATMUL": 131,
+        "SIGMOID": 47,
+        "MUL": 48,
+        "ADD": 107,
+        "REDUCE": 110,
+        "RELU": 177,
+        "DIV": 14,
+        "SUB": 7,
+        "EXP": 7,
+        "NEG": 19,
+        "COPY_OUT": 36
+      },
+      "pipe_cycles": {
+        "PIPE_M": 44610,
+        "PIPE_V": 55496
+      },
+      "max_fanout": 28,
+      "components": 36,
+      "largest_component": 133,
+      "dag_depth": 63,
+      "max_level_width": 80,
+      "valid_dag": true
+    },
+    {
+      "case": "case_011",
+      "bytes": 332344,
+      "ops": 880,
+      "internal_ops": 688,
+      "tensors": 1056,
+      "edges": 2448,
+      "op_edges": 1392,
+      "sources": 176,
+      "sinks": 16,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 192,
+        "L1": 864
+      },
+      "op_kinds": {
+        "COPY_IN": 176,
+        "MATMUL": 352,
+        "ADD": 336,
+        "COPY_OUT": 16
+      },
+      "pipe_cycles": {
+        "PIPE_M": 184448,
+        "PIPE_V": 25536
+      },
+      "max_fanout": 4,
+      "components": 16,
+      "largest_component": 43,
+      "dag_depth": 23,
+      "max_level_width": 352,
+      "valid_dag": true
+    },
+    {
+      "case": "case_012",
+      "bytes": 430544,
+      "ops": 1304,
+      "internal_ops": 972,
+      "tensors": 1555,
+      "edges": 3131,
+      "op_edges": 1576,
+      "sources": 251,
+      "sinks": 81,
+      "max_tensor_bytes": 9216,
+      "positions": {
+        "DDR": 332,
+        "L1": 366,
+        "UB": 857
+      },
+      "op_kinds": {
+        "COPY_IN": 251,
+        "CONV": 8,
+        "RELU": 92,
+        "ADD": 193,
+        "MATMUL": 127,
+        "DIV": 84,
+        "REDUCE": 214,
+        "SUB": 65,
+        "EXP": 10,
+        "MUL": 99,
+        "SQRT": 11,
+        "SIGMOID": 45,
+        "NEG": 24,
+        "COPY_OUT": 81
+      },
+      "pipe_cycles": {
+        "PIPE_M": 35572,
+        "PIPE_V": 32237
+      },
+      "max_fanout": 12,
+      "components": 50,
+      "largest_component": 98,
+      "dag_depth": 20,
+      "max_level_width": 195,
+      "valid_dag": true
+    },
+    {
+      "case": "case_013",
+      "bytes": 1197680,
+      "ops": 3202,
+      "internal_ops": 1968,
+      "tensors": 4190,
+      "edges": 8126,
+      "op_edges": 3936,
+      "sources": 988,
+      "sinks": 246,
+      "max_tensor_bytes": 2048,
+      "positions": {
+        "DDR": 1234,
+        "L1": 2956
+      },
+      "op_kinds": {
+        "COPY_IN": 988,
+        "MATMUL": 984,
+        "ADD": 738,
+        "RELU": 246,
+        "COPY_OUT": 246
+      },
+      "pipe_cycles": {
+        "PIPE_M": 263712,
+        "PIPE_V": 43296
+      },
+      "max_fanout": 246,
+      "components": 246,
+      "largest_component": 8,
+      "dag_depth": 5,
+      "max_level_width": 984,
+      "valid_dag": true
+    },
+    {
+      "case": "case_014",
+      "bytes": 14404567,
+      "ops": 38666,
+      "internal_ops": 35705,
+      "tensors": 40287,
+      "edges": 108272,
+      "op_edges": 67985,
+      "sources": 1621,
+      "sinks": 1340,
+      "max_tensor_bytes": 165888,
+      "positions": {
+        "DDR": 2961,
+        "L1": 32854,
+        "UB": 4472
+      },
+      "op_kinds": {
+        "COPY_IN": 1621,
+        "CONV": 300,
+        "RELU": 912,
+        "ADD": 14722,
+        "MATMUL": 15915,
+        "REDUCE": 2682,
+        "MUL": 2,
+        "SUB": 1,
+        "SIGMOID": 603,
+        "NEG": 568,
+        "COPY_OUT": 1340
+      },
+      "pipe_cycles": {
+        "PIPE_M": 17225748,
+        "PIPE_V": 1651424
+      },
+      "max_fanout": 38,
+      "components": 1340,
+      "largest_component": 124,
+      "dag_depth": 125,
+      "max_level_width": 15921,
+      "valid_dag": true
+    },
+    {
+      "case": "case_015",
+      "bytes": 423712,
+      "ops": 1290,
+      "internal_ops": 1013,
+      "tensors": 1501,
+      "edges": 3107,
+      "op_edges": 1606,
+      "sources": 211,
+      "sinks": 66,
+      "max_tensor_bytes": 32768,
+      "positions": {
+        "DDR": 277,
+        "L1": 302,
+        "UB": 922
+      },
+      "op_kinds": {
+        "COPY_IN": 211,
+        "MATMUL": 130,
+        "SIGMOID": 50,
+        "MUL": 112,
+        "ADD": 192,
+        "REDUCE": 241,
+        "DIV": 76,
+        "SUB": 57,
+        "EXP": 13,
+        "RELU": 106,
+        "SQRT": 10,
+        "NEG": 26,
+        "COPY_OUT": 66
+      },
+      "pipe_cycles": {
+        "PIPE_M": 94980,
+        "PIPE_V": 101497
+      },
+      "max_fanout": 11,
+      "components": 46,
+      "largest_component": 145,
+      "dag_depth": 30,
+      "max_level_width": 172,
+      "valid_dag": true
+    },
+    {
+      "case": "case_016",
+      "bytes": 6110151,
+      "ops": 18008,
+      "internal_ops": 17995,
+      "tensors": 18020,
+      "edges": 43019,
+      "op_edges": 24999,
+      "sources": 12,
+      "sinks": 1,
+      "max_tensor_bytes": 32768,
+      "positions": {
+        "DDR": 13,
+        "L1": 12,
+        "UB": 17995
+      },
+      "op_kinds": {
+        "COPY_IN": 12,
+        "RELU": 7332,
+        "REDUCE": 3660,
+        "ADD": 7003,
+        "COPY_OUT": 1
+      },
+      "pipe_cycles": {
+        "PIPE_V": 7714975
+      },
+      "max_fanout": 305,
+      "components": 1,
+      "largest_component": 17995,
+      "dag_depth": 2441,
+      "max_level_width": 12,
+      "valid_dag": true
+    },
+    {
+      "case": "case_017",
+      "bytes": 576372,
+      "ops": 1758,
+      "internal_ops": 1373,
+      "tensors": 2015,
+      "edges": 4245,
+      "op_edges": 2230,
+      "sources": 257,
+      "sinks": 128,
+      "max_tensor_bytes": 24576,
+      "positions": {
+        "DDR": 385,
+        "L1": 221,
+        "UB": 1409
+      },
+      "op_kinds": {
+        "COPY_IN": 257,
+        "MATMUL": 82,
+        "SIGMOID": 57,
+        "MUL": 191,
+        "ADD": 280,
+        "REDUCE": 313,
+        "DIV": 133,
+        "SUB": 109,
+        "EXP": 13,
+        "CONV": 28,
+        "RELU": 114,
+        "SQRT": 13,
+        "NEG": 40,
+        "COPY_OUT": 128
+      },
+      "pipe_cycles": {
+        "PIPE_M": 110600,
+        "PIPE_V": 67202
+      },
+      "max_fanout": 10,
+      "components": 60,
+      "largest_component": 162,
+      "dag_depth": 19,
+      "max_level_width": 233,
+      "valid_dag": true
+    },
+    {
+      "case": "case_018",
+      "bytes": 1128892,
+      "ops": 3285,
+      "internal_ops": 2727,
+      "tensors": 3717,
+      "edges": 8718,
+      "op_edges": 5001,
+      "sources": 432,
+      "sinks": 126,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 558,
+        "L1": 2498,
+        "UB": 661
+      },
+      "op_kinds": {
+        "COPY_IN": 432,
+        "MATMUL": 1092,
+        "ADD": 1019,
+        "RELU": 173,
+        "REDUCE": 270,
+        "DIV": 20,
+        "SUB": 10,
+        "EXP": 10,
+        "SIGMOID": 70,
+        "MUL": 9,
+        "NEG": 54,
+        "COPY_OUT": 126
+      },
+      "pipe_cycles": {
+        "PIPE_M": 971320,
+        "PIPE_V": 112731
+      },
+      "max_fanout": 20,
+      "components": 126,
+      "largest_component": 59,
+      "dag_depth": 29,
+      "max_level_width": 1084,
+      "valid_dag": true
+    },
+    {
+      "case": "case_019",
+      "bytes": 247397,
+      "ops": 766,
+      "internal_ops": 647,
+      "tensors": 854,
+      "edges": 1841,
+      "op_edges": 987,
+      "sources": 88,
+      "sinks": 31,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 119,
+        "UB": 537,
+        "L1": 198
+      },
+      "op_kinds": {
+        "COPY_IN": 88,
+        "RELU": 216,
+        "ADD": 122,
+        "REDUCE": 75,
+        "MATMUL": 124,
+        "SIGMOID": 27,
+        "MUL": 26,
+        "DIV": 20,
+        "SUB": 12,
+        "EXP": 10,
+        "CONV": 5,
+        "NEG": 10,
+        "COPY_OUT": 31
+      },
+      "pipe_cycles": {
+        "PIPE_V": 40276,
+        "PIPE_M": 48436
+      },
+      "max_fanout": 36,
+      "components": 31,
+      "largest_component": 170,
+      "dag_depth": 80,
+      "max_level_width": 57,
+      "valid_dag": true
+    },
+    {
+      "case": "case_020",
+      "bytes": 2576402,
+      "ops": 7584,
+      "internal_ops": 7008,
+      "tensors": 7872,
+      "edges": 18048,
+      "op_edges": 10176,
+      "sources": 288,
+      "sinks": 288,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 576,
+        "UB": 7296
+      },
+      "op_kinds": {
+        "COPY_IN": 288,
+        "RELU": 4032,
+        "ADD": 2976,
+        "COPY_OUT": 288
+      },
+      "pipe_cycles": {
+        "PIPE_V": 532608
+      },
+      "max_fanout": 7,
+      "components": 288,
+      "largest_component": 28,
+      "dag_depth": 25,
+      "max_level_width": 576,
+      "valid_dag": true
+    },
+    {
+      "case": "case_021",
+      "bytes": 1694570,
+      "ops": 4450,
+      "internal_ops": 3920,
+      "tensors": 4900,
+      "edges": 12820,
+      "op_edges": 7920,
+      "sources": 450,
+      "sinks": 80,
+      "max_tensor_bytes": 12288,
+      "positions": {
+        "DDR": 530,
+        "L1": 4370
+      },
+      "op_kinds": {
+        "COPY_IN": 450,
+        "MATMUL": 2000,
+        "ADD": 1920,
+        "COPY_OUT": 80
+      },
+      "pipe_cycles": {
+        "PIPE_M": 6192000,
+        "PIPE_V": 783360
+      },
+      "max_fanout": 10,
+      "components": 80,
+      "largest_component": 49,
+      "dag_depth": 8,
+      "max_level_width": 2000,
+      "valid_dag": true
+    },
+    {
+      "case": "case_022",
+      "bytes": 501930,
+      "ops": 1567,
+      "internal_ops": 1356,
+      "tensors": 1705,
+      "edges": 3720,
+      "op_edges": 2015,
+      "sources": 138,
+      "sinks": 73,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 211,
+        "UB": 1433,
+        "L1": 61
+      },
+      "op_kinds": {
+        "COPY_IN": 138,
+        "RELU": 367,
+        "ADD": 375,
+        "REDUCE": 254,
+        "DIV": 71,
+        "MUL": 115,
+        "SUB": 62,
+        "SQRT": 7,
+        "MATMUL": 23,
+        "SIGMOID": 44,
+        "EXP": 4,
+        "NEG": 34,
+        "COPY_OUT": 73
+      },
+      "pipe_cycles": {
+        "PIPE_V": 54087,
+        "PIPE_M": 4484
+      },
+      "max_fanout": 10,
+      "components": 32,
+      "largest_component": 183,
+      "dag_depth": 37,
+      "max_level_width": 149,
+      "valid_dag": true
+    },
+    {
+      "case": "case_023",
+      "bytes": 388009,
+      "ops": 1202,
+      "internal_ops": 1011,
+      "tensors": 1336,
+      "edges": 2869,
+      "op_edges": 1533,
+      "sources": 134,
+      "sinks": 57,
+      "max_tensor_bytes": 24576,
+      "positions": {
+        "DDR": 191,
+        "UB": 1012,
+        "L1": 133
+      },
+      "op_kinds": {
+        "COPY_IN": 134,
+        "RELU": 291,
+        "ADD": 266,
+        "REDUCE": 154,
+        "MATMUL": 60,
+        "SIGMOID": 37,
+        "MUL": 64,
+        "DIV": 54,
+        "SUB": 38,
+        "SQRT": 3,
+        "EXP": 15,
+        "CONV": 4,
+        "NEG": 25,
+        "COPY_OUT": 57
+      },
+      "pipe_cycles": {
+        "PIPE_V": 69558,
+        "PIPE_M": 63384
+      },
+      "max_fanout": 8,
+      "components": 43,
+      "largest_component": 127,
+      "dag_depth": 32,
+      "max_level_width": 96,
+      "valid_dag": true
+    },
+    {
+      "case": "case_024",
+      "bytes": 2014832,
+      "ops": 5972,
+      "internal_ops": 5959,
+      "tensors": 5984,
+      "edges": 14255,
+      "op_edges": 8271,
+      "sources": 12,
+      "sinks": 1,
+      "max_tensor_bytes": 32768,
+      "positions": {
+        "DDR": 13,
+        "L1": 12,
+        "UB": 5959
+      },
+      "op_kinds": {
+        "COPY_IN": 12,
+        "RELU": 2436,
+        "REDUCE": 1212,
+        "ADD": 2311,
+        "COPY_OUT": 1
+      },
+      "pipe_cycles": {
+        "PIPE_V": 2554795
+      },
+      "max_fanout": 101,
+      "components": 1,
+      "largest_component": 5959,
+      "dag_depth": 809,
+      "max_level_width": 12,
+      "valid_dag": true
+    },
+    {
+      "case": "case_025",
+      "bytes": 8864067,
+      "ops": 23997,
+      "internal_ops": 18662,
+      "tensors": 26666,
+      "edges": 63990,
+      "op_edges": 37324,
+      "sources": 2669,
+      "sinks": 2666,
+      "max_tensor_bytes": 9216,
+      "positions": {
+        "DDR": 5335,
+        "L1": 10667,
+        "UB": 10664
+      },
+      "op_kinds": {
+        "COPY_IN": 2669,
+        "MATMUL": 7998,
+        "SIGMOID": 2666,
+        "MUL": 5332,
+        "ADD": 2666,
+        "COPY_OUT": 2666
+      },
+      "pipe_cycles": {
+        "PIPE_M": 4702824,
+        "PIPE_V": 1215696
+      },
+      "max_fanout": 2666,
+      "components": 2666,
+      "largest_component": 7,
+      "dag_depth": 7,
+      "max_level_width": 5332,
+      "valid_dag": true
+    },
+    {
+      "case": "case_026",
+      "bytes": 249536,
+      "ops": 769,
+      "internal_ops": 636,
+      "tensors": 871,
+      "edges": 1849,
+      "op_edges": 978,
+      "sources": 102,
+      "sinks": 31,
+      "max_tensor_bytes": 24576,
+      "positions": {
+        "DDR": 133,
+        "L1": 215,
+        "UB": 523
+      },
+      "op_kinds": {
+        "COPY_IN": 102,
+        "CONV": 15,
+        "RELU": 215,
+        "ADD": 190,
+        "MATMUL": 87,
+        "SIGMOID": 11,
+        "MUL": 10,
+        "REDUCE": 88,
+        "DIV": 6,
+        "SUB": 3,
+        "EXP": 3,
+        "NEG": 8,
+        "COPY_OUT": 31
+      },
+      "pipe_cycles": {
+        "PIPE_M": 40992,
+        "PIPE_V": 70768
+      },
+      "max_fanout": 20,
+      "components": 31,
+      "largest_component": 198,
+      "dag_depth": 50,
+      "max_level_width": 76,
+      "valid_dag": true
+    },
+    {
+      "case": "case_027",
+      "bytes": 687076,
+      "ops": 1800,
+      "internal_ops": 1424,
+      "tensors": 2160,
+      "edges": 5024,
+      "op_edges": 2864,
+      "sources": 360,
+      "sinks": 16,
+      "max_tensor_bytes": 12288,
+      "positions": {
+        "DDR": 376,
+        "L1": 1784
+      },
+      "op_kinds": {
+        "COPY_IN": 360,
+        "MATMUL": 720,
+        "ADD": 704,
+        "COPY_OUT": 16
+      },
+      "pipe_cycles": {
+        "PIPE_M": 2229120,
+        "PIPE_V": 287232
+      },
+      "max_fanout": 4,
+      "components": 16,
+      "largest_component": 89,
+      "dag_depth": 46,
+      "max_level_width": 720,
+      "valid_dag": true
+    },
+    {
+      "case": "case_028",
+      "bytes": 7081503,
+      "ops": 19944,
+      "internal_ops": 19584,
+      "tensors": 20151,
+      "edges": 51822,
+      "op_edges": 31671,
+      "sources": 207,
+      "sinks": 153,
+      "max_tensor_bytes": 165888,
+      "positions": {
+        "DDR": 360,
+        "L1": 19791
+      },
+      "op_kinds": {
+        "COPY_IN": 207,
+        "CONV": 8262,
+        "RELU": 7650,
+        "ADD": 3672,
+        "COPY_OUT": 153
+      },
+      "pipe_cycles": {
+        "PIPE_M": 38974608,
+        "PIPE_V": 1975536
+      },
+      "max_fanout": 153,
+      "components": 153,
+      "largest_component": 128,
+      "dag_depth": 125,
+      "max_level_width": 306,
+      "valid_dag": true
+    },
+    {
+      "case": "case_029",
+      "bytes": 392684,
+      "ops": 1113,
+      "internal_ops": 861,
+      "tensors": 1281,
+      "edges": 2772,
+      "op_edges": 1491,
+      "sources": 168,
+      "sinks": 84,
+      "max_tensor_bytes": 2048,
+      "positions": {
+        "DDR": 252,
+        "UB": 1029
+      },
+      "op_kinds": {
+        "COPY_IN": 168,
+        "REDUCE": 168,
+        "ADD": 231,
+        "DIV": 126,
+        "MUL": 189,
+        "SUB": 105,
+        "RELU": 21,
+        "SQRT": 21,
+        "COPY_OUT": 84
+      },
+      "pipe_cycles": {
+        "PIPE_V": 37485
+      },
+      "max_fanout": 5,
+      "components": 21,
+      "largest_component": 41,
+      "dag_depth": 13,
+      "max_level_width": 168,
+      "valid_dag": true
+    },
+    {
+      "case": "case_030",
+      "bytes": 4138350,
+      "ops": 11248,
+      "internal_ops": 10070,
+      "tensors": 11940,
+      "edges": 30954,
+      "op_edges": 19014,
+      "sources": 692,
+      "sinks": 486,
+      "max_tensor_bytes": 6144,
+      "positions": {
+        "DDR": 1178,
+        "L1": 9164,
+        "UB": 1598
+      },
+      "op_kinds": {
+        "COPY_IN": 692,
+        "MATMUL": 4472,
+        "ADD": 3984,
+        "RELU": 206,
+        "REDUCE": 976,
+        "SUB": 2,
+        "NEG": 214,
+        "SIGMOID": 216,
+        "COPY_OUT": 486
+      },
+      "pipe_cycles": {
+        "PIPE_M": 2776480,
+        "PIPE_V": 406822
+      },
+      "max_fanout": 22,
+      "components": 486,
+      "largest_component": 57,
+      "dag_depth": 13,
+      "max_level_width": 4472,
+      "valid_dag": true
+    },
+    {
+      "case": "case_031",
+      "bytes": 2487489,
+      "ops": 6805,
+      "internal_ops": 6135,
+      "tensors": 7365,
+      "edges": 18435,
+      "op_edges": 11070,
+      "sources": 560,
+      "sinks": 110,
+      "max_tensor_bytes": 13824,
+      "positions": {
+        "DDR": 670,
+        "L1": 4167,
+        "UB": 2528
+      },
+      "op_kinds": {
+        "COPY_IN": 560,
+        "MATMUL": 2122,
+        "ADD": 2138,
+        "REDUCE": 555,
+        "SUB": 283,
+        "MUL": 92,
+        "SQRT": 24,
+        "DIV": 218,
+        "RELU": 426,
+        "EXP": 151,
+        "SIGMOID": 83,
+        "NEG": 43,
+        "COPY_OUT": 110
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1334492,
+        "PIPE_V": 221025
+      },
+      "max_fanout": 144,
+      "components": 107,
+      "largest_component": 2147,
+      "dag_depth": 137,
+      "max_level_width": 1659,
+      "valid_dag": true
+    },
+    {
+      "case": "case_032",
+      "bytes": 335704,
+      "ops": 1035,
+      "internal_ops": 827,
+      "tensors": 1186,
+      "edges": 2469,
+      "op_edges": 1283,
+      "sources": 151,
+      "sinks": 57,
+      "max_tensor_bytes": 4608,
+      "positions": {
+        "DDR": 208,
+        "L1": 154,
+        "UB": 824
+      },
+      "op_kinds": {
+        "COPY_IN": 151,
+        "MATMUL": 45,
+        "DIV": 68,
+        "REDUCE": 199,
+        "SUB": 55,
+        "EXP": 6,
+        "ADD": 185,
+        "MUL": 91,
+        "RELU": 112,
+        "SQRT": 8,
+        "CONV": 3,
+        "NEG": 26,
+        "SIGMOID": 29,
+        "COPY_OUT": 57
+      },
+      "pipe_cycles": {
+        "PIPE_M": 10150,
+        "PIPE_V": 33995
+      },
+      "max_fanout": 11,
+      "components": 25,
+      "largest_component": 189,
+      "dag_depth": 31,
+      "max_level_width": 137,
+      "valid_dag": true
+    },
+    {
+      "case": "case_033",
+      "bytes": 1414590,
+      "ops": 4069,
+      "internal_ops": 3465,
+      "tensors": 4572,
+      "edges": 11073,
+      "op_edges": 6501,
+      "sources": 503,
+      "sinks": 101,
+      "max_tensor_bytes": 13824,
+      "positions": {
+        "DDR": 604,
+        "L1": 3226,
+        "UB": 742
+      },
+      "op_kinds": {
+        "COPY_IN": 503,
+        "CONV": 6,
+        "RELU": 227,
+        "ADD": 1474,
+        "REDUCE": 194,
+        "DIV": 18,
+        "MUL": 32,
+        "SUB": 14,
+        "SQRT": 4,
+        "MATMUL": 1407,
+        "SIGMOID": 43,
+        "NEG": 46,
+        "COPY_OUT": 101
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1728108,
+        "PIPE_V": 192042
+      },
+      "max_fanout": 24,
+      "components": 95,
+      "largest_component": 64,
+      "dag_depth": 35,
+      "max_level_width": 1439,
+      "valid_dag": true
+    },
+    {
+      "case": "case_034",
+      "bytes": 1551151,
+      "ops": 4545,
+      "internal_ops": 3745,
+      "tensors": 5144,
+      "edges": 11907,
+      "op_edges": 6763,
+      "sources": 599,
+      "sinks": 201,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 800,
+        "UB": 1457,
+        "L1": 2887
+      },
+      "op_kinds": {
+        "COPY_IN": 599,
+        "RELU": 221,
+        "ADD": 1344,
+        "REDUCE": 463,
+        "DIV": 85,
+        "MUL": 119,
+        "SUB": 71,
+        "SQRT": 9,
+        "MATMUL": 1262,
+        "EXP": 6,
+        "NEG": 79,
+        "SIGMOID": 86,
+        "COPY_OUT": 201
+      },
+      "pipe_cycles": {
+        "PIPE_V": 194956,
+        "PIPE_M": 749160
+      },
+      "max_fanout": 14,
+      "components": 155,
+      "largest_component": 94,
+      "dag_depth": 25,
+      "max_level_width": 1374,
+      "valid_dag": true
+    },
+    {
+      "case": "case_035",
+      "bytes": 1397316,
+      "ops": 4237,
+      "internal_ops": 3857,
+      "tensors": 4538,
+      "edges": 10712,
+      "op_edges": 6174,
+      "sources": 301,
+      "sinks": 79,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 380,
+        "L1": 704,
+        "UB": 3454
+      },
+      "op_kinds": {
+        "COPY_IN": 301,
+        "RELU": 445,
+        "REDUCE": 696,
+        "ADD": 841,
+        "MATMUL": 513,
+        "SUB": 368,
+        "MUL": 343,
+        "SQRT": 74,
+        "DIV": 314,
+        "EXP": 128,
+        "SIGMOID": 97,
+        "CONV": 3,
+        "NEG": 35,
+        "COPY_OUT": 79
+      },
+      "pipe_cycles": {
+        "PIPE_V": 143909,
+        "PIPE_M": 62192
+      },
+      "max_fanout": 128,
+      "components": 16,
+      "largest_component": 2430,
+      "dag_depth": 334,
+      "max_level_width": 224,
+      "valid_dag": true
+    },
+    {
+      "case": "case_036",
+      "bytes": 1425385,
+      "ops": 4001,
+      "internal_ops": 2400,
+      "tensors": 4802,
+      "edges": 9602,
+      "op_edges": 4800,
+      "sources": 801,
+      "sinks": 800,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 1601,
+        "L1": 1601,
+        "UB": 1600
+      },
+      "op_kinds": {
+        "COPY_IN": 801,
+        "CONV": 800,
+        "RELU": 800,
+        "ADD": 800,
+        "COPY_OUT": 800
+      },
+      "pipe_cycles": {
+        "PIPE_M": 931200,
+        "PIPE_V": 121600
+      },
+      "max_fanout": 800,
+      "components": 800,
+      "largest_component": 3,
+      "dag_depth": 4,
+      "max_level_width": 800,
+      "valid_dag": true
+    },
+    {
+      "case": "case_037",
+      "bytes": 369696,
+      "ops": 980,
+      "internal_ops": 780,
+      "tensors": 1160,
+      "edges": 2740,
+      "op_edges": 1580,
+      "sources": 180,
+      "sinks": 20,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 200,
+        "L1": 960
+      },
+      "op_kinds": {
+        "COPY_IN": 180,
+        "MATMUL": 400,
+        "ADD": 380,
+        "COPY_OUT": 20
+      },
+      "pipe_cycles": {
+        "PIPE_M": 209600,
+        "PIPE_V": 28880
+      },
+      "max_fanout": 5,
+      "components": 20,
+      "largest_component": 39,
+      "dag_depth": 7,
+      "max_level_width": 400,
+      "valid_dag": true
+    },
+    {
+      "case": "case_038",
+      "bytes": 2552691,
+      "ops": 6843,
+      "internal_ops": 5907,
+      "tensors": 7649,
+      "edges": 18941,
+      "op_edges": 11292,
+      "sources": 806,
+      "sinks": 130,
+      "max_tensor_bytes": 32768,
+      "positions": {
+        "DDR": 936,
+        "UB": 848,
+        "L1": 5865
+      },
+      "op_kinds": {
+        "COPY_IN": 806,
+        "RELU": 287,
+        "ADD": 2602,
+        "REDUCE": 252,
+        "MATMUL": 2626,
+        "DIV": 10,
+        "SUB": 6,
+        "EXP": 5,
+        "SIGMOID": 56,
+        "MUL": 10,
+        "CONV": 4,
+        "NEG": 49,
+        "COPY_OUT": 130
+      },
+      "pipe_cycles": {
+        "PIPE_V": 167776,
+        "PIPE_M": 1325000
+      },
+      "max_fanout": 15,
+      "components": 130,
+      "largest_component": 116,
+      "dag_depth": 37,
+      "max_level_width": 2594,
+      "valid_dag": true
+    },
+    {
+      "case": "case_039",
+      "bytes": 2265714,
+      "ops": 5966,
+      "internal_ops": 5250,
+      "tensors": 6612,
+      "edges": 17182,
+      "op_edges": 10570,
+      "sources": 646,
+      "sinks": 70,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 716,
+        "L1": 5896
+      },
+      "op_kinds": {
+        "COPY_IN": 646,
+        "MATMUL": 2660,
+        "ADD": 2590,
+        "COPY_OUT": 70
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1377880,
+        "PIPE_V": 98420
+      },
+      "max_fanout": 10,
+      "components": 70,
+      "largest_component": 75,
+      "dag_depth": 9,
+      "max_level_width": 2660,
+      "valid_dag": true
+    },
+    {
+      "case": "case_040",
+      "bytes": 1122765,
+      "ops": 3381,
+      "internal_ops": 3083,
+      "tensors": 3647,
+      "edges": 8621,
+      "op_edges": 4974,
+      "sources": 266,
+      "sinks": 32,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 298,
+        "L1": 963,
+        "UB": 2386
+      },
+      "op_kinds": {
+        "COPY_IN": 266,
+        "MATMUL": 571,
+        "ADD": 706,
+        "RELU": 445,
+        "REDUCE": 475,
+        "SUB": 275,
+        "MUL": 157,
+        "SQRT": 50,
+        "DIV": 200,
+        "EXP": 125,
+        "SIGMOID": 66,
+        "NEG": 13,
+        "COPY_OUT": 32
+      },
+      "pipe_cycles": {
+        "PIPE_M": 111972,
+        "PIPE_V": 185751
+      },
+      "max_fanout": 125,
+      "components": 28,
+      "largest_component": 2194,
+      "dag_depth": 230,
+      "max_level_width": 196,
+      "valid_dag": true
+    },
+    {
+      "case": "case_041",
+      "bytes": 6768052,
+      "ops": 18149,
+      "internal_ops": 16594,
+      "tensors": 19210,
+      "edges": 51024,
+      "op_edges": 31814,
+      "sources": 1061,
+      "sinks": 494,
+      "max_tensor_bytes": 6144,
+      "positions": {
+        "DDR": 1555,
+        "L1": 15683,
+        "UB": 1972
+      },
+      "op_kinds": {
+        "COPY_IN": 1061,
+        "MATMUL": 7558,
+        "ADD": 7167,
+        "REDUCE": 1052,
+        "RELU": 377,
+        "MUL": 1,
+        "NEG": 220,
+        "SIGMOID": 219,
+        "COPY_OUT": 494
+      },
+      "pipe_cycles": {
+        "PIPE_M": 5895240,
+        "PIPE_V": 607750
+      },
+      "max_fanout": 20,
+      "components": 494,
+      "largest_component": 182,
+      "dag_depth": 50,
+      "max_level_width": 7574,
+      "valid_dag": true
+    },
+    {
+      "case": "case_042",
+      "bytes": 1986945,
+      "ops": 5345,
+      "internal_ops": 4733,
+      "tensors": 5853,
+      "edges": 14855,
+      "op_edges": 9002,
+      "sources": 508,
+      "sinks": 104,
+      "max_tensor_bytes": 18432,
+      "positions": {
+        "DDR": 612,
+        "L1": 4507,
+        "UB": 734
+      },
+      "op_kinds": {
+        "COPY_IN": 508,
+        "MATMUL": 2077,
+        "RELU": 224,
+        "ADD": 2058,
+        "REDUCE": 246,
+        "CONV": 6,
+        "SIGMOID": 53,
+        "MUL": 25,
+        "NEG": 44,
+        "COPY_OUT": 104
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1599076,
+        "PIPE_V": 226026
+      },
+      "max_fanout": 24,
+      "components": 104,
+      "largest_component": 258,
+      "dag_depth": 54,
+      "max_level_width": 2057,
+      "valid_dag": true
+    },
+    {
+      "case": "case_043",
+      "bytes": 3488481,
+      "ops": 9756,
+      "internal_ops": 9309,
+      "tensors": 10140,
+      "edges": 25867,
+      "op_edges": 15727,
+      "sources": 384,
+      "sinks": 63,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 447,
+        "UB": 6973,
+        "L1": 2720
+      },
+      "op_kinds": {
+        "COPY_IN": 384,
+        "RELU": 561,
+        "ADD": 2261,
+        "REDUCE": 1444,
+        "MATMUL": 1968,
+        "SUB": 1142,
+        "MUL": 367,
+        "SQRT": 114,
+        "DIV": 750,
+        "EXP": 540,
+        "SIGMOID": 135,
+        "NEG": 27,
+        "COPY_OUT": 63
+      },
+      "pipe_cycles": {
+        "PIPE_V": 343841,
+        "PIPE_M": 517752
+      },
+      "max_fanout": 324,
+      "components": 38,
+      "largest_component": 4910,
+      "dag_depth": 203,
+      "max_level_width": 547,
+      "valid_dag": true
+    },
+    {
+      "case": "case_044",
+      "bytes": 502310,
+      "ops": 1436,
+      "internal_ops": 1364,
+      "tensors": 1497,
+      "edges": 3686,
+      "op_edges": 2189,
+      "sources": 61,
+      "sinks": 11,
+      "max_tensor_bytes": 73728,
+      "positions": {
+        "DDR": 72,
+        "L1": 1425
+      },
+      "op_kinds": {
+        "COPY_IN": 61,
+        "CONV": 550,
+        "RELU": 550,
+        "ADD": 264,
+        "COPY_OUT": 11
+      },
+      "pipe_cycles": {
+        "PIPE_M": 74404,
+        "PIPE_V": 9988
+      },
+      "max_fanout": 11,
+      "components": 11,
+      "largest_component": 124,
+      "dag_depth": 125,
+      "max_level_width": 11,
+      "valid_dag": true
+    },
+    {
+      "case": "case_045",
+      "bytes": 604287,
+      "ops": 1787,
+      "internal_ops": 1651,
+      "tensors": 1855,
+      "edges": 4253,
+      "op_edges": 2398,
+      "sources": 68,
+      "sinks": 68,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 136,
+        "UB": 1719
+      },
+      "op_kinds": {
+        "COPY_IN": 68,
+        "RELU": 950,
+        "ADD": 701,
+        "COPY_OUT": 68
+      },
+      "pipe_cycles": {
+        "PIPE_V": 125476
+      },
+      "max_fanout": 7,
+      "components": 68,
+      "largest_component": 28,
+      "dag_depth": 25,
+      "max_level_width": 136,
+      "valid_dag": true
+    },
+    {
+      "case": "case_046",
+      "bytes": 370394,
+      "ops": 1058,
+      "internal_ops": 992,
+      "tensors": 1116,
+      "edges": 2708,
+      "op_edges": 1592,
+      "sources": 58,
+      "sinks": 8,
+      "max_tensor_bytes": 73728,
+      "positions": {
+        "DDR": 66,
+        "L1": 1050
+      },
+      "op_kinds": {
+        "COPY_IN": 58,
+        "CONV": 400,
+        "RELU": 400,
+        "ADD": 192,
+        "COPY_OUT": 8
+      },
+      "pipe_cycles": {
+        "PIPE_M": 209248,
+        "PIPE_V": 18400
+      },
+      "max_fanout": 8,
+      "components": 8,
+      "largest_component": 124,
+      "dag_depth": 125,
+      "max_level_width": 8,
+      "valid_dag": true
+    },
+    {
+      "case": "case_047",
+      "bytes": 4991726,
+      "ops": 13988,
+      "internal_ops": 13710,
+      "tensors": 14259,
+      "edges": 37206,
+      "op_edges": 22947,
+      "sources": 271,
+      "sinks": 7,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 278,
+        "L1": 2988,
+        "UB": 10993
+      },
+      "op_kinds": {
+        "COPY_IN": 271,
+        "MATMUL": 2720,
+        "REDUCE": 2240,
+        "SUB": 1960,
+        "MUL": 420,
+        "ADD": 3010,
+        "SQRT": 140,
+        "DIV": 1260,
+        "RELU": 840,
+        "EXP": 980,
+        "SIGMOID": 140,
+        "COPY_OUT": 7
+      },
+      "pipe_cycles": {
+        "PIPE_M": 153760,
+        "PIPE_V": 259370
+      },
+      "max_fanout": 980,
+      "components": 1,
+      "largest_component": 13710,
+      "dag_depth": 461,
+      "max_level_width": 196,
+      "valid_dag": true
+    },
+    {
+      "case": "case_048",
+      "bytes": 679300,
+      "ops": 1900,
+      "internal_ops": 1728,
+      "tensors": 2069,
+      "edges": 4961,
+      "op_edges": 2892,
+      "sources": 169,
+      "sinks": 3,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 172,
+        "L1": 544,
+        "UB": 1353
+      },
+      "op_kinds": {
+        "COPY_IN": 169,
+        "MATMUL": 378,
+        "REDUCE": 270,
+        "SUB": 189,
+        "MUL": 162,
+        "ADD": 324,
+        "SQRT": 54,
+        "DIV": 162,
+        "RELU": 54,
+        "EXP": 81,
+        "SIGMOID": 54,
+        "COPY_OUT": 3
+      },
+      "pipe_cycles": {
+        "PIPE_M": 139536,
+        "PIPE_V": 120060
+      },
+      "max_fanout": 81,
+      "components": 1,
+      "largest_component": 1728,
+      "dag_depth": 370,
+      "max_level_width": 57,
+      "valid_dag": true
+    },
+    {
+      "case": "case_049",
+      "bytes": 1482431,
+      "ops": 4465,
+      "internal_ops": 4303,
+      "tensors": 4609,
+      "edges": 11684,
+      "op_edges": 7075,
+      "sources": 144,
+      "sinks": 18,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 162,
+        "L1": 926,
+        "UB": 3521
+      },
+      "op_kinds": {
+        "COPY_IN": 144,
+        "MATMUL": 794,
+        "REDUCE": 723,
+        "SUB": 554,
+        "MUL": 192,
+        "ADD": 908,
+        "SQRT": 64,
+        "DIV": 370,
+        "RELU": 355,
+        "EXP": 265,
+        "SIGMOID": 72,
+        "NEG": 6,
+        "COPY_OUT": 18
+      },
+      "pipe_cycles": {
+        "PIPE_M": 95464,
+        "PIPE_V": 165715
+      },
+      "max_fanout": 256,
+      "components": 11,
+      "largest_component": 3952,
+      "dag_depth": 187,
+      "max_level_width": 134,
+      "valid_dag": true
+    },
+    {
+      "case": "case_050",
+      "bytes": 1585294,
+      "ops": 4781,
+      "internal_ops": 4555,
+      "tensors": 4969,
+      "edges": 12462,
+      "op_edges": 7493,
+      "sources": 188,
+      "sinks": 38,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 226,
+        "L1": 964,
+        "UB": 3779
+      },
+      "op_kinds": {
+        "COPY_IN": 188,
+        "MATMUL": 781,
+        "REDUCE": 752,
+        "SUB": 569,
+        "MUL": 225,
+        "ADD": 1021,
+        "SQRT": 68,
+        "DIV": 386,
+        "RELU": 392,
+        "EXP": 263,
+        "SIGMOID": 79,
+        "NEG": 19,
+        "COPY_OUT": 38
+      },
+      "pipe_cycles": {
+        "PIPE_M": 51968,
+        "PIPE_V": 133411
+      },
+      "max_fanout": 256,
+      "components": 23,
+      "largest_component": 4011,
+      "dag_depth": 187,
+      "max_level_width": 134,
+      "valid_dag": true
+    },
+    {
+      "case": "case_051",
+      "bytes": 479298,
+      "ops": 1429,
+      "internal_ops": 1416,
+      "tensors": 1441,
+      "edges": 3398,
+      "op_edges": 1957,
+      "sources": 12,
+      "sinks": 1,
+      "max_tensor_bytes": 32768,
+      "positions": {
+        "DDR": 13,
+        "L1": 12,
+        "UB": 1416
+      },
+      "op_kinds": {
+        "COPY_IN": 12,
+        "RELU": 588,
+        "REDUCE": 288,
+        "ADD": 540,
+        "COPY_OUT": 1
+      },
+      "pipe_cycles": {
+        "PIPE_V": 607080
+      },
+      "max_fanout": 24,
+      "components": 1,
+      "largest_component": 1416,
+      "dag_depth": 193,
+      "max_level_width": 12,
+      "valid_dag": true
+    },
+    {
+      "case": "case_052",
+      "bytes": 447395,
+      "ops": 1347,
+      "internal_ops": 1008,
+      "tensors": 1606,
+      "edges": 3272,
+      "op_edges": 1666,
+      "sources": 259,
+      "sinks": 80,
+      "max_tensor_bytes": 13824,
+      "positions": {
+        "DDR": 339,
+        "UB": 812,
+        "L1": 455
+      },
+      "op_kinds": {
+        "COPY_IN": 259,
+        "REDUCE": 226,
+        "ADD": 202,
+        "DIV": 80,
+        "MUL": 108,
+        "SUB": 58,
+        "RELU": 61,
+        "SQRT": 8,
+        "MATMUL": 174,
+        "EXP": 14,
+        "SIGMOID": 45,
+        "NEG": 32,
+        "COPY_OUT": 80
+      },
+      "pipe_cycles": {
+        "PIPE_V": 62595,
+        "PIPE_M": 141528
+      },
+      "max_fanout": 12,
+      "components": 52,
+      "largest_component": 120,
+      "dag_depth": 18,
+      "max_level_width": 218,
+      "valid_dag": true
+    },
+    {
+      "case": "case_053",
+      "bytes": 4295523,
+      "ops": 12046,
+      "internal_ops": 11670,
+      "tensors": 12377,
+      "edges": 31833,
+      "op_edges": 19456,
+      "sources": 331,
+      "sinks": 45,
+      "max_tensor_bytes": 73728,
+      "positions": {
+        "DDR": 376,
+        "L1": 4016,
+        "UB": 7985
+      },
+      "op_kinds": {
+        "COPY_IN": 331,
+        "MATMUL": 2080,
+        "ADD": 2512,
+        "RELU": 1265,
+        "REDUCE": 1684,
+        "CONV": 648,
+        "SIGMOID": 88,
+        "MUL": 223,
+        "SUB": 1438,
+        "SQRT": 70,
+        "DIV": 910,
+        "EXP": 735,
+        "NEG": 17,
+        "COPY_OUT": 45
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1212726,
+        "PIPE_V": 344076
+      },
+      "max_fanout": 735,
+      "components": 39,
+      "largest_component": 9853,
+      "dag_depth": 242,
+      "max_level_width": 318,
+      "valid_dag": true
+    },
+    {
+      "case": "case_054",
+      "bytes": 5766618,
+      "ops": 16133,
+      "internal_ops": 15751,
+      "tensors": 16484,
+      "edges": 42855,
+      "op_edges": 26371,
+      "sources": 351,
+      "sinks": 31,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 382,
+        "L1": 3588,
+        "UB": 12514
+      },
+      "op_kinds": {
+        "COPY_IN": 351,
+        "MATMUL": 3090,
+        "REDUCE": 2588,
+        "SUB": 2270,
+        "MUL": 379,
+        "ADD": 3590,
+        "SQRT": 126,
+        "DIV": 1386,
+        "RELU": 1044,
+        "EXP": 1134,
+        "SIGMOID": 138,
+        "NEG": 6,
+        "COPY_OUT": 31
+      },
+      "pipe_cycles": {
+        "PIPE_M": 574216,
+        "PIPE_V": 440672
+      },
+      "max_fanout": 1134,
+      "components": 24,
+      "largest_component": 15390,
+      "dag_depth": 355,
+      "max_level_width": 324,
+      "valid_dag": true
+    },
+    {
+      "case": "case_055",
+      "bytes": 472661,
+      "ops": 1468,
+      "internal_ops": 1236,
+      "tensors": 1641,
+      "edges": 3467,
+      "op_edges": 1826,
+      "sources": 173,
+      "sinks": 59,
+      "max_tensor_bytes": 13824,
+      "positions": {
+        "DDR": 232,
+        "L1": 208,
+        "UB": 1201
+      },
+      "op_kinds": {
+        "COPY_IN": 173,
+        "MATMUL": 91,
+        "ADD": 281,
+        "RELU": 318,
+        "REDUCE": 261,
+        "DIV": 56,
+        "MUL": 102,
+        "SUB": 50,
+        "SQRT": 7,
+        "SIGMOID": 38,
+        "NEG": 32,
+        "COPY_OUT": 59
+      },
+      "pipe_cycles": {
+        "PIPE_M": 61796,
+        "PIPE_V": 69049
+      },
+      "max_fanout": 12,
+      "components": 24,
+      "largest_component": 183,
+      "dag_depth": 29,
+      "max_level_width": 200,
+      "valid_dag": true
+    },
+    {
+      "case": "case_056",
+      "bytes": 2816837,
+      "ops": 7936,
+      "internal_ops": 7678,
+      "tensors": 8157,
+      "edges": 20894,
+      "op_edges": 12737,
+      "sources": 221,
+      "sinks": 37,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 258,
+        "L1": 1550,
+        "UB": 6349
+      },
+      "op_kinds": {
+        "COPY_IN": 221,
+        "MATMUL": 1372,
+        "REDUCE": 1322,
+        "SUB": 1061,
+        "MUL": 352,
+        "ADD": 1655,
+        "SQRT": 110,
+        "DIV": 704,
+        "RELU": 458,
+        "EXP": 506,
+        "SIGMOID": 122,
+        "NEG": 16,
+        "COPY_OUT": 37
+      },
+      "pipe_cycles": {
+        "PIPE_M": 131016,
+        "PIPE_V": 245953
+      },
+      "max_fanout": 486,
+      "components": 19,
+      "largest_component": 7464,
+      "dag_depth": 301,
+      "max_level_width": 162,
+      "valid_dag": true
+    },
+    {
+      "case": "case_057",
+      "bytes": 342707,
+      "ops": 1053,
+      "internal_ops": 865,
+      "tensors": 1180,
+      "edges": 2563,
+      "op_edges": 1383,
+      "sources": 127,
+      "sinks": 61,
+      "max_tensor_bytes": 4608,
+      "positions": {
+        "DDR": 188,
+        "L1": 134,
+        "UB": 858
+      },
+      "op_kinds": {
+        "COPY_IN": 127,
+        "CONV": 5,
+        "RELU": 118,
+        "ADD": 158,
+        "REDUCE": 172,
+        "DIV": 74,
+        "MUL": 123,
+        "SUB": 63,
+        "SQRT": 10,
+        "MATMUL": 94,
+        "EXP": 2,
+        "SIGMOID": 23,
+        "NEG": 23,
+        "COPY_OUT": 61
+      },
+      "pipe_cycles": {
+        "PIPE_M": 14062,
+        "PIPE_V": 47565
+      },
+      "max_fanout": 48,
+      "components": 21,
+      "largest_component": 193,
+      "dag_depth": 102,
+      "max_level_width": 126,
+      "valid_dag": true
+    },
+    {
+      "case": "case_058",
+      "bytes": 6812100,
+      "ops": 17886,
+      "internal_ops": 16575,
+      "tensors": 18942,
+      "edges": 52347,
+      "op_edges": 33405,
+      "sources": 1056,
+      "sinks": 255,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 1311,
+        "L1": 17631
+      },
+      "op_kinds": {
+        "COPY_IN": 1056,
+        "MATMUL": 8415,
+        "ADD": 8160,
+        "COPY_OUT": 255
+      },
+      "pipe_cycles": {
+        "PIPE_M": 4358970,
+        "PIPE_V": 310080
+      },
+      "max_fanout": 17,
+      "components": 255,
+      "largest_component": 65,
+      "dag_depth": 8,
+      "max_level_width": 8415,
+      "valid_dag": true
+    },
+    {
+      "case": "case_059",
+      "bytes": 1199740,
+      "ops": 3168,
+      "internal_ops": 2752,
+      "tensors": 3520,
+      "edges": 9088,
+      "op_edges": 5568,
+      "sources": 352,
+      "sinks": 64,
+      "max_tensor_bytes": 4096,
+      "positions": {
+        "DDR": 416,
+        "L1": 3104
+      },
+      "op_kinds": {
+        "COPY_IN": 352,
+        "MATMUL": 1408,
+        "ADD": 1344,
+        "COPY_OUT": 64
+      },
+      "pipe_cycles": {
+        "PIPE_M": 737792,
+        "PIPE_V": 102144
+      },
+      "max_fanout": 8,
+      "components": 64,
+      "largest_component": 43,
+      "dag_depth": 23,
+      "max_level_width": 1408,
+      "valid_dag": true
+    },
+    {
+      "case": "case_060",
+      "bytes": 2236508,
+      "ops": 6086,
+      "internal_ops": 5281,
+      "tensors": 6752,
+      "edges": 16435,
+      "op_edges": 9683,
+      "sources": 666,
+      "sinks": 139,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 805,
+        "UB": 1821,
+        "L1": 4126
+      },
+      "op_kinds": {
+        "COPY_IN": 666,
+        "RELU": 417,
+        "ADD": 2196,
+        "REDUCE": 384,
+        "MATMUL": 1835,
+        "SIGMOID": 76,
+        "MUL": 151,
+        "DIV": 80,
+        "SUB": 72,
+        "SQRT": 10,
+        "NEG": 60,
+        "COPY_OUT": 139
+      },
+      "pipe_cycles": {
+        "PIPE_V": 273539,
+        "PIPE_M": 720232
+      },
+      "max_fanout": 12,
+      "components": 89,
+      "largest_component": 183,
+      "dag_depth": 42,
+      "max_level_width": 1977,
+      "valid_dag": true
+    },
+    {
+      "case": "case_061",
+      "bytes": 479208,
+      "ops": 1450,
+      "internal_ops": 1115,
+      "tensors": 1709,
+      "edges": 3505,
+      "op_edges": 1796,
+      "sources": 259,
+      "sinks": 76,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 335,
+        "L1": 494,
+        "UB": 880
+      },
+      "op_kinds": {
+        "COPY_IN": 259,
+        "MATMUL": 202,
+        "ADD": 237,
+        "RELU": 157,
+        "REDUCE": 201,
+        "DIV": 63,
+        "MUL": 103,
+        "SUB": 54,
+        "SQRT": 9,
+        "SIGMOID": 48,
+        "NEG": 41,
+        "COPY_OUT": 76
+      },
+      "pipe_cycles": {
+        "PIPE_M": 71456,
+        "PIPE_V": 27572
+      },
+      "max_fanout": 20,
+      "components": 40,
+      "largest_component": 167,
+      "dag_depth": 46,
+      "max_level_width": 232,
+      "valid_dag": true
+    },
+    {
+      "case": "case_062",
+      "bytes": 8651962,
+      "ops": 23999,
+      "internal_ops": 19636,
+      "tensors": 28361,
+      "edges": 58906,
+      "op_edges": 30545,
+      "sources": 4362,
+      "sinks": 1,
+      "max_tensor_bytes": 4608,
+      "positions": {
+        "DDR": 4363,
+        "L1": 13090,
+        "UB": 10908
+      },
+      "op_kinds": {
+        "COPY_IN": 4362,
+        "MATMUL": 8728,
+        "RELU": 8728,
+        "ADD": 2180,
+        "COPY_OUT": 1
+      },
+      "pipe_cycles": {
+        "PIPE_M": 2618400,
+        "PIPE_V": 392688
+      },
+      "max_fanout": 8,
+      "components": 1,
+      "largest_component": 19636,
+      "dag_depth": 29,
+      "max_level_width": 2181,
+      "valid_dag": true
+    },
+    {
+      "case": "case_063",
+      "bytes": 3222074,
+      "ops": 8995,
+      "internal_ops": 7360,
+      "tensors": 10629,
+      "edges": 22078,
+      "op_edges": 11449,
+      "sources": 1634,
+      "sinks": 1,
+      "max_tensor_bytes": 4608,
+      "positions": {
+        "DDR": 1635,
+        "L1": 4906,
+        "UB": 4088
+      },
+      "op_kinds": {
+        "COPY_IN": 1634,
+        "MATMUL": 3272,
+        "RELU": 3272,
+        "ADD": 816,
+        "COPY_OUT": 1
+      },
+      "pipe_cycles": {
+        "PIPE_M": 981600,
+        "PIPE_V": 147168
+      },
+      "max_fanout": 8,
+      "components": 1,
+      "largest_component": 7360,
+      "dag_depth": 27,
+      "max_level_width": 817,
+      "valid_dag": true
+    },
+    {
+      "case": "case_064",
+      "bytes": 343656,
+      "ops": 972,
+      "internal_ops": 906,
+      "tensors": 1034,
+      "edges": 2550,
+      "op_edges": 1516,
+      "sources": 62,
+      "sinks": 4,
+      "max_tensor_bytes": 1024,
+      "positions": {
+        "DDR": 66,
+        "L1": 245,
+        "UB": 723
+      },
+      "op_kinds": {
+        "COPY_IN": 62,
+        "MATMUL": 186,
+        "REDUCE": 144,
+        "SUB": 108,
+        "MUL": 72,
+        "ADD": 180,
+        "SQRT": 24,
+        "DIV": 84,
+        "RELU": 36,
+        "EXP": 48,
+        "SIGMOID": 24,
+        "COPY_OUT": 4
+      },
+      "pipe_cycles": {
+        "PIPE_M": 7308,
+        "PIPE_V": 15744
+      },
+      "max_fanout": 48,
+      "components": 1,
+      "largest_component": 906,
+      "dag_depth": 124,
+      "max_level_width": 32,
+      "valid_dag": true
+    },
+    {
+      "case": "case_065",
+      "bytes": 297029,
+      "ops": 914,
+      "internal_ops": 704,
+      "tensors": 1067,
+      "edges": 2164,
+      "op_edges": 1097,
+      "sources": 153,
+      "sinks": 57,
+      "max_tensor_bytes": 4608,
+      "positions": {
+        "DDR": 210,
+        "L1": 181,
+        "UB": 676
+      },
+      "op_kinds": {
+        "COPY_IN": 153,
+        "MATMUL": 59,
+        "ADD": 140,
+        "RELU": 127,
+        "REDUCE": 150,
+        "DIV": 65,
+        "MUL": 50,
+        "SUB": 43,
+        "SQRT": 6,
+        "CONV": 8,
+        "EXP": 16,
+        "SIGMOID": 22,
+        "NEG": 18,
+        "COPY_OUT": 57
+      },
+      "pipe_cycles": {
+        "PIPE_M": 28260,
+        "PIPE_V": 29518
+      },
+      "max_fanout": 9,
+      "components": 42,
+      "largest_component": 61,
+      "dag_depth": 29,
+      "max_level_width": 98,
+      "valid_dag": true
+    },
+    {
+      "case": "case_066",
+      "bytes": 2196525,
+      "ops": 6181,
+      "internal_ops": 5962,
+      "tensors": 6362,
+      "edges": 16324,
+      "op_edges": 9962,
+      "sources": 181,
+      "sinks": 38,
+      "max_tensor_bytes": 36864,
+      "positions": {
+        "DDR": 219,
+        "L1": 1350,
+        "UB": 4793
+      },
+      "op_kinds": {
+        "COPY_IN": 181,
+        "MATMUL": 1160,
+        "REDUCE": 990,
+        "SUB": 805,
+        "MUL": 252,
+        "ADD": 1280,
+        "SQRT": 74,
+        "DIV": 524,
+        "RELU": 362,
+        "EXP": 393,
+        "SIGMOID": 100,
+        "CONV": 15,
+        "NEG": 7,
+        "COPY_OUT": 38
+      },
+      "pipe_cycles": {
+        "PIPE_M": 269694,
+        "PIPE_V": 170683
+      },
+      "max_fanout": 243,
+      "components": 28,
+      "largest_component": 3675,
+      "dag_depth": 155,
+      "max_level_width": 192,
+      "valid_dag": true
+    },
+    {
+      "case": "case_067",
+      "bytes": 3177332,
+      "ops": 8996,
+      "internal_ops": 8804,
+      "tensors": 9117,
+      "edges": 23246,
+      "op_edges": 14129,
+      "sources": 121,
+      "sinks": 71,
+      "max_tensor_bytes": 294912,
+      "positions": {
+        "DDR": 192,
+        "L1": 8925
+      },
+      "op_kinds": {
+        "COPY_IN": 121,
+        "CONV": 3550,
+        "RELU": 3550,
+        "ADD": 1704,
+        "COPY_OUT": 71
+      },
+      "pipe_cycles": {
+        "PIPE_M": 58915232,
+        "PIPE_V": 2360608
+      },
+      "max_fanout": 71,
+      "components": 71,
+      "largest_component": 124,
+      "dag_depth": 125,
+      "max_level_width": 71,
+      "valid_dag": true
+    },
+    {
+      "case": "case_068",
+      "bytes": 2080289,
+      "ops": 5853,
+      "internal_ops": 5351,
+      "tensors": 6260,
+      "edges": 15148,
+      "op_edges": 8888,
+      "sources": 407,
+      "sinks": 95,
+      "max_tensor_bytes": 36864,
+      "positions": {
+        "DDR": 502,
+        "L1": 1293,
+        "UB": 4465
+      },
+      "op_kinds": {
+        "COPY_IN": 407,
+        "MATMUL": 1001,
+        "RELU": 370,
+        "ADD": 1112,
+        "REDUCE": 929,
+        "SUB": 641,
+        "MUL": 294,
+        "SQRT": 58,
+        "DIV": 514,
+        "EXP": 296,
+        "SIGMOID": 87,
+        "CONV": 9,
+        "NEG": 40,
+        "COPY_OUT": 95
+      },
+      "pipe_cycles": {
+        "PIPE_M": 249101,
+        "PIPE_V": 154696
+      },
+      "max_fanout": 288,
+      "components": 32,
+      "largest_component": 4176,
+      "dag_depth": 265,
+      "max_level_width": 220,
+      "valid_dag": true
+    },
+    {
+      "case": "case_069",
+      "bytes": 379073,
+      "ops": 1074,
+      "internal_ops": 1032,
+      "tensors": 1110,
+      "edges": 2844,
+      "op_edges": 1734,
+      "sources": 36,
+      "sinks": 6,
+      "max_tensor_bytes": 9216,
+      "positions": {
+        "DDR": 42,
+        "L1": 243,
+        "UB": 825
+      },
+      "op_kinds": {
+        "COPY_IN": 36,
+        "MATMUL": 210,
+        "REDUCE": 168,
+        "SUB": 144,
+        "MUL": 36,
+        "ADD": 222,
+        "SQRT": 12,
+        "DIV": 96,
+        "RELU": 60,
+        "EXP": 72,
+        "SIGMOID": 12,
+        "COPY_OUT": 6
+      },
+      "pipe_cycles": {
+        "PIPE_M": 16674,
+        "PIPE_V": 15288
+      },
+      "max_fanout": 72,
+      "components": 1,
+      "largest_component": 1032,
+      "dag_depth": 47,
+      "max_level_width": 144,
+      "valid_dag": true
+    },
+    {
+      "case": "case_070",
+      "bytes": 466830,
+      "ops": 1437,
+      "internal_ops": 1191,
+      "tensors": 1630,
+      "edges": 3424,
+      "op_edges": 1794,
+      "sources": 193,
+      "sinks": 53,
+      "max_tensor_bytes": 24576,
+      "positions": {
+        "DDR": 246,
+        "L1": 399,
+        "UB": 985
+      },
+      "op_kinds": {
+        "COPY_IN": 193,
+        "MATMUL": 162,
+        "SIGMOID": 48,
+        "MUL": 82,
+        "ADD": 271,
+        "REDUCE": 223,
+        "RELU": 321,
+        "DIV": 30,
+        "SUB": 26,
+        "SQRT": 3,
+        "EXP": 3,
+        "NEG": 22,
+        "COPY_OUT": 53
+      },
+      "pipe_cycles": {
+        "PIPE_M": 91832,
+        "PIPE_V": 47214
+      },
+      "max_fanout": 14,
+      "components": 38,
+      "largest_component": 285,
+      "dag_depth": 36,
+      "max_level_width": 213,
+      "valid_dag": true
+    },
+    {
+      "case": "case_071",
+      "bytes": 275828,
+      "ops": 781,
+      "internal_ops": 741,
+      "tensors": 816,
+      "edges": 2063,
+      "op_edges": 1247,
+      "sources": 35,
+      "sinks": 5,
+      "max_tensor_bytes": 9216,
+      "positions": {
+        "DDR": 40,
+        "L1": 188,
+        "UB": 588
+      },
+      "op_kinds": {
+        "COPY_IN": 35,
+        "MATMUL": 156,
+        "REDUCE": 120,
+        "SUB": 100,
+        "MUL": 30,
+        "ADD": 155,
+        "SQRT": 10,
+        "DIV": 70,
+        "RELU": 40,
+        "EXP": 50,
+        "SIGMOID": 10,
+        "COPY_OUT": 5
+      },
+      "pipe_cycles": {
+        "PIPE_M": 12534,
+        "PIPE_V": 10954
+      },
+      "max_fanout": 50,
+      "components": 1,
+      "largest_component": 741,
+      "dag_depth": 47,
+      "max_level_width": 100,
+      "valid_dag": true
+    },
+    {
+      "case": "case_072",
+      "bytes": 11723255,
+      "ops": 31387,
+      "internal_ops": 29666,
+      "tensors": 32624,
+      "edges": 88639,
+      "op_edges": 56015,
+      "sources": 1237,
+      "sinks": 484,
+      "max_tensor_bytes": 165888,
+      "positions": {
+        "DDR": 1721,
+        "L1": 24316,
+        "UB": 6587
+      },
+      "op_kinds": {
+        "COPY_IN": 1237,
+        "CONV": 150,
+        "RELU": 714,
+        "ADD": 11986,
+        "MATMUL": 12150,
+        "REDUCE": 1968,
+        "SUB": 858,
+        "MUL": 271,
+        "SQRT": 90,
+        "DIV": 540,
+        "EXP": 405,
+        "SIGMOID": 309,
+        "NEG": 225,
+        "COPY_OUT": 484
+      },
+      "pipe_cycles": {
+        "PIPE_M": 22928094,
+        "PIPE_V": 1708199
+      },
+      "max_fanout": 405,
+      "components": 476,
+      "largest_component": 6140,
+      "dag_depth": 252,
+      "max_level_width": 11082,
+      "valid_dag": true
+    },
+    {
+      "case": "case_073",
+      "bytes": 1746207,
+      "ops": 4964,
+      "internal_ops": 4836,
+      "tensors": 5053,
+      "edges": 12814,
+      "op_edges": 7761,
+      "sources": 89,
+      "sinks": 39,
+      "max_tensor_bytes": 294912,
+      "positions": {
+        "DDR": 128,
+        "L1": 4925
+      },
+      "op_kinds": {
+        "COPY_IN": 89,
+        "CONV": 1950,
+        "RELU": 1950,
+        "ADD": 936,
+        "COPY_OUT": 39
+      },
+      "pipe_cycles": {
+        "PIPE_M": 8160672,
+        "PIPE_V": 428064
+      },
+      "max_fanout": 39,
+      "components": 39,
+      "largest_component": 124,
+      "dag_depth": 125,
+      "max_level_width": 39,
+      "valid_dag": true
+    },
+    {
+      "case": "case_074",
+      "bytes": 1480814,
+      "ops": 4269,
+      "internal_ops": 3609,
+      "tensors": 4833,
+      "edges": 11541,
+      "op_edges": 6708,
+      "sources": 564,
+      "sinks": 96,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 660,
+        "L1": 3261,
+        "UB": 912
+      },
+      "op_kinds": {
+        "COPY_IN": 564,
+        "MATMUL": 1400,
+        "ADD": 1493,
+        "RELU": 217,
+        "REDUCE": 277,
+        "DIV": 42,
+        "MUL": 67,
+        "SUB": 37,
+        "SQRT": 6,
+        "SIGMOID": 44,
+        "NEG": 26,
+        "COPY_OUT": 96
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1579424,
+        "PIPE_V": 198420
+      },
+      "max_fanout": 21,
+      "components": 73,
+      "largest_component": 269,
+      "dag_depth": 40,
+      "max_level_width": 1474,
+      "valid_dag": true
+    },
+    {
+      "case": "case_075",
+      "bytes": 2745416,
+      "ops": 7684,
+      "internal_ops": 7410,
+      "tensors": 7953,
+      "edges": 20378,
+      "op_edges": 12425,
+      "sources": 269,
+      "sinks": 5,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 274,
+        "L1": 1826,
+        "UB": 5853
+      },
+      "op_kinds": {
+        "COPY_IN": 269,
+        "MATMUL": 1560,
+        "REDUCE": 1200,
+        "SUB": 1000,
+        "MUL": 300,
+        "ADD": 1550,
+        "SQRT": 100,
+        "DIV": 700,
+        "RELU": 400,
+        "EXP": 500,
+        "SIGMOID": 100,
+        "COPY_OUT": 5
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1107520,
+        "PIPE_V": 644660
+      },
+      "max_fanout": 500,
+      "components": 1,
+      "largest_component": 7410,
+      "dag_depth": 461,
+      "max_level_width": 105,
+      "valid_dag": true
+    },
+    {
+      "case": "case_076",
+      "bytes": 13180582,
+      "ops": 35076,
+      "internal_ops": 32528,
+      "tensors": 36815,
+      "edges": 99916,
+      "op_edges": 63101,
+      "sources": 1739,
+      "sinks": 809,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 2548,
+        "L1": 31486,
+        "UB": 2781
+      },
+      "op_kinds": {
+        "COPY_IN": 1739,
+        "MATMUL": 15281,
+        "ADD": 14458,
+        "REDUCE": 1628,
+        "RELU": 420,
+        "SIGMOID": 358,
+        "MUL": 23,
+        "SUB": 2,
+        "NEG": 358,
+        "COPY_OUT": 809
+      },
+      "pipe_cycles": {
+        "PIPE_M": 6061644,
+        "PIPE_V": 947248
+      },
+      "max_fanout": 34,
+      "components": 809,
+      "largest_component": 122,
+      "dag_depth": 14,
+      "max_level_width": 15270,
+      "valid_dag": true
+    },
+    {
+      "case": "case_077",
+      "bytes": 1733744,
+      "ops": 4872,
+      "internal_ops": 4486,
+      "tensors": 5208,
+      "edges": 12652,
+      "op_edges": 7444,
+      "sources": 336,
+      "sinks": 50,
+      "max_tensor_bytes": 20736,
+      "positions": {
+        "DDR": 386,
+        "L1": 1386,
+        "UB": 3436
+      },
+      "op_kinds": {
+        "COPY_IN": 336,
+        "MATMUL": 920,
+        "REDUCE": 672,
+        "SUB": 487,
+        "MUL": 156,
+        "ADD": 1056,
+        "SQRT": 52,
+        "DIV": 344,
+        "RELU": 459,
+        "EXP": 242,
+        "SIGMOID": 74,
+        "NEG": 24,
+        "COPY_OUT": 50
+      },
+      "pipe_cycles": {
+        "PIPE_M": 415406,
+        "PIPE_V": 136672
+      },
+      "max_fanout": 144,
+      "components": 41,
+      "largest_component": 2096,
+      "dag_depth": 136,
+      "max_level_width": 213,
+      "valid_dag": true
+    },
+    {
+      "case": "case_078",
+      "bytes": 385171,
+      "ops": 1094,
+      "internal_ops": 1024,
+      "tensors": 1156,
+      "edges": 2812,
+      "op_edges": 1656,
+      "sources": 62,
+      "sinks": 8,
+      "max_tensor_bytes": 165888,
+      "positions": {
+        "DDR": 70,
+        "L1": 1086
+      },
+      "op_kinds": {
+        "COPY_IN": 62,
+        "CONV": 432,
+        "RELU": 400,
+        "ADD": 192,
+        "COPY_OUT": 8
+      },
+      "pipe_cycles": {
+        "PIPE_M": 2037888,
+        "PIPE_V": 103296
+      },
+      "max_fanout": 8,
+      "components": 8,
+      "largest_component": 128,
+      "dag_depth": 125,
+      "max_level_width": 16,
+      "valid_dag": true
+    },
+    {
+      "case": "case_079",
+      "bytes": 7708587,
+      "ops": 20130,
+      "internal_ops": 18720,
+      "tensors": 21252,
+      "edges": 58980,
+      "op_edges": 37728,
+      "sources": 1122,
+      "sinks": 288,
+      "max_tensor_bytes": 12288,
+      "positions": {
+        "DDR": 1410,
+        "L1": 19842
+      },
+      "op_kinds": {
+        "COPY_IN": 1122,
+        "MATMUL": 9504,
+        "ADD": 9216,
+        "COPY_OUT": 288
+      },
+      "pipe_cycles": {
+        "PIPE_M": 29424384,
+        "PIPE_V": 3760128
+      },
+      "max_fanout": 18,
+      "components": 288,
+      "largest_component": 65,
+      "dag_depth": 9,
+      "max_level_width": 9504,
+      "valid_dag": true
+    },
+    {
+      "case": "case_080",
+      "bytes": 528981,
+      "ops": 1395,
+      "internal_ops": 1098,
+      "tensors": 1674,
+      "edges": 3888,
+      "op_edges": 2214,
+      "sources": 279,
+      "sinks": 18,
+      "max_tensor_bytes": 8192,
+      "positions": {
+        "DDR": 297,
+        "L1": 1377
+      },
+      "op_kinds": {
+        "COPY_IN": 279,
+        "MATMUL": 558,
+        "ADD": 540,
+        "COPY_OUT": 18
+      },
+      "pipe_cycles": {
+        "PIPE_M": 289044,
+        "PIPE_V": 20520
+      },
+      "max_fanout": 6,
+      "components": 18,
+      "largest_component": 61,
+      "dag_depth": 8,
+      "max_level_width": 558,
+      "valid_dag": true
+    },
+    {
+      "case": "case_081",
+      "bytes": 1601132,
+      "ops": 4505,
+      "internal_ops": 3485,
+      "tensors": 5185,
+      "edges": 11220,
+      "op_edges": 6035,
+      "sources": 680,
+      "sinks": 340,
+      "max_tensor_bytes": 2048,
+      "positions": {
+        "DDR": 1020,
+        "UB": 4165
+      },
+      "op_kinds": {
+        "COPY_IN": 680,
+        "REDUCE": 680,
+        "ADD": 935,
+        "DIV": 510,
+        "MUL": 765,
+        "SUB": 425,
+        "RELU": 85,
+        "SQRT": 85,
+        "COPY_OUT": 340
+      },
+      "pipe_cycles": {
+        "PIPE_V": 151725
+      },
+      "max_fanout": 5,
+      "components": 85,
+      "largest_component": 41,
+      "dag_depth": 13,
+      "max_level_width": 680,
+      "valid_dag": true
+    },
+    {
+      "case": "case_082",
+      "bytes": 1498341,
+      "ops": 4209,
+      "internal_ops": 4113,
+      "tensors": 4298,
+      "edges": 11187,
+      "op_edges": 6889,
+      "sources": 89,
+      "sinks": 7,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 96,
+        "L1": 902,
+        "UB": 3300
+      },
+      "op_kinds": {
+        "COPY_IN": 89,
+        "MATMUL": 816,
+        "REDUCE": 672,
+        "SUB": 588,
+        "MUL": 126,
+        "ADD": 903,
+        "SQRT": 42,
+        "DIV": 378,
+        "RELU": 252,
+        "EXP": 294,
+        "SIGMOID": 42,
+        "COPY_OUT": 7
+      },
+      "pipe_cycles": {
+        "PIPE_M": 567936,
+        "PIPE_V": 359766
+      },
+      "max_fanout": 294,
+      "components": 1,
+      "largest_component": 4113,
+      "dag_depth": 139,
+      "max_level_width": 196,
+      "valid_dag": true
+    },
+    {
+      "case": "case_083",
+      "bytes": 1389087,
+      "ops": 3956,
+      "internal_ops": 3844,
+      "tensors": 4037,
+      "edges": 10206,
+      "op_edges": 6169,
+      "sources": 81,
+      "sinks": 31,
+      "max_tensor_bytes": 73728,
+      "positions": {
+        "DDR": 112,
+        "L1": 3925
+      },
+      "op_kinds": {
+        "COPY_IN": 81,
+        "CONV": 1550,
+        "RELU": 1550,
+        "ADD": 744,
+        "COPY_OUT": 31
+      },
+      "pipe_cycles": {
+        "PIPE_M": 810836,
+        "PIPE_V": 71300
+      },
+      "max_fanout": 31,
+      "components": 31,
+      "largest_component": 124,
+      "dag_depth": 125,
+      "max_level_width": 31,
+      "valid_dag": true
+    },
+    {
+      "case": "case_084",
+      "bytes": 5110179,
+      "ops": 14001,
+      "internal_ops": 8616,
+      "tensors": 18309,
+      "edges": 33387,
+      "op_edges": 15078,
+      "sources": 4308,
+      "sinks": 1077,
+      "max_tensor_bytes": 4608,
+      "positions": {
+        "DDR": 5385,
+        "L1": 5385,
+        "UB": 7539
+      },
+      "op_kinds": {
+        "COPY_IN": 4308,
+        "MATMUL": 2154,
+        "DIV": 2154,
+        "REDUCE": 2154,
+        "SUB": 1077,
+        "EXP": 1077,
+        "COPY_OUT": 1077
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1266552,
+        "PIPE_V": 1240704
+      },
+      "max_fanout": 2,
+      "components": 1077,
+      "largest_component": 8,
+      "dag_depth": 9,
+      "max_level_width": 1077,
+      "valid_dag": true
+    },
+    {
+      "case": "case_085",
+      "bytes": 7159265,
+      "ops": 19993,
+      "internal_ops": 19737,
+      "tensors": 20240,
+      "edges": 53243,
+      "op_edges": 33003,
+      "sources": 247,
+      "sinks": 9,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 256,
+        "L1": 4024,
+        "UB": 15960
+      },
+      "op_kinds": {
+        "COPY_IN": 247,
+        "MATMUL": 3780,
+        "REDUCE": 3240,
+        "SUB": 2916,
+        "MUL": 486,
+        "ADD": 4455,
+        "SQRT": 162,
+        "DIV": 1782,
+        "RELU": 1296,
+        "EXP": 1458,
+        "SIGMOID": 162,
+        "COPY_OUT": 9
+      },
+      "pipe_cycles": {
+        "PIPE_M": 2565216,
+        "PIPE_V": 1724706
+      },
+      "max_fanout": 1458,
+      "components": 1,
+      "largest_component": 19737,
+      "dag_depth": 451,
+      "max_level_width": 324,
+      "valid_dag": true
+    },
+    {
+      "case": "case_086",
+      "bytes": 1908009,
+      "ops": 5372,
+      "internal_ops": 5274,
+      "tensors": 5462,
+      "edges": 14290,
+      "op_edges": 8828,
+      "sources": 90,
+      "sinks": 8,
+      "max_tensor_bytes": 9216,
+      "positions": {
+        "DDR": 98,
+        "L1": 1113,
+        "UB": 4251
+      },
+      "op_kinds": {
+        "COPY_IN": 90,
+        "MATMUL": 1026,
+        "REDUCE": 864,
+        "SUB": 768,
+        "MUL": 144,
+        "ADD": 1176,
+        "SQRT": 48,
+        "DIV": 480,
+        "RELU": 336,
+        "EXP": 384,
+        "SIGMOID": 48,
+        "COPY_OUT": 8
+      },
+      "pipe_cycles": {
+        "PIPE_M": 79182,
+        "PIPE_V": 78060
+      },
+      "max_fanout": 384,
+      "components": 1,
+      "largest_component": 5274,
+      "dag_depth": 139,
+      "max_level_width": 256,
+      "valid_dag": true
+    },
+    {
+      "case": "case_087",
+      "bytes": 10397401,
+      "ops": 28666,
+      "internal_ops": 27556,
+      "tensors": 29569,
+      "edges": 77339,
+      "op_edges": 47770,
+      "sources": 903,
+      "sinks": 207,
+      "max_tensor_bytes": 36864,
+      "positions": {
+        "DDR": 1110,
+        "L1": 10957,
+        "UB": 17502
+      },
+      "op_kinds": {
+        "COPY_IN": 903,
+        "MATMUL": 7288,
+        "REDUCE": 3877,
+        "SUB": 3042,
+        "MUL": 481,
+        "ADD": 7396,
+        "SQRT": 160,
+        "DIV": 1960,
+        "RELU": 1456,
+        "EXP": 1560,
+        "SIGMOID": 255,
+        "NEG": 81,
+        "COPY_OUT": 207
+      },
+      "pipe_cycles": {
+        "PIPE_M": 3593280,
+        "PIPE_V": 882784
+      },
+      "max_fanout": 960,
+      "components": 196,
+      "largest_component": 12693,
+      "dag_depth": 383,
+      "max_level_width": 3066,
+      "valid_dag": true
+    },
+    {
+      "case": "case_088",
+      "bytes": 1190948,
+      "ops": 3577,
+      "internal_ops": 3309,
+      "tensors": 3811,
+      "edges": 9270,
+      "op_edges": 5459,
+      "sources": 234,
+      "sinks": 34,
+      "max_tensor_bytes": 36864,
+      "positions": {
+        "DDR": 268,
+        "L1": 894,
+        "UB": 2649
+      },
+      "op_kinds": {
+        "COPY_IN": 234,
+        "MATMUL": 690,
+        "SIGMOID": 48,
+        "MUL": 106,
+        "ADD": 672,
+        "REDUCE": 535,
+        "SUB": 382,
+        "SQRT": 32,
+        "DIV": 300,
+        "RELU": 321,
+        "EXP": 206,
+        "NEG": 17,
+        "COPY_OUT": 34
+      },
+      "pipe_cycles": {
+        "PIPE_M": 173608,
+        "PIPE_V": 99744
+      },
+      "max_fanout": 192,
+      "components": 31,
+      "largest_component": 2798,
+      "dag_depth": 177,
+      "max_level_width": 100,
+      "valid_dag": true
+    },
+    {
+      "case": "case_089",
+      "bytes": 1848665,
+      "ops": 5254,
+      "internal_ops": 5120,
+      "tensors": 5348,
+      "edges": 13628,
+      "op_edges": 8280,
+      "sources": 94,
+      "sinks": 40,
+      "max_tensor_bytes": 18432,
+      "positions": {
+        "DDR": 134,
+        "L1": 5214
+      },
+      "op_kinds": {
+        "COPY_IN": 94,
+        "CONV": 2160,
+        "RELU": 2000,
+        "ADD": 960,
+        "COPY_OUT": 40
+      },
+      "pipe_cycles": {
+        "PIPE_M": 589120,
+        "PIPE_V": 109760
+      },
+      "max_fanout": 40,
+      "components": 40,
+      "largest_component": 128,
+      "dag_depth": 125,
+      "max_level_width": 80,
+      "valid_dag": true
+    },
+    {
+      "case": "case_090",
+      "bytes": 613299,
+      "ops": 1744,
+      "internal_ops": 1664,
+      "tensors": 1811,
+      "edges": 4502,
+      "op_edges": 2691,
+      "sources": 67,
+      "sinks": 13,
+      "max_tensor_bytes": 165888,
+      "positions": {
+        "DDR": 80,
+        "L1": 1731
+      },
+      "op_kinds": {
+        "COPY_IN": 67,
+        "CONV": 702,
+        "RELU": 650,
+        "ADD": 312,
+        "COPY_OUT": 13
+      },
+      "pipe_cycles": {
+        "PIPE_M": 840528,
+        "PIPE_V": 59280
+      },
+      "max_fanout": 13,
+      "components": 13,
+      "largest_component": 128,
+      "dag_depth": 125,
+      "max_level_width": 26,
+      "valid_dag": true
+    },
+    {
+      "case": "case_091",
+      "bytes": 12638901,
+      "ops": 33497,
+      "internal_ops": 31554,
+      "tensors": 34927,
+      "edges": 96492,
+      "op_edges": 61565,
+      "sources": 1430,
+      "sinks": 513,
+      "max_tensor_bytes": 73728,
+      "positions": {
+        "DDR": 1943,
+        "L1": 31140,
+        "UB": 1844
+      },
+      "op_kinds": {
+        "COPY_IN": 1430,
+        "CONV": 270,
+        "RELU": 559,
+        "ADD": 14437,
+        "REDUCE": 1044,
+        "MATMUL": 14790,
+        "MUL": 1,
+        "SIGMOID": 239,
+        "NEG": 214,
+        "COPY_OUT": 513
+      },
+      "pipe_cycles": {
+        "PIPE_M": 8981360,
+        "PIPE_V": 931710
+      },
+      "max_fanout": 30,
+      "components": 513,
+      "largest_component": 147,
+      "dag_depth": 125,
+      "max_level_width": 14803,
+      "valid_dag": true
+    },
+    {
+      "case": "case_092",
+      "bytes": 6333836,
+      "ops": 17942,
+      "internal_ops": 17608,
+      "tensors": 18134,
+      "edges": 46392,
+      "op_edges": 28258,
+      "sources": 192,
+      "sinks": 142,
+      "max_tensor_bytes": 73728,
+      "positions": {
+        "DDR": 334,
+        "L1": 17800
+      },
+      "op_kinds": {
+        "COPY_IN": 192,
+        "CONV": 7100,
+        "RELU": 7100,
+        "ADD": 3408,
+        "COPY_OUT": 142
+      },
+      "pipe_cycles": {
+        "PIPE_M": 3714152,
+        "PIPE_V": 326600
+      },
+      "max_fanout": 142,
+      "components": 142,
+      "largest_component": 124,
+      "dag_depth": 125,
+      "max_level_width": 142,
+      "valid_dag": true
+    },
+    {
+      "case": "case_093",
+      "bytes": 334666,
+      "ops": 901,
+      "internal_ops": 552,
+      "tensors": 1181,
+      "edges": 2285,
+      "op_edges": 1104,
+      "sources": 280,
+      "sinks": 69,
+      "max_tensor_bytes": 2048,
+      "positions": {
+        "DDR": 349,
+        "L1": 832
+      },
+      "op_kinds": {
+        "COPY_IN": 280,
+        "MATMUL": 276,
+        "ADD": 207,
+        "RELU": 69,
+        "COPY_OUT": 69
+      },
+      "pipe_cycles": {
+        "PIPE_M": 73968,
+        "PIPE_V": 12144
+      },
+      "max_fanout": 69,
+      "components": 69,
+      "largest_component": 8,
+      "dag_depth": 5,
+      "max_level_width": 276,
+      "valid_dag": true
+    },
+    {
+      "case": "case_094",
+      "bytes": 257869,
+      "ops": 791,
+      "internal_ops": 647,
+      "tensors": 895,
+      "edges": 1925,
+      "op_edges": 1030,
+      "sources": 104,
+      "sinks": 40,
+      "max_tensor_bytes": 18432,
+      "positions": {
+        "DDR": 144,
+        "L1": 266,
+        "UB": 485
+      },
+      "op_kinds": {
+        "COPY_IN": 104,
+        "MATMUL": 110,
+        "SIGMOID": 32,
+        "MUL": 37,
+        "ADD": 193,
+        "REDUCE": 62,
+        "RELU": 190,
+        "CONV": 6,
+        "NEG": 17,
+        "COPY_OUT": 40
+      },
+      "pipe_cycles": {
+        "PIPE_M": 70944,
+        "PIPE_V": 36616
+      },
+      "max_fanout": 12,
+      "components": 40,
+      "largest_component": 44,
+      "dag_depth": 37,
+      "max_level_width": 108,
+      "valid_dag": true
+    },
+    {
+      "case": "case_095",
+      "bytes": 2189857,
+      "ops": 6006,
+      "internal_ops": 3696,
+      "tensors": 7854,
+      "edges": 14322,
+      "op_edges": 6468,
+      "sources": 1848,
+      "sinks": 462,
+      "max_tensor_bytes": 18432,
+      "positions": {
+        "DDR": 2310,
+        "L1": 2310,
+        "UB": 3234
+      },
+      "op_kinds": {
+        "COPY_IN": 1848,
+        "MATMUL": 924,
+        "DIV": 924,
+        "REDUCE": 924,
+        "SUB": 462,
+        "EXP": 462,
+        "COPY_OUT": 462
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1069992,
+        "PIPE_V": 1014552
+      },
+      "max_fanout": 2,
+      "components": 462,
+      "largest_component": 8,
+      "dag_depth": 9,
+      "max_level_width": 462,
+      "valid_dag": true
+    },
+    {
+      "case": "case_096",
+      "bytes": 434276,
+      "ops": 1362,
+      "internal_ops": 1198,
+      "tensors": 1476,
+      "edges": 3200,
+      "op_edges": 1724,
+      "sources": 114,
+      "sinks": 50,
+      "max_tensor_bytes": 18432,
+      "positions": {
+        "DDR": 164,
+        "L1": 266,
+        "UB": 1046
+      },
+      "op_kinds": {
+        "COPY_IN": 114,
+        "MATMUL": 161,
+        "DIV": 20,
+        "REDUCE": 153,
+        "SUB": 10,
+        "EXP": 10,
+        "CONV": 9,
+        "RELU": 481,
+        "ADD": 233,
+        "SIGMOID": 52,
+        "MUL": 45,
+        "NEG": 24,
+        "COPY_OUT": 50
+      },
+      "pipe_cycles": {
+        "PIPE_M": 40144,
+        "PIPE_V": 53130
+      },
+      "max_fanout": 55,
+      "components": 50,
+      "largest_component": 397,
+      "dag_depth": 120,
+      "max_level_width": 93,
+      "valid_dag": true
+    },
+    {
+      "case": "case_097",
+      "bytes": 2859868,
+      "ops": 7488,
+      "internal_ops": 6592,
+      "tensors": 8320,
+      "edges": 21568,
+      "op_edges": 13248,
+      "sources": 832,
+      "sinks": 64,
+      "max_tensor_bytes": 12288,
+      "positions": {
+        "DDR": 896,
+        "L1": 7424
+      },
+      "op_kinds": {
+        "COPY_IN": 832,
+        "MATMUL": 3328,
+        "ADD": 3264,
+        "COPY_OUT": 64
+      },
+      "pipe_cycles": {
+        "PIPE_M": 10303488,
+        "PIPE_V": 1331712
+      },
+      "max_fanout": 8,
+      "components": 64,
+      "largest_component": 103,
+      "dag_depth": 53,
+      "max_level_width": 3328,
+      "valid_dag": true
+    },
+    {
+      "case": "case_098",
+      "bytes": 494504,
+      "ops": 1553,
+      "internal_ops": 1365,
+      "tensors": 1700,
+      "edges": 3615,
+      "op_edges": 1915,
+      "sources": 147,
+      "sinks": 41,
+      "max_tensor_bytes": 16384,
+      "positions": {
+        "DDR": 188,
+        "UB": 1408,
+        "L1": 104
+      },
+      "op_kinds": {
+        "COPY_IN": 147,
+        "RELU": 525,
+        "ADD": 353,
+        "REDUCE": 248,
+        "DIV": 63,
+        "MUL": 51,
+        "SUB": 42,
+        "SQRT": 7,
+        "MATMUL": 28,
+        "EXP": 14,
+        "NEG": 20,
+        "SIGMOID": 14,
+        "COPY_OUT": 41
+      },
+      "pipe_cycles": {
+        "PIPE_V": 162701,
+        "PIPE_M": 17296
+      },
+      "max_fanout": 13,
+      "components": 27,
+      "largest_component": 389,
+      "dag_depth": 52,
+      "max_level_width": 98,
+      "valid_dag": true
+    },
+    {
+      "case": "case_099",
+      "bytes": 2613016,
+      "ops": 7054,
+      "internal_ops": 6296,
+      "tensors": 7610,
+      "edges": 19599,
+      "op_edges": 11989,
+      "sources": 556,
+      "sinks": 202,
+      "max_tensor_bytes": 24576,
+      "positions": {
+        "DDR": 758,
+        "L1": 6007,
+        "UB": 845
+      },
+      "op_kinds": {
+        "COPY_IN": 556,
+        "MATMUL": 2859,
+        "RELU": 189,
+        "ADD": 2607,
+        "REDUCE": 410,
+        "SIGMOID": 113,
+        "MUL": 25,
+        "NEG": 93,
+        "COPY_OUT": 202
+      },
+      "pipe_cycles": {
+        "PIPE_M": 1595484,
+        "PIPE_V": 144720
+      },
+      "max_fanout": 20,
+      "components": 202,
+      "largest_component": 117,
+      "dag_depth": 30,
+      "max_level_width": 2810,
+      "valid_dag": true
+    },
+    {
+      "case": "case_100",
+      "bytes": 537404,
+      "ops": 1654,
+      "internal_ops": 1394,
+      "tensors": 1825,
+      "edges": 4014,
+      "op_edges": 2189,
+      "sources": 171,
+      "sinks": 89,
+      "max_tensor_bytes": 18432,
+      "positions": {
+        "DDR": 260,
+        "L1": 186,
+        "UB": 1379
+      },
+      "op_kinds": {
+        "COPY_IN": 171,
+        "CONV": 9,
+        "RELU": 238,
+        "ADD": 358,
+        "MATMUL": 100,
+        "DIV": 78,
+        "REDUCE": 291,
+        "SUB": 69,
+        "EXP": 3,
+        "SIGMOID": 51,
+        "MUL": 156,
+        "SQRT": 8,
+        "NEG": 33,
+        "COPY_OUT": 89
+      },
+      "pipe_cycles": {
+        "PIPE_M": 62556,
+        "PIPE_V": 102007
+      },
+      "max_fanout": 22,
+      "components": 43,
+      "largest_component": 275,
+      "dag_depth": 53,
+      "max_level_width": 187,
+      "valid_dag": true
+    }
+  ]
+}

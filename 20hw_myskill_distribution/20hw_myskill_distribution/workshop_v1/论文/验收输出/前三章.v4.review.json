@@ -1,0 +1,2781 @@
+{
+  "pdf": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文.pdf",
+  "pdf_sha256": "488f77be7cf2a8299396446877782c40d41280ede7247d3562b73f7322543dfc",
+  "status": "PASS",
+  "pages": [
+    {
+      "physical_page": 5,
+      "path": "前三章.v4.review_pages\\page_005.png",
+      "sha256": "ccf29fc62454d34d5312e9b952a4aa98af7f0e95c1aec00244d83fe8fcba430e",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/page_005.png",
+      "observation": "问题背景给出二部依赖图、私有存储及场景差别；1.2在页下开始，标题后仍有完整任务文字，未孤立。",
+      "issues": []
+    },
+    {
+      "physical_page": 6,
+      "path": "前三章.v4.review_pages\\page_006.png",
+      "sha256": "0c8ac29fe6023a65035de38bdfaa564d2e538845995fc2d9228b6110e29a7835",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/page_006.png",
+      "observation": "1.2连续交代三问的输入、方案、指标与复现要求；路线图引句在正文末，页下留白来自下一页的整幅路线图，无缺段或裁切。",
+      "issues": []
+    },
+    {
+      "physical_page": 7,
+      "path": "前三章.v4.review_pages\\page_007.png",
+      "sha256": "56ffbd97e28b1ec172880814a7ae610cfbd80f894b4b7c6755de51b7258821bc",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/page_007.png",
+      "observation": "图1.1在独立页居中；四带依次是共用图与评估口径、场景A、场景B、共享L2，箭头和图题可辨。",
+      "issues": []
+    },
+    {
+      "physical_page": 8,
+      "path": "前三章.v4.review_pages\\page_008.png",
+      "sha256": "fdd7a6739ced303e93668a98920cb74e0ef5706211c31b1c33215e3b202c52bc",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/page_008.png",
+      "observation": "路线图后的衔接段位于本页页首，使第一章内容页连续；模型假设随即说明其工作假设性质。符号章同页接排，表3.1题名、表头及首行同页，列宽无溢出。",
+      "issues": []
+    },
+    {
+      "physical_page": 9,
+      "path": "前三章.v4.review_pages\\page_009.png",
+      "sha256": "71d3ceb5b559cc163d7a31896ef020214a3cbd334414693e13dfdbe0c944c994",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/page_009.png",
+      "observation": "符号表续页沿用表3.1编号与四列表头；容量、带宽和指标单位完整，末尾表注在底线外且未孤立。",
+      "issues": []
+    },
+    {
+      "physical_page": 10,
+      "path": "前三章.v4.review_pages\\page_010.png",
+      "sha256": "0c99b118771e6e736d4d3a8ab346256f58386e69e4efb819d23274d6298d6c9d",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/page_010.png",
+      "observation": "第四章在新页有问题文字与问题一综合图；顶部DAG、中部方法、底部两张实测缩图和图题均在版心内。",
+      "issues": []
+    },
+    {
+      "physical_page": 38,
+      "path": "前三章.v4.review_pages\\page_038.png",
+      "sha256": "7d5b34d3e16d2cfa7d0c886ffa7678dade6e6796cb877f12e80466bc0d0cd9f2",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/page_038.png",
+      "observation": "评价章优点和缺点各有四条具体依据，官方100例成绩、成对反事实和方法边界分开表述；标题、编号与行间无碰撞。",
+      "issues": []
+    },
+    {
+      "physical_page": 39,
+      "path": "前三章.v4.review_pages\\page_039.png",
+      "sha256": "87c208a81b36fa0baf32639cee12e0ae6d90a33b1afea9156f02f378b38af000",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/page_039.png",
+      "observation": "推广与改进为两个自然段，分别写迁移前提与后续实验；本页下方留白由参考文献另起页形成，正文无截断。",
+      "issues": []
+    }
+  ],
+  "symbol_crops": [
+    {
+      "physical_page": 8,
+      "bbox": [
+        70.87000274658203,
+        515.95703125,
+        524.406005859375,
+        776.8900146484375
+      ],
+      "path": "前三章.v4.review_pages\\symbol_008.png",
+      "sha256": "370007591c59e79ad563818f16e44b8882c1eb80c97b0d39a93ade51ff17245d",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/symbol_008.png",
+      "observation": "首段表题居中、顶线与表头分隔线、底线清楚，类别与单一符号逐行对应，无竖线及缩放挤压。",
+      "issues": []
+    },
+    {
+      "physical_page": 9,
+      "bbox": [
+        70.87000274658203,
+        68.61100006103516,
+        524.406005859375,
+        402.25
+      ],
+      "path": "前三章.v4.review_pages\\symbol_009.png",
+      "sha256": "21d7466b4feaf0a9f010b409f523ddd280ed2c30a001210013e17e1c5871ba7c",
+      "reviewed": true,
+      "tool_ref": "functions.view_image:论文/验收输出/前三章.v4.review_pages/symbol_009.png",
+      "observation": "续表重复表头并保留同一表号；最终注在底线下。局部裁图左缘紧贴注字，整页PDF可确认完整的‘注：’及内容。",
+      "issues": []
+    }
+  ],
+  "first_three_content_pages": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "first_three_unique_page_count": 5,
+  "symbol_chapter_page_count": 2,
+  "restatement_prose": {
+    "method": "paragraph_destinations_distinct_baselines_v1",
+    "checks": [
+      {
+        "code": "restatement_prose_measurements_present",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_body_geometry",
+        "ok": true,
+        "height_bp": 700.157489414695,
+        "width_bp": 453.54332254047324
+      },
+      {
+        "code": "restatement_prose_prescribed_format",
+        "ok": true,
+        "leading_bp": 17.932752179327522,
+        "font_size_bp": 11.955168119551683
+      },
+      {
+        "code": "restatement_prose_anchors:1",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:1",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:2",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:2",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:3",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:3",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:4",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:4",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:5",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:5",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:6",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:6",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:7",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:7",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:8",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:8",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:9",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:9",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:10",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:10",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:11",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:11",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:12",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:12",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:13",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:13",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:15",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:15",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchors:16",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_anchor_order:16",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:2",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:3",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:4",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:5",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:6",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:8",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:9",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:10",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:11",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:12",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_format:16",
+        "ok": true
+      },
+      {
+        "code": "restatement_prose_at_least_one_page",
+        "ok": true,
+        "actual": 1.2820512820512822,
+        "required": 1.0,
+        "counted_lines": 50,
+        "full_page_line_capacity": 39
+      }
+    ],
+    "paragraphs": [
+      {
+        "id": 14,
+        "role": "excluded_caption_wrapper",
+        "begin": [
+          6,
+          70.87000274658203,
+          727.75
+        ],
+        "caption_bbox": [
+          228.63800048828125,
+          717.43701171875,
+          366.63800048828125,
+          730.5964965820312
+        ]
+      },
+      {
+        "id": 1,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          4,
+          70.87000274658203,
+          109.52001953125
+        ],
+        "end": [
+          4,
+          139.8699951171875,
+          109.52001953125
+        ],
+        "counted_lines": 0
+      },
+      {
+        "id": 2,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          4,
+          70.87000274658203,
+          134.1400146484375
+        ],
+        "end": [
+          4,
+          505.5,
+          205.8699951171875
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 3,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          4,
+          70.87000274658203,
+          223.79998779296875
+        ],
+        "end": [
+          4,
+          278.3500061035156,
+          295.530029296875
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 4,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          4,
+          70.87000274658203,
+          313.46002197265625
+        ],
+        "end": [
+          4,
+          350.0799865722656,
+          385.20001220703125
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 5,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          4,
+          70.87000274658203,
+          403.1300048828125
+        ],
+        "end": [
+          4,
+          230.52999877929688,
+          492.7900085449219
+        ],
+        "counted_lines": 6
+      },
+      {
+        "id": 6,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          4,
+          70.87000274658203,
+          510.7200012207031
+        ],
+        "end": [
+          4,
+          87.06999969482422,
+          600.3900146484375
+        ],
+        "counted_lines": 6
+      },
+      {
+        "id": 7,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          4,
+          70.87000274658203,
+          621.4700317382812
+        ],
+        "end": [
+          4,
+          139.8699951171875,
+          621.4700317382812
+        ],
+        "counted_lines": 0
+      },
+      {
+        "id": 8,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          4,
+          70.87000274658203,
+          646.0900268554688
+        ],
+        "end": [
+          4,
+          345.44000244140625,
+          717.8200073242188
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 9,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          4,
+          70.87000274658203,
+          735.75
+        ],
+        "end": [
+          5,
+          500.8399963378906,
+          100.75
+        ],
+        "counted_lines": 4
+      },
+      {
+        "id": 10,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          5,
+          70.87000274658203,
+          118.69000244140625
+        ],
+        "end": [
+          5,
+          294.29998779296875,
+          190.4200439453125
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 11,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          5,
+          70.87000274658203,
+          208.35003662109375
+        ],
+        "end": [
+          5,
+          426.1199951171875,
+          280.08001708984375
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 12,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          5,
+          70.87000274658203,
+          298.010009765625
+        ],
+        "end": [
+          5,
+          251.4499969482422,
+          298.010009765625
+        ],
+        "counted_lines": 1
+      },
+      {
+        "id": 13,
+        "role": "excluded",
+        "begin": [
+          6,
+          70.87000274658203,
+          707.7000122070312
+        ],
+        "end": [
+          6,
+          524.4099731445312,
+          707.7000122070312
+        ]
+      },
+      {
+        "id": 15,
+        "role": "excluded",
+        "begin": [
+          6,
+          228.63999938964844,
+          727.75
+        ],
+        "end": [
+          6,
+          366.6400146484375,
+          727.75
+        ]
+      },
+      {
+        "id": 16,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          7,
+          70.87000274658203,
+          82.82000732421875
+        ],
+        "end": [
+          7,
+          397.9100036621094,
+          118.69000244140625
+        ],
+        "counted_lines": 3
+      }
+    ],
+    "lines": [
+      {
+        "physical_page": 5,
+        "baseline_bp": 134.1,
+        "paragraph_id": 2,
+        "bbox": [
+          94.7760009765625,
+          123.86648559570312,
+          524.4219970703125,
+          135.82168579101562
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 152.1,
+        "paragraph_id": 2,
+        "bbox": [
+          70.86599731445312,
+          141.7994842529297,
+          524.42236328125,
+          153.7546844482422
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 170.0,
+        "paragraph_id": 2,
+        "bbox": [
+          70.86599731445312,
+          159.73248291015625,
+          533.0419921875,
+          171.68768310546875
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 187.9,
+        "paragraph_id": 2,
+        "bbox": [
+          70.86599731445312,
+          177.6654815673828,
+          524.42236328125,
+          189.6206817626953
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 205.9,
+        "paragraph_id": 2,
+        "bbox": [
+          70.86599731445312,
+          195.5974884033203,
+          513.2083740234375,
+          207.5526885986328
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 223.8,
+        "paragraph_id": 3,
+        "bbox": [
+          94.7760009765625,
+          213.53048706054688,
+          532.115234375,
+          225.48568725585938
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 241.7,
+        "paragraph_id": 3,
+        "bbox": [
+          70.86599731445312,
+          231.46348571777344,
+          533.189208984375,
+          244.57383728027344
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 259.7,
+        "paragraph_id": 3,
+        "bbox": [
+          70.86599731445312,
+          249.39649963378906,
+          532.115234375,
+          262.5068664550781
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 277.6,
+        "paragraph_id": 3,
+        "bbox": [
+          70.86599731445312,
+          267.3284606933594,
+          533.060546875,
+          280.4388427734375
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 295.5,
+        "paragraph_id": 3,
+        "bbox": [
+          70.86599731445312,
+          285.261474609375,
+          286.0596008300781,
+          297.2166748046875
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 313.5,
+        "paragraph_id": 4,
+        "bbox": [
+          94.7760009765625,
+          303.1944580078125,
+          524.4157104492188,
+          316.3048400878906
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 331.4,
+        "paragraph_id": 4,
+        "bbox": [
+          70.86599731445312,
+          321.1274719238281,
+          524.4097900390625,
+          334.23785400390625
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 349.3,
+        "paragraph_id": 4,
+        "bbox": [
+          70.86599731445312,
+          339.0594787597656,
+          524.42236328125,
+          351.0146789550781
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 367.3,
+        "paragraph_id": 4,
+        "bbox": [
+          70.86599731445312,
+          356.99249267578125,
+          524.42236328125,
+          368.94769287109375
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 385.2,
+        "paragraph_id": 4,
+        "bbox": [
+          70.86599731445312,
+          374.9255065917969,
+          357.7908020019531,
+          386.8807067871094
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 403.1,
+        "paragraph_id": 5,
+        "bbox": [
+          94.7760009765625,
+          392.85845947265625,
+          524.4100341796875,
+          405.9688415527344
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 421.1,
+        "paragraph_id": 5,
+        "bbox": [
+          70.86599731445312,
+          410.79046630859375,
+          524.4100341796875,
+          423.9008483886719
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 439.0,
+        "paragraph_id": 5,
+        "bbox": [
+          70.86601257324219,
+          428.7234802246094,
+          524.41748046875,
+          441.8338623046875
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 456.9,
+        "paragraph_id": 5,
+        "bbox": [
+          70.86602783203125,
+          446.656494140625,
+          524.4057006835938,
+          459.7668762207031
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 474.9,
+        "paragraph_id": 5,
+        "bbox": [
+          70.86602783203125,
+          464.5895080566406,
+          524.41455078125,
+          477.69989013671875
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 492.8,
+        "paragraph_id": 5,
+        "bbox": [
+          70.86602783203125,
+          482.5215148925781,
+          238.23883056640625,
+          494.4767150878906
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 510.7,
+        "paragraph_id": 6,
+        "bbox": [
+          94.7760009765625,
+          500.4544677734375,
+          524.4219970703125,
+          512.40966796875
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 528.7,
+        "paragraph_id": 6,
+        "bbox": [
+          70.86599731445312,
+          518.387451171875,
+          533.0540161132812,
+          530.3426513671875
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 546.6,
+        "paragraph_id": 6,
+        "bbox": [
+          70.86599731445312,
+          536.3204956054688,
+          524.42236328125,
+          548.2756958007812
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 564.5,
+        "paragraph_id": 6,
+        "bbox": [
+          70.86599731445312,
+          554.2525024414062,
+          524.4019775390625,
+          567.3628540039062
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 582.5,
+        "paragraph_id": 6,
+        "bbox": [
+          70.86601257324219,
+          572.185546875,
+          524.42236328125,
+          584.1407470703125
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 600.4,
+        "paragraph_id": 6,
+        "bbox": [
+          70.86601257324219,
+          590.1185302734375,
+          94.77641296386719,
+          602.07373046875
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 646.1,
+        "paragraph_id": 8,
+        "bbox": [
+          94.7760009765625,
+          635.8194580078125,
+          524.412109375,
+          648.9298095703125
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 664.0,
+        "paragraph_id": 8,
+        "bbox": [
+          70.86599731445312,
+          653.75146484375,
+          533.197509765625,
+          665.7066650390625
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 682.0,
+        "paragraph_id": 8,
+        "bbox": [
+          70.86599731445312,
+          671.6844482421875,
+          524.42236328125,
+          683.6396484375
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 699.9,
+        "paragraph_id": 8,
+        "bbox": [
+          70.86599731445312,
+          689.617431640625,
+          524.4108276367188,
+          702.727783203125
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 717.8,
+        "paragraph_id": 8,
+        "bbox": [
+          70.86599731445312,
+          707.5504150390625,
+          353.1441955566406,
+          720.6607666015625
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 735.8,
+        "paragraph_id": 9,
+        "bbox": [
+          94.7760009765625,
+          725.4824829101562,
+          524.4033203125,
+          738.5928344726562
+        ]
+      },
+      {
+        "physical_page": 5,
+        "baseline_bp": 753.7,
+        "paragraph_id": 9,
+        "bbox": [
+          70.86599731445312,
+          743.4154663085938,
+          524.4072265625,
+          756.5258178710938
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 82.8,
+        "paragraph_id": 9,
+        "bbox": [
+          70.86599731445312,
+          72.55148315429688,
+          524.42236328125,
+          84.50668334960938
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 100.8,
+        "paragraph_id": 9,
+        "bbox": [
+          70.86599731445312,
+          90.48448181152344,
+          508.544189453125,
+          103.59483337402344
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 118.7,
+        "paragraph_id": 10,
+        "bbox": [
+          94.7760009765625,
+          108.41748046875,
+          524.407958984375,
+          121.52783203125
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 136.6,
+        "paragraph_id": 10,
+        "bbox": [
+          70.86602783203125,
+          126.35047912597656,
+          524.4030151367188,
+          139.46083068847656
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 154.6,
+        "paragraph_id": 10,
+        "bbox": [
+          70.86602783203125,
+          144.28248596191406,
+          532.12158203125,
+          156.23768615722656
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 172.5,
+        "paragraph_id": 10,
+        "bbox": [
+          70.86602783203125,
+          162.21548461914062,
+          524.4224243164062,
+          174.17068481445312
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 190.4,
+        "paragraph_id": 10,
+        "bbox": [
+          70.86602783203125,
+          180.1484832763672,
+          302.00762939453125,
+          193.2588348388672
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 208.4,
+        "paragraph_id": 11,
+        "bbox": [
+          94.7760009765625,
+          198.08148193359375,
+          524.4136962890625,
+          211.19183349609375
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 226.3,
+        "paragraph_id": 11,
+        "bbox": [
+          70.86602783203125,
+          216.0134735107422,
+          524.40234375,
+          229.1238250732422
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 244.2,
+        "paragraph_id": 11,
+        "bbox": [
+          70.86604309082031,
+          233.94647216796875,
+          524.4224243164062,
+          245.90167236328125
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 262.1,
+        "paragraph_id": 11,
+        "bbox": [
+          70.86604309082031,
+          251.8794708251953,
+          524.4112548828125,
+          264.9898376464844
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 280.1,
+        "paragraph_id": 11,
+        "bbox": [
+          70.86602783203125,
+          269.81243896484375,
+          433.82421875,
+          282.9228210449219
+        ]
+      },
+      {
+        "physical_page": 6,
+        "baseline_bp": 298.0,
+        "paragraph_id": 12,
+        "bbox": [
+          94.7760009765625,
+          287.7444763183594,
+          259.16058349609375,
+          300.8548583984375
+        ]
+      },
+      {
+        "physical_page": 8,
+        "baseline_bp": 82.8,
+        "paragraph_id": 16,
+        "bbox": [
+          94.7760009765625,
+          72.55148315429688,
+          524.4091796875,
+          85.66183471679688
+        ]
+      },
+      {
+        "physical_page": 8,
+        "baseline_bp": 100.8,
+        "paragraph_id": 16,
+        "bbox": [
+          70.86599731445312,
+          90.48448181152344,
+          524.42236328125,
+          102.43968200683594
+        ]
+      },
+      {
+        "physical_page": 8,
+        "baseline_bp": 118.7,
+        "paragraph_id": 16,
+        "bbox": [
+          70.86599731445312,
+          108.41748809814453,
+          405.6116027832031,
+          120.37268829345703
+        ]
+      }
+    ],
+    "equivalent_pages": 1.2820512820512822,
+    "note": "正常段落末行按一行计；空白/段距不计。内容充实度须实际审查。",
+    "metadata_sha256": "a146eb592fe89ff9457b2b5d66f12dec8928ed15b49f979630d55e8fa8fd01c0",
+    "normal_baselineskip_bp": 17.932752179327522,
+    "textheight_bp": 700.157489414695,
+    "textwidth_bp": 453.54332254047324,
+    "normal_font_size_bp": 11.955168119551683,
+    "full_page_line_capacity": 39,
+    "counted_lines": 50,
+    "effective_height_bp": 896.6376089663761,
+    "minimum_equivalent_pages": 1.0,
+    "chapter_content_pages": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "excluded_caption_boxes": [
+      {
+        "id": 1,
+        "kind": "figure",
+        "number": "1.1",
+        "width": 137.99997011207972,
+        "limit": 453.54332254047324,
+        "font_size": 12.000000000000002,
+        "height": 10.079950186799502,
+        "depth": 4.320029887920299,
+        "physical_page": 7,
+        "bbox": [
+          228.63800048828125,
+          717.43701171875,
+          366.63800048828125,
+          730.5964965820312
+        ],
+        "text": "图1.1多核调度研究路线",
+        "label": "fig:roadmap",
+        "source_title": "多核调度研究路线"
+      }
+    ]
+  },
+  "evaluation_pages": [
+    38,
+    39
+  ],
+  "evaluation_prose": {
+    "method": "paragraph_destinations_distinct_baselines_v1",
+    "checks": [
+      {
+        "code": "evaluation_prose_measurements_present",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_body_geometry",
+        "ok": true,
+        "height_bp": 700.157489414695,
+        "width_bp": 453.54332254047324
+      },
+      {
+        "code": "evaluation_prose_prescribed_format",
+        "ok": true,
+        "leading_bp": 17.932752179327522,
+        "font_size_bp": 11.955168119551683
+      },
+      {
+        "code": "evaluation_prose_anchors:1",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:1",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:2",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:2",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:3",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:3",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:4",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:4",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:5",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:5",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:6",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:6",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:7",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:7",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:8",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:8",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:9",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:9",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:10",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:10",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:11",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:11",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:12",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:12",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchors:13",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_anchor_order:13",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:2",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:3",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:4",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:5",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:7",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:8",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:9",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:10",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:12",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_format:13",
+        "ok": true
+      },
+      {
+        "code": "evaluation_prose_at_least_one_page",
+        "ok": true,
+        "actual": 1.1538461538461537,
+        "required": 1.0,
+        "counted_lines": 45,
+        "full_page_line_capacity": 39
+      }
+    ],
+    "paragraphs": [
+      {
+        "id": 1,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          37,
+          70.87000274658203,
+          109.52001953125
+        ],
+        "end": [
+          37,
+          139.8699951171875,
+          109.52001953125
+        ],
+        "counted_lines": 0
+      },
+      {
+        "id": 2,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          37,
+          88.80000305175781,
+          134.1400146484375
+        ],
+        "end": [
+          37,
+          320.20001220703125,
+          205.8699951171875
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 3,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          37,
+          88.80000305175781,
+          223.79998779296875
+        ],
+        "end": [
+          37,
+          368.0199890136719,
+          295.530029296875
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 4,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          37,
+          88.80000305175781,
+          313.46002197265625
+        ],
+        "end": [
+          37,
+          523.4299926757812,
+          367.260009765625
+        ],
+        "counted_lines": 4
+      },
+      {
+        "id": 5,
+        "role": "body",
+        "subsection": 1,
+        "begin": [
+          37,
+          88.80000305175781,
+          385.20001220703125
+        ],
+        "end": [
+          37,
+          224.55999755859375,
+          438.9900207519531
+        ],
+        "counted_lines": 4
+      },
+      {
+        "id": 6,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          37,
+          70.87000274658203,
+          460.08001708984375
+        ],
+        "end": [
+          37,
+          139.8699951171875,
+          460.08001708984375
+        ],
+        "counted_lines": 0
+      },
+      {
+        "id": 7,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          37,
+          88.80000305175781,
+          484.69000244140625
+        ],
+        "end": [
+          37,
+          308.239990234375,
+          538.489990234375
+        ],
+        "counted_lines": 4
+      },
+      {
+        "id": 8,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          37,
+          88.80000305175781,
+          556.4300537109375
+        ],
+        "end": [
+          37,
+          435.0799865722656,
+          610.2200317382812
+        ],
+        "counted_lines": 4
+      },
+      {
+        "id": 9,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          37,
+          88.80000305175781,
+          628.1600341796875
+        ],
+        "end": [
+          37,
+          344.1099853515625,
+          681.9500122070312
+        ],
+        "counted_lines": 4
+      },
+      {
+        "id": 10,
+        "role": "body",
+        "subsection": 2,
+        "begin": [
+          37,
+          88.80000305175781,
+          699.8900146484375
+        ],
+        "end": [
+          37,
+          188.69000244140625,
+          753.6900024414062
+        ],
+        "counted_lines": 4
+      },
+      {
+        "id": 11,
+        "role": "body",
+        "subsection": 3,
+        "begin": [
+          38,
+          70.87000274658203,
+          82.82000732421875
+        ],
+        "end": [
+          38,
+          187.8699951171875,
+          82.82000732421875
+        ],
+        "counted_lines": 0
+      },
+      {
+        "id": 12,
+        "role": "body",
+        "subsection": 3,
+        "begin": [
+          38,
+          70.87000274658203,
+          107.44000244140625
+        ],
+        "end": [
+          38,
+          338.1300048828125,
+          179.1700439453125
+        ],
+        "counted_lines": 5
+      },
+      {
+        "id": 13,
+        "role": "body",
+        "subsection": 3,
+        "begin": [
+          38,
+          70.87000274658203,
+          197.10003662109375
+        ],
+        "end": [
+          38,
+          262.1499938964844,
+          286.77001953125
+        ],
+        "counted_lines": 6
+      }
+    ],
+    "lines": [
+      {
+        "physical_page": 38,
+        "baseline_bp": 134.1,
+        "paragraph_id": 2,
+        "bbox": [
+          73.8550033569336,
+          123.86648559570312,
+          524.4215087890625,
+          136.97683715820312
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 152.1,
+        "paragraph_id": 2,
+        "bbox": [
+          88.79899597167969,
+          141.7994842529297,
+          524.39990234375,
+          154.9098358154297
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 170.0,
+        "paragraph_id": 2,
+        "bbox": [
+          88.79898071289062,
+          159.73248291015625,
+          524.41064453125,
+          171.68768310546875
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 187.9,
+        "paragraph_id": 2,
+        "bbox": [
+          88.79898071289062,
+          177.6654815673828,
+          524.4091796875,
+          190.7758331298828
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 205.9,
+        "paragraph_id": 2,
+        "bbox": [
+          88.79898071289062,
+          195.5974884033203,
+          327.9029846191406,
+          207.5526885986328
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 223.8,
+        "paragraph_id": 3,
+        "bbox": [
+          73.8550033569336,
+          213.53048706054688,
+          524.40478515625,
+          226.64083862304688
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 241.7,
+        "paragraph_id": 3,
+        "bbox": [
+          88.79899597167969,
+          231.46348571777344,
+          524.4218139648438,
+          244.57383728027344
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 259.7,
+        "paragraph_id": 3,
+        "bbox": [
+          88.79898071289062,
+          249.39649963378906,
+          524.4022827148438,
+          262.5068664550781
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 277.6,
+        "paragraph_id": 3,
+        "bbox": [
+          88.79898071289062,
+          267.3284606933594,
+          524.4088134765625,
+          280.4388427734375
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 295.5,
+        "paragraph_id": 3,
+        "bbox": [
+          88.7989501953125,
+          285.261474609375,
+          375.7237548828125,
+          297.2166748046875
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 313.5,
+        "paragraph_id": 4,
+        "bbox": [
+          73.8550033569336,
+          303.1944580078125,
+          532.1063232421875,
+          316.3048400878906
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 331.4,
+        "paragraph_id": 4,
+        "bbox": [
+          88.79901123046875,
+          321.1274719238281,
+          524.417724609375,
+          334.23785400390625
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 349.3,
+        "paragraph_id": 4,
+        "bbox": [
+          88.79901123046875,
+          339.0594787597656,
+          524.41064453125,
+          351.0146789550781
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 367.3,
+        "paragraph_id": 4,
+        "bbox": [
+          88.79901123046875,
+          356.99249267578125,
+          531.1414184570312,
+          368.94769287109375
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 385.2,
+        "paragraph_id": 5,
+        "bbox": [
+          73.8550033569336,
+          374.92547607421875,
+          524.4044799804688,
+          388.0358581542969
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 403.1,
+        "paragraph_id": 5,
+        "bbox": [
+          88.79899597167969,
+          392.8584899902344,
+          524.41064453125,
+          404.8136901855469
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 421.1,
+        "paragraph_id": 5,
+        "bbox": [
+          88.79899597167969,
+          410.7904968261719,
+          533.0421142578125,
+          423.90087890625
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 439.0,
+        "paragraph_id": 5,
+        "bbox": [
+          88.79898071289062,
+          428.7235107421875,
+          232.26138305664062,
+          440.6787109375
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 484.7,
+        "paragraph_id": 7,
+        "bbox": [
+          73.8550033569336,
+          474.4244689941406,
+          524.4083251953125,
+          487.53485107421875
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 502.6,
+        "paragraph_id": 7,
+        "bbox": [
+          88.79899597167969,
+          492.35748291015625,
+          524.41064453125,
+          504.31268310546875
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 520.6,
+        "paragraph_id": 7,
+        "bbox": [
+          88.79899597167969,
+          510.28948974609375,
+          524.41064453125,
+          522.2446899414062
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 538.5,
+        "paragraph_id": 7,
+        "bbox": [
+          88.79899597167969,
+          528.2225341796875,
+          315.94781494140625,
+          540.177734375
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 556.4,
+        "paragraph_id": 8,
+        "bbox": [
+          73.8550033569336,
+          546.1554565429688,
+          524.4083251953125,
+          559.2658081054688
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 574.4,
+        "paragraph_id": 8,
+        "bbox": [
+          88.79899597167969,
+          564.0885009765625,
+          532.110595703125,
+          577.1988525390625
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 592.3,
+        "paragraph_id": 8,
+        "bbox": [
+          88.79901123046875,
+          582.0204467773438,
+          524.41064453125,
+          593.9756469726562
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 610.2,
+        "paragraph_id": 8,
+        "bbox": [
+          88.79901123046875,
+          599.9534301757812,
+          442.789794921875,
+          613.0637817382812
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 628.2,
+        "paragraph_id": 9,
+        "bbox": [
+          73.8550033569336,
+          617.886474609375,
+          524.4139404296875,
+          630.996826171875
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 646.1,
+        "paragraph_id": 9,
+        "bbox": [
+          88.79898071289062,
+          635.8194580078125,
+          533.040283203125,
+          648.9298095703125
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 664.0,
+        "paragraph_id": 9,
+        "bbox": [
+          88.79899597167969,
+          653.75146484375,
+          524.39892578125,
+          666.86181640625
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 682.0,
+        "paragraph_id": 9,
+        "bbox": [
+          88.79899597167969,
+          671.6844482421875,
+          351.81341552734375,
+          683.6396484375
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 699.9,
+        "paragraph_id": 10,
+        "bbox": [
+          73.8550033569336,
+          689.6174926757812,
+          524.400390625,
+          702.7278442382812
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 717.8,
+        "paragraph_id": 10,
+        "bbox": [
+          88.79898071289062,
+          707.5504760742188,
+          524.4105834960938,
+          719.5056762695312
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 735.8,
+        "paragraph_id": 10,
+        "bbox": [
+          88.79898071289062,
+          725.4824829101562,
+          524.4058837890625,
+          738.5928344726562
+        ]
+      },
+      {
+        "physical_page": 38,
+        "baseline_bp": 753.7,
+        "paragraph_id": 10,
+        "bbox": [
+          88.79899597167969,
+          743.4154663085938,
+          196.3957977294922,
+          755.3706665039062
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 107.4,
+        "paragraph_id": 12,
+        "bbox": [
+          94.7760009765625,
+          97.16848754882812,
+          524.4219360351562,
+          109.12368774414062
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 125.4,
+        "paragraph_id": 12,
+        "bbox": [
+          70.86599731445312,
+          115.10148620605469,
+          524.42236328125,
+          127.05668640136719
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 143.3,
+        "paragraph_id": 12,
+        "bbox": [
+          70.86599731445312,
+          133.0334930419922,
+          524.4110107421875,
+          146.1438446044922
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 161.2,
+        "paragraph_id": 12,
+        "bbox": [
+          70.86602783203125,
+          150.9664764404297,
+          524.4224243164062,
+          162.9216766357422
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 179.2,
+        "paragraph_id": 12,
+        "bbox": [
+          70.86602783203125,
+          168.8994903564453,
+          345.83563232421875,
+          180.8546905517578
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 197.1,
+        "paragraph_id": 13,
+        "bbox": [
+          94.7760009765625,
+          186.8324737548828,
+          524.4219970703125,
+          198.7876739501953
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 215.0,
+        "paragraph_id": 13,
+        "bbox": [
+          70.86599731445312,
+          204.7644805908203,
+          524.42236328125,
+          216.7196807861328
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 233.0,
+        "paragraph_id": 13,
+        "bbox": [
+          70.86599731445312,
+          222.69747924804688,
+          524.42236328125,
+          234.65267944335938
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 250.9,
+        "paragraph_id": 13,
+        "bbox": [
+          70.86599731445312,
+          240.63047790527344,
+          524.42236328125,
+          252.58567810058594
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 268.8,
+        "paragraph_id": 13,
+        "bbox": [
+          70.86599731445312,
+          258.5634765625,
+          524.42236328125,
+          270.5186767578125
+        ]
+      },
+      {
+        "physical_page": 39,
+        "baseline_bp": 286.8,
+        "paragraph_id": 13,
+        "bbox": [
+          70.86599731445312,
+          276.4964599609375,
+          262.1492004394531,
+          288.45166015625
+        ]
+      }
+    ],
+    "equivalent_pages": 1.1538461538461537,
+    "note": "正常段落末行按一行计；空白/段距不计。内容充实度须实际审查。",
+    "metadata_sha256": "f2ddd625dcdf84d564a298554c705093ce6f7db17f06f45d5f1f9a5454e963c1",
+    "normal_baselineskip_bp": 17.932752179327522,
+    "textheight_bp": 700.157489414695,
+    "textwidth_bp": 453.54332254047324,
+    "normal_font_size_bp": 11.955168119551683,
+    "full_page_line_capacity": 39,
+    "counted_lines": 45,
+    "effective_height_bp": 806.9738480697386,
+    "minimum_equivalent_pages": 1.0,
+    "chapter_content_pages": [
+      38,
+      39
+    ],
+    "excluded_caption_boxes": []
+  },
+  "evaluation_source": {
+    "failures": [],
+    "groups": {
+      "模型优点": [
+        "\\textbf{优点一：以官方全局完成时间闭合建模与求解。} 三问都把切图、同核顺序、跨核依赖和存储行为落实为可执行方案，再由题定评估器计算 Makespan。候选的粗负载、连通块大小或命中字节率只是构造和诊断量，不被误写成实际完成时间。问题一的五核平均加速比为$3.5093$，问题二为$3.5456$，问题三为$3.6104$；这些数值均来自100个官方算例的完整配置，而非代理目标的预测。",
+        "\\textbf{优点二：使用成对反事实分离场景与缓存机制。} 问题二把问题一的同一方案重新放入场景B，先测量Task合并、私有存储驻留与COPY规则改变的净影响，再与场景B重新择优的附加收益区分。问题三在相同算例、核数、切图和同核顺序上比较无L2与题定L2评估结果，使场景差异与候选更替不混入Cache机制收益。逐例比例而非只有总均值保留了有益、无益和不利的真实差异。",
+        "\\textbf{优点三：保留可追溯的方案、响应和独立复核。} 对100例与五种核数逐一保存方案、官方原始响应和结构化摘要；问题一至问题三所选配置各有500份独立检查记录。校验覆盖操作唯一性、子图依赖、同核顺序及关键时间线，减少将评估器成功退出误当作科学验证的风险。候选失败也被保留在模型比较记录中，不用缺失分数冒充劣势。",
+        "\\textbf{优点四：把结构异质性纳入解释。} 输入图的弱连通块与宽度差异决定连通块、深度分段和分批候选的适用范围；正式结果同时报告分位数、逐例非单调性与候选胜出频数。这样，平均加速比之外的低收益尾部及新增DDR搬运都能与调度机制对应，而不被单一汇总指标掩盖。"
+      ],
+      "模型缺点": [
+        "\\textbf{缺点一：有限候选集不保证全局最优。} 方案只在预先确定的连通块、八段深度划分和宽图分批三类候选中择优，没有穷举合法切图与核内顺序。特别是较大的弱连通块若需要非均匀切分，固定深度段可能错过更好的并行安排。因此文中加速比是可复核的可行结果，不能宣称达到理论最优。",
+        "\\textbf{缺点二：粗负载未精确预报资源争用。} 连通块权重主要汇总操作计算周期，对共享DDR带宽、四条Pipe、固定Task等待及L1/UB容量的联合作用没有建立闭式代理。它足以产生合法候选，却可能把局部均衡方案送入全局拥塞；正式结果中随核数增加仍出现逐例速度下降，说明代理与Makespan之间存在结构依赖。",
+        "\\textbf{缺点三：问题三的参数外推范围有限。} 正式成绩只对应题定L2容量和带宽。另选六个结构不同的算例做54格容量—带宽网格，是解释命中和瓶颈的非官方机制实验，并非官方100例的重新计分。网格中候选身份保持不变，能帮助隔离参数影响，却不能代表所有算例在其他硬件配置下的最优策略。",
+        "\\textbf{缺点四：模型依赖题给评估语义。} FIFO不刷新次序、COPY\\_IN按逻辑张量编号查询和两条读带宽池等规则都按官方实现核验。真实处理器若增加写回、异步预取、不同缓存一致性或变动的Task启动成本，原候选排序可能改变，须重新标定而不能直接套用本文速度比。"
+      ],
+      "模型的推广与改进": [
+        "这套“依赖图切分—可执行方案—事件评估—成对反事实”的程序可用于具有明确操作依赖、可配置并行执行资源和可观察搬运成本的其他推理或数据流处理器。推广的前提是准确重建目标设备的合法性规则、存储层级、Pipe并发与固定开销，并提供与之匹配的评估或实机计时接口。若只有粗略峰值算力而缺少资源争用数据，本文的方案生成思想仍可借用，但不能迁移本文的数值加速结论。",
+        "针对有限候选集，后续可在保持覆盖与无环约束的前提下，对大连通块增加按关键路径、边界张量字节和容量余量联合引导的自适应切分；对已有方案实施局部合并、迁核和同核重排。每次改动应在固定案例划分和相同官方评估预算下成对比较，同时报告改进幅度与额外计算成本。针对缓存参数，宜扩大结构分层抽样，并在不同容量与带宽上重新优化候选，与同方案机制反事实分别报告；只有当独立复核和完整输入范围保持成立，才可将其作为新的正式策略。"
+      ]
+    },
+    "counts": {
+      "模型优点": 4,
+      "模型缺点": 4,
+      "模型的推广与改进": 2
+    },
+    "source_sha256": "4c4298d1421febde2b6b69197f2792f8bdfde0924242b4e1dd08fc44f749e4f4",
+    "assurance": "仅核对结构和显式重复；科学依据、解释质量与未来设想须实际审阅。",
+    "chapter_source_bindings": {
+      "pre1": "bc97f73a0e7e0e3e9eb24abfddfd2773e78694aad5c0d6d0966b93dbe71aaf22",
+      "pre2": "56899af7c9f03fb4a26bbd8409df15c94fb6afe926087d2181ab05097d3a3c60",
+      "pre3": "43c6391645de258fbe1e5ce897aed68a9acdb1ad950dd246b6c026ef281aaba8",
+      "q1": "a1acbc2e30cea90405c004394194f529fd72effc46cd128c98eeffa7ddc751b1",
+      "q2": "828845f1cd8d198811fe7a622b338287dbd0771cbf2d7e70dc12def4ba926e3d",
+      "q3": "47afcda294be9d30054b01b5002833769b58a2c245874ef25364a8ffec3778df",
+      "evaluation": "4c4298d1421febde2b6b69197f2792f8bdfde0924242b4e1dd08fc44f749e4f4",
+      "references": "15845beb592f68195bb30b636b1dce4431d8afed3d9f4a38dc574a199c7111a0"
+    }
+  },
+  "evaluation_content_review": {
+    "advantages_evidence": {
+      "status": "verified",
+      "observation": "第7.1节四点分别落实官方Makespan、同方案反事实、500份所选方案复核与结构异质性；三问五核均值写明样本范围。",
+      "evidence_locations": [
+        "论文/论文.pdf:38",
+        "论文/章节内容/07_模型评价与展望.tex:7.1"
+      ]
+    },
+    "limitations_causes_impacts": {
+      "status": "verified",
+      "observation": "第7.2节四点说明有限候选的最优性边界、粗负载与资源争用、六例参数网格外推范围以及题定模拟语义依赖，均写出可能影响。",
+      "evidence_locations": [
+        "论文/论文.pdf:38",
+        "论文/章节内容/07_模型评价与展望.tex:7.2"
+      ]
+    },
+    "transfer_conditions": {
+      "status": "verified",
+      "observation": "第7.3节首段列明迁移需重建合法性、存储层级、Pipe并发、固定开销及评估接口，且明确数值加速结论不能直接迁移。",
+      "evidence_locations": [
+        "论文/论文.pdf:39",
+        "论文/章节内容/07_模型评价与展望.tex:7.3首段"
+      ]
+    },
+    "improvement_paths": {
+      "status": "verified",
+      "observation": "第7.3节次段提出自适应切分、局部合并/迁核/重排与跨容量带宽重优化，并要求固定案例和评估预算下成对核验。",
+      "evidence_locations": [
+        "论文/论文.pdf:39",
+        "论文/章节内容/07_模型评价与展望.tex:7.3次段"
+      ]
+    },
+    "verified_vs_proposed": {
+      "status": "verified",
+      "observation": "第7.1—7.2节的100例正式成绩、500份逐问复核与六例非官方网格均标出性质；第7.3节用‘后续可’和‘宜’表达尚未运行的改进。",
+      "evidence_locations": [
+        "论文/论文.pdf:38",
+        "论文/论文.pdf:39"
+      ]
+    },
+    "substance_without_padding": {
+      "status": "verified",
+      "observation": "第38页逐条解释真实证据与机制，第39页给出可执行迁移条件和改进实验；净正文测量约1.15页，未用扩大间距或重复句填页。",
+      "evidence_locations": [
+        "论文/论文.pdf:38",
+        "论文/论文.pdf:39"
+      ]
+    }
+  },
+  "page_recommendations": [],
+  "local_symbol_definitions": {
+    "status": "PASS",
+    "failures": [],
+    "warnings": [],
+    "assurance": "机械覆盖、源绑定与显式语义审阅记录；记录本身不证明实际阅读或自然度。"
+  },
+  "chapter_ranges": [
+    {
+      "level": 1,
+      "title": "问题重述",
+      "number": "1",
+      "anchor": "section.1",
+      "role": "preliminary",
+      "physical_page": 5,
+      "bbox": [
+        262.63800048828125,
+        70.79499816894531,
+        332.63800048828125,
+        86.20733642578125
+      ],
+      "start_physical_page": 5,
+      "end_physical_page": 8,
+      "end_position": [
+        7,
+        70.87000274658203,
+        119.95001220703125
+      ],
+      "content_pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "content_positions": [
+        {
+          "physical_page": 5,
+          "top": 70.79499816894531,
+          "bottom": 773.023872916154,
+          "visible_characters": 1234
+        },
+        {
+          "physical_page": 6,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 463
+        },
+        {
+          "physical_page": 7,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 250
+        },
+        {
+          "physical_page": 8,
+          "top": 68.86614173228347,
+          "bottom": 121.95001220703125,
+          "visible_characters": 102
+        }
+      ],
+      "touched_pages": 4
+    },
+    {
+      "level": 1,
+      "title": "模型假设",
+      "number": "2",
+      "anchor": "section.2",
+      "role": "preliminary",
+      "physical_page": 8,
+      "bbox": [
+        262.63800048828125,
+        138.08999633789062,
+        332.63800048828125,
+        153.50233459472656
+      ],
+      "start_physical_page": 8,
+      "end_physical_page": 8,
+      "end_position": [
+        7,
+        70.87000274658203,
+        450.510009765625
+      ],
+      "content_pages": [
+        8
+      ],
+      "content_positions": [
+        {
+          "physical_page": 8,
+          "top": 138.08999633789062,
+          "bottom": 452.510009765625,
+          "visible_characters": 548
+        }
+      ],
+      "touched_pages": 1
+    },
+    {
+      "level": 1,
+      "title": "关键性符号说明",
+      "number": "3",
+      "anchor": "section.3",
+      "role": "preliminary",
+      "physical_page": 8,
+      "bbox": [
+        241.63800048828125,
+        468.6470031738281,
+        353.63800048828125,
+        484.0593566894531
+      ],
+      "start_physical_page": 8,
+      "end_physical_page": 9,
+      "end_position": [
+        8,
+        70.87000274658203,
+        396.25
+      ],
+      "content_pages": [
+        8,
+        9
+      ],
+      "content_positions": [
+        {
+          "physical_page": 8,
+          "top": 468.6470031738281,
+          "bottom": 773.023872916154,
+          "visible_characters": 195
+        },
+        {
+          "physical_page": 9,
+          "top": 68.86614173228347,
+          "bottom": 398.25,
+          "visible_characters": 297
+        }
+      ],
+      "touched_pages": 2
+    },
+    {
+      "level": 1,
+      "title": "问题一求解与分析",
+      "number": "4",
+      "anchor": "section.4",
+      "role": "problem",
+      "physical_page": 10,
+      "bbox": [
+        234.63800048828125,
+        70.79499816894531,
+        360.63800048828125,
+        86.20733642578125
+      ],
+      "start_physical_page": 10,
+      "end_physical_page": 18,
+      "end_position": [
+        17,
+        70.87000274658203,
+        524.3499755859375
+      ],
+      "content_pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "content_positions": [
+        {
+          "physical_page": 10,
+          "top": 70.79499816894531,
+          "bottom": 773.023872916154,
+          "visible_characters": 736
+        },
+        {
+          "physical_page": 11,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 1169
+        },
+        {
+          "physical_page": 12,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 784
+        },
+        {
+          "physical_page": 13,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 430
+        },
+        {
+          "physical_page": 14,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 486
+        },
+        {
+          "physical_page": 15,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 653
+        },
+        {
+          "physical_page": 16,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 1340
+        },
+        {
+          "physical_page": 17,
+          "top": 68.86614173228347,
+          "bottom": 773.023872916154,
+          "visible_characters": 1338
+        },
+        {
+          "physical_page": 18,
+          "top": 68.86614173228347,
+          "bottom": 526.3499755859375,
+          "visible_characters": 830
+        }
+      ],
+      "touched_pages": 9
+    }
+  ],
+  "measurements": {
+    "checks": [
+      {
+        "code": "symbol_three_rules:8",
+        "ok": true,
+        "measurements": [
+          {
+            "y": 550.95703125,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          },
+          {
+            "y": 577.6719970703125,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 0.75,
+            "dashed": false
+          },
+          {
+            "y": 765.666015625,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          }
+        ],
+        "unit": "PDF bp",
+        "tolerance_bp": 0.04
+      },
+      {
+        "code": "symbol_rule_widths:8",
+        "ok": true,
+        "measurements": [
+          {
+            "y": 550.95703125,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          },
+          {
+            "y": 577.6719970703125,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 0.75,
+            "dashed": false
+          },
+          {
+            "y": 765.666015625,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          }
+        ]
+      },
+      {
+        "code": "symbol_no_extra_borders:8",
+        "ok": true,
+        "drawings": []
+      },
+      {
+        "code": "symbol_header_with_data:8",
+        "ok": true
+      },
+      {
+        "code": "symbol_header:8",
+        "ok": true,
+        "actual": "类别符号含义单位"
+      },
+      {
+        "code": "symbol_font:8",
+        "ok": true,
+        "sizes": [
+          12.0
+        ],
+        "fonts": [
+          "SimSun"
+        ],
+        "expected_bp": 12
+      },
+      {
+        "code": "symbol_math_and_text_sizes:8",
+        "ok": true,
+        "sizes": [
+          7.97,
+          12.0
+        ]
+      },
+      {
+        "code": "symbol_caption:8",
+        "ok": true,
+        "actual": "表3.1关键性符号说明"
+      },
+      {
+        "code": "symbol_caption_font:8",
+        "ok": true,
+        "sizes": [
+          12.0
+        ]
+      },
+      {
+        "code": "symbol_cells_centered:8",
+        "ok": true,
+        "offsets_bp": [
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.004,
+          -0.006,
+          -0.171,
+          -1.533,
+          -0.36,
+          -0.004,
+          -0.342,
+          -0.207,
+          -0.256,
+          -0.485,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.002,
+          -0.003,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          0.004,
+          0.002
+        ],
+        "tolerance_bp": 4
+      },
+      {
+        "code": "symbol_caption_centered:8",
+        "ok": true
+      },
+      {
+        "code": "symbol_no_intermediate_note:8",
+        "ok": true
+      },
+      {
+        "code": "symbol_three_rules:9",
+        "ok": true,
+        "measurements": [
+          {
+            "y": 103.61100006103516,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          },
+          {
+            "y": 130.3260040283203,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 0.75,
+            "dashed": false
+          },
+          {
+            "y": 378.79998779296875,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          }
+        ],
+        "unit": "PDF bp",
+        "tolerance_bp": 0.04
+      },
+      {
+        "code": "symbol_rule_widths:9",
+        "ok": true,
+        "measurements": [
+          {
+            "y": 103.61100006103516,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          },
+          {
+            "y": 130.3260040283203,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 0.75,
+            "dashed": false
+          },
+          {
+            "y": 378.79998779296875,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          }
+        ]
+      },
+      {
+        "code": "symbol_no_extra_borders:9",
+        "ok": true,
+        "drawings": []
+      },
+      {
+        "code": "symbol_header_with_data:9",
+        "ok": true
+      },
+      {
+        "code": "symbol_header:9",
+        "ok": true,
+        "actual": "类别符号含义单位"
+      },
+      {
+        "code": "symbol_font:9",
+        "ok": true,
+        "sizes": [
+          12.0
+        ],
+        "fonts": [
+          "SimSun"
+        ],
+        "expected_bp": 12
+      },
+      {
+        "code": "symbol_math_and_text_sizes:9",
+        "ok": true,
+        "sizes": [
+          7.97,
+          12.0
+        ]
+      },
+      {
+        "code": "symbol_caption:9",
+        "ok": true,
+        "actual": "表3.1（续）"
+      },
+      {
+        "code": "symbol_caption_font:9",
+        "ok": true,
+        "sizes": [
+          12.0
+        ]
+      },
+      {
+        "code": "symbol_cells_centered:9",
+        "ok": true,
+        "offsets_bp": [
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.001,
+          -0.004,
+          -0.008,
+          -0.008,
+          -0.252,
+          -0.253,
+          -0.254,
+          -0.252,
+          -0.252,
+          -0.359,
+          -0.253,
+          -0.36,
+          -0.36,
+          -0.359,
+          -0.003,
+          -0.003,
+          -0.002,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.002,
+          -0.002,
+          -0.003,
+          -0.003,
+          -0.003,
+          -0.0,
+          -0.001,
+          -0.001,
+          0.001,
+          0.001,
+          0.007,
+          0.002,
+          0.007,
+          0.004,
+          0.004,
+          -0.0,
+          0.002,
+          -0.0
+        ],
+        "tolerance_bp": 4
+      },
+      {
+        "code": "symbol_caption_centered:9",
+        "ok": true
+      },
+      {
+        "code": "symbol_final_note",
+        "ok": true,
+        "actual": "注：符号中i表示操作，j表示张量，k表示核心数。",
+        "sizes": [
+          10.5
+        ]
+      },
+      {
+        "code": "symbol_one_logical_table",
+        "ok": true
+      },
+      {
+        "code": "symbol_note_with_final_fragment",
+        "ok": true
+      }
+    ],
+    "fragments": [
+      {
+        "physical_page": 8,
+        "rules": [
+          {
+            "y": 550.95703125,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          },
+          {
+            "y": 577.6719970703125,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 0.75,
+            "dashed": false
+          },
+          {
+            "y": 765.666015625,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          }
+        ],
+        "caption": "表3.1关键性符号说明",
+        "bbox": [
+          70.87000274658203,
+          515.95703125,
+          524.406005859375,
+          776.8900146484375
+        ]
+      },
+      {
+        "physical_page": 9,
+        "rules": [
+          {
+            "y": 103.61100006103516,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          },
+          {
+            "y": 130.3260040283203,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 0.75,
+            "dashed": false
+          },
+          {
+            "y": 378.79998779296875,
+            "x0": 70.87000274658203,
+            "x1": 524.406005859375,
+            "width_bp": 1.5,
+            "dashed": false
+          }
+        ],
+        "caption": "表3.1（续）",
+        "bbox": [
+          70.87000274658203,
+          68.61100006103516,
+          524.406005859375,
+          402.25
+        ]
+      }
+    ]
+  },
+  "recheck": "complete",
+  "assurance": "渲染不等于实际看图；逐页与局部观察后填写，PDF变化后重建并重审。",
+  "reviewed_at": "2026-09-23T22:38:42.289910+00:00"
+}

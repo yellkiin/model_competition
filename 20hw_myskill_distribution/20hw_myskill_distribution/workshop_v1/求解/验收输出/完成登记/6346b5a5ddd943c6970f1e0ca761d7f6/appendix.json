@@ -1,0 +1,152 @@
+{
+  "status": "FAIL",
+  "checks": [
+    {
+      "code": "paper_manifest_exists",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\论文输入.json"
+    },
+    {
+      "code": "supporting_manifest_exists",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\求解\\支撑材料清单.json"
+    },
+    {
+      "code": "submission_dir_exists",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\提交附件"
+    },
+    {
+      "code": "appendix_manifest_exists",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\求解\\附录清单.json"
+    },
+    {
+      "code": "appendix_tex_exists",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\章节内容\\99_附录.generated.tex"
+    },
+    {
+      "code": "appendix_template_exists",
+      "ok": true,
+      "path": "E:\\20hw_myskill_distribution\\华为杯_论文规范模板\\章节模板\\附录模板.tex"
+    },
+    {
+      "code": "appendix_runtime_current",
+      "ok": true,
+      "requested": "codex",
+      "recorded": "codex"
+    },
+    {
+      "code": "problem_counts_match",
+      "ok": true,
+      "paper": 3,
+      "supporting": 3,
+      "appendix": 3
+    },
+    {
+      "code": "all_supporting_questions_complete",
+      "ok": true
+    },
+    {
+      "code": "appendix_part_count_is_n_plus_one",
+      "ok": true
+    },
+    {
+      "code": "paper_manifest_hash_current",
+      "ok": false
+    },
+    {
+      "code": "supporting_manifest_hash_current",
+      "ok": true
+    },
+    {
+      "code": "generated_tex_hash_current",
+      "ok": true
+    },
+    {
+      "code": "full_submission_inventory_and_sources_current",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "code": "attachment_inventory_matches_submission",
+      "ok": true,
+      "expected_count": 5,
+      "actual_count": 5
+    },
+    {
+      "code": "appendix_code_matches_real_and_packaged_sources",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "code": "generated_content_matches_inventory_and_code",
+      "ok": true
+    },
+    {
+      "code": "appendix_numbers_are_contiguous",
+      "ok": true,
+      "actual": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "code": "appendix_titles_are_dynamic",
+      "ok": true,
+      "expected": [
+        "附件文件及内容",
+        "问题一关键代码",
+        "问题二关键代码",
+        "问题三关键代码"
+      ],
+      "actual": [
+        "附件文件及内容",
+        "问题一关键代码",
+        "问题二关键代码",
+        "问题三关键代码"
+      ]
+    },
+    {
+      "code": "attachment_rows_cover_inventory",
+      "ok": true
+    },
+    {
+      "code": "all_selected_code_is_inputminted_through_template",
+      "ok": true,
+      "expected": 21,
+      "actual": 21
+    },
+    {
+      "code": "generated_tex_has_no_raw_minted_style",
+      "ok": true
+    },
+    {
+      "code": "appendix_template_owns_minted_light_style",
+      "ok": true,
+      "missing": []
+    },
+    {
+      "code": "main_tex_calls_unified_template",
+      "ok": true
+    },
+    {
+      "code": "main_tex_calls_generated_appendix",
+      "ok": true
+    },
+    {
+      "code": "paper_uses_current_unified_template_copy",
+      "ok": true,
+      "copied": "E:\\20hw_myskill_distribution\\workshop_v1\\论文\\附录模板.tex"
+    }
+  ],
+  "failures": [
+    {
+      "code": "paper_manifest_hash_current",
+      "ok": false
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "requirements": [
+    {
+      "capability": "python",
+      "necessity": "required",
+      "enabled": true,
+      "sources": [
+        "base"
+      ],
+      "reason": "工作流启动必需",
+      "provider": null
+    },
+    {
+      "capability": "workflow-core",
+      "necessity": "required",
+      "enabled": true,
+      "sources": [
+        "base"
+      ],
+      "reason": "工作流启动必需",
+      "provider": null
+    },
+    {
+      "capability": "pdf",
+      "necessity": "conditional",
+      "enabled": false,
+      "sources": [
+        "base"
+      ],
+      "reason": "读取题目/论文/结构图阶段按实际需要启用",
+      "provider": null
+    },
+    {
+      "capability": "paper-python",
+      "necessity": "conditional",
+      "enabled": false,
+      "sources": [
+        "base"
+      ],
+      "reason": "读取题目/论文/结构图阶段按实际需要启用",
+      "provider": null
+    },
+    {
+      "capability": "latex",
+      "necessity": "conditional",
+      "enabled": false,
+      "sources": [
+        "base"
+      ],
+      "reason": "读取题目/论文/结构图阶段按实际需要启用",
+      "provider": null
+    },
+    {
+      "capability": "fonts",
+      "necessity": "conditional",
+      "enabled": false,
+      "sources": [
+        "base"
+      ],
+      "reason": "读取题目/论文/结构图阶段按实际需要启用",
+      "provider": null
+    },
+    {
+      "capability": "drawio",
+      "necessity": "conditional",
+      "enabled": false,
+      "sources": [
+        "base"
+      ],
+      "reason": "读取题目/论文/结构图阶段按实际需要启用",
+      "provider": null
+    }
+  ]
+}

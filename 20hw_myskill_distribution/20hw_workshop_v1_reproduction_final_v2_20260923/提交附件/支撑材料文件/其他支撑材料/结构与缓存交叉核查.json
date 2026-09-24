@@ -1,0 +1,40 @@
+{
+  "source": "求解/正式实验/逐例分析.csv",
+  "source_sha256": "ab7e31c5aee6ccaa9f3effb2288388e1fbe89763085512466a63481ef71e9c59",
+  "statistical_unit": "one official case at five cores, using the same q3 plan with and without L2",
+  "bin_definition": "The four largest-component-fraction bins were also used in q1 structure analysis; no threshold was tuned on Cache outcomes.",
+  "rows": [
+    {
+      "bin": "$f\\leq0.05$",
+      "cases": 38,
+      "mean_hit_rate": 0.24482574510372238,
+      "mean_matched_gain": 1.0278694121979082,
+      "strict_gain_cases": 20,
+      "max_matched_gain": 1.4239969620025037
+    },
+    {
+      "bin": "$0.05<f\\leq0.20$",
+      "cases": 21,
+      "mean_hit_rate": 0.2468712207300232,
+      "mean_matched_gain": 1.0516337951946975,
+      "strict_gain_cases": 12,
+      "max_matched_gain": 1.2912039331137475
+    },
+    {
+      "bin": "$0.20<f\\leq0.60$",
+      "cases": 13,
+      "mean_hit_rate": 0.2270772743475479,
+      "mean_matched_gain": 1.0244250903451941,
+      "strict_gain_cases": 9,
+      "max_matched_gain": 1.2299093655589124
+    },
+    {
+      "bin": "$f>0.60$",
+      "cases": 28,
+      "mean_hit_rate": 0.13762087612858684,
+      "mean_matched_gain": 1.0048146725403078,
+      "strict_gain_cases": 17,
+      "max_matched_gain": 1.0451764311457548
+    }
+  ]
+}

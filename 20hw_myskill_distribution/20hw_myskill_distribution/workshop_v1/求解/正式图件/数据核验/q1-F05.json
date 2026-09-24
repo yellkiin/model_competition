@@ -1,0 +1,15 @@
+{
+  "source_path": "求解/图件数据/q1-F05.csv",
+  "sha256": "e5ca54cd1ca4ccb731be1af1d31a618fb8e2fac83364660cac0524a9668e568a",
+  "fields": [
+    "case",
+    "cores",
+    "candidate",
+    "largest_component_fraction",
+    "max_level_width",
+    "internal_ops"
+  ],
+  "row_count": 400,
+  "valid": true,
+  "validation_method": "标准CSV解析、非空行与计划字段逐项核对；源表由正式评估结构化结果派生。"
+}

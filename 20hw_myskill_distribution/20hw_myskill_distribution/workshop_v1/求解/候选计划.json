@@ -1,0 +1,2661 @@
+{
+  "schema_version": "1.2",
+  "drawing_preflight_path": "求解/绘图能力预检.json",
+  "project_title": "通用神经网络处理器下的多核调度问题",
+  "plan_status": "ready",
+  "visual_encoding_path": "求解/视觉编码表.md",
+  "problems": [
+    {
+      "problem_id": "q1",
+      "complexity": "standard",
+      "claims": [
+        {
+          "claim_id": "q1-C01",
+          "text": "q1正式100例官方评估与独立核验的可复核结论"
+        }
+      ],
+      "evidence_matrix": [
+        {
+          "evidence_id": "q1-E01",
+          "category": "mechanism_geometry",
+          "question": "模型机理、几何或数据流是否需要可视解释？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "graph_flow",
+          "representation": "schematic",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q1-OVERVIEW"
+          ]
+        },
+        {
+          "evidence_id": "q1-E02",
+          "category": "main_result",
+          "question": "本问最重要的定量结论是什么？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "distribution",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q1-F01",
+            "q1-F02"
+          ]
+        },
+        {
+          "evidence_id": "q1-E03",
+          "category": "independent_validation",
+          "question": "什么独立证据能够验证主结果？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "multi_point_scan",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q1-F06"
+          ]
+        },
+        {
+          "evidence_id": "q1-E04",
+          "category": "sensitivity_robustness",
+          "question": "哪些输入、参数或扰动会改变结论？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "multi_point_scan",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q1-F03",
+            "q1-F04",
+            "q1-F05"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "q1-F01",
+          "count_role": "independent_science",
+          "scope": "q1",
+          "scientific_question": "图规模与最大连通块占比如何联合分布？",
+          "claim_ids": [
+            "q1-C01"
+          ],
+          "evidence_ids": [
+            "q1-E02"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "图规模与最大连通块占比如何联合分布？",
+              "figure_type": "hexbin",
+              "figure_family": "distribution_uncertainty",
+              "chart_type": "hexbin",
+              "chart_families": [
+                "hexbin"
+              ],
+              "chart_review": "参照图包含hexbin二维计数及额外残差直方图；本题只继承hexbin密度编码，原题并无注入恢复或残差真值。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q1-F01.csv",
+              "fields": [
+                "case",
+                "internal_ops",
+                "components",
+                "largest_component_fraction"
+              ],
+              "units": [
+                "类别",
+                "个",
+                "个",
+                "比例"
+              ],
+              "visual_encoding": "hexbin编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/MonteCarloRecovery",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q1-F01:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "histogram",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q1-F01.pdf",
+            "preview": "求解/正式图件/q1-F01.png"
+          },
+          "statistics_report": "求解/正式图件/q1-F01.stats.json",
+          "qa_report": "求解/正式图件/q1-F01.qa.json",
+          "paper": {
+            "chapter": "04_问题一.tex",
+            "label": "fig:q1-f01",
+            "caption": "输入结构分布",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "28737a7700dc3ab5484a29e0d1652bdd68babc33ca5f9f384271656221b894e9",
+            "evidence": {
+              "求解/图件数据/q1-F01.csv": "acfaff8a33fd8a771600091ed5d86c8aa5945f6330e300c99f75d039b7b83f15",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q1-F01:academic"
+                ],
+                "observation": "已实看MonteCarloRecovery原示例与图谱并读取源码；参照图包含hexbin二维计数及额外残差直方图；本题只继承hexbin密度编码，原题并无注入恢复或残差真值。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q1-F01:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板rel_grouped_regression_marginal_scatter的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q1-F01:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "MonteCarloRecovery",
+                "chart_families": [
+                  "hexbin"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q1-F01:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "rel_grouped_regression_marginal_scatter",
+                "chart_families": [
+                  "hexbin"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q1-F02",
+          "count_role": "independent_science",
+          "scope": "q1",
+          "scientific_question": "核数扩展如何改变加速比的中心与离散范围？",
+          "claim_ids": [
+            "q1-C01"
+          ],
+          "evidence_ids": [
+            "q1-E02"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "核数扩展如何改变加速比的中心与离散范围？",
+              "figure_type": "line",
+              "figure_family": "trend_scan",
+              "chart_type": "line",
+              "chart_families": [
+                "line"
+              ],
+              "chart_review": "参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q1-F02.csv",
+              "fields": [
+                "case",
+                "cores",
+                "q1_speedup"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "倍"
+              ],
+              "visual_encoding": "line编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/LineTrend",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q1-F02:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "area",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q1-F02.pdf",
+            "preview": "求解/正式图件/q1-F02.png"
+          },
+          "statistics_report": "求解/正式图件/q1-F02.stats.json",
+          "qa_report": "求解/正式图件/q1-F02.qa.json",
+          "paper": {
+            "chapter": "04_问题一.tex",
+            "label": "fig:q1-f02",
+            "caption": "问题一1至5核平均加速比与案例分位范围",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "288df37ca9d75384a3bb6c160438797d8dfe8c32838952573c4f5cd6b0a4f9a2",
+            "evidence": {
+              "求解/图件数据/q1-F02.csv": "455cf977fb61efe4d78a30c61a8ee536bfb3943712e95a26509f8f59c3812f5f",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q1-F02:academic"
+                ],
+                "observation": "已实看LineTrend原示例与图谱并读取源码；参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q1-F02:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板trd_smoothed_trend_curves的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q1-F02:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "LineTrend",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q1-F02:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "trd_smoothed_trend_curves",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q1-F03",
+          "count_role": "independent_science",
+          "scope": "q1",
+          "scientific_question": "最大连通块占比不同的图有何加速差异？",
+          "claim_ids": [
+            "q1-C01"
+          ],
+          "evidence_ids": [
+            "q1-E04"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "最大连通块占比不同的图有何加速差异？",
+              "figure_type": "violin",
+              "figure_family": "distribution_uncertainty",
+              "chart_type": "violin",
+              "chart_families": [
+                "violin"
+              ],
+              "chart_review": "参照图为分组小提琴叠加原始点及显著性括号；本题保留原始点和中位线，不使用未经检验的p值。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q1-F03.csv",
+              "fields": [
+                "case",
+                "internal_ops",
+                "largest_component_fraction",
+                "q1_speedup"
+              ],
+              "units": [
+                "类别",
+                "个",
+                "比例",
+                "倍"
+              ],
+              "visual_encoding": "violin编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/GroupedViolin",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q1-F03:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "scatter",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q1-F03.pdf",
+            "preview": "求解/正式图件/q1-F03.png"
+          },
+          "statistics_report": "求解/正式图件/q1-F03.stats.json",
+          "qa_report": "求解/正式图件/q1-F03.qa.json",
+          "paper": {
+            "chapter": "04_问题一.tex",
+            "label": "fig:q1-f03",
+            "caption": "结构分组加速差异",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "ceda21cfcbffcf93af7c6865031d2a017327c27b819b8e2e027ae0903674bb9e",
+            "evidence": {
+              "求解/图件数据/q1-F03.csv": "0d64af14636f35ac0cbe6a1515df281ffb09f070b5c7be9849a08f9b5777f1c5",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q1-F03:academic"
+                ],
+                "observation": "已实看GroupedViolin原示例与图谱并读取源码；参照图为分组小提琴叠加原始点及显著性括号；本题保留原始点和中位线，不使用未经检验的p值。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q1-F03:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板dis_violin_mean_change_grid的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q1-F03:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "GroupedViolin",
+                "chart_families": [
+                  "violin"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q1-F03:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "dis_violin_mean_change_grid",
+                "chart_families": [
+                  "violin"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q1-F04",
+          "count_role": "independent_science",
+          "scope": "q1",
+          "scientific_question": "五核新增DDR搬运与加速之间有何权衡？",
+          "claim_ids": [
+            "q1-C01"
+          ],
+          "evidence_ids": [
+            "q1-E04"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "五核新增DDR搬运与加速之间有何权衡？",
+              "figure_type": "bubble",
+              "figure_family": "relationship_correlation",
+              "chart_type": "bubble",
+              "chart_families": [
+                "bubble"
+              ],
+              "chart_review": "参照图以点面积和颜色同时编码两个实测量；本题沿用双色变量的点图语法，将类别矩阵换为真实连续轴。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q1-F04.csv",
+              "fields": [
+                "case",
+                "internal_ops",
+                "added_copy_mb",
+                "speedup"
+              ],
+              "units": [
+                "类别",
+                "个",
+                "MiB",
+                "倍"
+              ],
+              "visual_encoding": "bubble编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/MarkerGeneDotPlot",
+              "asset_mode": "cross_type_inherit",
+              "selected_candidate_id": "q1-F04:academic",
+              "omitted_chart_families": []
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q1-F04.pdf",
+            "preview": "求解/正式图件/q1-F04.png"
+          },
+          "statistics_report": "求解/正式图件/q1-F04.stats.json",
+          "qa_report": "求解/正式图件/q1-F04.qa.json",
+          "paper": {
+            "chapter": "04_问题一.tex",
+            "label": "fig:q1-f04",
+            "caption": "加速与新增搬运",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "d28f7a8bb1c8ad75cc129864db0c97a777e3e6ce2797f9e59a35955f97040d4a",
+            "evidence": {
+              "求解/图件数据/q1-F04.csv": "80c6dc88c5ac247ee7b1f11c3a3b768be0d15a4eb00d45b0fb476724b5135e0e",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q1-F04:academic"
+                ],
+                "observation": "已实看MarkerGeneDotPlot原示例与图谱并读取源码；参照图以点面积和颜色同时编码两个实测量；本题沿用双色变量的点图语法，将类别矩阵换为真实连续轴。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q1-F04:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板rel_lollipop_bubble_coefficients的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q1-F04:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "MarkerGeneDotPlot",
+                "chart_families": [
+                  "bubble"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q1-F04:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "rel_lollipop_bubble_coefficients",
+                "chart_families": [
+                  "bubble"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q1-F05",
+          "count_role": "independent_science",
+          "scope": "q1",
+          "scientific_question": "何种结构条件下深度分段候选胜出？",
+          "claim_ids": [
+            "q1-C01"
+          ],
+          "evidence_ids": [
+            "q1-E04"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "何种结构条件下深度分段候选胜出？",
+              "figure_type": "heatmap",
+              "figure_family": "heatmap_surface",
+              "chart_type": "heatmap",
+              "chart_families": [
+                "heatmap"
+              ],
+              "chart_review": "参照图为标值矩阵和发散色带；本题为实际计数胜率矩阵，空格注明无算例，颜色限制在0到1。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q1-F05.csv",
+              "fields": [
+                "case",
+                "cores",
+                "candidate",
+                "largest_component_fraction",
+                "max_level_width",
+                "internal_ops"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "类别",
+                "比例",
+                "个",
+                "个"
+              ],
+              "visual_encoding": "heatmap编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/ScenarioHeatmap",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q1-F05:academic",
+              "omitted_chart_families": []
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q1-F05.pdf",
+            "preview": "求解/正式图件/q1-F05.png"
+          },
+          "statistics_report": "求解/正式图件/q1-F05.stats.json",
+          "qa_report": "求解/正式图件/q1-F05.qa.json",
+          "paper": {
+            "chapter": "04_问题一.tex",
+            "label": "fig:q1-f05",
+            "caption": "结构分箱候选胜率",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "1371c538ad0524b3e717b8de6aae5639a217cc91232d1e6d5bab5657280ee2a3",
+            "evidence": {
+              "求解/图件数据/q1-F05.csv": "e5ca54cd1ca4ccb731be1af1d31a618fb8e2fac83364660cac0524a9668e568a",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q1-F05:academic"
+                ],
+                "observation": "已实看ScenarioHeatmap原示例与图谱并读取源码；参照图为标值矩阵和发散色带；本题为实际计数胜率矩阵，空格注明无算例，颜色限制在0到1。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q1-F05:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板rel_multilayer_encoded_correlation_heatmap的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q1-F05:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "ScenarioHeatmap",
+                "chart_families": [
+                  "heatmap"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q1-F05:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "rel_multilayer_encoded_correlation_heatmap",
+                "chart_families": [
+                  "heatmap"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q1-F06",
+          "count_role": "independent_science",
+          "scope": "q1",
+          "scientific_question": "候选评估时间与候选质量怎样权衡？",
+          "claim_ids": [
+            "q1-C01"
+          ],
+          "evidence_ids": [
+            "q1-E03"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "候选评估时间与候选质量怎样权衡？",
+              "figure_type": "scatter",
+              "figure_family": "optimization_decision",
+              "chart_type": "scatter",
+              "chart_families": [
+                "scatter"
+              ],
+              "chart_review": "参照图使用箱体、散点及成对连线；本题据同例同核成对字段，按指标选箱线或散点，不挪用示例的显著性标注。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q1-F06.csv",
+              "fields": [
+                "case",
+                "cores",
+                "candidate",
+                "makespan_cycles",
+                "evaluation_seconds"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "类别",
+                "周期",
+                "秒"
+              ],
+              "visual_encoding": "scatter编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/PairedBoxScatter",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q1-F06:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "box",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q1-F06.pdf",
+            "preview": "求解/正式图件/q1-F06.png"
+          },
+          "statistics_report": "求解/正式图件/q1-F06.stats.json",
+          "qa_report": "求解/正式图件/q1-F06.qa.json",
+          "paper": {
+            "chapter": "04_问题一.tex",
+            "label": "fig:q1-f06",
+            "caption": "候选质量与评估成本",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "9e5bd7a540b4cdeca8422806f3208ed88eff2ec51e44a03128caed9b23b457ee",
+            "evidence": {
+              "求解/图件数据/q1-F06.csv": "4c9f6d44469f4eaa91be1b81371a9ae3e14da3cfbbc70ff817eb9a6587f57ecc",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q1-F06:academic"
+                ],
+                "observation": "已实看PairedBoxScatter原示例与图谱并读取源码；参照图使用箱体、散点及成对连线；本题据同例同核成对字段，按指标选箱线或散点，不挪用示例的显著性标注。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q1-F06:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板rel_scatter_error_colormap_regression的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q1-F06:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "PairedBoxScatter",
+                "chart_families": [
+                  "scatter"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q1-F06:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "rel_scatter_error_colormap_regression",
+                "chart_families": [
+                  "scatter"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        }
+      ],
+      "schematics": [],
+      "low_figure_exception": null
+    },
+    {
+      "problem_id": "q2",
+      "complexity": "standard",
+      "claims": [
+        {
+          "claim_id": "q2-C01",
+          "text": "q2正式100例官方评估与独立核验的可复核结论"
+        }
+      ],
+      "evidence_matrix": [
+        {
+          "evidence_id": "q2-E01",
+          "category": "mechanism_geometry",
+          "question": "模型机理、几何或数据流是否需要可视解释？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "graph_flow",
+          "representation": "schematic",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q2-OVERVIEW"
+          ]
+        },
+        {
+          "evidence_id": "q2-E02",
+          "category": "main_result",
+          "question": "本问最重要的定量结论是什么？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "distribution",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q2-F01",
+            "q2-F06"
+          ]
+        },
+        {
+          "evidence_id": "q2-E03",
+          "category": "independent_validation",
+          "question": "什么独立证据能够验证主结果？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "multi_point_scan",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q2-F02",
+            "q2-F03"
+          ]
+        },
+        {
+          "evidence_id": "q2-E04",
+          "category": "sensitivity_robustness",
+          "question": "哪些输入、参数或扰动会改变结论？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "multi_point_scan",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q2-F04",
+            "q2-F05"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "q2-F01",
+          "count_role": "independent_science",
+          "scope": "q2",
+          "scientific_question": "同方案的场景A/B时长比如何随核数变化？",
+          "claim_ids": [
+            "q2-C01"
+          ],
+          "evidence_ids": [
+            "q2-E02"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "同方案的场景A/B时长比如何随核数变化？",
+              "figure_type": "violin",
+              "figure_family": "distribution_uncertainty",
+              "chart_type": "violin",
+              "chart_families": [
+                "violin"
+              ],
+              "chart_review": "参照图为多组小提琴与分位中心；本题四个核数组的实测收益分布采用水平小提琴和原始点。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q2-F01.csv",
+              "fields": [
+                "case",
+                "cores",
+                "candidate",
+                "scene_b_gain_same_plan"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "类别",
+                "倍"
+              ],
+              "visual_encoding": "violin编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/Violin",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q2-F01:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "box",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q2-F01.pdf",
+            "preview": "求解/正式图件/q2-F01.png"
+          },
+          "statistics_report": "求解/正式图件/q2-F01.stats.json",
+          "qa_report": "求解/正式图件/q2-F01.qa.json",
+          "paper": {
+            "chapter": "05_问题二.tex",
+            "label": "fig:q2-f01",
+            "caption": "同方案场景收益",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "7f039aabfb4d0298625c2bff6a13156089d8b248333a891f66ff379c83be6b18",
+            "evidence": {
+              "求解/图件数据/q2-F01.csv": "11278f122e8d441ee80ff476d7952be59baae59834aecb981a44df58e75330d7",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q2-F01:academic"
+                ],
+                "observation": "已实看Violin原示例与图谱并读取源码；参照图为多组小提琴与分位中心；本题四个核数组的实测收益分布采用水平小提琴和原始点。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q2-F01:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板dis_rank_sum_violin_box的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q2-F01:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "Violin",
+                "chart_families": [
+                  "violin"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q2-F01:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "dis_rank_sum_violin_box",
+                "chart_families": [
+                  "violin"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q2-F02",
+          "count_role": "independent_science",
+          "scope": "q2",
+          "scientific_question": "场景B内重新择优的附加收益有多大？",
+          "claim_ids": [
+            "q2-C01"
+          ],
+          "evidence_ids": [
+            "q2-E03"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "场景B内重新择优的附加收益有多大？",
+              "figure_type": "box",
+              "figure_family": "comparison_ranking",
+              "chart_type": "box",
+              "chart_families": [
+                "box"
+              ],
+              "chart_review": "参照图使用箱体、散点及成对连线；本题据同例同核成对字段，按指标选箱线或散点，不挪用示例的显著性标注。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q2-F02.csv",
+              "fields": [
+                "case",
+                "cores",
+                "q2_policy_gain"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "倍"
+              ],
+              "visual_encoding": "box编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/PairedBoxScatter",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q2-F02:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "scatter",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q2-F02.pdf",
+            "preview": "求解/正式图件/q2-F02.png"
+          },
+          "statistics_report": "求解/正式图件/q2-F02.stats.json",
+          "qa_report": "求解/正式图件/q2-F02.qa.json",
+          "paper": {
+            "chapter": "05_问题二.tex",
+            "label": "fig:q2-f02",
+            "caption": "场景B策略增益",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "4ba8e1d694d76c68ee85638870db7a78f6aff5be590e80bdd30316fe6f6a9c70",
+            "evidence": {
+              "求解/图件数据/q2-F02.csv": "636aa14558004fd7484c302088eb7c26d4e003468741dc0abe45daf0e642177e",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q2-F02:academic"
+                ],
+                "observation": "已实看PairedBoxScatter原示例与图谱并读取源码；参照图使用箱体、散点及成对连线；本题据同例同核成对字段，按指标选箱线或散点，不挪用示例的显著性标注。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q2-F02:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板dis_combined_boxplot_grid的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q2-F02:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "PairedBoxScatter",
+                "chart_families": [
+                  "box"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q2-F02:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "dis_combined_boxplot_grid",
+                "chart_families": [
+                  "box"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q2-F03",
+          "count_role": "independent_science",
+          "scope": "q2",
+          "scientific_question": "新增DDR搬运中的边界COPY与Spill各占多少？",
+          "claim_ids": [
+            "q2-C01"
+          ],
+          "evidence_ids": [
+            "q2-E03"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "新增DDR搬运中的边界COPY与Spill各占多少？",
+              "figure_type": "area",
+              "figure_family": "trend_scan",
+              "chart_type": "area",
+              "chart_families": [
+                "area"
+              ],
+              "chart_review": "参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q2-F03.csv",
+              "fields": [
+                "case",
+                "cores",
+                "candidate",
+                "partition_added_copy_bytes",
+                "spill_added_copy_bytes",
+                "added_copy_bytes"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "类别",
+                "字节",
+                "字节",
+                "字节"
+              ],
+              "visual_encoding": "area编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/LineTrend",
+              "asset_mode": "cross_type_inherit",
+              "selected_candidate_id": "q2-F03:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "line",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q2-F03.pdf",
+            "preview": "求解/正式图件/q2-F03.png"
+          },
+          "statistics_report": "求解/正式图件/q2-F03.stats.json",
+          "qa_report": "求解/正式图件/q2-F03.qa.json",
+          "paper": {
+            "chapter": "05_问题二.tex",
+            "label": "fig:q2-f03",
+            "caption": "新增搬运来源",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "434c269bd8daeb9998ceec48ec63adbebd5a318bb9f391aaf9f586e2393cd3ec",
+            "evidence": {
+              "求解/图件数据/q2-F03.csv": "fadc3d29033fb17e63122694451ccf649d3106499b6e71d0e12143d2e1fc8944",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q2-F03:academic"
+                ],
+                "observation": "已实看LineTrend原示例与图谱并读取源码；参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q2-F03:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板cmp_flowing_percentage_stack的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q2-F03:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "LineTrend",
+                "chart_families": [
+                  "area"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q2-F03:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "cmp_flowing_percentage_stack",
+                "chart_families": [
+                  "area"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q2-F04",
+          "count_role": "independent_science",
+          "scope": "q2",
+          "scientific_question": "容量压力与五核收益如何共同变化？",
+          "claim_ids": [
+            "q2-C01"
+          ],
+          "evidence_ids": [
+            "q2-E04"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "容量压力与五核收益如何共同变化？",
+              "figure_type": "bubble",
+              "figure_family": "relationship_correlation",
+              "chart_type": "bubble",
+              "chart_families": [
+                "bubble"
+              ],
+              "chart_review": "参照图以点面积和颜色同时编码两个实测量；本题沿用双色变量的点图语法，将类别矩阵换为真实连续轴。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q2-F04.csv",
+              "fields": [
+                "case",
+                "memory_peak_fraction",
+                "q2_speedup",
+                "internal_ops",
+                "largest_component_fraction"
+              ],
+              "units": [
+                "类别",
+                "额定容量比例",
+                "倍",
+                "个",
+                "比例"
+              ],
+              "visual_encoding": "bubble编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/MarkerGeneDotPlot",
+              "asset_mode": "cross_type_inherit",
+              "selected_candidate_id": "q2-F04:academic",
+              "omitted_chart_families": []
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q2-F04.pdf",
+            "preview": "求解/正式图件/q2-F04.png"
+          },
+          "statistics_report": "求解/正式图件/q2-F04.stats.json",
+          "qa_report": "求解/正式图件/q2-F04.qa.json",
+          "paper": {
+            "chapter": "05_问题二.tex",
+            "label": "fig:q2-f04",
+            "caption": "容量压力与加速",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "39654abd5d045c46f834f64383e45055a9e3fd1471fa935b651bf957ca3e3959",
+            "evidence": {
+              "求解/图件数据/q2-F04.csv": "d6d32548cffae0ee2bee60e6659aa95152493f4005283f6651b1e775dbbceb45",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q2-F04:academic"
+                ],
+                "observation": "已实看MarkerGeneDotPlot原示例与图谱并读取源码；参照图以点面积和颜色同时编码两个实测量；本题沿用双色变量的点图语法，将类别矩阵换为真实连续轴。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q2-F04:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板rel_grouped_correlation_bubble_matrix的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q2-F04:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "MarkerGeneDotPlot",
+                "chart_families": [
+                  "bubble"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q2-F04:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "rel_grouped_correlation_bubble_matrix",
+                "chart_families": [
+                  "bubble"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q2-F05",
+          "count_role": "independent_science",
+          "scope": "q2",
+          "scientific_question": "场景切换后的速度与搬运变化是否同向？",
+          "claim_ids": [
+            "q2-C01"
+          ],
+          "evidence_ids": [
+            "q2-E04"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "场景切换后的速度与搬运变化是否同向？",
+              "figure_type": "scatter",
+              "figure_family": "relationship_correlation",
+              "chart_type": "scatter",
+              "chart_families": [
+                "scatter"
+              ],
+              "chart_review": "参照图使用箱体、散点及成对连线；本题据同例同核成对字段，按指标选箱线或散点，不挪用示例的显著性标注。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q2-F05.csv",
+              "fields": [
+                "case",
+                "q1_speedup",
+                "q2_speedup",
+                "q1_added_copy_bytes",
+                "q2_added_copy_bytes"
+              ],
+              "units": [
+                "类别",
+                "倍",
+                "倍",
+                "字节",
+                "字节"
+              ],
+              "visual_encoding": "scatter编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/PairedBoxScatter",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q2-F05:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "box",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q2-F05.pdf",
+            "preview": "求解/正式图件/q2-F05.png"
+          },
+          "statistics_report": "求解/正式图件/q2-F05.stats.json",
+          "qa_report": "求解/正式图件/q2-F05.qa.json",
+          "paper": {
+            "chapter": "05_问题二.tex",
+            "label": "fig:q2-f05",
+            "caption": "速度搬运象限",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "c1a3b00b7ff18ac09a1aa719b724d0fd3ac4ebb9af7fe7a960a71300091c88db",
+            "evidence": {
+              "求解/图件数据/q2-F05.csv": "86138611092513ea9a0345f851536b10b022b25bb002cc903bba0e1599530410",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q2-F05:academic"
+                ],
+                "observation": "已实看PairedBoxScatter原示例与图谱并读取源码；参照图使用箱体、散点及成对连线；本题据同例同核成对字段，按指标选箱线或散点，不挪用示例的显著性标注。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q2-F05:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板rel_scatter_error_colormap_regression的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q2-F05:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "PairedBoxScatter",
+                "chart_families": [
+                  "scatter"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q2-F05:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "rel_scatter_error_colormap_regression",
+                "chart_families": [
+                  "scatter"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q2-F06",
+          "count_role": "independent_science",
+          "scope": "q2",
+          "scientific_question": "场景B从1核至5核的平均加速比如何变化？",
+          "claim_ids": [
+            "q2-C01"
+          ],
+          "evidence_ids": [
+            "q2-E02"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "场景B从1核至5核的平均加速比如何变化？",
+              "figure_type": "line",
+              "figure_family": "trend_scan",
+              "chart_type": "line",
+              "chart_families": [
+                "line"
+              ],
+              "chart_review": "参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q2-F06.csv",
+              "fields": [
+                "case",
+                "cores",
+                "q2_speedup"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "倍"
+              ],
+              "visual_encoding": "line编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/LineTrend",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q2-F06:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "area",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q2-F06.pdf",
+            "preview": "求解/正式图件/q2-F06.png"
+          },
+          "statistics_report": "求解/正式图件/q2-F06.stats.json",
+          "qa_report": "求解/正式图件/q2-F06.qa.json",
+          "paper": {
+            "chapter": "05_问题二.tex",
+            "label": "fig:q2-f06",
+            "caption": "问题二1至5核平均加速比",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "573551b1eca95ed7e678b3a0f27e64629ce3c3d589ca3087f38bd5e4d0970124",
+            "evidence": {
+              "求解/图件数据/q2-F06.csv": "7cb3b68afe0092cad73365dd22ae511007e6f5d2e5b233508ffd31e27b8de2a4",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q2-F06:academic"
+                ],
+                "observation": "已实看LineTrend原示例与图谱并读取源码；参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q2-F06:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板trd_smoothed_trend_curves的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q2-F06:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "LineTrend",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q2-F06:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "trd_smoothed_trend_curves",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        }
+      ],
+      "schematics": [],
+      "low_figure_exception": null
+    },
+    {
+      "problem_id": "q3",
+      "complexity": "standard",
+      "claims": [
+        {
+          "claim_id": "q3-C01",
+          "text": "q3正式100例官方评估与独立核验的可复核结论"
+        }
+      ],
+      "evidence_matrix": [
+        {
+          "evidence_id": "q3-E01",
+          "category": "mechanism_geometry",
+          "question": "模型机理、几何或数据流是否需要可视解释？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "graph_flow",
+          "representation": "schematic",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q3-OVERVIEW"
+          ]
+        },
+        {
+          "evidence_id": "q3-E02",
+          "category": "main_result",
+          "question": "本问最重要的定量结论是什么？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "distribution",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q3-F01",
+            "q3-F06"
+          ]
+        },
+        {
+          "evidence_id": "q3-E03",
+          "category": "independent_validation",
+          "question": "什么独立证据能够验证主结果？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "multi_point_scan",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q3-F02",
+            "q3-F05"
+          ]
+        },
+        {
+          "evidence_id": "q3-E04",
+          "category": "sensitivity_robustness",
+          "question": "哪些输入、参数或扰动会改变结论？",
+          "applicability": "applicable",
+          "reason": "本问有已完成且独立核验的官方结构化结果；机制由逐问综合图解释。",
+          "data_shape": "multi_point_scan",
+          "representation": "figure",
+          "result_files": [
+            "求解/正式实验/统计分析.json"
+          ],
+          "figure_ids": [
+            "q3-F03",
+            "q3-F04"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "q3-F01",
+          "count_role": "independent_science",
+          "scope": "q3",
+          "scientific_question": "题定L2配置下同方案Cache收益的经验分布如何？",
+          "claim_ids": [
+            "q3-C01"
+          ],
+          "evidence_ids": [
+            "q3-E02"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "题定L2配置下同方案Cache收益的经验分布如何？",
+              "figure_type": "ecdf",
+              "figure_family": "distribution_uncertainty",
+              "chart_type": "ecdf",
+              "chart_families": [
+                "line"
+              ],
+              "chart_review": "参照图有连续趋势及真实重复试验带；本题是经验累积分布而非迭代收敛，不生成虚假的置信带。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q3-F01.csv",
+              "fields": [
+                "case",
+                "cores",
+                "cache_gain"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "倍"
+              ],
+              "visual_encoding": "line编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/ConvergenceBand",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q3-F01:academic",
+              "omitted_chart_families": []
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q3-F01.pdf",
+            "preview": "求解/正式图件/q3-F01.png"
+          },
+          "statistics_report": "求解/正式图件/q3-F01.stats.json",
+          "qa_report": "求解/正式图件/q3-F01.qa.json",
+          "paper": {
+            "chapter": "06_问题三.tex",
+            "label": "fig:q3-f01",
+            "caption": "Cache收益经验分布",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "e7fa3a7f7dc37c0eabcca5c2a3a8fcc196a85e517aba798843bdcb230669431b",
+            "evidence": {
+              "求解/图件数据/q3-F01.csv": "503d78db5150d3f6d68ea04671927fc308cbb224e91da1c93da2720ab71011c6",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q3-F01:academic"
+                ],
+                "observation": "已实看ConvergenceBand原示例与图谱并读取源码；参照图有连续趋势及真实重复试验带；本题是经验累积分布而非迭代收敛，不生成虚假的置信带。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q3-F01:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板trd_smoothed_trend_curves的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q3-F01:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "ConvergenceBand",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q3-F01:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "trd_smoothed_trend_curves",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": [
+              {
+                "chart_family": "line",
+                "portfolio_sha256": "77f9fe17e9b96ca72ab443d5382e705af0f7f4c8bf0a9428d9b1be885f9395c4",
+                "figure_ids": [
+                  "q1-F02",
+                  "q2-F06",
+                  "q3-F01",
+                  "q3-F04",
+                  "q3-F06"
+                ],
+                "scientific_purpose": "五核组的同方案L2收益经验累积曲线必须保留概率阶梯和尾部阈值，才能判断收益有多少实例超过1。",
+                "alternatives": [
+                  {
+                    "chart_family": "histogram",
+                    "reason": "分箱频数不能在任意收益阈值直接读出累计实例比例，且尾部受箱宽影响。"
+                  }
+                ],
+                "reason": "经验分布曲线提供逐阈值累计比例，直方图会随箱宽改变尾部视觉判断；这里有明确的不同科学用途。",
+                "evidence": {
+                  "求解/图件数据/q3-F01.csv": "503d78db5150d3f6d68ea04671927fc308cbb224e91da1c93da2720ab71011c6"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "figure_id": "q3-F02",
+          "count_role": "independent_science",
+          "scope": "q3",
+          "scientific_question": "命中字节率与同方案收益如何关联？",
+          "claim_ids": [
+            "q3-C01"
+          ],
+          "evidence_ids": [
+            "q3-E03"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "命中字节率与同方案收益如何关联？",
+              "figure_type": "hexbin",
+              "figure_family": "relationship_correlation",
+              "chart_type": "hexbin",
+              "chart_families": [
+                "hexbin"
+              ],
+              "chart_review": "参照图包含hexbin二维计数及额外残差直方图；本题只继承hexbin密度编码，原题并无注入恢复或残差真值。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q3-F02.csv",
+              "fields": [
+                "case",
+                "internal_ops",
+                "q3_cache_hit_rate",
+                "q3_cache_gain"
+              ],
+              "units": [
+                "类别",
+                "个",
+                "比例",
+                "倍"
+              ],
+              "visual_encoding": "hexbin编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/MonteCarloRecovery",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q3-F02:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "histogram",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q3-F02.pdf",
+            "preview": "求解/正式图件/q3-F02.png"
+          },
+          "statistics_report": "求解/正式图件/q3-F02.stats.json",
+          "qa_report": "求解/正式图件/q3-F02.qa.json",
+          "paper": {
+            "chapter": "06_问题三.tex",
+            "label": "fig:q3-f02",
+            "caption": "命中率与收益",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "7c61d3c540e3f8af4222cfeb0a4b00d24c76ef7d74a7aa96d09cf18a916f285a",
+            "evidence": {
+              "求解/图件数据/q3-F02.csv": "a5d49cfe5e11e091ccf72b8f5d37b27aaf7a12ed6eaf88724f8de268bcd422fd",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q3-F02:academic"
+                ],
+                "observation": "已实看MonteCarloRecovery原示例与图谱并读取源码；参照图包含hexbin二维计数及额外残差直方图；本题只继承hexbin密度编码，原题并无注入恢复或残差真值。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q3-F02:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板rel_grouped_regression_marginal_scatter的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q3-F02:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "MonteCarloRecovery",
+                "chart_families": [
+                  "hexbin"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q3-F02:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "rel_grouped_regression_marginal_scatter",
+                "chart_families": [
+                  "hexbin"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q3-F03",
+          "count_role": "independent_science",
+          "scope": "q3",
+          "scientific_question": "六例非官方容量带宽网格的实测响应面如何？",
+          "claim_ids": [
+            "q3-C01"
+          ],
+          "evidence_ids": [
+            "q3-E04"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "六例非官方容量带宽网格的实测响应面如何？",
+              "figure_type": "surface",
+              "figure_family": "heatmap_surface",
+              "chart_type": "surface",
+              "chart_families": [
+                "surface"
+              ],
+              "chart_review": "参照图为连续双参数等值区和可行边界；本题核数是离散轴，借其分位区间与对比层次而不插值。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q3-F03.csv",
+              "fields": [
+                "case",
+                "capacity_bytes",
+                "bandwidth_bytes_per_cycle",
+                "candidate",
+                "makespan_cycles"
+              ],
+              "units": [
+                "类别",
+                "字节",
+                "字节/周期",
+                "类别",
+                "周期"
+              ],
+              "visual_encoding": "surface编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/ParameterSweep",
+              "asset_mode": "cross_type_inherit",
+              "selected_candidate_id": "q3-F03:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "heatmap",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                },
+                {
+                  "chart_family": "contour",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_cache_surface.py",
+          "outputs": {
+            "vector": "求解/正式图件/q3-F03.pdf",
+            "preview": "求解/正式图件/q3-F03.png"
+          },
+          "statistics_report": "求解/正式图件/q3-F03.stats.json",
+          "qa_report": "求解/正式图件/q3-F03.qa.json",
+          "paper": {
+            "chapter": "06_问题三.tex",
+            "label": "fig:q3-f03",
+            "caption": "容量带宽响应面",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "0fbb0b07fd2e25c09411ad2fc8e0d6f4e0f1a29d02f6fc1374648eb579475944",
+            "evidence": {
+              "求解/图件数据/q3-F03.csv": "0b3f018d08d3c7cae04a561e397f6de9c7a0f0e2f4562624bcc200913083c95e",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q3-F03:academic"
+                ],
+                "observation": "已实看ParameterSweep原示例与图谱并读取源码；参照图为连续双参数等值区和可行边界；本题核数是离散轴，借其分位区间与对比层次而不插值。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q3-F03:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板mpn_3d_surface_scatter_report的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q3-F03:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "ParameterSweep",
+                "chart_families": [
+                  "surface"
+                ],
+                "dimension": "3d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q3-F03:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "mpn_3d_surface_scatter_report",
+                "chart_families": [
+                  "contour"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": true,
+              "reason": "三维响应面有三个独立实测数值轴。",
+              "disadvantage": "无",
+              "axes": [
+                {
+                  "field": "capacity_bytes",
+                  "unit": "字节",
+                  "meaning": "L2容量",
+                  "result_file": "求解/图件数据/q3-F03.csv",
+                  "range": "实际CSV网格范围"
+                },
+                {
+                  "field": "bandwidth_bytes_per_cycle",
+                  "unit": "字节/周期",
+                  "meaning": "L2读带宽",
+                  "result_file": "求解/图件数据/q3-F03.csv",
+                  "range": "实际CSV网格范围"
+                },
+                {
+                  "field": "makespan_cycles",
+                  "unit": "周期",
+                  "meaning": "官方完成周期",
+                  "result_file": "求解/图件数据/q3-F03.csv",
+                  "range": "实际CSV网格范围"
+                }
+              ],
+              "view": "斜视并保留三个坐标轴",
+              "occlusion": "两例分面且仅九格，稀疏点可见",
+              "projection": "正交坐标三维曲面",
+              "quantitative_basis": "六例每例九个官方评估点，未加入额外点"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q3-F04",
+          "count_role": "independent_science",
+          "scope": "q3",
+          "scientific_question": "容量变化如何改变六例的命中字节率？",
+          "claim_ids": [
+            "q3-C01"
+          ],
+          "evidence_ids": [
+            "q3-E04"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "容量变化如何改变六例的命中字节率？",
+              "figure_type": "line",
+              "figure_family": "trend_scan",
+              "chart_type": "line",
+              "chart_families": [
+                "line"
+              ],
+              "chart_review": "参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q3-F04.csv",
+              "fields": [
+                "case",
+                "capacity_bytes",
+                "bandwidth_bytes_per_cycle",
+                "hit_rate"
+              ],
+              "units": [
+                "类别",
+                "字节",
+                "字节/周期",
+                "比例"
+              ],
+              "visual_encoding": "line编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/LineTrend",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q3-F04:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "area",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q3-F04.pdf",
+            "preview": "求解/正式图件/q3-F04.png"
+          },
+          "statistics_report": "求解/正式图件/q3-F04.stats.json",
+          "qa_report": "求解/正式图件/q3-F04.qa.json",
+          "paper": {
+            "chapter": "06_问题三.tex",
+            "label": "fig:q3-f04",
+            "caption": "容量命中响应",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "731be7b05fcbb1a00d985e88d2dc45a591e1cf5ca2bda9728c6b710afb987339",
+            "evidence": {
+              "求解/图件数据/q3-F04.csv": "6844626940a587a75baca054edc7c2be48b97c58fba3dcf85c55db558f680908",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q3-F04:academic"
+                ],
+                "observation": "已实看LineTrend原示例与图谱并读取源码；参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q3-F04:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板trd_smoothed_trend_curves的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q3-F04:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "LineTrend",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q3-F04:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "trd_smoothed_trend_curves",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": [
+              {
+                "chart_family": "line",
+                "portfolio_sha256": "77f9fe17e9b96ca72ab443d5382e705af0f7f4c8bf0a9428d9b1be885f9395c4",
+                "figure_ids": [
+                  "q1-F02",
+                  "q2-F06",
+                  "q3-F01",
+                  "q3-F04",
+                  "q3-F06"
+                ],
+                "scientific_purpose": "容量顺序与六例命中率平台效应是灵敏度问题，需要直接追踪同一实例随容量增加的轨迹。",
+                "alternatives": [
+                  {
+                    "chart_family": "heatmap",
+                    "reason": "离散色阶弱化各实例容量从0.25到4 MiB的转折和完全不变的平台。"
+                  }
+                ],
+                "reason": "折线连接实测容量点只表示有序配置，六条轨迹的转折和平台在热图中不易横向比较。",
+                "evidence": {
+                  "求解/图件数据/q3-F04.csv": "6844626940a587a75baca054edc7c2be48b97c58fba3dcf85c55db558f680908"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "figure_id": "q3-F05",
+          "count_role": "independent_science",
+          "scope": "q3",
+          "scientific_question": "各核数的命中和未命中查询字节如何构成？",
+          "claim_ids": [
+            "q3-C01"
+          ],
+          "evidence_ids": [
+            "q3-E03"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "各核数的命中和未命中查询字节如何构成？",
+              "figure_type": "bar",
+              "figure_family": "comparison_ranking",
+              "chart_type": "bar",
+              "chart_families": [
+                "bar"
+              ],
+              "chart_review": "参照图用分组颜色和堆叠表达组成；本题仅画官方搬运或命中字节的实际组成，不借用示例模型名/概率。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q3-F05.csv",
+              "fields": [
+                "case",
+                "cores",
+                "cache_hit_bytes",
+                "cache_miss_bytes",
+                "cache_hit_rate"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "字节",
+                "字节",
+                "比例"
+              ],
+              "visual_encoding": "bar编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/BarComposition",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q3-F05:academic",
+              "omitted_chart_families": []
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q3-F05.pdf",
+            "preview": "求解/正式图件/q3-F05.png"
+          },
+          "statistics_report": "求解/正式图件/q3-F05.stats.json",
+          "qa_report": "求解/正式图件/q3-F05.qa.json",
+          "paper": {
+            "chapter": "06_问题三.tex",
+            "label": "fig:q3-f05",
+            "caption": "核数与查询字节",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "15af851137d981b17bae8190346edf0a63090a057be828933035ee1ad24318f7",
+            "evidence": {
+              "求解/图件数据/q3-F05.csv": "c693bce8970f0984366ada613aa12ab6e365f483f2338e712dbe7557f348e0a2",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q3-F05:academic"
+                ],
+                "observation": "已实看BarComposition原示例与图谱并读取源码；参照图用分组颜色和堆叠表达组成；本题仅画官方搬运或命中字节的实际组成，不借用示例模型名/概率。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q3-F05:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板trd_dual_axis_bar_line的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q3-F05:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "BarComposition",
+                "chart_families": [
+                  "bar"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q3-F05:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "trd_dual_axis_bar_line",
+                "chart_families": [
+                  "bar"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": []
+          }
+        },
+        {
+          "figure_id": "q3-F06",
+          "count_role": "independent_science",
+          "scope": "q3",
+          "scientific_question": "固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+          "claim_ids": [
+            "q3-C01"
+          ],
+          "evidence_ids": [
+            "q3-E02"
+          ],
+          "archetype": "quantitative_grid",
+          "layout": "单幅定量图，论文版心160mm，中文标签",
+          "hero_panel": "main",
+          "panels": [
+            {
+              "panel_id": "main",
+              "rendering_route": "academic",
+              "source_skill": "academic-figure-skill",
+              "question": "固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+              "figure_type": "line",
+              "figure_family": "trend_scan",
+              "chart_type": "line",
+              "chart_families": [
+                "line"
+              ],
+              "chart_review": "参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。正式图仅绘制结果CSV中存在的字段与可复算统计。",
+              "result_file": "求解/图件数据/q3-F06.csv",
+              "fields": [
+                "case",
+                "cores",
+                "no_l2_speedup",
+                "with_l2_speedup"
+              ],
+              "units": [
+                "类别",
+                "核",
+                "倍",
+                "倍"
+              ],
+              "visual_encoding": "line编码真实结果字段；图例、单位与对应CSV一致。",
+              "asset_directory": ".agents/skills/academic-figure-skill/assets/figures/LineTrend",
+              "asset_mode": "visual_adapt",
+              "selected_candidate_id": "q3-F06:academic",
+              "omitted_chart_families": [
+                {
+                  "chart_family": "area",
+                  "reason": "该参考模板具备此编码，但本题此图无对应独立变量或统计，保留会误导读者。"
+                }
+              ]
+            }
+          ],
+          "script": "求解/render_science_figures.py",
+          "outputs": {
+            "vector": "求解/正式图件/q3-F06.pdf",
+            "preview": "求解/正式图件/q3-F06.png"
+          },
+          "statistics_report": "求解/正式图件/q3-F06.stats.json",
+          "qa_report": "求解/正式图件/q3-F06.qa.json",
+          "paper": {
+            "chapter": "06_问题三.tex",
+            "label": "fig:q3-f06",
+            "caption": "同方案无L2与有L2的核数比较",
+            "reference_context": "本问官方结果分析中先解释科学用途再引用该图。"
+          },
+          "status": "qa_pass",
+          "selection": {
+            "figure_sha256": "60f2d2111c292dfcf4270a07f3837934aa66a8e786a204dbb5db14cebfcdd1f4",
+            "evidence": {
+              "求解/图件数据/q3-F06.csv": "70fd7c2fbede8612a5be896adb2c43ed8cb824b9e83ad5c34d95bc97df2f5ae0",
+              "求解/绘图能力预检.json": "7f81d33376c0194084c161163e712cc6b9a2ac66eb377e2223ecbc7d2351936b"
+            },
+            "source_checks": [
+              {
+                "source_skill": "academic-figure-skill",
+                "candidate_ids": [
+                  "q3-F06:academic"
+                ],
+                "observation": "已实看LineTrend原示例与图谱并读取源码；参照图用多组折线/点比较随横轴变化；本题按已评估的离散容量画线，无中间点或重复误差带。",
+                "limitation": "示例数据和附带统计不能直接移入本题。"
+              },
+              {
+                "source_skill": "modelviz-skill",
+                "candidate_ids": [
+                  "q3-F06:modelviz"
+                ],
+                "observation": "已完成modelviz全目录与预览检查，比较模板trd_smoothed_trend_curves的数据结构。",
+                "limitation": "其多面板或任务特定统计超出本图数据，正式选用更直接的academic编码。"
+              }
+            ],
+            "candidates": [
+              {
+                "candidate_id": "q3-F06:academic",
+                "source_skill": "academic-figure-skill",
+                "reference_id": "LineTrend",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": true,
+                "reason": "与真实结果结构及所需科学问题相符；参考输出已按论文宽度实看。"
+              },
+              {
+                "candidate_id": "q3-F06:modelviz",
+                "source_skill": "modelviz-skill",
+                "reference_id": "trd_smoothed_trend_curves",
+                "chart_families": [
+                  "line"
+                ],
+                "dimension": "2d",
+                "suitable": false,
+                "reason": "作为双来源替代已检查；其默认多面板或统计语义与本图证据不完全匹配。"
+              }
+            ],
+            "limited_candidates_reason": "两套目录均已审阅，选择适合真实字段的候选。",
+            "three_d": {
+              "applicable": false,
+              "reason": "此图的第三维不是独立的完整网格响应；二维位置加颜色或面积更清晰。",
+              "disadvantage": "其他图采用三维会造成遮挡并降低二维成对差异可读性。",
+              "axes": [],
+              "view": "不采用三维",
+              "occlusion": "二维避免遮挡",
+              "projection": "二维正交坐标",
+              "quantitative_basis": "第三维无完整网格或不服务本图主要判断"
+            },
+            "repetition_exceptions": [
+              {
+                "chart_family": "line",
+                "portfolio_sha256": "77f9fe17e9b96ca72ab443d5382e705af0f7f4c8bf0a9428d9b1be885f9395c4",
+                "figure_ids": [
+                  "q1-F02",
+                  "q2-F06",
+                  "q3-F01",
+                  "q3-F04",
+                  "q3-F06"
+                ],
+                "scientific_purpose": "题目要求核数一至五的加速比曲线，此图同时比较同一所选方案的无L2与有L2。",
+                "alternatives": [
+                  {
+                    "chart_family": "bar",
+                    "reason": "分组柱可以读单个核数，但难以直接比较两个场景随核数变化的连续差距。"
+                  }
+                ],
+                "reason": "两条有序核数曲线明确展示缓存收益随核数增加的差距；分组柱会减弱成对趋势。",
+                "evidence": {
+                  "求解/图件数据/q3-F06.csv": "70fd7c2fbede8612a5be896adb2c43ed8cb824b9e83ad5c34d95bc97df2f5ae0"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "schematics": [],
+      "low_figure_exception": null
+    }
+  ],
+  "global_figures": [],
+  "flowcharts": [
+    {
+      "scope": "全篇",
+      "needed": "yes",
+      "reason": "三个问题有明确递进的任务组织和验证顺序。",
+      "plan_id": "GLOBAL-ROADMAP",
+      "status": "qa_pass"
+    },
+    {
+      "scope": "q1",
+      "needed": "yes",
+      "reason": "逐问综合图含真实任务、求解、评价和核验顺序。",
+      "plan_id": "q1-OVERVIEW",
+      "status": "planned"
+    },
+    {
+      "scope": "q2",
+      "needed": "yes",
+      "reason": "逐问综合图含真实任务、求解、评价和核验顺序。",
+      "plan_id": "q2-OVERVIEW",
+      "status": "planned"
+    },
+    {
+      "scope": "q3",
+      "needed": "yes",
+      "reason": "逐问综合图含真实任务、求解、评价和核验顺序。",
+      "plan_id": "q3-OVERVIEW",
+      "status": "planned"
+    }
+  ]
+}

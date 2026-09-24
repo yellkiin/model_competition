@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "requirements": [
+    {
+      "capability": "science",
+      "necessity": "required",
+      "enabled": true,
+      "sources": ["rendering"],
+      "reason": "三问100例结构化结果需用数值数组与Matplotlib生成16张正式科研图及300 dpi预览；当前工作区虚拟环境实测缺少matplotlib。",
+      "provider": null
+    }
+  ]
+}

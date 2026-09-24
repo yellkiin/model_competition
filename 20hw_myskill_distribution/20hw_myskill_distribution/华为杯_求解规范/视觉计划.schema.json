@@ -1,0 +1,1119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "华为杯视觉证据计划",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_title",
+    "plan_status",
+    "visual_encoding_path",
+    "problems",
+    "global_figures",
+    "flowcharts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1",
+        "1.2"
+      ]
+    },
+    "project_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_status": {
+      "enum": [
+        "draft",
+        "ready"
+      ]
+    },
+    "visual_encoding_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "problems": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/problem"
+      }
+    },
+    "global_figures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/figure"
+      }
+    },
+    "flowcharts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/flowchart"
+      }
+    },
+    "drawing_preflight_path": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": [
+        "evidence_id",
+        "category",
+        "question",
+        "applicability",
+        "reason",
+        "data_shape",
+        "representation",
+        "result_files",
+        "figure_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "enum": [
+            "mechanism_geometry",
+            "main_result",
+            "independent_validation",
+            "error_constraint",
+            "comparison_ablation",
+            "sensitivity_robustness",
+            "scenario",
+            "theoretical_boundary",
+            "counterexample",
+            "complexity_convergence"
+          ]
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "applicability": {
+          "enum": [
+            "pending",
+            "applicable",
+            "not_needed",
+            "not_possible"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "data_shape": {
+          "enum": [
+            "pending",
+            "single_value",
+            "ordered_series",
+            "multi_point_scan",
+            "repeated_trials",
+            "distribution",
+            "error_structure",
+            "matrix_surface",
+            "spatial_geometry",
+            "graph_flow",
+            "analytic_relation"
+          ]
+        },
+        "representation": {
+          "enum": [
+            "pending",
+            "figure",
+            "schematic",
+            "table",
+            "text",
+            "na"
+          ]
+        },
+        "result_files": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "figure_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "panel": {
+      "type": "object",
+      "required": [
+        "panel_id",
+        "question",
+        "figure_type",
+        "figure_family",
+        "result_file",
+        "fields",
+        "units",
+        "visual_encoding"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "rendering_route": {
+                "const": "academic"
+              }
+            }
+          },
+          "then": {
+            "if": {
+              "required": [
+                "source_skill"
+              ],
+              "properties": {
+                "source_skill": {
+                  "const": "modelviz-skill"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "template_id",
+                "source_skill"
+              ]
+            },
+            "else": {
+              "required": [
+                "asset_directory",
+                "asset_mode"
+              ]
+            }
+          },
+          "else": {
+            "required": [
+              "rendering_route",
+              "content_kind",
+              "route_reason"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "panel_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*$"
+        },
+        "rendering_route": {
+          "enum": [
+            "academic",
+            "native_media",
+            "domain_render",
+            "structure"
+          ]
+        },
+        "content_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "route_reason": {
+          "type": "string",
+          "minLength": 8
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "figure_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "figure_family": {
+          "enum": [
+            "mechanism",
+            "trajectory_spatial",
+            "trend_scan",
+            "comparison_ranking",
+            "prediction_diagnostic",
+            "classification_clustering",
+            "optimization_decision",
+            "distribution_uncertainty",
+            "relationship_correlation",
+            "heatmap_surface",
+            "flow_structure",
+            "native_image",
+            "domain_spatial",
+            "domain_signal",
+            "domain_network"
+          ]
+        },
+        "result_file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "units": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "visual_encoding": {
+          "type": "string",
+          "minLength": 1
+        },
+        "asset_directory": {
+          "type": "string",
+          "minLength": 1
+        },
+        "asset_mode": {
+          "enum": [
+            "native_run",
+            "visual_adapt",
+            "cross_type_inherit"
+          ]
+        },
+        "source_skill": {
+          "enum": [
+            "academic-figure-skill",
+            "modelviz-skill"
+          ]
+        },
+        "template_id": {
+          "type": "string"
+        },
+        "chart_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chart_families": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "heatmap",
+              "bar",
+              "line",
+              "scatter",
+              "box",
+              "violin",
+              "density",
+              "histogram",
+              "ecdf",
+              "surface",
+              "contour",
+              "trajectory",
+              "ribbon",
+              "waterfall",
+              "forest",
+              "radar",
+              "pie",
+              "area",
+              "hexbin",
+              "network",
+              "sankey",
+              "venn",
+              "upset",
+              "ternary",
+              "rose",
+              "gantt",
+              "taylor",
+              "biplot",
+              "bubble",
+              "qq"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "chart_review": {
+          "type": "string"
+        },
+        "selected_candidate_id": {
+          "type": "string"
+        },
+        "comparison_group": {
+          "type": "string"
+        },
+        "omitted_chart_families": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "chart_family",
+              "reason"
+            ],
+            "properties": {
+              "chart_family": {
+                "enum": [
+                  "heatmap",
+                  "bar",
+                  "line",
+                  "scatter",
+                  "box",
+                  "violin",
+                  "density",
+                  "histogram",
+                  "ecdf",
+                  "surface",
+                  "contour",
+                  "trajectory",
+                  "ribbon",
+                  "waterfall",
+                  "forest",
+                  "radar",
+                  "pie",
+                  "area",
+                  "hexbin",
+                  "network",
+                  "sankey",
+                  "venn",
+                  "upset",
+                  "ternary",
+                  "rose",
+                  "gantt",
+                  "taylor",
+                  "biplot",
+                  "bubble",
+                  "qq"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 12
+              }
+            }
+          }
+        }
+      }
+    },
+    "paper_link": {
+      "type": "object",
+      "required": [
+        "chapter",
+        "label",
+        "caption",
+        "reference_context"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "chapter": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string",
+          "pattern": "^fig:"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "reference_context": {
+          "type": "string"
+        }
+      }
+    },
+    "figure": {
+      "type": "object",
+      "required": [
+        "figure_id",
+        "scope",
+        "scientific_question",
+        "claim_ids",
+        "evidence_ids",
+        "archetype",
+        "layout",
+        "hero_panel",
+        "panels",
+        "script",
+        "outputs",
+        "statistics_report",
+        "qa_report",
+        "paper",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "figure_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "count_role": {
+          "enum": [
+            "independent_science",
+            "illustration"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scientific_question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "archetype": {
+          "enum": [
+            "quantitative_grid",
+            "schematic_led",
+            "image_plate_quant",
+            "asymmetric_mixed"
+          ]
+        },
+        "layout": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hero_panel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "panels": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/panel"
+          }
+        },
+        "script": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outputs": {
+          "type": "object",
+          "required": [
+            "preview"
+          ],
+          "anyOf": [
+            {
+              "required": [
+                "vector"
+              ]
+            },
+            {
+              "required": [
+                "primary"
+              ]
+            }
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "vector": {
+              "type": "string",
+              "pattern": "\\.(pdf|svg)$"
+            },
+            "primary": {
+              "type": "string",
+              "pattern": "\\.(png|jpg|jpeg|pdf|svg)$"
+            },
+            "preview": {
+              "type": "string",
+              "pattern": "\\.png$"
+            }
+          }
+        },
+        "statistics_report": {
+          "type": "string",
+          "minLength": 1
+        },
+        "qa_report": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paper": {
+          "$ref": "#/$defs/paper_link"
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "data_ready",
+            "rendered",
+            "qa_pass",
+            "incomplete"
+          ]
+        },
+        "selection": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "figure_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "evidence": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "minProperties": 1
+            },
+            "source_checks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "source_skill": {
+                    "enum": [
+                      "academic-figure-skill",
+                      "modelviz-skill"
+                    ]
+                  },
+                  "candidate_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 0
+                  },
+                  "limitation": {
+                    "type": "string"
+                  },
+                  "observation": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "source_skill",
+                  "candidate_ids",
+                  "limitation",
+                  "observation"
+                ]
+              },
+              "minItems": 2
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "candidate_id": {
+                    "type": "string"
+                  },
+                  "source_skill": {
+                    "enum": [
+                      "academic-figure-skill",
+                      "modelviz-skill"
+                    ]
+                  },
+                  "reference_id": {
+                    "type": "string"
+                  },
+                  "chart_families": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "heatmap",
+                        "bar",
+                        "line",
+                        "scatter",
+                        "box",
+                        "violin",
+                        "density",
+                        "histogram",
+                        "ecdf",
+                        "surface",
+                        "contour",
+                        "trajectory",
+                        "ribbon",
+                        "waterfall",
+                        "forest",
+                        "radar",
+                        "pie",
+                        "area",
+                        "hexbin",
+                        "network",
+                        "sankey",
+                        "venn",
+                        "upset",
+                        "ternary",
+                        "rose",
+                        "gantt",
+                        "taylor",
+                        "biplot",
+                        "bubble",
+                        "qq"
+                      ]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                  },
+                  "dimension": {
+                    "enum": [
+                      "2d",
+                      "3d"
+                    ]
+                  },
+                  "suitable": {
+                    "type": "boolean"
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 12
+                  }
+                },
+                "required": [
+                  "candidate_id",
+                  "source_skill",
+                  "reference_id",
+                  "chart_families",
+                  "dimension",
+                  "suitable",
+                  "reason"
+                ]
+              },
+              "minItems": 1
+            },
+            "limited_candidates_reason": {
+              "type": "string"
+            },
+            "three_d": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "applicable": {
+                  "type": "boolean"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "disadvantage": {
+                  "type": "string"
+                },
+                "axes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "field": {
+                        "type": "string"
+                      },
+                      "unit": {
+                        "type": "string"
+                      },
+                      "meaning": {
+                        "type": "string"
+                      },
+                      "result_file": {
+                        "type": "string"
+                      },
+                      "range": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "field",
+                      "unit",
+                      "meaning",
+                      "result_file",
+                      "range"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "view": {
+                  "type": "string"
+                },
+                "occlusion": {
+                  "type": "string"
+                },
+                "projection": {
+                  "type": "string"
+                },
+                "quantitative_basis": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "applicable",
+                "reason",
+                "disadvantage",
+                "axes",
+                "view",
+                "occlusion",
+                "projection",
+                "quantitative_basis"
+              ]
+            },
+            "repetition_exceptions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "chart_family": {
+                    "enum": [
+                      "heatmap",
+                      "bar",
+                      "line",
+                      "scatter",
+                      "box",
+                      "violin",
+                      "density",
+                      "histogram",
+                      "ecdf",
+                      "surface",
+                      "contour",
+                      "trajectory",
+                      "ribbon",
+                      "waterfall",
+                      "forest",
+                      "radar",
+                      "pie",
+                      "area",
+                      "hexbin",
+                      "network",
+                      "sankey",
+                      "venn",
+                      "upset",
+                      "ternary",
+                      "rose",
+                      "gantt",
+                      "taylor",
+                      "biplot",
+                      "bubble",
+                      "qq"
+                    ]
+                  },
+                  "portfolio_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "figure_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 3
+                  },
+                  "scientific_purpose": {
+                    "type": "string"
+                  },
+                  "alternatives": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "chart_family": {
+                          "enum": [
+                            "heatmap",
+                            "bar",
+                            "line",
+                            "scatter",
+                            "box",
+                            "violin",
+                            "density",
+                            "histogram",
+                            "ecdf",
+                            "surface",
+                            "contour",
+                            "trajectory",
+                            "ribbon",
+                            "waterfall",
+                            "forest",
+                            "radar",
+                            "pie",
+                            "area",
+                            "hexbin",
+                            "network",
+                            "sankey",
+                            "venn",
+                            "upset",
+                            "ternary",
+                            "rose",
+                            "gantt",
+                            "taylor",
+                            "biplot",
+                            "bubble",
+                            "qq"
+                          ]
+                        },
+                        "reason": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "chart_family",
+                        "reason"
+                      ]
+                    },
+                    "minItems": 1
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "minProperties": 1
+                  }
+                },
+                "required": [
+                  "chart_family",
+                  "portfolio_sha256",
+                  "figure_ids",
+                  "scientific_purpose",
+                  "alternatives",
+                  "reason",
+                  "evidence"
+                ]
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "figure_sha256",
+            "evidence",
+            "source_checks",
+            "candidates",
+            "limited_candidates_reason",
+            "three_d",
+            "repetition_exceptions"
+          ]
+        }
+      }
+    },
+    "schematic": {
+      "type": "object",
+      "required": [
+        "schematic_id",
+        "kind",
+        "scientific_question",
+        "source_refs",
+        "elements",
+        "tex_source",
+        "output_pdf",
+        "preview_png",
+        "paper",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schematic_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "mechanism_geometry",
+            "coordinate_transform",
+            "propagation_path",
+            "sampling_folding",
+            "physical_principle"
+          ]
+        },
+        "scientific_question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "elements": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "tex_source": {
+          "type": "string",
+          "pattern": "\\.tex$"
+        },
+        "output_pdf": {
+          "type": "string",
+          "pattern": "\\.pdf$"
+        },
+        "preview_png": {
+          "type": "string",
+          "pattern": "\\.png$"
+        },
+        "paper": {
+          "$ref": "#/$defs/paper_link"
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "rendered",
+            "qa_pass",
+            "incomplete"
+          ]
+        }
+      }
+    },
+    "problem": {
+      "type": "object",
+      "required": [
+        "problem_id",
+        "complexity",
+        "claims",
+        "evidence_matrix",
+        "figures",
+        "schematics",
+        "low_figure_exception"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "problem_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "complexity": {
+          "enum": [
+            "simple",
+            "standard",
+            "complex"
+          ]
+        },
+        "claims": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "claim_id",
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "claim_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "evidence_matrix": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "figures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/figure"
+          }
+        },
+        "schematics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/schematic"
+          }
+        },
+        "low_figure_exception": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "flowchart": {
+      "type": "object",
+      "required": [
+        "scope",
+        "needed",
+        "reason",
+        "plan_id",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "needed": {
+          "enum": [
+            "pending",
+            "yes",
+            "no"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "plan_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "planned",
+            "qa_pass",
+            "not_applicable",
+            "incomplete"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "1.2"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "drawing_preflight_path"
+        ]
+      }
+    }
+  ]
+}

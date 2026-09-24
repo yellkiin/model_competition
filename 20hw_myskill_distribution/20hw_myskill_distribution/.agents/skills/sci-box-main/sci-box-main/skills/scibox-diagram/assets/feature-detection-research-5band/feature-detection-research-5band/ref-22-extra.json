@@ -1,0 +1,43 @@
+{
+  "source_id": "ref-22",
+  "method": "least-squares circle fit to blue-gray contour pixels, excluding measured node rectangles",
+  "point_count": 350,
+  "center": [
+    345.6237639535479,
+    923.8256994088523
+  ],
+  "radius": 81.25988795544863,
+  "excluded_boxes": [
+    [
+      303,
+      831,
+      88,
+      42
+    ],
+    [
+      219,
+      881,
+      87,
+      42
+    ],
+    [
+      379,
+      881,
+      88,
+      42
+    ],
+    [
+      243,
+      949,
+      90,
+      45
+    ],
+    [
+      348,
+      949,
+      89,
+      45
+    ]
+  ],
+  "status": "measurement_only_not_visual_pass"
+}
