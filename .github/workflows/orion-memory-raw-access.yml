@@ -1,0 +1,53 @@
+name: ORION memory selected raw records
+on:
+  push:
+    branches: [orion/memory-input-access-20260925]
+    paths: ['.github/workflows/orion-memory-raw-access.yml']
+permissions:
+  contents: read
+jobs:
+  selected_records:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research_a_orion_anytime/team_results/day01/shard_0/final/team_day01_shard0_final.zip.part*
+            /research_a_orion_anytime/team_results/day01/shard_1/final/team_day01_shard1_final.zip.part*
+            /research_a_orion_anytime/team_results/day01/shard_0/final/TRANSFER_PARTS.json
+            /research_a_orion_anytime/team_results/day01/shard_1/final/ARCHIVE_PARTS.json
+      - name: Extract only eight selected cases without altering their records
+        shell: python
+        run: |
+          from pathlib import Path
+          import json, shutil, zipfile
+          root=Path.cwd(); out=root/'memory_selected_day01'; out.mkdir()
+          cases={f'case_{i:03d}' for i in (5,51,73,90,92,59,83,67)}
+          for shard, manifest_name in ((0,'TRANSFER_PARTS.json'),(1,'ARCHIVE_PARTS.json')):
+              src=root/f'research_a_orion_anytime/team_results/day01/shard_{shard}/final'
+              manifest=json.loads((src/manifest_name).read_text(encoding='utf-8-sig'))
+              archive=root/f'selected_source_{shard}.zip'
+              with archive.open('wb') as dest:
+                  for part in manifest['parts']:
+                      with (src/part['name']).open('rb') as inp: shutil.copyfileobj(inp,dest)
+              index=[]
+              with zipfile.ZipFile(archive) as z:
+                  for info in z.infolist():
+                      if info.is_dir() or not any(c in info.filename for c in cases): continue
+                      path=out/f'shard_{shard}'/info.filename
+                      if not path.resolve().is_relative_to(out.resolve()): raise ValueError('Invalid member')
+                      path.parent.mkdir(parents=True,exist_ok=True)
+                      with z.open(info) as inp, path.open('wb') as dest: shutil.copyfileobj(inp,dest)
+                      index.append({'member':info.filename,'bytes':info.file_size})
+              (out/f'shard_{shard}_index.json').write_text(json.dumps(index),encoding='utf8')
+              archive.unlink()
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-memory-selected-day01-raw
+          path: memory_selected_day01
+          retention-days: 3
+          if-no-files-found: error
