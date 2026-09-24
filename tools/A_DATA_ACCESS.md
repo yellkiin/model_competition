@@ -18,7 +18,19 @@
 
 指定仓库 `yellkiin/model_competition`、引用 `codex/a-data-plain-json-20260924`，然后按原目录读取 JSON。读取到的内容应该是包含 `tensors`、`ops`、`edges` 的对象，不再以 `version https://git-lfs.github.com/spec/v1` 开头。
 
-普通 Git 文件也可能超过连接器的单次内容长度限制。若工具只返回部分内容，应在可执行环境通过 Git 获取完整文件，不要把截断文本保存为输入，也不要自行编造或缩小图。读取权限与运行 Python 的能力是两项独立条件。
+远端复核发现第二层限制：当前连接器对 `case_051.json` 返回完整文件中的正常 JSON 文本，但大于 1 MiB 的 `case_016.json`、`case_014.json` 返回空正文。这是文件内容接口的大小限制，不是修复分支仍保存 LFS 指针。不要把空正文或截断文本保存为输入。
+
+若网页环境不能直接用 Git 下载，可以读取本分支的 `tools/a_input_payloads/MANIFEST.json`，按指定图对应的 `parts` 顺序取得普通文本分片，保存为相同相对路径，再读取 `tools/restore_a_inputs.py` 和 `tools/a_input_payloads/config.txt`。所有分片采用 gzip + base64，仅压缩传输，不重写 JSON；每个文本分片小于 1 MiB。将完整工具返回正文保存为文件，不要把 base64 手工抄写、截断或交给模型改写。支持工具编排的环境可直接把工具返回的 content 写入文件，不必在聊天中打印大段内容。
+
+取得清单、配置和所需分片后，在具有 Python 执行能力的环境运行：
+
+```text
+python tools/restore_a_inputs.py --payload-dir tools/a_input_payloads --output-dir inputs_A/data --cases 16 24 51
+```
+
+Windows 本机用 `D:\python\python.exe` 代替 `python`；网页执行环境使用已有 Python。不传 `--cases` 时还原全部 100 张图，需先取得全部分片。输出目录可以直接指定为原官方附件的 `data/`；已有真实文件若内容相同会跳过，若不同则拒绝覆盖。仅当需要把已有 LFS 指针替换成真实数据时加 `--replace-lfs-pointers`。脚本不联网、不安装依赖、不运行求解器，也不计算哈希或指纹；原官方配置随输入原样还原。
+
+读取权限与运行 Python 的能力是两项独立条件；没有代码执行能力的聊天只能读资料，不能声称已跑实验。
 
 ## 已有开发环境只取得真实输入
 
@@ -33,7 +45,7 @@ git restore --source=FETCH_HEAD --worktree -- "题目/A题/通用神经网络处
 
 ## 给三个研发 Agent 的补充提示词
 
-> A 题原 data/ 的全部 100 张图曾由 Git LFS 保存，网页读取到三行指针不是实际图。请从 yellkiin/model_competition 的 codex/a-data-plain-json-20260924 分支，按原路径读取 case_001.json 至 case_100.json；这批现已保存为普通 Git 文件。不要只读取 main 或旧结果分支。若有终端，可用上面的 fetch + restore 只取得 data/，保留你自己的研发分支与代码。确认取得完整 JSON 后继续原定差图对照；不要运行哈希、指纹、checksum、smoke、pytest、unittest、全仓审计或额外 benchmark，不改官方图、config 或评估器。
+> A 题输入读取问题已在 yellkiin/model_competition 的 codex/a-data-plain-json-20260924 分支修复。先读 tools/A_DATA_ACCESS.md。原路径 100 张图现为普通 Git 文件；小文件可直接读取，超过 1 MiB 的文件若返回空正文，请改取 tools/a_input_payloads/MANIFEST.json 中对应图的完整文本分片，配合 tools/restore_a_inputs.py 无损还原到独立输入目录；配置用同目录 config.txt。可以用 Git 的环境优先通过 fetch + restore 直接取得原 data/，保留自己的研发分支与代码。不要只读取 main 或旧结果分支。确认取得完整 JSON 后继续原定差图对照；不要运行哈希、指纹、checksum、smoke、pytest、unittest、全仓审计或额外 benchmark，不改官方图、config 或评估器。
 
 ## AI 辅助与验证记录
 
