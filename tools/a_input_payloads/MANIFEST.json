@@ -1,0 +1,877 @@
+{
+  "schema_version": 1,
+  "encoding": "gzip+base64",
+  "source_revision": "93676535f70756dd485b08cc81645f5e8a38694a",
+  "official_data_path": "题目/A题/通用神经网络处理器下的多核调度问题  附件/data",
+  "graph_count": 100,
+  "configuration": {
+    "filename": "config.txt",
+    "original_bytes": 341
+  },
+  "cases": {
+    "case_001": {
+      "filename": "case_001.json",
+      "original_bytes": 353884,
+      "base64_characters": 28884,
+      "parts": [
+        "case_001.json.gz.b64.part001"
+      ]
+    },
+    "case_002": {
+      "filename": "case_002.json",
+      "original_bytes": 784064,
+      "base64_characters": 64252,
+      "parts": [
+        "case_002.json.gz.b64.part001"
+      ]
+    },
+    "case_003": {
+      "filename": "case_003.json",
+      "original_bytes": 4869895,
+      "base64_characters": 396048,
+      "parts": [
+        "case_003.json.gz.b64.part001",
+        "case_003.json.gz.b64.part002",
+        "case_003.json.gz.b64.part003"
+      ]
+    },
+    "case_004": {
+      "filename": "case_004.json",
+      "original_bytes": 364607,
+      "base64_characters": 30888,
+      "parts": [
+        "case_004.json.gz.b64.part001"
+      ]
+    },
+    "case_005": {
+      "filename": "case_005.json",
+      "original_bytes": 1495150,
+      "base64_characters": 126704,
+      "parts": [
+        "case_005.json.gz.b64.part001"
+      ]
+    },
+    "case_006": {
+      "filename": "case_006.json",
+      "original_bytes": 274573,
+      "base64_characters": 25520,
+      "parts": [
+        "case_006.json.gz.b64.part001"
+      ]
+    },
+    "case_007": {
+      "filename": "case_007.json",
+      "original_bytes": 1832496,
+      "base64_characters": 150580,
+      "parts": [
+        "case_007.json.gz.b64.part001"
+      ]
+    },
+    "case_008": {
+      "filename": "case_008.json",
+      "original_bytes": 509065,
+      "base64_characters": 42984,
+      "parts": [
+        "case_008.json.gz.b64.part001"
+      ]
+    },
+    "case_009": {
+      "filename": "case_009.json",
+      "original_bytes": 2146447,
+      "base64_characters": 185756,
+      "parts": [
+        "case_009.json.gz.b64.part001"
+      ]
+    },
+    "case_010": {
+      "filename": "case_010.json",
+      "original_bytes": 256464,
+      "base64_characters": 23972,
+      "parts": [
+        "case_010.json.gz.b64.part001"
+      ]
+    },
+    "case_011": {
+      "filename": "case_011.json",
+      "original_bytes": 332344,
+      "base64_characters": 28320,
+      "parts": [
+        "case_011.json.gz.b64.part001"
+      ]
+    },
+    "case_012": {
+      "filename": "case_012.json",
+      "original_bytes": 430544,
+      "base64_characters": 39784,
+      "parts": [
+        "case_012.json.gz.b64.part001"
+      ]
+    },
+    "case_013": {
+      "filename": "case_013.json",
+      "original_bytes": 1197680,
+      "base64_characters": 96416,
+      "parts": [
+        "case_013.json.gz.b64.part001"
+      ]
+    },
+    "case_014": {
+      "filename": "case_014.json",
+      "original_bytes": 14404567,
+      "base64_characters": 1126836,
+      "parts": [
+        "case_014.json.gz.b64.part001",
+        "case_014.json.gz.b64.part002",
+        "case_014.json.gz.b64.part003",
+        "case_014.json.gz.b64.part004",
+        "case_014.json.gz.b64.part005",
+        "case_014.json.gz.b64.part006"
+      ]
+    },
+    "case_015": {
+      "filename": "case_015.json",
+      "original_bytes": 423712,
+      "base64_characters": 39172,
+      "parts": [
+        "case_015.json.gz.b64.part001"
+      ]
+    },
+    "case_016": {
+      "filename": "case_016.json",
+      "original_bytes": 6110151,
+      "base64_characters": 462908,
+      "parts": [
+        "case_016.json.gz.b64.part001",
+        "case_016.json.gz.b64.part002",
+        "case_016.json.gz.b64.part003"
+      ]
+    },
+    "case_017": {
+      "filename": "case_017.json",
+      "original_bytes": 576372,
+      "base64_characters": 52408,
+      "parts": [
+        "case_017.json.gz.b64.part001"
+      ]
+    },
+    "case_018": {
+      "filename": "case_018.json",
+      "original_bytes": 1128892,
+      "base64_characters": 91908,
+      "parts": [
+        "case_018.json.gz.b64.part001"
+      ]
+    },
+    "case_019": {
+      "filename": "case_019.json",
+      "original_bytes": 247397,
+      "base64_characters": 22840,
+      "parts": [
+        "case_019.json.gz.b64.part001"
+      ]
+    },
+    "case_020": {
+      "filename": "case_020.json",
+      "original_bytes": 2576402,
+      "base64_characters": 199740,
+      "parts": [
+        "case_020.json.gz.b64.part001",
+        "case_020.json.gz.b64.part002"
+      ]
+    },
+    "case_021": {
+      "filename": "case_021.json",
+      "original_bytes": 1694570,
+      "base64_characters": 134296,
+      "parts": [
+        "case_021.json.gz.b64.part001"
+      ]
+    },
+    "case_022": {
+      "filename": "case_022.json",
+      "original_bytes": 501930,
+      "base64_characters": 45156,
+      "parts": [
+        "case_022.json.gz.b64.part001"
+      ]
+    },
+    "case_023": {
+      "filename": "case_023.json",
+      "original_bytes": 388009,
+      "base64_characters": 35076,
+      "parts": [
+        "case_023.json.gz.b64.part001"
+      ]
+    },
+    "case_024": {
+      "filename": "case_024.json",
+      "original_bytes": 2014832,
+      "base64_characters": 158776,
+      "parts": [
+        "case_024.json.gz.b64.part001"
+      ]
+    },
+    "case_025": {
+      "filename": "case_025.json",
+      "original_bytes": 8864067,
+      "base64_characters": 695092,
+      "parts": [
+        "case_025.json.gz.b64.part001",
+        "case_025.json.gz.b64.part002",
+        "case_025.json.gz.b64.part003",
+        "case_025.json.gz.b64.part004"
+      ]
+    },
+    "case_026": {
+      "filename": "case_026.json",
+      "original_bytes": 249536,
+      "base64_characters": 23164,
+      "parts": [
+        "case_026.json.gz.b64.part001"
+      ]
+    },
+    "case_027": {
+      "filename": "case_027.json",
+      "original_bytes": 687076,
+      "base64_characters": 56900,
+      "parts": [
+        "case_027.json.gz.b64.part001"
+      ]
+    },
+    "case_028": {
+      "filename": "case_028.json",
+      "original_bytes": 7081503,
+      "base64_characters": 583068,
+      "parts": [
+        "case_028.json.gz.b64.part001",
+        "case_028.json.gz.b64.part002",
+        "case_028.json.gz.b64.part003"
+      ]
+    },
+    "case_029": {
+      "filename": "case_029.json",
+      "original_bytes": 392684,
+      "base64_characters": 34320,
+      "parts": [
+        "case_029.json.gz.b64.part001"
+      ]
+    },
+    "case_030": {
+      "filename": "case_030.json",
+      "original_bytes": 4138350,
+      "base64_characters": 323920,
+      "parts": [
+        "case_030.json.gz.b64.part001",
+        "case_030.json.gz.b64.part002"
+      ]
+    },
+    "case_031": {
+      "filename": "case_031.json",
+      "original_bytes": 2487489,
+      "base64_characters": 209796,
+      "parts": [
+        "case_031.json.gz.b64.part001",
+        "case_031.json.gz.b64.part002"
+      ]
+    },
+    "case_032": {
+      "filename": "case_032.json",
+      "original_bytes": 335704,
+      "base64_characters": 31024,
+      "parts": [
+        "case_032.json.gz.b64.part001"
+      ]
+    },
+    "case_033": {
+      "filename": "case_033.json",
+      "original_bytes": 1414590,
+      "base64_characters": 117044,
+      "parts": [
+        "case_033.json.gz.b64.part001"
+      ]
+    },
+    "case_034": {
+      "filename": "case_034.json",
+      "original_bytes": 1551151,
+      "base64_characters": 130668,
+      "parts": [
+        "case_034.json.gz.b64.part001"
+      ]
+    },
+    "case_035": {
+      "filename": "case_035.json",
+      "original_bytes": 1397316,
+      "base64_characters": 121096,
+      "parts": [
+        "case_035.json.gz.b64.part001"
+      ]
+    },
+    "case_036": {
+      "filename": "case_036.json",
+      "original_bytes": 1425385,
+      "base64_characters": 108768,
+      "parts": [
+        "case_036.json.gz.b64.part001"
+      ]
+    },
+    "case_037": {
+      "filename": "case_037.json",
+      "original_bytes": 369696,
+      "base64_characters": 31260,
+      "parts": [
+        "case_037.json.gz.b64.part001"
+      ]
+    },
+    "case_038": {
+      "filename": "case_038.json",
+      "original_bytes": 2552691,
+      "base64_characters": 206280,
+      "parts": [
+        "case_038.json.gz.b64.part001",
+        "case_038.json.gz.b64.part002"
+      ]
+    },
+    "case_039": {
+      "filename": "case_039.json",
+      "original_bytes": 2265714,
+      "base64_characters": 182520,
+      "parts": [
+        "case_039.json.gz.b64.part001"
+      ]
+    },
+    "case_040": {
+      "filename": "case_040.json",
+      "original_bytes": 1122765,
+      "base64_characters": 97580,
+      "parts": [
+        "case_040.json.gz.b64.part001"
+      ]
+    },
+    "case_041": {
+      "filename": "case_041.json",
+      "original_bytes": 6768052,
+      "base64_characters": 535196,
+      "parts": [
+        "case_041.json.gz.b64.part001",
+        "case_041.json.gz.b64.part002",
+        "case_041.json.gz.b64.part003"
+      ]
+    },
+    "case_042": {
+      "filename": "case_042.json",
+      "original_bytes": 1986945,
+      "base64_characters": 160536,
+      "parts": [
+        "case_042.json.gz.b64.part001"
+      ]
+    },
+    "case_043": {
+      "filename": "case_043.json",
+      "original_bytes": 3488481,
+      "base64_characters": 293280,
+      "parts": [
+        "case_043.json.gz.b64.part001",
+        "case_043.json.gz.b64.part002"
+      ]
+    },
+    "case_044": {
+      "filename": "case_044.json",
+      "original_bytes": 502310,
+      "base64_characters": 43912,
+      "parts": [
+        "case_044.json.gz.b64.part001"
+      ]
+    },
+    "case_045": {
+      "filename": "case_045.json",
+      "original_bytes": 604287,
+      "base64_characters": 49632,
+      "parts": [
+        "case_045.json.gz.b64.part001"
+      ]
+    },
+    "case_046": {
+      "filename": "case_046.json",
+      "original_bytes": 370394,
+      "base64_characters": 32260,
+      "parts": [
+        "case_046.json.gz.b64.part001"
+      ]
+    },
+    "case_047": {
+      "filename": "case_047.json",
+      "original_bytes": 4991726,
+      "base64_characters": 419704,
+      "parts": [
+        "case_047.json.gz.b64.part001",
+        "case_047.json.gz.b64.part002",
+        "case_047.json.gz.b64.part003"
+      ]
+    },
+    "case_048": {
+      "filename": "case_048.json",
+      "original_bytes": 679300,
+      "base64_characters": 60208,
+      "parts": [
+        "case_048.json.gz.b64.part001"
+      ]
+    },
+    "case_049": {
+      "filename": "case_049.json",
+      "original_bytes": 1482431,
+      "base64_characters": 128236,
+      "parts": [
+        "case_049.json.gz.b64.part001"
+      ]
+    },
+    "case_050": {
+      "filename": "case_050.json",
+      "original_bytes": 1585294,
+      "base64_characters": 138500,
+      "parts": [
+        "case_050.json.gz.b64.part001"
+      ]
+    },
+    "case_051": {
+      "filename": "case_051.json",
+      "original_bytes": 479298,
+      "base64_characters": 39968,
+      "parts": [
+        "case_051.json.gz.b64.part001"
+      ]
+    },
+    "case_052": {
+      "filename": "case_052.json",
+      "original_bytes": 447395,
+      "base64_characters": 40924,
+      "parts": [
+        "case_052.json.gz.b64.part001"
+      ]
+    },
+    "case_053": {
+      "filename": "case_053.json",
+      "original_bytes": 4295523,
+      "base64_characters": 362356,
+      "parts": [
+        "case_053.json.gz.b64.part001",
+        "case_053.json.gz.b64.part002"
+      ]
+    },
+    "case_054": {
+      "filename": "case_054.json",
+      "original_bytes": 5766618,
+      "base64_characters": 474076,
+      "parts": [
+        "case_054.json.gz.b64.part001",
+        "case_054.json.gz.b64.part002",
+        "case_054.json.gz.b64.part003"
+      ]
+    },
+    "case_055": {
+      "filename": "case_055.json",
+      "original_bytes": 472661,
+      "base64_characters": 42968,
+      "parts": [
+        "case_055.json.gz.b64.part001"
+      ]
+    },
+    "case_056": {
+      "filename": "case_056.json",
+      "original_bytes": 2816837,
+      "base64_characters": 232628,
+      "parts": [
+        "case_056.json.gz.b64.part001",
+        "case_056.json.gz.b64.part002"
+      ]
+    },
+    "case_057": {
+      "filename": "case_057.json",
+      "original_bytes": 342707,
+      "base64_characters": 31360,
+      "parts": [
+        "case_057.json.gz.b64.part001"
+      ]
+    },
+    "case_058": {
+      "filename": "case_058.json",
+      "original_bytes": 6812100,
+      "base64_characters": 533516,
+      "parts": [
+        "case_058.json.gz.b64.part001",
+        "case_058.json.gz.b64.part002",
+        "case_058.json.gz.b64.part003"
+      ]
+    },
+    "case_059": {
+      "filename": "case_059.json",
+      "original_bytes": 1199740,
+      "base64_characters": 98308,
+      "parts": [
+        "case_059.json.gz.b64.part001"
+      ]
+    },
+    "case_060": {
+      "filename": "case_060.json",
+      "original_bytes": 2236508,
+      "base64_characters": 184672,
+      "parts": [
+        "case_060.json.gz.b64.part001"
+      ]
+    },
+    "case_061": {
+      "filename": "case_061.json",
+      "original_bytes": 479208,
+      "base64_characters": 42984,
+      "parts": [
+        "case_061.json.gz.b64.part001"
+      ]
+    },
+    "case_062": {
+      "filename": "case_062.json",
+      "original_bytes": 8651962,
+      "base64_characters": 651876,
+      "parts": [
+        "case_062.json.gz.b64.part001",
+        "case_062.json.gz.b64.part002",
+        "case_062.json.gz.b64.part003",
+        "case_062.json.gz.b64.part004"
+      ]
+    },
+    "case_063": {
+      "filename": "case_063.json",
+      "original_bytes": 3222074,
+      "base64_characters": 249628,
+      "parts": [
+        "case_063.json.gz.b64.part001",
+        "case_063.json.gz.b64.part002"
+      ]
+    },
+    "case_064": {
+      "filename": "case_064.json",
+      "original_bytes": 343656,
+      "base64_characters": 30692,
+      "parts": [
+        "case_064.json.gz.b64.part001"
+      ]
+    },
+    "case_065": {
+      "filename": "case_065.json",
+      "original_bytes": 297029,
+      "base64_characters": 27604,
+      "parts": [
+        "case_065.json.gz.b64.part001"
+      ]
+    },
+    "case_066": {
+      "filename": "case_066.json",
+      "original_bytes": 2196525,
+      "base64_characters": 186416,
+      "parts": [
+        "case_066.json.gz.b64.part001"
+      ]
+    },
+    "case_067": {
+      "filename": "case_067.json",
+      "original_bytes": 3177332,
+      "base64_characters": 258804,
+      "parts": [
+        "case_067.json.gz.b64.part001",
+        "case_067.json.gz.b64.part002"
+      ]
+    },
+    "case_068": {
+      "filename": "case_068.json",
+      "original_bytes": 2080289,
+      "base64_characters": 181248,
+      "parts": [
+        "case_068.json.gz.b64.part001"
+      ]
+    },
+    "case_069": {
+      "filename": "case_069.json",
+      "original_bytes": 379073,
+      "base64_characters": 33568,
+      "parts": [
+        "case_069.json.gz.b64.part001"
+      ]
+    },
+    "case_070": {
+      "filename": "case_070.json",
+      "original_bytes": 466830,
+      "base64_characters": 42372,
+      "parts": [
+        "case_070.json.gz.b64.part001"
+      ]
+    },
+    "case_071": {
+      "filename": "case_071.json",
+      "original_bytes": 275828,
+      "base64_characters": 24680,
+      "parts": [
+        "case_071.json.gz.b64.part001"
+      ]
+    },
+    "case_072": {
+      "filename": "case_072.json",
+      "original_bytes": 11723255,
+      "base64_characters": 928596,
+      "parts": [
+        "case_072.json.gz.b64.part001",
+        "case_072.json.gz.b64.part002",
+        "case_072.json.gz.b64.part003",
+        "case_072.json.gz.b64.part004",
+        "case_072.json.gz.b64.part005"
+      ]
+    },
+    "case_073": {
+      "filename": "case_073.json",
+      "original_bytes": 1746207,
+      "base64_characters": 146408,
+      "parts": [
+        "case_073.json.gz.b64.part001"
+      ]
+    },
+    "case_074": {
+      "filename": "case_074.json",
+      "original_bytes": 1480814,
+      "base64_characters": 121720,
+      "parts": [
+        "case_074.json.gz.b64.part001"
+      ]
+    },
+    "case_075": {
+      "filename": "case_075.json",
+      "original_bytes": 2745416,
+      "base64_characters": 236612,
+      "parts": [
+        "case_075.json.gz.b64.part001",
+        "case_075.json.gz.b64.part002"
+      ]
+    },
+    "case_076": {
+      "filename": "case_076.json",
+      "original_bytes": 13180582,
+      "base64_characters": 1041256,
+      "parts": [
+        "case_076.json.gz.b64.part001",
+        "case_076.json.gz.b64.part002",
+        "case_076.json.gz.b64.part003",
+        "case_076.json.gz.b64.part004",
+        "case_076.json.gz.b64.part005",
+        "case_076.json.gz.b64.part006"
+      ]
+    },
+    "case_077": {
+      "filename": "case_077.json",
+      "original_bytes": 1733744,
+      "base64_characters": 148824,
+      "parts": [
+        "case_077.json.gz.b64.part001"
+      ]
+    },
+    "case_078": {
+      "filename": "case_078.json",
+      "original_bytes": 385171,
+      "base64_characters": 33692,
+      "parts": [
+        "case_078.json.gz.b64.part001"
+      ]
+    },
+    "case_079": {
+      "filename": "case_079.json",
+      "original_bytes": 7708587,
+      "base64_characters": 603884,
+      "parts": [
+        "case_079.json.gz.b64.part001",
+        "case_079.json.gz.b64.part002",
+        "case_079.json.gz.b64.part003",
+        "case_079.json.gz.b64.part004"
+      ]
+    },
+    "case_080": {
+      "filename": "case_080.json",
+      "original_bytes": 528981,
+      "base64_characters": 44784,
+      "parts": [
+        "case_080.json.gz.b64.part001"
+      ]
+    },
+    "case_081": {
+      "filename": "case_081.json",
+      "original_bytes": 1601132,
+      "base64_characters": 136532,
+      "parts": [
+        "case_081.json.gz.b64.part001"
+      ]
+    },
+    "case_082": {
+      "filename": "case_082.json",
+      "original_bytes": 1498341,
+      "base64_characters": 126812,
+      "parts": [
+        "case_082.json.gz.b64.part001"
+      ]
+    },
+    "case_083": {
+      "filename": "case_083.json",
+      "original_bytes": 1389087,
+      "base64_characters": 115780,
+      "parts": [
+        "case_083.json.gz.b64.part001"
+      ]
+    },
+    "case_084": {
+      "filename": "case_084.json",
+      "original_bytes": 5110179,
+      "base64_characters": 394056,
+      "parts": [
+        "case_084.json.gz.b64.part001",
+        "case_084.json.gz.b64.part002",
+        "case_084.json.gz.b64.part003"
+      ]
+    },
+    "case_085": {
+      "filename": "case_085.json",
+      "original_bytes": 7159265,
+      "base64_characters": 586228,
+      "parts": [
+        "case_085.json.gz.b64.part001",
+        "case_085.json.gz.b64.part002",
+        "case_085.json.gz.b64.part003"
+      ]
+    },
+    "case_086": {
+      "filename": "case_086.json",
+      "original_bytes": 1908009,
+      "base64_characters": 162332,
+      "parts": [
+        "case_086.json.gz.b64.part001"
+      ]
+    },
+    "case_087": {
+      "filename": "case_087.json",
+      "original_bytes": 10397401,
+      "base64_characters": 857912,
+      "parts": [
+        "case_087.json.gz.b64.part001",
+        "case_087.json.gz.b64.part002",
+        "case_087.json.gz.b64.part003",
+        "case_087.json.gz.b64.part004",
+        "case_087.json.gz.b64.part005"
+      ]
+    },
+    "case_088": {
+      "filename": "case_088.json",
+      "original_bytes": 1190948,
+      "base64_characters": 104260,
+      "parts": [
+        "case_088.json.gz.b64.part001"
+      ]
+    },
+    "case_089": {
+      "filename": "case_089.json",
+      "original_bytes": 1848665,
+      "base64_characters": 156040,
+      "parts": [
+        "case_089.json.gz.b64.part001"
+      ]
+    },
+    "case_090": {
+      "filename": "case_090.json",
+      "original_bytes": 613299,
+      "base64_characters": 53324,
+      "parts": [
+        "case_090.json.gz.b64.part001"
+      ]
+    },
+    "case_091": {
+      "filename": "case_091.json",
+      "original_bytes": 12638901,
+      "base64_characters": 988220,
+      "parts": [
+        "case_091.json.gz.b64.part001",
+        "case_091.json.gz.b64.part002",
+        "case_091.json.gz.b64.part003",
+        "case_091.json.gz.b64.part004",
+        "case_091.json.gz.b64.part005",
+        "case_091.json.gz.b64.part006"
+      ]
+    },
+    "case_092": {
+      "filename": "case_092.json",
+      "original_bytes": 6333836,
+      "base64_characters": 515604,
+      "parts": [
+        "case_092.json.gz.b64.part001",
+        "case_092.json.gz.b64.part002",
+        "case_092.json.gz.b64.part003"
+      ]
+    },
+    "case_093": {
+      "filename": "case_093.json",
+      "original_bytes": 334666,
+      "base64_characters": 28236,
+      "parts": [
+        "case_093.json.gz.b64.part001"
+      ]
+    },
+    "case_094": {
+      "filename": "case_094.json",
+      "original_bytes": 257869,
+      "base64_characters": 23736,
+      "parts": [
+        "case_094.json.gz.b64.part001"
+      ]
+    },
+    "case_095": {
+      "filename": "case_095.json",
+      "original_bytes": 2189857,
+      "base64_characters": 171700,
+      "parts": [
+        "case_095.json.gz.b64.part001"
+      ]
+    },
+    "case_096": {
+      "filename": "case_096.json",
+      "original_bytes": 434276,
+      "base64_characters": 39592,
+      "parts": [
+        "case_096.json.gz.b64.part001"
+      ]
+    },
+    "case_097": {
+      "filename": "case_097.json",
+      "original_bytes": 2859868,
+      "base64_characters": 224772,
+      "parts": [
+        "case_097.json.gz.b64.part001",
+        "case_097.json.gz.b64.part002"
+      ]
+    },
+    "case_098": {
+      "filename": "case_098.json",
+      "original_bytes": 494504,
+      "base64_characters": 44360,
+      "parts": [
+        "case_098.json.gz.b64.part001"
+      ]
+    },
+    "case_099": {
+      "filename": "case_099.json",
+      "original_bytes": 2613016,
+      "base64_characters": 210816,
+      "parts": [
+        "case_099.json.gz.b64.part001",
+        "case_099.json.gz.b64.part002"
+      ]
+    },
+    "case_100": {
+      "filename": "case_100.json",
+      "original_bytes": 537404,
+      "base64_characters": 48636,
+      "parts": [
+        "case_100.json.gz.b64.part001"
+      ]
+    }
+  }
+}

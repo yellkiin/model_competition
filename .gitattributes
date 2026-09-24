@@ -6,7 +6,8 @@
 /题目/**/*.tif filter=lfs diff=lfs merge=lfs -text
 /题目/**/*.parquet filter=lfs diff=lfs merge=lfs -text
 /题目/**/*.jsonl filter=lfs diff=lfs merge=lfs -text
-/题目/A题/**/data/*.json filter=lfs diff=lfs merge=lfs -text
+# A graph JSON files must be directly readable by GitHub/cloud agents.
+/题目/A题/**/data/*.json -filter diff merge -text
 
 /调研/** text eol=lf
 /tools/** text eol=lf
