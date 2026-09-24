@@ -1,0 +1,331 @@
+{
+  "settings": {
+    "version": "aster-v3-release-affinity-4.1",
+    "preset": "best5-8eval-90s",
+    "cases": [
+      3,
+      7,
+      12,
+      20,
+      28,
+      35,
+      47,
+      56,
+      65,
+      76,
+      88,
+      94
+    ],
+    "cores": [
+      5
+    ],
+    "questions": [
+      1,
+      2,
+      3
+    ],
+    "mode": "full",
+    "budget": 8,
+    "job_seconds": 90.0,
+    "eval_seconds": 45.0,
+    "baseline_seconds": 120.0,
+    "gap_tolerance": 0.03,
+    "shards": 1,
+    "shard": 0,
+    "official_dir": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\题目\\A题\\通用神经网络处理器下的多核调度问题  附件",
+    "config_text": "# 竞赛结果统一采用以下固定评估值，不得修改。\n\n[capacity]\nL1 524288\nUB 131072\n\n[bandwidth]\nbandwidth 60\n\n[multicore_scene_a]\ntask_cross_core_wait_cycles 1000\ntask_same_core_wait_cycles 100\n\n[multicore_scene_b]\ncross_core_copy_delay_cycles 500\n\n[problem_3]\ncache_capacity_bytes 1048576\ncache_bandwidth_bytes_per_cycle 250\n"
+  },
+  "jobs": [
+    {
+      "id": "case_003_q1_n5",
+      "case": 3,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_003_q2_n5",
+      "case": 3,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_003_q3_n5",
+      "case": 3,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_003_q0_n1",
+      "case": 3,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_007_q1_n5",
+      "case": 7,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_007_q2_n5",
+      "case": 7,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_007_q3_n5",
+      "case": 7,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_007_q0_n1",
+      "case": 7,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_012_q1_n5",
+      "case": 12,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_012_q2_n5",
+      "case": 12,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_012_q3_n5",
+      "case": 12,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_012_q0_n1",
+      "case": 12,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_020_q1_n5",
+      "case": 20,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_020_q2_n5",
+      "case": 20,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_020_q3_n5",
+      "case": 20,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_020_q0_n1",
+      "case": 20,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_028_q1_n5",
+      "case": 28,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_028_q2_n5",
+      "case": 28,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_028_q3_n5",
+      "case": 28,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_028_q0_n1",
+      "case": 28,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_035_q1_n5",
+      "case": 35,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_035_q2_n5",
+      "case": 35,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_035_q3_n5",
+      "case": 35,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_035_q0_n1",
+      "case": 35,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_047_q1_n5",
+      "case": 47,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_047_q2_n5",
+      "case": 47,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_047_q3_n5",
+      "case": 47,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_047_q0_n1",
+      "case": 47,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_056_q1_n5",
+      "case": 56,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_056_q2_n5",
+      "case": 56,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_056_q3_n5",
+      "case": 56,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_056_q0_n1",
+      "case": 56,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_065_q1_n5",
+      "case": 65,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_065_q2_n5",
+      "case": 65,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_065_q3_n5",
+      "case": 65,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_065_q0_n1",
+      "case": 65,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_076_q1_n5",
+      "case": 76,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_076_q2_n5",
+      "case": 76,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_076_q3_n5",
+      "case": 76,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_076_q0_n1",
+      "case": 76,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_088_q1_n5",
+      "case": 88,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_088_q2_n5",
+      "case": 88,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_088_q3_n5",
+      "case": 88,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_088_q0_n1",
+      "case": 88,
+      "q": 0,
+      "n": 1
+    },
+    {
+      "id": "case_094_q1_n5",
+      "case": 94,
+      "q": 1,
+      "n": 5
+    },
+    {
+      "id": "case_094_q2_n5",
+      "case": 94,
+      "q": 2,
+      "n": 5
+    },
+    {
+      "id": "case_094_q3_n5",
+      "case": 94,
+      "q": 3,
+      "n": 5
+    },
+    {
+      "id": "case_094_q0_n1",
+      "case": 94,
+      "q": 0,
+      "n": 1
+    }
+  ],
+  "machine": "Nuggets",
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "created_utc": "20260924T095317_031044"
+}

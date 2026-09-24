@@ -1,0 +1,26 @@
+{
+  "actual_command": "& 'C:\\Program Files\\Python312\\python.exe' -X utf8 -u -m research_a_aster_rbc.v3.best5 --workers 2 --wall-seconds 900 --official-dir 'C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition\\题目\\A题\\通用神经网络处理器下的多核调度问题  附件'",
+  "python_executable": "C:\\Program Files\\Python312\\python.exe",
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "machine": "Nuggets",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_pr": "https://github.com/yellkiin/model_competition/pull/18",
+  "source_branch": "research/a-aster-v3-wavefront-20260924",
+  "source_commit": "cd24013cb8dfc29d847df5c4caea5222923402a7",
+  "version": "aster-v3-release-affinity-4.1",
+  "source_acquisition": "All 23 files under research_a_aster_rbc/v3 retrieved from the pinned PR head through GitHub connector after Git network connection failed; no substitute modules.",
+  "git_worktree_base": "401281996209e7fcb0aca96414e0117075a4b674",
+  "git_head_is_source_commit": false,
+  "workers": 2,
+  "memory_available_GiB_at_launch": 9.24615478515625,
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "source_modified_before_launch": false,
+  "official_modified": false,
+  "configuration_modified": false,
+  "rule": "One 900-second best5 holdout run only; no automatic continuation, retry tier, second round, or 100-case expansion.",
+  "cpu_model": "13th Gen Intel(R) Core(TM) i7-13650HX",
+  "logical_cpu_count": 20,
+  "memory_total_GiB": 31.81237030029297
+}
