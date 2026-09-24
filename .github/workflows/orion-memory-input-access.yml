@@ -1,0 +1,80 @@
+name: ORION memory selected input access
+on:
+  push:
+    branches: [orion/memory-input-access-20260925]
+    paths: ['.github/workflows/orion-memory-input-access.yml']
+permissions:
+  contents: read
+jobs:
+  selected_inputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research_a_orion_anytime/*.py
+            /research_a_orion_anytime/team_results/day01/latest.json
+            /research_a_orion_anytime/team_results/day01/combined_final/*.csv
+            /research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip
+            /research_a_orion_track_memory/*.py
+            /research_a_orion_review_3pc/COMMON.md
+            /tools/A_DATA_ACCESS.md
+            /tools/restore_a_inputs.py
+            /tools/a_input_payloads/MANIFEST.json
+            /tools/a_input_payloads/config.txt
+            /题目/A题/*.docx
+            /题目/A题/**/code/*.py
+            /题目/A题/**/data/config.txt
+            /题目/A题/**/data/case_005.json
+            /题目/A题/**/data/case_051.json
+            /题目/A题/**/data/case_073.json
+            /题目/A题/**/data/case_090.json
+            /题目/A题/**/data/case_092.json
+            /题目/A题/**/data/case_059.json
+            /题目/A题/**/data/case_083.json
+            /题目/A题/**/data/case_067.json
+            /调研/A题_文献.json
+            /调研/A题_文献库/*.md
+            /调研/A题_文献库/pdf/A16_*.pdf
+            /调研/A题_文献库/pdf/A17_*.pdf
+            /调研/A题_文献库/pdf/A18_*.pdf
+            /调研/A题_文献库/pdf/A39_*.pdf
+      - name: Copy only selected reference files; no solver or tests
+        shell: python
+        run: |
+          from pathlib import Path
+          import shutil, zipfile, json
+          root = Path.cwd()
+          out = root / 'memory_selected_reference'
+          out.mkdir()
+          for name in ('research_a_orion_anytime', 'research_a_orion_track_memory', 'research_a_orion_review_3pc', '题目/A题', '调研', 'tools'):
+              source = root / name
+              if not source.exists():
+                  continue
+              for p in source.rglob('*'):
+                  if p.is_file() and p.name != 'selected_plans.zip':
+                      dest = out / p.relative_to(root)
+                      dest.parent.mkdir(parents=True, exist_ok=True)
+                      shutil.copyfile(p, dest)
+          archive = root / 'research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip'
+          selected = {f'case_{i:03d}' for i in (5,51,73,90,92,59,83,67)}
+          with zipfile.ZipFile(archive) as z:
+              for name in z.namelist():
+                  p = Path(name)
+                  if p.suffix == '.json' and any(case in name for case in selected):
+                      dest = out / 'day01_selected_plans' / p
+                      if not dest.resolve().is_relative_to(out.resolve()):
+                          raise ValueError('Invalid archive member')
+                      dest.parent.mkdir(parents=True, exist_ok=True)
+                      dest.write_bytes(z.read(name))
+          (out / 'ACCESS_SOURCE.json').write_text(json.dumps({'scope': 'Eight full original A graphs, original evaluator, selected day01 plans, current solver source, four literature PDFs; no solver executed', 'source_ref': 'main at helper branch creation'}, ensure_ascii=False), encoding='utf8')
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-memory-selected-reference
+          path: memory_selected_reference
+          retention-days: 3
+          if-no-files-found: error
