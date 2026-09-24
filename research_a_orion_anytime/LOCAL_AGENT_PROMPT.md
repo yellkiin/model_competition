@@ -55,7 +55,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_anytime\r
 
 ## 六、PR 与代码版本
 
-本目录已经由主代理提交到独立 GitHub 分支 `feat/a-orion-anytime-20260924` 并创建 PR。**本地 Agent 不要重复创建 PR，不要 force push，不要自动 merge。** 先从该 PR/分支取得代码后直接运行真实 A 题实验。
+本目录已经由主代理提交到独立 GitHub 分支 `feat/a-orion-anytime-20260924`，完整 PR 为 #15：https://github.com/yellkiin/model_competition/pull/15 。**本地 Agent 不要重复创建 PR，不要 force push，不要自动 merge。** 先从该 PR/分支取得代码后直接运行真实 A 题实验。
 
 如果实验中发现 Windows 路径、编码、进程启动等兼容问题，只对本目录做最小修复并在新输出目录重新跑 pilot；是否把修复提交到同一 PR，等用户明确要求后再做。实验输出、官方图、ZIP、文献 PDF 和日志大包不要提交到 GitHub。
 
