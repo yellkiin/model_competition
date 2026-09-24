@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "iteration_id": "day01",
+  "stage": "combined_final",
+  "path": "combined_final/",
+  "payload_commit": "ce085fcd24acf68e2df37bcb2b72019e1a055778",
+  "remote_verified": true,
+  "published_at_utc": "2026-09-24T12:47:32.393Z",
+  "formal_complete": true,
+  "graphs": 100,
+  "valid_main": 1400,
+  "valid_pairs": 500,
+  "independent_checks": 1400,
+  "per_machine_comparison": "MACHINE_COMPARISON.md",
+  "preserved_shards": [
+    {
+      "shard_index": 0,
+      "path": "shard_0/",
+      "final_commit": "a6ff10eb501200b390934c688b2f95223fe8c634"
+    },
+    {
+      "shard_index": 1,
+      "path": "shard_1/",
+      "final_commit": "8c4f60ee33fdc3cbf92b894517f75b9670ec08df",
+      "payload_commit": "348b1373badf7a67beeb2a517c80d2159bd0b4a6",
+      "user_explicitly_requested_preservation": true
+    }
+  ],
+  "preservation_policy": "Keep shard_1 raw transfer, refinement_complete, final, per-case results, failures and original budgets independently. Keep shard_0 independently too. Combined report does not replace or select between shards."
+}
