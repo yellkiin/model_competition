@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "iteration_id": "day01",
+  "shard_index": 1,
+  "repository": "yellkiin/model_competition",
+  "branch": "codex/orion-team-run-20260924",
+  "payload_commit": "348b1373badf7a67beeb2a517c80d2159bd0b4a6",
+  "confirmed_remote_commit": "348b1373badf7a67beeb2a517c80d2159bd0b4a6",
+  "published_at_utc": "2026-09-24T11:56:44.992584+00:00",
+  "uploaded": true,
+  "stages": {
+    "refinement_complete": {
+      "manifest": "refinement_complete/ARCHIVE_PARTS.json",
+      "archive_name": "team_day01_shard1_refinement_complete.zip",
+      "archive_bytes": 569834331,
+      "part_count": 12
+    },
+    "final": {
+      "manifest": "final/ARCHIVE_PARTS.json",
+      "archive_name": "team_day01_shard1_final.zip",
+      "archive_bytes": 624575904,
+      "part_count": 13
+    }
+  },
+  "verification": "Remote branch tree and manifest readback; all prepared paths retained and all part sizes confirmed. No new checksums.",
+  "historical_status_note": "Stage PHASE_STATUS and LOCAL_DELIVERY preserve their original snapshot-time uploaded=false fields. This publication record confirms subsequent GitHub delivery."
+}

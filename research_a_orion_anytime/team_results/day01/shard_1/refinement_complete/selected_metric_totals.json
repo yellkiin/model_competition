@@ -1,0 +1,156 @@
+[
+  {
+    "q": 0,
+    "n": 1,
+    "count": 50,
+    "makespan": 138460062,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 775906400,
+    "added_copy_bytes": 651037432,
+    "partition_added_copy_bytes": 0,
+    "spill_added_copy_bytes": 651037432
+  },
+  {
+    "q": 1,
+    "n": 2,
+    "count": 50,
+    "makespan": 73204835,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 1165537472,
+    "added_copy_bytes": 1040668504,
+    "partition_added_copy_bytes": 1033354336,
+    "spill_added_copy_bytes": 7314168
+  },
+  {
+    "q": 1,
+    "n": 3,
+    "count": 50,
+    "makespan": 53620401,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 1184202936,
+    "added_copy_bytes": 1059333968,
+    "partition_added_copy_bytes": 1050301288,
+    "spill_added_copy_bytes": 9032680
+  },
+  {
+    "q": 1,
+    "n": 4,
+    "count": 50,
+    "makespan": 44080629,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 1177110806,
+    "added_copy_bytes": 1052241838,
+    "partition_added_copy_bytes": 1043043246,
+    "spill_added_copy_bytes": 9198592
+  },
+  {
+    "q": 1,
+    "n": 5,
+    "count": 50,
+    "makespan": 38442922,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 1124719900,
+    "added_copy_bytes": 999850932,
+    "partition_added_copy_bytes": 979159860,
+    "spill_added_copy_bytes": 20691072
+  },
+  {
+    "q": 2,
+    "n": 2,
+    "count": 50,
+    "makespan": 72984286,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 604207694,
+    "added_copy_bytes": 479338726,
+    "partition_added_copy_bytes": 90995102,
+    "spill_added_copy_bytes": 388343624
+  },
+  {
+    "q": 2,
+    "n": 3,
+    "count": 50,
+    "makespan": 52348944,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 587084644,
+    "added_copy_bytes": 462215676,
+    "partition_added_copy_bytes": 140422428,
+    "spill_added_copy_bytes": 321793248
+  },
+  {
+    "q": 2,
+    "n": 4,
+    "count": 50,
+    "makespan": 41976633,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 659550570,
+    "added_copy_bytes": 534681602,
+    "partition_added_copy_bytes": 255063154,
+    "spill_added_copy_bytes": 279618448
+  },
+  {
+    "q": 2,
+    "n": 5,
+    "count": 50,
+    "makespan": 36285891,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 665031560,
+    "added_copy_bytes": 540162592,
+    "partition_added_copy_bytes": 291344160,
+    "spill_added_copy_bytes": 248818432
+  },
+  {
+    "q": 3,
+    "n": 1,
+    "count": 50,
+    "makespan": 132951887,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 570896202,
+    "added_copy_bytes": 446027234,
+    "partition_added_copy_bytes": 0,
+    "spill_added_copy_bytes": 446027234
+  },
+  {
+    "q": 3,
+    "n": 2,
+    "count": 50,
+    "makespan": 71681999,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 563885234,
+    "added_copy_bytes": 439016266,
+    "partition_added_copy_bytes": 106442882,
+    "spill_added_copy_bytes": 332573384
+  },
+  {
+    "q": 3,
+    "n": 3,
+    "count": 50,
+    "makespan": 51211967,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 592168812,
+    "added_copy_bytes": 467299844,
+    "partition_added_copy_bytes": 142187556,
+    "spill_added_copy_bytes": 325112288
+  },
+  {
+    "q": 3,
+    "n": 4,
+    "count": 50,
+    "makespan": 41251761,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 662089266,
+    "added_copy_bytes": 537220298,
+    "partition_added_copy_bytes": 256246602,
+    "spill_added_copy_bytes": 280973696
+  },
+  {
+    "q": 3,
+    "n": 5,
+    "count": 50,
+    "makespan": 35510320,
+    "original_graph_copy_bytes": 124868968,
+    "scheduled_copy_bytes": 676098376,
+    "added_copy_bytes": 551229408,
+    "partition_added_copy_bytes": 297067344,
+    "spill_added_copy_bytes": 254162064
+  }
+]

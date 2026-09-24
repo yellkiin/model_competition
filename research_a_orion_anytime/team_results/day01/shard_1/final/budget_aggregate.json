@@ -1,0 +1,155 @@
+[
+  {
+    "stage": "coverage",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 5.0,
+    "valid": 566,
+    "total": 700,
+    "mean_coverage_over_prefix": 0.9992150014875942,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "coverage",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 10.0,
+    "valid": 642,
+    "total": 700,
+    "mean_coverage_over_prefix": 0.9999977276968867,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "coverage",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 20.0,
+    "valid": 672,
+    "total": 700,
+    "mean_coverage_over_prefix": 1.0,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "coverage",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 30.0,
+    "valid": 682,
+    "total": 700,
+    "mean_coverage_over_prefix": 1.0,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "coverage",
+    "cutoff_kind": "evaluations",
+    "cutoff_value": 3.0,
+    "valid": 700,
+    "total": 700,
+    "mean_coverage_over_prefix": 1.0,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "coverage",
+    "cutoff_kind": "evaluations",
+    "cutoff_value": 8.0,
+    "valid": 700,
+    "total": 700,
+    "mean_coverage_over_prefix": 1.0,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "coverage",
+    "cutoff_kind": "evaluations",
+    "cutoff_value": 16.0,
+    "valid": 700,
+    "total": 700,
+    "mean_coverage_over_prefix": 1.0,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "coverage",
+    "cutoff_kind": "evaluations",
+    "cutoff_value": 24.0,
+    "valid": 700,
+    "total": 700,
+    "mean_coverage_over_prefix": 1.0,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 0.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.0,
+    "better_than_coverage": 0
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 5.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.0611619269862829,
+    "better_than_coverage": 298
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 10.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.0807671242248476,
+    "better_than_coverage": 386
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 20.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.1096979732111993,
+    "better_than_coverage": 440
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "seconds",
+    "cutoff_value": 30.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.1248057032597758,
+    "better_than_coverage": 470
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "evaluations",
+    "cutoff_value": 3.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.1011105427702332,
+    "better_than_coverage": 392
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "evaluations",
+    "cutoff_value": 8.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.1104597778794776,
+    "better_than_coverage": 474
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "evaluations",
+    "cutoff_value": 16.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.1158584779582386,
+    "better_than_coverage": 494
+  },
+  {
+    "stage": "refinement",
+    "cutoff_kind": "evaluations",
+    "cutoff_value": 24.0,
+    "valid": 628,
+    "total": 628,
+    "mean_coverage_over_prefix": 1.118747878789551,
+    "better_than_coverage": 497
+  }
+]

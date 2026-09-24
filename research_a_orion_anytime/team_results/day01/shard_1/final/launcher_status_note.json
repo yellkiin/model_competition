@@ -1,0 +1,17 @@
+{
+  "observed_at_utc": "2026-09-24T11:15:54.819677+00:00",
+  "outer_status": "process_failed",
+  "outer_exit_code": null,
+  "watchdog_exit_code": 0,
+  "watchdog_expired": false,
+  "final_independent_checks": 700,
+  "verification_keys": 700,
+  "verification_ok": 700,
+  "main_valid": 700,
+  "same_plan_pairs_valid": 250,
+  "missing": [],
+  "process_tree_observation": "At 19:09 Beijing, CIM returned no matching original ORION PowerShell/Python process; final freeze follows this confirmation.",
+  "facts": "Outer wrapper wrote process_failed with null exit_code; watchdog exited 0, not expired. Original report and all verification entries show complete shard results. Original status files are preserved.",
+  "inference": "The wrapper assigns process_failed whenever its child ExitCode is not equal to 0; the observed null explains that label. The reason the wrapper did not obtain an exit code is not established.",
+  "action": "No restart, no status correction, no source edit. Report the discrepancy alongside verified experiment completion."
+}

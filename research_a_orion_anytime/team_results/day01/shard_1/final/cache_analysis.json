@@ -1,0 +1,63 @@
+{
+  "groups": [
+    {
+      "n": 1,
+      "count": 50,
+      "mean": 1.0029946312353561,
+      "median": 1.0,
+      "p10": 1.0,
+      "minimum": 1.0,
+      "positive": 14,
+      "tie": 36,
+      "negative": 0
+    },
+    {
+      "n": 2,
+      "count": 50,
+      "mean": 1.0106417176621552,
+      "median": 1.000249695925882,
+      "p10": 1.0,
+      "minimum": 0.9999297900723162,
+      "positive": 31,
+      "tie": 18,
+      "negative": 1
+    },
+    {
+      "n": 3,
+      "count": 50,
+      "mean": 1.0211694179322992,
+      "median": 1.0004196201162228,
+      "p10": 1.0,
+      "minimum": 1.0,
+      "positive": 33,
+      "tie": 17,
+      "negative": 0
+    },
+    {
+      "n": 4,
+      "count": 50,
+      "mean": 1.0392457120648984,
+      "median": 1.0029885553323972,
+      "p10": 1.0,
+      "minimum": 1.0,
+      "positive": 36,
+      "tie": 14,
+      "negative": 0
+    },
+    {
+      "n": 5,
+      "count": 50,
+      "mean": 1.092685431807378,
+      "median": 1.0125849416735613,
+      "p10": 1.0,
+      "minimum": 1.0,
+      "positive": 40,
+      "tie": 10,
+      "negative": 0
+    }
+  ],
+  "positive": 154,
+  "tie": 95,
+  "negative": 1,
+  "definition": "Arithmetic mean of per-case identical-plan no-L2/with-L2 makespan; existing stored plan identities compared, no new hash."
+}
