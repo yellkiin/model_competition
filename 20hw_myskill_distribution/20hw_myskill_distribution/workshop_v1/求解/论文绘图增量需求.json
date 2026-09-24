@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "requirements": [
+    {
+      "capability": "paper-python",
+      "necessity": "required",
+      "enabled": true,
+      "sources": ["rendering", "submission"],
+      "reason": "正式论文章节、摘要、参考文献、附录和 PDF 审计需要论文 Python 工具链",
+      "provider": null
+    },
+    {
+      "capability": "latex",
+      "necessity": "required",
+      "enabled": true,
+      "sources": ["rendering", "submission"],
+      "reason": "论文唯一主源须用 XeLaTeX 和 BibTeX 编译并实测最终 PDF",
+      "provider": null
+    },
+    {
+      "capability": "fonts",
+      "necessity": "required",
+      "enabled": true,
+      "sources": ["rendering", "submission"],
+      "reason": "华为杯中文论文及正式图件需实测宋体、黑体和隶书字形",
+      "provider": null
+    },
+    {
+      "capability": "drawio",
+      "necessity": "required",
+      "enabled": true,
+      "sources": ["rendering"],
+      "reason": "第一章 scibox 模板总体路线图及逐问可编辑综合图优先使用 draw.io",
+      "provider": null
+    }
+  ]
+}

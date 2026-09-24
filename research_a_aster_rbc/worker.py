@@ -16,7 +16,16 @@ def save(path: Path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_suffix(path.suffix + '.tmp')
     temp.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + '\n', encoding='utf-8')
-    temp.replace(path)
+    # Windows readers/antivirus can briefly deny an atomic replacement. Retry
+    # only this filesystem operation; never repeat an official evaluation.
+    for attempt in range(6):
+        try:
+            temp.replace(path)
+            break
+        except PermissionError as exc:
+            if sys.platform != 'win32' or exc.winerror not in (5, 32, 33) or attempt == 5:
+                raise
+            time.sleep(.05 * (attempt + 1))
 
 
 def main(request: Path):

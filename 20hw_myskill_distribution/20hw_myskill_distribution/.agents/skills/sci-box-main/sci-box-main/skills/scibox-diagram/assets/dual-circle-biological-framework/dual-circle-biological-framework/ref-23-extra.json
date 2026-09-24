@@ -1,0 +1,108 @@
+{
+  "source_id": "ref-23",
+  "status": "MEASURED_REQUIRES_VISUAL_REVIEW",
+  "method": "RGB contour masks within 5px of observed elliptical boundaries, foreground/arrow exclusions, robust least-squares axis-aligned ellipse fit",
+  "ellipses": [
+    {
+      "id": "outer_blue",
+      "initial_search_ellipse": [
+        454,
+        309,
+        160,
+        144
+      ],
+      "color_target": [
+        47,
+        85,
+        151
+      ],
+      "point_count": 745,
+      "center": [
+        452.01812262043296,
+        308.0032710407882
+      ],
+      "radii": [
+        158.88679173862664,
+        143.9706105493529
+      ],
+      "median_absolute_residual_px": 0.3099012988854468,
+      "p90_absolute_residual_px": 0.5623280269751719
+    },
+    {
+      "id": "outer_green",
+      "initial_search_ellipse": [
+        628,
+        309,
+        156,
+        144
+      ],
+      "color_target": [
+        84,
+        130,
+        53
+      ],
+      "point_count": 885,
+      "center": [
+        624.7449726601319,
+        308.0048473158386
+      ],
+      "radii": [
+        158.83386697913855,
+        143.94472314280264
+      ],
+      "median_absolute_residual_px": 0.30854509419058207,
+      "p90_absolute_residual_px": 0.5447477401013142
+    },
+    {
+      "id": "inner_blue",
+      "initial_search_ellipse": [
+        401,
+        309,
+        103,
+        99
+      ],
+      "color_target": [
+        47,
+        85,
+        151
+      ],
+      "point_count": 171,
+      "center": [
+        400.41752615718605,
+        308.0442313474987
+      ],
+      "radii": [
+        100.93440583514489,
+        98.3471330432189
+      ],
+      "median_absolute_residual_px": 0.3183718248258101,
+      "p90_absolute_residual_px": 0.5439219961186288
+    },
+    {
+      "id": "inner_green",
+      "initial_search_ellipse": [
+        680,
+        309,
+        101,
+        99
+      ],
+      "color_target": [
+        84,
+        130,
+        53
+      ],
+      "point_count": 171,
+      "center": [
+        676.2510424480938,
+        307.9601088666912
+      ],
+      "radii": [
+        100.6887236049272,
+        98.45271034762466
+      ],
+      "median_absolute_residual_px": 0.3311148961117755,
+      "p90_absolute_residual_px": 0.5735867887322325
+    }
+  ],
+  "rejected_method": "Circle constraint visibly missed horizontal outer contour; previous fit preserved as ref-23-circle-rejected.json/png."
+}

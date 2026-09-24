@@ -1,0 +1,855 @@
+{
+  "assurance": "Real XeLaTeX includegraphics box and shipout measurements. Public outer resize/scale/rotate wrappers fail explicitly; use includegraphics width/height/angle. Editable records do not prove viewing.",
+  "bibliography_inputs": [],
+  "bibliography_run": null,
+  "compile_runs": [
+    {
+      "command": [
+        "C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\software\\TinyTeX\\bin\\windows\\xelatex.EXE",
+        "-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-recorder",
+        "-jobname=论文",
+        "-output-directory=.",
+        "E:/20hw_myskill_distribution/workshop_v1/论文/验收输出/图形入文.v4.review_files/probe_wrapper.tex"
+      ],
+      "cwd": "E:\\20hw_myskill_distribution\\workshop_v1\\论文",
+      "log_path": "论文/验收输出/图形入文.v4.review_files/compile_1.log",
+      "log_sha256": "d653677c9c3874eba30e2c777fa812b001560b3f7f6d035802cb559dfec1b835",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\software\\TinyTeX\\bin\\windows\\xelatex.EXE",
+        "-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-recorder",
+        "-jobname=论文",
+        "-output-directory=.",
+        "E:/20hw_myskill_distribution/workshop_v1/论文/验收输出/图形入文.v4.review_files/probe_wrapper.tex"
+      ],
+      "cwd": "E:\\20hw_myskill_distribution\\workshop_v1\\论文",
+      "log_path": "论文/验收输出/图形入文.v4.review_files/compile_final.log",
+      "log_sha256": "d653677c9c3874eba30e2c777fa812b001560b3f7f6d035802cb559dfec1b835",
+      "returncode": 0
+    }
+  ],
+  "figures": [
+    {
+      "figure_id": "q1-F01",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第12页六边形图呈现非COPY操作规模与最大连通块占比，轴与色标可见，图题在图下。",
+          "page_number": 12,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_012.png",
+          "page_render_sha256": "6171a5d4afa781c6c8efabeaba7dbdd0766748dc59a5621655eb6b6f1505b0c7",
+          "pdf_bbox": [
+            70.87000274658203,
+            358.92610929351844,
+            524.413295399135,
+            616.8900146484375
+          ],
+          "probe_id": 3,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-09-16.png; 论文/验收输出/图形入文.v4.review_files/page_012.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q1-F01.pdf",
+      "vector_sha256": "35ffb4c771c85d619344649aaaaf94d9bbc01bba5d7da0cf9fc044b160571099"
+    },
+    {
+      "figure_id": "q1-F02",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 85.00367795765878,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第13页上图的1—5核均值折线与案例分位阴影均在坐标区内，标值与图题清楚。",
+          "page_number": 13,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_013.png",
+          "page_render_sha256": "b46251c91ab9c1baa2e82d2b9bfaa56fc4a032e49570070b964dfd2a68e63b22",
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86469972770564,
+            524.413295399135,
+            311.82000732421875
+          ],
+          "probe_id": 4,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-09-16.png; 论文/验收输出/图形入文.v4.review_files/page_013.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q1-F02.pdf",
+      "vector_sha256": "cde60ab52066e6525bf36a0d0540018cdde9ac69d26f38067a00e1d0402d9899"
+    },
+    {
+      "figure_id": "q1-F03",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 87.00375837830357,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第13页下图以四组小提琴和散点呈现结构分层，基准线、分组样本量和图题可辨。",
+          "page_number": 13,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_013.png",
+          "page_render_sha256": "b46251c91ab9c1baa2e82d2b9bfaa56fc4a032e49570070b964dfd2a68e63b22",
+          "pdf_bbox": [
+            70.87000274658203,
+            348.13518286649673,
+            524.413295399135,
+            594.760009765625
+          ],
+          "probe_id": 5,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-09-16.png; 论文/验收输出/图形入文.v4.review_files/page_013.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q1-F03.pdf",
+      "vector_sha256": "52d2e35540b8cb5657ceff01b77dc56da115de5ace7129799fd3e00490bf957d"
+    },
+    {
+      "figure_id": "q1-F04",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第14页上图展示五核加速与新增DDR搬运的散点，坐标和颜色条完整。",
+          "page_number": 14,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_014.png",
+          "page_render_sha256": "82fefe71ec141c46f5990eecb49f6c97663fc2c3f730ef352cd0a99d3ae6e6dd",
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86611173492469,
+            524.413295399135,
+            328.83001708984375
+          ],
+          "probe_id": 6,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-09-16.png; 论文/验收输出/图形入文.v4.review_files/page_014.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q1-F04.pdf",
+      "vector_sha256": "b3d23d775b5bd57a644f028c01aff1d64c20a1e90bfb7549cd7c386e8347b6b8"
+    },
+    {
+      "figure_id": "q1-F05",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 83.00359050781792,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第14页下图的二维分箱胜率矩阵显示样本数与百分比，色标和图题未裁切。",
+          "page_number": 14,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_014.png",
+          "page_render_sha256": "82fefe71ec141c46f5990eecb49f6c97663fc2c3f730ef352cd0a99d3ae6e6dd",
+          "pdf_bbox": [
+            70.87000274658203,
+            365.14422430716354,
+            524.413295399135,
+            600.4299926757812
+          ],
+          "probe_id": 7,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-09-16.png; 论文/验收输出/图形入文.v4.review_files/page_014.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q1-F05.pdf",
+      "vector_sha256": "2045efea4196e40236b850075a1e219f70ca00d963b2514ee5c5178829b693be"
+    },
+    {
+      "figure_id": "q1-F06",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第15页散点给出候选评估时间与相对质量，族名图例在版心内。",
+          "page_number": 15,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_015.png",
+          "page_render_sha256": "56a4497f7b02040611f17ce31dd90c3b3b642bdba2e19fba93daf59f43978497",
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86611173492469,
+            524.413295399135,
+            328.83001708984375
+          ],
+          "probe_id": 8,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-09-16.png; 论文/验收输出/图形入文.v4.review_files/page_015.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q1-F06.pdf",
+      "vector_sha256": "7ac0a2739a9611a98aa1a3b57487099b8c59c4a419410011c64559b6c58990f7"
+    },
+    {
+      "figure_id": "q2-F01",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 87.00375837830357,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第21页下图逐核展示同方案场景A/B时长比分布，基准线、核数及图题可见。",
+          "page_number": 21,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_021.png",
+          "page_render_sha256": "6d9d6fd006cb94b94a7c05e9f87812f5af0333d8057a174e7bb0c5a558c56ead",
+          "pdf_bbox": [
+            70.87000274658203,
+            377.60515356962173,
+            524.413295399135,
+            624.22998046875
+          ],
+          "probe_id": 11,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-17-24.png; 论文/验收输出/图形入文.v4.review_files/page_021.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q2-F01.pdf",
+      "vector_sha256": "bc94adbc4a2d843130735bcfed3abf02086fdf99429709ee914d808174572d81"
+    },
+    {
+      "figure_id": "q2-F02",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 84.00363423273834,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第22页上图保留场景B重选收益的少量严格改善点与大量接近1的实例，刻度和图题可辨。",
+          "page_number": 22,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_022.png",
+          "page_render_sha256": "2d38a945820d928a4dd7906ae41a2f3569e0e3039345b06ae7a72784c55ee6bd",
+          "pdf_bbox": [
+            70.87000274658203,
+            70.8694522518096,
+            524.413295399135,
+            308.989990234375
+          ],
+          "probe_id": 12,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-17-24.png; 论文/验收输出/图形入文.v4.review_files/page_022.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q2-F02.pdf",
+      "vector_sha256": "c009e4788de2a588578658a7c840364bd400e1ad527387badf66f7dd74f89ce7"
+    },
+    {
+      "figure_id": "q2-F03",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 83.00359050781792,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第22页下图用双色面积分开边界COPY与Spill，四个核数和MiB单位完整。",
+          "page_number": 22,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_022.png",
+          "page_render_sha256": "2d38a945820d928a4dd7906ae41a2f3569e0e3039345b06ae7a72784c55ee6bd",
+          "pdf_bbox": [
+            70.87000274658203,
+            394.81426825247604,
+            524.413295399135,
+            630.1000366210938
+          ],
+          "probe_id": 13,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-17-24.png; 论文/验收输出/图形入文.v4.review_files/page_022.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q2-F03.pdf",
+      "vector_sha256": "23079631d210adac5858bb18032915b8b9225f1819b973a086d57efcf636b336"
+    },
+    {
+      "figure_id": "q2-F04",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第23页上图以容量峰值比例、点色和纵轴收益构成资源散点，色标未越界。",
+          "page_number": 23,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_023.png",
+          "page_render_sha256": "ad8c12eb00964b6a37a149453a167b03267d1448b2cba54d4d5716ffce2987e0",
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86611173492469,
+            524.413295399135,
+            328.83001708984375
+          ],
+          "probe_id": 14,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-17-24.png; 论文/验收输出/图形入文.v4.review_files/page_023.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q2-F04.pdf",
+      "vector_sha256": "6eaffa33a8ead55813864b73c8ea10d5f78628ff313cddf18c99b103a0cea1d5"
+    },
+    {
+      "figure_id": "q2-F05",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第23页下图的速度—搬运成对坐标、零参考线与点均完整。",
+          "page_number": 23,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_023.png",
+          "page_render_sha256": "ad8c12eb00964b6a37a149453a167b03267d1448b2cba54d4d5716ffce2987e0",
+          "pdf_bbox": [
+            70.87000274658203,
+            365.14607999664344,
+            524.413295399135,
+            623.1099853515625
+          ],
+          "probe_id": 15,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-17-24.png; 论文/验收输出/图形入文.v4.review_files/page_023.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q2-F05.pdf",
+      "vector_sha256": "d5a3d8853a74330deea20c38f1b95ab6323112001dbe3485bcd146014f2a18d6"
+    },
+    {
+      "figure_id": "q2-F06",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 83.00359050781792,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第21页上图的1—5核平均加速比折线在正文宽度内，标值和图题清楚。",
+          "page_number": 21,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_021.png",
+          "page_render_sha256": "6d9d6fd006cb94b94a7c05e9f87812f5af0333d8057a174e7bb0c5a558c56ead",
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86425604544476,
+            524.413295399135,
+            306.1500244140625
+          ],
+          "probe_id": 10,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-17-24.png; 论文/验收输出/图形入文.v4.review_files/page_021.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q2-F06.pdf",
+      "vector_sha256": "868f1ab308ae860a6ad52d3600a000106e1f96fc6b1e923bdf2eac6e3d85c394"
+    },
+    {
+      "figure_id": "q3-F01",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第30页下图有L2与无L2的经验累积分布逐核叠加，图例、刻度和图题可读。",
+          "page_number": 30,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_030.png",
+          "page_render_sha256": "e8ef0d893568c58fb7f6d20d0b8b4f5018d552481bf41a17c332fdb34f03b6ee",
+          "pdf_bbox": [
+            70.87000274658203,
+            440.9660873208622,
+            524.413295399135,
+            698.9299926757812
+          ],
+          "probe_id": 18,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-25-32.png; 论文/验收输出/图形入文.v4.review_files/page_030.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q3-F01.pdf",
+      "vector_sha256": "471788603de20e8e441c26a1f08b07fafd29b17aca3839f3bb8163befed369e0"
+    },
+    {
+      "figure_id": "q3-F02",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第31页六边形图与离散点显示命中字节率—同方案收益关系，色标完整且图题未截断。",
+          "page_number": 31,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_031.png",
+          "page_render_sha256": "8e8a4786f330d1f12204383721d35a0f018406de60b075002d9d29f5cfe99577",
+          "pdf_bbox": [
+            70.87000274658203,
+            153.1261215005497,
+            524.413295399135,
+            411.09002685546875
+          ],
+          "probe_id": 19,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-25-32.png; 论文/验收输出/图形入文.v4.review_files/page_031.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q3-F02.pdf",
+      "vector_sha256": "ede1580a1eb4eb1dbbb69c763a983efa709571d22056705dda0a719945957d8b"
+    },
+    {
+      "figure_id": "q3-F03",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第35页两幅非官方容量—带宽响应面并列，案例044/083标识及三维轴可见。",
+          "page_number": 35,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_035.png",
+          "page_render_sha256": "21d09314a9651f45cfb573a687311654fefd45ca9ad54e8d20678aa614308f7e",
+          "pdf_bbox": [
+            70.87000274658203,
+            319.8561019692997,
+            524.413295399135,
+            577.8200073242188
+          ],
+          "probe_id": 21,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-33-40.png; 论文/验收输出/图形入文.v4.review_files/page_035.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q3-F03.pdf",
+      "vector_sha256": "a72dc9ecf52eac7693f8820aa92175afd07cb4531c85d7e9fd4725e9c7280d76"
+    },
+    {
+      "figure_id": "q3-F04",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 91.00393327798533,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第36页六例固定带宽容量响应折线及图例在版心内，图题注明命中率。",
+          "page_number": 36,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_036.png",
+          "page_render_sha256": "a43814c7ec90f62ea712c0ea03f7e175819cadef49bc6527c672b70ccfe266c3",
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86611173492469,
+            524.413295399135,
+            328.83001708984375
+          ],
+          "probe_id": 22,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-33-40.png; 论文/验收输出/图形入文.v4.review_files/page_036.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q3-F04.pdf",
+      "vector_sha256": "0ad6d72cb2d5d7254d99ed2e98f3b988cea448c0cdda98d3ec286077b05cca7b"
+    },
+    {
+      "figure_id": "q3-F05",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 82.00354326829944,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第32页堆叠条展示各核数命中和未命中查询字节，百分比标签与图例清楚。",
+          "page_number": 32,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_032.png",
+          "page_render_sha256": "fedb732674ad3ae47d83c71fde74ad9a6a8d733beeaccc5bce4abcc50b195725",
+          "pdf_bbox": [
+            70.87000274658203,
+            151.7790221942982,
+            524.413295399135,
+            384.2300109863281
+          ],
+          "probe_id": 20,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-25-32.png; 论文/验收输出/图形入文.v4.review_files/page_032.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q3-F05.pdf",
+      "vector_sha256": "51c3747ad36d415297932a0dad0a9b1364fb4f8034f1b66afe0f2a0142414440"
+    },
+    {
+      "figure_id": "q3-F06",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 87.00375837830357,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第30页上图为同方案无L2与有L2的逐核平均加速比两条线，图例和图题完整。",
+          "page_number": 30,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_030.png",
+          "page_render_sha256": "e8ef0d893568c58fb7f6d20d0b8b4f5018d552481bf41a17c332fdb34f03b6ee",
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86516333524673,
+            524.413295399135,
+            317.489990234375
+          ],
+          "probe_id": 17,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-25-32.png; 论文/验收输出/图形入文.v4.review_files/page_030.png"
+        }
+      ],
+      "vector_path": "求解/正式图件/q3-F06.pdf",
+      "vector_sha256": "62d763b166aa4eedaf69ec74e77ff46ac4f3944fe2033c7c631945e247a27e97"
+    },
+    {
+      "figure_id": "GLOBAL-ROADMAP",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 210.9182224712882,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第7页总体路线图四带居中，场景与任务次序、箭头、图题均清晰，无截断。",
+          "page_number": 7,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_007.png",
+          "page_render_sha256": "56ffbd97e28b1ec172880814a7ae610cfbd80f894b4b7c6755de51b7258821bc",
+          "pdf_bbox": [
+            70.87000274658203,
+            109.821586304167,
+            524.413295399135,
+            707.7000122070312
+          ],
+          "probe_id": 1,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-01-08.png; 论文/验收输出/图形入文.v4.review_files/page_007.png"
+        }
+      ],
+      "vector_path": "求解/总体路线图_论文宽.pdf",
+      "vector_sha256": "9f502c19871b2ef24503084881d395b28d86225c63f615e19f289759fd160f3f"
+    },
+    {
+      "figure_id": "q1-OVERVIEW",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 154.0082800608828,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第10页问题一综合图的DAG、切图方法、两张真实结果缩图与正文图号对应，图题位置正常。",
+          "page_number": 10,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_010.png",
+          "page_render_sha256": "0c99b118771e6e736d4d3a8ab346256f58386e69e4efb819d23274d6298d6c9d",
+          "pdf_bbox": [
+            70.87000274658203,
+            221.0811105388484,
+            524.413295399135,
+            657.6400146484375
+          ],
+          "probe_id": 2,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-09-16.png; 论文/验收输出/图形入文.v4.review_files/page_010.png"
+        }
+      ],
+      "vector_path": "求解/综合图/q1-overview.pdf",
+      "vector_sha256": "8b37754b10fabe41dbaf86541a24c1c768bae6a83fa623d5dfff884e7aeeae28"
+    },
+    {
+      "figure_id": "q2-OVERVIEW",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 154.0082800608828,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第19页问题二综合图的同核Task合并、跨核COPY及结果缩图按三带排列，图题与正文分开。",
+          "page_number": 19,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_019.png",
+          "page_render_sha256": "d27e4d756b41295d90adf9d90ddb9cd7f535cd02cea264086e02809860f2db2a",
+          "pdf_bbox": [
+            70.87000274658203,
+            203.1011300700984,
+            524.413295399135,
+            639.6600341796875
+          ],
+          "probe_id": 9,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-17-24.png; 论文/验收输出/图形入文.v4.review_files/page_019.png"
+        }
+      ],
+      "vector_path": "求解/综合图/q2-overview.pdf",
+      "vector_sha256": "c102ea8b30e4c506dfd5a160748a7971b6d36a911cfe077da6c814aad69630db"
+    },
+    {
+      "figure_id": "q3-OVERVIEW",
+      "occurrences": [
+        {
+          "display_depth_mm": 0.0,
+          "display_height_mm": 154.0082800608828,
+          "display_width_mm": 159.99999490798396,
+          "observation": "第28页问题三综合图分开L2命中/未命中读路径，官方与非官方结果缩图在底带，图题完整。",
+          "page_number": 28,
+          "page_render_path": "论文/验收输出/图形入文.v4.review_files/page_028.png",
+          "page_render_sha256": "ba77d15d563240060f5a98447bd7c71417328a0714557652fcf03c5e163a785f",
+          "pdf_bbox": [
+            70.87000274658203,
+            222.37108856619216,
+            524.413295399135,
+            658.9299926757812
+          ],
+          "probe_id": 16,
+          "reviewed": true,
+          "text_width_mm": 160.00000545177807,
+          "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-25-32.png; 论文/验收输出/图形入文.v4.review_files/page_028.png"
+        }
+      ],
+      "vector_path": "求解/综合图/q3-overview.pdf",
+      "vector_sha256": "e993b3751f731da6c998fb6b3424c168ddc00a8821ca82bb3c2954adec9d14be"
+    }
+  ],
+  "first_chapters_review_path": "论文/验收输出/前三章.v4.review.json",
+  "fls_path": "论文/论文.fls",
+  "fls_sha256": "95e779240e8fb7a8f70929e3d557500b751550a46b5826f1b6ebdaae99187f19",
+  "generated_outputs": {
+    "论文/论文.aux": "4f4a011cd1814cd9c6293a3778e7198d10a346ecdc3959c27265c72b90f741d1",
+    "论文/论文.gmcmevaluation": "f2ddd625dcdf84d564a298554c705093ce6f7db17f06f45d5f1f9a5454e963c1",
+    "论文/论文.gmcmlayout": "846a9f66e63484d9813775a37d7389ca6855bd05f3c791f128550e35935b86b0",
+    "论文/论文.gmcmprose": "a146eb592fe89ff9457b2b5d66f12dec8928ed15b49f979630d55e8fa8fd01c0"
+  },
+  "main_tex": "论文/论文.tex",
+  "main_tex_sha256": "3482f66bfdc754bd1d3887c852b1c61840a2deab23b86a9995b82f8b6a14c6ad",
+  "pagination_stability": {
+    "current": {
+      ".aux": "4f4a011cd1814cd9c6293a3778e7198d10a346ecdc3959c27265c72b90f741d1",
+      ".out": "ad6615acbf8f036729eb2a8da40b8664087faca3394145905db523201d9948f6",
+      ".toc": "8aa738a60f78b3b8b39ce287cb6284ae27f0f6dfd0ef9a536e2191efc5d027eb"
+    },
+    "previous": {
+      ".aux": "4f4a011cd1814cd9c6293a3778e7198d10a346ecdc3959c27265c72b90f741d1",
+      ".out": "ad6615acbf8f036729eb2a8da40b8664087faca3394145905db523201d9948f6",
+      ".toc": "8aa738a60f78b3b8b39ce287cb6284ae27f0f6dfd0ef9a536e2191efc5d027eb"
+    }
+  },
+  "pdf_pages": 61,
+  "pdf_path": "论文/论文.pdf",
+  "pdf_sha256": "488f77be7cf2a8299396446877782c40d41280ede7247d3562b73f7322543dfc",
+  "portfolio_review": {
+    "reviewed": true,
+    "tool_ref": "functions.view_image:论文/验收输出/final-visual-v4/contact-01-08.png 至 contact-57-61.png（8张；全61页）",
+    "observation": "逐页查看最终61页：摘要2页、动态目录2页、正文35页、参考文献1页和代码附录21页；22个图件均落在对应问题正文，三问综合图在首节，科学图轴题与图题可见，附录代码可分页，无空白页、明显遮挡或跨版心截断。第27页和第39页因章节自然结束留白，内容未重复凑页。"
+  },
+  "probe_path": "论文/论文.afprobe",
+  "probe_sha256": "e8a2498abda873b6316bac630432d2d0720b589e0cbb5139d9180d8b661809b6",
+  "resource_dependencies": {
+    "digest": "3f16688f38f05cb29f3700c7314c980469b470531a90d87d529ed3b0434ebb9b",
+    "files": {
+      ".agents/skills/gmcm-abstract/SKILL.md": "1903fb8d1d89311524556f774a38d264d32c30f0131193a77132239ac4b16872",
+      ".agents/skills/gmcm-supporting-materials/SKILL.md": "bd2867ee1e6493c6d263a2fde000f16158578b1ec73eaac438e22be333d868cd",
+      ".agents/skills/gmcm-supporting-materials/agents/openai.yaml": "f6e4f9bbe8f121c6b31c3f851d06b9d77c6bf861966becdd494ccc60fb398059",
+      ".agents/skills/gmcm-supporting-materials/assets/代码环境说明.template.md": "7824df32c04540ab6f8d74edd149733bc096400486f8bb73f1d9008fd426cfa5",
+      ".agents/skills/gmcm-supporting-materials/assets/支撑材料说明.template.md": "bc4025bb68bab21134917f7dd6d67afff76b2b78f21beb658780f0319633a2f8",
+      "AGENTS.md": "3641bb88e82d416c5b74a33b2c0ad614a3e41523dfd0a3d2d9bf618893b2f48f",
+      "华为杯_求解规范/academic_figure_references.schema.json": "56ae30d13e1afe92c21f99c7c8eb72c78f528d668ecb6d35a6960666c6b6d0a3",
+      "华为杯_求解规范/academic_paper_review.schema.json": "5cd713baa87135cc648955b5d314df7058d38d3c54ad6425fe3717e2145240ee",
+      "华为杯_求解规范/chart_family_map.json": "1945f283bd9454d74587b1a5e788fc77826e798ff52848f042cf5274e7532640",
+      "华为杯_求解规范/drawing_preflight.schema.json": "72c19cda06ef94796eade3bcb2c62c0cda5ed241e63fb97bf373cf44b72dbbcd",
+      "华为杯_求解规范/modelviz_qa.schema.json": "8a96dc82d7de6eebf2bca52110c68e50a2b9d4c42f6b3022945b2982366a53a9",
+      "华为杯_求解规范/modelviz_references.schema.json": "67ee59319cc160c872420dee092cf42bafa39ab6e6dfdbd87cae826ce55d7768",
+      "华为杯_求解规范/modelviz_run.schema.json": "ad9ccaf2e1eddcfdc7c5c921de82a9aeb353bf42f3286913c93d3b4decb421ca",
+      "华为杯_求解规范/tools/audit_academic_figure_assets.py": "e2b1b5fe85b8bc40bc72b2b9d7f5138fd58f0e1aad5133d1912d5961350f5a32",
+      "华为杯_求解规范/tools/audit_diagram_positions.py": "726f253d6b0cc814765a92bebd5566ee9564dc3fdb78cb80b3dc08191acdbaad",
+      "华为杯_求解规范/tools/audit_diagram_workflow.py": "dc8d2e56d9c272698caa9d14a6ba22d3765ad02834c265faafceee577ae0057b",
+      "华为杯_求解规范/tools/audit_media_figures.py": "90038adb72feaad485e6183b0ea59b33122e6526352f923fabd2ea27c2adc619",
+      "华为杯_求解规范/tools/audit_overview_demo.py": "c5252038c475d588512018204f64e00046e6e1bdd9a129a4f7dff4b81b7ca74b",
+      "华为杯_求解规范/tools/audit_supporting_materials.py": "6687dacbd05988fd064cf781dfa0474524e64bfe934e0496f29375ef6c5a96ce",
+      "华为杯_求解规范/tools/audit_visual_plan.py": "fbbff71c9797a0ef79434fcafec8d4e84a790171eb975ea54afd9c268605445b",
+      "华为杯_求解规范/tools/bibliography_inputs.py": "7107b912c53ab822fea35892b960b2ff86c37f41a28d0413ea8a1013404066b0",
+      "华为杯_求解规范/tools/build_academic_figure_asset_index.py": "9d3f115a03c75b353b4bee6843c9566cabdaeb9d236d916eac854a5380e37ba6",
+      "华为杯_求解规范/tools/build_figure_accounting.py": "832747a4683324ad76b4d928ddb911fc6b3d920291923939ced707fb13dea33c",
+      "华为杯_求解规范/tools/build_overview_inclusions.py": "f4804ebc1fd03f30deff04941b4ca2621299b30a076aed5a915b1a085c198ccc",
+      "华为杯_求解规范/tools/build_supporting_materials.py": "df84d8ae28adcb92d613914e6fcc5c1bcafc4c6bb19cc6078fee25f3fee83e91",
+      "华为杯_求解规范/tools/candidate_figures.py": "5478ccda3f4ce1514393c6364e2871e9a05f5e405c5d5246a1c09ab7ef4575ba",
+      "华为杯_求解规范/tools/candidate_gallery.py": "ea4f6b5e82e6d353bac99b37ea509889025d9689b4a0c92b59afe86c0fd24835",
+      "华为杯_求解规范/tools/chart_policy.py": "a5a21624672f8f573472eb6b15fa6bca59f34aeb2288e495c5af052066777fb6",
+      "华为杯_求解规范/tools/check_model_demo_delivery.py": "cc6d867949863905419dc900649a8ed82472c836d26b75afc1274498d2675b13",
+      "华为杯_求解规范/tools/collect_academic_paper_review.py": "fea112ee23f98f55e61809d77932491878c7a9022d10dfd3b341a9b3533a680c",
+      "华为杯_求解规范/tools/demo_media_workflow.py": "45fc8a409358637bf3cd7efd85ac8551dacbd3de3081161328c5fee1f90c7667",
+      "华为杯_求解规范/tools/deploy_candidate_workflow.py": "b78af9724b2e1a53c18173ab07cd1825c0e5f1182e15ce5d4614a97f573b71c1",
+      "华为杯_求解规范/tools/drawing_sources.py": "a70dcd737c97a97667259b122c477ec43383f6802aada456b097e66456ac98ae",
+      "华为杯_求解规范/tools/environment_contract.py": "eb26ebea2e0db7357b03a2d81c09aaa703960ab7a111afb0aa63b0031b07d262",
+      "华为杯_求解规范/tools/environment_manager.py": "8e6ba7ac848549eae72de76c87d157bcf18cafb1d698eb5c02d95b220267aa4c",
+      "华为杯_求解规范/tools/environment_platform.py": "74657f83b681182ebe760eb1d3a3f149e262733b58ddb1c311e748bb0e223624",
+      "华为杯_求解规范/tools/environment_probes.py": "c963d28a2c73ba34a1ed01508ada965db0de893613596c7ea5b0bd8199bfdcc2",
+      "华为杯_求解规范/tools/environment_reports.py": "5c8c819c6ee0c7c17c91595cde85a8db2a91b85f0279bf60578322feb796347c",
+      "华为杯_求解规范/tools/extract_visual_materials.py": "c5624d82c4752e760023a8e678810f1e1877438a6ce337a3c00f93e1b4c944c1",
+      "华为杯_求解规范/tools/figure_accounting.py": "299bce489d4b51e7dccad5c2df2ac01de1e62612bceaf1b707dc4096f2c1203b",
+      "华为杯_求解规范/tools/filesystem_paths.py": "6f0cc639f5829e9533de28b7434639e3b1ad997fa5b38969e335b9e5dd84daf5",
+      "华为杯_求解规范/tools/generate_base_requirements.py": "39569c7cf12df85ea7447438bb555953ee8419e4bf33560180f40aa282558ef2",
+      "华为杯_求解规范/tools/init_supporting_materials.py": "3419445eb9ab8114366ea8db2925f72ce895cac88b4dc6ed0b19f20de0eeb4ac",
+      "华为杯_求解规范/tools/init_visual_plan.py": "636dbbd9dc2f205232a6f726f1f9390409156c74ef7e146973d279e2f3dc94cd",
+      "华为杯_求解规范/tools/inspect_visual_materials.py": "5a75a6ffc2c484392766da5925e3a74f889346a400983eb530d5d3d0a9ddbe16",
+      "华为杯_求解规范/tools/model_demo_train.py": "342158a7b104e18cd5823f9926d6e9fdec7a63fd8c016e42985dbae7dca8e7f4",
+      "华为杯_求解规范/tools/model_demo_validate.py": "1e650da187699f8c9bc13c51697873d95f923ad59ddd8e96b8b39ea219fae012",
+      "华为杯_求解规范/tools/model_selection.py": "d7107ac0ad992c4e23f554295608210c4620172310a07424ef6cac3887a51b42",
+      "华为杯_求解规范/tools/modelviz_bridge.py": "2f7a08dec0496b8f796ce72a0f2047861ea83c3bfca86e9a93ae77394a79f55a",
+      "华为杯_求解规范/tools/overview_content.py": "08373d58f71a7c78a3c85b95c60acbc41613adc9b656ca12a98388d990498a3f",
+      "华为杯_求解规范/tools/overview_geometry.py": "0aa17ca1a61678c1cdc2a83905b0d9dcb033f33967f4f11332a69b7c0a2a76b7",
+      "华为杯_求解规范/tools/prepare_academic_figure_qa.py": "32c3304967edfc69abf71bd05ad448b1c914a88510a9ec1daefafd35e09e8199",
+      "华为杯_求解规范/tools/prepare_academic_figure_review.py": "41272a0c0117bb61fcd3536bd5991458773c145f42fe994ef0c4c5334edd8797",
+      "华为杯_求解规范/tools/render_model_comparison_demo.py": "c7e480df538ff6ec47bc8836cfd385963d209af136f3f84e20b3cf29bc4fe60a",
+      "华为杯_求解规范/tools/reproduce_supporting_materials.py": "472194a1b0e0ed9ebeb6cee7a65ab75d6c55ccc98a4b1b23fec17ba06a9aa648",
+      "华为杯_求解规范/tools/roadmap_templates.py": "2d862aa146a1185768332839ed6d1d621e0f5782a7e8f0540285d889e976b6fe",
+      "华为杯_求解规范/tools/run_academic_figure.py": "5dbb763e0d4809617fb6e72c97fbe2c56c27ba5aca73fef1b08042dd0276a941",
+      "华为杯_求解规范/tools/run_academic_figure_smoke.py": "32731a27982d1b315a5bd2e83d3ad010785aaf67b405d90b703512d83cc1b914",
+      "华为杯_求解规范/tools/run_bibliography_closure_regression.py": "955bf114329ba34bb74835366b1325f792bf0adbb641d82437ad805e7d14ce4c",
+      "华为杯_求解规范/tools/run_media_figure.py": "faf82ed7e9144a23c81aa1ce9f5f7a98ca4179c64ce9afb22fbe4d36da8abc5f",
+      "华为杯_求解规范/tools/run_model_selection_demo.py": "eb0859085d724f1978b9e1a5f1ca8e468c0e966cb7cd51842e8c946bfd2dd018",
+      "华为杯_求解规范/tools/run_overview_demo_step.py": "0e38bae2ff40a11208692dbf64e541260f0f2ac95ed8fb53ad75baa4c93038dd",
+      "华为杯_求解规范/tools/run_position_regression.py": "858a355a6790e486838da7057b2d665b30d0046731d0520fd28d9abfce240122",
+      "华为杯_求解规范/tools/run_shared_skill.py": "9e1bf9afbce51dcb9df5d6a693ae711c31b5289735aad51c64c3374bfefc5e5e",
+      "华为杯_求解规范/tools/supporting_contract.py": "f459bbe5290b1e9e9d29d8b9f610614d4a74a42ef581578141fd286fe74124f2",
+      "华为杯_求解规范/tools/sync_supporting_skill.py": "753d43146dcee3b583150d581ac64ad432deb38e061d255c585e397997dda68e",
+      "华为杯_求解规范/tools/verify_academic_figure_smoke.py": "c18623842bc6b6a4e580be1bc640122c86830b67198d97a79d2fffebb3482304",
+      "华为杯_求解规范/tools/visual_routes.py": "9f3cb35ebb13dd9093e14f61abc5afd5a0d3962502b76357d315d15e3bbfef5a",
+      "华为杯_求解规范/tools/workflow_deployment.py": "30a224bab7d1e897c2af4fda6f5d4b42ea0c6bebd40b4c970bed14e950bfc86b",
+      "华为杯_求解规范/tools/workshop.py": "1296c54cd7320843272020bdfa5c69663cf91318891c9c5f8309e36d1fe16fbb",
+      "华为杯_求解规范/tools/workspace_cli.py": "c2ddd9810098ce161618074b5e25a5a26e5a2d2e44707fb6acb40a5210943c23",
+      "华为杯_求解规范/tools/workspace_completion.py": "3421cdc8b71c2e140bada848b52e1943155dc68e99c84c9a75cb515730c8015d",
+      "华为杯_求解规范/tools/workspace_context.py": "864e419692b265ef6940b69876e041c5c9c41a0f8818b9b7355feb6b54aecec0",
+      "华为杯_求解规范/tools/workspace_execution.py": "6bba6646e4391ce276f395116bd9d7037234c5e7cd38fb9d0950882a95e195d9",
+      "华为杯_求解规范/tools/workspace_resources.py": "7276a60669a63ca6841d630737604c4a082e5126daacfe0ab7853b3b9b460307",
+      "华为杯_求解规范/tools/workspace_schema.py": "f8bf48d3450cace2cf8cefa615ce31b854d8e25107f787b6f23956d184dcc9ff",
+      "华为杯_求解规范/候选图工作流.md": "0baf785456db7f09b375e71abd1dbe2636d3623b8f836063b0e044b057c81aaf",
+      "华为杯_求解规范/候选图清单.schema.json": "33d37f761086610be9919296fe0bbb26f543e3816a809370480aefb6309a5645",
+      "华为杯_求解规范/华为杯_求解规范.md": "4e25650f4e1c8969d3b1c52aaa1e5eb8d97d16c03c739c4909d80927ef25e06b",
+      "华为杯_求解规范/华为杯_绘图规范.md": "e0ec15fbe12974348311cbd60465b3e5ceb6c6464c63b3c9926773bd551286c6",
+      "华为杯_求解规范/图数口径.schema.json": "babf8bbe85a0488f245f7669d2d2b602361fbad5c1eb8bb841b78b457e75e47c",
+      "华为杯_求解规范/工作区工作流.md": "a8f67cd4c24ae14b1b6effd74b723088fc43edf072666bd58e7c7a0300a9e54b",
+      "华为杯_求解规范/工作区清单.schema.json": "da45aecab22fdb56a5cef5b6bf3cfefd24d8b1487c56cd13126d4c5cf4156444",
+      "华为杯_求解规范/工作流部署.md": "6795f908ca7edd153da0ec7b09c0a50a318f5f399f7cda30bbd71743db4bffed",
+      "华为杯_求解规范/总体路线图模板选型协议.md": "4a6afe217fde2b951c68576031009c5be21f68c2c254d04989c495df78320df2",
+      "华为杯_求解规范/总控阶段_claude.md": "63bb9d537b865ef4dc330887d8d7611545d3a9afb21a6c814d26a682b4d048db",
+      "华为杯_求解规范/总控阶段_codex.md": "4d53e3720e6c4a5f8650979bf566ae544ddd7f04e57fb7f1a6807284da37cbd0",
+      "华为杯_求解规范/支撑材料清单.schema.json": "8a6a3e6b06c0218b9ee725fc35b9e8008471519ed05596371fa5b8e52c4abf0a",
+      "华为杯_求解规范/模型选择与竞赛协议.md": "bcc1c91036bbfc0e2021bfa26853811f75f83d6f94bcacc589801ef91c479ecd",
+      "华为杯_求解规范/模型选择报告.schema.json": "c04fef6c771e3e025c795dd86aca4d8eeb37527e80ed4b9c8e52c59999151615",
+      "华为杯_求解规范/环境/基础需求.json": "e066fe3cc64498ee5aa349e3cfef60d11eacecc8e629a795ffdad8dfbf98953c",
+      "华为杯_求解规范/环境/环境检测.schema.json": "3dea558d34e2078bdf0580202d759a00b92ca2a97e015751c24b58dac7eaa198",
+      "华为杯_求解规范/环境/软件目录.json": "80c66649f668c59d0869638e1913f4072aa63c6d68f1ec09071b222fd050eb35",
+      "华为杯_求解规范/环境/软件目录.schema.json": "419cdea4e270832130e33c3dbc6f316e175088d18d7a4ff7cc3d57bd5d67f27c",
+      "华为杯_求解规范/环境/软件需求.schema.json": "a84a4b245b2e995b1451e8369a5fb164a8118dde54088b84be225a93efd74cb9",
+      "华为杯_求解规范/结构图工作流.md": "20487e592065db209d74013972f7b3cb2fdc23ebc2953e38d6e83e2b01874fea",
+      "华为杯_求解规范/综合图内容.schema.json": "392db5c05f8a57c73c46d4a8a23916b92b506196daa9ca3f2517bac8162571b3",
+      "华为杯_求解规范/综合图尺寸.schema.json": "9e2ce7ecdb21960a0b490c68ad0a66b980b4fc08abf6666a8bb5f6084aa80246",
+      "华为杯_求解规范/视觉素材证据.schema.json": "fd79da8eb8c68d0b48592320c468f9eed4e3d2db03d6fc3ebe780e54c493b650",
+      "华为杯_求解规范/视觉计划.schema.json": "e339c89b3ccaa1dfa0bcd7528df519791f75094721a07ab1d8c97fb2cf1b54ef",
+      "华为杯_论文规范模板/README.md": "2f7aa0f27810408ebbf9c664326b07e62fc65a7e18fc8cabe55d241b44e6a46a",
+      "华为杯_论文规范模板/agent_manifest.schema.json": "1775f7b0d6cf79d0212d3bf7f46a1ce2cac0d1d1d4e9d6dbd7d6a0d45c3a325d",
+      "华为杯_论文规范模板/example.tex": "95a893ba0bd38e3a84cd3977311ebc685ed719841e25b34f25bfe2ea3471726b",
+      "华为杯_论文规范模板/gmcm-layout.sty": "64241bfd13714b41d63dfeb6a5bac67c50139df0fc3f4b288a7150bc11c6296a",
+      "华为杯_论文规范模板/gmcm-title.sty": "ba8f41f3647969e360273afd55df321dd55e312250dd75f22f7b47da4d59b79e",
+      "华为杯_论文规范模板/gmcm.bst": "c69ec2adbdbd97b9b3a07c8707e7d6465e15813ee9d899f0b94bc76ce7d13c7a",
+      "华为杯_论文规范模板/gmcmthesis.cls": "93eda1c6da24f229fc407bde104afbaabbb811537bbc921534f4def4a1823032",
+      "华为杯_论文规范模板/page_targets.json": "27061c1bd14f594f0fdcd05355af58435772b2b993a646fe8427a343c97097bd",
+      "华为杯_论文规范模板/tools/abstract_evidence.py": "04a7b8dc3c6ef1d2d7e43fafcebe950be7d8b845f13d65e4c61be96ab4833d0e",
+      "华为杯_论文规范模板/tools/ai_disclosure.py": "87762d53cb7ca45f3c8f7fbd85e6d8413500409e690ef58fe8d4a0c1b79f32a0",
+      "华为杯_论文规范模板/tools/audit_abstract.py": "641bc5b632227a8f4ccb3e6361dfb0166b3e64e0d0881205b99b61f7de60ecff",
+      "华为杯_论文规范模板/tools/audit_abstract_pdf.py": "3436699a4d2b592b9c0c69ad36bb620488403e34d8ad9083583ca761911e78d2",
+      "华为杯_论文规范模板/tools/audit_appendix.py": "15c7e12c877cf5f4d6cb40015e396efa1891d246626381be75d190f4377db706",
+      "华为杯_论文规范模板/tools/audit_citations.py": "06e7ae84d31b605ca12108b98284dcb2e90ad799b713c9c8fc70311acd897aeb",
+      "华为杯_论文规范模板/tools/audit_docx.py": "501a2788b3d5907bbfa0b4c77cc0c244eb0978f0b7ac51eba7494505517bd5c8",
+      "华为杯_论文规范模板/tools/audit_paper.py": "dc0d7b119968b30c2bf8cad93ccc8204a51dd5cbf2e3734ce3187faabd9fb761",
+      "华为杯_论文规范模板/tools/audit_pdf_layout.py": "afe32b7822fa2f82e825ed457df9340970b6190ad2cc24f29b1b8af6fc40dcd8",
+      "华为杯_论文规范模板/tools/audit_tex.py": "1778852f86b45083b3f8098d64a4a792e499ab95521592f142505b796366f240",
+      "华为杯_论文规范模板/tools/build_appendix.py": "80a64cbcc8ad5e085ecfcc08f78908001ddcd9e790ddb77ac046f863a94355ed",
+      "华为杯_论文规范模板/tools/build_docx.py": "b022ac3def263119ed5ee03017aa6b317eb6757b11db9e842b45b5bd977a020c",
+      "华为杯_论文规范模板/tools/build_latex.py": "6fa10ed3b43bf772856dc1cc4ccd9c33b8c33fa32065ad9e630d8d2c949c6609",
+      "华为杯_论文规范模板/tools/calibrate_page_targets.py": "42b598b6ab362690c67d9fee9e05937451b05b8a1ed5f14578adc6544b2214ba",
+      "华为杯_论文规范模板/tools/collect_reference_source.py": "c70ea4809b1b20b6124b1a3df93f53ad27964f8550a48c5ad656b2503f9b2ef8",
+      "华为杯_论文规范模板/tools/evaluation_contract.py": "f9d252444bcaf54d708c3afc0c244704133ffce5c8530681ced8a64809cd5e37",
+      "华为杯_论文规范模板/tools/evaluation_fixture.py": "93bc6ca92dd7b78a2c1385ef48e41fee7d6ec13c4b66a069aedca63d311129c4",
+      "华为杯_论文规范模板/tools/first_chapters.py": "421de84bbcec578edc6b4fb2d0cdf37499cec8a06841168d6c594ea5afcf376e",
+      "华为杯_论文规范模板/tools/first_chapters_pdf.py": "31ba6b27f3510f553b879b3b259687d78743025535559721c7c8fcf19a5ec7b3",
+      "华为杯_论文规范模板/tools/migrate_markdown_to_tex.py": "2171a7a96e505fc87774d35bad1fe6711655c76307de16f9d77c8a5dfc2eb593",
+      "华为杯_论文规范模板/tools/paper_contract.py": "b488997a068364e3405af95b5a0a1b1bd8bef041ed3bbb071dd7b0e9d029007c",
+      "华为杯_论文规范模板/tools/reference_evidence.py": "b71d0f262ee860bd29617bba4fc10f5d17b7de22ff0b209fd78ed0b210b0f663",
+      "华为杯_论文规范模板/tools/render_word.vbs": "3358ad41068377a9fd1e2dd0ae5137e4f30eebd48a1746328abd543b10ba815e",
+      "华为杯_论文规范模板/tools/restatement_prose.py": "0487b84ee5d16bc6f2cc48ad495f6dd95de7d9904a84bf9a800ecbb0ebc09abf",
+      "华为杯_论文规范模板/tools/run_abstract_boundary_smoke.py": "ca3ba3d668c443306d50b5e195949c82e9394c980b0e1c596a170c78faba5257",
+      "华为杯_论文规范模板/tools/run_abstract_regression.py": "65f42301845c00c7def9fdf48615cbe15a0585cb645073559b8dce42f62187da",
+      "华为杯_论文规范模板/tools/run_ai_disclosure_regression.py": "ed05d21b87f1edf815e8db1b79e32b1062e6054f02e8e66cd40e56907d0e2b5c",
+      "华为杯_论文规范模板/tools/run_appendix_smoke.py": "e0dd753ccce6876598fa5bcc6c4ba7af5db3932f4fb95605ccdc285959ef01bf",
+      "华为杯_论文规范模板/tools/run_citation_smoke.py": "be3294f57656520dcdae35cd408bd8d30e7777329689df263678d9d71e7b54d4",
+      "华为杯_论文规范模板/tools/run_first_chapters_regression.py": "bfa1302ded4175b4456cbcd61cf27056ff46f0ab56b71cb43c9a2248c14155f3",
+      "华为杯_论文规范模板/tools/run_layout_regression.py": "c9f806054c5a150a8effa9ff13e51cc8bcd2a82fdbb4a2be6821e3823409dcce",
+      "华为杯_论文规范模板/tools/run_layout_smoke.py": "f9dbd72b5e361d871fad042c8bd70fbc90106ed5b418a82ecb8435b6cfbc7d4b",
+      "华为杯_论文规范模板/tools/run_prose_regression.py": "36b2907a6d70d7fc643b9d82bc6d1068ee20266a5f4e600aeb1f7dedb8ed551d",
+      "华为杯_论文规范模板/tools/run_reference_evidence_regression.py": "4f8bbbd7e83757ba7be7afcca524c06d30707ef0e63c7e6e8ea1ee82d642627e",
+      "华为杯_论文规范模板/tools/run_word_render.py": "934934e79feea15d18f29304f164a1ddb9fa4e57049713d0451274020ff49fd5",
+      "华为杯_论文规范模板/前三章写作与验收.md": "24ce4627d6175e4a785fdba7d2382ad40263bbbe8f5ccdd65b0d03945ca67adf",
+      "华为杯_论文规范模板/华为杯_论文章节规范.md": "fcc22ae75dbfc882e59db13f3af141f882b918d6ceeecaddbdc9a5836965d7df",
+      "华为杯_论文规范模板/参考文献证据.schema.json": "d4e9ef02dc8f0104cc7bcb9b8bd7e80d26a6f4ddb5a2d4ecd0446fe69a5edd44",
+      "华为杯_论文规范模板/摘要证据.schema.json": "341270d29ceb5609f8e43de5e152b9d2a4170d0419fdbdf94084ff6e356bcb5b",
+      "华为杯_论文规范模板/摘要题型规则.md": "e7ba7adbc8490c1f17b243fd2055e8dcefe21d88cf1cdb64d5d11eb0eb57f7d8",
+      "华为杯_论文规范模板/章节模板/关键性符号说明模板.tex": "3f0a923b966b3381298523737ad4cf64fb7e4a02d5a5bc3fafebbcc5fac652fc",
+      "华为杯_论文规范模板/章节模板/参考文献模板.tex": "ebca7a0f88476d643a4840d26b8bc88ff16c41030b4ebab77b2f90ff9a885752",
+      "华为杯_论文规范模板/章节模板/摘要模板.tex": "d09b77a050d4d1dbd330365a018892fd1c350ff11021540cf1e7578261267eb7",
+      "华为杯_论文规范模板/章节模板/模型假设模板.tex": "f5545d2a5602a15de2f058a51f05b77dac5dc48ad9fbd6e326be5d9298b4f335",
+      "华为杯_论文规范模板/章节模板/模型检验模板.tex": "112973849625a1e2732a35b5936c49ff1c9217283dbbc00bac7d5d3ba7130e9a",
+      "华为杯_论文规范模板/章节模板/模型评价与改进模板.tex": "e7ad8bc8596b6700e1c36aaacd85b892e1bcd9acc51318ef10698dd2a8b6f5c8",
+      "华为杯_论文规范模板/章节模板/结论模板.tex": "311c8cff3131f24316826731165481a6daadce6598794d24fed7cba7ac9e0433",
+      "华为杯_论文规范模板/章节模板/通用正文模板.tex": "961954f528d1d8a9b90feac065e20439ecc7c92ddd0add08a2d454d284f3a927",
+      "华为杯_论文规范模板/章节模板/问题章节模板.tex": "d2b7624dde21d33f474507e957f73e94dc7d4a873445449928e08328048ce503",
+      "华为杯_论文规范模板/章节模板/问题重述模板.tex": "ad33def67877cb1b6c842598645816e58433e313b785f301d524699e027c9b2f",
+      "华为杯_论文规范模板/章节模板/附录模板.tex": "18080ea5dc9d2fc013af88b83587128b955dc6d418eedd5475cb744bb262b8fd",
+      "华为杯_论文规范模板/章节页数基线.json": "bc7a08d846ea6efce3af07512e1b4b5a18174847fdf7ffd0ca60284ad6c79e3e",
+      "工作流模式.json": "f6a618fb3cd7cd8ac3b2fc246d7372f089ac4ce331ccfb99a5d0289cecc3a3ec",
+      "第二十三届研赛论文Word标准模板.docx": "23fcd3ad67829f8f7357bd4eed4f2a587eed4d88dcc168668bcba24ffb5714c5"
+    },
+    "runtime": "codex",
+    "schema_version": "1.0",
+    "scope": "paper"
+  },
+  "runtime": "codex",
+  "schema_version": "2.2",
+  "source_closure": {
+    "论文/gmcm-layout.sty": "64241bfd13714b41d63dfeb6a5bac67c50139df0fc3f4b288a7150bc11c6296a",
+    "论文/gmcm-title.sty": "ba8f41f3647969e360273afd55df321dd55e312250dd75f22f7b47da4d59b79e",
+    "论文/gmcmthesis.cls": "93eda1c6da24f229fc407bde104afbaabbb811537bbc921534f4def4a1823032",
+    "论文/章节内容/00_摘要.tex": "41822f208ba427a767534cb859b2bfa4d5df2fd0b2803e5703194ac8abe4f66d",
+    "论文/章节内容/01_问题重述.tex": "ccc59e6dcac4a00acd57d85f5b35d5aca35208c7d8911855d8ab40f0ef8f701f",
+    "论文/章节内容/02_模型假设.tex": "56899af7c9f03fb4a26bbd8409df15c94fb6afe926087d2181ab05097d3a3c60",
+    "论文/章节内容/03_关键性符号说明.tex": "5571703fe79b931d6df328bcfa1ea1446d325a6329aac37e4d27ca8fa69c0638",
+    "论文/章节内容/04_问题一.tex": "17854d0f02ca80bce7d6dbe6aec45fa96d864d95538020a1d6cbcf1c6c541937",
+    "论文/章节内容/05_问题二.tex": "64d118c19586c570a6d117a9607d2be8e4da2dc1b389a04bcf5f92461e5d1819",
+    "论文/章节内容/06_问题三.tex": "6e64ee4cf04bcc83b342fd3adf1f5c6fe05105367f2372242ad581559eaeccab",
+    "论文/章节内容/07_模型评价与展望.tex": "4c4298d1421febde2b6b69197f2792f8bdfde0924242b4e1dd08fc44f749e4f4",
+    "论文/章节内容/08_参考文献.tex": "1d822555f3ca21e7b5670c158878481ee7323d07fe56389496de05b2a8b3c0c9",
+    "论文/章节内容/99_附录.generated.tex": "c584b219dc581d20cffe17101240aed65caec1af1e612ef020d54c4be192052d",
+    "论文/章节内容/q1_反例核查.generated.tex": "3c8d43d1de386b9b5e13f264614922cbd7e905aede714e7afe233161263db247",
+    "论文/章节内容/q1_模型比较.generated.tex": "463057cded4a62be99be564c32e0286f60ad5db0796b90572d69d2076511beba",
+    "论文/章节内容/q1_深度分析.generated.tex": "4de8aff9b56fabacaa858488e727a181c35995c5350cc71502b214638bdf9e6e",
+    "论文/章节内容/q2_候选交叉核查.generated.tex": "a9768f8ceafeb3bfbc3d91f13b3ddd916adb087673a64a1fa1f42d6e43c624d8",
+    "论文/章节内容/q2_模型比较.generated.tex": "463057cded4a62be99be564c32e0286f60ad5db0796b90572d69d2076511beba",
+    "论文/章节内容/q2_深度分析.generated.tex": "ab98432608ea76c84ad76fedd241e91a58f5b36bc814244ba03f39c8dea0ec1d",
+    "论文/章节内容/q3_参数深度.generated.tex": "7dc33be146d91d30c6d6e9dc6aedac5d76dea73adea31bf77db4b8833e14d85b",
+    "论文/章节内容/q3_命中交叉核查.generated.tex": "266bd7f18126f2124b9c95d12aa273e175ca4b63fa2243af5e339aeeb24213fc",
+    "论文/章节内容/q3_模型比较.generated.tex": "463057cded4a62be99be564c32e0286f60ad5db0796b90572d69d2076511beba",
+    "论文/章节内容/q3_结构缓存交叉核查.generated.tex": "b9d7c8b7d21861e34cd2265013e33b9fc5a4a98dde1d2963c82387941fa26fe4",
+    "论文/章节内容/q3_逐核深度.generated.tex": "ef3f5d5cab12a25e6a87f96ad1563d6d32f89e842abe4def1368a3a167a4ab74",
+    "论文/综合图片段/q1-overview.tex": "ec0fe44baaea02aa26f280dba92499f47504831ae76881029314f6bae34d05b9",
+    "论文/综合图片段/q2-overview.tex": "6bf866b59a52e55fb74ddf805ea084323682714aba0dfc1fc14484d53a64bb5c",
+    "论文/综合图片段/q3-overview.tex": "119ef8ab6e0a246dd55f62558a3502a7ce444a9be03acfc14ed777cec48b28c5",
+    "论文/论文.tex": "3482f66bfdc754bd1d3887c852b1c61840a2deab23b86a9995b82f8b6a14c6ad",
+    "论文/附录模板.tex": "18080ea5dc9d2fc013af88b83587128b955dc6d418eedd5475cb744bb262b8fd",
+    "论文/验收输出/图形入文.v4.review_files/probe_wrapper.tex": "47cf759d0ddd30bf3de2c1291741da9da5f30d809f33a48ac3e0088f04508bd1"
+  },
+  "started_at_ns": 1790202989753463700,
+  "status": "PASS",
+  "reviewed_at": "2026-09-23T22:38:42.289910+00:00"
+}

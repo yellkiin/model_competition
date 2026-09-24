@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "events": [
+    {
+      "action": "venv_reuse",
+      "path": "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+      "version": [
+        3,
+        13,
+        15
+      ],
+      "time": "2026-09-23T06:46:12.832706+00:00"
+    },
+    {
+      "action": "pip_offline_cache",
+      "name": "python.exe",
+      "returncode": 1,
+      "output": "Looking in links: c:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\n\nERROR: Could not find a version that satisfies the requirement PyMuPDF<2,>=1.24 (from versions: none)\nERROR: No matching distribution found for PyMuPDF<2,>=1.24",
+      "time": "2026-09-23T06:46:14.444595+00:00"
+    },
+    {
+      "action": "pip_download",
+      "source": "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "Looking in indexes: https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple\nCollecting PyMuPDF<2,>=1.24\n  Downloading pymupdf-1.28.2-cp310-abi3-win_amd64.whl (19.8 MB)\n     ---------------------------------------- 19.8/19.8 MB 11.0 MB/s  0:00:01\nCollecting Pillow<13,>=10\n  Downloading pillow-12.3.0-cp313-cp313-win_amd64.whl (7.2 MB)\n     ---------------------------------------- 7.2/7.2 MB 6.6 MB/s  0:00:01\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\pymupdf-1.28.2-cp310-abi3-win_amd64.whl\nSaved c:\\users\\13925\\appdata\\local\\huaweicupworkflow\\cache\\wheels\\pillow-12.3.0-cp313-cp313-win_amd64.whl",
+      "time": "2026-09-23T06:46:19.097722+00:00"
+    },
+    {
+      "action": "pip_install",
+      "source": "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "Looking in links: c:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\pymupdf-1.28.2-cp310-abi3-win_amd64.whl\nProcessing C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\cache\\wheels\\pillow-12.3.0-cp313-cp313-win_amd64.whl\nInstalling collected packages: PyMuPDF, Pillow\n\nSuccessfully installed Pillow-12.3.0 PyMuPDF-1.28.2",
+      "time": "2026-09-23T06:46:22.545306+00:00"
+    },
+    {
+      "action": "user_environment",
+      "status": "satisfied",
+      "changes": [
+        {
+          "variable": "Path",
+          "before": "%USERPROFILE%\\AppData\\Local\\Microsoft\\WindowsApps;D:\\APP\\anaconda3;D:\\APP\\anaconda3\\Library\\usr\\bin;D:\\APP\\anaconda3\\Library\\mingw-w64;D:\\APP\\anaconda3\\Library\\bin;D:\\APP\\anaconda3\\Scripts;%PyCharm%;D:\\App\\Microsoft VS Code\\bin;C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\python-3.13.15;C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\python-3.13.15\\Scripts",
+          "after": "%USERPROFILE%\\AppData\\Local\\Microsoft\\WindowsApps;D:\\APP\\anaconda3;D:\\APP\\anaconda3\\Library\\usr\\bin;D:\\APP\\anaconda3\\Library\\mingw-w64;D:\\APP\\anaconda3\\Library\\bin;D:\\APP\\anaconda3\\Scripts;%PyCharm%;D:\\App\\Microsoft VS Code\\bin;C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\python-3.13.15;C:\\Users\\13925\\AppData\\Local\\HuaweiCupWorkflow\\python-3.13.15\\Scripts",
+          "changed": false
+        }
+      ],
+      "time": "2026-09-23T06:46:23.689432+00:00"
+    }
+  ]
+}

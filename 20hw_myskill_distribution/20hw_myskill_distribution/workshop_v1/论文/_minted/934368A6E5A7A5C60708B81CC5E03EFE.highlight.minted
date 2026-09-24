@@ -1,0 +1,11 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Question\PYGZhy{}specific entry point for formal candidate replay and validation.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{argparse}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{support\PYGZus{}reproduce}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{solve}\PYG{p}{,} \PYG{n}{validate}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{parser} \PYG{o}{=} \PYG{n}{argparse}\PYG{o}{.}\PYG{n}{ArgumentParser}\PYG{p}{()}
+    \PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}action\PYGZsq{}}\PYG{p}{,} \PYG{n}{choices}\PYG{o}{=}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}solve\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}validate\PYGZsq{}}\PYG{p}{))}
+    \PYG{n}{args} \PYG{o}{=} \PYG{n}{parser}\PYG{o}{.}\PYG{n}{parse\PYGZus{}args}\PYG{p}{()}
+    \PYG{p}{(}\PYG{n}{solve} \PYG{k}{if} \PYG{n}{args}\PYG{o}{.}\PYG{n}{action} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}solve\PYGZsq{}} \PYG{k}{else} \PYG{n}{validate}\PYG{p}{)()}
+\end{MintedVerbatim}

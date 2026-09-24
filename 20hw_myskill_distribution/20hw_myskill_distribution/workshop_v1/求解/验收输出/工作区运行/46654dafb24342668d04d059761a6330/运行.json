@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "error": null,
+  "started_at": "2026-09-23T23:03:10.198297+00:00",
+  "finished_at": "2026-09-23T23:07:24.954665+00:00",
+  "tool": "华为杯_论文规范模板/tools/audit_appendix.py",
+  "command": [
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\workspace_execution.py",
+    "--child",
+    "E:\\20hw_myskill_distribution\\workshop_v1",
+    "E:\\20hw_myskill_distribution\\华为杯_论文规范模板\\tools\\audit_appendix.py",
+    "--project-root",
+    ".",
+    "--main-tex",
+    "论文/论文.tex",
+    "--runtime",
+    "codex",
+    "--report",
+    "求解/验收输出/完成登记/097b3be20b104a8982c59f19d085f177/appendix.json"
+  ],
+  "runtime": "codex",
+  "cwd": "E:\\20hw_myskill_distribution\\workshop_v1",
+  "shared_changes": [],
+  "inputs": {
+    "status": "PASS",
+    "changed_inputs": []
+  },
+  "independent_reproduction_root": null,
+  "stdout": "求解/验收输出/工作区运行/46654dafb24342668d04d059761a6330/stdout.log",
+  "stderr": "求解/验收输出/工作区运行/46654dafb24342668d04d059761a6330/stderr.log",
+  "assurance": "真实子进程和文件一致性检查；不代表科学或视觉审阅，不是 OS 沙箱。"
+}

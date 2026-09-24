@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "华为杯 LaTeX-first 论文 manifest",
+  "type": "object",
+  "required": [
+    "title",
+    "keywords",
+    "abstract_tex_path",
+    "chapters",
+    "abstract_evidence_path",
+    "references_evidence_path",
+    "first_chapters_evidence_path",
+    "first_chapters_review_path"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "keywords": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "abstract_tex_path": {
+      "type": "string",
+      "pattern": "\\.tex$"
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 6,
+      "description": "固定 Q+5 个元数据章节：三章前置、Q 个问题、评价、参考文献；Q>=1，附录另由工具生成。动态标题/顺序由 paper_contract.py 检查。",
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter_id",
+          "title",
+          "role",
+          "order",
+          "tex_path"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "chapter_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "enum": [
+              "preliminary",
+              "problem",
+              "evaluation",
+              "references"
+            ]
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "level": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1,
+            "default": 1
+          },
+          "tex_path": {
+            "type": "string",
+            "pattern": "\\.tex$"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "abstract_type": {
+            "enum": [
+              "optimization",
+              "statistics",
+              "prediction",
+              "mechanism",
+              "simulation",
+              "evaluation",
+              "interpretation",
+              "theory"
+            ]
+          },
+          "abstract_result_mode": {
+            "enum": [
+              "quantitative",
+              "qualitative",
+              "analytic"
+            ],
+            "default": "quantitative"
+          },
+          "depends_on_previous": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "problem"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "abstract_type"
+              ]
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "abstract_result_mode"
+              ],
+              "properties": {
+                "abstract_result_mode": {
+                  "const": "qualitative"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "abstract_type"
+              ],
+              "properties": {
+                "abstract_type": {
+                  "enum": [
+                    "mechanism",
+                    "interpretation",
+                    "theory"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "contest_edition": {
+      "type": "string",
+      "pattern": "^[一二三四五六七八九十百]+$",
+      "description": "赛事届次中文数字；缺省二十三，保留历届论文的实际届次"
+    },
+    "title_lines": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "可选的既有题目断行，拼接须等于title"
+    },
+    "abstract_evidence_path": {
+      "type": "string",
+      "pattern": "\\.json$",
+      "description": "摘要证据映射，路径相对论文manifest目录；不得由摘要反推或虚构结果。"
+    },
+    "references_evidence_path": {
+      "type": "string",
+      "pattern": "\\.json$",
+      "description": "正文实引文献的来源元数据和用途证据，路径相对论文manifest目录；详见参考文献证据.schema.json。"
+    },
+    "first_chapters_evidence_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\.json$"
+    },
+    "first_chapters_review_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\.json$",
+      "description": "当前PDF逐页复核：前三章、第4章交界及evaluation章全部页面；含评价章净正文测量和六项内容审阅，采集器仅生成待审记录。"
+    }
+  }
+}

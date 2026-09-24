@@ -1,0 +1,26 @@
+{
+  "contact_pages": 23,
+  "counts": {
+    "atlas_images": 19,
+    "directories": 42,
+    "inventory_files": 215,
+    "production_families": 39,
+    "scripts": 65
+  },
+  "inspection_errors": [],
+  "render_errors": [],
+  "scan_digest": "c3498c1d170c0e68e2360d2d83f8357fde815ae58069316c3555d547830d3f9c",
+  "status": "PASS",
+  "sync": {
+    "counts": [
+      264,
+      264
+    ],
+    "differences": [],
+    "ignored": [
+      "__pycache__",
+      "*.pyc"
+    ],
+    "status": "PASS"
+  }
+}

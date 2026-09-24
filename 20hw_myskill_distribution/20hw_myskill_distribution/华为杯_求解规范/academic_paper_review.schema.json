@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Compiled academic figure inclusion evidence; visual receipts remain manual",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "runtime",
+    "main_tex",
+    "main_tex_sha256",
+    "pdf_path",
+    "pdf_sha256",
+    "pdf_pages",
+    "source_closure",
+    "compile_runs",
+    "fls_path",
+    "fls_sha256",
+    "probe_path",
+    "probe_sha256",
+    "figures",
+    "portfolio_review",
+    "bibliography_run",
+    "generated_outputs",
+    "bibliography_inputs"
+  ],
+  "properties": {
+    "resource_dependencies": {"type": ["object", "null"]},
+    "schema_version": {
+      "const": "2.2"
+    },
+    "runtime": {
+      "enum": [
+        "codex",
+        "claude"
+      ]
+    },
+    "main_tex": {
+      "type": "string",
+      "minLength": 1
+    },
+    "main_tex_sha256": {
+      "$ref": "#/$defs/hash"
+    },
+    "pdf_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pdf_sha256": {
+      "$ref": "#/$defs/hash"
+    },
+    "pdf_pages": {
+      "type": "integer"
+    },
+    "source_closure": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/hash"
+      }
+    },
+    "compile_runs": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "command",
+          "cwd",
+          "returncode",
+          "log_path",
+          "log_sha256"
+        ],
+        "properties": {
+          "command": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "cwd": {
+            "type": "string"
+          },
+          "returncode": {
+            "const": 0
+          },
+          "log_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "log_sha256": {
+            "$ref": "#/$defs/hash"
+          }
+        }
+      }
+    },
+    "fls_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fls_sha256": {
+      "$ref": "#/$defs/hash"
+    },
+    "probe_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "probe_sha256": {
+      "$ref": "#/$defs/hash"
+    },
+    "portfolio_review": {
+      "$ref": "#/$defs/view"
+    },
+    "figures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "figure_id",
+          "vector_path",
+          "vector_sha256",
+          "occurrences"
+        ],
+        "properties": {
+          "figure_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "vector_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "vector_sha256": {
+            "$ref": "#/$defs/hash"
+          },
+          "occurrences": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "probe_id",
+                "display_width_mm",
+                "display_height_mm",
+                "text_width_mm",
+                "page_number",
+                "page_render_path",
+                "page_render_sha256",
+                "reviewed",
+                "tool_ref",
+                "observation",
+                "display_depth_mm",
+                "pdf_bbox"
+              ],
+              "properties": {
+                "probe_id": {
+                  "type": "integer"
+                },
+                "display_width_mm": {
+                  "type": "number"
+                },
+                "display_height_mm": {
+                  "type": "number"
+                },
+                "text_width_mm": {
+                  "type": "number"
+                },
+                "page_number": {
+                  "type": "integer"
+                },
+                "page_render_path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "page_render_sha256": {
+                  "$ref": "#/$defs/hash"
+                },
+                "reviewed": {
+                  "type": "boolean"
+                },
+                "tool_ref": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "display_depth_mm": {
+                  "type": "number"
+                },
+                "pdf_bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "bibliography_run": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "command",
+            "cwd",
+            "returncode",
+            "log_path",
+            "log_sha256"
+          ],
+          "properties": {
+            "command": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string"
+              }
+            },
+            "cwd": {
+              "type": "string"
+            },
+            "returncode": {
+              "const": 0
+            },
+            "log_path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "log_sha256": {
+              "$ref": "#/$defs/hash"
+            }
+          }
+        }
+      ]
+    },
+    "generated_outputs": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/hash"
+      }
+    },
+    "bibliography_inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "scope",
+          "kind",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "enum": [
+              "project",
+              "external"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "database",
+              "style"
+            ]
+          },
+          "sha256": {
+            "$ref": "#/$defs/hash"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "view": {
+      "type": "object",
+      "required": [
+        "reviewed",
+        "tool_ref",
+        "observation"
+      ],
+      "properties": {
+        "reviewed": {
+          "type": "boolean"
+        },
+        "tool_ref": {
+          "type": "string"
+        },
+        "observation": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

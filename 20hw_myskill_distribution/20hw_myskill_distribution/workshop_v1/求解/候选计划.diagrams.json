@@ -1,0 +1,762 @@
+{
+  "schema_version": "1.0",
+  "overview_content_version": "2.0",
+  "purpose": "production",
+  "runtime": "codex",
+  "questions": [
+    {
+      "problem_id": "q1",
+      "chapter_id": "q1",
+      "supporting_question_id": "q1",
+      "overview_id": "q1-OVERVIEW"
+    },
+    {
+      "problem_id": "q2",
+      "chapter_id": "q2",
+      "supporting_question_id": "q2",
+      "overview_id": "q2-OVERVIEW"
+    },
+    {
+      "problem_id": "q3",
+      "chapter_id": "q3",
+      "supporting_question_id": "q3",
+      "overview_id": "q3-OVERVIEW"
+    }
+  ],
+  "diagrams": [
+    {
+      "diagram_id": "GLOBAL-ROADMAP",
+      "problem_id": null,
+      "kind": "flowchart",
+      "placement": "body",
+      "scientific_question": "题定三场景如何从共同图结构、合法方案及官方评估形成完整研究路线？",
+      "backend": "drawio",
+      "backend_reason": "选中scibox可编辑四内容模板，便于保持阶段色带、单向连接与论文矢量文字。",
+      "source": "求解/总体路线图_紧凑.drawio",
+      "dependencies": [
+        "求解/总体路线图.drawio",
+        "求解/总体路线图内容.json",
+        "求解/tighten_roadmap.py",
+        "求解/preview_roadmap_page.py",
+        "求解/总体路线图_紧凑.pdf",
+        "求解/finalize_roadmap.py"
+      ],
+      "outputs": {
+        "vector": "求解/总体路线图_论文宽.pdf",
+        "preview": "求解/总体路线图_紧凑.png"
+      },
+      "target_width_mm": 160,
+      "sources": [
+        {
+          "path": "求解/题面约束清单.md",
+          "sha256": "2fc777003ebc39ebaaa037961213fb52092e7937f88f3a8a26fca020612d7492",
+          "locator": "共用定义和问题一至三"
+        },
+        {
+          "path": "求解/求解计划.md",
+          "sha256": "a24ca3cd4fcd961d75dd235f228ce3cf59a5bbb0d0cf36abe6ca8f22bc5fe4ad",
+          "locator": "共用计算与候选"
+        },
+        {
+          "path": "求解/数据审计.json",
+          "sha256": "6ee1625c2299c1d793270788d18d4318035d54d9a3cd7976d47f68622b0fef8e",
+          "locator": "cases数组包含100个官方图结构审计"
+        }
+      ],
+      "references": [
+        {
+          "path": ".agents/skills/sci-box-main/sci-box-main/skills/scibox-diagram/assets/four-content-evidence-roadmap/preview.png",
+          "sha256": "33c115660741f1458fbc286d1ec59692193fbe0ad984697720fcb5cf8e0fc98f",
+          "reviewed": true,
+          "observation": "四层彩色横带各自包含左侧三项、中心要点、右侧三项；阶段之间单向连接，适合输入审计与三个递进场景。",
+          "decision": "选用四层结构，把原示例政策建议替换为真实L2场景；缩短带间空白并提高字级。"
+        },
+        {
+          "path": ".agents/skills/sci-box-main/sci-box-main/skills/scibox-diagram/assets/triple-band-research-validation/preview.png",
+          "sha256": "d9187d1d6aa47e25fe95431fa24740976bcc963dfd5bfbedf88e8130f3948348",
+          "reviewed": true,
+          "observation": "三层证据带含中心分析与两侧模块，空白较大；本题审计加三场景共四层，压入三层会混淆场景。",
+          "decision": "淘汰：需把两个独立场景挤入同一带，真实关系和论文尺寸均不如四层方案。"
+        },
+        {
+          "path": ".agents/skills/sci-box-main/sci-box-main/skills/scibox-diagram/assets/four-stage-research-framework/preview.png",
+          "sha256": "76da1e7e52b77d15899cbb9f44828b1ccbef7a84a1bb5a4b6bdc7e5643b38839",
+          "reviewed": true,
+          "observation": "同为四层，但每层只有两列任务节点，难同时容纳候选构造、约束及评价三类信息。",
+          "decision": "淘汰：四阶段数目适合，节点容量和证据对照不足。"
+        }
+      ],
+      "panels": [
+        {
+          "panel_id": "input",
+          "kind": "object",
+          "content": "题定二部计算图、100个算例、固定配置与方案合法性审计",
+          "source_path": "求解/题面约束清单.md",
+          "source_locator": "共用问题定义；输入与评估边界",
+          "semantic_review": "左侧输入核查到右侧单核基准的研究起点，未使用示例数值。"
+        },
+        {
+          "panel_id": "scene_a",
+          "kind": "process",
+          "content": "独立Task的场景A：连通块、深度分段和独立块分批候选",
+          "source_path": "求解/求解计划.md",
+          "source_locator": "共用计算与候选；逐问工作1",
+          "semantic_review": "场景A确为第一问，每子图一Task，右侧只写评价量。"
+        },
+        {
+          "panel_id": "scene_b",
+          "kind": "process",
+          "content": "同核复用的场景B：Task合并、跨核同步与容量核验",
+          "source_path": "求解/题面约束清单.md",
+          "source_locator": "问题二：场景B",
+          "semantic_review": "场景B建立在切图方案上，但重新按合并Task规则评估。"
+        },
+        {
+          "panel_id": "cache",
+          "kind": "process",
+          "content": "共享只读L2：FIFO、容量和带宽响应及同方案比较",
+          "source_path": "求解/题面约束清单.md",
+          "source_locator": "问题三：共享只读L2 Cache",
+          "semantic_review": "Cache仅供COPY_IN查询；改动配置的响应只作非官方分析。"
+        }
+      ],
+      "connections": [
+        {
+          "from": "input",
+          "to": "scene_a",
+          "type": "sequence",
+          "meaning": "合法输入与固定单核基准先于场景A方案评价",
+          "source_locator": "题面约束清单.md:问题一"
+        },
+        {
+          "from": "scene_a",
+          "to": "scene_b",
+          "type": "sequence",
+          "meaning": "场景B沿用切图候选但按同核Task复用规则重评",
+          "source_locator": "题面约束清单.md:问题二"
+        },
+        {
+          "from": "scene_b",
+          "to": "cache",
+          "type": "sequence",
+          "meaning": "共享L2建立在场景B的Task与跨核同步结构上",
+          "source_locator": "题面约束清单.md:问题三"
+        }
+      ],
+      "flow_semantics": true,
+      "paper": {
+        "caption": "多核调度研究路线",
+        "label": "fig:roadmap",
+        "reference_context": "第一章1.2问题重述末段明确作为本文研究安排，并先引用后插图。"
+      },
+      "qa_path": "求解/总体路线图.qa.json",
+      "status": "qa_pass",
+      "template_selection_path": "求解/总体路线图模板选型.json"
+    },
+    {
+      "diagram_id": "q1-OVERVIEW",
+      "problem_id": "q1",
+      "kind": "comprehensive",
+      "placement": "body",
+      "scientific_question": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+      "backend": "tikz",
+      "backend_reason": "题定DAG、核心或Cache路径需要自由矢量图元，已有两张正式图可直接嵌入；TikZ保证中文与公式可编辑。",
+      "source": "求解/综合图/q1-overview.tex",
+      "dependencies": [
+        "求解/build_overviews.py",
+        "求解/视觉计划.json",
+        "求解/综合图/q1-overview.tex",
+        "求解/综合图/q1-overview.pdf",
+        "求解/综合图/q1-overview.png"
+      ],
+      "outputs": {
+        "vector": "求解/综合图/q1-overview.pdf",
+        "preview": "求解/综合图/q1-overview.png"
+      },
+      "target_width_mm": 160,
+      "physical_size": {
+        "target_body_height_mm": 154,
+        "minimum_body_height_mm": 148.5,
+        "minimum_text_width_fraction": 0.9,
+        "measurement": "actual_pdf_ink_excluding_caption",
+        "density_review": "三带分别包含本问实质机理、求解约束与两张真实结果，非空板拉伸。"
+      },
+      "sources": [
+        {
+          "path": "求解/题面约束清单.md",
+          "sha256": "2fc777003ebc39ebaaa037961213fb52092e7937f88f3a8a26fca020612d7492",
+          "locator": "本问硬约束及官方口径"
+        },
+        {
+          "path": "求解/求解计划.md",
+          "sha256": "a24ca3cd4fcd961d75dd235f228ce3cf59a5bbb0d0cf36abe6ca8f22bc5fe4ad",
+          "locator": "三问候选构造与评价路径"
+        },
+        {
+          "path": "求解/正式实验/统计分析.json",
+          "sha256": "54625a20d8d26e41977443ad6da277bfe5c85b78a98699cc4195ef1334ad4705",
+          "locator": "q1各核数与五核成对统计"
+        },
+        {
+          "path": "求解/正式实验/逐问核验摘要.json",
+          "sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a",
+          "locator": "独立核验或正式结果交叉校验"
+        },
+        {
+          "path": "求解/正式图件/q1-F02.pdf",
+          "sha256": "a231f03f8b00115f274f89e8e90730bfc1ac2ba65fd4040c689434a577a321d2",
+          "locator": "q1-F02已计算图件的完整原图"
+        },
+        {
+          "path": "求解/正式图件/q1-F03.pdf",
+          "sha256": "a696eef51577c2bc4174d82b301dd148eb84e6fe7f0c06f772999431194984c6",
+          "locator": "q1-F03已计算图件的完整原图"
+        }
+      ],
+      "references": [
+        {
+          "path": ".agents/skills/comprehensive-graphic-text-flowchart/assets/约束优化综合图_疲劳模型与遗传搜索验证.png",
+          "sha256": "1cb0836804198752fd6dc48a7cc3833ce6bc88387a5b927d7bdc2b767bda3561",
+          "reviewed": true,
+          "observation": "原图上侧公式与算法、下侧验证结果的非等宽矩形分区清晰；历史疲劳数据不可复用。",
+          "decision": "继承对象—方法—证据纵向组织，不复制统计数值。"
+        },
+        {
+          "path": ".agents/skills/comprehensive-graphic-text-flowchart/assets/多源检测综合图_样本采集与传感分析及模型构建.jpg",
+          "sha256": "ab91539e83ced6c253b379a25349f0cba08747e3a5c1d6f38f5c952c05c58ae0",
+          "reviewed": true,
+          "observation": "三栏浅马卡龙底板与窄白隙组织复杂证据；缩图保留且由正文详细图承担读数。",
+          "decision": "继承浅色紧凑分区与直接复用结果原图。"
+        },
+        {
+          "path": ".agents/skills/algorithm-mechanism-diagram/assets/光谱双分支网络_专家知识与全局特征动态融合.png",
+          "sha256": "c939c27419bd7117506864bf798e8d444d661e5ea4f816e72a5c4203d5caf4aa",
+          "reviewed": true,
+          "observation": "原图有真实输入到双支路再汇合的矢量连接语法，但卷积网络题材与调度无关。",
+          "decision": "只继承分支与连接画法，本题顶端节点、Cache或核心关系依据题面重绘。"
+        }
+      ],
+      "panels": [
+        {
+          "panel_id": "mechanism",
+          "kind": "algorithm",
+          "content": "非COPY操作—张量交替DAG及依赖箭头",
+          "mechanism_skill": "algorithm-mechanism-diagram",
+          "source_path": "求解/题面约束清单.md",
+          "source_locator": "问题一题定规则",
+          "semantic_review": "顶部矢量图元只绘题定节点与真实数据流，不引入神经网络模板的历史层数。"
+        },
+        {
+          "panel_id": "method",
+          "kind": "process",
+          "content": "连通块、深度段和分批候选→官方场景A择优",
+          "source_path": "求解/求解计划.md",
+          "source_locator": "逐问工作1",
+          "semantic_review": "箭头对应真实候选产生、规则重评和验证顺序，不画不存在的反馈迭代。"
+        },
+        {
+          "panel_id": "resulta",
+          "kind": "result",
+          "content": "q1-F02真实定量结果缩图",
+          "source_path": "求解/正式图件/q1-F02.pdf",
+          "source_locator": "q1-F02论文尺寸矢量图",
+          "visual_plan": "求解/视觉计划.json",
+          "visual_figure_id": "q1-F02",
+          "detail_figure_id": "q1-F02",
+          "reuse_mode": "direct",
+          "semantic_review": "直接嵌入当前结果图，缩图仅作导航，完整值由正文详细图承担读取。"
+        },
+        {
+          "panel_id": "resultb",
+          "kind": "result",
+          "content": "q1-F03真实定量结果缩图",
+          "source_path": "求解/正式图件/q1-F03.pdf",
+          "source_locator": "q1-F03论文尺寸矢量图",
+          "visual_plan": "求解/视觉计划.json",
+          "visual_figure_id": "q1-F03",
+          "detail_figure_id": "q1-F03",
+          "reuse_mode": "direct",
+          "semantic_review": "直接嵌入当前结果图，非官方配置在问题三缩图中明确标注。"
+        },
+        {
+          "panel_id": "validation",
+          "kind": "validation",
+          "content": "500条所选配置的官方响应与独立时间线一致",
+          "source_path": "求解/正式实验/逐问核验摘要.json",
+          "source_locator": "结果校验字段与统计验证",
+          "semantic_review": "只概括实际执行的独立或交叉核验，未绘虚构精度。"
+        }
+      ],
+      "connections": [
+        {
+          "from": "mechanism",
+          "to": "method",
+          "type": "derivation",
+          "meaning": "题定结构约束决定候选和规则",
+          "source_locator": "求解/求解计划.md:逐问工作1"
+        },
+        {
+          "from": "method",
+          "to": "resulta",
+          "type": "sequence",
+          "meaning": "官方评估候选产生实际图一",
+          "source_locator": "求解/求解计划.md:逐问工作1"
+        },
+        {
+          "from": "method",
+          "to": "resultb",
+          "type": "sequence",
+          "meaning": "官方评估候选产生实际图二",
+          "source_locator": "求解/求解计划.md:逐问工作1"
+        },
+        {
+          "from": "resulta",
+          "to": "validation",
+          "type": "validation",
+          "meaning": "独立记录核验所展示结果",
+          "source_locator": "求解/求解计划.md:逐问工作1"
+        },
+        {
+          "from": "resultb",
+          "to": "validation",
+          "type": "validation",
+          "meaning": "独立记录核验所展示结果",
+          "source_locator": "求解/求解计划.md:逐问工作1"
+        }
+      ],
+      "flow_semantics": true,
+      "narrative": {
+        "task": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+        "basis": "题定图和官方事件模拟规则作为前提，100例实算为结果。",
+        "solve": "候选构造、场景评价与独立核验按图中编号推进。",
+        "outcome": "100例五核均值及机制成对指标取自当前结构化统计。"
+      },
+      "overview_detail": "结果缩图 q1-F02 与 q1-F03 分别对应正文详细图，缩图数字不负责单独读数。",
+      "paper": {
+        "caption": "问题一求解与核验总览",
+        "label": "fig:q1-overview",
+        "reference_context": "本问首节问题描述与分析先引用图，再通过生成的浮动保护片段入文。"
+      },
+      "qa_path": "求解/综合图/q1-overview.qa.json",
+      "status": "incomplete"
+    },
+    {
+      "diagram_id": "q2-OVERVIEW",
+      "problem_id": "q2",
+      "kind": "comprehensive",
+      "placement": "body",
+      "scientific_question": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+      "backend": "tikz",
+      "backend_reason": "题定DAG、核心或Cache路径需要自由矢量图元，已有两张正式图可直接嵌入；TikZ保证中文与公式可编辑。",
+      "source": "求解/综合图/q2-overview.tex",
+      "dependencies": [
+        "求解/build_overviews.py",
+        "求解/视觉计划.json",
+        "求解/综合图/q2-overview.tex",
+        "求解/综合图/q2-overview.pdf",
+        "求解/综合图/q2-overview.png"
+      ],
+      "outputs": {
+        "vector": "求解/综合图/q2-overview.pdf",
+        "preview": "求解/综合图/q2-overview.png"
+      },
+      "target_width_mm": 160,
+      "physical_size": {
+        "target_body_height_mm": 154,
+        "minimum_body_height_mm": 148.5,
+        "minimum_text_width_fraction": 0.9,
+        "measurement": "actual_pdf_ink_excluding_caption",
+        "density_review": "三带分别包含本问实质机理、求解约束与两张真实结果，非空板拉伸。"
+      },
+      "sources": [
+        {
+          "path": "求解/题面约束清单.md",
+          "sha256": "2fc777003ebc39ebaaa037961213fb52092e7937f88f3a8a26fca020612d7492",
+          "locator": "本问硬约束及官方口径"
+        },
+        {
+          "path": "求解/求解计划.md",
+          "sha256": "a24ca3cd4fcd961d75dd235f228ce3cf59a5bbb0d0cf36abe6ca8f22bc5fe4ad",
+          "locator": "三问候选构造与评价路径"
+        },
+        {
+          "path": "求解/正式实验/统计分析.json",
+          "sha256": "54625a20d8d26e41977443ad6da277bfe5c85b78a98699cc4195ef1334ad4705",
+          "locator": "q2各核数与五核成对统计"
+        },
+        {
+          "path": "求解/正式实验/逐问核验摘要.json",
+          "sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a",
+          "locator": "独立核验或正式结果交叉校验"
+        },
+        {
+          "path": "求解/正式图件/q2-F02.pdf",
+          "sha256": "6505aeeac2ece2c470da07d625a1a22fd6a8747ae357e9d780580843805c8643",
+          "locator": "q2-F02已计算图件的完整原图"
+        },
+        {
+          "path": "求解/正式图件/q2-F03.pdf",
+          "sha256": "bca0ae83e06b9d5f7df9e2256c5b43d1d35ecff7c586e8ff89ff529e436027d2",
+          "locator": "q2-F03已计算图件的完整原图"
+        }
+      ],
+      "references": [
+        {
+          "path": ".agents/skills/comprehensive-graphic-text-flowchart/assets/约束优化综合图_疲劳模型与遗传搜索验证.png",
+          "sha256": "1cb0836804198752fd6dc48a7cc3833ce6bc88387a5b927d7bdc2b767bda3561",
+          "reviewed": true,
+          "observation": "原图上侧公式与算法、下侧验证结果的非等宽矩形分区清晰；历史疲劳数据不可复用。",
+          "decision": "继承对象—方法—证据纵向组织，不复制统计数值。"
+        },
+        {
+          "path": ".agents/skills/comprehensive-graphic-text-flowchart/assets/多源检测综合图_样本采集与传感分析及模型构建.jpg",
+          "sha256": "ab91539e83ced6c253b379a25349f0cba08747e3a5c1d6f38f5c952c05c58ae0",
+          "reviewed": true,
+          "observation": "三栏浅马卡龙底板与窄白隙组织复杂证据；缩图保留且由正文详细图承担读数。",
+          "decision": "继承浅色紧凑分区与直接复用结果原图。"
+        },
+        {
+          "path": ".agents/skills/algorithm-mechanism-diagram/assets/光谱双分支网络_专家知识与全局特征动态融合.png",
+          "sha256": "c939c27419bd7117506864bf798e8d444d661e5ea4f816e72a5c4203d5caf4aa",
+          "reviewed": true,
+          "observation": "原图有真实输入到双支路再汇合的矢量连接语法，但卷积网络题材与调度无关。",
+          "decision": "只继承分支与连接画法，本题顶端节点、Cache或核心关系依据题面重绘。"
+        }
+      ],
+      "panels": [
+        {
+          "panel_id": "mechanism",
+          "kind": "algorithm",
+          "content": "同核保留与跨核COPY对比",
+          "mechanism_skill": "algorithm-mechanism-diagram",
+          "source_path": "求解/题面约束清单.md",
+          "source_locator": "问题二题定规则",
+          "semantic_review": "顶部矢量图元只绘题定节点与真实数据流，不引入神经网络模板的历史层数。"
+        },
+        {
+          "panel_id": "method",
+          "kind": "process",
+          "content": "场景A候选→场景B重评→容量与COPY分解",
+          "source_path": "求解/求解计划.md",
+          "source_locator": "逐问工作2",
+          "semantic_review": "箭头对应真实候选产生、规则重评和验证顺序，不画不存在的反馈迭代。"
+        },
+        {
+          "panel_id": "resulta",
+          "kind": "result",
+          "content": "q2-F02真实定量结果缩图",
+          "source_path": "求解/正式图件/q2-F02.pdf",
+          "source_locator": "q2-F02论文尺寸矢量图",
+          "visual_plan": "求解/视觉计划.json",
+          "visual_figure_id": "q2-F02",
+          "detail_figure_id": "q2-F02",
+          "reuse_mode": "direct",
+          "semantic_review": "直接嵌入当前结果图，缩图仅作导航，完整值由正文详细图承担读取。"
+        },
+        {
+          "panel_id": "resultb",
+          "kind": "result",
+          "content": "q2-F03真实定量结果缩图",
+          "source_path": "求解/正式图件/q2-F03.pdf",
+          "source_locator": "q2-F03论文尺寸矢量图",
+          "visual_plan": "求解/视觉计划.json",
+          "visual_figure_id": "q2-F03",
+          "detail_figure_id": "q2-F03",
+          "reuse_mode": "direct",
+          "semantic_review": "直接嵌入当前结果图，非官方配置在问题三缩图中明确标注。"
+        },
+        {
+          "panel_id": "validation",
+          "kind": "validation",
+          "content": "500条所选配置的容量峰值与时间线独立核验",
+          "source_path": "求解/正式实验/逐问核验摘要.json",
+          "source_locator": "结果校验字段与统计验证",
+          "semantic_review": "只概括实际执行的独立或交叉核验，未绘虚构精度。"
+        }
+      ],
+      "connections": [
+        {
+          "from": "mechanism",
+          "to": "method",
+          "type": "derivation",
+          "meaning": "题定结构约束决定候选和规则",
+          "source_locator": "求解/求解计划.md:逐问工作2"
+        },
+        {
+          "from": "method",
+          "to": "resulta",
+          "type": "sequence",
+          "meaning": "官方评估候选产生实际图一",
+          "source_locator": "求解/求解计划.md:逐问工作2"
+        },
+        {
+          "from": "method",
+          "to": "resultb",
+          "type": "sequence",
+          "meaning": "官方评估候选产生实际图二",
+          "source_locator": "求解/求解计划.md:逐问工作2"
+        },
+        {
+          "from": "resulta",
+          "to": "validation",
+          "type": "validation",
+          "meaning": "独立记录核验所展示结果",
+          "source_locator": "求解/求解计划.md:逐问工作2"
+        },
+        {
+          "from": "resultb",
+          "to": "validation",
+          "type": "validation",
+          "meaning": "独立记录核验所展示结果",
+          "source_locator": "求解/求解计划.md:逐问工作2"
+        }
+      ],
+      "flow_semantics": true,
+      "narrative": {
+        "task": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+        "basis": "题定图和官方事件模拟规则作为前提，100例实算为结果。",
+        "solve": "候选构造、场景评价与独立核验按图中编号推进。",
+        "outcome": "100例五核均值及机制成对指标取自当前结构化统计。"
+      },
+      "overview_detail": "结果缩图 q2-F02 与 q2-F03 分别对应正文详细图，缩图数字不负责单独读数。",
+      "paper": {
+        "caption": "问题二求解与核验总览",
+        "label": "fig:q2-overview",
+        "reference_context": "本问首节问题描述与分析先引用图，再通过生成的浮动保护片段入文。"
+      },
+      "qa_path": "求解/综合图/q2-overview.qa.json",
+      "status": "incomplete"
+    },
+    {
+      "diagram_id": "q3-OVERVIEW",
+      "problem_id": "q3",
+      "kind": "comprehensive",
+      "placement": "body",
+      "scientific_question": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+      "backend": "tikz",
+      "backend_reason": "题定DAG、核心或Cache路径需要自由矢量图元，已有两张正式图可直接嵌入；TikZ保证中文与公式可编辑。",
+      "source": "求解/综合图/q3-overview.tex",
+      "dependencies": [
+        "求解/build_overviews.py",
+        "求解/视觉计划.json",
+        "求解/综合图/q3-overview.tex",
+        "求解/综合图/q3-overview.pdf",
+        "求解/综合图/q3-overview.png"
+      ],
+      "outputs": {
+        "vector": "求解/综合图/q3-overview.pdf",
+        "preview": "求解/综合图/q3-overview.png"
+      },
+      "target_width_mm": 160,
+      "physical_size": {
+        "target_body_height_mm": 154,
+        "minimum_body_height_mm": 148.5,
+        "minimum_text_width_fraction": 0.9,
+        "measurement": "actual_pdf_ink_excluding_caption",
+        "density_review": "三带分别包含本问实质机理、求解约束与两张真实结果，非空板拉伸。"
+      },
+      "sources": [
+        {
+          "path": "求解/题面约束清单.md",
+          "sha256": "2fc777003ebc39ebaaa037961213fb52092e7937f88f3a8a26fca020612d7492",
+          "locator": "本问硬约束及官方口径"
+        },
+        {
+          "path": "求解/求解计划.md",
+          "sha256": "a24ca3cd4fcd961d75dd235f228ce3cf59a5bbb0d0cf36abe6ca8f22bc5fe4ad",
+          "locator": "三问候选构造与评价路径"
+        },
+        {
+          "path": "求解/正式实验/统计分析.json",
+          "sha256": "54625a20d8d26e41977443ad6da277bfe5c85b78a98699cc4195ef1334ad4705",
+          "locator": "q3各核数与五核成对统计"
+        },
+        {
+          "path": "求解/正式实验/逐问核验摘要.json",
+          "sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a",
+          "locator": "独立核验或正式结果交叉校验"
+        },
+        {
+          "path": "求解/正式图件/q3-F02.pdf",
+          "sha256": "472cd60b3fd1ad31d3bd1baa268c465c950afad9f9a584d24f289baa543ddc50",
+          "locator": "q3-F02已计算图件的完整原图"
+        },
+        {
+          "path": "求解/正式图件/q3-F03.pdf",
+          "sha256": "711d29e796d91748905e778013df543d284911b601df9489615ac4d883dda182",
+          "locator": "q3-F03已计算图件的完整原图"
+        },
+        {
+          "path": "求解/正式实验/L2参数敏感性_非官方/统计验证.json",
+          "sha256": "0b7dadc0a39a260004d28c722ac5c1365e5b54fee0524973ba6558b6047e2e3c",
+          "locator": "六例54格非官方配置与默认官方配置交叉核验"
+        }
+      ],
+      "references": [
+        {
+          "path": ".agents/skills/comprehensive-graphic-text-flowchart/assets/双模态融合综合图_RGB与高光谱重建及预测.jpg",
+          "sha256": "1e27833d6009695cc5f2064fa21af70409663dc28b996ccb114e7cd89e20c2dc",
+          "reviewed": true,
+          "observation": "原图上层两条数据路径汇合，下层方法和结果形成全幅矩形；历史重建任务与数值不适用。",
+          "decision": "继承左右两读池路径的连接组织，不使用历史图像或模型。"
+        },
+        {
+          "path": ".agents/skills/comprehensive-graphic-text-flowchart/assets/多源检测综合图_样本采集与传感分析及模型构建.jpg",
+          "sha256": "ab91539e83ced6c253b379a25349f0cba08747e3a5c1d6f38f5c952c05c58ae0",
+          "reviewed": true,
+          "observation": "三栏浅马卡龙底板与窄白隙组织复杂证据；缩图保留且由正文详细图承担读数。",
+          "decision": "继承浅色紧凑分区与直接复用结果原图。"
+        },
+        {
+          "path": ".agents/skills/algorithm-mechanism-diagram/assets/光谱双分支网络_专家知识与全局特征动态融合.png",
+          "sha256": "c939c27419bd7117506864bf798e8d444d661e5ea4f816e72a5c4203d5caf4aa",
+          "reviewed": true,
+          "observation": "原图有真实输入到双支路再汇合的矢量连接语法，但卷积网络题材与调度无关。",
+          "decision": "只继承分支与连接画法，本题顶端节点、Cache或核心关系依据题面重绘。"
+        }
+      ],
+      "panels": [
+        {
+          "panel_id": "mechanism",
+          "kind": "algorithm",
+          "content": "COPY_IN命中L2读池、未命中DDR读池",
+          "mechanism_skill": "algorithm-mechanism-diagram",
+          "source_path": "求解/题面约束清单.md",
+          "source_locator": "问题三题定规则",
+          "semantic_review": "顶部矢量图元只绘题定节点与真实数据流，不引入神经网络模板的历史层数。"
+        },
+        {
+          "panel_id": "method",
+          "kind": "process",
+          "content": "命中/未命中双读池→同方案反事实→官方评价",
+          "source_path": "求解/求解计划.md",
+          "source_locator": "逐问工作3",
+          "semantic_review": "箭头对应真实候选产生、规则重评和验证顺序，不画不存在的反馈迭代。"
+        },
+        {
+          "panel_id": "resulta",
+          "kind": "result",
+          "content": "q3-F02真实定量结果缩图",
+          "source_path": "求解/正式图件/q3-F02.pdf",
+          "source_locator": "q3-F02论文尺寸矢量图",
+          "visual_plan": "求解/视觉计划.json",
+          "visual_figure_id": "q3-F02",
+          "detail_figure_id": "q3-F02",
+          "reuse_mode": "direct",
+          "semantic_review": "直接嵌入当前结果图，缩图仅作导航，完整值由正文详细图承担读取。"
+        },
+        {
+          "panel_id": "resultb",
+          "kind": "result",
+          "content": "q3-F03真实定量结果缩图",
+          "source_path": "求解/正式图件/q3-F03.pdf",
+          "source_locator": "q3-F03论文尺寸矢量图",
+          "visual_plan": "求解/视觉计划.json",
+          "visual_figure_id": "q3-F03",
+          "detail_figure_id": "q3-F03",
+          "reuse_mode": "direct",
+          "semantic_review": "直接嵌入当前结果图，非官方配置在问题三缩图中明确标注。"
+        },
+        {
+          "panel_id": "validation",
+          "kind": "validation",
+          "content": "100例默认配置与六例非官方网格的交叉核验",
+          "source_path": "求解/正式实验/逐问核验摘要.json",
+          "source_locator": "结果校验字段与统计验证",
+          "semantic_review": "只概括实际执行的独立或交叉核验，未绘虚构精度。"
+        }
+      ],
+      "connections": [
+        {
+          "from": "mechanism",
+          "to": "method",
+          "type": "derivation",
+          "meaning": "题定结构约束决定候选和规则",
+          "source_locator": "求解/求解计划.md:逐问工作3"
+        },
+        {
+          "from": "method",
+          "to": "resulta",
+          "type": "sequence",
+          "meaning": "官方评估候选产生实际图一",
+          "source_locator": "求解/求解计划.md:逐问工作3"
+        },
+        {
+          "from": "method",
+          "to": "resultb",
+          "type": "sequence",
+          "meaning": "官方评估候选产生实际图二",
+          "source_locator": "求解/求解计划.md:逐问工作3"
+        },
+        {
+          "from": "resulta",
+          "to": "validation",
+          "type": "validation",
+          "meaning": "独立记录核验所展示结果",
+          "source_locator": "求解/求解计划.md:逐问工作3"
+        },
+        {
+          "from": "resultb",
+          "to": "validation",
+          "type": "validation",
+          "meaning": "独立记录核验所展示结果",
+          "source_locator": "求解/求解计划.md:逐问工作3"
+        }
+      ],
+      "flow_semantics": true,
+      "narrative": {
+        "task": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+        "basis": "题定图和官方事件模拟规则作为前提，100例实算为结果。",
+        "solve": "候选构造、场景评价与独立核验按图中编号推进。",
+        "outcome": "100例五核均值及机制成对指标取自当前结构化统计。"
+      },
+      "overview_detail": "结果缩图 q3-F02 与 q3-F03 分别对应正文详细图，缩图数字不负责单独读数。",
+      "paper": {
+        "caption": "问题三求解与核验总览",
+        "label": "fig:q3-overview",
+        "reference_context": "本问首节问题描述与分析先引用图，再通过生成的浮动保护片段入文。"
+      },
+      "qa_path": "求解/综合图/q3-overview.qa.json",
+      "status": "incomplete"
+    }
+  ],
+  "figure_accounting": [
+    {
+      "figure_id": "GLOBAL-ROADMAP",
+      "purpose": "global_roadmap",
+      "problem_id": null,
+      "per_question": false,
+      "paper_total": true,
+      "flow_total": true,
+      "scientific_contribution": "以题定图结构和官方评估为基础，准确串联场景A、同核复用场景B与共享只读L2。"
+    },
+    {
+      "figure_id": "q1-OVERVIEW",
+      "purpose": "question_overview",
+      "problem_id": "q1",
+      "per_question": false,
+      "paper_total": true,
+      "flow_total": true,
+      "scientific_contribution": "切图、依赖序列和官方场景A响应如何构成可核验的调度？"
+    },
+    {
+      "figure_id": "q2-OVERVIEW",
+      "purpose": "question_overview",
+      "problem_id": "q2",
+      "per_question": false,
+      "paper_total": true,
+      "flow_total": true,
+      "scientific_contribution": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？"
+    },
+    {
+      "figure_id": "q3-OVERVIEW",
+      "purpose": "question_overview",
+      "problem_id": "q3",
+      "per_question": false,
+      "paper_total": true,
+      "flow_total": true,
+      "scientific_contribution": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？"
+    }
+  ],
+  "paper_review_path": ""
+}

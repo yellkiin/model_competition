@@ -1,0 +1,18 @@
+\begin{table}[htbp]\centering
+\caption{五核最大弱连通块占比分层的方案与收益}\label{tab:q1-structure-deep}
+\small\begin{tabular}{lrrrrr}\toprule
+最大块占比 $f$ & 算例数 & 平均加速比 & DAG深度中位数 & 连通块 & 分段/分批 \\ \midrule
+$f\leq0.05$ & 38 & 4.6200 & 18.5 & 30 & 0/8 \\
+$0.05<f\leq0.20$ & 21 & 3.8113 & 37.0 & 21 & 0/0 \\
+$0.20<f\leq0.60$ & 13 & 3.6504 & 102.0 & 11 & 2/0 \\
+$f>0.60$ & 28 & 1.7098 & 211.5 & 8 & 20/0 \\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[htbp]\centering
+\caption{问题一相邻核数下降的真实配置次数}\label{tab:q1-nonmonotone-deep}
+\small\begin{tabular}{lrrr}\toprule
+核数变化 & 加速比下降配置 & 同时换候选族 & 同时新增搬运增加 \\ \midrule
+1→2 & 0 & 0 & 0 \\
+2→3 & 7 & 0 & 7 \\
+3→4 & 12 & 0 & 11 \\
+4→5 & 22 & 1 & 19 \\
+\bottomrule\end{tabular}\end{table}

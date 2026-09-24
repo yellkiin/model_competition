@@ -1,0 +1,1171 @@
+{
+  "template_id": "triple-band-research-validation",
+  "name": "三带研究基础实验与联合验证图",
+  "canvas": [
+    1206,
+    1743
+  ],
+  "source_id": "ref-36",
+  "nodes": [
+    {
+      "id": "title",
+      "bbox": [
+        95,
+        44,
+        910,
+        50
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#4472c4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "band0_title",
+      "bbox": [
+        108,
+        146,
+        884,
+        38
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#c55a11",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "band0l_0",
+      "bbox": [
+        125,
+        220,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fffaf5",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band0l_1",
+      "bbox": [
+        125,
+        282,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fffaf5",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band0l_2",
+      "bbox": [
+        125,
+        344,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fffaf5",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band0r_0",
+      "bbox": [
+        740,
+        220,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fffaf5",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band0r_1",
+      "bbox": [
+        740,
+        282,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fffaf5",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band0r_2",
+      "bbox": [
+        740,
+        344,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fffaf5",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band0core",
+      "bbox": [
+        415,
+        265,
+        270,
+        72
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "band1_title",
+      "bbox": [
+        108,
+        686,
+        884,
+        38
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#1f4e79",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "band1l_0",
+      "bbox": [
+        125,
+        760,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band1l_1",
+      "bbox": [
+        125,
+        822,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band1l_2",
+      "bbox": [
+        125,
+        884,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band1r_0",
+      "bbox": [
+        740,
+        760,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band1r_1",
+      "bbox": [
+        740,
+        822,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band1r_2",
+      "bbox": [
+        740,
+        884,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band1core",
+      "bbox": [
+        415,
+        805,
+        270,
+        72
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "band2_title",
+      "bbox": [
+        108,
+        1206,
+        884,
+        38
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#548235",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "band2l_0",
+      "bbox": [
+        125,
+        1280,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band2l_1",
+      "bbox": [
+        125,
+        1342,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band2l_2",
+      "bbox": [
+        125,
+        1404,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band2r_0",
+      "bbox": [
+        740,
+        1280,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band2r_1",
+      "bbox": [
+        740,
+        1342,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band2r_2",
+      "bbox": [
+        740,
+        1404,
+        230,
+        48
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "band2core",
+      "bbox": [
+        415,
+        1325,
+        270,
+        72
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontStyle": "1"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "outer",
+      "points": [
+        [
+          50,
+          20
+        ],
+        [
+          1050,
+          20
+        ],
+        [
+          1050,
+          1700
+        ],
+        [
+          50,
+          1700
+        ],
+        [
+          50,
+          20
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band0",
+      "points": [
+        [
+          90,
+          130
+        ],
+        [
+          1010,
+          130
+        ],
+        [
+          1010,
+          580
+        ],
+        [
+          90,
+          580
+        ],
+        [
+          90,
+          130
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band0e0",
+      "points": [
+        [
+          356,
+          243
+        ],
+        [
+          390,
+          243
+        ],
+        [
+          390,
+          300
+        ],
+        [
+          414,
+          300
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#c55a11",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band0o0",
+      "points": [
+        [
+          686,
+          300
+        ],
+        [
+          710,
+          300
+        ],
+        [
+          710,
+          243
+        ],
+        [
+          739,
+          243
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#c55a11",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band0e1",
+      "points": [
+        [
+          356,
+          305
+        ],
+        [
+          390,
+          305
+        ],
+        [
+          390,
+          300
+        ],
+        [
+          414,
+          300
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#c55a11",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band0o1",
+      "points": [
+        [
+          686,
+          300
+        ],
+        [
+          710,
+          300
+        ],
+        [
+          710,
+          305
+        ],
+        [
+          739,
+          305
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#c55a11",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band0e2",
+      "points": [
+        [
+          356,
+          367
+        ],
+        [
+          390,
+          367
+        ],
+        [
+          390,
+          300
+        ],
+        [
+          414,
+          300
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#c55a11",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band0o2",
+      "points": [
+        [
+          686,
+          300
+        ],
+        [
+          710,
+          300
+        ],
+        [
+          710,
+          367
+        ],
+        [
+          739,
+          367
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#c55a11",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "between0",
+      "points": [
+        [
+          550,
+          580
+        ],
+        [
+          550,
+          635
+        ]
+      ],
+      "meaning": "阶段向下推进",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#4472c4",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band1",
+      "points": [
+        [
+          90,
+          670
+        ],
+        [
+          1010,
+          670
+        ],
+        [
+          1010,
+          1120
+        ],
+        [
+          90,
+          1120
+        ],
+        [
+          90,
+          670
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band1e0",
+      "points": [
+        [
+          356,
+          783
+        ],
+        [
+          390,
+          783
+        ],
+        [
+          390,
+          840
+        ],
+        [
+          414,
+          840
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#1f4e79",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band1o0",
+      "points": [
+        [
+          686,
+          840
+        ],
+        [
+          710,
+          840
+        ],
+        [
+          710,
+          783
+        ],
+        [
+          739,
+          783
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#1f4e79",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band1e1",
+      "points": [
+        [
+          356,
+          845
+        ],
+        [
+          390,
+          845
+        ],
+        [
+          390,
+          840
+        ],
+        [
+          414,
+          840
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#1f4e79",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band1o1",
+      "points": [
+        [
+          686,
+          840
+        ],
+        [
+          710,
+          840
+        ],
+        [
+          710,
+          845
+        ],
+        [
+          739,
+          845
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#1f4e79",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band1e2",
+      "points": [
+        [
+          356,
+          907
+        ],
+        [
+          390,
+          907
+        ],
+        [
+          390,
+          840
+        ],
+        [
+          414,
+          840
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#1f4e79",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band1o2",
+      "points": [
+        [
+          686,
+          840
+        ],
+        [
+          710,
+          840
+        ],
+        [
+          710,
+          907
+        ],
+        [
+          739,
+          907
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#1f4e79",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "between1",
+      "points": [
+        [
+          550,
+          1120
+        ],
+        [
+          550,
+          1175
+        ]
+      ],
+      "meaning": "阶段向下推进",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#4472c4",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band2",
+      "points": [
+        [
+          90,
+          1190
+        ],
+        [
+          1010,
+          1190
+        ],
+        [
+          1010,
+          1640
+        ],
+        [
+          90,
+          1640
+        ],
+        [
+          90,
+          1190
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band2e0",
+      "points": [
+        [
+          356,
+          1303
+        ],
+        [
+          390,
+          1303
+        ],
+        [
+          390,
+          1360
+        ],
+        [
+          414,
+          1360
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#548235",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band2o0",
+      "points": [
+        [
+          686,
+          1360
+        ],
+        [
+          710,
+          1360
+        ],
+        [
+          710,
+          1303
+        ],
+        [
+          739,
+          1303
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#548235",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band2e1",
+      "points": [
+        [
+          356,
+          1365
+        ],
+        [
+          390,
+          1365
+        ],
+        [
+          390,
+          1360
+        ],
+        [
+          414,
+          1360
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#548235",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band2o1",
+      "points": [
+        [
+          686,
+          1360
+        ],
+        [
+          710,
+          1360
+        ],
+        [
+          710,
+          1365
+        ],
+        [
+          739,
+          1365
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#548235",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band2e2",
+      "points": [
+        [
+          356,
+          1427
+        ],
+        [
+          390,
+          1427
+        ],
+        [
+          390,
+          1360
+        ],
+        [
+          414,
+          1360
+        ]
+      ],
+      "meaning": "输入汇入核心",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#548235",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band2o2",
+      "points": [
+        [
+          686,
+          1360
+        ],
+        [
+          710,
+          1360
+        ],
+        [
+          710,
+          1427
+        ],
+        [
+          739,
+          1427
+        ]
+      ],
+      "meaning": "核心分发输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#548235",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    }
+  ]
+}

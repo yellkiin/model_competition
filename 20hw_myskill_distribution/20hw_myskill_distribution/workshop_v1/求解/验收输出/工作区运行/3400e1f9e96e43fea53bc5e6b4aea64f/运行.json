@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "error": null,
+  "started_at": "2026-09-23T10:46:35.534163+00:00",
+  "finished_at": "2026-09-23T10:50:18.967010+00:00",
+  "tool": "华为杯_求解规范/tools/run_academic_figure.py",
+  "command": [
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\workspace_execution.py",
+    "--child",
+    "E:\\20hw_myskill_distribution\\workshop_v1",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\run_academic_figure.py",
+    "--project-root",
+    ".",
+    "--plan",
+    "求解/视觉计划.json",
+    "--runtime",
+    "codex",
+    "--figure-id",
+    "q1-F01",
+    "--",
+    "--figure",
+    "q1-F01"
+  ],
+  "runtime": "codex",
+  "cwd": "E:\\20hw_myskill_distribution\\workshop_v1",
+  "shared_changes": [],
+  "inputs": {
+    "status": "PASS",
+    "changed_inputs": []
+  },
+  "independent_reproduction_root": null,
+  "stdout": "求解/验收输出/工作区运行/3400e1f9e96e43fea53bc5e6b4aea64f/stdout.log",
+  "stderr": "求解/验收输出/工作区运行/3400e1f9e96e43fea53bc5e6b4aea64f/stderr.log",
+  "assurance": "真实子进程和文件一致性检查；不代表科学或视觉审阅，不是 OS 沙箱。"
+}

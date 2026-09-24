@@ -1,0 +1,2436 @@
+{
+  "template_id": "data-model-deployment-5stage",
+  "name": "数据归集建模与系统落地五阶段流程图",
+  "canvas": [
+    1206,
+    1743
+  ],
+  "source_id": "ref-20",
+  "nodes": [
+    {
+      "id": "flag_0",
+      "bbox": [
+        37,
+        30,
+        116,
+        380
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d7e8d1",
+        "strokeColor": "#46652d",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(rZPZDsIgEEW/hlcCDIs+u/wHKloilobW7e8FMVpRmxh9abjMHO4wTBFM2ko3BjFyRDBFjFFC4jfqqtC6bcyyy5sHHaxeOJMjbRf81hztqrsxtq5MsF2KwgzBZO2D2QS/r1dZNzplptXOH5L3KXME37zOz3qek52te8mSYykEVYxTUGOg9F8ol5gIJoEKNRpzBerzQUoUFf/EMkyf4M9sfJQCFoMXfvESCl8t5IizZPpNnQJwH5UDdQ43+m8HPdrxFi579ZK+dL41dxUXjwFdW+fyfPfj5UDHrfwbwewC)"
+      }
+    },
+    {
+      "id": "flag_text_0",
+      "bbox": [
+        56,
+        48,
+        38,
+        344
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "stage_down_0",
+      "bbox": [
+        549,
+        423,
+        92,
+        38
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#858585",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.50",
+        "arrowSize": "0.44"
+      }
+    },
+    {
+      "id": "flag_1",
+      "bbox": [
+        37,
+        479,
+        116,
+        211
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e8dfec",
+        "strokeColor": "#7030a0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(rVPbTgMhEP0aXsnAcNl5ru1/YEtdIi4bdm3172VDYyvVJmpfCGfmnBk4DAxXU+9GzyQcGT4wKQVAWQvuG+ym0W/nGjy4HNxj9DUzzTk9+2PYzSdNGHqfw7xkcc1wtU/ZP+X0OuwqHt3CXHYv6bD0fqs64Kde71/xppJjGC7IRnGjtbBSCbSEQtxLqiTvCIi0NGAMavFzIaubE/9Hi5rbThCBlgKlhRva8iiNWN+88FWv4oAUHQAp2xkrqfuFVlsugACURUI0iv5q9N0Kne34Vtx6dUXfxjT5T1Q25wHdhxjrfF/m24EuofqNcP0B)"
+      }
+    },
+    {
+      "id": "flag_text_1",
+      "bbox": [
+        56,
+        497,
+        38,
+        175
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "stage_down_1",
+      "bbox": [
+        549,
+        711,
+        92,
+        41
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#858585",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.50",
+        "arrowSize": "0.44"
+      }
+    },
+    {
+      "id": "flag_2",
+      "bbox": [
+        37,
+        770,
+        116,
+        290
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d8e1f5",
+        "strokeColor": "#203864",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(rVNLDsIgED0NWwIM0Hbt5x6oaIlYGlqr3l4ajG1RmxjdEN7Me/NjQLBoSlVrxMgFwRIxRgkJZ8BlglVT620bjZ3yRm2sjp6m9e6oL2bXPjSmKrU3be+FFYLF3nl98O5c7SKuVc/sbyfX9bmvUUfwI9dtiteRbE01IkuOpRA0Y5xCVgCl/5JyjnOWiVwyIvMiEMXnSJlISv5JDMW0rs/S8CqJVsx2/JJKEgycP0stvpAKgYcSSYgy0+L8pP8XaZjHW3E6rBf61rpGP1G4DCu6N9bGDR/705UOpviRYHUH)"
+      }
+    },
+    {
+      "id": "flag_text_2",
+      "bbox": [
+        56,
+        788,
+        38,
+        254
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "stage_down_2",
+      "bbox": [
+        549,
+        1081,
+        92,
+        37
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#858585",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.50",
+        "arrowSize": "0.44"
+      }
+    },
+    {
+      "id": "flag_3",
+      "bbox": [
+        37,
+        1139,
+        116,
+        306
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#f9d5b8",
+        "strokeColor": "#843c0c",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(rVPbcgIhDP0aXplAuCzPVv8DFV2mdNlhV23/vuzg1JWtPrS+MDnJOUkIgeBqaG3vCIcLwTfCOQPIZ8Zthe3Qu91YnGebvN0GVyLDmOK7u/j9eNX4rnXJj1MU1wRXh5jcMcVTty+4txNzsj7iear9WXRAr7W+7vGmkIPvZmQlqJKSaS4YaoOMvUoqJAXTABrOpGoUbx4n0rLq+F9aoMwo0I3A3BaX8rE2P0ollk8vvKglDZ11qcWTWkutoAZmneJfB/2yRLdx/CquZ7Wg70Ic3A/Kxm1BDz6Est/zeL3Q2VW+Ea6/AQ==)"
+      }
+    },
+    {
+      "id": "flag_text_3",
+      "bbox": [
+        56,
+        1157,
+        38,
+        270
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "stage_down_3",
+      "bbox": [
+        549,
+        1468,
+        92,
+        37
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#858585",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.50",
+        "arrowSize": "0.44"
+      }
+    },
+    {
+      "id": "flag_4",
+      "bbox": [
+        37,
+        1522,
+        116,
+        192
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ffe699",
+        "strokeColor": "#806000",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(rZPbDoIwDIafZrcLWxnDaw/vMWHI4mRkIOjbOzIiOJTE6M3Sv+2XHtIh2DalqCWiUY9ghyglUeRep8tAi6aWWeudnbBKHLX0kaa15ix7lbcjo6pSWtUOUdgj2BbGypM11yr3uhZD5mBdTDfUvnkuwmOt+6s++GStqllyEuOEMcJpTIBvgJB/oTHFJOXsM85Z0Of3BMQY1gC39YBgqxMtCiQMJ/SbjhjHKVkj1pf2Iz7N+xYOl7FIz7Rp5FM5YzqxQmntL3QeD0/SufxHgP0D)"
+      }
+    },
+    {
+      "id": "flag_text_4",
+      "bbox": [
+        56,
+        1540,
+        38,
+        156
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "database_0",
+      "bbox": [
+        183,
+        30,
+        225,
+        95
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d0e8d2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "cylinder3",
+        "size": "12",
+        "boundedLbl": "1",
+        "backgroundOutline": "1"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "database_0",
+        "overlapReason": "同一数据库圆柱的筒身与浅色顶面，标签位于筒身内。"
+      }
+    },
+    {
+      "id": "database_cap_0",
+      "bbox": [
+        183,
+        30,
+        225,
+        24
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e3f0e3",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "database_0",
+        "overlapReason": "圆柱同对象浅色顶面覆盖筒身的顶椭圆。"
+      }
+    },
+    {
+      "id": "database_name_0",
+      "bbox": [
+        191,
+        65,
+        209,
+        35
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 33
+    },
+    {
+      "id": "database_1",
+      "bbox": [
+        432,
+        30,
+        225,
+        95
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d0e8d2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "cylinder3",
+        "size": "12",
+        "boundedLbl": "1",
+        "backgroundOutline": "1"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "database_1",
+        "overlapReason": "同一数据库圆柱的筒身与浅色顶面，标签位于筒身内。"
+      }
+    },
+    {
+      "id": "database_cap_1",
+      "bbox": [
+        432,
+        30,
+        225,
+        24
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e3f0e3",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "database_1",
+        "overlapReason": "圆柱同对象浅色顶面覆盖筒身的顶椭圆。"
+      }
+    },
+    {
+      "id": "database_name_1",
+      "bbox": [
+        440,
+        65,
+        209,
+        35
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 33
+    },
+    {
+      "id": "database_2",
+      "bbox": [
+        685,
+        30,
+        225,
+        95
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d0e8d2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "cylinder3",
+        "size": "12",
+        "boundedLbl": "1",
+        "backgroundOutline": "1"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "database_2",
+        "overlapReason": "同一数据库圆柱的筒身与浅色顶面，标签位于筒身内。"
+      }
+    },
+    {
+      "id": "database_cap_2",
+      "bbox": [
+        685,
+        30,
+        225,
+        24
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e3f0e3",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "database_2",
+        "overlapReason": "圆柱同对象浅色顶面覆盖筒身的顶椭圆。"
+      }
+    },
+    {
+      "id": "database_name_2",
+      "bbox": [
+        693,
+        65,
+        209,
+        35
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 33
+    },
+    {
+      "id": "database_3",
+      "bbox": [
+        936,
+        30,
+        225,
+        95
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d0e8d2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "cylinder3",
+        "size": "12",
+        "boundedLbl": "1",
+        "backgroundOutline": "1"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "database_3",
+        "overlapReason": "同一数据库圆柱的筒身与浅色顶面，标签位于筒身内。"
+      }
+    },
+    {
+      "id": "database_cap_3",
+      "bbox": [
+        936,
+        30,
+        225,
+        24
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e3f0e3",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "database_3",
+        "overlapReason": "圆柱同对象浅色顶面覆盖筒身的顶椭圆。"
+      }
+    },
+    {
+      "id": "database_name_3",
+      "bbox": [
+        944,
+        65,
+        209,
+        35
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 33
+    },
+    {
+      "id": "prepare_body_0",
+      "bbox": [
+        183,
+        202,
+        477,
+        201
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d2e9e4",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "rectangle",
+        "rounded": "1",
+        "arcSize": "20"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "prepare_0",
+        "overlapReason": "同一处理模块的正文面板与跨边界标题胶囊，有意叠层且文字留在安全区。"
+      }
+    },
+    {
+      "id": "prepare_cap_0",
+      "bbox": [
+        265,
+        177,
+        337,
+        73
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c6e0d9",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "rectangle",
+        "rounded": "1",
+        "absoluteArcSize": "1",
+        "arcSize": "73"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "prepare_0",
+        "overlapReason": "标题胶囊覆盖同一处理面板的上边界。"
+      }
+    },
+    {
+      "id": "prepare_title_0",
+      "bbox": [
+        278,
+        192,
+        311,
+        40
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 33
+    },
+    {
+      "id": "prepare_detail_0",
+      "bbox": [
+        205,
+        272,
+        433,
+        92
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "prepare_body_1",
+      "bbox": [
+        690,
+        202,
+        477,
+        201
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d2e9e4",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "rectangle",
+        "rounded": "1",
+        "arcSize": "20"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "prepare_1",
+        "overlapReason": "同一处理模块的正文面板与跨边界标题胶囊，有意叠层且文字留在安全区。"
+      }
+    },
+    {
+      "id": "prepare_cap_1",
+      "bbox": [
+        772,
+        177,
+        337,
+        73
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#c6e0d9",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "rectangle",
+        "rounded": "1",
+        "absoluteArcSize": "1",
+        "arcSize": "73"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "prepare_1",
+        "overlapReason": "标题胶囊覆盖同一处理面板的上边界。"
+      }
+    },
+    {
+      "id": "prepare_title_1",
+      "bbox": [
+        785,
+        192,
+        311,
+        40
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 33
+    },
+    {
+      "id": "prepare_detail_1",
+      "bbox": [
+        712,
+        272,
+        433,
+        92
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "package_front_0",
+      "bbox": [
+        183,
+        534,
+        270,
+        156
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e9deed",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "rectangle"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_0",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_top_0",
+      "bbox": [
+        183,
+        482,
+        322,
+        52
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#eee7f2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(fVHNEoIgEH4ars7CGuLZ6j1IMZlIHCCttw8Hx8yDF2a/v/lgIVj5Tg6KMJgIngljFCCeEXc7LP2g6pDIUTotb0YlxQdnH2rSTVgyuu+U02FW8UKwaq1Td2dffZPwIGfnPD3tOHe/Uw6ypeuzdi/MNdmN7jd2yjOal8AFMlYKilz8pY+zsC87tAvMxAlKpLwogAqeH9+zNtarFcXh9+JWG5MWttX3G4pU+he8fAE=)"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_0",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_side_0",
+      "bbox": [
+        453,
+        482,
+        52,
+        208
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#b9b1bd",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZBBDsIgEEVPw9YgxHiAWu+B7VQmIhDAtt5eyBDbsDBxQ+bPvM/AZ7KLWnlggi9MXpgQR87zmbVutIoehkTNWQVUNwM0iSm4Byw4pupBqyFgKlPZM9lNLsA9uJcdSXtVyFI93Vx2r+Tjh7rrTVqcauNKtEG7o/PLGp7/h59/Xt/Sm7/ig3ERvioX27cmNIZS2c/bGHKLwpf9Bw==)"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_0",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_title_0",
+      "bbox": [
+        231,
+        493,
+        259,
+        33
+      ],
+      "font_size": 25,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 30
+    },
+    {
+      "id": "package_detail_0",
+      "bbox": [
+        193,
+        560,
+        250,
+        112
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "package_front_1",
+      "bbox": [
+        511,
+        534,
+        270,
+        156
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e9deed",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "rectangle"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_1",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_top_1",
+      "bbox": [
+        511,
+        482,
+        322,
+        52
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#eee7f2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(fVHNEoIgEH4ars7CGuLZ6j1IMZlIHCCttw8Hx8yDF2a/v/lgIVj5Tg6KMJgIngljFCCeEXc7LP2g6pDIUTotb0YlxQdnH2rSTVgyuu+U02FW8UKwaq1Td2dffZPwIGfnPD3tOHe/Uw6ypeuzdi/MNdmN7jd2yjOal8AFMlYKilz8pY+zsC87tAvMxAlKpLwogAqeH9+zNtarFcXh9+JWG5MWttX3G4pU+he8fAE=)"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_1",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_side_1",
+      "bbox": [
+        781,
+        482,
+        52,
+        208
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#b9b1bd",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZBBDsIgEEVPw9YgxHiAWu+B7VQmIhDAtt5eyBDbsDBxQ+bPvM/AZ7KLWnlggi9MXpgQR87zmbVutIoehkTNWQVUNwM0iSm4Byw4pupBqyFgKlPZM9lNLsA9uJcdSXtVyFI93Vx2r+Tjh7rrTVqcauNKtEG7o/PLGp7/h59/Xt/Sm7/ig3ERvioX27cmNIZS2c/bGHKLwpf9Bw==)"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_1",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_title_1",
+      "bbox": [
+        559,
+        493,
+        259,
+        33
+      ],
+      "font_size": 25,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 30
+    },
+    {
+      "id": "package_detail_1",
+      "bbox": [
+        521,
+        560,
+        250,
+        112
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "package_front_2",
+      "bbox": [
+        839,
+        534,
+        270,
+        156
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e9deed",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "rectangle"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_2",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_top_2",
+      "bbox": [
+        839,
+        482,
+        322,
+        52
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#eee7f2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(fVHNEoIgEH4ars7CGuLZ6j1IMZlIHCCttw8Hx8yDF2a/v/lgIVj5Tg6KMJgIngljFCCeEXc7LP2g6pDIUTotb0YlxQdnH2rSTVgyuu+U02FW8UKwaq1Td2dffZPwIGfnPD3tOHe/Uw6ypeuzdi/MNdmN7jd2yjOal8AFMlYKilz8pY+zsC87tAvMxAlKpLwogAqeH9+zNtarFcXh9+JWG5MWttX3G4pU+he8fAE=)"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_2",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_side_2",
+      "bbox": [
+        1109,
+        482,
+        52,
+        208
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#b9b1bd",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZBBDsIgEEVPw9YgxHiAWu+B7VQmIhDAtt5eyBDbsDBxQ+bPvM/AZ7KLWnlggi9MXpgQR87zmbVutIoehkTNWQVUNwM0iSm4Byw4pupBqyFgKlPZM9lNLsA9uJcdSXtVyFI93Vx2r+Tjh7rrTVqcauNKtEG7o/PLGp7/h59/Xt/Sm7/ig3ERvioX27cmNIZS2c/bGHKLwpf9Bw==)"
+      },
+      "semantic_attributes": {
+        "diagramRole": "surface",
+        "diagramObject": "package_2",
+        "overlapReason": "单个立体数据封装模块的前顶侧原生表面，实际多边形共享边；正文与顶面标签独立。"
+      }
+    },
+    {
+      "id": "package_title_2",
+      "bbox": [
+        887,
+        493,
+        259,
+        33
+      ],
+      "font_size": 25,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_height": 30
+    },
+    {
+      "id": "package_detail_2",
+      "bbox": [
+        849,
+        560,
+        250,
+        112
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "model_input_0",
+      "bbox": [
+        183,
+        778,
+        149,
+        120
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d6e7fa",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "30"
+      }
+    },
+    {
+      "id": "model_input_1",
+      "bbox": [
+        183,
+        940,
+        149,
+        120
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d6e7fa",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "30"
+      }
+    },
+    {
+      "id": "training_branch_0",
+      "bbox": [
+        383,
+        778,
+        295,
+        55
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d6e7fa",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "training_branch_1",
+      "bbox": [
+        383,
+        843,
+        295,
+        55
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d6e7fa",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "training_branch_2",
+      "bbox": [
+        383,
+        940,
+        295,
+        55
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d6e7fa",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "training_branch_3",
+      "bbox": [
+        383,
+        1005,
+        295,
+        55
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d6e7fa",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "core_training",
+      "bbox": [
+        744,
+        806,
+        183,
+        227
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b6c7e8",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "weight_interface",
+      "bbox": [
+        985,
+        806,
+        183,
+        227
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b6c7e8",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "training_interface_relation",
+      "bbox": [
+        929,
+        902,
+        53,
+        39
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#335eaa",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "doubleArrow",
+        "arrowWidth": "0.48",
+        "arrowSize": "0.35"
+      }
+    },
+    {
+      "id": "optimization",
+      "bbox": [
+        183,
+        1140,
+        60,
+        202
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "evaluation",
+      "bbox": [
+        625,
+        1140,
+        60,
+        202
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "optimization_axis_0",
+      "bbox": [
+        287,
+        1148,
+        295,
+        56
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "optimization_axis_1",
+      "bbox": [
+        287,
+        1213,
+        295,
+        56
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "optimization_axis_2",
+      "bbox": [
+        287,
+        1278,
+        295,
+        56
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "optimization_down",
+      "bbox": [
+        398,
+        1347,
+        73,
+        33
+      ],
+      "font_size": 27,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#843c0c",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.58",
+        "arrowSize": "0.42"
+      }
+    },
+    {
+      "id": "model_deployment",
+      "bbox": [
+        183,
+        1393,
+        502,
+        51
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8ceab",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "system_architecture",
+      "bbox": [
+        812,
+        1140,
+        274,
+        64
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8ceab",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "30"
+      }
+    },
+    {
+      "id": "system_module_0",
+      "bbox": [
+        732,
+        1241,
+        59,
+        203
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "system_module_1",
+      "bbox": [
+        804,
+        1241,
+        59,
+        203
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "system_module_2",
+      "bbox": [
+        878,
+        1241,
+        59,
+        203
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "system_module_3",
+      "bbox": [
+        952,
+        1241,
+        59,
+        203
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "system_module_4",
+      "bbox": [
+        1027,
+        1241,
+        59,
+        203
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "system_module_5",
+      "bbox": [
+        1102,
+        1241,
+        59,
+        203
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fdf0e2",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 28
+    },
+    {
+      "id": "integration",
+      "bbox": [
+        455,
+        1522,
+        442,
+        65
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#feedb1",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "30"
+      }
+    },
+    {
+      "id": "implementation_0",
+      "bbox": [
+        175,
+        1644,
+        224,
+        69
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fbf2cf",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "implementation_1",
+      "bbox": [
+        430,
+        1644,
+        224,
+        69
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fbf2cf",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "implementation_2",
+      "bbox": [
+        686,
+        1644,
+        224,
+        69
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fbf2cf",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "implementation_3",
+      "bbox": [
+        937,
+        1644,
+        224,
+        69
+      ],
+      "font_size": 27,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fbf2cf",
+        "strokeColor": "#191919",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "stage_frame_0",
+      "points": [
+        [
+          18,
+          12
+        ],
+        [
+          1180,
+          12
+        ],
+        [
+          1180,
+          422
+        ],
+        [
+          18,
+          422
+        ],
+        [
+          18,
+          12
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "stage_frame_1",
+      "points": [
+        [
+          18,
+          463
+        ],
+        [
+          1180,
+          463
+        ],
+        [
+          1180,
+          710
+        ],
+        [
+          18,
+          710
+        ],
+        [
+          18,
+          463
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "stage_frame_2",
+      "points": [
+        [
+          18,
+          754
+        ],
+        [
+          1180,
+          754
+        ],
+        [
+          1180,
+          1080
+        ],
+        [
+          18,
+          1080
+        ],
+        [
+          18,
+          754
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "stage_frame_3",
+      "points": [
+        [
+          18,
+          1120
+        ],
+        [
+          1180,
+          1120
+        ],
+        [
+          1180,
+          1467
+        ],
+        [
+          18,
+          1467
+        ],
+        [
+          18,
+          1120
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "stage_frame_4",
+      "points": [
+        [
+          18,
+          1507
+        ],
+        [
+          1180,
+          1507
+        ],
+        [
+          1180,
+          1727
+        ],
+        [
+          18,
+          1727
+        ],
+        [
+          18,
+          1507
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "database_stem_0",
+      "points": [
+        [
+          295.5,
+          126
+        ],
+        [
+          295.5,
+          150
+        ]
+      ],
+      "meaning": "该数据库接入共享数据归集母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "database_stem_1",
+      "points": [
+        [
+          544.5,
+          126
+        ],
+        [
+          544.5,
+          150
+        ]
+      ],
+      "meaning": "该数据库接入共享数据归集母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "database_stem_2",
+      "points": [
+        [
+          797.5,
+          126
+        ],
+        [
+          797.5,
+          150
+        ]
+      ],
+      "meaning": "该数据库接入共享数据归集母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "database_stem_3",
+      "points": [
+        [
+          1048.5,
+          126
+        ],
+        [
+          1048.5,
+          150
+        ]
+      ],
+      "meaning": "该数据库接入共享数据归集母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "source_bus",
+      "points": [
+        [
+          295.5,
+          150
+        ],
+        [
+          1048.5,
+          150
+        ]
+      ],
+      "meaning": "四类数据源共同连接两个处理模块；无单向因果箭头",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "preparation_branch_0",
+      "points": [
+        [
+          433.5,
+          150
+        ],
+        [
+          433.5,
+          175
+        ]
+      ],
+      "meaning": "共同数据源进入该处理模块",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "preparation_branch_1",
+      "points": [
+        [
+          940.5,
+          150
+        ],
+        [
+          940.5,
+          175
+        ]
+      ],
+      "meaning": "共同数据源进入该处理模块",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_trunk_0",
+      "points": [
+        [
+          334,
+          838
+        ],
+        [
+          357,
+          838
+        ]
+      ],
+      "meaning": "输入或配置模块连接两个并列分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_bus_0",
+      "points": [
+        [
+          357,
+          806
+        ],
+        [
+          357,
+          871
+        ]
+      ],
+      "meaning": "该模块的二分支母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_branch_0_0",
+      "points": [
+        [
+          357,
+          806
+        ],
+        [
+          382,
+          806
+        ]
+      ],
+      "meaning": "模块关联对应特征或配置项",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_branch_0_1",
+      "points": [
+        [
+          357,
+          871
+        ],
+        [
+          382,
+          871
+        ]
+      ],
+      "meaning": "模块关联对应特征或配置项",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_trunk_1",
+      "points": [
+        [
+          334,
+          1000
+        ],
+        [
+          357,
+          1000
+        ]
+      ],
+      "meaning": "输入或配置模块连接两个并列分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_bus_1",
+      "points": [
+        [
+          357,
+          968
+        ],
+        [
+          357,
+          1033
+        ]
+      ],
+      "meaning": "该模块的二分支母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_branch_1_0",
+      "points": [
+        [
+          357,
+          968
+        ],
+        [
+          382,
+          968
+        ]
+      ],
+      "meaning": "模块关联对应特征或配置项",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_branch_1_1",
+      "points": [
+        [
+          357,
+          1033
+        ],
+        [
+          382,
+          1033
+        ]
+      ],
+      "meaning": "模块关联对应特征或配置项",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "input_config_link",
+      "points": [
+        [
+          257,
+          900
+        ],
+        [
+          257,
+          938
+        ]
+      ],
+      "meaning": "输入模块与参数模块的配合关系；原图无方向",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "training_merge_0",
+      "points": [
+        [
+          680,
+          805
+        ],
+        [
+          710,
+          805
+        ]
+      ],
+      "meaning": "本分支连接核心训练的共同母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "training_merge_1",
+      "points": [
+        [
+          680,
+          870
+        ],
+        [
+          710,
+          870
+        ]
+      ],
+      "meaning": "本分支连接核心训练的共同母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "training_merge_2",
+      "points": [
+        [
+          680,
+          967
+        ],
+        [
+          710,
+          967
+        ]
+      ],
+      "meaning": "本分支连接核心训练的共同母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "training_merge_3",
+      "points": [
+        [
+          680,
+          1032
+        ],
+        [
+          710,
+          1032
+        ]
+      ],
+      "meaning": "本分支连接核心训练的共同母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "training_bus",
+      "points": [
+        [
+          710,
+          805
+        ],
+        [
+          710,
+          1032
+        ]
+      ],
+      "meaning": "四项训练输入汇合母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "training_root",
+      "points": [
+        [
+          710,
+          919
+        ],
+        [
+          742,
+          919
+        ]
+      ],
+      "meaning": "输入特征及参数配置共同用于核心算法模型训练",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "optimization_trunk",
+      "points": [
+        [
+          245,
+          1241
+        ],
+        [
+          265,
+          1241
+        ]
+      ],
+      "meaning": "迭代优化展开为三个并列改进方向",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "optimization_bus",
+      "points": [
+        [
+          265,
+          1176
+        ],
+        [
+          265,
+          1307
+        ]
+      ],
+      "meaning": "三项优化方向共享母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "evaluation_bus",
+      "points": [
+        [
+          603,
+          1176
+        ],
+        [
+          603,
+          1307
+        ]
+      ],
+      "meaning": "三个方向汇入模型性能评估",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "evaluation_root",
+      "points": [
+        [
+          603,
+          1241
+        ],
+        [
+          623,
+          1241
+        ]
+      ],
+      "meaning": "三项改进共同接受性能评估",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "optimization_branch_0",
+      "points": [
+        [
+          265,
+          1176
+        ],
+        [
+          285,
+          1176
+        ]
+      ],
+      "meaning": "对应优化方向",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "evaluation_branch_0",
+      "points": [
+        [
+          584,
+          1176
+        ],
+        [
+          603,
+          1176
+        ]
+      ],
+      "meaning": "该方向的性能评估关联",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "optimization_branch_1",
+      "points": [
+        [
+          265,
+          1241
+        ],
+        [
+          285,
+          1241
+        ]
+      ],
+      "meaning": "对应优化方向",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "evaluation_branch_1",
+      "points": [
+        [
+          584,
+          1241
+        ],
+        [
+          603,
+          1241
+        ]
+      ],
+      "meaning": "该方向的性能评估关联",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "optimization_branch_2",
+      "points": [
+        [
+          265,
+          1306
+        ],
+        [
+          285,
+          1306
+        ]
+      ],
+      "meaning": "对应优化方向",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "evaluation_branch_2",
+      "points": [
+        [
+          584,
+          1306
+        ],
+        [
+          603,
+          1306
+        ]
+      ],
+      "meaning": "该方向的性能评估关联",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "architecture_branch_0",
+      "points": [
+        [
+          949,
+          1206
+        ],
+        [
+          761.5,
+          1239
+        ]
+      ],
+      "meaning": "总体架构分为该功能模块；保留原图六条无箭头斜分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "architecture_branch_1",
+      "points": [
+        [
+          949,
+          1206
+        ],
+        [
+          833.5,
+          1239
+        ]
+      ],
+      "meaning": "总体架构分为该功能模块；保留原图六条无箭头斜分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "architecture_branch_2",
+      "points": [
+        [
+          949,
+          1206
+        ],
+        [
+          907.5,
+          1239
+        ]
+      ],
+      "meaning": "总体架构分为该功能模块；保留原图六条无箭头斜分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "architecture_branch_3",
+      "points": [
+        [
+          949,
+          1206
+        ],
+        [
+          981.5,
+          1239
+        ]
+      ],
+      "meaning": "总体架构分为该功能模块；保留原图六条无箭头斜分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "architecture_branch_4",
+      "points": [
+        [
+          949,
+          1206
+        ],
+        [
+          1056.5,
+          1239
+        ]
+      ],
+      "meaning": "总体架构分为该功能模块；保留原图六条无箭头斜分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "architecture_branch_5",
+      "points": [
+        [
+          949,
+          1206
+        ],
+        [
+          1131.5,
+          1239
+        ]
+      ],
+      "meaning": "总体架构分为该功能模块；保留原图六条无箭头斜分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "integration_trunk",
+      "points": [
+        [
+          676,
+          1589
+        ],
+        [
+          676,
+          1614
+        ]
+      ],
+      "meaning": "整体验证关联四种落地与总结活动",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "integration_bus",
+      "points": [
+        [
+          286,
+          1614
+        ],
+        [
+          1048,
+          1614
+        ]
+      ],
+      "meaning": "四种活动共享母线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "implementation_branch_0",
+      "points": [
+        [
+          287,
+          1614
+        ],
+        [
+          287,
+          1642
+        ]
+      ],
+      "meaning": "验证与落地活动并列关联，无额外因果方向",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "implementation_branch_1",
+      "points": [
+        [
+          542,
+          1614
+        ],
+        [
+          542,
+          1642
+        ]
+      ],
+      "meaning": "验证与落地活动并列关联，无额外因果方向",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "implementation_branch_2",
+      "points": [
+        [
+          798,
+          1614
+        ],
+        [
+          798,
+          1642
+        ]
+      ],
+      "meaning": "验证与落地活动并列关联，无额外因果方向",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "implementation_branch_3",
+      "points": [
+        [
+          1049,
+          1614
+        ],
+        [
+          1049,
+          1642
+        ]
+      ],
+      "meaning": "验证与落地活动并列关联，无额外因果方向",
+      "style": {
+        "endArrow": "none"
+      }
+    }
+  ]
+}

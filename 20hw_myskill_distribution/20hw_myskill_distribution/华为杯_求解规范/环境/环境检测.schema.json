@@ -1,0 +1,153 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "status": {
+      "enum": [
+        "satisfied",
+        "missing",
+        "blocked",
+        "failed"
+      ]
+    },
+    "checked_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workspace": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirements_sha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "catalog_sha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "python": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "path_entries": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "variables": {
+      "type": "object",
+      "properties": {
+        "DRAWIO_CLI": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "persistent_status": {
+      "enum": [
+        "unexamined",
+        "satisfied",
+        "blocked"
+      ]
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "capability": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]*$"
+          },
+          "status": {
+            "enum": [
+              "unexamined",
+              "satisfied",
+              "missing",
+              "installing",
+              "failed",
+              "blocked",
+              "not_applicable",
+              "unresolved"
+            ]
+          },
+          "provider": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "returncode": {
+                  "type": "integer"
+                },
+                "output": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "returncode",
+                "output"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "capability",
+          "status",
+          "provider",
+          "version",
+          "path",
+          "detail",
+          "tests"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "checked_at",
+    "workspace",
+    "requirements_sha256",
+    "catalog_sha256",
+    "python",
+    "path_entries",
+    "variables",
+    "persistent_status",
+    "results"
+  ],
+  "additionalProperties": false
+}

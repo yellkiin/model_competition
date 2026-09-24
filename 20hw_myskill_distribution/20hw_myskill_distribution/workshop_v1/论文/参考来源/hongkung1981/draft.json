@@ -1,0 +1,30 @@
+{
+  "source_draft": {
+    "url": "https://api.crossref.org/works/10.1145/800076.802486/transform/application/vnd.citationstyles.csl+json",
+    "authority": "",
+    "authority_reason": "",
+    "capture_path": "参考来源/hongkung1981/source.json",
+    "capture_sha256": "6406a761b56fd9aaf5a383e3f9e743266c5bec50f8fff5d77e5c3dd964ff7405",
+    "receipt_path": "参考来源/hongkung1981/receipt.json",
+    "receipt_sha256": "a6562032107dc52e85134b77c314eddae506a24b59438b221cc6cf23360b8900",
+    "format": "csl_json",
+    "review": {
+      "reviewed": false,
+      "tool_ref": "",
+      "observation": ""
+    }
+  },
+  "extracted_metadata": {
+    "title": "I/O complexity",
+    "authors": [
+      "Hong Jia-Wei",
+      "H. T. Kung"
+    ],
+    "year": "1981",
+    "container": "Proceedings of the thirteenth annual ACM symposium on Theory of computing  - STOC '81",
+    "pages": "326-333",
+    "publisher": "ACM Press",
+    "doi": "10.1145/800076.802486"
+  },
+  "status": "REVIEW_REQUIRED"
+}

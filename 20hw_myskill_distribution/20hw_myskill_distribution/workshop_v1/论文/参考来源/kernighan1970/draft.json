@@ -1,0 +1,32 @@
+{
+  "source_draft": {
+    "url": "https://api.crossref.org/works/10.1002/j.1538-7305.1970.tb01770.x/transform/application/vnd.citationstyles.csl+json",
+    "authority": "",
+    "authority_reason": "",
+    "capture_path": "参考来源/kernighan1970/source.json",
+    "capture_sha256": "6eb0174dda44ff813a606fdb702bf4cec822a95fa4ab78578eab585850214163",
+    "receipt_path": "参考来源/kernighan1970/receipt.json",
+    "receipt_sha256": "64ad66944b3874c5b98ae9161d480310f807d86f1d1f2742803bc7b82cd10e15",
+    "format": "csl_json",
+    "review": {
+      "reviewed": false,
+      "tool_ref": "",
+      "observation": ""
+    }
+  },
+  "extracted_metadata": {
+    "title": "An Efficient Heuristic Procedure for Partitioning Graphs",
+    "authors": [
+      "B. W. Kernighan",
+      "S. Lin"
+    ],
+    "year": "1970",
+    "container": "Bell System Technical Journal",
+    "pages": "291-307",
+    "volume": "49",
+    "issue": "2",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi": "10.1002/j.1538-7305.1970.tb01770.x"
+  },
+  "status": "REVIEW_REQUIRED"
+}

@@ -1,0 +1,2488 @@
+{
+  "template_id": "innovation-chain-5stage",
+  "name": "创新产业链五阶段研究框架图",
+  "canvas": [
+    1206,
+    1743
+  ],
+  "source_id": "ref-21",
+  "nodes": [
+    {
+      "id": "heading_stages",
+      "bbox": [
+        26,
+        99,
+        182,
+        52
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd1d2",
+        "strokeColor": "#b85d64",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "10"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "heading_content",
+      "bbox": [
+        508,
+        99,
+        183,
+        53
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd1d2",
+        "strokeColor": "#b85d64",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "10"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "heading_methods",
+      "bbox": [
+        986,
+        99,
+        162,
+        52
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fcd1d2",
+        "strokeColor": "#b85d64",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "10"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "stage_1",
+      "bbox": [
+        29,
+        305,
+        183,
+        70
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "shape": "chevron",
+        "size": "0.15"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "stage_2",
+      "bbox": [
+        29,
+        655,
+        183,
+        70
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "shape": "chevron",
+        "size": "0.15"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "stage_3",
+      "bbox": [
+        29,
+        1026,
+        183,
+        70
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "shape": "chevron",
+        "size": "0.15"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "stage_4",
+      "bbox": [
+        29,
+        1283,
+        183,
+        70
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "shape": "chevron",
+        "size": "0.15"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "stage_5",
+      "bbox": [
+        29,
+        1502,
+        183,
+        70
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "shape": "chevron",
+        "size": "0.15"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "stage_arrow_1",
+      "bbox": [
+        100,
+        162,
+        43,
+        132
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "stage_arrow_2",
+      "bbox": [
+        100,
+        388,
+        43,
+        247
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "stage_arrow_3",
+      "bbox": [
+        100,
+        755,
+        43,
+        249
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "stage_arrow_4",
+      "bbox": [
+        100,
+        1120,
+        43,
+        150
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "stage_arrow_5",
+      "bbox": [
+        100,
+        1360,
+        43,
+        126
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "method_arrow_1",
+      "bbox": [
+        1054,
+        167,
+        40,
+        105
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "method_arrow_2",
+      "bbox": [
+        1054,
+        482,
+        40,
+        118
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "method_arrow_3",
+      "bbox": [
+        1054,
+        810,
+        40,
+        247
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "method_arrow_4",
+      "bbox": [
+        1054,
+        1303,
+        40,
+        144
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#1c546b",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": "0.30",
+        "arrowSize": "0.22"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "methods_1",
+      "bbox": [
+        991,
+        288,
+        163,
+        178
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "5"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "methods_2",
+      "bbox": [
+        991,
+        616,
+        162,
+        178
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "5"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "methods_3",
+      "bbox": [
+        991,
+        1073,
+        162,
+        209
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "5"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "methods_4",
+      "bbox": [
+        991,
+        1474,
+        163,
+        139
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#bdd7ee",
+        "strokeColor": "#39878e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "5"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "title_1",
+      "bbox": [
+        326,
+        182,
+        544,
+        39
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#a3b0dc",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "pillar_1",
+      "bbox": [
+        266,
+        241,
+        161,
+        39
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#a6c990",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "10"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "pillar_2",
+      "bbox": [
+        514,
+        241,
+        161,
+        39
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#a6c990",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "10"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "pillar_3",
+      "bbox": [
+        774,
+        241,
+        161,
+        39
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#a6c990",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "10"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_4",
+      "bbox": [
+        266,
+        292,
+        161,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_8",
+      "bbox": [
+        266,
+        335,
+        161,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_10",
+      "bbox": [
+        266,
+        379,
+        161,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_12",
+      "bbox": [
+        266,
+        422,
+        161,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_7",
+      "bbox": [
+        510,
+        308,
+        172,
+        65
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fcd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_11",
+      "bbox": [
+        510,
+        395,
+        172,
+        65
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_5",
+      "bbox": [
+        775,
+        303,
+        160,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_9",
+      "bbox": [
+        775,
+        366,
+        160,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fdd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "trend_13",
+      "bbox": [
+        773,
+        422,
+        161,
+        37
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fbd8ce",
+        "strokeColor": "#b56f52",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "pillar_arrow_1",
+      "bbox": [
+        450,
+        335,
+        45,
+        43
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#b6681f",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".5",
+        "arrowSize": ".4"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "pillar_arrow_2",
+      "bbox": [
+        702,
+        335,
+        45,
+        43
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#b6681f",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".5",
+        "arrowSize": ".4"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "title_2",
+      "bbox": [
+        326,
+        514,
+        544,
+        39
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#a3b3db",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_14",
+      "bbox": [
+        251,
+        574,
+        319,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#dcd4e3",
+        "strokeColor": "#a38dad",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_15",
+      "bbox": [
+        605,
+        574,
+        319,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#dcd5e2",
+        "strokeColor": "#a38dad",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_22",
+      "bbox": [
+        255,
+        636,
+        161,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fde4b2",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_24",
+      "bbox": [
+        255,
+        690,
+        161,
+        37
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fde5b2",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_26",
+      "bbox": [
+        255,
+        743,
+        161,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fde4b3",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_28",
+      "bbox": [
+        255,
+        796,
+        161,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fee4b2",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_21",
+      "bbox": [
+        596,
+        628,
+        199,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fde5b2",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_23",
+      "bbox": [
+        596,
+        672,
+        199,
+        39
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fde4b3",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_25",
+      "bbox": [
+        596,
+        717,
+        199,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fde4b3",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_27",
+      "bbox": [
+        596,
+        762,
+        199,
+        37
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fde4b3",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "chain_29",
+      "bbox": [
+        596,
+        806,
+        199,
+        38
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fde4b2",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "6"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "structure",
+      "bbox": [
+        457,
+        628,
+        36,
+        221
+      ],
+      "font_size": 18,
+      "style": {
+        "fillColor": "#fde4b3",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "restructure_basis",
+      "bbox": [
+        517,
+        626,
+        47,
+        220
+      ],
+      "font_size": 18,
+      "style": {
+        "fillColor": "#fee4b2",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "risk",
+      "bbox": [
+        833,
+        626,
+        47,
+        220
+      ],
+      "font_size": 18,
+      "style": {
+        "fillColor": "#fee4b2",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "optimal_path",
+      "bbox": [
+        894,
+        626,
+        47,
+        220
+      ],
+      "font_size": 18,
+      "style": {
+        "fillColor": "#fee4b2",
+        "strokeColor": "#c8a04b",
+        "strokeWidth": "1.5"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "title_3",
+      "bbox": [
+        326,
+        909,
+        544,
+        39
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#a2b1dc",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_31",
+      "bbox": [
+        262,
+        980,
+        151,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#cedbfb",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_34",
+      "bbox": [
+        261,
+        1019,
+        152,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#cedafd",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_37",
+      "bbox": [
+        262,
+        1059,
+        151,
+        34
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#cddbff",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_40",
+      "bbox": [
+        262,
+        1097,
+        151,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#ccdbff",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_41",
+      "bbox": [
+        262,
+        1137,
+        151,
+        34
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#cddafd",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_30",
+      "bbox": [
+        754,
+        978,
+        196,
+        34
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#ccdafe",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_36",
+      "bbox": [
+        752,
+        1031,
+        197,
+        34
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#cedbfd",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_39",
+      "bbox": [
+        753,
+        1082,
+        197,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d0d9fa",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_42",
+      "bbox": [
+        754,
+        1137,
+        196,
+        34
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#cddbfd",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_35",
+      "bbox": [
+        529,
+        1026,
+        106,
+        100
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#e5c3e5",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism_43",
+      "bbox": [
+        477,
+        1148,
+        209,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#e6c3e5",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "factors",
+      "bbox": [
+        455,
+        1013,
+        32,
+        125
+      ],
+      "font_size": 18,
+      "style": {
+        "fillColor": "#e5c2e6",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "10"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "mechanism",
+      "bbox": [
+        672,
+        1013,
+        32,
+        125
+      ],
+      "font_size": 18,
+      "style": {
+        "fillColor": "#e5c3e6",
+        "strokeColor": "#79728e",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "10"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_44",
+      "bbox": [
+        274,
+        1244,
+        171,
+        38
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#fdd6d0",
+        "strokeColor": "#bc805b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_45",
+      "bbox": [
+        599,
+        1245,
+        270,
+        37
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#fcd7d1",
+        "strokeColor": "#bc805b",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_47",
+      "bbox": [
+        273,
+        1292,
+        172,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d4efd2",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_50",
+      "bbox": [
+        273,
+        1336,
+        172,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d4f0d0",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_53",
+      "bbox": [
+        273,
+        1380,
+        172,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d4efd1",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_48",
+      "bbox": [
+        528,
+        1292,
+        209,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d6eed4",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_49",
+      "bbox": [
+        746,
+        1292,
+        181,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d5efd1",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_51",
+      "bbox": [
+        528,
+        1336,
+        209,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d6eed4",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_52",
+      "bbox": [
+        746,
+        1336,
+        181,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d5efd2",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_54",
+      "bbox": [
+        528,
+        1380,
+        209,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d4efd1",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_55",
+      "bbox": [
+        746,
+        1380,
+        181,
+        35
+      ],
+      "font_size": 19,
+      "style": {
+        "fillColor": "#d6efd3",
+        "strokeColor": "#849576",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "path_arrow",
+      "bbox": [
+        469,
+        1305,
+        44,
+        43
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#d78a52",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".4",
+        "arrowSize": ".4"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "title_5",
+      "bbox": [
+        326,
+        1486,
+        544,
+        39
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#a3b0db",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "8"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "policy_57",
+      "bbox": [
+        255,
+        1539,
+        185,
+        65
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fae8cc",
+        "strokeColor": "#c6a650",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "policy_58",
+      "bbox": [
+        508,
+        1539,
+        171,
+        64
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fae8cc",
+        "strokeColor": "#c6a650",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "policy_59",
+      "bbox": [
+        756,
+        1539,
+        179,
+        65
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#fae8cc",
+        "strokeColor": "#c6a650",
+        "strokeWidth": "1.5",
+        "rounded": "1",
+        "arcSize": "12"
+      },
+      "text_slot": true
+    },
+    {
+      "id": "policy_arrow_1",
+      "bbox": [
+        451,
+        1550,
+        46,
+        40
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#c8ae44",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".35",
+        "arrowSize": ".4"
+      },
+      "text_slot": false
+    },
+    {
+      "id": "policy_arrow_2",
+      "bbox": [
+        697,
+        1550,
+        46,
+        40
+      ],
+      "font_size": 20,
+      "style": {
+        "fillColor": "#c8ae44",
+        "strokeColor": "none",
+        "strokeWidth": "1.5",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".35",
+        "arrowSize": ".4"
+      },
+      "text_slot": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "group_1",
+      "points": [
+        [
+          220,
+          169
+        ],
+        [
+          972,
+          169
+        ],
+        [
+          972,
+          484
+        ],
+        [
+          220,
+          484
+        ],
+        [
+          220,
+          169
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "group_2",
+      "points": [
+        [
+          220,
+          501
+        ],
+        [
+          972,
+          501
+        ],
+        [
+          972,
+          872
+        ],
+        [
+          220,
+          872
+        ],
+        [
+          220,
+          501
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "group_3",
+      "points": [
+        [
+          231,
+          958
+        ],
+        [
+          958,
+          958
+        ],
+        [
+          958,
+          1191
+        ],
+        [
+          231,
+          1191
+        ],
+        [
+          231,
+          958
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "group_4",
+      "points": [
+        [
+          220,
+          896
+        ],
+        [
+          972,
+          896
+        ],
+        [
+          972,
+          1205
+        ],
+        [
+          220,
+          1205
+        ],
+        [
+          220,
+          896
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "group_5",
+      "points": [
+        [
+          231,
+          1229
+        ],
+        [
+          465,
+          1229
+        ],
+        [
+          465,
+          1428
+        ],
+        [
+          231,
+          1428
+        ],
+        [
+          231,
+          1229
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "group_6",
+      "points": [
+        [
+          516,
+          1229
+        ],
+        [
+          949,
+          1229
+        ],
+        [
+          949,
+          1428
+        ],
+        [
+          516,
+          1428
+        ],
+        [
+          516,
+          1229
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "group_7",
+      "points": [
+        [
+          220,
+          1218
+        ],
+        [
+          972,
+          1218
+        ],
+        [
+          972,
+          1447
+        ],
+        [
+          220,
+          1447
+        ],
+        [
+          220,
+          1218
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "group_8",
+      "points": [
+        [
+          220,
+          1473
+        ],
+        [
+          972,
+          1473
+        ],
+        [
+          972,
+          1616
+        ],
+        [
+          220,
+          1616
+        ],
+        [
+          220,
+          1473
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "panel_1",
+      "points": [
+        [
+          248,
+          231
+        ],
+        [
+          445,
+          231
+        ],
+        [
+          445,
+          473
+        ],
+        [
+          248,
+          473
+        ],
+        [
+          248,
+          231
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "panel_2",
+      "points": [
+        [
+          498,
+          231
+        ],
+        [
+          695,
+          231
+        ],
+        [
+          695,
+          473
+        ],
+        [
+          498,
+          473
+        ],
+        [
+          498,
+          231
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "panel_3",
+      "points": [
+        [
+          754,
+          231
+        ],
+        [
+          951,
+          231
+        ],
+        [
+          951,
+          473
+        ],
+        [
+          754,
+          473
+        ],
+        [
+          754,
+          231
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "panel_4",
+      "points": [
+        [
+          243,
+          563
+        ],
+        [
+          585,
+          563
+        ],
+        [
+          585,
+          861
+        ],
+        [
+          243,
+          861
+        ],
+        [
+          243,
+          563
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "panel_5",
+      "points": [
+        [
+          585,
+          563
+        ],
+        [
+          954,
+          563
+        ],
+        [
+          954,
+          861
+        ],
+        [
+          585,
+          861
+        ],
+        [
+          585,
+          563
+        ]
+      ],
+      "meaning": "虚线分组边界，不表示数据传递",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 3",
+        "strokeWidth": "2"
+      }
+    },
+    {
+      "id": "structure_inputs_branch_1",
+      "points": [
+        [
+          417,
+          655
+        ],
+        [
+          436,
+          655
+        ]
+      ],
+      "meaning": "四项结构证据汇成产业链结构特征：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "structure_inputs_branch_2",
+      "points": [
+        [
+          417,
+          709
+        ],
+        [
+          436,
+          709
+        ]
+      ],
+      "meaning": "四项结构证据汇成产业链结构特征：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "structure_inputs_branch_3",
+      "points": [
+        [
+          417,
+          762
+        ],
+        [
+          436,
+          762
+        ]
+      ],
+      "meaning": "四项结构证据汇成产业链结构特征：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "structure_inputs_branch_4",
+      "points": [
+        [
+          417,
+          815
+        ],
+        [
+          436,
+          815
+        ]
+      ],
+      "meaning": "四项结构证据汇成产业链结构特征：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "structure_inputs_bus",
+      "points": [
+        [
+          436,
+          655
+        ],
+        [
+          436,
+          815
+        ]
+      ],
+      "meaning": "四项结构证据汇成产业链结构特征：共用汇流线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "structure_inputs_out",
+      "points": [
+        [
+          436,
+          737
+        ],
+        [
+          456,
+          737
+        ]
+      ],
+      "meaning": "四项结构证据汇成产业链结构特征：汇总输入",
+      "style": {
+        "endArrow": "block"
+      }
+    },
+    {
+      "id": "structure_basis",
+      "points": [
+        [
+          493,
+          737
+        ],
+        [
+          516,
+          737
+        ]
+      ],
+      "meaning": "结构特征为重构提供现实依据",
+      "style": {
+        "endArrow": "block"
+      }
+    },
+    {
+      "id": "risk_inputs_branch_1",
+      "points": [
+        [
+          796,
+          647
+        ],
+        [
+          812,
+          647
+        ]
+      ],
+      "meaning": "五类风险证据汇成监测预警体系：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "risk_inputs_branch_2",
+      "points": [
+        [
+          796,
+          691
+        ],
+        [
+          812,
+          691
+        ]
+      ],
+      "meaning": "五类风险证据汇成监测预警体系：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "risk_inputs_branch_3",
+      "points": [
+        [
+          796,
+          736
+        ],
+        [
+          812,
+          736
+        ]
+      ],
+      "meaning": "五类风险证据汇成监测预警体系：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "risk_inputs_branch_4",
+      "points": [
+        [
+          796,
+          781
+        ],
+        [
+          812,
+          781
+        ]
+      ],
+      "meaning": "五类风险证据汇成监测预警体系：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "risk_inputs_branch_5",
+      "points": [
+        [
+          796,
+          825
+        ],
+        [
+          812,
+          825
+        ]
+      ],
+      "meaning": "五类风险证据汇成监测预警体系：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "risk_inputs_bus",
+      "points": [
+        [
+          812,
+          647
+        ],
+        [
+          812,
+          825
+        ]
+      ],
+      "meaning": "五类风险证据汇成监测预警体系：共用汇流线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "risk_inputs_out",
+      "points": [
+        [
+          812,
+          737
+        ],
+        [
+          832,
+          737
+        ]
+      ],
+      "meaning": "五类风险证据汇成监测预警体系：汇总输入",
+      "style": {
+        "endArrow": "block"
+      }
+    },
+    {
+      "id": "risk_path",
+      "points": [
+        [
+          880,
+          737
+        ],
+        [
+          893,
+          737
+        ]
+      ],
+      "meaning": "监测预警支持重构路径",
+      "style": {
+        "endArrow": "block"
+      }
+    },
+    {
+      "id": "factors_in_branch_1",
+      "points": [
+        [
+          414,
+          997
+        ],
+        [
+          434,
+          997
+        ]
+      ],
+      "meaning": "五项影响因素汇总：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "factors_in_branch_2",
+      "points": [
+        [
+          414,
+          1037
+        ],
+        [
+          434,
+          1037
+        ]
+      ],
+      "meaning": "五项影响因素汇总：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "factors_in_branch_3",
+      "points": [
+        [
+          414,
+          1077
+        ],
+        [
+          434,
+          1077
+        ]
+      ],
+      "meaning": "五项影响因素汇总：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "factors_in_branch_4",
+      "points": [
+        [
+          414,
+          1115
+        ],
+        [
+          434,
+          1115
+        ]
+      ],
+      "meaning": "五项影响因素汇总：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "factors_in_branch_5",
+      "points": [
+        [
+          414,
+          1155
+        ],
+        [
+          434,
+          1155
+        ]
+      ],
+      "meaning": "五项影响因素汇总：并行分支",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "factors_in_bus",
+      "points": [
+        [
+          434,
+          997
+        ],
+        [
+          434,
+          1155
+        ]
+      ],
+      "meaning": "五项影响因素汇总：共用汇流线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "factors_in_out",
+      "points": [
+        [
+          434,
+          1077
+        ],
+        [
+          454,
+          1077
+        ]
+      ],
+      "meaning": "五项影响因素汇总：汇总输入",
+      "style": {
+        "endArrow": "block"
+      }
+    },
+    {
+      "id": "factors_to_center",
+      "points": [
+        [
+          487,
+          1077
+        ],
+        [
+          528,
+          1077
+        ]
+      ],
+      "meaning": "影响因素作用于三链重构",
+      "style": {
+        "endArrow": "block"
+      }
+    },
+    {
+      "id": "mechanism_in_1",
+      "points": [
+        [
+          752,
+          995
+        ],
+        [
+          729,
+          995
+        ]
+      ],
+      "meaning": "四类机理证据汇合",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "mechanism_in_2",
+      "points": [
+        [
+          752,
+          1048
+        ],
+        [
+          729,
+          1048
+        ]
+      ],
+      "meaning": "四类机理证据汇合",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "mechanism_in_3",
+      "points": [
+        [
+          752,
+          1100
+        ],
+        [
+          729,
+          1100
+        ]
+      ],
+      "meaning": "四类机理证据汇合",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "mechanism_in_4",
+      "points": [
+        [
+          752,
+          1154
+        ],
+        [
+          729,
+          1154
+        ]
+      ],
+      "meaning": "四类机理证据汇合",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "mechanism_bus",
+      "points": [
+        [
+          729,
+          995
+        ],
+        [
+          729,
+          1154
+        ]
+      ],
+      "meaning": "机理输入共用汇流线",
+      "style": {
+        "endArrow": "none"
+      }
+    },
+    {
+      "id": "mechanism_out",
+      "points": [
+        [
+          729,
+          1077
+        ],
+        [
+          705,
+          1077
+        ]
+      ],
+      "meaning": "机理证据进入机理模块",
+      "style": {
+        "endArrow": "block"
+      }
+    },
+    {
+      "id": "mechanism_to_center",
+      "points": [
+        [
+          671,
+          1077
+        ],
+        [
+          636,
+          1077
+        ]
+      ],
+      "meaning": "机理作用于三链重构",
+      "style": {
+        "endArrow": "block"
+      }
+    },
+    {
+      "id": "center_result",
+      "points": [
+        [
+          582,
+          1127
+        ],
+        [
+          582,
+          1147
+        ]
+      ],
+      "meaning": "汇总三链重构影响机理",
+      "style": {
+        "endArrow": "block"
+      }
+    }
+  ]
+}

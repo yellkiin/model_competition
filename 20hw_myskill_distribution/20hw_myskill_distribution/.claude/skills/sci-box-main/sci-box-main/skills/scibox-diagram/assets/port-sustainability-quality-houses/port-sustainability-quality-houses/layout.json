@@ -1,0 +1,2665 @@
+{
+  "template_id": "port-sustainability-quality-houses",
+  "name": "港口供应链双质量屋与减排策略研究图",
+  "canvas": [
+    1206,
+    1743
+  ],
+  "source_id": "ref-09",
+  "nodes": [
+    {
+      "id": "title",
+      "bbox": [
+        79,
+        21,
+        1048,
+        67
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#8da7d6",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "gradientColor": "#4972c3",
+        "gradientDirection": "east",
+        "fontColor": "#ffffff"
+      },
+      "text_height": 32
+    },
+    {
+      "id": "stage_shape_0",
+      "bbox": [
+        80,
+        121,
+        101,
+        292
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#feeee1",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(pZLRDoIwDEW/Zq9mtDrCM+J/EBhCnIwMFP17N4q4ELMEfVl7u9O1WS7DtK/zTjLgI8MjA4h4ZE+ra9KQgNOYMUwrbeTZ6Ftbku4Hoy+y0Eob20BxamKAQiawz6f85NNjUw61GzdFGuFTXe7KLrvqu9vrQRCnrZ6+mltU03qgED+SEeIuQMd/0cBD9PLpb3wvtjwewxb6kITo9adsomezfGd5CC2U7uWibPLxQdUoRd7x79detCVyMmYv)"
+      }
+    },
+    {
+      "id": "stage_text_0",
+      "bbox": [
+        98,
+        187.0,
+        30,
+        160
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 22
+    },
+    {
+      "id": "stage_shape_1",
+      "bbox": [
+        80,
+        451,
+        101,
+        358
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ddf0f9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(pZLdDoIwDIWfZrdmrGHANeJ7IAwhTmoGir69+0FciFmC3qw93detaQ6BfGjLqyCMTgT2hLGIRvrUunUa4tRoKAjkDSpxUnjra6eHUeFZVChR6QYXbRNhkB5LXoPNDz49dfXYmu9stDTzqWtpyia74N3M9XAQdVM9fTW3yK73QM5/JCPOdwE6+YuOIUQvS3/jSbbhcUbjLaNkLESvl7KJns3ynaUhtJI4iEXp5OODppPSece/X3tRl5yToXgB)"
+      }
+    },
+    {
+      "id": "stage_text_1",
+      "bbox": [
+        98,
+        550.0,
+        30,
+        160
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 22
+    },
+    {
+      "id": "stage_shape_2",
+      "bbox": [
+        80,
+        873,
+        101,
+        231
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(pZLbDoIwDIafZrdmB05eo74HwhDipGSg6Nu7rYgLURL0Zu3ffV2b5Sci7aqslYTTgYgd4ZxRZk6jK9RcOC32RKQlaHnScG0K1F2v4SxzUKBNA0bXRLhI4mMQFS4/+PRQF31lx7mII3yqzWzZZhe42b3uCFHc6uGrsUXVjQdG0Y8ko3wTfqfjf+hkuwRPf/56m4VrNgnYGponS/T8T1bRo1c+s3QJzRV0clImedugrJVC6/j3cyuaEhpZ7J8=)"
+      }
+    },
+    {
+      "id": "stage_text_2",
+      "bbox": [
+        98,
+        908.5,
+        30,
+        160
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 22
+    },
+    {
+      "id": "stage_shape_3",
+      "bbox": [
+        80,
+        1142,
+        101,
+        413
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ded0e4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(pZLdDoIwDIWfZrdma2XINeJ7EBhCnIwMFH1790NwMUqC3Kw93deuWQ7BtK/zThCgI8EjAWCUmdPo2us9Q6sxI5hWSouzVre29LoftLqIQkmlTYOProkAJjzGPHL5KaTHphxq+5yLjoaQ6nJbttlV3e1eDw9Rv9UzVFOLbNoA5PxPkiW4i37T8Sb6QJfo+dMnHChfMRwQ1tAsWaL5Fnoyy3eWLqGFVL2YlUnePqgaKb13wvtPL5qSdzJmLw==)"
+      }
+    },
+    {
+      "id": "stage_text_3",
+      "bbox": [
+        98,
+        1268.5,
+        30,
+        160
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 22
+    },
+    {
+      "id": "foundation",
+      "bbox": [
+        192,
+        121,
+        915,
+        284
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#feeee1",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "absoluteArcSize": "1",
+        "arcSize": "28"
+      }
+    },
+    {
+      "id": "foundation_outline",
+      "bbox": [
+        192,
+        121,
+        915,
+        284
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZLdEoIgEIWfhntYbIxrs/fwh9LJxFBT3z5wHUPGaroRDpzl212X8KgtkkYSoAPhJwIg2MF8jS5QwzGwmseERxel5VWrvs5Rt51WN5mpSmkTgOscRIBLkaYCnzq77qHMu8Li5hURrqtJ7LHd3dXT5jWiiQWY1oSSujFVWTtOQdln66NPcmtlXrUTc810BP8eNmnsg1fzUlf4F3rptANfC4GtY5fuNcjzenD6A009cPil33TDZX9gvWavFcDOj8sq1cpVmc17UHCw3Dt/UM0RjjmPXw==)"
+      }
+    },
+    {
+      "id": "houses",
+      "bbox": [
+        192,
+        452,
+        915,
+        374
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ddf0f9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "absoluteArcSize": "1",
+        "arcSize": "28"
+      }
+    },
+    {
+      "id": "houses_outline",
+      "bbox": [
+        192,
+        452,
+        915,
+        374
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZLbEoIgEIafhntYzMZrs/cwoHQyMQ+pbx8Hh5CxGm9kf/h2/t11EU27Im8EAjwiekIACTmor9KF1fQYaU0zRNOrbMWtlUPNre76Vt4Fk5VsVYI9TRICmifswpmJzz49lrwvtJ05DQ0+1eT6WkcP+dJ1TRYikS1rthL7OVVZe2SCyXf0OeRcoyTodiY+jCcI32FVxraxg5fRxbusl0l75q4RWBOb7sGAAjYwx3+scWAc/5g3XvmSHbbBsF0HsPHjWCU74ZQKPotiF8t/CxdVXdk1p9kb)"
+      }
+    },
+    {
+      "id": "evaluation",
+      "bbox": [
+        199,
+        865,
+        908,
+        231
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "absoluteArcSize": "1",
+        "arcSize": "28"
+      }
+    },
+    {
+      "id": "evaluation_outline",
+      "bbox": [
+        199,
+        865,
+        908,
+        231
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZLdDoIwDIWfZvf7MQLXiO9BYAoRGQ4QeHs3StzWEIw3rGc7zdeWEpH2Vd5JwulExIVwntDYfI2uQHPBrBYZEelNaXnXamxL0P2g1UMWqlHaJMC5JhEuIpknZ7HGV9891eVQWdx6AsJ3dbm9ttFTvW1dM5jYCcpaQFI/p6lbzxknB9bXmJfWylC3C/PNdOb4nQdl7IKdeeuLRf+gt0k7uGuEh45dOhoQ8iI4/YGmCBx2EoJpwA0HdIxFw2ao3eDHFY3q5VeZwC0KLJb/hhfVXMGai+wD)"
+      }
+    },
+    {
+      "id": "game",
+      "bbox": [
+        199,
+        1125,
+        389,
+        431
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e8dcee",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "absoluteArcSize": "1",
+        "arcSize": "28"
+      }
+    },
+    {
+      "id": "game_outline",
+      "bbox": [
+        199,
+        1125,
+        389,
+        431
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZLdEoIgEIWfhnvY1cxrs/dglNLJxPxJfftAHAPGarqRPfDtnN11CSZdwRtBgI4ETwQAj7H6Kl0YHSDTGlOCyUW24trKoc6N7vpW3kQmK9mqBHMuSQQwPkTIwyU+2/RY5n2h7ZZzocGmGq6vdXSXT13XZCAWmLJmI6mdU5W1RWIUfkYfA881yrxuZ2bDdAL/HZwy9o03eB0di/6xXidtmW+NgEvsunsD8ljPnP6wpp6x24lrTB1fd0Dfbb1hbx3Azo/LKtmJTangvShmsew3f1HVlVlzTF8=)"
+      }
+    },
+    {
+      "id": "simulation",
+      "bbox": [
+        699,
+        1125,
+        408,
+        431
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e8dcee",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "absoluteArcSize": "1",
+        "arcSize": "28"
+      }
+    },
+    {
+      "id": "simulation_outline",
+      "bbox": [
+        699,
+        1125,
+        408,
+        431
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZLREoIgEEW/hndgK/PZ7D8YtXQyMdTUvw/ECdhxbHqRvXB3zu66BJKuFG1BOB0JXAjnB3rWX63LVQMzGlICyU2q4q7k0ORWd72SjyKTtVQ6wZ5LEuEQnyIQxyW++u6xyvvS4JZzcXPf1QpzbaKnfJu6JmtiB1vWbCX1c+qq8ZwQ71hfg8iNlaFuZ+ab6cTxOw/K2AQ786pZ9A96nbSDu0Z46NikowEhL4LTH2iKwGEnIZgG3HBA+1g0bIbaDX5cVsuu+CoduEWxi+W/4UXVV3bNIf0A)"
+      }
+    },
+    {
+      "id": "research_base",
+      "bbox": [
+        544,
+        133,
+        190,
+        42
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#a9d18e",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "gradientColor": "#70ad47",
+        "gradientDirection": "east"
+      }
+    },
+    {
+      "id": "theory_title",
+      "bbox": [
+        232,
+        185,
+        258,
+        41
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae4d5",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "related_title",
+      "bbox": [
+        773,
+        185,
+        311,
+        41
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae4d5",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "theory",
+      "bbox": [
+        232,
+        246,
+        258,
+        143
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#fae4d5",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "related",
+      "bbox": [
+        773,
+        246,
+        313,
+        143
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#fae4d5",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "theory_item_0",
+      "bbox": [
+        240,
+        261,
+        242,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "align": "left",
+        "spacingLeft": "0"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "theory_item_1",
+      "bbox": [
+        240,
+        300,
+        242,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "align": "left",
+        "spacingLeft": "0"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "theory_item_2",
+      "bbox": [
+        240,
+        339,
+        242,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "align": "left",
+        "spacingLeft": "0"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "related_item_0",
+      "bbox": [
+        781,
+        261,
+        297,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "align": "left",
+        "spacingLeft": "0"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "related_item_1",
+      "bbox": [
+        781,
+        300,
+        297,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "align": "left",
+        "spacingLeft": "0"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "related_item_2",
+      "bbox": [
+        781,
+        339,
+        297,
+        34
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "align": "left",
+        "spacingLeft": "0"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "methods",
+      "bbox": [
+        543,
+        246,
+        161,
+        143
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fae4d5",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "dashed": "1",
+        "dashPattern": "3 3",
+        "rounded": "1",
+        "arcSize": "12"
+      }
+    },
+    {
+      "id": "method_left",
+      "bbox": [
+        505,
+        305,
+        30,
+        31
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#844008",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "west",
+        "arrowWidth": ".55",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "method_right",
+      "bbox": [
+        722,
+        305,
+        30,
+        31
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#844008",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".55",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "to_houses",
+      "bbox": [
+        614,
+        414,
+        70,
+        44
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#50b0a3",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": ".55",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "house_heading",
+      "bbox": [
+        429,
+        465,
+        395,
+        40
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#c4ece8",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "gradientColor": "#76d5d1",
+        "gradientDirection": "east"
+      }
+    },
+    {
+      "id": "two_stages",
+      "bbox": [
+        214,
+        554,
+        68,
+        177
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#beddf0",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 22
+    },
+    {
+      "id": "house_roof_0",
+      "bbox": [
+        457,
+        518,
+        242,
+        46
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ddf0f9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(dZBLEsIgDIZPw9ahoT72td6DoVQYselAa/X2AhkrOroh+cOXJxNNMHLUDPjCxJEBQA3xjdqQrndJipaJpkevzx7noSMdJo8XrdChjzzZnMNAbA97JXn2TyW92G4yqVu21LGkRpnCybviLY11J4hK8Uc51CvH2aEgK6g2nzT/D6/b/iysHAa9qui8p+utc7RR+f99oRii84r2CQ==)"
+      }
+    },
+    {
+      "id": "roof_text_0",
+      "bbox": [
+        526,
+        534,
+        104,
+        27
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_head_0",
+      "bbox": [
+        465,
+        572,
+        226,
+        33
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_matrix_0",
+      "bbox": [
+        465,
+        655,
+        226,
+        43
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_absolute_0",
+      "bbox": [
+        461,
+        746,
+        234,
+        27
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_relative_0",
+      "bbox": [
+        461,
+        779,
+        234,
+        27
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_roof_1",
+      "bbox": [
+        850,
+        518,
+        242,
+        46
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ddf0f9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(dZBLEsIgDIZPw9ahoT72td6DoVQYselAa/X2AhkrOroh+cOXJxNNMHLUDPjCxJEBQA3xjdqQrndJipaJpkevzx7noSMdJo8XrdChjzzZnMNAbA97JXn2TyW92G4yqVu21LGkRpnCybviLY11J4hK8Uc51CvH2aEgK6g2nzT/D6/b/iysHAa9qui8p+utc7RR+f99oRii84r2CQ==)"
+      }
+    },
+    {
+      "id": "roof_text_1",
+      "bbox": [
+        919,
+        534,
+        104,
+        27
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_head_1",
+      "bbox": [
+        858,
+        572,
+        226,
+        33
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_matrix_1",
+      "bbox": [
+        858,
+        655,
+        226,
+        43
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_absolute_1",
+      "bbox": [
+        854,
+        746,
+        234,
+        27
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "house_relative_1",
+      "bbox": [
+        854,
+        779,
+        234,
+        27
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "left_correlation",
+      "bbox": [
+        298,
+        614,
+        75,
+        129
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ddf0f9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(jZBBEsIgDEVPwx7DYHVd6z0YSoURmw5Ua28vEKuMKzckP7wPSZhoo1WTYcAXJk4MoJHpSNKS3MExa9Ex0Q4YzCXgfexJxzng1Wj0GJKBYjExEPLQaMVLfq7pxfWzzb+VWGioqUnlcs5u+MhtPQmip/hKai9rj3djRW4DrLXxH/I96sZqj9F8VEq+rQ3Oexqnvv9dTyrRbkX3Ag==)"
+      }
+    },
+    {
+      "id": "left_correlation_text",
+      "bbox": [
+        323,
+        648,
+        49,
+        59
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "customer",
+      "bbox": [
+        376,
+        620,
+        35,
+        116
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 20
+    },
+    {
+      "id": "weight",
+      "bbox": [
+        418,
+        620,
+        35,
+        116
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 20
+    },
+    {
+      "id": "sustainability",
+      "bbox": [
+        753,
+        620,
+        43,
+        116
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 20
+    },
+    {
+      "id": "importance",
+      "bbox": [
+        802,
+        620,
+        45,
+        117
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "to_evaluation",
+      "bbox": [
+        614,
+        826,
+        70,
+        44
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#50b0a3",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "south",
+        "arrowWidth": ".55",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "evaluation_heading",
+      "bbox": [
+        456,
+        879,
+        395,
+        40
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#edd2cd",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "gradientColor": "#ed8997",
+        "gradientDirection": "east"
+      }
+    },
+    {
+      "id": "barriers",
+      "bbox": [
+        221,
+        928,
+        214,
+        48
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "drivers",
+      "bbox": [
+        866,
+        931,
+        219,
+        48
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "obstacle_model",
+      "bbox": [
+        221,
+        989,
+        214,
+        49
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "tobit_model",
+      "bbox": [
+        866,
+        991,
+        219,
+        49
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "ch_dea",
+      "bbox": [
+        554,
+        928,
+        198,
+        72
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#a0dba8",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "barrier_input",
+      "bbox": [
+        463,
+        970,
+        63,
+        27
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#a62c44",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "east",
+        "arrowWidth": ".55",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "driver_input",
+      "bbox": [
+        778,
+        970,
+        63,
+        27
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#a62c44",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "singleArrow",
+        "direction": "west",
+        "arrowWidth": ".55",
+        "arrowSize": ".4"
+      }
+    },
+    {
+      "id": "overall_sustainability",
+      "bbox": [
+        470,
+        1027,
+        160,
+        59
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "100"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "regional_sustainability",
+      "bbox": [
+        675,
+        1027,
+        160,
+        59
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d4e8d3",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "100"
+      },
+      "text_height": 27
+    },
+    {
+      "id": "three_way_relation",
+      "bbox": [
+        602,
+        1105,
+        84,
+        74
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#50b0a3",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZPbDoMgDIafhnuknnbt3HsYxWnGwKCb29sPaLKhyQjxhvaHj1IoJVDNQzNxwuhK4EwYK1MzGDmgLJyEmkDVK82vWj1kh3petLrxVgmlDY/W7ZFKchfk4oPr2C2DPcdZBzKfmho7bb27etqEXgilSNE3SurvEaP0yLzckCE0Y0dROAUSSI+irPiPlls0C73AFsXiRaF5ICpLjqKhBGj0rXZBQ2+1Q0MVgPi6QvxvSfIA2go1868yzu/P96MQ2Cf++r7lzBS2K9Qf)"
+      }
+    },
+    {
+      "id": "investment_stage",
+      "bbox": [
+        216,
+        1142,
+        51,
+        397
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 20
+    },
+    {
+      "id": "simulation_stage",
+      "bbox": [
+        712,
+        1147,
+        51,
+        392
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      },
+      "text_width": 20
+    },
+    {
+      "id": "equilibrium",
+      "bbox": [
+        372,
+        1143,
+        117,
+        57
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "short_game",
+      "bbox": [
+        297,
+        1228,
+        117,
+        56
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "long_game",
+      "bbox": [
+        447,
+        1228,
+        117,
+        56
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "game_model_left",
+      "bbox": [
+        286,
+        1332,
+        138,
+        68
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e8dcee",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "game_model_right",
+      "bbox": [
+        437,
+        1332,
+        138,
+        68
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e8dcee",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "recommendation",
+      "bbox": [
+        318,
+        1426,
+        224,
+        114
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "28"
+      }
+    },
+    {
+      "id": "micro_arrow",
+      "bbox": [
+        588,
+        1259,
+        110,
+        88
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e6cced",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZLRDoMgDEW/hncE59izc/9hFIcZswZ0bn8/oMSRJS5mL7S3nEJzgfDSqnqUhNGF8DNhLMuoW51WqIXwkleElx0YeTUwDy1qOxm4yQY0GMdjDD2E8ZM40voQ8ktKL307KX9biIFmKTXWvuyzOzz8WE+E4lCv2FKkPbofErLI/0XpNrm6EtE8330qGrgLLdg2Sn+QjQYrV+WSj4tdrzU6n+5/v6Qr4Tfg1Rs=)"
+      }
+    },
+    {
+      "id": "micro_label",
+      "bbox": [
+        590,
+        1287,
+        88,
+        28
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "macro_arrow",
+      "bbox": [
+        588,
+        1374,
+        110,
+        88
+      ],
+      "font_size": 22,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e6cced",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(nZJNDsIgEIVPw54CVlzXeo+mpULETgOt1dvLj1FK0qRxw8yDb5jJA0QrK5tRIIIXRM+IkKLAbnVaRs25l7RGtOrBiKuBeeiitpOBm2hBg3F8jKEGEXriR9wcQn5J6UV1k/TdQgw0Samx8ds+u8PDj/XMxnp9isq0SqshYVn5L4q3yXV7xnbfGQ3chZZkG80NWLOtBiu+yiU/H3uldfQ+Pc/f0m3Fj0DrNw==)"
+      }
+    },
+    {
+      "id": "macro_label",
+      "bbox": [
+        602,
+        1403,
+        88,
+        28
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "economy",
+      "bbox": [
+        945,
+        1148,
+        55,
+        30
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "environment",
+      "bbox": [
+        1027,
+        1206,
+        55,
+        30
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "energy",
+      "bbox": [
+        937,
+        1284,
+        55,
+        30
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "enterprise",
+      "bbox": [
+        843,
+        1187,
+        55,
+        56
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "policy",
+      "bbox": [
+        803,
+        1272,
+        55,
+        30
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "abatement_selection",
+      "bbox": [
+        866,
+        1314,
+        160,
+        42
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "scenarios",
+      "bbox": [
+        786,
+        1413,
+        160,
+        36
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "port",
+      "bbox": [
+        786,
+        1456,
+        73,
+        35
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "shipping",
+      "bbox": [
+        866,
+        1456,
+        80,
+        35
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "market",
+      "bbox": [
+        786,
+        1499,
+        160,
+        36
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "abatement",
+      "bbox": [
+        990,
+        1413,
+        92,
+        36
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "intensity_1",
+      "bbox": [
+        990,
+        1456,
+        92,
+        35
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "intensity_2",
+      "bbox": [
+        990,
+        1499,
+        92,
+        36
+      ],
+      "font_size": 22,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e5c8ed",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "top_outer",
+      "points": [
+        [
+          180,
+          107
+        ],
+        [
+          1127,
+          107
+        ],
+        [
+          1127,
+          414
+        ],
+        [
+          180,
+          414
+        ],
+        [
+          180,
+          107
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#222222",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "remaining_outer",
+      "points": [
+        [
+          610,
+          436
+        ],
+        [
+          181,
+          436
+        ],
+        [
+          181,
+          1567
+        ],
+        [
+          1127,
+          1567
+        ],
+        [
+          1127,
+          436
+        ],
+        [
+          688,
+          436
+        ]
+      ],
+      "meaning": "剩余三阶段共享虚线外框；顶部在推进箭头处留缺口",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#222222",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "theory_border",
+      "points": [
+        [
+          232,
+          246
+        ],
+        [
+          490,
+          246
+        ],
+        [
+          490,
+          389
+        ],
+        [
+          232,
+          389
+        ],
+        [
+          232,
+          246
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "0",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "related_border",
+      "points": [
+        [
+          773,
+          246
+        ],
+        [
+          1086,
+          246
+        ],
+        [
+          1086,
+          389
+        ],
+        [
+          773,
+          389
+        ],
+        [
+          773,
+          246
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "0",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "base_left",
+      "points": [
+        [
+          542,
+          153
+        ],
+        [
+          361,
+          153
+        ],
+        [
+          361,
+          183
+        ]
+      ],
+      "meaning": "研究基础分发至理论基础",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "base_right",
+      "points": [
+        [
+          736,
+          153
+        ],
+        [
+          942,
+          153
+        ],
+        [
+          942,
+          183
+        ]
+      ],
+      "meaning": "研究基础分发至相关研究",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "theory_down",
+      "points": [
+        [
+          361,
+          228
+        ],
+        [
+          361,
+          244
+        ]
+      ],
+      "meaning": "理论基础关联三个理论条目",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "related_down",
+      "points": [
+        [
+          942,
+          228
+        ],
+        [
+          942,
+          244
+        ]
+      ],
+      "meaning": "相关研究关联三个条目",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#ac5c32",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "house_grid_0",
+      "points": [
+        [
+          457,
+          564
+        ],
+        [
+          699,
+          564
+        ],
+        [
+          699,
+          808
+        ],
+        [
+          457,
+          808
+        ],
+        [
+          457,
+          564
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "0",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "house_line_0_0",
+      "points": [
+        [
+          457,
+          614
+        ],
+        [
+          699,
+          614
+        ]
+      ],
+      "meaning": "质量屋单元格边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "house_line_0_1",
+      "points": [
+        [
+          457,
+          743
+        ],
+        [
+          699,
+          743
+        ]
+      ],
+      "meaning": "质量屋单元格边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "house_line_0_2",
+      "points": [
+        [
+          457,
+          776
+        ],
+        [
+          699,
+          776
+        ]
+      ],
+      "meaning": "质量屋单元格边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "house_grid_1",
+      "points": [
+        [
+          850,
+          564
+        ],
+        [
+          1092,
+          564
+        ],
+        [
+          1092,
+          808
+        ],
+        [
+          850,
+          808
+        ],
+        [
+          850,
+          564
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "0",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "house_line_1_0",
+      "points": [
+        [
+          850,
+          614
+        ],
+        [
+          1092,
+          614
+        ]
+      ],
+      "meaning": "质量屋单元格边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "house_line_1_1",
+      "points": [
+        [
+          850,
+          743
+        ],
+        [
+          1092,
+          743
+        ]
+      ],
+      "meaning": "质量屋单元格边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "house_line_1_2",
+      "points": [
+        [
+          850,
+          776
+        ],
+        [
+          1092,
+          776
+        ]
+      ],
+      "meaning": "质量屋单元格边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "customer_frame",
+      "points": [
+        [
+          374,
+          615
+        ],
+        [
+          413,
+          615
+        ],
+        [
+          413,
+          741
+        ],
+        [
+          374,
+          741
+        ],
+        [
+          374,
+          615
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "0",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "weight_frame",
+      "points": [
+        [
+          416,
+          615
+        ],
+        [
+          455,
+          615
+        ],
+        [
+          455,
+          741
+        ],
+        [
+          416,
+          741
+        ],
+        [
+          416,
+          615
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "0",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "sustainability_frame",
+      "points": [
+        [
+          751,
+          615
+        ],
+        [
+          798,
+          615
+        ],
+        [
+          798,
+          741
+        ],
+        [
+          751,
+          741
+        ],
+        [
+          751,
+          615
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "0",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "importance_frame",
+      "points": [
+        [
+          801,
+          615
+        ],
+        [
+          848,
+          615
+        ],
+        [
+          848,
+          742
+        ],
+        [
+          801,
+          742
+        ],
+        [
+          801,
+          615
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "0",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "house_transfer_top",
+      "points": [
+        [
+          701,
+          590
+        ],
+        [
+          774,
+          590
+        ],
+        [
+          774,
+          612
+        ]
+      ],
+      "meaning": "第一质量屋技术需求关联第二质量屋可持续输入",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "house_transfer_bottom",
+      "points": [
+        [
+          701,
+          792
+        ],
+        [
+          825,
+          792
+        ],
+        [
+          825,
+          746
+        ]
+      ],
+      "meaning": "第一质量屋相对重要性传递至第二阶段重要性",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#587ca0",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "overall_output",
+      "points": [
+        [
+          593,
+          1002
+        ],
+        [
+          552,
+          1025
+        ]
+      ],
+      "meaning": "评价模型关联总体可持续性",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "regional_output",
+      "points": [
+        [
+          712,
+          1002
+        ],
+        [
+          754,
+          1025
+        ]
+      ],
+      "meaning": "评价模型关联区域可持续性",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#649b46",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "equilibrium_short",
+      "points": [
+        [
+          417,
+          1202
+        ],
+        [
+          356,
+          1226
+        ]
+      ],
+      "meaning": "双均衡分解为静态短期博弈",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "equilibrium_long",
+      "points": [
+        [
+          442,
+          1202
+        ],
+        [
+          505,
+          1226
+        ]
+      ],
+      "meaning": "双均衡分解为动态长期博弈",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "short_model",
+      "points": [
+        [
+          355,
+          1286
+        ],
+        [
+          355,
+          1330
+        ]
+      ],
+      "meaning": "静态短期博弈连接其模型",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "long_model",
+      "points": [
+        [
+          506,
+          1286
+        ],
+        [
+          506,
+          1330
+        ]
+      ],
+      "meaning": "动态长期博弈连接其模型",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "left_advice",
+      "points": [
+        [
+          356,
+          1402
+        ],
+        [
+          407,
+          1424
+        ]
+      ],
+      "meaning": "静态模型归入投资建议",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "right_advice",
+      "points": [
+        [
+          506,
+          1402
+        ],
+        [
+          455,
+          1424
+        ]
+      ],
+      "meaning": "动态模型归入投资建议",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "economy_enterprise",
+      "points": [
+        [
+          941,
+          1161
+        ],
+        [
+          909,
+          1166
+        ],
+        [
+          887,
+          1183
+        ]
+      ],
+      "meaning": "经济关联港航企业",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "curved": "1"
+      }
+    },
+    {
+      "id": "environment_economy",
+      "points": [
+        [
+          1051,
+          1204
+        ],
+        [
+          1032,
+          1174
+        ],
+        [
+          1002,
+          1163
+        ]
+      ],
+      "meaning": "环境关联经济",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "curved": "1"
+      }
+    },
+    {
+      "id": "energy_environment",
+      "points": [
+        [
+          994,
+          1294
+        ],
+        [
+          1033,
+          1280
+        ],
+        [
+          1054,
+          1238
+        ]
+      ],
+      "meaning": "能源关联环境",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "curved": "1"
+      }
+    },
+    {
+      "id": "enterprise_energy",
+      "points": [
+        [
+          866,
+          1247
+        ],
+        [
+          891,
+          1280
+        ],
+        [
+          929,
+          1295
+        ]
+      ],
+      "meaning": "港航企业关联能源",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "curved": "1"
+      }
+    },
+    {
+      "id": "policy_enterprise",
+      "points": [
+        [
+          820,
+          1270
+        ],
+        [
+          847,
+          1245
+        ]
+      ],
+      "meaning": "政策关联港航企业",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "curved": "1"
+      }
+    },
+    {
+      "id": "scenario_group",
+      "points": [
+        [
+          777,
+          1391
+        ],
+        [
+          954,
+          1391
+        ],
+        [
+          954,
+          1544
+        ],
+        [
+          777,
+          1544
+        ],
+        [
+          777,
+          1391
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "indicator_group",
+      "points": [
+        [
+          976,
+          1391
+        ],
+        [
+          1094,
+          1391
+        ],
+        [
+          1094,
+          1544
+        ],
+        [
+          976,
+          1544
+        ],
+        [
+          976,
+          1391
+        ]
+      ],
+      "meaning": "面板边界，不表示流程关系",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 3"
+      }
+    },
+    {
+      "id": "selection_scenarios",
+      "points": [
+        [
+          901,
+          1358
+        ],
+        [
+          846,
+          1389
+        ]
+      ],
+      "meaning": "减排措施映射多场景",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "selection_indicators",
+      "points": [
+        [
+          977,
+          1358
+        ],
+        [
+          1038,
+          1389
+        ]
+      ],
+      "meaning": "减排措施映射评价指标",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#9870a5",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    }
+  ]
+}

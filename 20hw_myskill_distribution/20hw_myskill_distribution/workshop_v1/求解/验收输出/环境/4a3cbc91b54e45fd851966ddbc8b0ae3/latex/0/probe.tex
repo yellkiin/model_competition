@@ -1,0 +1,15 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{fontspec}
+\IfFontExistsTF{STXinwei}{}{\errmessage{Missing required font STXinwei}}
+\IfFontExistsTF{SimSun}{}{\errmessage{Missing required font SimSun}}
+\IfFontExistsTF{SimHei}{}{\errmessage{Missing required font SimHei}}
+\IfFontExistsTF{KaiTi}{}{\errmessage{Missing required font KaiTi}}
+\IfFontExistsTF{Times New Roman}{}{\errmessage{Missing required font Times New Roman}}
+\usepackage{gmcm-title,tikz,minted,natbib}
+\begin{document}
+\GMCMContestTitle{二十三}
+中文环境验证，English text. \citep{probe}
+\begin{tikzpicture}\draw[->] (0,0)--(2,0) node[right]{测试};\end{tikzpicture}
+\inputminted{python}{sample.py}
+\bibliographystyle{plainnat}\bibliography{probe}
+\end{document}

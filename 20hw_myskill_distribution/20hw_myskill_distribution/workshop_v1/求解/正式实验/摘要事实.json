@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "derivation": {
+    "statistics_source": "求解/正式实验/统计分析.json",
+    "statistics_sha256": "54625a20d8d26e41977443ad6da277bfe5c85b78a98699cc4195ef1334ad4705",
+    "validation_source": "求解/正式实验/逐问核验摘要.json",
+    "validation_sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a",
+    "definition": "100个官方算例、5核逐例加速比的算术平均；独立核验按当前逐问摘要。"
+  },
+  "questions": {
+    "q1": {
+      "method": "连通块分核",
+      "conclusion": {
+        "text": "多数图可利用多个核心",
+        "status": "verified"
+      },
+      "speedup": {
+        "value": 3.5092901309873006,
+        "unit": "（无量纲）",
+        "status": "verified"
+      },
+      "validation": "所选五百组方案的覆盖、时间线及官方响应交叉核验全部通过"
+    },
+    "q2": {
+      "method": "场景B重新择优",
+      "conclusion": {
+        "text": "Task合并并不保证逐例加速",
+        "status": "verified"
+      },
+      "speedup": {
+        "value": 3.545622829240541,
+        "unit": "（无量纲）",
+        "status": "verified"
+      },
+      "validation": "所选五百组方案的覆盖、时间线及官方响应交叉核验全部通过"
+    },
+    "q3": {
+      "method": "同方案反事实",
+      "conclusion": {
+        "text": "有正向收益的算例过半",
+        "status": "verified"
+      },
+      "speedup": {
+        "value": 3.610379887949727,
+        "unit": "（无量纲）",
+        "status": "verified"
+      },
+      "validation": "所选五百组方案的覆盖、时间线及官方响应交叉核验全部通过",
+      "cache_gain": {
+        "value": 1.025956843682253,
+        "unit": "（无量纲）",
+        "status": "verified"
+      }
+    }
+  }
+}

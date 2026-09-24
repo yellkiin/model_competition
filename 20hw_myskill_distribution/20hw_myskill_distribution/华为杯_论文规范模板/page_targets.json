@@ -1,0 +1,138 @@
+{
+  "version": 2,
+  "required_body_pages": 35,
+  "page_system": "printed",
+  "body_definition": "正文从目录结束后的下一页开始，到参考文献标题前一页结束；摘要、目录、参考文献和附录不计入正文。",
+  "chapter_hard_limits": {
+    "关键性符号说明": 2
+  },
+  "chapter_start": "chapter_1_and_4_onward_new_page_chapters_2_3_continue",
+  "abstract_targets": {
+    "max_pages": 2,
+    "keyword_label_count": 1,
+    "min_first_page_keyword_y_ratio": 0.8,
+    "policy": "摘要须实质占满第1页；若关键词位于第2页则视为已满足最低篇幅。不得用空行、强制分页、字号或间距凑摘要篇幅。"
+  },
+  "role_targets": {
+    "evaluation": {
+      "min_pages": 1,
+      "observed": [
+        1,
+        1
+      ]
+    },
+    "preliminary": {
+      "min_pages": 1,
+      "max_pages": 8,
+      "observed": [
+        1,
+        4
+      ]
+    },
+    "problem": {
+      "min_pages": 3,
+      "max_pages": 27,
+      "observed": [
+        7,
+        8,
+        10,
+        10,
+        13,
+        14,
+        18,
+        27
+      ]
+    }
+  },
+  "observations": [
+    {
+      "sample": "A24103350007",
+      "name": "问题重述与背景",
+      "role": "preliminary",
+      "pages": 4
+    },
+    {
+      "sample": "A24103350007",
+      "name": "问题一",
+      "role": "problem",
+      "pages": 10
+    },
+    {
+      "sample": "A24103350007",
+      "name": "问题二",
+      "role": "problem",
+      "pages": 10
+    },
+    {
+      "sample": "A24103350007",
+      "name": "问题三",
+      "role": "problem",
+      "pages": 27
+    },
+    {
+      "sample": "A24103350007",
+      "name": "模型总结",
+      "role": "evaluation",
+      "pages": 1
+    },
+    {
+      "sample": "C24106130096",
+      "name": "问题重述",
+      "role": "preliminary",
+      "pages": 1
+    },
+    {
+      "sample": "C24106130096",
+      "name": "问题一",
+      "role": "problem",
+      "pages": 13
+    },
+    {
+      "sample": "C24106130096",
+      "name": "问题二",
+      "role": "problem",
+      "pages": 14
+    },
+    {
+      "sample": "C24106130096",
+      "name": "问题三",
+      "role": "problem",
+      "pages": 7
+    },
+    {
+      "sample": "C24106130096",
+      "name": "问题四",
+      "role": "problem",
+      "pages": 18
+    },
+    {
+      "sample": "C24106130096",
+      "name": "问题五",
+      "role": "problem",
+      "pages": 8
+    },
+    {
+      "sample": "C24106130096",
+      "name": "模型评价与推广",
+      "role": "evaluation",
+      "pages": 1
+    }
+  ],
+  "policy": "Body minimum 35 pages and chapter_hard_limits remain hard gates. Restatement and evaluation each require at least one equivalent page of net prose in the final PDF, with no maximum. First-three-chapter 3–6 pages and other role windows are review warnings. Never alter official font, margins, or spacing, or repeat content to pass.",
+  "first_three_chapters": {
+    "severity": "warning",
+    "min_pages": 3,
+    "max_pages": 6,
+    "counting": "unique_physical_content_pages_from_pdf_anchors"
+  },
+  "restatement_prose": {
+    "minimum_equivalent_pages": 1.0,
+    "severity": "error",
+    "measurement": "paragraph_destinations_distinct_baselines_v1"
+  },
+  "evaluation_prose": {
+    "minimum_equivalent_pages": 1.0,
+    "severity": "error",
+    "measurement": "paragraph_destinations_distinct_baselines_v1"
+  }
+}

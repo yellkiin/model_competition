@@ -1,0 +1,867 @@
+{
+  "sources": [
+    {
+      "id": "problem",
+      "path": "题目/通用神经网络处理器下的多核调度问题.docx",
+      "kind": "problem"
+    },
+    {
+      "id": "readme",
+      "path": "数据/原始/A题官方附件/README.md",
+      "kind": "attachment"
+    },
+    {
+      "id": "sze",
+      "path": "论文/参考来源/sze2017_author/source.html",
+      "kind": "verified_external"
+    },
+    {
+      "id": "eyeriss",
+      "path": "论文/参考来源/eyeriss2017_mit/source.html",
+      "kind": "verified_external"
+    },
+    {
+      "id": "tpu",
+      "path": "论文/参考来源/jouppi2017_google/source.html",
+      "kind": "verified_external"
+    },
+    {
+      "id": "pebble",
+      "path": "论文/参考来源/hongkung1981_author/source.pdf",
+      "kind": "verified_external"
+    }
+  ],
+  "context": {
+    "object_scene": [
+      {
+        "text": "同构 NPU 核、私有 L1/UB 与共享 DDR 上的 Op–Tensor 有向无环图。",
+        "source": {
+          "source_id": "problem",
+          "location": "正文 1.1 段5、1.2 段7至19",
+          "quote": "考虑由  个同构 AI 核心与共享核外主存"
+        }
+      }
+    ],
+    "difficulty_causes": [
+      {
+        "text": "切图、分核和同核顺序共同影响并行、边界搬运和驻留时间。",
+        "source": {
+          "source_id": "problem",
+          "location": "正文 1.3 段23",
+          "quote": "求解困难来自三个相互耦合的决策：切图、核心的分配和同一核内的子图调度顺序。"
+        }
+      }
+    ],
+    "scope_exclusions": [
+      {
+        "text": "L0A、L0B、L0C 和 VReg 不是本题评估的缓存约束。",
+        "source": {
+          "source_id": "problem",
+          "location": "附录 A 段76",
+          "quote": "图中L0A、L0B、L0C、VReg缓存不用在本题中考虑"
+        }
+      }
+    ],
+    "shared_conditions": [
+      {
+        "text": "固定官方配置与全部计算图，输出非 COPY 操作子图映射和逐核序列。",
+        "source": {
+          "source_id": "problem",
+          "location": "正文 1.3 段24至28、附录 B.3/B.5",
+          "quote": "映射表必须包含所有核内操作节点"
+        }
+      },
+      {
+        "text": "官方全局 Makespan 是主指标，额外 DDR 搬运为次指标。",
+        "source": {
+          "source_id": "problem",
+          "location": "正文 1.4 段30至35",
+          "quote": "总体任务执行时间（Makespan）：最重要指标"
+        }
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "order": 1,
+      "original_id": "问题 1",
+      "source": {
+        "source_id": "problem",
+        "location": "正文问题 1 段45至50",
+        "quote": "场景 A 下，每个子图独立构成一个 Task，所有跨子图数据均须经 DDR 中转。"
+      },
+      "inputs": [
+        "官方计算图",
+        "固定配置",
+        "二至五个核心"
+      ],
+      "action": "构造切图并给出逐核子图序列",
+      "object": "场景 A 的每子图一 Task 调度",
+      "conditions": [
+        "全部跨子图数据经 DDR",
+        "子图依赖无环",
+        "同步与容量规则按官方评估器"
+      ],
+      "outputs": [
+        "正式方案 JSON",
+        "一至五核平均加速比折线图",
+        "逐例 Makespan 与新增 DDR 搬运",
+        "Python 复现程序"
+      ],
+      "validation": [
+        "全部官方用例与固定配置",
+        "官方评估器输出",
+        "附件可复现"
+      ],
+      "depends_on": [],
+      "required_methods": [],
+      "literal_requirements": [
+        "二至五核",
+        "DDR",
+        "Makespan"
+      ],
+      "coverage": {
+        "status": "verified",
+        "restatement_quote": "问题一针对场景 A：一个子图就是一个 Task，跨子图张量都须经 DDR；跨核前驱 Task 与同核 Task 切换分别受题定等待时间约束。应建立切图和调度模型，分别为二至五核生成方案。正文需展示以整图单核时长为基准的一至五核平均加速比，逐例结果表列出全部给定算例的官方 Makespan 与额外搬运量，并保留可复现程序和方案文件。",
+        "observation": "逐项对照原题的场景、输入、输出与校验要求；该段保持题定口径且没有塞入本文成绩。"
+      },
+      "subtasks": [
+        {
+          "original_id": "问题 1-正文",
+          "source": {
+            "source_id": "problem",
+            "location": "正文问题 1-正文",
+            "quote": "正文：给出 1～5 个核的平均加速比折线图"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "问题一针对场景 A：一个子图就是一个 Task，跨子图张量都须经 DDR；跨核前驱 Task 与同核 Task 切换分别受题定等待时间约束。应建立切图和调度模型，分别为二至五核生成方案。正文需展示以整图单核时长为基准的一至五核平均加速比，逐例结果表列出全部给定算例的官方 Makespan 与额外搬运量，并保留可复现程序和方案文件。",
+            "observation": "同一重述段明确保留此交付件及其官方评估口径。"
+          },
+          "literal_requirements": [
+            "平均加速比"
+          ]
+        },
+        {
+          "original_id": "问题 1-附录",
+          "source": {
+            "source_id": "problem",
+            "location": "正文问题 1-附录",
+            "quote": "附录：逐用例列出赛题评估程序给出的结果"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "问题一针对场景 A：一个子图就是一个 Task，跨子图张量都须经 DDR；跨核前驱 Task 与同核 Task 切换分别受题定等待时间约束。应建立切图和调度模型，分别为二至五核生成方案。正文需展示以整图单核时长为基准的一至五核平均加速比，逐例结果表列出全部给定算例的官方 Makespan 与额外搬运量，并保留可复现程序和方案文件。",
+            "observation": "同一重述段明确保留此交付件及其官方评估口径。"
+          },
+          "literal_requirements": [
+            "逐例结果表"
+          ]
+        },
+        {
+          "original_id": "问题 1-附件",
+          "source": {
+            "source_id": "problem",
+            "location": "正文问题 1-附件",
+            "quote": "附件：提供可复现的 Python 程序脚本"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "问题一针对场景 A：一个子图就是一个 Task，跨子图张量都须经 DDR；跨核前驱 Task 与同核 Task 切换分别受题定等待时间约束。应建立切图和调度模型，分别为二至五核生成方案。正文需展示以整图单核时长为基准的一至五核平均加速比，逐例结果表列出全部给定算例的官方 Makespan 与额外搬运量，并保留可复现程序和方案文件。",
+            "observation": "同一重述段明确保留此交付件及其官方评估口径。"
+          },
+          "literal_requirements": [
+            "可复现程序"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "original_id": "问题 2",
+      "source": {
+        "source_id": "problem",
+        "location": "正文问题 2 段52至57",
+        "quote": "场景 B 下，每个核心上的全部子图合并为一个 Task"
+      },
+      "inputs": [
+        "问题一模型",
+        "官方计算图",
+        "固定配置",
+        "二至五个核心"
+      ],
+      "action": "改进切图、分核和调度",
+      "object": "场景 B 的同核合并 Task 调度",
+      "conditions": [
+        "同核 L1/UB 复用",
+        "跨核 DDR 拷贝与同步",
+        "满足 L1/UB 容量"
+      ],
+      "outputs": [
+        "正式方案 JSON",
+        "一至五核平均加速比折线图",
+        "逐例 Makespan 与新增 DDR 搬运",
+        "Python 复现程序"
+      ],
+      "validation": [
+        "全部官方用例与固定配置",
+        "与问题一相同的单核分母",
+        "附件可复现"
+      ],
+      "depends_on": [
+        "问题 1"
+      ],
+      "required_methods": [],
+      "literal_requirements": [
+        "二至五核",
+        "L1",
+        "UB"
+      ],
+      "coverage": {
+        "status": "verified",
+        "restatement_quote": "问题二针对场景 B：同核全部子图合为一个 Task，可在 L1 或 UB 中复用数据，跨核依赖则以 DDR 拷贝和固定同步延迟实现。需在满足每核私有缓存容量的前提下，调整切图、分核与顺序，在二至五核稳定生成方案，争取进一步降低全局时长和额外搬运。其平均加速比仍以与问题一相同的整图单核结果为分母；逐例指标与方案同样须保留在支撑材料中，并提供可复现的 Python 程序。",
+        "observation": "逐项对照原题的场景、输入、输出与校验要求；该段保持题定口径且没有塞入本文成绩。"
+      },
+      "subtasks": [
+        {
+          "original_id": "问题 2-正文",
+          "source": {
+            "source_id": "problem",
+            "location": "正文问题 2-正文",
+            "quote": "正文：给出场景 B 下 1～5 个核的平均加速比折线图"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "问题二针对场景 B：同核全部子图合为一个 Task，可在 L1 或 UB 中复用数据，跨核依赖则以 DDR 拷贝和固定同步延迟实现。需在满足每核私有缓存容量的前提下，调整切图、分核与顺序，在二至五核稳定生成方案，争取进一步降低全局时长和额外搬运。其平均加速比仍以与问题一相同的整图单核结果为分母；逐例指标与方案同样须保留在支撑材料中，并提供可复现的 Python 程序。",
+            "observation": "同一重述段明确保留此交付件及其官方评估口径。"
+          },
+          "literal_requirements": [
+            "平均加速比"
+          ]
+        },
+        {
+          "original_id": "问题 2-附录",
+          "source": {
+            "source_id": "problem",
+            "location": "正文问题 2-附录",
+            "quote": "附录：逐个用例地列出赛题评估程序给出的结果"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "问题二针对场景 B：同核全部子图合为一个 Task，可在 L1 或 UB 中复用数据，跨核依赖则以 DDR 拷贝和固定同步延迟实现。需在满足每核私有缓存容量的前提下，调整切图、分核与顺序，在二至五核稳定生成方案，争取进一步降低全局时长和额外搬运。其平均加速比仍以与问题一相同的整图单核结果为分母；逐例指标与方案同样须保留在支撑材料中，并提供可复现的 Python 程序。",
+            "observation": "同一重述段明确保留此交付件及其官方评估口径。"
+          },
+          "literal_requirements": [
+            "逐例指标"
+          ]
+        },
+        {
+          "original_id": "问题 2-附件",
+          "source": {
+            "source_id": "problem",
+            "location": "正文问题 2-附件",
+            "quote": "附件：提供可复现的 Python 程序脚本"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "问题二针对场景 B：同核全部子图合为一个 Task，可在 L1 或 UB 中复用数据，跨核依赖则以 DDR 拷贝和固定同步延迟实现。需在满足每核私有缓存容量的前提下，调整切图、分核与顺序，在二至五核稳定生成方案，争取进一步降低全局时长和额外搬运。其平均加速比仍以与问题一相同的整图单核结果为分母；逐例指标与方案同样须保留在支撑材料中，并提供可复现的 Python 程序。",
+            "observation": "同一重述段明确保留此交付件及其官方评估口径。"
+          },
+          "literal_requirements": [
+            "可复现的 Python 程序"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "original_id": "问题 3",
+      "source": {
+        "source_id": "problem",
+        "location": "正文问题 3 段58至62",
+        "quote": "本问题在场景 B 的基础上引入所有核心共享的只读 L2 Cache"
+      },
+      "inputs": [
+        "场景 B 方案",
+        "官方计算图",
+        "固定 L2 配置",
+        "容量与带宽变化分析"
+      ],
+      "action": "研究缓存参数并设计适配算法",
+      "object": "共享只读 L2 下的多核切图与调度",
+      "conditions": [
+        "COPY_IN 才查询 L2",
+        "只读 FIFO",
+        "独立 DDR/L2 带宽",
+        "同方案无 L2 与有 L2 比较"
+      ],
+      "outputs": [
+        "一至五核两配置曲线",
+        "同核数 Cache 加速比",
+        "逐例两配置 Makespan、额外搬运与命中率"
+      ],
+      "validation": [
+        "固定配置的官方实验",
+        "同方案加速比定义",
+        "参数变化另列非官方分析"
+      ],
+      "depends_on": [
+        "问题 2"
+      ],
+      "required_methods": [],
+      "literal_requirements": [
+        "COPY\\_IN",
+        "FIFO",
+        "同一方案"
+      ],
+      "coverage": {
+        "status": "verified",
+        "restatement_quote": "问题三在场景 B 上增加所有核心共享的只读 L2。只有 COPY\\_IN 查询 Cache；命中不改变 FIFO 顺序，L2 读带宽与 DDR 带宽独立。需研究容量与读带宽变化如何影响切图、调度及完成时间，设计相应方案，并在题定容量和带宽下完成全部正式用例。正文比较同核数无 L2 与有 L2 的结果，Cache 加速比须在同一方案上用无 L2 时长除以有 L2 时长；逐例结果表列出两种配置的 Makespan、额外搬运量和命中率。",
+        "observation": "逐项对照原题的场景、输入、输出与校验要求；该段保持题定口径且没有塞入本文成绩。"
+      },
+      "subtasks": [
+        {
+          "original_id": "问题 3-正文",
+          "source": {
+            "source_id": "problem",
+            "location": "正文问题 3-正文",
+            "quote": "正文：给出 1～5 核下无 L2 与只读 Cache 两种配置的对比曲线"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "问题三在场景 B 上增加所有核心共享的只读 L2。只有 COPY\\_IN 查询 Cache；命中不改变 FIFO 顺序，L2 读带宽与 DDR 带宽独立。需研究容量与读带宽变化如何影响切图、调度及完成时间，设计相应方案，并在题定容量和带宽下完成全部正式用例。正文比较同核数无 L2 与有 L2 的结果，Cache 加速比须在同一方案上用无 L2 时长除以有 L2 时长；逐例结果表列出两种配置的 Makespan、额外搬运量和命中率。",
+            "observation": "同一重述段明确保留此交付件及其官方评估口径。"
+          },
+          "literal_requirements": [
+            "正文比较同核数无 L2 与有 L2 的结果"
+          ]
+        },
+        {
+          "original_id": "问题 3-附录",
+          "source": {
+            "source_id": "problem",
+            "location": "正文问题 3-附录",
+            "quote": "附录：逐用例列出无 L2 与只读 Cache 两种配置"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "问题三在场景 B 上增加所有核心共享的只读 L2。只有 COPY\\_IN 查询 Cache；命中不改变 FIFO 顺序，L2 读带宽与 DDR 带宽独立。需研究容量与读带宽变化如何影响切图、调度及完成时间，设计相应方案，并在题定容量和带宽下完成全部正式用例。正文比较同核数无 L2 与有 L2 的结果，Cache 加速比须在同一方案上用无 L2 时长除以有 L2 时长；逐例结果表列出两种配置的 Makespan、额外搬运量和命中率。",
+            "observation": "同一重述段明确保留此交付件及其官方评估口径。"
+          },
+          "literal_requirements": [
+            "逐例结果表"
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "text": "待调度的对象是由操作节点和张量节点交替连接而成的有向无环计算图。",
+      "kind": "problem",
+      "source": {
+        "source_id": "problem",
+        "location": "正文 1.2 段7至19",
+        "quote": "待调度对象是一张有向无环计算图"
+      }
+    },
+    {
+      "text": "题目给定的平台由若干同构 NPU 核心及共享 DDR 组成。",
+      "kind": "problem",
+      "source": {
+        "source_id": "problem",
+        "location": "正文 1.1 段5",
+        "quote": "同构 AI 核心与共享核外主存"
+      }
+    },
+    {
+      "text": "神经网络处理器研究已有对硬件平台、体系结构及降低计算成本路径的系统综述\\cite{sze2017}。",
+      "kind": "verified_external",
+      "citation_key": "sze2017",
+      "source": {
+        "source_id": "sze",
+        "location": "arXiv 摘要第2段",
+        "quote": "discuss various hardware platforms and architectures"
+      }
+    },
+    {
+      "text": "Eyeriss 对局部复用和片外访存能耗的实证分析说明，数据流设计会显著改变搬运代价\\cite{eyeriss2017}；",
+      "kind": "verified_external",
+      "citation_key": "eyeriss2017",
+      "source": {
+        "source_id": "eyeriss",
+        "location": "MIT 页面 Abstract 段",
+        "quote": "maximally reusing data locally to reduce expensive data movement"
+      }
+    },
+    {
+      "text": "TPU 的整模型评估则提醒我们，专用矩阵单元的峰值能力不能单独代表应用完成时间\\cite{jouppi2017}。",
+      "kind": "verified_external",
+      "citation_key": "jouppi2017",
+      "source": {
+        "source_id": "tpu",
+        "location": "Google Research Abstract 段",
+        "quote": "99th-percentile response-time requirement"
+      }
+    },
+    {
+      "text": "经典的红蓝卵石模型从理论上刻画有限快存下计算与I/O的牵制\\cite{hongkung1981}。",
+      "kind": "verified_external",
+      "citation_key": "hongkung1981",
+      "source": {
+        "source_id": "pebble",
+        "location": "原刊 PDF 第1页摘要",
+        "quote": "red-blue pebble game is proposed to model the"
+      }
+    }
+  ],
+  "gaps": [],
+  "symbols": [
+    {
+      "category": "集合",
+      "symbol": "G",
+      "meaning": "输入的有向无环二部计算图",
+      "unit": "—",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{G}{输入的有向无环二部计算图}{—}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "记输入二部图为 $G$，并写成 $G=(\\mathcal{O}\\cup\\mathcal{T},E)$。$\\mathcal{O}$ 是操作节点集合，$\\mathcal{T}$ 是张量节点集合，$E$ 仅连接不同类型节点。对每个非 COPY 操作 $i$ 定义子图编号 $g(i)$；对子图 $g$ 定义核心编号 $a(g)$，并令每核子图序列形成一个全排列。所有非 COPY 操作必须且只能出现一次，子图依赖收缩图必须无环，同核序列须与该图的偏序相容。这些是硬约束，并在正式计分前由题目提供的校验程序执行。"
+        }
+      ]
+    },
+    {
+      "category": "集合",
+      "symbol": "\\mathcal{O}",
+      "meaning": "计算图中的操作节点集合",
+      "unit": "—",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{\\mathcal{O}}{计算图中的操作节点集合}{—}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "记输入二部图为 $G$，并写成 $G=(\\mathcal{O}\\cup\\mathcal{T},E)$。$\\mathcal{O}$ 是操作节点集合，$\\mathcal{T}$ 是张量节点集合，$E$ 仅连接不同类型节点。对每个非 COPY 操作 $i$ 定义子图编号 $g(i)$；对子图 $g$ 定义核心编号 $a(g)$，并令每核子图序列形成一个全排列。所有非 COPY 操作必须且只能出现一次，子图依赖收缩图必须无环，同核序列须与该图的偏序相容。这些是硬约束，并在正式计分前由题目提供的校验程序执行。"
+        }
+      ]
+    },
+    {
+      "category": "集合",
+      "symbol": "\\mathcal{T}",
+      "meaning": "计算图中的张量节点集合",
+      "unit": "—",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{\\mathcal{T}}{计算图中的张量节点集合}{—}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "记输入二部图为 $G$，并写成 $G=(\\mathcal{O}\\cup\\mathcal{T},E)$。$\\mathcal{O}$ 是操作节点集合，$\\mathcal{T}$ 是张量节点集合，$E$ 仅连接不同类型节点。对每个非 COPY 操作 $i$ 定义子图编号 $g(i)$；对子图 $g$ 定义核心编号 $a(g)$，并令每核子图序列形成一个全排列。所有非 COPY 操作必须且只能出现一次，子图依赖收缩图必须无环，同核序列须与该图的偏序相容。这些是硬约束，并在正式计分前由题目提供的校验程序执行。"
+        }
+      ]
+    },
+    {
+      "category": "集合",
+      "symbol": "E",
+      "meaning": "计算图的有向依赖边集合",
+      "unit": "—",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{E}{计算图的有向依赖边集合}{—}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "多资源列表调度研究把核心、缓存、内存和I/O与任务先后约束共同纳入完工时间目标\\cite{perotin2021}；针对有向无环任务图的HEFT算法还把执行代价和通信代价共同用于任务排序\\cite{topcuoglu2002}。Kernighan--Lin以给定规模限制下的割边代价为划分目标\\cite{kernighan1970}；多层次方法则通过粗化、粗图划分和细化逐步改善割边\\cite{karypis1998}。本题同时存在Task切换、私有存储和共享DDR竞争，因此这些算法在本文作为建模参照，最终分数仍由题定评估器给出。"
+        }
+      ]
+    },
+    {
+      "category": "索引",
+      "symbol": "i",
+      "meaning": "操作节点的索引",
+      "unit": "1",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{索引}{i}{操作节点的索引}{1}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "\\section{问题一求解与分析}"
+        }
+      ]
+    },
+    {
+      "category": "索引",
+      "symbol": "j",
+      "meaning": "张量节点的索引",
+      "unit": "1",
+      "scope": "问题二、三使用",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{索引}{j}{张量节点的索引}{1}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/05_问题二.tex",
+          "quote": "仍采用问题一的 $g(i)$ 和 $a(g)$。若大小为 $s_j$ 的张量 $j$ 从源操作流向后继操作，且两端归属不同核心，场景 B 须在源核增加 COPY\\_OUT、在目的核增加 COPY\\_IN；接收端还要等待固定同步延迟。若两端在同一核心，即使所属子图不同，仍可在合并 Task 内保留核内数据，不因子图边界强制插入 DDR 搬运。这个规则与场景 A 的“每过子图边界都搬运”形成核心差别。"
+        }
+      ]
+    },
+    {
+      "category": "索引",
+      "symbol": "k",
+      "meaning": "参与调度的核心数",
+      "unit": "1",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{索引}{k}{参与调度的核心数}{1}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "场景 A 把每个子图作为独立 Task。即使两个相邻 Task 被安排到同一核心，前一 Task 的私有缓存也不再可用；跨子图张量须由 DDR 中转。同核顺序和跨核前驱分别触发不同的固定等待，因此切图粒度本身会改变调度开销。过粗的子图压缩并行度，过细的子图增加 Task 切换及搬运。图~\\ref{fig:q1-overview} 将计算图、依赖约束、候选切图及官方核验放在一条研究链中，具体统计图在本章结果段给出。"
+        }
+      ]
+    },
+    {
+      "category": "参数",
+      "symbol": "c_i",
+      "meaning": "操作 $i$ 的题定计算周期",
+      "unit": "cycle",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{c_i}{操作 $i$ 的题定计算周期}{cycle}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "w(C)=\\sum_{i\\in C}(c_i+1),"
+        }
+      ]
+    },
+    {
+      "category": "参数",
+      "symbol": "s_j",
+      "meaning": "张量 $j$ 占用的字节数",
+      "unit": "byte",
+      "scope": "问题二、三使用",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{s_j}{张量 $j$ 占用的字节数}{byte}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/05_问题二.tex",
+          "quote": "仍采用问题一的 $g(i)$ 和 $a(g)$。若大小为 $s_j$ 的张量 $j$ 从源操作流向后继操作，且两端归属不同核心，场景 B 须在源核增加 COPY\\_OUT、在目的核增加 COPY\\_IN；接收端还要等待固定同步延迟。若两端在同一核心，即使所属子图不同，仍可在合并 Task 内保留核内数据，不因子图边界强制插入 DDR 搬运。这个规则与场景 A 的“每过子图边界都搬运”形成核心差别。"
+        }
+      ]
+    },
+    {
+      "category": "变量",
+      "symbol": "g(i)",
+      "meaning": "非 COPY 操作 $i$ 所属的子图编号",
+      "unit": "1",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{变量}{g(i)}{非 COPY 操作 $i$ 所属的子图编号}{1}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "记输入二部图为 $G$，并写成 $G=(\\mathcal{O}\\cup\\mathcal{T},E)$。$\\mathcal{O}$ 是操作节点集合，$\\mathcal{T}$ 是张量节点集合，$E$ 仅连接不同类型节点。对每个非 COPY 操作 $i$ 定义子图编号 $g(i)$；对子图 $g$ 定义核心编号 $a(g)$，并令每核子图序列形成一个全排列。所有非 COPY 操作必须且只能出现一次，子图依赖收缩图必须无环，同核序列须与该图的偏序相容。这些是硬约束，并在正式计分前由题目提供的校验程序执行。"
+        }
+      ]
+    },
+    {
+      "category": "变量",
+      "symbol": "a(g)",
+      "meaning": "子图 $g$ 被分配的核心编号",
+      "unit": "1",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{变量}{a(g)}{子图 $g$ 被分配的核心编号}{1}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "记输入二部图为 $G$，并写成 $G=(\\mathcal{O}\\cup\\mathcal{T},E)$。$\\mathcal{O}$ 是操作节点集合，$\\mathcal{T}$ 是张量节点集合，$E$ 仅连接不同类型节点。对每个非 COPY 操作 $i$ 定义子图编号 $g(i)$；对子图 $g$ 定义核心编号 $a(g)$，并令每核子图序列形成一个全排列。所有非 COPY 操作必须且只能出现一次，子图依赖收缩图必须无环，同核序列须与该图的偏序相容。这些是硬约束，并在正式计分前由题目提供的校验程序执行。"
+        }
+      ]
+    },
+    {
+      "category": "参数",
+      "symbol": "C_{\\mathrm{L1}}",
+      "meaning": "每个核心的 L1 容量",
+      "unit": "byte",
+      "scope": "问题二、三使用",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{C_{\\mathrm{L1}}}{每个核心的 L1 容量}{byte}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/05_问题二.tex",
+          "quote": "L(t)\\le C_{\\mathrm{L1}},\\qquad U(t)\\le C_{\\mathrm{UB}}."
+        }
+      ]
+    },
+    {
+      "category": "参数",
+      "symbol": "C_{\\mathrm{UB}}",
+      "meaning": "每个核心的 UB 容量",
+      "unit": "byte",
+      "scope": "问题二、三使用",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{C_{\\mathrm{UB}}}{每个核心的 UB 容量}{byte}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/05_问题二.tex",
+          "quote": "L(t)\\le C_{\\mathrm{L1}},\\qquad U(t)\\le C_{\\mathrm{UB}}."
+        }
+      ]
+    },
+    {
+      "category": "参数",
+      "symbol": "B_{\\mathrm{DDR}}",
+      "meaning": "全部核心共享的 DDR 总带宽",
+      "unit": "byte/cycle",
+      "scope": "问题二、三使用",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{B_{\\mathrm{DDR}}}{全部核心共享的 DDR 总带宽}{byte/cycle}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/05_问题二.tex",
+          "quote": "跨核依赖的延迟、共享 DDR 总带宽 $B_{\\mathrm{DDR}}$ 及计算 Pipe 占用均按官方多核事件模拟器结算。其输入除了图和配置，只有两个方案字段：操作到子图的映射及各核心子图序列。我们不额外假定跨核 COPY 可以与特定操作完全重叠，也不以缓存可复用等同于缓存必然命中。"
+        }
+      ]
+    },
+    {
+      "category": "参数",
+      "symbol": "C_{\\mathrm{L2}}",
+      "meaning": "共享只读 L2 容量",
+      "unit": "byte",
+      "scope": "问题三使用",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{C_{\\mathrm{L2}}}{共享只读 L2 容量}{byte}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/06_问题三.tex",
+          "quote": "对一次 COPY\\_IN，先按张量逻辑编号查找 L2。命中时把所需字节交由 Cache 读带宽池，且不刷新该项 FIFO 顺序；未命中时从 DDR 读取，完成后按容量规则写入，只读 L2 不服务 COPY\\_OUT。容量 $C_{\\mathrm{L2}}$ 与读带宽 $B_{\\mathrm{L2}}$ 由题定固定配置提供；单张量若大于容量就不缓存。DDR 的读写仍共享原带宽池，两个带宽池互相独立。"
+        }
+      ]
+    },
+    {
+      "category": "参数",
+      "symbol": "B_{\\mathrm{L2}}",
+      "meaning": "共享只读 L2 读带宽",
+      "unit": "byte/cycle",
+      "scope": "问题三使用",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{B_{\\mathrm{L2}}}{共享只读 L2 读带宽}{byte/cycle}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/06_问题三.tex",
+          "quote": "对一次 COPY\\_IN，先按张量逻辑编号查找 L2。命中时把所需字节交由 Cache 读带宽池，且不刷新该项 FIFO 顺序；未命中时从 DDR 读取，完成后按容量规则写入，只读 L2 不服务 COPY\\_OUT。容量 $C_{\\mathrm{L2}}$ 与读带宽 $B_{\\mathrm{L2}}$ 由题定固定配置提供；单张量若大于容量就不缓存。DDR 的读写仍共享原带宽池，两个带宽池互相独立。"
+        }
+      ]
+    },
+    {
+      "category": "指标",
+      "symbol": "T_k",
+      "meaning": "$k$ 核方案的全局 Makespan",
+      "unit": "cycle",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{指标}{T_k}{$k$ 核方案的全局 Makespan}{cycle}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "对核数 $k$，令官方评估程序得到的全局完成时间为 $T_k$，原始整图单核完成时间为 $T_1$，则本题要求的加速比 $S_k$ 为"
+        }
+      ]
+    },
+    {
+      "category": "指标",
+      "symbol": "T_1",
+      "meaning": "原始整图单核基准 Makespan",
+      "unit": "cycle",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{指标}{T_1}{原始整图单核基准 Makespan}{cycle}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "对核数 $k$，令官方评估程序得到的全局完成时间为 $T_k$，原始整图单核完成时间为 $T_1$，则本题要求的加速比 $S_k$ 为"
+        }
+      ]
+    },
+    {
+      "category": "指标",
+      "symbol": "S_k",
+      "meaning": "相对于整图单核基准的加速比",
+      "unit": "1",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{指标}{S_k}{相对于整图单核基准的加速比}{1}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "对核数 $k$，令官方评估程序得到的全局完成时间为 $T_k$，原始整图单核完成时间为 $T_1$，则本题要求的加速比 $S_k$ 为"
+        }
+      ]
+    },
+    {
+      "category": "指标",
+      "symbol": "D_k",
+      "meaning": "相对原图新增的 DDR 搬运量",
+      "unit": "byte",
+      "scope": "三个问题公共记号",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{指标}{D_k}{相对原图新增的 DDR 搬运量}{byte}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/04_问题一.tex",
+          "quote": "令 $D_k$ 为调度后 DDR 搬运字节数减去原图已有的搬运字节数。方案选择以最小化 $T_k$ 为第一目标；相同完成时间时，优先较小的 $D_k$。这里的 $T_k$ 是四条 Pipe、私有缓存、Task 等待与共享 DDR 带宽共同作用后的事件模拟结果，不用任何核内局部排布时间替代。"
+        }
+      ]
+    },
+    {
+      "category": "指标",
+      "symbol": "H_k",
+      "meaning": "可由 L2 服务的 COPY\\_IN 字节命中率",
+      "unit": "1",
+      "scope": "问题三使用",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{指标}{H_k}{可由 L2 服务的 COPY\\_IN 字节命中率}{1}"
+      },
+      "uses": [
+        {
+          "tex_path": "章节内容/06_问题三.tex",
+          "quote": "H_k=\\frac{\\text{L2命中 COPY\\_IN 的字节数}}{\\text{可查询 L2 的 COPY\\_IN 总字节数}}."
+        }
+      ]
+    }
+  ],
+  "review": {
+    "reviewer": "Codex：核对原题 DOCX 段落、四幅图及官方 README，逐项对照当前前三章",
+    "reviewed_at": "2026-09-23T22:03:14.020591+00:00",
+    "findings": [],
+    "task_coverage": {
+      "status": "verified",
+      "observation": "原题只有问题 1、2、3；逐问核对正文/附录/附件子项，问题三原题仅列正文与附录两类结果。"
+    },
+    "conditions_units_logic": {
+      "status": "verified",
+      "observation": "问题一与二均写二至五核方案、一至五核曲线；问题二的同核复用、问题三的只读 FIFO 和同方案比值均按原题保留。"
+    },
+    "source_attribution": {
+      "status": "verified",
+      "observation": "硬件、图格式及交付条件来自题目 DOCX 和官方附件；四项外部背景均有作者或出版方原文与正文实引证据。"
+    },
+    "method_assumption_result_separation": {
+      "status": "verified",
+      "observation": "1.1 和 1.2 未报告本文实验值或候选算法细节；路线图明确是本文研究安排，第二章新增假设单列。"
+    },
+    "dependencies_outputs_validation": {
+      "status": "verified",
+      "observation": "场景 B 继承问题一基准和模型，L2 继承场景 B；逐例结果、折线图及复现附件分别对上原题交付。"
+    },
+    "background_coherence": {
+      "status": "verified",
+      "observation": "先说明二部图与多核存储，再解释切分、DDR 争用和缓存驻留之间的冲突，末段落到官方全局评估。"
+    },
+    "natural_expression": {
+      "status": "verified",
+      "observation": "每段以具体对象和机制为主线，避免空泛行业意义与先报本文成绩；问题重述按三问连续叙述。"
+    },
+    "symbol_definitions": {
+      "status": "verified",
+      "observation": "逐行核对 21 个表内独立符号，单位分别为字节、周期、带宽或无量纲；全部在后续正文有实际使用。"
+    },
+    "bindings": {
+      "数据/原始/A题官方附件/README.md": "d4aaa99648d10e4a11d1619d14dbf73ff6a8df8fa67c6f138949b2cbc3444775",
+      "论文/参考来源/eyeriss2017_mit/source.html": "6064f7c28c873a7fda6deadacf482f82eae4fb8258358f75eb5f6e9b385e9c54",
+      "论文/参考来源/hongkung1981_author/source.pdf": "b70147993c1ef70326aae7f1cbfc92ef4851aad3de2abf1f8e16df0afa3218bb",
+      "论文/参考来源/jouppi2017_google/source.html": "5464d827932653fffb2db1a5c284e8f57497e3659e50a97880d33d2e85f8662a",
+      "论文/参考来源/sze2017_author/source.html": "e87d351fa51709bbfb25e5ec0091fec4b25c54bd9a95c9cb9986ede33af38189",
+      "论文/章节内容/01_问题重述.tex": "ccc59e6dcac4a00acd57d85f5b35d5aca35208c7d8911855d8ab40f0ef8f701f",
+      "论文/章节内容/02_模型假设.tex": "56899af7c9f03fb4a26bbd8409df15c94fb6afe926087d2181ab05097d3a3c60",
+      "论文/章节内容/03_关键性符号说明.tex": "5571703fe79b931d6df328bcfa1ea1446d325a6329aac37e4d27ca8fa69c0638",
+      "论文/章节内容/04_问题一.tex": "17854d0f02ca80bce7d6dbe6aec45fa96d864d95538020a1d6cbcf1c6c541937",
+      "论文/章节内容/05_问题二.tex": "64d118c19586c570a6d117a9607d2be8e4da2dc1b389a04bcf5f92461e5d1819",
+      "论文/章节内容/06_问题三.tex": "6e64ee4cf04bcc83b342fd3adf1f5c6fe05105367f2372242ad581559eaeccab",
+      "论文/章节内容/07_模型评价与展望.tex": "4c4298d1421febde2b6b69197f2792f8bdfde0924242b4e1dd08fc44f749e4f4",
+      "论文/章节内容/08_参考文献.tex": "1d822555f3ca21e7b5670c158878481ee7323d07fe56389496de05b2a8b3c0c9",
+      "论文/章节内容/q1_反例核查.generated.tex": "3c8d43d1de386b9b5e13f264614922cbd7e905aede714e7afe233161263db247",
+      "论文/章节内容/q1_模型比较.generated.tex": "463057cded4a62be99be564c32e0286f60ad5db0796b90572d69d2076511beba",
+      "论文/章节内容/q1_深度分析.generated.tex": "4de8aff9b56fabacaa858488e727a181c35995c5350cc71502b214638bdf9e6e",
+      "论文/章节内容/q2_候选交叉核查.generated.tex": "a9768f8ceafeb3bfbc3d91f13b3ddd916adb087673a64a1fa1f42d6e43c624d8",
+      "论文/章节内容/q2_模型比较.generated.tex": "463057cded4a62be99be564c32e0286f60ad5db0796b90572d69d2076511beba",
+      "论文/章节内容/q2_深度分析.generated.tex": "ab98432608ea76c84ad76fedd241e91a58f5b36bc814244ba03f39c8dea0ec1d",
+      "论文/章节内容/q3_参数深度.generated.tex": "7dc33be146d91d30c6d6e9dc6aedac5d76dea73adea31bf77db4b8833e14d85b",
+      "论文/章节内容/q3_命中交叉核查.generated.tex": "266bd7f18126f2124b9c95d12aa273e175ca4b63fa2243af5e339aeeb24213fc",
+      "论文/章节内容/q3_模型比较.generated.tex": "463057cded4a62be99be564c32e0286f60ad5db0796b90572d69d2076511beba",
+      "论文/章节内容/q3_结构缓存交叉核查.generated.tex": "b9d7c8b7d21861e34cd2265013e33b9fc5a4a98dde1d2963c82387941fa26fe4",
+      "论文/章节内容/q3_逐核深度.generated.tex": "ef3f5d5cab12a25e6a87f96ad1563d6d32f89e842abe4def1368a3a167a4ab74",
+      "论文/综合图片段/q1-overview.tex": "ec0fe44baaea02aa26f280dba92499f47504831ae76881029314f6bae34d05b9",
+      "论文/综合图片段/q2-overview.tex": "6bf866b59a52e55fb74ddf805ea084323682714aba0dfc1fc14484d53a64bb5c",
+      "论文/综合图片段/q3-overview.tex": "119ef8ab6e0a246dd55f62558a3502a7ce444a9be03acfc14ed777cec48b28c5",
+      "题目/通用神经网络处理器下的多核调度问题.docx": "d03f1d9a39f1fcae23467cc9fd384cbc61e4f13fc71f3567bdf44e1f3bab0b46",
+      "@evidence_content": "fc912eb87a4d6b1d67cf032f054bcc6b076baea237a2583ac831e6d9642e0565"
+    }
+  }
+}

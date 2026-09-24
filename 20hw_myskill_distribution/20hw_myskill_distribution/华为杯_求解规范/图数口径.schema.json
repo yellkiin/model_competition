@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "视觉计划.diagrams.json 的 figure_accounting",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["figure_id", "purpose", "problem_id", "per_question", "paper_total", "flow_total", "scientific_contribution"],
+    "properties": {
+      "figure_id": {"type": "string", "minLength": 1},
+      "purpose": {"enum": ["independent_science", "question_overview", "global_roadmap", "global_science", "panel", "illustration"]},
+      "problem_id": {"type": ["string", "null"]},
+      "per_question": {"type": "boolean"},
+      "paper_total": {"type": "boolean"},
+      "flow_total": {"type": "boolean"},
+      "scientific_contribution": {"type": "string", "minLength": 10}
+    }
+  }
+}

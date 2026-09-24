@@ -1,0 +1,20 @@
+{
+  "name": "overview-macaron",
+  "version": "1.0",
+  "canvas": "#FFFFFF",
+  "text": "#263442",
+  "secondary_text": "#526170",
+  "divider": "#81909E",
+  "light_border": "#CDD5DC",
+  "palettes": {
+    "mint": ["#EEF7F0", "#D8ECDE", "#6D977F"],
+    "blue": ["#EDF5FC", "#D8E8F7", "#6B90AF"],
+    "peach": ["#FCF0EF", "#F4DBD8", "#B48680"],
+    "yellow": ["#FCF7E9", "#F2E6C3", "#A28D5B"],
+    "lavender": ["#F3F0FA", "#E5DEF4", "#8B7CA5"]
+  },
+  "palette_order": ["partition", "title", "accent"],
+  "connector_families": ["arrow_band", "stage_heading", "light_line", "convergence", "aligned_comparison"],
+  "layout_variants": ["unequal_columns", "input_branches_merge", "asymmetric_grid", "mechanism_spanning", "unified_bands"],
+  "assurance": "Design starting points, not color, panel-count or typography thresholds. Preserve result semantics."
+}

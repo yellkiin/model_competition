@@ -1,0 +1,202 @@
+% 华为杯统一附录模板。
+% 本文件由 build_latex.py 复制到论文目录并在导言区实际 \input；
+% 生成内容只能调用这里的接口，不得在章节片段中另设代码样式。
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{needspace}
+\usemintedstyle{lovelace}
+
+% 克制的浅色学术代码配色。语法 token 由 Pygments 的 lovelace 浅色主题生成；
+% 下列颜色只负责纸面、边线和行号，不覆盖 Pygments token 语义。
+\definecolor{AppendixStripeWhite}{HTML}{FFFFFF}
+\definecolor{AppendixStripeGray}{HTML}{F8F8F8}
+\definecolor{AppendixDivider}{HTML}{63B96C}
+\definecolor{AppendixHorizontalRule}{HTML}{555B57}
+\definecolor{AppendixLineNumber}{HTML}{6F8175}
+\definecolor{AppendixCaption}{HTML}{343A36}
+\newfontfamily\AppendixCodeLatin{Consolas}[Scale=MatchLowercase]
+\newcommand{\AppendixCodeFont}{\songti\AppendixCodeLatin}
+\renewcommand{\myFont}{\AppendixCodeFont}
+
+% Pygments 仍负责词法分类；在 lovelace 浅色基底上将论文要求的
+% “关键词紫、字符串绿、数字/类型棕橙、注释灰绿”固化为低饱和调色板。
+% Minted 在首次代码块前载入 Pygments style，因此在 MintedVerbatim
+% 开始时覆写 token 显示色，避免被后载入的 styledef 反向覆盖。
+\makeatletter
+\newcommand{\AppendixPygmentsPalette}{%
+  \@namedef{PYG@tok@k}{\def\PYG@tc####1{\textcolor[HTML]{8B4E8F}{####1}}}%
+  \@namedef{PYG@tok@kc}{\def\PYG@tc####1{\textcolor[HTML]{8B4E8F}{####1}}}%
+  \@namedef{PYG@tok@kd}{\def\PYG@tc####1{\textcolor[HTML]{8B4E8F}{####1}}}%
+  \@namedef{PYG@tok@kn}{\def\PYG@tc####1{\textcolor[HTML]{8B4E8F}{####1}}}%
+  \@namedef{PYG@tok@kp}{\def\PYG@tc####1{\textcolor[HTML]{8B4E8F}{####1}}}%
+  \@namedef{PYG@tok@kr}{\def\PYG@tc####1{\textcolor[HTML]{8B4E8F}{####1}}}%
+  \@namedef{PYG@tok@kt}{\def\PYG@tc####1{\textcolor[HTML]{8B4E8F}{####1}}}%
+  \@namedef{PYG@tok@ow}{\def\PYG@tc####1{\textcolor[HTML]{8B4E8F}{####1}}}%
+  \@namedef{PYG@tok@s}{\def\PYG@tc####1{\textcolor[HTML]{4F8A55}{####1}}}%
+  \@namedef{PYG@tok@s1}{\def\PYG@tc####1{\textcolor[HTML]{4F8A55}{####1}}}%
+  \@namedef{PYG@tok@s2}{\def\PYG@tc####1{\textcolor[HTML]{4F8A55}{####1}}}%
+  \@namedef{PYG@tok@sa}{\def\PYG@tc####1{\textcolor[HTML]{4F8A55}{####1}}}%
+  \@namedef{PYG@tok@sd}{\def\PYG@tc####1{\textcolor[HTML]{4F8A55}{####1}}}%
+  \@namedef{PYG@tok@si}{\def\PYG@tc####1{\textcolor[HTML]{4F8A55}{####1}}}%
+  \@namedef{PYG@tok@m}{\def\PYG@tc####1{\textcolor[HTML]{A06D20}{####1}}}%
+  \@namedef{PYG@tok@mi}{\def\PYG@tc####1{\textcolor[HTML]{A06D20}{####1}}}%
+  \@namedef{PYG@tok@mf}{\def\PYG@tc####1{\textcolor[HTML]{A06D20}{####1}}}%
+  \@namedef{PYG@tok@mh}{\def\PYG@tc####1{\textcolor[HTML]{A06D20}{####1}}}%
+  \@namedef{PYG@tok@mo}{\def\PYG@tc####1{\textcolor[HTML]{A06D20}{####1}}}%
+  \@namedef{PYG@tok@nb}{\def\PYG@tc####1{\textcolor[HTML]{9A702D}{####1}}}%
+  \@namedef{PYG@tok@c}{\def\PYG@tc####1{\textcolor[HTML]{7A887E}{####1}}}%
+  \@namedef{PYG@tok@c1}{\def\PYG@tc####1{\textcolor[HTML]{7A887E}{####1}}}%
+  \@namedef{PYG@tok@cm}{\def\PYG@tc####1{\textcolor[HTML]{7A887E}{####1}}}%
+  \@namedef{PYG@tok@cp}{\def\PYG@tc####1{\textcolor[HTML]{6F8175}{####1}}}%
+}
+% 用 fvextra 的全宽行盒绘制白/极浅灰逻辑行底纹。breaklines 产生的
+% 视觉续行仍位于同一个 parbox 中，因此保持与源代码逻辑行相同的底色。
+\newcommand{\AppendixFullWidthStripe}[2]{%
+  \setlength{\FV@TmpLength}{\fboxsep}%
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{#1}{%
+    \setlength{\fboxsep}{\FV@TmpLength}%
+    \rlap{\strut#2}%
+    \hspace{\linewidth}%
+    \ifx\FV@RightListFrame\relax\else
+      \hspace{-\FV@FrameSep}\hspace{-\FV@FrameRule}%
+    \fi
+    \ifx\FV@LeftListFrame\relax\else
+      \hspace{-\FV@FrameSep}\hspace{-\FV@FrameRule}%
+    \fi
+  }%
+  \hss
+}
+\newcommand{\AppendixZebraLine}[1]{%
+  \ifodd\value{FancyVerbLine}%
+    \AppendixFullWidthStripe{AppendixStripeWhite}{#1}%
+  \else
+    \AppendixFullWidthStripe{AppendixStripeGray}{#1}%
+  \fi
+}
+\AtBeginEnvironment{MintedVerbatim}{\AppendixPygmentsPalette}
+\makeatother
+
+% 透明、无左右框的可分页外壳。overlay 会在 unbroken/first/middle/last
+% 每个物理分片上执行，从而显式重复绘制上下细横线。
+\newtcolorbox{AppendixCodePageFrame}{%
+  enhanced jigsaw,
+  breakable,
+  width=\linewidth,
+  colback=white,
+  colframe=AppendixHorizontalRule,
+  boxrule=0pt,
+  leftrule=0pt,
+  rightrule=0pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  boxsep=0pt,
+  left=0pt,
+  right=0pt,
+  % 为每个物理分页片段的横线保留极窄的无遮挡带，避免首/末行
+  % 的全宽 zebra 色块覆盖横线主体。
+  top=1.5pt,
+  bottom=1.5pt,
+  arc=0pt,
+  outer arc=0pt,
+  sharp corners,
+  before skip=0.15\baselineskip,
+  after skip=0.20\baselineskip,
+  lines before break=3,
+  overlay={%
+    \draw[AppendixHorizontalRule,line width=0.5pt]
+      ([yshift=-0.25pt]frame.north west)--([yshift=-0.25pt]frame.north east);%
+    \draw[AppendixHorizontalRule,line width=0.5pt]
+      ([yshift=0.25pt]frame.south west)--([yshift=0.25pt]frame.south east);%
+  }
+}
+
+\setminted{
+  encoding=utf8,
+  linenos,
+  numberblanklines=true,
+  numbersep=6pt,
+  breaklines,
+  breakanywhere,
+  autogobble,
+  tabsize=4,
+  obeytabs=true,
+  fontfamily=myFont,
+  fontsize=\fontsize{10.2pt}{13.5pt}\selectfont,
+  baselinestretch=1.0,
+  frame=leftline,
+  framesep=5pt,
+  framerule=0.55pt,
+  rulecolor=\color{AppendixDivider},
+  xleftmargin=3.15em,
+  xrightmargin=0pt,
+  listparameters={\setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}\setlength{\parsep}{0pt}},
+  resetmargins=true,
+  style=lovelace
+}
+
+\newcommand{\AppendixStart}{%
+  \section{附录}%
+}
+
+\newcommand{\AppendixPart}[2]{%
+  \par\vspace{1.3\baselineskip}%
+  \phantomsection
+  \noindent{\songti\fontsize{12pt}{18pt}\selectfont\bfseries 附录 #1：#2}\par
+  \addcontentsline{toc}{subsection}{附录 #1：#2}%
+  \vspace{0.55\baselineskip}%
+}
+
+\newcommand{\AppendixAttachmentTableBegin}{%
+  \begingroup
+  \renewcommand{\arraystretch}{1.18}%
+  \setlength{\tabcolsep}{4pt}%
+  \small
+  \begin{longtable}{>{\centering\arraybackslash}p{1.0cm}p{3.0cm}p{10.0cm}}
+  \toprule
+  序号 & 文件夹名称 & 主要内容 \\
+  \midrule
+  \endfirsthead
+  \toprule
+  序号 & 文件夹名称 & 主要内容 \\
+  \midrule
+  \endhead
+  \midrule
+  \multicolumn{3}{r}{续下页}\\
+  \endfoot
+  \bottomrule
+  \endlastfoot
+}
+
+\newcommand{\AppendixAttachmentRow}[3]{%
+  #1 & #2 & #3 \\
+}
+
+\newcommand{\AppendixAttachmentTableEnd}{%
+  \end{longtable}
+  \endgroup
+}
+
+% #1: 可选 minted 参数（支持 firstline/lastline/firstnumber）
+% #2: 代码片段标题；#3: Pygments lexer；#4: 真实源码路径。
+\newcommand{\AppendixCodeFile}[4][]{%
+  \Needspace{6\baselineskip}%
+  \par\vspace{0.35\baselineskip}%
+  \noindent{\color{AppendixCaption}\songti\fontsize{10.5pt}{15pt}\selectfont #2}\par
+  \vspace{0.15\baselineskip}%
+  \begingroup
+  \renewcommand{\theFancyVerbLine}{\AppendixCodeLatin\fontsize{8.6pt}{13.5pt}\selectfont\color{AppendixLineNumber}\arabic{FancyVerbLine}}%
+  \let\FancyVerbHighlightLine\AppendixZebraLine
+  \begin{AppendixCodePageFrame}%
+    \inputminted[#1]{#3}{#4}%
+  \end{AppendixCodePageFrame}%
+  \endgroup
+  \par\vspace{0.25\baselineskip}%
+}
+
+\newcommand{\AppendixEnd}{\par}

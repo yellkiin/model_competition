@@ -1,0 +1,474 @@
+{
+  "schema_version": "1.0",
+  "academic-figure-skill": {
+    "3DHeatmap": [
+      "heatmap",
+      "bar"
+    ],
+    "Frequency_3DHeatmap": [
+      "heatmap"
+    ],
+    "AUROC": [
+      "line"
+    ],
+    "Bar": [
+      "bar"
+    ],
+    "BarAblation": [
+      "bar"
+    ],
+    "BarCategorical": [
+      "bar"
+    ],
+    "BarComparison": [
+      "bar"
+    ],
+    "BarComposition": [
+      "bar"
+    ],
+    "BarDistribution": [
+      "bar"
+    ],
+    "GroupedBarChart": [
+      "bar",
+      "scatter"
+    ],
+    "StackedBarScatter": [
+      "bar",
+      "scatter"
+    ],
+    "CorrelationMatrix": [
+      "heatmap",
+      "scatter",
+      "density",
+      "histogram"
+    ],
+    "GroupedCorrelationMatrix": [
+      "scatter",
+      "density",
+      "histogram",
+      "box",
+      "bar"
+    ],
+    "DensityHeatmap": [
+      "heatmap",
+      "density",
+      "bar"
+    ],
+    "GroupedViolin": [
+      "violin",
+      "scatter"
+    ],
+    "Violin": [
+      "violin",
+      "box"
+    ],
+    "KernelDensity": [
+      "density",
+      "contour"
+    ],
+    "MarginalDensity": [
+      "scatter",
+      "density",
+      "box"
+    ],
+    "LineTrend": [
+      "line",
+      "area"
+    ],
+    "Manifold": [
+      "scatter",
+      "network",
+      "surface",
+      "heatmap"
+    ],
+    "PCA": [
+      "biplot",
+      "bar"
+    ],
+    "MantelCorrelation": [
+      "heatmap",
+      "network"
+    ],
+    "PairedBoxScatter": [
+      "box",
+      "scatter"
+    ],
+    "Radar": [
+      "radar"
+    ],
+    "RidgePlot": [
+      "density"
+    ],
+    "SankeyDiagram": [
+      "sankey"
+    ],
+    "ParameterSweep": [
+      "heatmap",
+      "contour",
+      "surface"
+    ],
+    "ScenarioHeatmap": [
+      "heatmap"
+    ],
+    "ResidualDiagnostics": [
+      "scatter",
+      "line",
+      "histogram",
+      "density"
+    ],
+    "ConvergenceBand": [
+      "line"
+    ],
+    "ResourceDesign": [
+      "line",
+      "area"
+    ],
+    "SensitivityTornado": [
+      "bar",
+      "forest"
+    ],
+    "ContributionWaterfall": [
+      "waterfall"
+    ],
+    "MonteCarloRecovery": [
+      "hexbin",
+      "histogram"
+    ],
+    "PhaseProfile": [
+      "heatmap",
+      "line"
+    ],
+    "TrajectoryProjection": [
+      "trajectory",
+      "scatter"
+    ],
+    "heatmap": [
+      "heatmap"
+    ],
+    "ConfusionMatrix": [
+      "heatmap",
+      "pie"
+    ],
+    "MarkerGeneDotPlot": [
+      "bubble"
+    ],
+    "volcano": [
+      "scatter"
+    ],
+    "Scatter": [
+      "scatter"
+    ]
+  },
+  "modelviz-skill": {
+    "clu_pca_correlation_heatmap": [
+      "heatmap",
+      "network"
+    ],
+    "clu_spearman_cluster_heatmap": [
+      "heatmap"
+    ],
+    "clu_pcoa_permanova": [
+      "scatter",
+      "density"
+    ],
+    "clu_rda_biplot": [
+      "biplot"
+    ],
+    "cmp_circular_barplot": [
+      "bar"
+    ],
+    "cmp_ternary_scatter": [
+      "ternary"
+    ],
+    "cmp_correlation_stacked_bar": [
+      "bar"
+    ],
+    "cmp_flowing_percentage_stack": [
+      "area"
+    ],
+    "cmp_gradient_single_factor_bar": [
+      "bar"
+    ],
+    "cmp_horizontal_percentage_stack": [
+      "bar"
+    ],
+    "cmp_multi_donut_charts": [
+      "pie"
+    ],
+    "cmp_multi_metric_radar": [
+      "radar"
+    ],
+    "cmp_nightingale_rose_grid": [
+      "rose"
+    ],
+    "cmp_radial_stacked_bar": [
+      "bar"
+    ],
+    "cmp_shap_heatmap_bar_report": [
+      "bar",
+      "heatmap",
+      "pie"
+    ],
+    "cmp_3d_ribbon_chart": [
+      "ribbon"
+    ],
+    "cmp_3d_waterfall_distribution": [
+      "density"
+    ],
+    "cmp_3d_stacked_surface": [
+      "heatmap"
+    ],
+    "cmp_3d_bar_chart": [
+      "bar"
+    ],
+    "evl_ml_metric_circular_dashboard": [
+      "bar",
+      "heatmap"
+    ],
+    "evl_multiomics_circular_heatmap": [
+      "heatmap",
+      "bar"
+    ],
+    "dis_combined_boxplot_grid": [
+      "box"
+    ],
+    "dis_ridgeline_distribution": [
+      "density"
+    ],
+    "dis_violin_mean_change_grid": [
+      "violin"
+    ],
+    "dis_rank_sum_violin_box": [
+      "violin",
+      "box",
+      "scatter"
+    ],
+    "dis_radial_bar_error_significance": [
+      "bar"
+    ],
+    "dis_tukey_hsd_violin_grid": [
+      "violin",
+      "box"
+    ],
+    "mpn_scatter_matrix_timeseries_regression": [
+      "scatter",
+      "line",
+      "histogram",
+      "heatmap"
+    ],
+    "mpn_plot_postprocessing_grid": [
+      "scatter",
+      "line"
+    ],
+    "mpn_3d_surface_scatter_report": [
+      "surface",
+      "contour"
+    ],
+    "net_chord_relationship": [
+      "network"
+    ],
+    "net_multi_set_venn": [
+      "venn"
+    ],
+    "opt_hants_parameter_selection": [
+      "scatter"
+    ],
+    "prd_multi_model_roc": [
+      "line"
+    ],
+    "prd_multi_model_regression_fit": [
+      "scatter"
+    ],
+    "prd_regression_learning_curve": [
+      "line"
+    ],
+    "prd_grouped_regression_fit": [
+      "scatter"
+    ],
+    "prd_regression_evaluation_panels": [
+      "scatter",
+      "histogram"
+    ],
+    "prd_taylor_diagram": [
+      "taylor"
+    ],
+    "prd_voting_ensemble_learning_curve": [
+      "line"
+    ],
+    "prd_xgboost_binary_shap": [
+      "waterfall"
+    ],
+    "prd_xgboost_multiclass_shap": [
+      "scatter"
+    ],
+    "prd_xgboost_regression_ale_heatmap": [
+      "heatmap"
+    ],
+    "rel_lollipop_bubble_coefficients": [
+      "bubble"
+    ],
+    "rel_radial_effect_chart": [
+      "bar"
+    ],
+    "rel_multilayer_encoded_correlation_heatmap": [
+      "heatmap"
+    ],
+    "rel_network_correlation_heatmap": [
+      "heatmap",
+      "network"
+    ],
+    "rel_diagonal_split_triangular_heatmap": [
+      "heatmap"
+    ],
+    "rel_scatter_error_colormap_regression": [
+      "scatter"
+    ],
+    "rel_fdr_correlation_heatmap": [
+      "heatmap"
+    ],
+    "rel_circular_grouped_correlation_heatmap": [
+      "heatmap"
+    ],
+    "rel_grouped_correlation_heatmap": [
+      "heatmap"
+    ],
+    "rel_grouped_correlation_bubble_matrix": [
+      "bubble"
+    ],
+    "rel_bar_association_matrix": [
+      "bar"
+    ],
+    "rel_interaction_bubble_matrix": [
+      "bubble"
+    ],
+    "rel_mantel_network_heatmap": [
+      "heatmap",
+      "network"
+    ],
+    "rel_multiclass_scatter_matrix": [
+      "scatter",
+      "density",
+      "bar",
+      "violin"
+    ],
+    "rel_pearson_correlation_heatmap": [
+      "heatmap"
+    ],
+    "rel_petal_correlation_heatmap": [
+      "heatmap"
+    ],
+    "rel_grouped_regression_marginal_scatter": [
+      "scatter",
+      "density"
+    ],
+    "rel_scatter_matrix_network": [
+      "scatter",
+      "network"
+    ],
+    "rel_pairplot_seamless_heatmap": [
+      "scatter",
+      "heatmap",
+      "density"
+    ],
+    "rel_sem_effect_decomposition": [
+      "bar"
+    ],
+    "rel_network_radar_report": [
+      "heatmap",
+      "network",
+      "bar"
+    ],
+    "sen_grouped_rf_shap": [
+      "scatter",
+      "bar"
+    ],
+    "sen_grouped_shap_top_features": [
+      "bar",
+      "pie"
+    ],
+    "sen_shap_importance_dependence": [
+      "bar",
+      "scatter",
+      "line"
+    ],
+    "sen_shap_importance_rose": [
+      "bar",
+      "scatter",
+      "rose"
+    ],
+    "sen_gam_contour_heatmap": [
+      "contour",
+      "heatmap"
+    ],
+    "sen_gam_partial_residual": [
+      "line",
+      "scatter"
+    ],
+    "sen_shap_dependence_distribution_threshold": [
+      "scatter",
+      "line",
+      "histogram"
+    ],
+    "sen_shap_gam_feature_effects": [
+      "scatter",
+      "line"
+    ],
+    "sen_shap_interaction_dependence": [
+      "scatter",
+      "line",
+      "histogram"
+    ],
+    "sen_shap_top_dependence_grid": [
+      "scatter",
+      "line"
+    ],
+    "sen_shap_interaction_network": [
+      "network"
+    ],
+    "sen_shap_interaction_matrix_heatmap": [
+      "violin",
+      "heatmap"
+    ],
+    "sen_shap_pdp_combo": [
+      "forest"
+    ],
+    "sen_multi_target_shap_polynomial_fit": [
+      "scatter",
+      "line"
+    ],
+    "sen_2d_pdp_contour": [
+      "contour"
+    ],
+    "spa_pixelwise_standardized_regression": [],
+    "spa_moving_window_partial_correlation": [],
+    "spa_moving_window_rf_shap_drivers": [],
+    "spa_xgboost_geoshapley": [
+      "scatter"
+    ],
+    "trd_dual_axis_bar_line": [
+      "bar",
+      "line"
+    ],
+    "trd_lag_correlation_analysis": [
+      "line"
+    ],
+    "trd_smoothed_trend_curves": [
+      "line"
+    ],
+    "trd_composite_line_bar_dual_axis": [
+      "line",
+      "bar"
+    ],
+    "cmp_stack_pie_box_report": [
+      "bar",
+      "pie",
+      "box"
+    ],
+    "mpn_rf_importance_correlation": [
+      "bar",
+      "bubble"
+    ]
+  },
+  "extension_rule": "Add a reviewed semantic mapping; inspect actual panels, not names or colors. Empty families require media/structure routing. chart_review explains actual used or omitted template elements."
+}

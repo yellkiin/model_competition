@@ -1,0 +1,34 @@
+{
+  "source_draft": {
+    "url": "https://api.crossref.org/works/10.1109/JPROC.2017.2761740/transform/application/vnd.citationstyles.csl+json",
+    "authority": "",
+    "authority_reason": "",
+    "capture_path": "参考来源/sze2017/source.json",
+    "capture_sha256": "d8bcfe6f2fe7cc45a0cdd62140cbcff5c805f38791e30081cefc3a97ea685d47",
+    "receipt_path": "参考来源/sze2017/receipt.json",
+    "receipt_sha256": "04e344d03f605d20336b20b6468224688d5558c9ced20e60264c6c1dd9e24ca2",
+    "format": "csl_json",
+    "review": {
+      "reviewed": false,
+      "tool_ref": "",
+      "observation": ""
+    }
+  },
+  "extracted_metadata": {
+    "title": "Efficient Processing of Deep Neural Networks: A Tutorial and Survey",
+    "authors": [
+      "Vivienne Sze",
+      "Yu-Hsin Chen",
+      "Tien-Ju Yang",
+      "Joel S. Emer"
+    ],
+    "year": "2017",
+    "container": "Proceedings of the IEEE",
+    "pages": "2295-2329",
+    "volume": "105",
+    "issue": "12",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi": "10.1109/jproc.2017.2761740"
+  },
+  "status": "REVIEW_REQUIRED"
+}

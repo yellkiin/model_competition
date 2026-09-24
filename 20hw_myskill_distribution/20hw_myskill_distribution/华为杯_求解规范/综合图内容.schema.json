@@ -1,0 +1,334 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Overview content v2 (design only; QA remains in existing qa_path)",
+  "$defs": {
+    "review": {
+      "type": "object",
+      "required": [
+        "result_integration",
+        "mechanism_value",
+        "rectangular_composition",
+        "palette",
+        "navigation",
+        "non_text_graphics",
+        "thumbnail_detail_link"
+      ],
+      "properties": {
+        "result_integration": {
+          "type": "object",
+          "required": [
+            "status",
+            "observation"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "pending",
+                "pass",
+                "fail"
+              ]
+            },
+            "observation": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "mechanism_value": {
+          "type": "object",
+          "required": [
+            "status",
+            "observation"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "pending",
+                "pass",
+                "fail"
+              ]
+            },
+            "observation": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "rectangular_composition": {
+          "type": "object",
+          "required": [
+            "status",
+            "observation"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "pending",
+                "pass",
+                "fail"
+              ]
+            },
+            "observation": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "palette": {
+          "type": "object",
+          "required": [
+            "status",
+            "observation"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "pending",
+                "pass",
+                "fail"
+              ]
+            },
+            "observation": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "navigation": {
+          "type": "object",
+          "required": [
+            "status",
+            "observation"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "pending",
+                "pass",
+                "fail"
+              ]
+            },
+            "observation": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "non_text_graphics": {
+          "type": "object",
+          "required": [
+            "status",
+            "observation"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "pending",
+                "pass",
+                "fail"
+              ]
+            },
+            "observation": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "thumbnail_detail_link": {
+          "type": "object",
+          "required": [
+            "status",
+            "observation"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "pending",
+                "pass",
+                "fail"
+              ]
+            },
+            "observation": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "version",
+    "status",
+    "verification",
+    "result_selection",
+    "omission_reason",
+    "mechanism",
+    "layout",
+    "theme"
+  ],
+  "properties": {
+    "version": {
+      "const": "2.0"
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "ready"
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "status",
+        "evidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "verified"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+            "path",
+            "sha256",
+            "locator",
+            "role"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+            "locator": {
+              "type": "string"
+            },
+            "role": {
+              "enum": ["result", "independent_validation", "model", "input"]
+            }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "result_selection": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "figure_id",
+          "decision",
+          "reason"
+        ],
+        "properties": {
+          "figure_id": {
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "pending",
+              "selected",
+              "not_suitable",
+              "redundant"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "omission_reason": {
+      "type": "string"
+    },
+    "mechanism": {
+      "type": "object",
+      "required": [
+        "applicable",
+        "category",
+        "panel_ids",
+        "reason"
+      ],
+      "properties": {
+        "applicable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "category": {
+          "type": "string"
+        },
+        "panel_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "layout": {
+      "type": "object",
+      "required": [
+        "strategy",
+        "reading_order",
+        "reason"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "reading_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "theme": {
+      "type": "object",
+      "required": [
+        "palette_ref",
+        "connector_family",
+        "reason"
+      ],
+      "properties": {
+        "palette_ref": {
+          "type": "string"
+        },
+        "connector_family": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,52 @@
+{
+  "status": "VISUALLY_REVIEWED_STAGING",
+  "publication_status": "published_both_endpoints",
+  "template_id": "fieldwork-analysis-3band",
+  "observations": "defect-log.md",
+  "score": 46,
+  "reviewed_outputs": [
+    "example.json",
+    "layout.json",
+    "example.drawio",
+    "example.png",
+    "example.pdf",
+    "preview.png",
+    "reference.png",
+    "reference-crop.png",
+    "defect-log.md",
+    "qa/replacement.png",
+    "qa/capacity-boundary.png",
+    "qa/configuration-tests.json",
+    "qa/pdf-render.png",
+    "qa/grayscale.png",
+    "qa/a4-size.png",
+    "qa/a3-size.png",
+    "qa/difference-mask.png"
+  ],
+  "hashes": {
+    "example.json": "ffda4167dffd6c57dfc7dcbd192e5d9ee4b3b602f206f5d2c193200399eae55c",
+    "layout.json": "607b62c3e16a5bc7d12186f51fa7967c5f52771ab13032abedd3be6b8d970336",
+    "example.drawio": "0abbf91f26d7d380ace88eaca9d0899038079d4cd43c6211ec33640cbd73ad0d",
+    "example.png": "77b25dfcc18750e13fdef8464a678117f99e61d660cf0c326da49edac5c6ad2b",
+    "example.pdf": "b70ce2fd643bbd02aa942369fe1459d4a6a062ffbedb0d0eebc49538b92d1ee4",
+    "preview.png": "77b25dfcc18750e13fdef8464a678117f99e61d660cf0c326da49edac5c6ad2b",
+    "reference.png": "fe470b44e2fd0549a9f2479701fcacda64987426390c1edd45699e2f4996b264",
+    "reference-crop.png": "4a2c1136cb1c42459f88f658735ae215dcff7761037636f1d8b42a5136ed1243",
+    "defect-log.md": "e7818ef6dd128b057663d11deee524a617d42bdc97190723cd24d2886f50c48e",
+    "qa/replacement.png": "bb5c0b28ac897a0b8b6fbefbab82179107a35027e6a444c9f6557e87fa67d5bf",
+    "qa/capacity-boundary.png": "29be803cbbbf97e14f1c366616b6d0960cbbd31a0f6e79adbefa833123b68a44",
+    "qa/configuration-tests.json": "c0710fa2d4ff60d9a81bc4f008a08a6536cc2ed7a176dea2d6edd9c2380e798a",
+    "qa/pdf-render.png": "a7f3ce6d09eccdff6d62d268a9142a2d0b7ffd4ee956a0a9135177febedd5578",
+    "qa/grayscale.png": "6ac501c6bedd302553e950e4fa0a003961a064f4d11f55caa7551ba67a16f474",
+    "qa/a4-size.png": "26cbe3f7a340178110d48745e6e683313659492ee2e42054d17bad5b3b5ab7de",
+    "qa/a3-size.png": "c80275797f2bb793574a7888d669ed8dc142d6d8d795d22cff54fc90abef6abe",
+    "qa/difference-mask.png": "59f69a5bedba06d131d42e483fa8c5de3d0a16a0d63477eaac04f8bec819dccf"
+  },
+  "source_dependencies": {
+    "scripts\\measured_template.py": "cdda5f4ba1935c5edf1a6573d26d9608c61306b49f9cc24433566efc986ce9dd",
+    "scripts\\fieldwork_analysis_3band.py": "35e36e5bfc195755616b776fe804a5f7c30f4ac928d0e9c114bc15433868aef1"
+  },
+  "a4_body_suitability": true,
+  "a3_display_suitability": true,
+  "evidence_scope": "Template reproduction and bounded text replacement only; actual paper inclusion requires fresh review."
+}

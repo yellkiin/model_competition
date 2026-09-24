@@ -1,0 +1,2297 @@
+{
+  "template_id": "coupled-method-experiment-framework",
+  "name": "耦合方法构建与实验验证五带研究框架图",
+  "canvas": [
+    1206,
+    1743
+  ],
+  "source_id": "ref-14",
+  "nodes": [
+    {
+      "id": "title_background",
+      "bbox": [
+        112,
+        17,
+        1009,
+        65
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d8e4f2",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(rZHBDoIwDIafZldT14zIGfE9CAxZnJRsKPr2bqtRhISTu7T9939Z2wksfFcNWkiYBB6FlHuAPIQgdCxkKpZYCixacvrs6NY3XPvR0UXXZMkFP8fECIkynZSf5u7JNGMXn0sxuX9cQxXlmF3pHvt6sAl2AMCNPZfKG7WmnwFxkL8wCrehPD+smExtM+tp1kRtyetPFZLvalpjLa9zfr/8niDx52L5Ag==)"
+      }
+    },
+    {
+      "id": "title_fold",
+      "bbox": [
+        1110,
+        70,
+        11,
+        12
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#adbac9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(hZBBEoMgDEVPw7YDyRGsvYejWJhS44Ct9fYFYi3VRVlAfvhv+ERgFUwzagFyFngWAErFLUqzSkgSa4FVT15fPT2GjnWYPN10S4589POZGQEIeeX6Urpn200mPZbP7P5xjU1qp+pOz5TqxSZ5klJysOUTbGutrLNDQcCB+AModSDknmgdBb2pWHzz9tY5/mN5v59ZbPG8sX4D)"
+      }
+    },
+    {
+      "id": "title",
+      "bbox": [
+        129,
+        25,
+        970,
+        47
+      ],
+      "font_size": 34,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "left_flag_0",
+      "bbox": [
+        13,
+        193,
+        81,
+        353
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d3dbe4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZHdDoIwDIWfZrdmW/3hHvE9CAwhTko2EH17u9XogomRXWw93fnSphWQ+7YcjNByFnAUWmeKLpItS9hB0FAIyBt05uxw6mvWfnR4MRVadATwGyFBWDwxPqXuuavHNlSLb3Tr1DWUIR2iK95CW3c2yY2Ukjt7LDMv1HZ9AmxXE5n6ItRhv7oKTew38xdSWfTmrSj4DKbprOVhpv/L5VCKNwvFEw==)"
+      }
+    },
+    {
+      "id": "left_label_0",
+      "bbox": [
+        20,
+        206,
+        44,
+        327
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "right_label_0",
+      "bbox": [
+        1137,
+        193,
+        55,
+        353
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d3dbe4",
+        "strokeColor": "#555555",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "left_flag_1",
+      "bbox": [
+        13,
+        744,
+        81,
+        353
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d3dbe4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZHdDoIwDIWfZrdmW/3hHvE9CAwhTko2EH17u9XogomRXWw93fnSphWQ+7YcjNByFnAUWmeKLpItS9hB0FAIyBt05uxw6mvWfnR4MRVadATwGyFBWDwxPqXuuavHNlSLb3Tr1DWUIR2iK95CW3c2yY2Ukjt7LDMv1HZ9AmxXE5n6ItRhv7oKTew38xdSWfTmrSj4DKbprOVhpv/L5VCKNwvFEw==)"
+      }
+    },
+    {
+      "id": "left_label_1",
+      "bbox": [
+        20,
+        757,
+        44,
+        327
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "right_label_1",
+      "bbox": [
+        1137,
+        744,
+        55,
+        353
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d3dbe4",
+        "strokeColor": "#555555",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "left_flag_2",
+      "bbox": [
+        13,
+        1343,
+        81,
+        353
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d3dbe4",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lZHdDoIwDIWfZrdmW/3hHvE9CAwhTko2EH17u9XogomRXWw93fnSphWQ+7YcjNByFnAUWmeKLpItS9hB0FAIyBt05uxw6mvWfnR4MRVadATwGyFBWDwxPqXuuavHNlSLb3Tr1DWUIR2iK95CW3c2yY2Ukjt7LDMv1HZ9AmxXE5n6ItRhv7oKTew38xdSWfTmrSj4DKbprOVhpv/L5VCKNwvFEw==)"
+      }
+    },
+    {
+      "id": "left_label_2",
+      "bbox": [
+        20,
+        1356,
+        44,
+        327
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "right_label_2",
+      "bbox": [
+        1137,
+        1343,
+        55,
+        353
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d3dbe4",
+        "strokeColor": "#555555",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "basis_header",
+      "bbox": [
+        135,
+        117,
+        442,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8dfd5",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "scheme_header",
+      "bbox": [
+        658,
+        117,
+        441,
+        57
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#eed1ce",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "key_identification",
+      "bbox": [
+        152,
+        188,
+        174,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ebe7e2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "research_goal",
+      "bbox": [
+        387,
+        188,
+        172,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ebe7e2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "survey",
+      "bbox": [
+        152,
+        296,
+        407,
+        59
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ebe7e2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "method_selection",
+      "bbox": [
+        671,
+        188,
+        174,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8f4e5",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "overall_planning",
+      "bbox": [
+        907,
+        188,
+        174,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8f4e5",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "route_design",
+      "bbox": [
+        671,
+        296,
+        410,
+        59
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f8f4e5",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "plus",
+      "bbox": [
+        854,
+        193,
+        45,
+        48
+      ],
+      "font_size": 40,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "SimSun"
+      }
+    },
+    {
+      "id": "preparation_chevron_0",
+      "bbox": [
+        591,
+        210,
+        28,
+        81
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#f8dfd5",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lVLRDsIgDPwaXg1QjbzP+R/LxoSI68Km078XqFGyJepCQu/KXVoKDIrBVL1mkk8MDkxKqcIWqCGqRKRQMiha9Prk8do1xIfR41nX6NAHPcXkYRLEPq6Ej7l6ss1oYrEUqWCu6quYjuiCt9jVnUR8wzmnxh7zzMvqbJcZBKx1SLVwbNcXUeK7ZXmRXw6x+6Ov2uGg3yyAzyBb6xwNPz+fP2ZI0UeA8gk=)"
+      }
+    },
+    {
+      "id": "preparation_chevron_1",
+      "bbox": [
+        614,
+        210,
+        28,
+        81
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#f8dfd5",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(lVLRDsIgDPwaXg1QjbzP+R/LxoSI68Km078XqFGyJepCQu/KXVoKDIrBVL1mkk8MDkxKqcIWqCGqRKRQMiha9Prk8do1xIfR41nX6NAHPcXkYRLEPq6Ej7l6ss1oYrEUqWCu6quYjuiCt9jVnUR8wzmnxh7zzMvqbJcZBKx1SLVwbNcXUeK7ZXmRXw6x+6Ov2uGg3yyAzyBb6xwNPz+fP2ZI0UeA8gk=)"
+      }
+    },
+    {
+      "id": "theory_background",
+      "bbox": [
+        135,
+        426,
+        133,
+        207
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#eae6ee",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "theory",
+      "bbox": [
+        151,
+        452,
+        101,
+        153
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "coupled_framework_background",
+      "bbox": [
+        966,
+        426,
+        134,
+        207
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#eae6ee",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "coupled_framework",
+      "bbox": [
+        980,
+        466,
+        106,
+        128
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "analysis_left_0",
+      "bbox": [
+        280,
+        426,
+        171,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f2e0e8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "analysis_right_0",
+      "bbox": [
+        781,
+        426,
+        173,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f2e0e8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "analysis_left_1",
+      "bbox": [
+        280,
+        501,
+        171,
+        57
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f2e0e8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "analysis_right_1",
+      "bbox": [
+        781,
+        501,
+        173,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f2e0e8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "analysis_left_2",
+      "bbox": [
+        280,
+        575,
+        171,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f2e0e8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "analysis_right_2",
+      "bbox": [
+        781,
+        575,
+        173,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f2e0e8",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "coupling_fill_0",
+      "bbox": [
+        508.99899999999997,
+        468.904,
+        126.34,
+        120.43
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2d5e8",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "coupling_fill_1",
+      "bbox": [
+        602.3,
+        468.999,
+        126.246,
+        120.318
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#e2d5e8",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "coupling_white_lens",
+      "bbox": [
+        602.3,
+        488.593551499009,
+        33.03899999999999,
+        81.0522083012255
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "stencil(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)"
+      }
+    },
+    {
+      "id": "coupling_outline_0",
+      "bbox": [
+        508.99899999999997,
+        468.904,
+        126.34,
+        120.43
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      },
+      "semantic_attributes": {
+        "diagramObject": "coupling-venn",
+        "diagramRole": "surface",
+        "overlapReason": "同一耦合交集示意的两个无字椭圆轮廓按原图有意交叠，白色交集与两圆边界均保留"
+      }
+    },
+    {
+      "id": "coupling_outline_1",
+      "bbox": [
+        602.3,
+        468.999,
+        126.246,
+        120.318
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "shape": "ellipse"
+      },
+      "semantic_attributes": {
+        "diagramObject": "coupling-venn",
+        "diagramRole": "surface",
+        "overlapReason": "同一耦合交集示意的两个无字椭圆轮廓按原图有意交叠，白色交集与两圆边界均保留"
+      }
+    },
+    {
+      "id": "coupling_label_0",
+      "bbox": [
+        527,
+        490,
+        68,
+        78
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "coupling_label_1",
+      "bbox": [
+        640,
+        490,
+        68,
+        78
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "none",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "model_background",
+      "bbox": [
+        135,
+        683,
+        965,
+        165
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#ededed",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "model_header",
+      "bbox": [
+        147,
+        698,
+        941,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#b6d9f4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "model_structure",
+      "bbox": [
+        146,
+        773,
+        295,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e8e6e2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "model_parameters",
+      "bbox": [
+        470,
+        772,
+        295,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e8e6e2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "model_performance",
+      "bbox": [
+        794,
+        773,
+        295,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e8e6e2",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "optimization_background",
+      "bbox": [
+        135,
+        861,
+        965,
+        236
+      ],
+      "font_size": 28,
+      "text_slot": false,
+      "style": {
+        "fillColor": "#d9e7f9",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "optimization_header",
+      "bbox": [
+        146,
+        877,
+        943,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#faf2cf",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "optimization_diagnosis",
+      "bbox": [
+        146,
+        952,
+        943,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#eae4ec",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "parameter_iteration",
+      "bbox": [
+        147,
+        1026,
+        293,
+        57
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#faf2cf",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "structure_improvement",
+      "bbox": [
+        470,
+        1025,
+        295,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#faf2cf",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "performance_check",
+      "bbox": [
+        794,
+        1026,
+        295,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#faf2cf",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "platform",
+      "bbox": [
+        135,
+        1149,
+        64,
+        291
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#c0d7e4",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "experiment_design",
+      "bbox": [
+        234,
+        1149,
+        62,
+        291
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fddab7",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "condition_quality",
+      "bbox": [
+        329,
+        1149,
+        64,
+        291
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#c8deb7",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "preprocessing",
+      "bbox": [
+        634,
+        1148,
+        64,
+        293
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f9f1d0",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "statistics",
+      "bbox": [
+        730,
+        1149,
+        64,
+        291
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#c8deb7",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "iteration",
+      "bbox": [
+        1036,
+        1149,
+        63,
+        291
+      ],
+      "font_size": 26,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f1e2a3",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "simulation",
+      "bbox": [
+        394,
+        1148,
+        208,
+        73
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e3f3d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "data_collection",
+      "bbox": [
+        394,
+        1222,
+        208,
+        72
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e3f3d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "initial_analysis",
+      "bbox": [
+        394,
+        1295,
+        208,
+        72
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e3f3d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "performance_optimization",
+      "bbox": [
+        394,
+        1369,
+        208,
+        71
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e3f3d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "metric_evaluation",
+      "bbox": [
+        795,
+        1148,
+        208,
+        97
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e3f3d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "error_diagnosis",
+      "bbox": [
+        795,
+        1246,
+        208,
+        97
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e3f3d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "optimization_strategy",
+      "bbox": [
+        795,
+        1344,
+        208,
+        97
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e3f3d9",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "results_header",
+      "bbox": [
+        300,
+        1498,
+        646,
+        57
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#9bcbd6",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "result_0",
+      "bbox": [
+        135,
+        1620,
+        221,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#daf0f6",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "result_1",
+      "bbox": [
+        382,
+        1620,
+        221,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#daf0f6",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "result_2",
+      "bbox": [
+        631,
+        1620,
+        221,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#daf0f6",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    },
+    {
+      "id": "result_3",
+      "bbox": [
+        879,
+        1620,
+        220,
+        58
+      ],
+      "font_size": 28,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#daf0f6",
+        "strokeColor": "#171717",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "outer_left_0",
+      "points": [
+        [
+          34,
+          50
+        ],
+        [
+          34,
+          192
+        ]
+      ],
+      "meaning": "装饰性外框；在侧标签处断开",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_right_0",
+      "points": [
+        [
+          1164,
+          50
+        ],
+        [
+          1164,
+          192
+        ]
+      ],
+      "meaning": "装饰性外框；在侧标签处断开",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_left_1",
+      "points": [
+        [
+          34,
+          548
+        ],
+        [
+          34,
+          743
+        ]
+      ],
+      "meaning": "装饰性外框；在侧标签处断开",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_right_1",
+      "points": [
+        [
+          1164,
+          548
+        ],
+        [
+          1164,
+          743
+        ]
+      ],
+      "meaning": "装饰性外框；在侧标签处断开",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_left_2",
+      "points": [
+        [
+          34,
+          1099
+        ],
+        [
+          34,
+          1342
+        ]
+      ],
+      "meaning": "装饰性外框；在侧标签处断开",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_right_2",
+      "points": [
+        [
+          1164,
+          1099
+        ],
+        [
+          1164,
+          1342
+        ]
+      ],
+      "meaning": "装饰性外框；在侧标签处断开",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_left_3",
+      "points": [
+        [
+          34,
+          1698
+        ],
+        [
+          34,
+          1724
+        ]
+      ],
+      "meaning": "装饰性外框；在侧标签处断开",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_right_3",
+      "points": [
+        [
+          1164,
+          1698
+        ],
+        [
+          1164,
+          1724
+        ]
+      ],
+      "meaning": "装饰性外框；在侧标签处断开",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_top_left",
+      "points": [
+        [
+          34,
+          50
+        ],
+        [
+          111,
+          50
+        ]
+      ],
+      "meaning": "外框左上边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_top_right",
+      "points": [
+        [
+          1123,
+          50
+        ],
+        [
+          1164,
+          50
+        ]
+      ],
+      "meaning": "外框右上边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "outer_bottom",
+      "points": [
+        [
+          34,
+          1724
+        ],
+        [
+          1164,
+          1724
+        ]
+      ],
+      "meaning": "外框底边",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "band_0",
+      "points": [
+        [
+          112,
+          97
+        ],
+        [
+          1121,
+          97
+        ],
+        [
+          1121,
+          387
+        ],
+        [
+          112,
+          387
+        ],
+        [
+          112,
+          97
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "8 4"
+      }
+    },
+    {
+      "id": "band_1",
+      "points": [
+        [
+          112,
+          403
+        ],
+        [
+          1121,
+          403
+        ],
+        [
+          1121,
+          652
+        ],
+        [
+          112,
+          652
+        ],
+        [
+          112,
+          403
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "8 4"
+      }
+    },
+    {
+      "id": "band_2",
+      "points": [
+        [
+          112,
+          668
+        ],
+        [
+          1121,
+          668
+        ],
+        [
+          1121,
+          1111
+        ],
+        [
+          112,
+          1111
+        ],
+        [
+          112,
+          668
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "8 4"
+      }
+    },
+    {
+      "id": "band_3",
+      "points": [
+        [
+          112,
+          1132
+        ],
+        [
+          1121,
+          1132
+        ],
+        [
+          1121,
+          1458
+        ],
+        [
+          112,
+          1458
+        ],
+        [
+          112,
+          1132
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "8 4"
+      }
+    },
+    {
+      "id": "band_4",
+      "points": [
+        [
+          112,
+          1477
+        ],
+        [
+          1121,
+          1477
+        ],
+        [
+          1121,
+          1695
+        ],
+        [
+          112,
+          1695
+        ],
+        [
+          112,
+          1477
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "8 4"
+      }
+    },
+    {
+      "id": "preparation_card_0",
+      "points": [
+        [
+          135,
+          176
+        ],
+        [
+          135,
+          370
+        ],
+        [
+          577,
+          370
+        ],
+        [
+          577,
+          176
+        ]
+      ],
+      "meaning": "上部卡片下部外框；标题自身描边组成上部边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "preparation_card_1",
+      "points": [
+        [
+          657,
+          176
+        ],
+        [
+          657,
+          370
+        ],
+        [
+          1099,
+          370
+        ],
+        [
+          1099,
+          176
+        ]
+      ],
+      "meaning": "上部卡片下部外框；标题自身描边组成上部边界",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "identify_goal",
+      "points": [
+        [
+          328,
+          217
+        ],
+        [
+          383,
+          217
+        ]
+      ],
+      "meaning": "关键识别指向研究目标",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "survey_join",
+      "points": [
+        [
+          355,
+          294
+        ],
+        [
+          355,
+          220
+        ]
+      ],
+      "meaning": "三类调研汇入识别到目标的路径",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "planning_route",
+      "points": [
+        [
+          994,
+          248
+        ],
+        [
+          994,
+          294
+        ]
+      ],
+      "meaning": "整体规划连接总体路线设计，原图无箭尖",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "route_to_method",
+      "points": [
+        [
+          758,
+          294
+        ],
+        [
+          758,
+          249
+        ]
+      ],
+      "meaning": "总体路线设计反向约束方法选择",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "theory_frame",
+      "points": [
+        [
+          135,
+          426
+        ],
+        [
+          268,
+          426
+        ],
+        [
+          268,
+          633
+        ],
+        [
+          135,
+          633
+        ],
+        [
+          135,
+          426
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "coupled_framework_frame",
+      "points": [
+        [
+          966,
+          426
+        ],
+        [
+          1100,
+          426
+        ],
+        [
+          1100,
+          633
+        ],
+        [
+          966,
+          633
+        ],
+        [
+          966,
+          426
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "coupling_left_stem",
+      "points": [
+        [
+          508,
+          529
+        ],
+        [
+          480,
+          529
+        ]
+      ],
+      "meaning": "左耦合分析向左侧三项检查分发",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_left_bus",
+      "points": [
+        [
+          480,
+          455
+        ],
+        [
+          480,
+          604
+        ]
+      ],
+      "meaning": "左侧三项并列分析母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_right_stem",
+      "points": [
+        [
+          730,
+          529
+        ],
+        [
+          754,
+          529
+        ]
+      ],
+      "meaning": "右耦合分析向右侧三项检查分发",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_right_bus",
+      "points": [
+        [
+          754,
+          455
+        ],
+        [
+          754,
+          604
+        ]
+      ],
+      "meaning": "右侧三项并列分析母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_left_0",
+      "points": [
+        [
+          480,
+          455
+        ],
+        [
+          453,
+          455
+        ]
+      ],
+      "meaning": "从耦合分析向左分析节点扇出，箭头朝左",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_right_0",
+      "points": [
+        [
+          754,
+          455
+        ],
+        [
+          779,
+          455
+        ]
+      ],
+      "meaning": "从耦合分析向右验证节点扇出，箭头朝右",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_left_1",
+      "points": [
+        [
+          480,
+          529
+        ],
+        [
+          453,
+          529
+        ]
+      ],
+      "meaning": "从耦合分析向左分析节点扇出，箭头朝左",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_right_1",
+      "points": [
+        [
+          754,
+          529
+        ],
+        [
+          779,
+          529
+        ]
+      ],
+      "meaning": "从耦合分析向右验证节点扇出，箭头朝右",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_left_2",
+      "points": [
+        [
+          480,
+          604
+        ],
+        [
+          453,
+          604
+        ]
+      ],
+      "meaning": "从耦合分析向左分析节点扇出，箭头朝左",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "coupling_right_2",
+      "points": [
+        [
+          754,
+          604
+        ],
+        [
+          779,
+          604
+        ]
+      ],
+      "meaning": "从耦合分析向右验证节点扇出，箭头朝右",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "model_frame",
+      "points": [
+        [
+          135,
+          683
+        ],
+        [
+          1100,
+          683
+        ],
+        [
+          1100,
+          848
+        ],
+        [
+          135,
+          848
+        ],
+        [
+          135,
+          683
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "optimization_frame",
+      "points": [
+        [
+          135,
+          861
+        ],
+        [
+          1100,
+          861
+        ],
+        [
+          1100,
+          1097
+        ],
+        [
+          135,
+          1097
+        ],
+        [
+          135,
+          861
+        ]
+      ],
+      "meaning": "分区边界，不表示数据流或因果",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0",
+        "dashed": "1",
+        "dashPattern": "3 2"
+      }
+    },
+    {
+      "id": "experiment_step_0",
+      "points": [
+        [
+          201,
+          1295
+        ],
+        [
+          231,
+          1295
+        ]
+      ],
+      "meaning": "实验链由左向右推进，组合框从整体右边界输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "experiment_step_1",
+      "points": [
+        [
+          298,
+          1295
+        ],
+        [
+          327,
+          1295
+        ]
+      ],
+      "meaning": "实验链由左向右推进，组合框从整体右边界输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "experiment_step_2",
+      "points": [
+        [
+          604,
+          1295
+        ],
+        [
+          633,
+          1295
+        ]
+      ],
+      "meaning": "实验链由左向右推进，组合框从整体右边界输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "experiment_step_3",
+      "points": [
+        [
+          699,
+          1295
+        ],
+        [
+          728,
+          1295
+        ]
+      ],
+      "meaning": "实验链由左向右推进，组合框从整体右边界输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "experiment_step_4",
+      "points": [
+        [
+          1005,
+          1295
+        ],
+        [
+          1034,
+          1295
+        ]
+      ],
+      "meaning": "实验链由左向右推进，组合框从整体右边界输出",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "results_stem",
+      "points": [
+        [
+          623,
+          1557
+        ],
+        [
+          623,
+          1588
+        ]
+      ],
+      "meaning": "成果总结分解为四类输出",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "results_bus",
+      "points": [
+        [
+          246,
+          1588
+        ],
+        [
+          989,
+          1588
+        ]
+      ],
+      "meaning": "四项成果共用分发母线",
+      "style": {
+        "endArrow": "none",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "result_drop_0",
+      "points": [
+        [
+          246,
+          1588
+        ],
+        [
+          246,
+          1618
+        ]
+      ],
+      "meaning": "总体成果到对应梳理、创新、应用或展望",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "result_drop_1",
+      "points": [
+        [
+          492,
+          1588
+        ],
+        [
+          492,
+          1618
+        ]
+      ],
+      "meaning": "总体成果到对应梳理、创新、应用或展望",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "result_drop_2",
+      "points": [
+        [
+          741,
+          1588
+        ],
+        [
+          741,
+          1618
+        ]
+      ],
+      "meaning": "总体成果到对应梳理、创新、应用或展望",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "result_drop_3",
+      "points": [
+        [
+          989,
+          1588
+        ],
+        [
+          989,
+          1618
+        ]
+      ],
+      "meaning": "总体成果到对应梳理、创新、应用或展望",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#151515",
+        "strokeWidth": "2",
+        "rounded": "0"
+      }
+    }
+  ]
+}

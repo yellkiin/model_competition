@@ -1,0 +1,185 @@
+{
+  "template_id": "behavior-intervention-3column",
+  "visual_status": "REVIEW_REQUIRED",
+  "checks": [
+    {
+      "case": "missing-field",
+      "ok": true,
+      "diagnostic": "texts 字段/固定节点数量不符；缺少 ['thinking']；多余 []"
+    },
+    {
+      "case": "extra-node",
+      "ok": true,
+      "diagnostic": "texts 字段/固定节点数量不符；缺少 []；多余 ['unexpected_node']"
+    },
+    {
+      "case": "long-text",
+      "ok": true,
+      "diagnostic": "texts.thinking 第1行: 宽14000.0px > 175.0px；约6个全角字，请手动断行"
+    },
+    {
+      "case": "wrong-type",
+      "ok": true,
+      "diagnostic": "texts.thinking: 须为非空字符串或字符串数组"
+    },
+    {
+      "case": "wrong-template",
+      "ok": true,
+      "diagnostic": "template_id: 本入口只接受 behavior-intervention-3column"
+    },
+    {
+      "case": "replacement",
+      "ok": true,
+      "visual_status": "REVIEW_REQUIRED"
+    },
+    {
+      "case": "capacity-boundary",
+      "ok": true,
+      "visual_status": "REVIEW_REQUIRED"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\behavior_intervention_3column.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\missing-field.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts 字段/固定节点数量不符；缺少 ['thinking']；多余 []\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\behavior_intervention_3column.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\extra-node.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts 字段/固定节点数量不符；缺少 []；多余 ['unexpected_node']\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\behavior_intervention_3column.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\long-text.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts.thinking 第1行: 宽14000.0px > 175.0px；约6个全角字，请手动断行\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\behavior_intervention_3column.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\wrong-type.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "texts.thinking: 须为非空字符串或字符串数组\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\behavior_intervention_3column.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\wrong-template.json",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "template_id: 本入口只接受 behavior-intervention-3column\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\behavior_intervention_3column.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\replacement.json",
+        "-o",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\replacement.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "behavior-intervention-3column: D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\replacement.drawio\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\check_layout.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\replacement.drawio",
+        "--strict"
+      ],
+      "exit_code": 0,
+      "stdout": "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\replacement.drawio: 顶点 67 / 连接器 35  FAIL 0  WARN 0\nPASS: 版式体检通过\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\export_figure.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\replacement.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\replacement.png\n✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\replacement.pdf\n接下来务必打开 PNG 逐块核对：文字有无溢出/压线、箭头方向、数值有没有抄错。\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\scripts\\behavior_intervention_3column.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\capacity-boundary.json",
+        "-o",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\capacity-boundary.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "behavior-intervention-3column: D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\capacity-boundary.drawio\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\check_layout.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\capacity-boundary.drawio",
+        "--strict"
+      ],
+      "exit_code": 0,
+      "stdout": "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\capacity-boundary.drawio: 顶点 67 / 连接器 35  FAIL 0  WARN 0\nPASS: 版式体检通过\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\jsw\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\.agents\\skills\\sci-box-main\\sci-box-main\\skills\\scibox-diagram\\scripts\\export_figure.py",
+        "D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\capacity-boundary.drawio"
+      ],
+      "exit_code": 0,
+      "stdout": "✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\capacity-boundary.png\n✓ D:\\jsw_DeskTop\\star_HW_myskill_catalog\\output\\流程图库扩充维护\\library\\assets\\behavior-intervention-3column\\qa\\capacity-boundary.pdf\n接下来务必打开 PNG 逐块核对：文字有无溢出/压线、箭头方向、数值有没有抄错。\n",
+      "stderr": ""
+    }
+  ],
+  "replacement_changed_fields": [
+    "thinking",
+    "content",
+    "methods",
+    "thinking_4",
+    "digital_context",
+    "research_title_2",
+    "output_detail_0"
+  ],
+  "machine_status": "PASS"
+}

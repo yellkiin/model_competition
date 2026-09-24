@@ -1,0 +1,31 @@
+{
+  "source_draft": {
+    "url": "https://api.crossref.org/works/10.1137/0117039/transform/application/vnd.citationstyles.csl+json",
+    "authority": "",
+    "authority_reason": "",
+    "capture_path": "参考来源/graham1969/source.json",
+    "capture_sha256": "d848448ac7fed51006018620332790f2fd71425719c84d63bc79e505875829c3",
+    "receipt_path": "参考来源/graham1969/receipt.json",
+    "receipt_sha256": "1e80e065c1b480f875ba24cd26abe8eac5b8dfa1813417ffae71ac155c016ee5",
+    "format": "csl_json",
+    "review": {
+      "reviewed": false,
+      "tool_ref": "",
+      "observation": ""
+    }
+  },
+  "extracted_metadata": {
+    "title": "Bounds on Multiprocessing Timing Anomalies",
+    "authors": [
+      "R. L. Graham"
+    ],
+    "year": "1969",
+    "container": "SIAM Journal on Applied Mathematics",
+    "pages": "416-429",
+    "volume": "17",
+    "issue": "2",
+    "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+    "doi": "10.1137/0117039"
+  },
+  "status": "REVIEW_REQUIRED"
+}

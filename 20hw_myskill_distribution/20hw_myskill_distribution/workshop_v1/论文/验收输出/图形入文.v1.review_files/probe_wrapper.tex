@@ -1,0 +1,31 @@
+\makeatletter
+\newwrite\AFstream
+\newcount\AFid
+\newcount\AFpage
+\newcount\AFtransform
+\newsavebox\AFbox
+\AddToHook{shipout/before}{\global\advance\AFpage by1}
+\AddToHook{begindocument/end}{%
+  \immediate\openout\AFstream=\jobname.afprobe
+  \let\AFsetfile\Gin@setfile
+  \def\Gin@setfile#1#2#3{\xdef\AFfile{#3}\AFsetfile{#1}{#2}{#3}}%
+  \let\AFgraphics\includegraphics
+  \let\AFresize\resizebox
+  \let\AFscale\scalebox
+  \let\AFrotate\rotatebox
+  \RenewDocumentCommand\resizebox{s m m +m}{\begingroup\advance\AFtransform by1\IfBooleanTF{#1}{\AFresize*{#2}{#3}{#4}}{\AFresize{#2}{#3}{#4}}\endgroup}%
+  \RenewDocumentCommand\scalebox{m o +m}{\begingroup\advance\AFtransform by1\IfNoValueTF{#2}{\AFscale{#1}{#3}}{\AFscale{#1}[#2]{#3}}\endgroup}%
+  \RenewDocumentCommand\rotatebox{O{} m +m}{\begingroup\advance\AFtransform by1\AFrotate[#1]{#2}{#3}\endgroup}%
+  \RenewDocumentCommand\includegraphics{s O{} m}{%
+    \ifnum\AFtransform>0\PackageError{academic-paper-probe}{Outer graphics transformation is not measurable here}{Use includegraphics width/height/angle directly for the planned figure.}\fi
+    \global\advance\AFid by1
+    \gdef\AFfile{}%
+    \sbox\AFbox{\IfBooleanTF{#1}{\AFgraphics*[#2]{#3}}{\AFgraphics[#2]{#3}}}%
+    \immediate\write\AFstream{FIG|\number\AFid|\AFfile|\the\wd\AFbox|\the\ht\AFbox|\the\textwidth|\the\dp\AFbox}%
+    \edef\AFdeferred{\noexpand\write\AFstream{PAGE|\number\AFid|\noexpand\number\noexpand\AFpage}}%
+    \AFdeferred\leavevmode\hypertarget{gmcm.graphic.\number\AFid}{\usebox\AFbox}%
+  }%
+}
+\makeatother
+
+\input{论文.tex}

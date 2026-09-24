@@ -1,0 +1,33 @@
+\documentclass[UTF8,a4paper,10pt]{ctexart}
+\usepackage[margin=22mm]{geometry}
+\usepackage{longtable,array,booktabs,xurl,hyperref}
+\hypersetup{hidelinks}
+\setlength{\emergencystretch}{3em}
+\begin{document}
+\section*{环境与依赖说明}
+本文件由机器可读能力清单生成，独立于正式论文；不授予科学、视觉或论文验收通过。
+\par 正式支持：Windows 10/11 x64，PowerShell 5.1 以上。
+\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{.19\linewidth}>{\raggedright\arraybackslash}p{.27\linewidth}>{\raggedright\arraybackslash}p{.43\linewidth}}
+\toprule 能力 / 状态 & 提供者 / 版本 & 需求依据 \\ \midrule\endhead
+Python 工作区虚拟环境 / satisfied & 兼容 Python 3.13.15 & 工作流启动必需 \\
+工作流与结构校验 / satisfied & 工作流与结构校验 [["jsonschema", "4.26.0"], ["PyYAML", "6.0.3"], ["pydantic", "2.13.5"], ["packag & 执行已选共享工具 build\_latex.py \\
+PDF 读取、渲染与页面检查 / satisfied & PDF 读取、渲染与页面检查 [["PyMuPDF", "1.28.2"], ["Pillow", "12.3.0"]] & 执行已选共享工具 build\_figure\_accounting.py \\
+论文解析与代码排版 / satisfied & 论文解析与代码排版 [["bibtexparser", "1.4.3"], ["pylatexenc", "2.10"], ["Pygments", "2.21.0"]] & 执行已选共享工具 build\_latex.py \\
+XeLaTeX 论文编译 / satisfied & TeX Live / TinyTeX XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026) & 执行已选共享工具 collect\_academic\_paper\_review.py \\
+官方标题及中文正文字体 / satisfied & 系统合法字体 XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026) & 执行已选共享工具 collect\_academic\_paper\_review.py \\
+可编辑结构图导出 / blocked & draw.io Desktop  & 第一章 scibox 模板总体路线图及逐问可编辑综合图优先使用 draw.io \\
+数值计算与静态绘图 / satisfied & 数值计算与静态绘图 [["numpy", "2.5.3"], ["scipy", "1.18.1"], ["matplotlib", "3.11.2"]] & 三问100例结构化结果需用数值数组与Matplotlib生成16张正式科研图及300 dpi预览；当前工作区虚拟环境实测缺少matplotlib。 \\
+\bottomrule\end{longtable}
+\normalsize\section*{安装与复现}
+优先复用实测兼容的软件。Python 包安装到工作区虚拟环境；直接依赖见 requirements.txt，精确版本见 requirements.lock.txt。虚拟环境与下载缓存不提交。
+\par 国内 PyPI 镜像优先，失败时显式回退官方源；TeX 宏包仓库须与发行版年度兼容。字体须来自合法来源，不替换官方标题样式。
+\section*{来源}
+\noindent\url{https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple}\par
+\noindent\url{https://pypi.org/simple}\par
+\noindent\url{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet}\par
+\noindent\url{https://mirrors.ctan.org/systems/texlive/tlnet}\par
+\noindent\url{https://www.python.org/downloads/}\par
+\noindent\url{https://yihui.org/tinytex/}\par
+\noindent\url{https://github.com/jgraph/drawio-desktop/releases}\par
+\end{document}

@@ -1,0 +1,986 @@
+{
+  "template_id": "five-chapter-research-roadmap",
+  "name": "五章节研究内容与方法路线图",
+  "canvas": [
+    1206,
+    1743
+  ],
+  "source_id": "ref-38",
+  "nodes": [
+    {
+      "id": "title",
+      "bbox": [
+        125,
+        45,
+        790,
+        46
+      ],
+      "font_size": 20,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#5b9bd5",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c0_title",
+      "bbox": [
+        123,
+        136,
+        794,
+        38
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e4dfec",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c0a_0",
+      "bbox": [
+        140,
+        202,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c0a_1",
+      "bbox": [
+        140,
+        258,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c0a_2",
+      "bbox": [
+        140,
+        314,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c0b_0",
+      "bbox": [
+        690,
+        202,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c0b_1",
+      "bbox": [
+        690,
+        258,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c0m",
+      "bbox": [
+        390,
+        240,
+        220,
+        58
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#e4dfec",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c1_title",
+      "bbox": [
+        123,
+        446,
+        794,
+        38
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fff2cc",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c1a_0",
+      "bbox": [
+        140,
+        512,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c1a_1",
+      "bbox": [
+        140,
+        568,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c1a_2",
+      "bbox": [
+        140,
+        624,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c1b_0",
+      "bbox": [
+        690,
+        512,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c1b_1",
+      "bbox": [
+        690,
+        568,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c1m",
+      "bbox": [
+        390,
+        550,
+        220,
+        58
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#fff2cc",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c2_title",
+      "bbox": [
+        123,
+        756,
+        794,
+        38
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f4cccc",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c2a_0",
+      "bbox": [
+        140,
+        822,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c2a_1",
+      "bbox": [
+        140,
+        878,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c2a_2",
+      "bbox": [
+        140,
+        934,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c2b_0",
+      "bbox": [
+        690,
+        822,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c2b_1",
+      "bbox": [
+        690,
+        878,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c2m",
+      "bbox": [
+        390,
+        860,
+        220,
+        58
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#f4cccc",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c3_title",
+      "bbox": [
+        123,
+        1066,
+        794,
+        38
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d9ead3",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c3a_0",
+      "bbox": [
+        140,
+        1132,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c3a_1",
+      "bbox": [
+        140,
+        1188,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c3a_2",
+      "bbox": [
+        140,
+        1244,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c3b_0",
+      "bbox": [
+        690,
+        1132,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c3b_1",
+      "bbox": [
+        690,
+        1188,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c3m",
+      "bbox": [
+        390,
+        1170,
+        220,
+        58
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d9ead3",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c4_title",
+      "bbox": [
+        123,
+        1376,
+        794,
+        38
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d9e2f3",
+        "strokeColor": "none",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontColor": "#ffffff",
+        "fontStyle": "1"
+      }
+    },
+    {
+      "id": "c4a_0",
+      "bbox": [
+        140,
+        1442,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c4a_1",
+      "bbox": [
+        140,
+        1498,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c4a_2",
+      "bbox": [
+        140,
+        1554,
+        205,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c4b_0",
+      "bbox": [
+        690,
+        1442,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c4b_1",
+      "bbox": [
+        690,
+        1498,
+        190,
+        42
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#ffffff",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8"
+      }
+    },
+    {
+      "id": "c4m",
+      "bbox": [
+        390,
+        1480,
+        220,
+        58
+      ],
+      "font_size": 18,
+      "text_slot": true,
+      "style": {
+        "fillColor": "#d9e2f3",
+        "strokeColor": "#666666",
+        "strokeWidth": "2",
+        "fontFamily": "Microsoft YaHei",
+        "rounded": "1",
+        "arcSize": "8",
+        "fontStyle": "1"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "outer",
+      "points": [
+        [
+          70,
+          20
+        ],
+        [
+          970,
+          20
+        ],
+        [
+          970,
+          1720
+        ],
+        [
+          70,
+          1720
+        ],
+        [
+          70,
+          20
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "c0",
+      "points": [
+        [
+          105,
+          120
+        ],
+        [
+          935,
+          120
+        ],
+        [
+          935,
+          370
+        ],
+        [
+          105,
+          370
+        ],
+        [
+          105,
+          120
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "next0",
+      "points": [
+        [
+          520,
+          370
+        ],
+        [
+          520,
+          430
+        ]
+      ],
+      "meaning": "章节衔接",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#5b9bd5",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "c1",
+      "points": [
+        [
+          105,
+          430
+        ],
+        [
+          935,
+          430
+        ],
+        [
+          935,
+          680
+        ],
+        [
+          105,
+          680
+        ],
+        [
+          105,
+          430
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "next1",
+      "points": [
+        [
+          520,
+          680
+        ],
+        [
+          520,
+          740
+        ]
+      ],
+      "meaning": "章节衔接",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#5b9bd5",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "c2",
+      "points": [
+        [
+          105,
+          740
+        ],
+        [
+          935,
+          740
+        ],
+        [
+          935,
+          990
+        ],
+        [
+          105,
+          990
+        ],
+        [
+          105,
+          740
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "next2",
+      "points": [
+        [
+          520,
+          990
+        ],
+        [
+          520,
+          1050
+        ]
+      ],
+      "meaning": "章节衔接",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#5b9bd5",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "c3",
+      "points": [
+        [
+          105,
+          1050
+        ],
+        [
+          935,
+          1050
+        ],
+        [
+          935,
+          1300
+        ],
+        [
+          105,
+          1300
+        ],
+        [
+          105,
+          1050
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "next3",
+      "points": [
+        [
+          520,
+          1300
+        ],
+        [
+          520,
+          1360
+        ]
+      ],
+      "meaning": "章节衔接",
+      "style": {
+        "endArrow": "block",
+        "strokeColor": "#5b9bd5",
+        "strokeWidth": "1.5",
+        "rounded": "0"
+      }
+    },
+    {
+      "id": "c4",
+      "points": [
+        [
+          105,
+          1360
+        ],
+        [
+          935,
+          1360
+        ],
+        [
+          935,
+          1610
+        ],
+        [
+          105,
+          1610
+        ],
+        [
+          105,
+          1360
+        ]
+      ],
+      "meaning": "分区边界，不表示因果或数据流",
+      "style": {
+        "endArrow": "none",
+        "dashed": "1",
+        "dashPattern": "2 2",
+        "rounded": "0"
+      }
+    }
+  ]
+}

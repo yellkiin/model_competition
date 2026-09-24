@@ -1,0 +1,21 @@
+{
+  "command": [
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\workspace_execution.py",
+    "--child",
+    "E:\\20hw_myskill_distribution\\workshop_v1",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\build_figure_accounting.py",
+    "--project-root",
+    ".",
+    "--plan",
+    "求解/视觉计划.json",
+    "--stage",
+    "render",
+    "--runtime",
+    "codex"
+  ],
+  "started_at": "2026-09-23T12:15:19.260047+00:00",
+  "workspace_root": "E:\\20hw_myskill_distribution\\workshop_v1",
+  "tool": "华为杯_求解规范/tools/build_figure_accounting.py"
+}

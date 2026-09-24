@@ -1,0 +1,39 @@
+{
+  "status": "FAIL",
+  "returncode": 1,
+  "error": null,
+  "started_at": "2026-09-23T19:51:34.729552+00:00",
+  "finished_at": "2026-09-23T19:55:15.651143+00:00",
+  "tool": "华为杯_论文规范模板/tools/build_latex.py",
+  "command": [
+    "E:\\20hw_myskill_distribution\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "E:\\20hw_myskill_distribution\\华为杯_求解规范\\tools\\workspace_execution.py",
+    "--child",
+    "E:\\20hw_myskill_distribution\\workshop_v1",
+    "E:\\20hw_myskill_distribution\\华为杯_论文规范模板\\tools\\build_latex.py",
+    "--manifest",
+    "论文/论文输入.json",
+    "--output",
+    "论文/论文.tex",
+    "--template-dir",
+    "..\\华为杯_论文规范模板",
+    "--manifest-out",
+    "论文/论文.inputs.json",
+    "--project-root",
+    ".",
+    "--runtime",
+    "codex"
+  ],
+  "runtime": "codex",
+  "cwd": "E:\\20hw_myskill_distribution\\workshop_v1",
+  "shared_changes": [],
+  "inputs": {
+    "status": "PASS",
+    "changed_inputs": []
+  },
+  "independent_reproduction_root": null,
+  "stdout": "求解/验收输出/工作区运行/17d58aa60a294cbb8dd03ece8bd8b116/stdout.log",
+  "stderr": "求解/验收输出/工作区运行/17d58aa60a294cbb8dd03ece8bd8b116/stderr.log",
+  "assurance": "真实子进程和文件一致性检查；不代表科学或视觉审阅，不是 OS 沙箱。"
+}

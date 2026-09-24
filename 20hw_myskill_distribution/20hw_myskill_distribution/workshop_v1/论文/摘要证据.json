@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "questions": [
+    {
+      "chapter_id": "q1",
+      "statements": [
+        {
+          "kind": "method",
+          "text": "连通块分核",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q1/method"
+        },
+        {
+          "kind": "conclusion",
+          "text": "多数图可利用多个核心",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q1/conclusion"
+        },
+        {
+          "kind": "value",
+          "text": "3.5093（无量纲）",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q1/speedup",
+          "decimal_places": 4
+        },
+        {
+          "kind": "validation",
+          "text": "所选五百组方案的覆盖、时间线及官方响应交叉核验全部通过",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q1/validation"
+        }
+      ]
+    },
+    {
+      "chapter_id": "q2",
+      "statements": [
+        {
+          "kind": "method",
+          "text": "场景B重新择优",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q2/method"
+        },
+        {
+          "kind": "conclusion",
+          "text": "Task合并并不保证逐例加速",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q2/conclusion"
+        },
+        {
+          "kind": "value",
+          "text": "3.5456（无量纲）",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q2/speedup",
+          "decimal_places": 4
+        },
+        {
+          "kind": "validation",
+          "text": "所选五百组方案的覆盖、时间线及官方响应交叉核验全部通过",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q2/validation"
+        }
+      ]
+    },
+    {
+      "chapter_id": "q3",
+      "statements": [
+        {
+          "kind": "method",
+          "text": "同方案反事实",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q3/method"
+        },
+        {
+          "kind": "conclusion",
+          "text": "有正向收益的算例过半",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q3/conclusion"
+        },
+        {
+          "kind": "value",
+          "text": "3.6104（无量纲）",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q3/speedup",
+          "decimal_places": 4
+        },
+        {
+          "kind": "validation",
+          "text": "所选五百组方案的覆盖、时间线及官方响应交叉核验全部通过",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q3/validation"
+        },
+        {
+          "kind": "value",
+          "text": "1.0260（无量纲）",
+          "source_path": "求解/正式实验/摘要事实.json",
+          "source_sha256": "a5e532f0b70d19a524b2eee55b07d4aad12549adf5375599c29c89b3e6a9a99a",
+          "source_pointer": "/questions/q3/cache_gain",
+          "decimal_places": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "method": "dependency_bands",
+  "num_cores": 5,
+  "target_bands": 8,
+  "actual_bands": 8,
+  "band_width": 24,
+  "max_depth": 185,
+  "subgraphs": 29,
+  "estimated_loads": [
+    45480,
+    19331,
+    115023,
+    68137,
+    17511
+  ],
+  "bands": [
+    {
+      "band": 0,
+      "components": 37,
+      "loads": [
+        35810,
+        8681,
+        8459,
+        8451,
+        8695
+      ]
+    },
+    {
+      "band": 1,
+      "components": 10,
+      "loads": [
+        5644,
+        4562,
+        4804,
+        5644,
+        4142
+      ]
+    },
+    {
+      "band": 2,
+      "components": 2,
+      "loads": [
+        0,
+        0,
+        0,
+        47646,
+        1320
+      ]
+    },
+    {
+      "band": 3,
+      "components": 9,
+      "loads": [
+        1216,
+        2432,
+        1988,
+        2432,
+        1330
+      ]
+    },
+    {
+      "band": 4,
+      "components": 1,
+      "loads": [
+        0,
+        0,
+        48680,
+        0,
+        0
+      ]
+    },
+    {
+      "band": 5,
+      "components": 8,
+      "loads": [
+        1154,
+        2308,
+        1888,
+        2308,
+        1154
+      ]
+    },
+    {
+      "band": 6,
+      "components": 1,
+      "loads": [
+        0,
+        0,
+        48320,
+        0,
+        0
+      ]
+    },
+    {
+      "band": 7,
+      "components": 8,
+      "loads": [
+        1656,
+        1348,
+        884,
+        1656,
+        870
+      ]
+    }
+  ]
+}

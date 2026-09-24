@@ -1,0 +1,4386 @@
+{
+  "status": "PASS",
+  "stage": "final",
+  "question_id": null,
+  "checks": [
+    {
+      "code": "root_fields_present",
+      "ok": true,
+      "severity": "PASS",
+      "missing": []
+    },
+    {
+      "code": "schema_version_supported",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "2.0"
+    },
+    {
+      "code": "questions_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "question_ids_unique",
+      "ok": true,
+      "severity": "PASS",
+      "values": [
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    {
+      "code": "package_marked_complete",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "complete"
+    },
+    {
+      "code": "model_selection_gate",
+      "ok": true,
+      "severity": "PASS",
+      "errors": []
+    },
+    {
+      "code": "q1_fields_present",
+      "ok": true,
+      "severity": "PASS",
+      "missing": []
+    },
+    {
+      "code": "q1_marked_complete",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "complete"
+    },
+    {
+      "code": "q1_summary_ready",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_files_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_entrypoint_listed",
+      "ok": true,
+      "severity": "PASS",
+      "entrypoint": "求解/问题一/问题一.py"
+    },
+    {
+      "code": "q1_run_command_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_0_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题一/问题一.py"
+    },
+    {
+      "code": "q1_source_0_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题一/问题一.py"
+    },
+    {
+      "code": "q1_source_0_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题一/问题一.py"
+    },
+    {
+      "code": "q1_source_1_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q1_source_1_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q1_source_1_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q1_source_2_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q1_source_2_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q1_source_2_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q1_source_3_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q1_source_3_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q1_source_3_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q1_source_4_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q1_source_4_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q1_source_4_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q1_source_5_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q1_source_5_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q1_source_5_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q1_source_6_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q1_source_6_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q1_source_6_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q1_source_7_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q1_source_7_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q1_source_7_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q1_source_8_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q1_source_8_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q1_source_8_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q1_source_9_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q1_source_9_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q1_source_9_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q1_source_10_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q1_source_10_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q1_source_10_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q1_source_11_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q1_source_11_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q1_source_11_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q1_source_12_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q1_source_12_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q1_source_12_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q1_source_13_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q1_source_13_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q1_source_13_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q1_source_14_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q1_source_14_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q1_source_14_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q1_source_15_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q1_source_15_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q1_source_15_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q1_source_16_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q1_source_16_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q1_source_16_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q1_source_17_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q1_source_17_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q1_source_17_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q1_source_18_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q1_source_18_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q1_source_18_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q1_source_19_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q1_source_19_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q1_source_19_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q1_source_20_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q1_source_20_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q1_source_20_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q1_source_21_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q1_source_21_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q1_source_21_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q1_source_22_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q1_source_22_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q1_source_22_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q1_source_23_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q1_source_23_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q1_source_23_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q1_source_24_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q1_source_24_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q1_source_24_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q1_source_25_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q1_source_25_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q1_source_25_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q1_source_26_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q1_source_26_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q1_source_26_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q1_source_27_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q1_source_27_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q1_source_27_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q1_direct_local_python_dependencies_listed",
+      "ok": true,
+      "severity": "PASS",
+      "missing": []
+    },
+    {
+      "code": "q1_run_verified",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "pass"
+    },
+    {
+      "code": "q1_verification_time_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_verification_record_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题一/结果/运行验证.json"
+    },
+    {
+      "code": "q1_independent_reproduction",
+      "ok": true,
+      "severity": "PASS",
+      "errors": []
+    },
+    {
+      "code": "q1_supplementary_reviewed",
+      "ok": true,
+      "severity": "PASS",
+      "note": "仅收入正文未完整呈现的正式候选比较表；待选图库未审定备选图不入包。"
+    },
+    {
+      "code": "q1_supplementary_0_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/模型比较/q1.csv"
+    },
+    {
+      "code": "q1_supplementary_0_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/模型比较/q1.csv"
+    },
+    {
+      "code": "q2_fields_present",
+      "ok": true,
+      "severity": "PASS",
+      "missing": []
+    },
+    {
+      "code": "q2_marked_complete",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "complete"
+    },
+    {
+      "code": "q2_summary_ready",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_files_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_entrypoint_listed",
+      "ok": true,
+      "severity": "PASS",
+      "entrypoint": "求解/问题二/问题二.py"
+    },
+    {
+      "code": "q2_run_command_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_0_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题二/问题二.py"
+    },
+    {
+      "code": "q2_source_0_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题二/问题二.py"
+    },
+    {
+      "code": "q2_source_0_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题二/问题二.py"
+    },
+    {
+      "code": "q2_source_1_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q2_source_1_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q2_source_1_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q2_source_2_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q2_source_2_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q2_source_2_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q2_source_3_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q2_source_3_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q2_source_3_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q2_source_4_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q2_source_4_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q2_source_4_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q2_source_5_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q2_source_5_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q2_source_5_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q2_source_6_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q2_source_6_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q2_source_6_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q2_source_7_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q2_source_7_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q2_source_7_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q2_source_8_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q2_source_8_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q2_source_8_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q2_source_9_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q2_source_9_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q2_source_9_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q2_source_10_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q2_source_10_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q2_source_10_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q2_source_11_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q2_source_11_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q2_source_11_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q2_source_12_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q2_source_12_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q2_source_12_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q2_source_13_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q2_source_13_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q2_source_13_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q2_source_14_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q2_source_14_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q2_source_14_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q2_source_15_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q2_source_15_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q2_source_15_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q2_source_16_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q2_source_16_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q2_source_16_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q2_source_17_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q2_source_17_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q2_source_17_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q2_source_18_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q2_source_18_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q2_source_18_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q2_source_19_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q2_source_19_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q2_source_19_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q2_source_20_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q2_source_20_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q2_source_20_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q2_source_21_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q2_source_21_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q2_source_21_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q2_source_22_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q2_source_22_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q2_source_22_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q2_source_23_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q2_source_23_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q2_source_23_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q2_source_24_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q2_source_24_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q2_source_24_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q2_source_25_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q2_source_25_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q2_source_25_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q2_source_26_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q2_source_26_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q2_source_26_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q2_source_27_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q2_source_27_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q2_source_27_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q2_direct_local_python_dependencies_listed",
+      "ok": true,
+      "severity": "PASS",
+      "missing": []
+    },
+    {
+      "code": "q2_run_verified",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "pass"
+    },
+    {
+      "code": "q2_verification_time_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_verification_record_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题二/结果/运行验证.json"
+    },
+    {
+      "code": "q2_independent_reproduction",
+      "ok": true,
+      "severity": "PASS",
+      "errors": []
+    },
+    {
+      "code": "q2_supplementary_reviewed",
+      "ok": true,
+      "severity": "PASS",
+      "note": "仅收入正文未完整呈现的正式候选比较表；待选图库未审定备选图不入包。"
+    },
+    {
+      "code": "q2_supplementary_0_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/模型比较/q2.csv"
+    },
+    {
+      "code": "q2_supplementary_0_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/模型比较/q2.csv"
+    },
+    {
+      "code": "q3_fields_present",
+      "ok": true,
+      "severity": "PASS",
+      "missing": []
+    },
+    {
+      "code": "q3_marked_complete",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "complete"
+    },
+    {
+      "code": "q3_summary_ready",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_files_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_entrypoint_listed",
+      "ok": true,
+      "severity": "PASS",
+      "entrypoint": "求解/问题三/问题三.py"
+    },
+    {
+      "code": "q3_run_command_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_0_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题三/问题三.py"
+    },
+    {
+      "code": "q3_source_0_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题三/问题三.py"
+    },
+    {
+      "code": "q3_source_0_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题三/问题三.py"
+    },
+    {
+      "code": "q3_source_1_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q3_source_1_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q3_source_1_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/support_reproduce.py"
+    },
+    {
+      "code": "q3_source_2_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q3_source_2_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q3_source_2_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/collect_official_results.py"
+    },
+    {
+      "code": "q3_source_3_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q3_source_3_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q3_source_3_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/verify_official_results.py"
+    },
+    {
+      "code": "q3_source_4_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q3_source_4_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q3_source_4_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/summarize_validations.py"
+    },
+    {
+      "code": "q3_source_5_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q3_source_5_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q3_source_5_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/run_official_experiments.py"
+    },
+    {
+      "code": "q3_source_6_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q3_source_6_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q3_source_6_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_components.py"
+    },
+    {
+      "code": "q3_source_7_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q3_source_7_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q3_source_7_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_bands.py"
+    },
+    {
+      "code": "q3_source_8_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q3_source_8_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q3_source_8_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/solve_batches.py"
+    },
+    {
+      "code": "q3_source_9_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q3_source_9_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q3_source_9_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/cache_sensitivity.py"
+    },
+    {
+      "code": "q3_source_10_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q3_source_10_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q3_source_10_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_official_results.py"
+    },
+    {
+      "code": "q3_source_11_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q3_source_11_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q3_source_11_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "q3_source_12_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q3_source_12_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q3_source_12_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_deep_evidence.py"
+    },
+    {
+      "code": "q3_source_13_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q3_source_13_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q3_source_13_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "q3_source_14_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q3_source_14_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q3_source_14_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "q3_source_15_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q3_source_15_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q3_source_15_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "q3_source_16_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q3_source_16_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q3_source_16_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "q3_source_17_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q3_source_17_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q3_source_17_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "q3_source_18_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q3_source_18_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q3_source_18_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "q3_source_19_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q3_source_19_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q3_source_19_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "q3_source_20_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q3_source_20_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q3_source_20_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "q3_source_21_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q3_source_21_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q3_source_21_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "q3_source_22_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q3_source_22_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q3_source_22_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "q3_source_23_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q3_source_23_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q3_source_23_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "q3_source_24_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q3_source_24_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q3_source_24_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "q3_source_25_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q3_source_25_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q3_source_25_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.txt"
+    },
+    {
+      "code": "q3_source_26_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q3_source_26_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q3_source_26_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "requirements.lock.txt"
+    },
+    {
+      "code": "q3_source_27_safe",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q3_source_27_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q3_source_27_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/数据审计.json"
+    },
+    {
+      "code": "q3_direct_local_python_dependencies_listed",
+      "ok": true,
+      "severity": "PASS",
+      "missing": []
+    },
+    {
+      "code": "q3_run_verified",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "pass"
+    },
+    {
+      "code": "q3_verification_time_present",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_verification_record_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题三/结果/运行验证.json"
+    },
+    {
+      "code": "q3_independent_reproduction",
+      "ok": true,
+      "severity": "PASS",
+      "errors": []
+    },
+    {
+      "code": "q3_supplementary_reviewed",
+      "ok": true,
+      "severity": "PASS",
+      "note": "仅收入正文未完整呈现的正式候选比较表；待选图库未审定备选图不入包。"
+    },
+    {
+      "code": "q3_supplementary_0_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/模型比较/q3.csv"
+    },
+    {
+      "code": "q3_supplementary_0_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/模型比较/q3.csv"
+    },
+    {
+      "code": "q3_supplementary_1_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/正式实验/L2参数敏感性_非官方/全部候选.csv"
+    },
+    {
+      "code": "q3_supplementary_1_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/正式实验/L2参数敏感性_非官方/全部候选.csv"
+    },
+    {
+      "code": "q3_supplementary_2_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/正式实验/L2参数敏感性_非官方/逐配置最优.csv"
+    },
+    {
+      "code": "q3_supplementary_2_described",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/正式实验/L2参数敏感性_非官方/逐配置最优.csv"
+    },
+    {
+      "code": "external_data_ids_unique",
+      "ok": true,
+      "severity": "PASS",
+      "values": []
+    },
+    {
+      "code": "external_data_reviewed",
+      "ok": true,
+      "severity": "PASS",
+      "note": "仅使用题目官方图数据和配置；无额外自主采集数据。"
+    },
+    {
+      "code": "official_0_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/提交源/正式候选评估.zip"
+    },
+    {
+      "code": "official_0_verified",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "pass"
+    },
+    {
+      "code": "official_0_verification_record_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/正式实验/逐问核验摘要.json"
+    },
+    {
+      "code": "official_1_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题一/结果/逐例官方评估.csv"
+    },
+    {
+      "code": "official_1_verified",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "pass"
+    },
+    {
+      "code": "official_1_verification_record_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/正式实验/逐问核验摘要.json"
+    },
+    {
+      "code": "official_2_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题二/结果/逐例官方评估.csv"
+    },
+    {
+      "code": "official_2_verified",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "pass"
+    },
+    {
+      "code": "official_2_verification_record_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/正式实验/逐问核验摘要.json"
+    },
+    {
+      "code": "official_3_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/问题三/结果/逐例官方评估.csv"
+    },
+    {
+      "code": "official_3_verified",
+      "ok": true,
+      "severity": "PASS",
+      "actual": "pass"
+    },
+    {
+      "code": "official_3_verification_record_exists",
+      "ok": true,
+      "severity": "PASS",
+      "path": "求解/正式实验/逐问核验摘要.json"
+    },
+    {
+      "code": "schema_valid",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "public_directory_contract",
+      "ok": true,
+      "severity": "PASS",
+      "errors": []
+    },
+    {
+      "code": "paper_question_order_matches",
+      "ok": true,
+      "severity": "PASS",
+      "paper": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "supporting": [
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    {
+      "code": "build_manifest_exists",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "hash_manifest_exists",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "readme_exists",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "package_rebuilt_after_manifest_change",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "target_questions_packaged",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "all_questions_packaged",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "file_inventory_complete",
+      "ok": true,
+      "severity": "PASS",
+      "missing": [],
+      "extra": []
+    },
+    {
+      "code": "unique_destination_paths",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "entry_0_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/交叉核查.json"
+    },
+    {
+      "code": "entry_1_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/归档来源.json"
+    },
+    {
+      "code": "entry_2_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/总体摘要.json"
+    },
+    {
+      "code": "entry_3_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/正式候选评估.zip"
+    },
+    {
+      "code": "entry_4_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/深度分析.json"
+    },
+    {
+      "code": "entry_5_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/结构与缓存交叉核查.json"
+    },
+    {
+      "code": "entry_6_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/统计分析.json"
+    },
+    {
+      "code": "entry_7_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/问题一_逐例官方评估.csv"
+    },
+    {
+      "code": "entry_8_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/问题三_逐例官方评估.csv"
+    },
+    {
+      "code": "entry_9_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/问题二_逐例官方评估.csv"
+    },
+    {
+      "code": "entry_10_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他支撑材料/非官方L2网格统计验证.json"
+    },
+    {
+      "code": "entry_11_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/其他数据/官方输入.zip"
+    },
+    {
+      "code": "entry_12_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/中间图表/q1_候选比较.csv"
+    },
+    {
+      "code": "entry_13_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/代码环境说明.md"
+    },
+    {
+      "code": "entry_14_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/requirements.lock.txt"
+    },
+    {
+      "code": "entry_15_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/requirements.txt"
+    },
+    {
+      "code": "entry_16_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/support_reproduce.py"
+    },
+    {
+      "code": "entry_17_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "entry_18_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "entry_19_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "entry_20_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "entry_21_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "entry_22_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "entry_23_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "entry_24_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "entry_25_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "entry_26_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "entry_27_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "entry_28_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/analyze_official_results.py"
+    },
+    {
+      "code": "entry_29_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "entry_30_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/build_deep_evidence.py"
+    },
+    {
+      "code": "entry_31_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "entry_32_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/cache_sensitivity.py"
+    },
+    {
+      "code": "entry_33_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/collect_official_results.py"
+    },
+    {
+      "code": "entry_34_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/run_official_experiments.py"
+    },
+    {
+      "code": "entry_35_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/solve_bands.py"
+    },
+    {
+      "code": "entry_36_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/solve_batches.py"
+    },
+    {
+      "code": "entry_37_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/solve_components.py"
+    },
+    {
+      "code": "entry_38_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/summarize_validations.py"
+    },
+    {
+      "code": "entry_39_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/verify_official_results.py"
+    },
+    {
+      "code": "entry_40_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/求解/数据审计.json"
+    },
+    {
+      "code": "entry_41_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题一/源码/问题一.py"
+    },
+    {
+      "code": "entry_42_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/中间图表/q3_候选比较.csv"
+    },
+    {
+      "code": "entry_43_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/中间图表/非官方L2参数_全部候选.csv"
+    },
+    {
+      "code": "entry_44_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/中间图表/非官方L2参数_逐配置最优.csv"
+    },
+    {
+      "code": "entry_45_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/代码环境说明.md"
+    },
+    {
+      "code": "entry_46_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/requirements.lock.txt"
+    },
+    {
+      "code": "entry_47_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/requirements.txt"
+    },
+    {
+      "code": "entry_48_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/support_reproduce.py"
+    },
+    {
+      "code": "entry_49_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "entry_50_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "entry_51_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "entry_52_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "entry_53_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "entry_54_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "entry_55_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "entry_56_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "entry_57_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "entry_58_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "entry_59_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "entry_60_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/analyze_official_results.py"
+    },
+    {
+      "code": "entry_61_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "entry_62_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/build_deep_evidence.py"
+    },
+    {
+      "code": "entry_63_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "entry_64_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/cache_sensitivity.py"
+    },
+    {
+      "code": "entry_65_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/collect_official_results.py"
+    },
+    {
+      "code": "entry_66_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/run_official_experiments.py"
+    },
+    {
+      "code": "entry_67_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/solve_bands.py"
+    },
+    {
+      "code": "entry_68_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/solve_batches.py"
+    },
+    {
+      "code": "entry_69_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/solve_components.py"
+    },
+    {
+      "code": "entry_70_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/summarize_validations.py"
+    },
+    {
+      "code": "entry_71_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/verify_official_results.py"
+    },
+    {
+      "code": "entry_72_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/求解/数据审计.json"
+    },
+    {
+      "code": "entry_73_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题三/源码/问题三.py"
+    },
+    {
+      "code": "entry_74_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/中间图表/q2_候选比较.csv"
+    },
+    {
+      "code": "entry_75_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/代码环境说明.md"
+    },
+    {
+      "code": "entry_76_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/requirements.lock.txt"
+    },
+    {
+      "code": "entry_77_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/requirements.txt"
+    },
+    {
+      "code": "entry_78_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/support_reproduce.py"
+    },
+    {
+      "code": "entry_79_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/contest_io.py"
+    },
+    {
+      "code": "entry_80_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/evaluation_validation.py"
+    },
+    {
+      "code": "entry_81_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py"
+    },
+    {
+      "code": "entry_82_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py"
+    },
+    {
+      "code": "entry_83_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py"
+    },
+    {
+      "code": "entry_84_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/schedule_step1.py"
+    },
+    {
+      "code": "entry_85_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/schedule_step2.py"
+    },
+    {
+      "code": "entry_86_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/schedule_step3.py"
+    },
+    {
+      "code": "entry_87_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/singlecore_evaluate.py"
+    },
+    {
+      "code": "entry_88_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py"
+    },
+    {
+      "code": "entry_89_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/analyze_cache_sensitivity.py"
+    },
+    {
+      "code": "entry_90_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/analyze_official_results.py"
+    },
+    {
+      "code": "entry_91_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/build_crosscheck_tables.py"
+    },
+    {
+      "code": "entry_92_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/build_deep_evidence.py"
+    },
+    {
+      "code": "entry_93_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/build_structure_cache_crosscheck.py"
+    },
+    {
+      "code": "entry_94_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/cache_sensitivity.py"
+    },
+    {
+      "code": "entry_95_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/collect_official_results.py"
+    },
+    {
+      "code": "entry_96_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/run_official_experiments.py"
+    },
+    {
+      "code": "entry_97_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/solve_bands.py"
+    },
+    {
+      "code": "entry_98_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/solve_batches.py"
+    },
+    {
+      "code": "entry_99_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/solve_components.py"
+    },
+    {
+      "code": "entry_100_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/summarize_validations.py"
+    },
+    {
+      "code": "entry_101_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/verify_official_results.py"
+    },
+    {
+      "code": "entry_102_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/求解/数据审计.json"
+    },
+    {
+      "code": "entry_103_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料文件/问题二/源码/问题二.py"
+    },
+    {
+      "code": "entry_104_source_and_package_hash",
+      "ok": true,
+      "severity": "PASS",
+      "path": "支撑材料说明.md"
+    },
+    {
+      "code": "internal_record_0_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_1_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_2_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_3_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_4_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_5_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_6_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_7_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_8_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_9_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_10_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_11_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "internal_record_12_source_and_snapshot",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "required_internal_records_complete",
+      "ok": true,
+      "severity": "PASS",
+      "missing": []
+    },
+    {
+      "code": "official_0_packaged_at_declared_destination",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "official_1_packaged_at_declared_destination",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "official_2_packaged_at_declared_destination",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "official_3_packaged_at_declared_destination",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_问题一.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_support_reproduce.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/collect_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/verify_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/summarize_validations.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/run_official_experiments.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/solve_components.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/solve_bands.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/solve_batches.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/cache_sensitivity.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/analyze_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/analyze_cache_sensitivity.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/build_deep_evidence.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/build_crosscheck_tables.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/build_structure_cache_crosscheck.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/contest_io.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/evaluation_validation.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/schedule_step1.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/schedule_step2.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/schedule_step3.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_requirements.txt",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_requirements.lock.txt",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_source_in_package_求解/数据审计.json",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_environment_document",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q1_declared_dependencies",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_问题二.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_support_reproduce.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/collect_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/verify_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/summarize_validations.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/run_official_experiments.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/solve_components.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/solve_bands.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/solve_batches.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/cache_sensitivity.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/analyze_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/analyze_cache_sensitivity.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/build_deep_evidence.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/build_crosscheck_tables.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/build_structure_cache_crosscheck.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/contest_io.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/evaluation_validation.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/schedule_step1.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/schedule_step2.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/schedule_step3.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_requirements.txt",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_requirements.lock.txt",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_source_in_package_求解/数据审计.json",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_environment_document",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q2_declared_dependencies",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_问题三.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_support_reproduce.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/collect_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/verify_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/summarize_validations.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/run_official_experiments.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/solve_components.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/solve_bands.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/solve_batches.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/cache_sensitivity.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/analyze_official_results.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/analyze_cache_sensitivity.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/build_deep_evidence.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/build_crosscheck_tables.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/build_structure_cache_crosscheck.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/contest_io.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/evaluation_validation.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/schedule_step1.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/schedule_step2.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/schedule_step3.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/singlecore_evaluate.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_requirements.txt",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_requirements.lock.txt",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_source_in_package_求解/数据审计.json",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_environment_document",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "q3_declared_dependencies",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "summary_matches_actual_folders",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "readme_covers_summary",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "readme_run_instructions",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "hash_manifest_well_formed",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "hash_manifest_file_set_complete",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "hash_manifest_values_match",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "candidate_runtime_explicit",
+      "ok": true,
+      "severity": "PASS"
+    },
+    {
+      "code": "candidate_coverage_complete",
+      "ok": true,
+      "severity": "PASS",
+      "failures": []
+    },
+    {
+      "code": "candidate_supplement_selection",
+      "ok": true,
+      "severity": "PASS",
+      "errors": []
+    },
+    {
+      "code": "question_comprehensive_diagram_gate",
+      "ok": true,
+      "severity": "PASS",
+      "failures": []
+    },
+    {
+      "code": "counted_scientific_figures_actual_asset_qa",
+      "ok": true,
+      "severity": "PASS",
+      "failures": []
+    }
+  ],
+  "failures": [],
+  "warnings": [],
+  "figure_accounting": {
+    "status": "PASS",
+    "checks": [
+      {
+        "code": "body_chart_family_diversity",
+        "ok": true,
+        "errors": []
+      },
+      {
+        "code": "accounting_object_ids_unique",
+        "ok": true
+      },
+      {
+        "code": "accounting_schema",
+        "ok": true,
+        "errors": []
+      },
+      {
+        "code": "accounting_declared_for_every_object",
+        "ok": true
+      },
+      {
+        "code": "accounting_overview_mapping_unique",
+        "ok": true
+      },
+      {
+        "code": "q1-F01:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F01:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F01:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F01:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F01:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F01:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F02:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F02:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F02:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F02:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F02:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F02:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F03:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F03:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F03:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F03:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F03:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F03:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F04:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F04:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F04:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F04:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F04:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F04:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F05:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F05:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F05:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F05:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F05:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F05:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-F06:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-F06:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F06:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-F06:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-F06:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-F06:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F01:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F01:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F01:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F01:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F01:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F01:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F02:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F02:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F02:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F02:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F02:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F02:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F03:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F03:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F03:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F03:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F03:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F03:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F04:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F04:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F04:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F04:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F04:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F04:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F05:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F05:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F05:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F05:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F05:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F05:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-F06:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-F06:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F06:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-F06:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-F06:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-F06:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F01:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F01:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F01:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F01:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F01:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F01:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F02:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F02:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F02:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F02:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F02:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F02:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F03:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F03:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F03:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F03:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F03:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F03:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F04:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F04:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F04:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F04:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F04:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F04:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F05:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F05:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F05:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F05:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F05:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F05:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-F06:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-F06:per_question_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F06:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-F06:flow_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-F06:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-F06:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:per_question_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "GLOBAL-ROADMAP:paper_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:flow_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:roadmap_is_global_flow",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1-OVERVIEW:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q1-OVERVIEW:per_question_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-OVERVIEW:paper_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q1-OVERVIEW:flow_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q1-OVERVIEW:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q1-OVERVIEW:mapped_overview_is_comprehensive",
+        "ok": true
+      },
+      {
+        "code": "q1-OVERVIEW:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q2-OVERVIEW:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q2-OVERVIEW:per_question_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-OVERVIEW:paper_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q2-OVERVIEW:flow_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q2-OVERVIEW:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q2-OVERVIEW:mapped_overview_is_comprehensive",
+        "ok": true
+      },
+      {
+        "code": "q2-OVERVIEW:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q3-OVERVIEW:purpose_and_owner",
+        "ok": true
+      },
+      {
+        "code": "q3-OVERVIEW:per_question_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-OVERVIEW:paper_total_derived",
+        "ok": true,
+        "expected": false
+      },
+      {
+        "code": "q3-OVERVIEW:flow_total_derived",
+        "ok": true,
+        "expected": true
+      },
+      {
+        "code": "q3-OVERVIEW:scientific_contribution_declared",
+        "ok": true
+      },
+      {
+        "code": "q3-OVERVIEW:mapped_overview_is_comprehensive",
+        "ok": true
+      },
+      {
+        "code": "q3-OVERVIEW:counted_output_qa_pass",
+        "ok": true
+      },
+      {
+        "code": "q1:independent_science_4_to_6",
+        "ok": true,
+        "count": 6
+      },
+      {
+        "code": "q1:one_extra_overview",
+        "ok": true,
+        "ids": [
+          "q1-OVERVIEW"
+        ]
+      },
+      {
+        "code": "q2:independent_science_4_to_6",
+        "ok": true,
+        "count": 6
+      },
+      {
+        "code": "q2:one_extra_overview",
+        "ok": true,
+        "ids": [
+          "q2-OVERVIEW"
+        ]
+      },
+      {
+        "code": "q3:independent_science_4_to_6",
+        "ok": true,
+        "count": 6
+      },
+      {
+        "code": "q3:one_extra_overview",
+        "ok": true,
+        "ids": [
+          "q3-OVERVIEW"
+        ]
+      },
+      {
+        "code": "paper_16_excluding_question_overviews",
+        "ok": true,
+        "count": 19
+      },
+      {
+        "code": "two_figures_with_real_flow_semantics",
+        "ok": true,
+        "count": 4
+      },
+      {
+        "code": "one_global_roadmap",
+        "ok": true
+      },
+      {
+        "code": "independent_contributions_not_repeated",
+        "ok": true
+      },
+      {
+        "code": "q1-F01:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F02:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F03:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F04:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F05:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q1-F06:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F01:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F02:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F03:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F04:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F05:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q2-F06:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F01:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F02:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F03:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F04:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F05:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "q3-F06:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "GLOBAL-ROADMAP:counted_vector_exists",
+        "ok": true
+      },
+      {
+        "code": "independent_vectors_not_duplicates",
+        "ok": true,
+        "duplicates": []
+      }
+    ],
+    "failures": [],
+    "figures": [
+      {
+        "figure_id": "q1-F01",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F01.pdf",
+        "scientific_question": "图规模与最大连通块占比如何联合分布？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：图规模与最大连通块占比如何联合分布？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F02",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F02.pdf",
+        "scientific_question": "核数扩展如何改变加速比的中心与离散范围？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：核数扩展如何改变加速比的中心与离散范围？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F03",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F03.pdf",
+        "scientific_question": "最大连通块占比不同的图有何加速差异？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：最大连通块占比不同的图有何加速差异？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F04",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F04.pdf",
+        "scientific_question": "五核新增DDR搬运与加速之间有何权衡？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：五核新增DDR搬运与加速之间有何权衡？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F05",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F05.pdf",
+        "scientific_question": "何种结构条件下深度分段候选胜出？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：何种结构条件下深度分段候选胜出？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-F06",
+        "problem_id": "q1",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q1-F06.pdf",
+        "scientific_question": "候选评估时间与候选质量怎样权衡？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：候选评估时间与候选质量怎样权衡？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F01",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F01.pdf",
+        "scientific_question": "同方案的场景A/B时长比如何随核数变化？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：同方案的场景A/B时长比如何随核数变化？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F02",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F02.pdf",
+        "scientific_question": "场景B内重新择优的附加收益有多大？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：场景B内重新择优的附加收益有多大？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F03",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F03.pdf",
+        "scientific_question": "新增DDR搬运中的边界COPY与Spill各占多少？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：新增DDR搬运中的边界COPY与Spill各占多少？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F04",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F04.pdf",
+        "scientific_question": "容量压力与五核收益如何共同变化？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：容量压力与五核收益如何共同变化？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F05",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F05.pdf",
+        "scientific_question": "场景切换后的速度与搬运变化是否同向？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：场景切换后的速度与搬运变化是否同向？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-F06",
+        "problem_id": "q2",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q2-F06.pdf",
+        "scientific_question": "场景B从1核至5核的平均加速比如何变化？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：场景B从1核至5核的平均加速比如何变化？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F01",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F01.pdf",
+        "scientific_question": "题定L2配置下同方案Cache收益的经验分布如何？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：题定L2配置下同方案Cache收益的经验分布如何？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F02",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F02.pdf",
+        "scientific_question": "命中字节率与同方案收益如何关联？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：命中字节率与同方案收益如何关联？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F03",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F03.pdf",
+        "scientific_question": "六例非官方容量带宽网格的实测响应面如何？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：六例非官方容量带宽网格的实测响应面如何？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F04",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F04.pdf",
+        "scientific_question": "容量变化如何改变六例的命中字节率？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：容量变化如何改变六例的命中字节率？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F05",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F05.pdf",
+        "scientific_question": "各核数的命中和未命中查询字节如何构成？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：各核数的命中和未命中查询字节如何构成？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-F06",
+        "problem_id": "q3",
+        "body": true,
+        "flow": false,
+        "vector": "求解/正式图件/q3-F06.pdf",
+        "scientific_question": "固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+        "status": "qa_pass",
+        "kind": "scientific",
+        "purpose": "independent_science",
+        "scientific_contribution": "用当前实测数据回答：固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+        "per_question": true,
+        "paper_total": true,
+        "flow_total": false,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "GLOBAL-ROADMAP",
+        "problem_id": null,
+        "body": true,
+        "flow": true,
+        "vector": "求解/总体路线图_论文宽.pdf",
+        "status": "qa_pass",
+        "scientific_question": "题定三场景如何从共同图结构、合法方案及官方评估形成完整研究路线？",
+        "kind": "flowchart",
+        "purpose": "global_roadmap",
+        "scientific_contribution": "以题定图结构和官方评估为基础，准确串联场景A、同核复用场景B与共享只读L2。",
+        "per_question": false,
+        "paper_total": true,
+        "flow_total": true,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q1-OVERVIEW",
+        "problem_id": "q1",
+        "body": true,
+        "flow": true,
+        "vector": "求解/综合图/q1-overview.pdf",
+        "status": "qa_pass",
+        "scientific_question": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+        "kind": "comprehensive",
+        "purpose": "question_overview",
+        "scientific_contribution": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+        "per_question": false,
+        "paper_total": false,
+        "flow_total": true,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q2-OVERVIEW",
+        "problem_id": "q2",
+        "body": true,
+        "flow": true,
+        "vector": "求解/综合图/q2-overview.pdf",
+        "status": "qa_pass",
+        "scientific_question": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+        "kind": "comprehensive",
+        "purpose": "question_overview",
+        "scientific_contribution": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+        "per_question": false,
+        "paper_total": false,
+        "flow_total": true,
+        "assurance_stage": "render"
+      },
+      {
+        "figure_id": "q3-OVERVIEW",
+        "problem_id": "q3",
+        "body": true,
+        "flow": true,
+        "vector": "求解/综合图/q3-overview.pdf",
+        "status": "qa_pass",
+        "scientific_question": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+        "kind": "comprehensive",
+        "purpose": "question_overview",
+        "scientific_contribution": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+        "per_question": false,
+        "paper_total": false,
+        "flow_total": true,
+        "assurance_stage": "render"
+      }
+    ],
+    "questions": [
+      {
+        "problem_id": "q1",
+        "independent_science_count": 6,
+        "independent_science_ids": [
+          "q1-F01",
+          "q1-F02",
+          "q1-F03",
+          "q1-F04",
+          "q1-F05",
+          "q1-F06"
+        ],
+        "overview_count": 1,
+        "overview_ids": [
+          "q1-OVERVIEW"
+        ]
+      },
+      {
+        "problem_id": "q2",
+        "independent_science_count": 6,
+        "independent_science_ids": [
+          "q2-F01",
+          "q2-F02",
+          "q2-F03",
+          "q2-F04",
+          "q2-F05",
+          "q2-F06"
+        ],
+        "overview_count": 1,
+        "overview_ids": [
+          "q2-OVERVIEW"
+        ]
+      },
+      {
+        "problem_id": "q3",
+        "independent_science_count": 6,
+        "independent_science_ids": [
+          "q3-F01",
+          "q3-F02",
+          "q3-F03",
+          "q3-F04",
+          "q3-F05",
+          "q3-F06"
+        ],
+        "overview_count": 1,
+        "overview_ids": [
+          "q3-OVERVIEW"
+        ]
+      }
+    ],
+    "paper_eligible_count": 19,
+    "flow_count": 4,
+    "assurance": "额度与版本检查；不替代独立科学信息、真实来源、实际看图及入文位置门禁。"
+  }
+}

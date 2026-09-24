@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Native media and domain-render evidence",
+  "type": "object",
+  "required": ["schema_version", "runtime", "purpose", "figures", "paper_review_path"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "runtime": {"enum": ["codex", "claude"]},
+    "purpose": {"enum": ["production", "demo"]},
+    "paper_review_path": {"type": "string"},
+    "figures": {"type": "array", "items": {"$ref": "#/$defs/figure"}}
+  },
+  "$defs": {
+    "figure": {
+      "type": "object",
+      "required": ["figure_id", "status", "target_width_mm", "paper_geometry", "output_kind", "scientific_contribution", "count_role", "classification_review", "run_record_path", "qa_path", "panels"],
+      "additionalProperties": false,
+      "properties": {
+        "figure_id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["planned", "rendered", "qa_pass", "incomplete"]},
+        "target_width_mm": {"type": "number", "minimum": 0},
+        "paper_geometry": {"type": "object", "required": ["source_tex", "source_sha256", "basis"]},
+        "output_kind": {"enum": ["raster", "mixed", "vector"]},
+        "scientific_contribution": {"type": "string"},
+        "count_role": {"enum": ["unreviewed", "independent_science", "illustration"]},
+        "classification_review": {"$ref": "#/$defs/review"},
+        "run_record_path": {"type": "string"},
+        "qa_path": {"type": "string"},
+        "panels": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/panel"}}
+      }
+    },
+    "review": {
+      "type": "object", "required": ["reviewed", "observation", "tool_ref"],
+      "properties": {"reviewed": {"type": "boolean"}, "observation": {"type": "string"}, "tool_ref": {"type": "string"}}
+    },
+    "panel": {
+      "type": "object",
+      "required": ["panel_id", "rendering_route", "content_kind", "sources", "dependencies", "parameters", "interpretation", "encoding", "geographic", "map_review", "structure_reference"],
+      "additionalProperties": false,
+      "properties": {
+        "panel_id": {"type": "string"},
+        "rendering_route": {"enum": ["native_media", "domain_render", "structure"]},
+        "content_kind": {"type": "string"},
+        "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+        "dependencies": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "parameters": {"type": "object"},
+        "interpretation": {"type": "string"},
+        "encoding": {"type": "object", "required": ["kind", "description"]},
+        "geographic": {"type": ["boolean", "null"]},
+        "map_review": {"type": ["object", "null"]},
+        "structure_reference": {"type": ["object", "null"]}
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["path", "sha256", "role", "origin", "permission", "inventory_path", "metadata_reviewed", "metadata_observation"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "role": {"enum": ["observation", "reference", "derived"]},
+        "origin": {"type": "string"},
+        "permission": {"type": "string"},
+        "inventory_path": {"type": "string"},
+        "metadata_reviewed": {"type": "boolean"},
+        "metadata_observation": {"type": "string"}
+      }
+    }
+  }
+}

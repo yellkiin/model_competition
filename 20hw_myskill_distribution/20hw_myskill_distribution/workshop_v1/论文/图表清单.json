@@ -1,0 +1,662 @@
+{
+  "schema_version": "1.0",
+  "plan_content_sha256": "47f9c465a68c61f3259a8d384e387dd7d7820927d26547d031dfdaed7cce602e",
+  "diagrams_content_sha256": "8ddc5716c293b637efb0601247a0c3fbba5a31869bd2478ca12988c7b599f799",
+  "figures": [
+    {
+      "figure_id": "q1-F01",
+      "problem_id": "q1",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：图规模与最大连通块占比如何联合分布？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q1-F01.pdf",
+      "vector_sha256": "35ffb4c771c85d619344649aaaaf94d9bbc01bba5d7da0cf9fc044b160571099",
+      "label": "fig:q1-f01",
+      "caption": "输入结构分布"
+    },
+    {
+      "figure_id": "q1-F02",
+      "problem_id": "q1",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：核数扩展如何改变加速比的中心与离散范围？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q1-F02.pdf",
+      "vector_sha256": "cde60ab52066e6525bf36a0d0540018cdde9ac69d26f38067a00e1d0402d9899",
+      "label": "fig:q1-f02",
+      "caption": "问题一1至5核平均加速比与案例分位范围"
+    },
+    {
+      "figure_id": "q1-F03",
+      "problem_id": "q1",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：最大连通块占比不同的图有何加速差异？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q1-F03.pdf",
+      "vector_sha256": "52d2e35540b8cb5657ceff01b77dc56da115de5ace7129799fd3e00490bf957d",
+      "label": "fig:q1-f03",
+      "caption": "结构分组加速差异"
+    },
+    {
+      "figure_id": "q1-F04",
+      "problem_id": "q1",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：五核新增DDR搬运与加速之间有何权衡？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q1-F04.pdf",
+      "vector_sha256": "b3d23d775b5bd57a644f028c01aff1d64c20a1e90bfb7549cd7c386e8347b6b8",
+      "label": "fig:q1-f04",
+      "caption": "加速与新增搬运"
+    },
+    {
+      "figure_id": "q1-F05",
+      "problem_id": "q1",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：何种结构条件下深度分段候选胜出？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q1-F05.pdf",
+      "vector_sha256": "2045efea4196e40236b850075a1e219f70ca00d963b2514ee5c5178829b693be",
+      "label": "fig:q1-f05",
+      "caption": "结构分箱候选胜率"
+    },
+    {
+      "figure_id": "q1-F06",
+      "problem_id": "q1",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：候选评估时间与候选质量怎样权衡？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q1-F06.pdf",
+      "vector_sha256": "7ac0a2739a9611a98aa1a3b57487099b8c59c4a419410011c64559b6c58990f7",
+      "label": "fig:q1-f06",
+      "caption": "候选质量与评估成本"
+    },
+    {
+      "figure_id": "q2-F01",
+      "problem_id": "q2",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：同方案的场景A/B时长比如何随核数变化？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q2-F01.pdf",
+      "vector_sha256": "bc94adbc4a2d843130735bcfed3abf02086fdf99429709ee914d808174572d81",
+      "label": "fig:q2-f01",
+      "caption": "同方案场景收益"
+    },
+    {
+      "figure_id": "q2-F02",
+      "problem_id": "q2",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：场景B内重新择优的附加收益有多大？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q2-F02.pdf",
+      "vector_sha256": "c009e4788de2a588578658a7c840364bd400e1ad527387badf66f7dd74f89ce7",
+      "label": "fig:q2-f02",
+      "caption": "场景B策略增益"
+    },
+    {
+      "figure_id": "q2-F03",
+      "problem_id": "q2",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：新增DDR搬运中的边界COPY与Spill各占多少？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q2-F03.pdf",
+      "vector_sha256": "23079631d210adac5858bb18032915b8b9225f1819b973a086d57efcf636b336",
+      "label": "fig:q2-f03",
+      "caption": "新增搬运来源"
+    },
+    {
+      "figure_id": "q2-F04",
+      "problem_id": "q2",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：容量压力与五核收益如何共同变化？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q2-F04.pdf",
+      "vector_sha256": "6eaffa33a8ead55813864b73c8ea10d5f78628ff313cddf18c99b103a0cea1d5",
+      "label": "fig:q2-f04",
+      "caption": "容量压力与加速"
+    },
+    {
+      "figure_id": "q2-F05",
+      "problem_id": "q2",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：场景切换后的速度与搬运变化是否同向？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q2-F05.pdf",
+      "vector_sha256": "d5a3d8853a74330deea20c38f1b95ab6323112001dbe3485bcd146014f2a18d6",
+      "label": "fig:q2-f05",
+      "caption": "速度搬运象限"
+    },
+    {
+      "figure_id": "q2-F06",
+      "problem_id": "q2",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：场景B从1核至5核的平均加速比如何变化？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q2-F06.pdf",
+      "vector_sha256": "868f1ab308ae860a6ad52d3600a000106e1f96fc6b1e923bdf2eac6e3d85c394",
+      "label": "fig:q2-f06",
+      "caption": "问题二1至5核平均加速比"
+    },
+    {
+      "figure_id": "q3-F01",
+      "problem_id": "q3",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：题定L2配置下同方案Cache收益的经验分布如何？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q3-F01.pdf",
+      "vector_sha256": "471788603de20e8e441c26a1f08b07fafd29b17aca3839f3bb8163befed369e0",
+      "label": "fig:q3-f01",
+      "caption": "Cache收益经验分布"
+    },
+    {
+      "figure_id": "q3-F02",
+      "problem_id": "q3",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：命中字节率与同方案收益如何关联？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q3-F02.pdf",
+      "vector_sha256": "ede1580a1eb4eb1dbbb69c763a983efa709571d22056705dda0a719945957d8b",
+      "label": "fig:q3-f02",
+      "caption": "命中率与收益"
+    },
+    {
+      "figure_id": "q3-F03",
+      "problem_id": "q3",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：六例非官方容量带宽网格的实测响应面如何？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q3-F03.pdf",
+      "vector_sha256": "a72dc9ecf52eac7693f8820aa92175afd07cb4531c85d7e9fd4725e9c7280d76",
+      "label": "fig:q3-f03",
+      "caption": "容量带宽响应面"
+    },
+    {
+      "figure_id": "q3-F04",
+      "problem_id": "q3",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：容量变化如何改变六例的命中字节率？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q3-F04.pdf",
+      "vector_sha256": "0ad6d72cb2d5d7254d99ed2e98f3b988cea448c0cdda98d3ec286077b05cca7b",
+      "label": "fig:q3-f04",
+      "caption": "容量命中响应"
+    },
+    {
+      "figure_id": "q3-F05",
+      "problem_id": "q3",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：各核数的命中和未命中查询字节如何构成？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q3-F05.pdf",
+      "vector_sha256": "51c3747ad36d415297932a0dad0a9b1364fb4f8034f1b66afe0f2a0142414440",
+      "label": "fig:q3-f05",
+      "caption": "核数与查询字节"
+    },
+    {
+      "figure_id": "q3-F06",
+      "problem_id": "q3",
+      "purpose": "independent_science",
+      "scientific_contribution": "用当前实测数据回答：固定同一方案时，无L2与有L2的1至5核平均加速比曲线如何比较？",
+      "per_question": true,
+      "paper_total": true,
+      "flow_total": false,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/正式图件/q3-F06.pdf",
+      "vector_sha256": "62d763b166aa4eedaf69ec74e77ff46ac4f3944fe2033c7c631945e247a27e97",
+      "label": "fig:q3-f06",
+      "caption": "同方案无L2与有L2的核数比较"
+    },
+    {
+      "figure_id": "GLOBAL-ROADMAP",
+      "problem_id": null,
+      "purpose": "global_roadmap",
+      "scientific_contribution": "以题定图结构和官方评估为基础，准确串联场景A、同核复用场景B与共享只读L2。",
+      "per_question": false,
+      "paper_total": true,
+      "flow_total": true,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/总体路线图_论文宽.pdf",
+      "vector_sha256": "9f502c19871b2ef24503084881d395b28d86225c63f615e19f289759fd160f3f",
+      "label": "fig:roadmap",
+      "caption": "多核调度研究路线"
+    },
+    {
+      "figure_id": "q1-OVERVIEW",
+      "problem_id": "q1",
+      "purpose": "question_overview",
+      "scientific_contribution": "切图、依赖序列和官方场景A响应如何构成可核验的调度？",
+      "per_question": false,
+      "paper_total": false,
+      "flow_total": true,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/综合图/q1-overview.pdf",
+      "vector_sha256": "8b37754b10fabe41dbaf86541a24c1c768bae6a83fa623d5dfff884e7aeeae28",
+      "label": "fig:q1-overview",
+      "caption": "问题一求解与核验总览"
+    },
+    {
+      "figure_id": "q2-OVERVIEW",
+      "problem_id": "q2",
+      "purpose": "question_overview",
+      "scientific_contribution": "同核合并、跨核边界与存储压力怎样共同决定场景B时长？",
+      "per_question": false,
+      "paper_total": false,
+      "flow_total": true,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/综合图/q2-overview.pdf",
+      "vector_sha256": "c102ea8b30e4c506dfd5a160748a7971b6d36a911cfe077da6c814aad69630db",
+      "label": "fig:q2-overview",
+      "caption": "问题二求解与核验总览"
+    },
+    {
+      "figure_id": "q3-OVERVIEW",
+      "problem_id": "q3",
+      "purpose": "question_overview",
+      "scientific_contribution": "共享只读L2的双读池与FIFO机制怎样影响同方案收益？",
+      "per_question": false,
+      "paper_total": false,
+      "flow_total": true,
+      "status": "qa_pass",
+      "body": true,
+      "vector": "求解/综合图/q3-overview.pdf",
+      "vector_sha256": "e993b3751f731da6c998fb6b3424c168ddc00a8821ca82bb3c2954adec9d14be",
+      "label": "fig:q3-overview",
+      "caption": "问题三求解与核验总览"
+    }
+  ],
+  "questions": [
+    {
+      "problem_id": "q1",
+      "independent_science_count": 6,
+      "independent_science_ids": [
+        "q1-F01",
+        "q1-F02",
+        "q1-F03",
+        "q1-F04",
+        "q1-F05",
+        "q1-F06"
+      ],
+      "overview_count": 1,
+      "overview_ids": [
+        "q1-OVERVIEW"
+      ]
+    },
+    {
+      "problem_id": "q2",
+      "independent_science_count": 6,
+      "independent_science_ids": [
+        "q2-F01",
+        "q2-F02",
+        "q2-F03",
+        "q2-F04",
+        "q2-F05",
+        "q2-F06"
+      ],
+      "overview_count": 1,
+      "overview_ids": [
+        "q2-OVERVIEW"
+      ]
+    },
+    {
+      "problem_id": "q3",
+      "independent_science_count": 6,
+      "independent_science_ids": [
+        "q3-F01",
+        "q3-F02",
+        "q3-F03",
+        "q3-F04",
+        "q3-F05",
+        "q3-F06"
+      ],
+      "overview_count": 1,
+      "overview_ids": [
+        "q3-OVERVIEW"
+      ]
+    }
+  ],
+  "paper_eligible_count": 19,
+  "flow_count": 4,
+  "assurance": "额度来自计划和归属；不证明科学价值、来源、实际看图或正文验收通过。",
+  "paper": {
+    "review_path": "论文/验收输出/图形入文.v4.review.json",
+    "review_sha256": "a376a4dc11b75ad59230d7485aba518e1bd08aa3df815c3564c21d68171a951c",
+    "pdf_path": "论文/论文.pdf",
+    "pdf_sha256": "488f77be7cf2a8299396446877782c40d41280ede7247d3562b73f7322543dfc",
+    "occurrences": {
+      "q1-F01": [
+        {
+          "page_number": 12,
+          "pdf_bbox": [
+            70.87000274658203,
+            358.92610929351844,
+            524.413295399135,
+            616.8900146484375
+          ],
+          "probe_id": 3
+        }
+      ],
+      "q1-F02": [
+        {
+          "page_number": 13,
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86469972770564,
+            524.413295399135,
+            311.82000732421875
+          ],
+          "probe_id": 4
+        }
+      ],
+      "q1-F03": [
+        {
+          "page_number": 13,
+          "pdf_bbox": [
+            70.87000274658203,
+            348.13518286649673,
+            524.413295399135,
+            594.760009765625
+          ],
+          "probe_id": 5
+        }
+      ],
+      "q1-F04": [
+        {
+          "page_number": 14,
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86611173492469,
+            524.413295399135,
+            328.83001708984375
+          ],
+          "probe_id": 6
+        }
+      ],
+      "q1-F05": [
+        {
+          "page_number": 14,
+          "pdf_bbox": [
+            70.87000274658203,
+            365.14422430716354,
+            524.413295399135,
+            600.4299926757812
+          ],
+          "probe_id": 7
+        }
+      ],
+      "q1-F06": [
+        {
+          "page_number": 15,
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86611173492469,
+            524.413295399135,
+            328.83001708984375
+          ],
+          "probe_id": 8
+        }
+      ],
+      "q2-F01": [
+        {
+          "page_number": 21,
+          "pdf_bbox": [
+            70.87000274658203,
+            377.60515356962173,
+            524.413295399135,
+            624.22998046875
+          ],
+          "probe_id": 11
+        }
+      ],
+      "q2-F02": [
+        {
+          "page_number": 22,
+          "pdf_bbox": [
+            70.87000274658203,
+            70.8694522518096,
+            524.413295399135,
+            308.989990234375
+          ],
+          "probe_id": 12
+        }
+      ],
+      "q2-F03": [
+        {
+          "page_number": 22,
+          "pdf_bbox": [
+            70.87000274658203,
+            394.81426825247604,
+            524.413295399135,
+            630.1000366210938
+          ],
+          "probe_id": 13
+        }
+      ],
+      "q2-F04": [
+        {
+          "page_number": 23,
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86611173492469,
+            524.413295399135,
+            328.83001708984375
+          ],
+          "probe_id": 14
+        }
+      ],
+      "q2-F05": [
+        {
+          "page_number": 23,
+          "pdf_bbox": [
+            70.87000274658203,
+            365.14607999664344,
+            524.413295399135,
+            623.1099853515625
+          ],
+          "probe_id": 15
+        }
+      ],
+      "q2-F06": [
+        {
+          "page_number": 21,
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86425604544476,
+            524.413295399135,
+            306.1500244140625
+          ],
+          "probe_id": 10
+        }
+      ],
+      "q3-F01": [
+        {
+          "page_number": 30,
+          "pdf_bbox": [
+            70.87000274658203,
+            440.9660873208622,
+            524.413295399135,
+            698.9299926757812
+          ],
+          "probe_id": 18
+        }
+      ],
+      "q3-F02": [
+        {
+          "page_number": 31,
+          "pdf_bbox": [
+            70.87000274658203,
+            153.1261215005497,
+            524.413295399135,
+            411.09002685546875
+          ],
+          "probe_id": 19
+        }
+      ],
+      "q3-F03": [
+        {
+          "page_number": 35,
+          "pdf_bbox": [
+            70.87000274658203,
+            319.8561019692997,
+            524.413295399135,
+            577.8200073242188
+          ],
+          "probe_id": 21
+        }
+      ],
+      "q3-F04": [
+        {
+          "page_number": 36,
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86611173492469,
+            524.413295399135,
+            328.83001708984375
+          ],
+          "probe_id": 22
+        }
+      ],
+      "q3-F05": [
+        {
+          "page_number": 32,
+          "pdf_bbox": [
+            70.87000274658203,
+            151.7790221942982,
+            524.413295399135,
+            384.2300109863281
+          ],
+          "probe_id": 20
+        }
+      ],
+      "q3-F06": [
+        {
+          "page_number": 30,
+          "pdf_bbox": [
+            70.87000274658203,
+            70.86516333524673,
+            524.413295399135,
+            317.489990234375
+          ],
+          "probe_id": 17
+        }
+      ],
+      "GLOBAL-ROADMAP": [
+        {
+          "page_number": 7,
+          "pdf_bbox": [
+            70.87000274658203,
+            109.821586304167,
+            524.413295399135,
+            707.7000122070312
+          ],
+          "probe_id": 1
+        }
+      ],
+      "q1-OVERVIEW": [
+        {
+          "page_number": 10,
+          "pdf_bbox": [
+            70.87000274658203,
+            221.0811105388484,
+            524.413295399135,
+            657.6400146484375
+          ],
+          "probe_id": 2
+        }
+      ],
+      "q2-OVERVIEW": [
+        {
+          "page_number": 19,
+          "pdf_bbox": [
+            70.87000274658203,
+            203.1011300700984,
+            524.413295399135,
+            639.6600341796875
+          ],
+          "probe_id": 9
+        }
+      ],
+      "q3-OVERVIEW": [
+        {
+          "page_number": 28,
+          "pdf_bbox": [
+            70.87000274658203,
+            222.37108856619216,
+            524.413295399135,
+            658.9299926757812
+          ],
+          "probe_id": 16
+        }
+      ]
+    }
+  }
+}

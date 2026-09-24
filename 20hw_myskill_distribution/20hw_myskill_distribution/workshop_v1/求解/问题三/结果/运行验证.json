@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "question_id": "q3",
+  "run_utc": "2026-09-23T09:45:23.339406+00:00",
+  "work_directory": "求解/支撑预演/20260923_1730/支撑材料文件/问题三/源码",
+  "commands": [
+    "python 问题三.py solve",
+    "python 问题三.py validate"
+  ],
+  "observed_exit_codes": [
+    0,
+    0
+  ],
+  "logs": [
+    {
+      "path": "求解/支撑预演/20260923_1730/q3_solve.log",
+      "sha256": "3e7270f0912ffd786e2012419a426167d9f2a6d47d592ac38121aa44a50840fa"
+    },
+    {
+      "path": "求解/支撑预演/20260923_1730/q3_validate.log",
+      "sha256": "ed103e1b7e76d122bcb5d1fc205b3d14a6aff0382c3d5f336f398925dd6ce65b"
+    }
+  ],
+  "comparisons": {
+    "总体摘要.json": {
+      "equal": true,
+      "observed_sha256": "c544db7733aa7eca6405f1e89362c9202993424e71cb867405214821146a736a",
+      "expected_sha256": "c544db7733aa7eca6405f1e89362c9202993424e71cb867405214821146a736a"
+    },
+    "逐问核验摘要.json": {
+      "equal": true,
+      "observed_sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a",
+      "expected_sha256": "fe445961a5af8ee31f17af27b9959c49d14e9af3cf75db904c292b41e10a304a"
+    }
+  },
+  "candidate_receipts_checked": 2005,
+  "selected_timelines_rechecked": 1500,
+  "scope": "原始官方评估响应全量重放与独立核验；没有在本次预演重跑全部官方事件模拟。"
+}

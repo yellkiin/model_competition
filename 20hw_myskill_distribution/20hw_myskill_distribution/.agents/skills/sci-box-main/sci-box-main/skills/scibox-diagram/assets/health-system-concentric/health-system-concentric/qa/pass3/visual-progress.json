@@ -1,0 +1,44 @@
+{
+  "status": "FURTHER_FIDELITY_REPAIR_REQUIRED",
+  "template_id": "health-system-concentric",
+  "publication_status": "not_published",
+  "observations": "defect-log.md",
+  "actual_viewed_outputs": [
+    "example.png",
+    "example.pdf",
+    "qa/pdf-render.png",
+    "qa/grayscale.png",
+    "qa/difference-mask.png",
+    "qa/replacement.png",
+    "qa/capacity-boundary.png",
+    "qa/a4-fit.png",
+    "qa/a3-fit.png",
+    "qa/a2-fit.png",
+    "qa/scroll-size.png"
+  ],
+  "hashes": {
+    "example.png": "c9e290a075b813feae79bcb33dcd1b30496aadf5234cd1f91cce2b82efd5f9c8",
+    "example.pdf": "61ce2439aa9cb7e9aaedffd48eb63f5d52a2a4a245d9d72930c55fd7a3567eee",
+    "qa/pdf-render.png": "5a9f25793b9261a49abc7f515e6927699e03acefec883f60ad454d0813495e04",
+    "qa/grayscale.png": "52c4e61b6edf7710c1ac882c4382802edcee781d12a505d213b4e68c260f90f8",
+    "qa/difference-mask.png": "6adceea51e6c3fe7e392ca674c9d727b04d875eb32124a6a6566e6099fb04442",
+    "qa/replacement.png": "e00f9b5451aa2bae1609aaecaa57efe1ab5cb6d5ae4e77652826462d39fd4a88",
+    "qa/capacity-boundary.png": "02b98298986faae282a85097b3f93f48ec653042f093812eb75a9564b9caace4",
+    "qa/a4-fit.png": "dc7fc011911de47cd173523ae18f2f52afd54ed7efd2a9e80051f71004b77648",
+    "qa/a3-fit.png": "575b0c8e9769ae94f46fb486ad168a224f9adb48d4e5740a8e9ad419ee8402f2",
+    "qa/a2-fit.png": "5b6140106a5c358a3ebd5ff0c531c42977835f57f4e6b53bf380db3f30d2242d",
+    "qa/scroll-size.png": "c3dc28e46e876edbfb8b5fff079b8f535dcba01d654a786dd51d808d282bf5d5",
+    "example.json": "895e503f1b078d0fc9d5313bc76b2d99252525c35e2fc7c500530342e27ddcdf",
+    "layout.json": "a7876d82cd06d9fe18bc64ab8b7627e247d367264b94e9346923a60fa3197d87",
+    "example.drawio": "2c0230a8d0653e335fbb4881253d7d03257657d68d6f77d76fd0d743c9a47a4d",
+    "defect-log.md": "6e4d41c2681bbdcb4a285641147a039d325a581595961581ebd4f62e9049aacc",
+    "qa/configuration-tests.json": "2c4f5da0159cd682fa187eb62138b682a815d0d135386bf5cfa49b1de87d08fd",
+    "qa/view-measurements.json": "f6c8822e1142ea84c45fb283f73b86585dd484456d4b944c29f79584a2824a4f"
+  },
+  "unresolved": [
+    "teaching three-lobe geometry",
+    "exact small-text transcription or explicit demonstration replacements",
+    "complete environmental paired paths and direction"
+  ],
+  "scope": "Third actual visual iteration; no final visual acceptance"
+}

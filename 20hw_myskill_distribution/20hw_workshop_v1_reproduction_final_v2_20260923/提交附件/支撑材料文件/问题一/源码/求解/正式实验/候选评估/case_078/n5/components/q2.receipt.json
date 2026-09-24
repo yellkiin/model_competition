@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "case": "case_078",
+  "num_cores": 5,
+  "candidate": "components",
+  "problem": 2,
+  "makespan": 663941,
+  "data_movement_bytes": {
+    "original_graph_copy_bytes": 2345088,
+    "scheduled_copy_bytes": 15965112,
+    "added_copy_bytes": 13620024,
+    "partition_added_copy_bytes": 8593920,
+    "spill_added_copy_bytes": 5026104
+  },
+  "cache_stats": {},
+  "elapsed_seconds": 0.095,
+  "result_path": "求解/正式实验/候选评估/case_078/n5/components/q2.json.gz",
+  "result_sha256": "249f15f661d551d45dfc66b5c0fe5ed9a542c5ebe71f6e86a963a8678d54f309",
+  "fingerprint": {
+    "graph_sha256": "d30ea13a65ed4d85fd62753d3e300a04c17fdbe592b6ca19c52a3a744e4affdd",
+    "plan_sha256": "4d47151375ce6663adfd00dfa539cad0aa72c797ee52b977794e1eb202ab1978",
+    "source_sha256": {
+      "数据/原始/A题官方附件/code/contest_io.py": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e",
+      "数据/原始/A题官方附件/code/evaluation_validation.py": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64",
+      "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_1.py": "2095f188a6c24ce3899f156bef21d50dcd87cbd9368488046b1e77e2bf91af3f",
+      "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_2.py": "0b39f84d5ec0a7fba9a4c92a598a9044b97ab79c71393824c1ba130ecfe6c464",
+      "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0",
+      "数据/原始/A题官方附件/code/schedule_step1.py": "d8fe721ff3dbe036e34a20c00cce6430960860000a49eb467e63465f76b84034",
+      "数据/原始/A题官方附件/code/schedule_step2.py": "2836baac176f4e0bdd9eec59b8d9ce254e209e5f7a251e23837ab684312fa0c3",
+      "数据/原始/A题官方附件/code/schedule_step3.py": "50053db0436f1d166dd75436693ba3af49b5c339576beb6e7299477f6b69fc7a",
+      "数据/原始/A题官方附件/code/singlecore_evaluate.py": "446b753ee134ef1fec8e052356bb077a2602fbe95572ccd3dddd7928e894b77a",
+      "数据/原始/A题官方附件/code/stub_multicore_cut_and_schedule.py": "0a3a3b79b5173b466fc05fc8d33b72d11d90b4df78995435853d91c632a35892",
+      "数据/原始/A题官方附件/data/config.txt": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+      "求解/run_official_experiments.py": "93204bcd97f3e7ffc45409db483151be69eb88e4c961115b7c75d00a19eaecb3",
+      "求解/solve_components.py": "488a098ca2048ccbc0bf2db7605caa699998d8b11eb392c252674f470524b2b4",
+      "求解/solve_bands.py": "4d69dc5842f57e1c9f27142a513bdf0d013a11db0cf31ce033734ff1e5ca33d5",
+      "求解/solve_batches.py": "57c221abf423ff8f73e2ceb83afa4d9c5b99d2dc3eec8079e87f519fb6a33948"
+    }
+  }
+}
