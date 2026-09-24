@@ -1,0 +1,8 @@
+Start-Process : 无法运行此命令，因为参数“WorkingDirectory”具有无效的值或不适用于此命令。请指定一个有效输入，然后再次
+运行此命令。
+所在位置 D:\桌面\model_competition\research_a_orion_anytime\continuation_20260924\run_continuation.ps1:16 字符: 8
++ $Child=Start-Process -FilePath $Python -ArgumentList $Quoted -Working ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Process]，DirectoryNotFoundException
+    + FullyQualifiedErrorId : DirectoryNotFoundException,Microsoft.PowerShell.Commands.StartProcessCommand
+ 

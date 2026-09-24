@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "format": "ordered byte chunks of one standard TRANSFER.json + run/ ZIP",
+  "archive_name": "team_day01_shard0_final.zip",
+  "archive_bytes": 498612048,
+  "archive_entries": 16844,
+  "parts": [
+    {
+      "name": "team_day01_shard0_final.zip.part001",
+      "bytes": 94371840
+    },
+    {
+      "name": "team_day01_shard0_final.zip.part002",
+      "bytes": 94371840
+    },
+    {
+      "name": "team_day01_shard0_final.zip.part003",
+      "bytes": 94371840
+    },
+    {
+      "name": "team_day01_shard0_final.zip.part004",
+      "bytes": 94371840
+    },
+    {
+      "name": "team_day01_shard0_final.zip.part005",
+      "bytes": 94371840
+    },
+    {
+      "name": "team_day01_shard0_final.zip.part006",
+      "bytes": 26752848
+    }
+  ],
+  "reconstruction": "Run python reassemble_transfer.py in this folder; then use the original transfer unpack into a new empty root.",
+  "note": "All result entries, including failed jobs, are retained. Only byte counts and ZIP directory structure were checked; no additional experiment or signature test."
+}

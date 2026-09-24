@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "shard_0": {
+    "commit": "a6ff10eb501200b390934c688b2f95223fe8c634",
+    "manifest": "../shard_0/final/TRANSFER_PARTS.json",
+    "zip_bytes": 498612048
+  },
+  "shard_1": {
+    "commit": "8c4f60ee33fdc3cbf92b894517f75b9670ec08df",
+    "manifest": "../shard_1/final/ARCHIVE_PARTS.json",
+    "zip_bytes": 624575904
+  },
+  "collection": "COLLECTION_STATUS.json",
+  "formal_complete": true
+}

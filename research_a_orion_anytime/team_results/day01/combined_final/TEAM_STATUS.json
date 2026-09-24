@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "iteration_id": "day01",
+  "stage": "combined_final",
+  "graphs": 100,
+  "expected_main": 1400,
+  "valid_main": 1400,
+  "expected_pairs": 500,
+  "valid_pairs": 500,
+  "independent_checks": 1400,
+  "formal_complete": true,
+  "failures_or_missing": [],
+  "refinement_completed": 1248,
+  "refinement_valid": 1247,
+  "refinement_failed": 1,
+  "historical_failure_count": 5,
+  "hard_timeout_valid": 1085,
+  "hard_timeout_without_valid": 4,
+  "mixed_execution": true,
+  "policies": [
+    {
+      "shard": 0,
+      "workers": 4,
+      "original_workers": 1,
+      "refinement_policy": {
+        "uniform_base_seconds": 27,
+        "max_requested": 30,
+        "large_multiplier": 2,
+        "priority": "descending certified ratio upper",
+        "jobs": 620
+      },
+      "python": "3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]",
+      "deadline_epoch": 1790268157.137837
+    },
+    {
+      "shard": 1,
+      "workers": 2,
+      "original_workers": 2,
+      "refinement_policy": {
+        "uniform_base_seconds": 30,
+        "max_requested": 30,
+        "large_multiplier": 2,
+        "priority": "descending certified ratio upper",
+        "jobs": 628
+      },
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "deadline_epoch": 1790268157.446933
+    }
+  ],
+  "reported_at_utc": "2026-09-24T12:36:07.497705+00:00"
+}
