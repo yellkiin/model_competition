@@ -5,7 +5,7 @@ on:
 jobs:
   gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 24
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,32 +18,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Re-evaluate formal 044 Q2 n3 plan as n5 with empty cores
+      - name: Cold paired old/new 30-second gate
         shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import json,zipfile
-          from pathlib import Path
-          from research_a_orion_anytime.engine import OfficialSession
-          from research_a_orion_track_structure.plugin import pad_plan
-          from research_a_orion_track_structure.analyze import timeline
-          root=Path('.')
-          official=root/'题目/A题/通用神经网络处理器下的多核调度问题  附件'
-          data=official/'data'
-          cfg=data/'config.txt'
-          if not cfg.exists(): cfg=official/'config.txt'
-          with zipfile.ZipFile(root/'research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip') as z:
-              p3=json.loads(z.read('plans/q2/n3/case_044_multicore_res.json'))
-              p5=json.loads(z.read('plans/q2/n5/case_044_multicore_res.json'))
-          s=OfficialSession(official,data/'case_044.json',cfg)
-          rows=[]
-          for kind,p in [('formal_n3',p3),('formal_n5',p5),('padded_n3_to_n5',pad_plan(p3,5))]:
-              r=s.evaluate(p,2)
-              d=timeline(s.graph,p,r)
-              rows.append(dict(kind=kind,makespan=r['official_result']['makespan'],
-                added_copy_bytes=r['official_result']['data_movement_bytes']['added_copy_bytes'],
-                effective_cores=d['effective_cores'],core_compute_ops=[x['compute_ops'] for x in d['cores']],
-                core_pipe_work=[x['pipe_work'] for x in d['cores']],audit_ok=r['audit']['ok']))
-          print('RESULT044 '+json.dumps(rows,separators=(',',':')))
-          PY
+          python -m research_a_orion_track_structure.run             --cases 016,024,044,048,059             --questions 1,2,3 --cores 2,5             --seconds 30 --wall-seconds 1250             --max-evaluations 8 --workers 2             --out gate_outputs/cold30
+          echo PER_CASE_BEGIN
+          cat gate_outputs/cold30/per_case.csv
+          echo PER_CASE_END
+          echo TRAJECTORY_BEGIN
+          cat gate_outputs/cold30/trajectory.csv
+          echo TRAJECTORY_END
+          cat gate_outputs/cold30/run_summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-structure-cold30
+          path: gate_outputs/cold30/
