@@ -8,6 +8,16 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            research_a_orion_anytime
+            research_a_orion_track_structure
+            research_a_orion_review_3pc
+            调研/A题_文献库
+            调研/A题_文献.json
+            题目/A题
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -27,8 +37,8 @@ jobs:
                   names=f.namelist()
                   print('archive_entries',len(names))
                   for n in names:
-                      if re.search(r'044',n) and re.search(r'(q|question)[_=-]?2',n,re.I):
-                          print('MATCH044Q2',n)
+                      if re.search(r'044',n):
+                          print('MATCH044',n)
                   print('sample',*names[:25],sep='\n')
           base=root/'题目/A题'
           docs=list(base.glob('*.docx'))
@@ -39,8 +49,7 @@ jobs:
                       xml=f.read('word/document.xml').decode('utf-8','ignore')
                   txt=re.sub(r'<[^>]+>',' ',xml)
                   txt=re.sub(r'\s+',' ',txt)
-                  if '核' in txt or 'Task' in txt:
-                      print('DOC_TEXT',p,txt[:12000])
+                  print('DOC_TEXT',p,txt[:16000])
               except Exception as e:
                   print('DOC_ERR',p,e)
           PY
