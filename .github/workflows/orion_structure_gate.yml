@@ -48,8 +48,13 @@ jobs:
                           if not meta:
                               continue
                           parent=name.rsplit('/',1)[0]
-                          rel=meta['plan_file'].replace('\\','/').split('/incumbents/')[-1]
-                          plan_name=parent+'/incumbents/'+rel
+                          pf=meta['plan_file'].replace('\\','/')
+                          if pf.startswith('incumbents/'):
+                              plan_name=parent+'/'+pf
+                          elif '/incumbents/' in pf:
+                              plan_name=parent+'/incumbents/'+pf.split('/incumbents/',1)[1]
+                          else:
+                              raise RuntimeError('unexpected plan_file '+pf)
                           plan=json.loads(z.read(plan_name))
                           out.write_text(json.dumps(plan,separators=(',',':')),encoding='utf8')
                           Path('/tmp/seed_index.json').write_text(json.dumps([{
