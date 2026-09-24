@@ -183,7 +183,8 @@ def formal(a,official,config,out,deadline,gate):
     atomic_json(out/'refinement_policy.json',dict(uniform_base_seconds=uniform,max_requested=a.refine_seconds,
                                                 large_multiplier=2,priority='descending certified ratio upper',jobs=len(refine_jobs)))
     for r in batch(refine_jobs,a.workers):
-        key=(r['case'],r['q'],r['n'])+        if r['status']=='ok':
+        key=(r['case'],r['q'],r['n'])
+        if r['status']=='ok':
             old=selected[key]
             if (r['makespan'],r['added_copy_bytes'])>(old['makespan'],old['added_copy_bytes']):raise ValueError('Refinement lost the seed incumbent')
             r['coverage_seconds']=old.get('total_job_seconds',old['process_seconds']);r['end_to_end_solve_seconds']=r.get('total_job_seconds',r['process_seconds'])+r['coverage_seconds']

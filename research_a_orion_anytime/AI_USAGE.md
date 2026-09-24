@@ -11,3 +11,15 @@
 实验真实性：逐项完成状态、版本与时间见MEASURED_VALIDATION及会话证据包。云端是Linux/CPython3.13.5，Windows与100图需本地真实执行。不声称平均6倍、任意预算全局最优或任意机器12小时全成功。
 
 发布真实性：2026-09-24 用户明确授权提交后，主代理将完整 `research_a_orion_anytime` 目录提交到独立 GitHub 分支并创建 PR；不自动合并，也不提交官方数据、生成实验结果或文献PDF。比赛规则、AI使用披露、队员署名及最终赛事提交仍由队伍核对和负责。
+
+2026-09-24 Windows actual-run startup repair: base main 152e023 (PR #15).
+The committed run.py line 181 and campaign.py line 186 contained joined-line
+syntax remnants; restored the intended newlines only. inputs.py was empty in
+both main and the PR branch; added the minimal existing-input ensure entry.
+Official inputs are read from the original workspace. No official evaluator,
+configuration, graph, search strategy, quality threshold, or budget was edited.
+No smoke/hash/fingerprint tests, pytest, unittest, repository audit or benchmark
+were run. setup_windows.ps1 reports CPython 3.12.5 x64 and Workers=1.
+Failed startup roots day01 and day01_fix02 are retained. The restarted output is
+day01_fix03, with the original team deadline 2026-09-24T17:43:48.3137853+00:00.
+Further actual import failure identified strategies.py:48 with the same joined-line defect. Focused search of the execution dependency chain also found core.py:345 adding two append return values. Both were split back into the intended two statements. New run root day01_fix04; same team deadline; all earlier failures retained.
