@@ -1,12 +1,19 @@
-# 复制给本地 Agent：ORION Anytime 的完整执行与发布任务
+# 复制给本地 Agent：ORION Anytime 直接实验任务
 
 你在Windows本机的yellkiin/model_competition仓库工作。本轮使用完整的`research_a_orion_anytime`代码包，不依赖旧PR#14。请实际执行，不要只重述计划；所有完成、失败与PR地址都必须来自真实输出。
+
+
+## 零、直接执行规则（本轮用户明确要求）
+
+**不要做冒烟测试，不要做哈希/文件指纹测试。** 不运行 smoke、pytest、unittest、全仓审计、SOURCE_MANIFEST 哈希比对、文件 checksum、环境 benchmark，亦不要把这些任务换个名字后执行。只做启动所需的最小环境检查，然后直接进入 A 题真实官方算例。
+
+这里“不要做冒烟/哈希测试”不等于关闭官方合法性检查：官方评估器本身的覆盖、无环、容量、Pipe/FIFO、跨核依赖和事件执行检查必须保留，不能修改或绕过。
 
 ## 一、保护范围与目标
 
 目标是最小化官方Makespan、提高加速比；相同Makespan才比较额外搬运。只改变我方方案、算法与独立输出，不能改题目、100图内容、config、原Step1/2/3和原评估器。不得改FIFO、引入重算/融合算子、使用模拟成绩替代官方结果。保留其他AI工作区、旧结果、本地ZIP及用户改动，不force/reset/clean，不自动merge或上传赛事。
 
-先读本目录README、EXPERIMENT_PLAN和MEASURED_VALIDATION。特别核对SOURCE_MANIFEST：云端完整主pilot与之后的非默认参数/恢复核验修复不是同一哈希，不能复用旧gate启动交付版本的formal；你必须在本机重做pilot。文档里本次云端实测是Linux/CPython3.13.5，不是Windows或100图成绩。源码可用性与GitHub远端是否真正创建PR必须分开。
+先读本目录README、EXPERIMENT_PLAN和MEASURED_VALIDATION。不要做 SOURCE_MANIFEST 哈希比对；交付版本必须在本机重新跑真实 pilot，不能拿旧 gate 代替。文档里本次云端实测是Linux/CPython3.13.5，不是Windows或100图成绩。源码可用性与GitHub远端是否真正创建PR必须分开。
 
 ## 二、放置完整代码并沿用环境
 
@@ -46,18 +53,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_anytime\r
 
 不要用Q2独立最优结果替代Q3选中方案的无L2配对。网格结果是非官方参数实验，不能混入固定config下100图成绩。所有统计逐例求比再平均。
 
-## 六、真正提交完整PR（用户已要求）
+## 六、PR 与代码版本
 
-本次云端会话没有GitHub写入动作，不能假装已经新建完整PR。你在本地有合法GitHub授权时，请用本目录publish_pr.ps1实际发布。它新建独立worktree与分支，仅复制本目录源码/文档，显式排除runs/输入/文献，不影响其他AI，不force push，不merge。
+本目录已经由主代理提交到独立 GitHub 分支 `feat/a-orion-anytime-20260924` 并创建 PR。**本地 Agent 不要重复创建 PR，不要 force push，不要自动 merge。** 先从该 PR/分支取得代码后直接运行真实 A 题实验。
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_anytime\publish_pr.ps1 `
-  -RepositoryRoot (Get-Location).Path
-```
-
-GitHub CLI仅发布需要，运行算法不需要。若gh未安装，配置本机gh；若未登录，请用户在本机交互式gh auth login，绝不索要/打印令牌。分支重名时用新的-Branch和-Worktree，不覆盖旧分支。发布成功后读取命令返回的实际PR URL，并检查文件清单包含完整求解链；不要复用旧#14地址声称完成。无法发布时如实给出分支/提交实际状态，保留完整补丁，不伪造PR编号。
-
-源码PR可以先创建供审查，实验结果不自动上传。真实本地修复经过验证后可提交到该独立分支；不提交官方数据、完整文献、日志大包与其他题文件。
+如果实验中发现 Windows 路径、编码、进程启动等兼容问题，只对本目录做最小修复并在新输出目录重新跑 pilot；是否把修复提交到同一 PR，等用户明确要求后再做。实验输出、官方图、ZIP、文献 PDF 和日志大包不要提交到 GitHub。
 
 ## 七、最终交付给用户
 
