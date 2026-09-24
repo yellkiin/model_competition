@@ -1,0 +1,52 @@
+name: ORION memory bounded input transfer
+on:
+  push:
+    branches: [orion/track-memory]
+    paths: [.github/workflows/orion-memory-input-transfer.yml]
+permissions:
+  contents: read
+jobs:
+  inputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/a-data-plain-json-20260924
+          lfs: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_005.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_051.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_067.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_073.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_090.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_092.json
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/config.txt
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/code/
+            /research_a_orion_anytime/core.py
+            /research_a_orion_anytime/strategies.py
+            /research_a_orion_anytime/engine.py
+            /research_a_orion_anytime/worker.py
+            /research_a_orion_anytime/solver.py
+            /research_a_orion_anytime/__init__.py
+            /research_a_orion_anytime/team_results/day01/combined_final/per_case.csv
+            /research_a_orion_anytime/team_results/day01/combined_final/improvements.csv
+            /research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip
+            /调研/A题_文献.json
+            /调研/A题_文献库/README.md
+            /调研/A题_文献库/方法对照与阅读顺序.md
+            /调研/A题_文献库/pdf/A16_2023_COSMA.pdf
+            /调研/A题_文献库/pdf/A17_2020_SERENITY.pdf
+            /调研/A题_文献库/pdf/A18_2022_HMCOS.pdf
+            /调研/A题_文献库/pdf/A39_2021.pdf
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-memory-requested-inputs
+          path: |
+            题目/A题/
+            research_a_orion_anytime/
+            调研/
+          if-no-files-found: error
+          retention-days: 3
