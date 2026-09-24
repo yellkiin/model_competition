@@ -1,0 +1,293 @@
+{
+  "planned": 48,
+  "statuses": [
+    {
+      "id": "case_003_q1_n5",
+      "status": "complete",
+      "stop_reason": "wall_or_recipe_limit",
+      "official_calls": 7
+    },
+    {
+      "id": "case_003_q2_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_003_q3_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_003_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_007_q1_n5",
+      "status": "complete",
+      "stop_reason": "global_compute_gap",
+      "official_calls": 2
+    },
+    {
+      "id": "case_007_q2_n5",
+      "status": "complete",
+      "stop_reason": "global_compute_gap",
+      "official_calls": 2
+    },
+    {
+      "id": "case_007_q3_n5",
+      "status": "complete",
+      "stop_reason": "global_compute_gap",
+      "official_calls": 3
+    },
+    {
+      "id": "case_007_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_012_q1_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 2
+    },
+    {
+      "id": "case_012_q2_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 3
+    },
+    {
+      "id": "case_012_q3_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 4
+    },
+    {
+      "id": "case_012_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_020_q1_n5",
+      "status": "complete",
+      "stop_reason": "global_compute_gap",
+      "official_calls": 1
+    },
+    {
+      "id": "case_020_q2_n5",
+      "status": "complete",
+      "stop_reason": "global_compute_gap",
+      "official_calls": 1
+    },
+    {
+      "id": "case_020_q3_n5",
+      "status": "complete",
+      "stop_reason": "global_compute_gap",
+      "official_calls": 2
+    },
+    {
+      "id": "case_020_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_028_q1_n5",
+      "status": "complete",
+      "stop_reason": "wall_or_recipe_limit",
+      "official_calls": 4
+    },
+    {
+      "id": "case_028_q2_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_028_q3_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_028_q0_n1",
+      "status": "failed",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_035_q1_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 5
+    },
+    {
+      "id": "case_035_q2_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_035_q3_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_035_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_047_q1_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_047_q2_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_047_q3_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_047_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_056_q1_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_056_q2_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_056_q3_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_056_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_065_q1_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 2
+    },
+    {
+      "id": "case_065_q2_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 3
+    },
+    {
+      "id": "case_065_q3_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 4
+    },
+    {
+      "id": "case_065_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_076_q1_n5",
+      "status": "failed",
+      "stop_reason": "wall_or_recipe_limit",
+      "official_calls": 2
+    },
+    {
+      "id": "case_076_q2_n5",
+      "status": "complete",
+      "stop_reason": "global_compute_gap",
+      "official_calls": 1
+    },
+    {
+      "id": "case_076_q3_n5",
+      "status": "complete",
+      "stop_reason": "global_compute_gap",
+      "official_calls": 2
+    },
+    {
+      "id": "case_076_q0_n1",
+      "status": "failed",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_088_q1_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_088_q2_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_088_q3_n5",
+      "status": "complete",
+      "stop_reason": "evaluation_cap",
+      "official_calls": 8
+    },
+    {
+      "id": "case_088_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    },
+    {
+      "id": "case_094_q1_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 2
+    },
+    {
+      "id": "case_094_q2_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 3
+    },
+    {
+      "id": "case_094_q3_n5",
+      "status": "complete",
+      "stop_reason": "neighbourhood_exhausted",
+      "official_calls": 4
+    },
+    {
+      "id": "case_094_q0_n1",
+      "status": "complete",
+      "stop_reason": "baseline",
+      "official_calls": 1
+    }
+  ]
+}

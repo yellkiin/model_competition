@@ -1,0 +1,302 @@
+{
+  "generated_utc": "2026-09-24T10:05:49.715156+00:00",
+  "coverage": {
+    "Q0": {
+      "planned": 12,
+      "complete": 10,
+      "partial": 0,
+      "failed": 2,
+      "not_started": 0,
+      "running": 0,
+      "native_statuses": {
+        "complete": 10,
+        "failed": 2
+      },
+      "legal_incumbent": 10,
+      "timeout_events": 2
+    },
+    "Q1": {
+      "planned": 12,
+      "complete": 11,
+      "partial": 0,
+      "failed": 1,
+      "not_started": 0,
+      "running": 0,
+      "native_statuses": {
+        "complete": 11,
+        "failed": 1
+      },
+      "legal_incumbent": 11,
+      "timeout_events": 4
+    },
+    "Q2": {
+      "planned": 12,
+      "complete": 12,
+      "partial": 0,
+      "failed": 0,
+      "not_started": 0,
+      "running": 0,
+      "native_statuses": {
+        "complete": 12
+      },
+      "legal_incumbent": 12,
+      "timeout_events": 0
+    },
+    "Q3": {
+      "planned": 12,
+      "complete": 12,
+      "partial": 0,
+      "failed": 0,
+      "not_started": 0,
+      "running": 0,
+      "native_statuses": {
+        "complete": 12
+      },
+      "legal_incumbent": 12,
+      "timeout_events": 1
+    }
+  },
+  "status_differences": [],
+  "groups": [
+    {
+      "question": 1,
+      "cores": 5,
+      "variant": "fast",
+      "planned": 12,
+      "legal": 11,
+      "missing_denominator": 2,
+      "legal_missing_denominator": 1,
+      "paired_classifications": {
+        "complete": 10
+      },
+      "speedup": {
+        "n": 10,
+        "arithmetic_mean": 2.96522797551184,
+        "geometric_mean": 2.4698163442217465,
+        "median": 2.7175958252636034,
+        "minimum": 1.0123808194967676,
+        "above_five": 0
+      }
+    },
+    {
+      "question": 1,
+      "cores": 5,
+      "variant": "best",
+      "planned": 12,
+      "legal": 11,
+      "missing_denominator": 2,
+      "legal_missing_denominator": 1,
+      "paired_classifications": {
+        "complete": 10
+      },
+      "speedup": {
+        "n": 10,
+        "arithmetic_mean": 3.1914004702096386,
+        "geometric_mean": 2.838939717472491,
+        "median": 3.0043764560211446,
+        "minimum": 1.3411651625994554,
+        "above_five": 1
+      }
+    },
+    {
+      "question": 2,
+      "cores": 5,
+      "variant": "fast",
+      "planned": 12,
+      "legal": 12,
+      "missing_denominator": 2,
+      "legal_missing_denominator": 2,
+      "paired_classifications": {
+        "complete": 10
+      },
+      "speedup": {
+        "n": 10,
+        "arithmetic_mean": 2.987961685157021,
+        "geometric_mean": 2.5037159674217757,
+        "median": 2.7991701862529084,
+        "minimum": 1.009117376173669,
+        "above_five": 0
+      }
+    },
+    {
+      "question": 2,
+      "cores": 5,
+      "variant": "best",
+      "planned": 12,
+      "legal": 12,
+      "missing_denominator": 2,
+      "legal_missing_denominator": 2,
+      "paired_classifications": {
+        "complete": 10
+      },
+      "speedup": {
+        "n": 10,
+        "arithmetic_mean": 3.3304963919958883,
+        "geometric_mean": 3.0635663988519575,
+        "median": 3.0320153859992764,
+        "minimum": 1.8553843797185812,
+        "above_five": 1
+      }
+    },
+    {
+      "question": 3,
+      "cores": 5,
+      "variant": "fast",
+      "planned": 12,
+      "legal": 12,
+      "missing_denominator": 2,
+      "legal_missing_denominator": 2,
+      "paired_classifications": {
+        "complete": 10
+      },
+      "speedup": {
+        "n": 10,
+        "arithmetic_mean": 3.0056110728225605,
+        "geometric_mean": 2.5145261626094757,
+        "median": 2.799289961137424,
+        "minimum": 1.009179756319196,
+        "above_five": 0
+      }
+    },
+    {
+      "question": 3,
+      "cores": 5,
+      "variant": "best",
+      "planned": 12,
+      "legal": 12,
+      "missing_denominator": 2,
+      "legal_missing_denominator": 2,
+      "paired_classifications": {
+        "complete": 10
+      },
+      "speedup": {
+        "n": 10,
+        "arithmetic_mean": 3.360775155893453,
+        "geometric_mean": 3.093591627459586,
+        "median": 3.0544053501126074,
+        "minimum": 1.8552422840012692,
+        "above_five": 1
+      }
+    }
+  ],
+  "cache": {
+    "planned": 12,
+    "completed": 12,
+    "ratio": {
+      "n": 12,
+      "arithmetic_mean": 1.019469722120206,
+      "geometric_mean": 1.0188965712129385,
+      "median": 1.0032989460478978,
+      "minimum": 0.9999890592006652,
+      "above_five": 0
+    },
+    "above_one": 8,
+    "equal_one": 3,
+    "below_one": 1
+  },
+  "official_calls_observed": 191,
+  "official_seconds_recorded_sum": 765.4749278010568,
+  "call_wall_seconds_recorded_sum": 1150.9380000003148,
+  "final_job_solve_seconds_sum": 1252.2689999999711,
+  "bound_violations": [],
+  "evidence_issues": [],
+  "definitions": {
+    "legal": "Stored official ok cycles corroborated by raw response; final best additionally matches its saved candidate plan and best raw.",
+    "complete": "Native complete plus corroborated legal incumbent; Q3 additionally requires matching final-plan Q2/Q3 raw evidence.",
+    "timing": "Job solve time is shared by variants; official_seconds excludes parent/session overhead, call_wall_seconds includes it. Sums are concurrent work totals, not wall time.",
+    "denominator": "Only this run's corroborated original Q0. Never imported from old registry.",
+    "means": "For s_i=T1_i/T_i: AM=mean(s_i), GM=exp(mean(log(s_i))); missing values excluded with counts, never zero-filled."
+  },
+  "source_run_id": "best5_20260924T095317_031044_61144",
+  "old_reference": {
+    "enabled": true,
+    "registry": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition_aster_round1\\research_a_aster_rbc\\runs\\20260924_052617_865946_Nuggets_s0\\attempt_registry.csv",
+    "rule": "Old completion_source only; matched case/question/5 cores/config/T1. Different budgets are references, not an equal-budget algorithm comparison.",
+    "excluded": [
+      {
+        "case": 28,
+        "question": 1,
+        "cores": 5,
+        "reason": "new result or new-run Q0 missing; old T1 is never filled into new result"
+      },
+      {
+        "case": 28,
+        "question": 2,
+        "cores": 5,
+        "reason": "new result or new-run Q0 missing; old T1 is never filled into new result"
+      },
+      {
+        "case": 28,
+        "question": 3,
+        "cores": 5,
+        "reason": "new result or new-run Q0 missing; old T1 is never filled into new result"
+      },
+      {
+        "case": 76,
+        "question": 1,
+        "cores": 5,
+        "reason": "new result or new-run Q0 missing; old T1 is never filled into new result"
+      },
+      {
+        "case": 76,
+        "question": 2,
+        "cores": 5,
+        "reason": "new result or new-run Q0 missing; old T1 is never filled into new result"
+      },
+      {
+        "case": 76,
+        "question": 3,
+        "cores": 5,
+        "reason": "new result or new-run Q0 missing; old T1 is never filled into new result"
+      }
+    ],
+    "groups": [
+      {
+        "question": 1,
+        "paired": 10,
+        "ratio": {
+          "n": 10,
+          "arithmetic_mean": 1.1354901812977203,
+          "geometric_mean": 1.112446062428312,
+          "median": 1.0396907411232181,
+          "minimum": 0.8280275054119445,
+          "above_five": 0
+        },
+        "new_faster": 6,
+        "equal": 2,
+        "new_slower": 2
+      },
+      {
+        "question": 2,
+        "paired": 10,
+        "ratio": {
+          "n": 10,
+          "arithmetic_mean": 1.2273212523745893,
+          "geometric_mean": 1.1740100268538083,
+          "median": 1.0394530042276289,
+          "minimum": 0.8280275054119445,
+          "above_five": 0
+        },
+        "new_faster": 6,
+        "equal": 1,
+        "new_slower": 3
+      },
+      {
+        "question": 3,
+        "paired": 10,
+        "ratio": {
+          "n": 10,
+          "arithmetic_mean": 1.2350374356154614,
+          "geometric_mean": 1.1780981225497102,
+          "median": 1.0394130078332733,
+          "minimum": 0.828080229226361,
+          "above_five": 0
+        },
+        "new_faster": 6,
+        "equal": 1,
+        "new_slower": 3
+      }
+    ]
+  },
+  "published_evidence_note": "Derived from saved local analysis.json without new evaluations. Raw plans, official responses and timelines are not included. Local corroboration flags are reported observations, not independently verifiable from this package alone."
+}

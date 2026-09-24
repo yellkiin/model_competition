@@ -1,0 +1,21 @@
+{
+  "native_summary_rows": 70,
+  "expected_multicore_variant_rows": 72,
+  "duplicate_keys": [],
+  "missing_keys": [
+    [
+      76,
+      1,
+      5,
+      "best"
+    ],
+    [
+      76,
+      1,
+      5,
+      "fast"
+    ]
+  ],
+  "unexpected_keys": [],
+  "note": "Native summary.csv preserved unchanged. The two failed case_076 Q1 variants have explicit null records in analysis.json; no cycles or speedups fabricated."
+}

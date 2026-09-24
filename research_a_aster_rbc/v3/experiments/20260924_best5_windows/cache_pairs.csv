@@ -1,0 +1,13 @@
+job_id,case,question,cores,complete,same_plan_json_equal,with_cache,without_cache,ratio,best_plan,replay_plan,replay_raw,reason
+case_003_q3_n5,3,3,5,True,True,256649,261615,1.0193493837887544,case_003_q3_n5/best_plan.json,case_003_q3_n5/e008_plan.json,case_003_q3_n5/e008_official.json.gz,
+case_007_q3_n5,7,3,5,True,True,197052,197052,1.0,case_007_q3_n5/best_plan.json,case_007_q3_n5/e002_plan.json,case_007_q3_n5/e002_official.json.gz,
+case_012_q3_n5,12,3,5,True,True,15705,15706,1.0000636739891755,case_012_q3_n5/best_plan.json,case_012_q3_n5/e004_plan.json,case_012_q3_n5/e004_official.json.gz,
+case_020_q3_n5,20,3,5,True,True,107650,107650,1.0,case_020_q3_n5/best_plan.json,case_020_q3_n5/e001_plan.json,case_020_q3_n5/e001_official.json.gz,
+case_028_q3_n5,28,3,5,True,True,8486005,9576738,1.1285331554718623,case_028_q3_n5/best_plan.json,case_028_q3_n5/e007_plan.json,case_028_q3_n5/e007_official.json.gz,
+case_035_q3_n5,35,3,5,True,True,91401,91400,0.9999890592006652,case_035_q3_n5/best_plan.json,case_035_q3_n5/e007_plan.json,case_035_q3_n5/e007_official.json.gz,
+case_047_q3_n5,47,3,5,True,True,143560,147664,1.0285873502368348,case_047_q3_n5/best_plan.json,case_047_q3_n5/e010_plan.json,case_047_q3_n5/e010_official.json.gz,
+case_056_q3_n5,56,3,5,True,True,146435,146501,1.0004507119199646,case_056_q3_n5/best_plan.json,case_056_q3_n5/e010_plan.json,case_056_q3_n5/e010_official.json.gz,
+case_065_q3_n5,65,3,5,True,True,11277,11277,1.0,case_065_q3_n5/best_plan.json,case_065_q3_n5/e004_plan.json,case_065_q3_n5/e004_official.json.gz,
+case_076_q3_n5,76,3,5,True,True,1232435,1240011,1.0061471801758308,case_076_q3_n5/best_plan.json,case_076_q3_n5/e001_plan.json,case_076_q3_n5/e001_official.json.gz,
+case_088_q3_n5,88,3,5,True,True,118515,120035,1.012825380753491,case_088_q3_n5/best_plan.json,case_088_q3_n5/e010_plan.json,case_088_q3_n5/e010_official.json.gz,
+case_094_q3_n5,94,3,5,True,True,20509,21282,1.037690769905895,case_094_q3_n5/best_plan.json,case_094_q3_n5/e004_plan.json,case_094_q3_n5/e004_official.json.gz,
