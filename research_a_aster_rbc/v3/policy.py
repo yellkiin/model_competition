@@ -5,7 +5,7 @@ from . import algorithms as A
 from .model import make_plan
 from .quality import view, bound_and_proxy, neighbors
 
-VERSION="aster-v3-wavefront-3"
+VERSION="aster-v3-release-affinity-4.1"
 
 
 def profile(g,n,cfg):
@@ -26,7 +26,7 @@ def profile(g,n,cfg):
                 shared_input_bytes=shared,suggested_active_cores=active)
 
 
-def recipes(g,n,q,cfg):
+def _base_recipes(g,n,q,cfg):
     """Lazy recipes: descriptor generation does not score dozens of plans."""
     f=profile(g,n,cfg);seen=set()
     def spec(kind,active=None,**kw):return dict(kind=kind,active=active or n,**kw)
@@ -53,14 +53,12 @@ def recipes(g,n,q,cfg):
                spec('stage',stages=16),spec('component'),spec('wave',width=4)]
     if len(g.components)>1 and not f['independent']:
         queue.insert(1,spec('component'))
-    # A different score-biased family cannot evict all other constructors.
-    # Expensive serial fallback is NOT routinely evaluated after a valid plan.
     for r in queue:
         key=tuple(sorted(r.items()))
         if key not in seen:seen.add(key);yield r
 
 
-def build(g,n,q,cfg,spec):
+def _base_build(g,n,q,cfg,spec):
     kind=spec['kind'];k=spec['active']
     if kind=='component':p=A.locality_waves(g,k,None)
     elif kind=='wave':p=A.locality_waves(g,k,spec['width'])
@@ -70,5 +68,48 @@ def build(g,n,q,cfg,spec):
     elif kind=='pipeline':p=A.pipeline_plan(g,k,cfg,q,stages=spec['stages'],batch=spec['batch'],fine=spec.get('fine',False),frontier=spec.get('frontier',False))
     elif kind=='serial':p=make_plan([g.order],[0],k)
     else:raise ValueError(kind)
+    p['core_schedules'] += [[] for _ in range(n-k)]
+    return p
+
+
+def recipes(g,n,q,cfg):
+    """Prioritise measured mechanism improvements; retain the legacy first plan.
+
+    No case-name rules. Full mode is the deployment default, not a grid of runs.
+    """
+    legacy=list(_base_recipes(g,n,q,cfg))
+    if n == 1 or q == 1:
+        yield from legacy
+        return
+    from .enhancements import release_frontier
+    f=profile(g,n,cfg)
+    extra=[]
+    if f['junction']:
+        extra=[dict(kind='release',active=n),dict(kind='release',active=max(2,n-1))]
+    elif f['shared_input_bytes']>cfg['capacity']['UB'] and max(g.depth.values(),default=0)>=64 and len(g.components)>=n:
+        extra=[dict(kind='affinity',active=n,batch=1),
+               dict(kind='affinity',active=n,batch=1,io_weight=.5),
+               dict(kind='ordered_stage',active=n,stages=8),
+               dict(kind='ordered_stage',active=n,stages=4)]
+    elif len(g.components)<n:
+        extra=[dict(kind='ordered_stage',active=n,stages=4),
+               dict(kind='release',active=n)]
+    sequence=legacy[:1]+extra+legacy[1:]
+    seen=set()
+    for item in sequence:
+        key=tuple(sorted(item.items()))
+        if key not in seen:
+            seen.add(key)
+            yield item
+
+
+def build(g,n,q,cfg,spec):
+    from .enhancements import release_frontier,affinity_pipeline,export_split
+    kind=spec['kind']; k=spec['active']
+    if kind=='release': p=release_frontier(g,k,q,cfg)
+    elif kind=='affinity': p=affinity_pipeline(g,k,q,cfg,batch=spec.get('batch',1),io_weight=spec.get('io_weight',1.))
+    elif kind=='ordered_stage':
+        p=A.stage_plan(g,k,cfg,q,stages=spec['stages'],pack=False)
+    else: return _base_build(g,n,q,cfg,spec)
     p['core_schedules'] += [[] for _ in range(n-k)]
     return p
