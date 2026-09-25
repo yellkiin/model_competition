@@ -1,43 +1,45 @@
-# 本地Agent接续：Anytime Wu / PR #34
+# Anytime Wu：下一轮本地小批次（2026-09-25恢复交付）
 
-先读取本轮REPORT、METHOD.md、LITERATURE.md、CI_EVIDENCE_INDEX.json和各版本结果。分支是新建的`orion/track-anytime_wu`，不是旧`orion/track-anytime`。开始前检查最新PR/分支，勿覆盖其他Agent或正在运行的目录；需要继续独立研究可再建唯一后缀分支。公共solver/campaign和官方图/config/evaluator、其他研究线不得修改。
+分支 `orion/track-anytime_wu` / PR #34。先读取 `results/wu_resume_20260925_0900/review/REPORT.md`、EVIDENCE_INDEX及原始失败，不覆盖旧实验或其他Agent。只研究第三问FIFO合法顺序、三问候选选择/停止，不改公共solver/campaign、官方图/config/evaluator、结构/内存或Fusion代码。
 
-## 先取真实输入和本轮原始证据
+## 默认版本与边界
 
-原输入导出：GitHub Actions run **36104651803**，artifact **10850846702**，名`orion-anytime-wu-frozen-inputs`。外层ZIP中有`orion_anytime_wu_frozen.zip`。其中`raw_day01/`保存两片原包的七图记录，官方原图/config/code在原附件目录，原文档和源码基线也有来源。不要把导出动作算成实测，不要运行源代码materialize脚本覆盖当前v2。
+默认 `--revision v3`。`v4-window` 完成窗口候选和 `v4-select` 负证据暂停都有明确反例，只是实验选项，不默认合入。v3可运行不等于统一冷启动全面优于旧ORION。024从day01弱种子有改善，但实际强结构种子693470本轮没有再改善，不能称刷新全仓最佳。
 
-完整仓库已经有当前官方输入时，只将内层ZIP的`raw_day01/`解压到自己的仓库根，保持原始包不动；不要覆盖已有公共代码或原图。原图获取困难先看tools/A_DATA_ACCESS.md，不把LFS指针/截断JSON当输入。
+FIFO接口：`plugin.propose(g,n,cfg,q,incumbent=None,feedback=None,deadline=None)`；选择器：`selector.select_candidate(candidates,history,remaining_seconds)`。提供完整原官方Q3 response/cache_events，不只是makespan数字。FIFO候选只排序既有子图；不改LRU，不添加sleep/delay，不用命中率代替Makespan。
 
-本轮主七图实测run **36106285863**，每图原始artifact含preparation、paired30、source和EXECUTION_COMMIT。v2修正独立复测run **36107422408**。先读实际artifact索引，不混淆启动失败36106178564与取消的重复36106800532。
+## 环境、真实种子和重评
 
-## Windows准备与真实小批次
+Windows优先已有 `D:\python\python.exe`、Python3.12.x、CPU-only；依赖沿用项目环境（资源观测需psutil）。只核对启动必需项，不做哈希/指纹测试、冒烟、pytest/unittest、全仓审计；官方合法性检查必须保留。本轮Linux实测，未声称Windows已跑。
 
-优先已有`D:\python\python.exe`、Python3.12.x、CPU-only。依赖`psutil==7.0.0`用于进程RSS和可用资源；只在缺少时安装。绘图可选matplotlib。不做烟雾、哈希/指纹、pytest/unittest或全仓审计。
+将代码/结果包解压到完整仓库根目录。轻包的 `research_a_orion_track_anytime/results/wu_resume_20260925_0900/review/next_seed_manifest.json` 包含7张Q3五核可用真实种子，每个都有plan/response/progress；024使用已重放的693470计划。其他为可取得原计划的历史解，不是按表格重造；不含无法取得原计划的32870等更强目标。这是有来源的暖启动池，不是免费冷启动，历史池取得总成本unknown。
 
-从正式原记录建立本机路径并重新原评估，不复制外机/tmp路径：
+完整原始包内 `preparation/seed_manifest.json` 重现本轮day01起点，不能与next_seed_manifest混成同组；新runner_resume支持原路径在checkout中重定位，保留原路径作为来源。
 
-```powershell
-& 'D:\python\python.exe' -u -m research_a_orion_track_anytime.prepare --cases 083,086 --workers 1 --out research_a_orion_track_anytime/results/wu_next_prepare
-```
+缺原始输入时先读tools/A_DATA_ACCESS.md。冻结输入导出run36104651803/artifact10850846702包含7图及原记录、官方代码；源导出不是实验。不要把LFS指针当JSON图。
 
-该动作会实际验证两图的三问/二核五核正式方案并取得Q3同方案无L2对照，输出seed_manifest.json。它使用day01正式种子，不是不存在原计划的“最新摘要最优解”。若有后来更好的完整plan/response，先明确新来源并重新目标q/n评估，另建清单保留其成本；未知历史成本不填0。
-
-先验证本轮仍有负结果的083，以及修正有改善的086：
+新机器第一次使用历史计划先重新官方评估（复用已经实测的prepare.fixed，不改变评估规则）：
 
 ```powershell
-& .\research_a_orion_track_anytime\run_windows.ps1 -Cases '083,086' -Questions '3' -Cores '5' -Methods 'old,combined' -Modes 'warm' -Revision 'v2' -Seconds 120 -MaxEvaluations 128 -TotalSeconds 700 -PairSeconds 30 -Workers 'auto' -SeedManifest 'research_a_orion_track_anytime/results/wu_next_prepare/seed_manifest.json' -Out 'research_a_orion_track_anytime/results/wu_next_negative_gate'
+& 'D:\python\python.exe' -u -m research_a_orion_track_anytime.revalidate_seeds --cases 044,083,086 --manifest research_a_orion_track_anytime/results/wu_resume_20260925_0900/review/next_seed_manifest.json --out research_a_orion_track_anytime/results/wu_next_checked
 ```
 
-输出目录须为新目录。不要默认扩100图。只有该批次通过后，再在**另一个run_id**进行`queue,fifo,budget,combined`消融或冷启动；新增预算不能倒填早期轨迹。本轮建议解决083选择偏置、保留旧解，而不是继续增加候选数量或把上限统一加大。
+该交付辅助入口本身未在Windows执行。重评数值不一致应停止核查，不覆盖历史成绩。若从正式表和raw_day01重新准备，使用prepare_resume；它在所有真实重评完成后才写完整seed_manifest，不能拿partial_seed_manifest启动比较。
 
-## 验收要求
+## 下一轮先小批次
 
-逐项检查完整原响应的合法性、首个可行解的父进程可用时刻、计划/响应一致性、原q0基准来源和Q3同方案no-L2。新结果不够好就保留已有种子，不能用本轮较弱day01实验覆盖更晚强解。old/combined每组合保持相同种子、时间和次数上限；历史质量/运行时差异单列。
+```powershell
+& 'D:\python\python.exe' -u -m research_a_orion_track_anytime.runner_resume --cases 044,083,086 --questions 3 --cores 5 --methods old,combined --modes warm --revision v3 --seconds 60 --max-evaluations 32 --total-seconds 600 --pair-seconds 30 --workers auto --max-workers 2 --seed-manifest research_a_orion_track_anytime/results/wu_next_checked/seed_manifest.json --out research_a_orion_track_anytime/results/wu_next_small
+```
 
-`--revision v2`对齐原solver的U/L gap语义并刷新incumbent邻域。v1.1保留仅用于复现其七图原实验，不应把两者曲线拼接。启发式停滞不是最优证明；固定持续时间slack不是精确缓存因果收益。命中率上升但Makespan退步的案例必须保留。
+输出目录必须全新。run_windows.ps1支持同样参数；auto只在已完成匹配块之间按CPU/RAM/实际RSS及失败调整，匹配块内资源条件不变；workers不是NPU核数。三台共享同一排序清单，用shards=3、shard-index=0/1/2分片，不要三台各跑完整100图。
 
-workers是CPU并发进程数，与NPU核数不同；本版按已完成比较块的内存/CPU/RSS反馈调整，块内不变。三台机器使用同一排序图清单与`--shards 3 --shard-index 0/1/2`分片，不各跑完整清单。跨机器墙钟不得直接当公平对照。
+小批次通过后再扩二核与三问；对应组合必须准备真实种子，轻包next_seed_manifest只含Q3五核，不可冒充二核。正式三问1—5核曲线和Q3同方案对照要求不变。
 
-每条轨迹记录30/60/120/300秒已有合法解，早停后标明持有；保留重复/剪枝/错误/无收益尝试。seed取得/新验证/追加搜索/Q3配对成本分开。旧solver仍沿用只保存improver全文的策略，不声称拥有所有旧版拒绝响应。
+## 修改与验收
 
-最终交付本轮自己的代码、真实方案/响应、轨迹、负结果和来源索引，新PR，不自动合并。正式一至五核和百图曲线要求仍在；小样本不能冒称完成它们。
+优先研究整体parent改变后相同局部FIFO动作重复无收益的问题。全族3次无收益后暂停、8次后探测在024略好却让044退步，不可永久屏蔽整个族。下一步应区分动作及局部复用环境、保留少量探测，先做小规模FIFO/预算/结合消融；queue不是旧公共ORION。
+
+同一真实轨迹取30/60/120/300前缀，停止后只持有已有解，不倒填。改变预算或策略单列独立run。Q3所选plan本身经原Q2接口做no-L2，不引用独立Q2最优。记录生成、评估、审计、输出、配对、失败、无收益、资源与阶段停止。未知历史池成本不写0；冻结时长的余量只是解释，不是缓存反事实下界。
+
+交付原始plan/response/progress、源码快照、负结果和未启动项，提交可审查PR，不自动合并，不提交赛事平台。
