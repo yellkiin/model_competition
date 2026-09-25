@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "run_id": "coherent_v4_20260925",
+  "source_version": "memory-coherent-4.4",
+  "official_evaluator_modified": false,
+  "old_scores_replayed": false,
+  "old_score_policy": "trusted previously published/saved feasible parent metrics, per user request",
+  "raw_responses_in_git": false,
+  "raw_response_note": "The PR intentionally keeps text summaries and code only. Full measured candidate plans/responses were retained in the research-session evidence archive; large opaque archives are not duplicated into Git.",
+  "main_sample": ["case_036", "case_048", "case_068", "case_084", "case_085", "case_086", "case_097"],
+  "main_sample_q": [1, 2, 3],
+  "main_sample_n": [5],
+  "measured_summary_files": ["per_case.csv", "means.csv", "micrograph_ablation.csv", "equal_budget.csv", "trajectory.csv", "REPORT.md"],
+  "important_negative_evidence": {
+    "case_084_q2_global_depth_bands": {"makespan": 1305922, "added_copy_bytes": 49856640, "spill_added_copy_bytes": 39931008, "selected": false},
+    "case_084_q2_whole_component_serial": {"makespan": 503472, "added_copy_bytes": 0, "spill_added_copy_bytes": 0, "selected": false}
+  }
+}
