@@ -16,8 +16,9 @@ def _key(path):
     text=Path(path).as_posix()
     m=re.search(r'/q([0-3])/n([1-5])/(case_\d{3})_multicore_res\.json$',text)
     if m:return m[3],int(m[1]),int(m[2])
-    m=re.search(r'(case_\d{3})_q([0-3])_n([1-5])',text)
-    if m:return m[1],int(m[2]),int(m[3])
+    matches=re.findall(r'(case_\d{3})_q([0-3])_n([1-5])',text)
+    if matches:
+        case,q,n=matches[-1];return case,int(q),int(n)
     return None
 
 
@@ -60,6 +61,10 @@ def catalogue(extra_roots=()):
             key=_key(p)
             if key and (p.name.endswith('_multicore_res.json') or re.fullmatch(r'case_\d{3}_q[0-3]_n[1-5]\.json',p.name)):
                 add(key,p,p)
+            elif p.name=='plan.json' and key and p.parent.name=='selected' and 'pairs' not in p.parts:
+                summary=p.parent.parent/'summary.json'
+                d=read(summary) if summary.is_file() else {}
+                if d.get('status')=='ok':add(key,p,summary,d.get('makespan'))
             elif p.name=='SOURCE.json' and (p.parent/'plan.json').is_file():
                 d=read(p);case=_case(d.get('case'))
                 if not case:

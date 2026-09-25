@@ -1,15 +1,22 @@
-"""Unpack six actual selected plans from a compact, readable run-length record."""
+"""Unpack actual selected plans from a compact, readable run-length record."""
 from __future__ import annotations
-import argparse
+import argparse, json, lzma
 from pathlib import Path
 from .io import ROOT, read, write, official_root
 
 
 def run(official=None, destination=None):
-    source=Path(__file__).parent/'evidence/compact_seeds.json'
+    folder=Path(__file__).parent/'evidence'
+    sources=sorted(list(folder.glob('compact_seeds*.json'))+list(folder.glob('compact_seeds*.json.xz')))
     out=Path(destination) if destination else Path(__file__).parent/'runs/installed_seeds'
     of,_=official_root(official);installed=[];missing=[]
-    for row in read(source)['plans']:
+    by_key={}
+    for source in sources:
+        data=json.loads(lzma.decompress(source.read_bytes()).decode('utf8')) if source.suffix=='.xz' else read(source)
+        for row in data['plans']:
+            key=row['case'],row['q'],row['n']
+            if key not in by_key or row['makespan']<by_key[key]['makespan']:by_key[key]=row
+    for key,row in sorted(by_key.items()):
         graph=of/'data'/(row['case']+'.json')
         if not graph.is_file():missing.append(row['case']);continue
         ids=sorted(o['id'] for o in read(graph)['ops'] if o['op'] not in ('COPY_IN','COPY_OUT'))

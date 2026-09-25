@@ -1,6 +1,8 @@
 # ORION Fusion SMF：600秒内的三线组合调度
 
-当前算法版本 `fusion-smf-2.2`。结构 S、内存驻留 M、真实 FIFO 事件与候选分配 F 已全部接入同一求解过程。不是三套程序各跑完后拼均值，也不重复把 FIFO 研究中的 private-island 微波次算作 F 的贡献：该原语已由 M 提供。
+当前算法版本 `fusion-smf-2.3`。结构 S、内存驻留 M、真实 FIFO 事件与候选分配 F 已全部接入同一求解过程。不是三套程序各跑完后拼均值，也不重复把 FIFO 研究中的 private-island 微波次算作 F 的贡献：该原语已由 M 提供。
+
+本轮增量与新实测见 [CONSOLIDATION_2_3.md](CONSOLIDATION_2_3.md)。保留已合并PR #37三线主算法，主要减少未参与排序的代理计算并更新实际可用强种子。
 
 ## 方法
 
@@ -25,12 +27,12 @@ S 负责关键路径、分组/分核、较少核好解在目标核数的重新�
 ```powershell
 # 三台分别用0、1、2，其他算法参数相同
 powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_fusion\run_windows.ps1 `
-  -ShardIndex 0 -Out 'research_a_orion_fusion\runs\round02_smf_shard_0'
+  -ShardIndex 0 -Out 'research_a_orion_fusion\runs\round03_smf23_shard_0'
 ```
 
 默认600秒、2048次评估上限、SMF、自动workers、12小时整批截止。600秒是上限而非必须耗尽；候选耗尽、充分停滞或证书接近可早停。同根恢复不重新获得12小时。
 
-所有主机使用同一份day01百图参考表和selected_plans.zip生成34/33/33分片；按旧实际成本+规模LPT平衡。一图全部小问/核数在同一台。已有S/M/F真实好方案自动从仓库选中结果目录发现；本次另提供6份实际好方案的可读游程记录，Windows入口解包后直接作为候选种子，仍在目标场景原评估。完整26方案包或其他本地目录通过 `-ExtraPlans '目录1','目录2'` 补充。只有数字没有plan时只记录目标差距，不虚构seed。
+所有主机使用同一份day01百图参考表和selected_plans.zip生成34/33/33分片；按旧实际成本+规模LPT平衡。一图全部小问/核数在同一台。已有S/M/F真实好方案自动从仓库选中结果目录发现；本次另提供19份实际好方案的可读游程记录，Windows入口解包后直接作为候选种子，仍在目标场景原评估。其他完整实际方案包或本地目录通过 `-ExtraPlans '目录1','目录2'` 补充。只有数字没有plan时只记录目标差距，不虚构seed。
 
 不运行哈希、冒烟、单元测试或全仓审计前置。启动必需项后直接跑本片两个尚未做过的真实SMF配置，通过即继续全片，先行结果复用。官方校验与最终时间线复核保留。缺数据只补本片A图。
 
@@ -51,24 +53,24 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_fusion\ru
 可选画图用matplotlib，求解不依赖它：
 ```powershell
 & 'D:\python\python.exe' -m research_a_orion_fusion.plot_paper `
-  --data 'research_a_orion_fusion\runs\round02_smf_shard_0\report\paper_data' `
-  --out 'research_a_orion_fusion\runs\round02_smf_shard_0\report\figures'
+  --data 'research_a_orion_fusion\runs\round03_smf23_shard_0\report\paper_data' `
+  --out 'research_a_orion_fusion\runs\round03_smf23_shard_0\report\figures'
 ```
 
 完成/截止后按用户要求，用本机已有GitHub授权实际发布：
 ```powershell
 .\research_a_orion_fusion\publish_results.ps1 `
-  -RunRoot 'research_a_orion_fusion\runs\round02_smf_shard_0' -ShardIndex 0
+  -RunRoot 'research_a_orion_fusion\runs\round03_smf23_shard_0' -ShardIndex 0
 ```
 
-只写 `research_a_orion_fusion/team_results/round02_smf/shard_N/`，新建独立结果PR，不自动合并。原始档案按40MiB分块，附顺序清单；图/官方代码/文献不重复上传，selected_plans.zip单独提供。
+只写 `research_a_orion_fusion/team_results/round03_smf23/shard_N/`，新建独立结果PR，不自动合并。原始档案按40MiB分块，附顺序清单；图/官方代码/文献不重复上传，selected_plans.zip单独提供。
 
 三片到齐后：
 ```powershell
 & 'D:\python\python.exe' -m research_a_orion_fusion.unpack_results '<片0发布目录>' --out '<片0新目录>'
 # 同样恢复另两片，然后
 & 'D:\python\python.exe' -m research_a_orion_fusion.campaign collect '<片0新目录>\run' '<片1新目录>\run' '<片2新目录>\run' `
-  --out 'research_a_orion_fusion\team_results\round02_smf\combined' --require-complete
+  --out 'research_a_orion_fusion\team_results\round03_smf23\combined' --require-complete
 ```
 
 ## 无收益时

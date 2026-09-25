@@ -48,7 +48,27 @@ def summarize(req,execution):
 
 def run_jobs(jobs,out,deadline_epoch,max_workers=0,reserve=.25):
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
-    pending=deque(jobs);active=[];results=[];policy=Admission(max_workers,reserve)
+    # Restore completed/checkpointed jobs before resource admission or deadline
+    # handling. A resumed expired batch must never overwrite a saved good result.
+    pending=deque();active=[];results=[];policy=Admission(max_workers,reserve)
+    for req in jobs:
+        folder=Path(req['out']);prior=folder/'summary.json'
+        old_request=folder/'request.json'
+        if old_request.is_file() and read(old_request)!=req:
+            raise ValueError(f'Changed request; use a new run directory: {folder}')
+        if prior.is_file():
+            if not old_request.is_file():raise ValueError('Saved result missing its original request')
+            results.append(read(prior));continue
+        if old_request.is_file() and (folder/'progress.json').is_file():
+            checkpoint=read(folder/'progress.json')
+            execution=read(folder/'execution.json') if (folder/'execution.json').is_file() else {
+                'reason':'interrupted_checkpoint_recovered','returncode':None,
+                'wall_seconds':checkpoint.get('elapsed_seconds',0.),
+                'wall_scope':'last_checkpoint_lower_bound','unobserved_tail':True,
+                'wall_cap_seconds':min(600,req.get('job_seconds',req.get('seconds',600))),
+                'peak_rss_bytes':None,'workers_at_start':None}
+            results.append(summarize(req,execution));continue
+        pending.append(req)
     resource_log=(out/'resources.jsonl').open('a',encoding='utf8');last_sample=0;sample=None
     try:
         while pending or active:
@@ -58,11 +78,6 @@ def run_jobs(jobs,out,deadline_epoch,max_workers=0,reserve=.25):
                 resource_log.write(json.dumps({'epoch':now,'active':len(active),**sample})+'\n');resource_log.flush()
             while pending and len(active)<sample['target_workers'] and now<deadline_epoch:
                 req=pending.popleft();folder=Path(req['out']);folder.mkdir(parents=True,exist_ok=True)
-                prior=folder/'summary.json'
-                if prior.is_file():
-                    old=read(folder/'request.json')
-                    if old!=req:raise ValueError(f'Changed request; use a new run directory: {folder}')
-                    results.append(read(prior));continue
                 write(folder/'request.json',req)
                 dynamic=[]
                 if req.get('campaign_jobs_root') and 's' in req.get('components','') and req['q']>0:
@@ -71,12 +86,13 @@ def run_jobs(jobs,out,deadline_epoch,max_workers=0,reserve=.25):
                         if old.get('status')=='ok' and old['q']>0 and old['n']<=req['n'] and (old['q'],old['n'])!=(req['q'],req['n']):
                             dynamic.append({'path':str(prior.parent/'plan.json'),'name':f'current_q{old["q"]}_n{old["n"]}', 'observed_source_makespan':old['makespan']})
                     dynamic.sort(key=lambda x:x['observed_source_makespan'])
-                write(folder/'runtime.json',{'launched_epoch':time.time(),'dynamic_alternatives':dynamic[:3]})
+                launched=time.time()
+                write(folder/'runtime.json',{'launched_epoch':launched,'dynamic_alternatives':dynamic[:3]})
                 log=(folder/'worker.log').open('w',encoding='utf8')
                 p=subprocess.Popen([sys.executable,'-m','research_a_orion_fusion.solve',str((folder/'request.json').resolve())],
                                    cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,
                                    start_new_session=os.name!='nt',env={**os.environ,'PYTHONUTF8':'1'})
-                active.append({'proc':p,'request':req,'log':log,'start':time.monotonic(),'peak_rss':0,
+                active.append({'proc':p,'request':req,'log':log,'start':time.monotonic()-max(0,time.time()-launched),'peak_rss':0,
                                'workers_at_start':sample['target_workers']})
             for a in active[:]:
                 p=a['proc'];req=a['request'];elapsed=time.monotonic()-a['start'];reason=None
