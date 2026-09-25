@@ -35,3 +35,15 @@ Transferred only the separation of candidate proposal and validation. Our exact 
 ## Evidence boundaries
 
 Fixed-observation criticality freezes the durations measured in one real official run. It includes original dependency, memory/Pipe-order and cross-copy arcs, but it is not a counterfactual simulation of the shared DDR queue. A zero-slack cached read does not by itself prove that making it miss would increase Makespan by its standalone latency. Exact cache gain is always the same Q3-selected plan evaluated again in Q2/no-L2.
+
+
+## Structural continuation literature mapping (2026-09-25)
+
+The new private-island micro-wave is not copied from a single paper. It combines only mechanisms that remain legal under the official evaluator:
+
+- **A02 / A39:** acyclic grouping and component/hyperedge structure motivate keeping independent compute islands closed while changing legal grouping/mapping candidates.
+- **A16 COSMA:** create/preserve/spill reasoning motivates bounding the number of simultaneously opened islands by live L1/UB bytes. We do not use COSMA's address placement, free reordering, or explicit swap decisions.
+- **A42:** bounded local refinement and multiple candidate families motivate treating the structural wave as one proposal family inside the Anytime controller rather than as a replacement objective.
+- FIFO cache behavior still comes exclusively from the official problem-3 event semantics. CADE/LRU-style reuse distance is not used as a cache model.
+
+Measured evidence and same-plan Q2/Q3 controls are in `results/anytime_structural_20260925/`.
