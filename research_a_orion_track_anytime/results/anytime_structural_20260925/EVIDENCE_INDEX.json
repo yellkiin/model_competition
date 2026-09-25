@@ -1,0 +1,13 @@
+{
+  "run_date": "2026-09-25",
+  "official_evaluator": "题目/A题/通用神经网络处理器下的多核调度问题  附件/code",
+  "config": "题目/A题/通用神经网络处理器下的多核调度问题  附件/data/config.txt",
+  "baseline_policy": "day01 published incumbents accepted without re-running per user instruction",
+  "q3_same_plan_control": "Every populated same_plan_no_l2 cell is an official Q2 evaluation of the exact selected Q3 plan.",
+  "raw_plans_and_responses": "Preserved in ORION_ANYTIME_STRUCTURAL_20260925_EVIDENCE.zip delivered with this work; compressed responses are not duplicated in Git.",
+  "controls": {
+    "case_001": "selected incumbent unchanged",
+    "case_059": "certified near-bound stop with zero new evaluations"
+  },
+  "algorithm_case_ids_used": false
+}

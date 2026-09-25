@@ -1,0 +1,68 @@
+{
+  "run_id": 36108457298,
+  "rows": 6,
+  "expected_rows": 6,
+  "artifacts": [
+    {
+      "id": 10852435674,
+      "node_id": "MDg6QXJ0aWZhY3QxMDg1MjQzNTY3NA==",
+      "name": "wu-v3-case-084",
+      "size_in_bytes": 7230390,
+      "url": "https://api.github.com/repos/yellkiin/model_competition/actions/artifacts/10852435674",
+      "archive_download_url": "https://api.github.com/repos/yellkiin/model_competition/actions/artifacts/10852435674/zip",
+      "expired": false,
+      "digest": "sha256:e09fd41e73dfc554f083999f115bc95d1dd3a13009d859094d34f0d66913e570",
+      "created_at": "2026-09-25T07:38:38Z",
+      "updated_at": "2026-09-25T07:38:38Z",
+      "expires_at": "2026-12-24T07:35:58Z",
+      "workflow_run": {
+        "id": 36108457298,
+        "repository_id": 1381208088,
+        "head_repository_id": 1381208088,
+        "head_branch": "orion/track-anytime_wu",
+        "head_sha": "56482968caf40c06efe6910361f4a8b52183e507"
+      }
+    },
+    {
+      "id": 10852103406,
+      "node_id": "MDg6QXJ0aWZhY3QxMDg1MjEwMzQwNg==",
+      "name": "wu-v3-case-083",
+      "size_in_bytes": 4861966,
+      "url": "https://api.github.com/repos/yellkiin/model_competition/actions/artifacts/10852103406",
+      "archive_download_url": "https://api.github.com/repos/yellkiin/model_competition/actions/artifacts/10852103406/zip",
+      "expired": false,
+      "digest": "sha256:fcf0016abf8065e5bf2fc2ea531abcdcae71134d5abb365951cab74505cd26bd",
+      "created_at": "2026-09-25T07:37:32Z",
+      "updated_at": "2026-09-25T07:37:32Z",
+      "expires_at": "2026-12-24T07:35:58Z",
+      "workflow_run": {
+        "id": 36108457298,
+        "repository_id": 1381208088,
+        "head_repository_id": 1381208088,
+        "head_branch": "orion/track-anytime_wu",
+        "head_sha": "56482968caf40c06efe6910361f4a8b52183e507"
+      }
+    },
+    {
+      "id": 10851812666,
+      "node_id": "MDg6QXJ0aWZhY3QxMDg1MTgxMjY2Ng==",
+      "name": "wu-v3-case-044",
+      "size_in_bytes": 1752954,
+      "url": "https://api.github.com/repos/yellkiin/model_competition/actions/artifacts/10851812666",
+      "archive_download_url": "https://api.github.com/repos/yellkiin/model_competition/actions/artifacts/10851812666/zip",
+      "expired": false,
+      "digest": "sha256:b1d0fc50604cea966b725b2802e1fd76d90d3556d14be9432e65dbc4e639c1d3",
+      "created_at": "2026-09-25T07:36:45Z",
+      "updated_at": "2026-09-25T07:36:45Z",
+      "expires_at": "2026-12-24T07:35:58Z",
+      "workflow_run": {
+        "id": 36108457298,
+        "repository_id": 1381208088,
+        "head_repository_id": 1381208088,
+        "head_branch": "orion/track-anytime_wu",
+        "head_sha": "56482968caf40c06efe6910361f4a8b52183e507"
+      }
+    }
+  ],
+  "experimental_gate_only": true
+}

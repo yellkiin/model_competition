@@ -1,0 +1,34 @@
+{
+  "utc_start": "2026-09-25T07:36:24Z",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "exe": "/usr/bin/python",
+  "policy": "wu-v3",
+  "base_commit": "b513a98f86183a8c1b41d67a547f06fa9d578e2a",
+  "branch": "orion/track-anytime_wu",
+  "lineage_pr26": "eaf9a67f86d54b87e3a6f80d815bea5593bf8d0e",
+  "cases": [
+    "case_044"
+  ],
+  "questions": [
+    3
+  ],
+  "cores": [
+    5
+  ],
+  "methods": [
+    "old",
+    "combined"
+  ],
+  "modes": [
+    "cold"
+  ],
+  "seconds": 30.0,
+  "evaluation_cap": 16,
+  "total_seconds": 180.0,
+  "gap_tolerance": 0.02,
+  "worker_policy": "adaptive between completed matched blocks using CPU/RAM/peakRSS; constant inside block",
+  "seed_manifest": "/tmp/wu_v3/preparation/seed_manifest.json",
+  "baseline_source": "original day01 q0 singlecore, historical; no free cold seed",
+  "actual_wall_seconds": 19.66485842899999
+}

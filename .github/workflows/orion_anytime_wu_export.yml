@@ -1,0 +1,143 @@
+name: Anytime Wu bounded stage-order regression gate
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: wu-v3-once
+  cancel-in-progress: false
+jobs:
+  freeze:
+    if: github.event.pull_request.head.ref == 'orion/track-anytime_wu'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    outputs:
+      active: ${{ steps.claim.outputs.active }}
+      commit: ${{ steps.claim.outputs.commit }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: orion/track-anytime_wu
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_anytime
+      - id: claim
+        run: |
+          set -euo pipefail
+          LOCK=research_a_orion_track_anytime/results/wu_20260925_0649/V3_CLAIM.txt
+          if test -f "$LOCK"; then echo 'active=no' >> "$GITHUB_OUTPUT"; exit 0; fi
+          python research_a_orion_track_anytime/apply_revision3.py
+          mkdir -p "$(dirname "$LOCK")"
+          echo "$GITHUB_RUN_ID" > "$LOCK"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research_a_orion_track_anytime/adapter.py research_a_orion_track_anytime/runner.py "$LOCK"
+          git commit -m 'fix(anytime-wu): persist v3 representative-stage source before bounded regression gate'
+          git push origin HEAD:orion/track-anytime_wu
+          echo 'active=yes' >> "$GITHUB_OUTPUT"
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  gate:
+    needs: freeze
+    if: needs.freeze.outputs.active == 'yes'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      matrix:
+        case: ['044','083','084']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.freeze.outputs.commit }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_anytime
+      - uses: actions/download-artifact@v4
+        with:
+          name: orion-anytime-wu-frozen-inputs
+          run-id: 36104651803
+          github-token: ${{ github.token }}
+          path: /tmp/source
+      - name: Restore unchanged official inputs and process monitor
+        run: |
+          python -m pip install --user psutil==7.0.0
+          python - <<'PY'
+          import zipfile
+          with zipfile.ZipFile('/tmp/source/orion_anytime_wu_frozen.zip') as z:
+            for n in z.namelist():
+              if n.startswith(('research_a_orion_anytime/','raw_day01/','题目/A题/')):z.extract(n,'.')
+          PY
+      - name: Actual fixed replays and cold-start regression gate
+        run: |
+          python -u -m research_a_orion_track_anytime.prepare --cases ${{ matrix.case }} --workers 1 --out /tmp/wu_v3/preparation
+          python -u -m research_a_orion_track_anytime.runner --cases ${{ matrix.case }} --questions 3 --cores 5 --methods old,combined --modes cold --revision v3 --seconds 30 --max-evaluations 16 --total-seconds 180 --pair-seconds 30 --workers 1 --seed-manifest /tmp/wu_v3/preparation/seed_manifest.json --out /tmp/wu_v3/comparison
+      - if: always()
+        run: |
+          mkdir -p /tmp/wu_v3/source
+          cp research_a_orion_track_anytime/*.py /tmp/wu_v3/source/
+          echo '${{ needs.freeze.outputs.commit }}' > /tmp/wu_v3/EXECUTION_COMMIT.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wu-v3-case-${{ matrix.case }}
+          path: /tmp/wu_v3
+          compression-level: 6
+  collect:
+    needs: [freeze, gate]
+    if: always() && needs.freeze.outputs.active == 'yes'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: orion/track-anytime_wu
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_anytime
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: wu-v3-case-*
+          path: /tmp/v3
+      - name: Commit actual tables and artifact index only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import os,csv,json,shutil,urllib.request
+          from pathlib import Path
+          out=Path('research_a_orion_track_anytime/results/wu_20260925_0649/ci_revision3');out.mkdir(exist_ok=True);rows=[]
+          for p in Path('/tmp/v3').glob('*/comparison/all_jobs.json'):
+            rows.extend({k:v for k,v in r.items() if not isinstance(v,(dict,list))} for r in json.loads(p.read_text()))
+            d=out/p.parent.parent.name;d.mkdir(exist_ok=True)
+            for name in ['per_case.csv','trajectory.csv','manifest.json','run_summary.json']:shutil.copy(p.parent/name,d/name)
+          keys=list(dict.fromkeys(k for r in rows for k in r))
+          with (out/'per_case.csv').open('w',encoding='utf-8-sig',newline='') as f:
+            w=csv.DictWriter(f,keys);w.writeheader();w.writerows(rows)
+          rid=int(os.environ['GITHUB_RUN_ID']);url=f'https://api.github.com/repos/yellkiin/model_competition/actions/runs/{rid}/artifacts?per_page=100'
+          artifacts=json.load(urllib.request.urlopen(urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})))['artifacts']
+          (out/'EVIDENCE_INDEX.json').write_text(json.dumps({'run_id':rid,'rows':len(rows),'expected_rows':6,'artifacts':artifacts,'experimental_gate_only':True},indent=2))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research_a_orion_track_anytime/results/wu_20260925_0649/ci_revision3
+          git commit -m 'results(anytime-wu): preserve v3 cold gate including all regressions'
+          git push origin HEAD:orion/track-anytime_wu
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          with zipfile.ZipFile('/tmp/wu_final_code_tables.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for f in Path('research_a_orion_track_anytime').rglob('*'):
+              if f.is_file() and '__pycache__' not in f.parts:z.write(f,str(f))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wu-final-code-tables
+          path: /tmp/wu_final_code_tables.zip

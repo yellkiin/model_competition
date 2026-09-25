@@ -1,0 +1,13 @@
+﻿case,q,n,mode,batch,old,peer_v4,repair_v6,repair_vs_peer,improvement_vs_peer_pct,old_seconds,peer_seconds,repair_seconds,peer_evaluations,repair_evaluations,peer_stop,repair_stop
+case_001,2,3,warm_start,bound,78545,78545,78545,tie,0.0,0.9435422690000053,0.10432134100000212,0.1325078500000103,0,0,global_bound_gap,recomputed_bound_before_candidate_generation
+case_001,3,5,warm_start,warm,47502,47502,47502,tie,0.0,5.063744318999994,3.28278365700001,3.4117973469999896,16,16,evaluation_cap,evaluation_cap
+case_024,3,5,warm_start,warm,2212022,2216206,2216206,tie,0.0,30.026912578000008,28.723283576,29.150537873999994,10,10,no_candidate_fits_remaining_estimated_time,no_candidate_fits_remaining_estimated_time
+case_044,3,5,cold_start,cold,49042,48804,48858,loss,-0.11064666830586933,13.621804440999995,9.844159480999991,9.746851968000001,16,16,evaluation_cap,evaluation_cap
+case_044,3,5,warm_start,warm,46687,44768,44768,tie,0.0,12.942710964,8.845323747000002,8.799658539999996,16,16,evaluation_cap,evaluation_cap
+case_059,2,5,warm_start,bound,150455,150455,150455,tie,0.0,2.6844289689999954,0.13172171600000127,0.13160237499999994,0,0,global_bound_gap,recomputed_bound_before_candidate_generation
+case_059,3,5,warm_start,warm,150455,150524,150524,tie,0.0,12.466545489999994,0.31104898499999933,0.18698609299999447,0,0,certified_near_bound_budget_stop,recomputed_bound_before_candidate_generation
+case_083,3,5,cold_start,cold,215741,185899,178634,win,3.908036084110189,30.03884771899999,24.871834229,21.561321206000002,16,16,evaluation_cap,evaluation_cap
+case_083,3,5,warm_start,warm,181091,180638,180638,tie,0.0,30.030749014999998,21.516779118000002,22.882621587999992,16,16,evaluation_cap,evaluation_cap
+case_084,3,5,cold_start,cold,503472,285686,285686,tie,0.0,30.028474422000016,28.356278137999993,25.221648509999966,5,5,finite_candidate_space_exhausted,finite_candidate_space_exhausted
+case_084,3,5,warm_start,warm,391700,285686,285686,tie,0.0,30.039469456000006,28.670173382,28.142225021,5,5,finite_candidate_space_exhausted,finite_candidate_space_exhausted
+case_086,3,5,warm_start,warm,48028,45706,45706,tie,0.0,30.022988543999986,25.938211257999995,25.65704176600002,16,16,evaluation_cap,evaluation_cap

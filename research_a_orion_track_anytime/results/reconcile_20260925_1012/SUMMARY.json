@@ -1,0 +1,59 @@
+{
+  "expected_search_arms": 36,
+  "actual_search_arms": 36,
+  "status_counts": {
+    "ok": 30,
+    "timeout_with_incumbent": 6
+  },
+  "peer_comparison": {
+    "tie": 10,
+    "loss": 1,
+    "win": 1
+  },
+  "selected_response_checks": 36,
+  "selected_response_valid": 36,
+  "q3_pairs_requested": 30,
+  "q3_pairs_exact_valid": 30,
+  "prior_v4_v5_originals_recovered": false,
+  "new_code_policy": "reconcile-v6",
+  "peer_commit": "27f7aa073bd7f91a1b1b9842eb2c9eb48117bf37",
+  "workflow_run_id": 36123440945,
+  "per_case_execution": [
+    {
+      "case": "001",
+      "execution_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+      "raw_bundle": "reconcile-case-001_raw.zip"
+    },
+    {
+      "case": "024",
+      "execution_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+      "raw_bundle": "reconcile-case-024_raw.zip"
+    },
+    {
+      "case": "044",
+      "execution_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+      "raw_bundle": "reconcile-case-044_raw.zip"
+    },
+    {
+      "case": "059",
+      "execution_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+      "raw_bundle": "reconcile-case-059_raw.zip"
+    },
+    {
+      "case": "083",
+      "execution_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+      "raw_bundle": "reconcile-case-083_raw.zip"
+    },
+    {
+      "case": "084",
+      "execution_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+      "raw_bundle": "reconcile-case-084_raw.zip"
+    },
+    {
+      "case": "086",
+      "execution_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+      "raw_bundle": "reconcile-case-086_raw.zip"
+    }
+  ],
+  "full_100_rerun": false
+}
