@@ -123,5 +123,18 @@
       "source": "literal recorded plan, losslessly expanded"
     }
   ],
-  "tables": []
+  "tables": [
+    {
+      "path": "evidence/anytime_30_seconds.csv",
+      "bytes_before_git_eol": 366157,
+      "data_rows": 1974,
+      "source": "all literal recorded strings; no recomputed time values"
+    },
+    {
+      "path": "evidence/all_improvement_events.csv",
+      "bytes_before_git_eol": 19729,
+      "data_rows": 159,
+      "source": "all literal recorded strings; no recomputed time values"
+    }
+  ]
 }
