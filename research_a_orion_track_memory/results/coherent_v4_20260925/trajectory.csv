@@ -1,0 +1,4 @@
+case,q,n,method,run_id,mode,phase,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,added_copy_bytes,evaluations,has_valid_incumbent
+case_084,2,5,memory-coherent-4.4,coherent_v4_20260925,warm_start,trusted_parent,0,,391700,2507412,6.401358182282359,9925632,0,true
+case_084,2,5,memory-coherent-4.4,coherent_v4_20260925,warm_start,new_official_incumbent,14.63,,285686,2507412,8.776810904279523,322560,1,true
+case_084,2,5,memory-coherent-4.4,coherent_v4_20260925,warm_start,stopped_candidate_space_exhausted,72.61,,285686,2507412,8.776810904279523,322560,1,true
