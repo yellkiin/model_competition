@@ -1,65 +1,28 @@
-name: ORION Anytime Wu real paired study
+name: ORION Anytime Wu duplicate-run guard
 on:
   pull_request:
     branches: [main]
-    paths: ['.github/workflows/orion_anytime_wu_export.yml']
 permissions:
   contents: read
-  actions: read
+  actions: write
 jobs:
-  experiment:
+  guard:
     if: github.event.pull_request.head.ref == 'orion/track-anytime_wu'
     runs-on: ubuntu-latest
-    timeout-minutes: 28
-    strategy:
-      fail-fast: false
-      max-parallel: 7
-      matrix:
-        case: ['001','024','044','059','083','084','086']
+    timeout-minutes: 2
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ff326e037312bec791efb465d7c0d161df84b8e3
-          fetch-depth: 1
-          filter: blob:none
-          sparse-checkout: research_a_orion_track_anytime
-      - uses: actions/download-artifact@v4
-        with:
-          name: orion-anytime-wu-frozen-inputs
-          run-id: 36104651803
-          github-token: ${{ github.token }}
-          path: /tmp/source
-      - name: Restore immutable inputs and required dependency
-        shell: bash
+      - name: Cancel only the accidentally duplicated study, preserve primary run
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          set -euo pipefail
-          python -m pip install --user psutil==7.0.0
           python - <<'PY'
-          import zipfile
-          from pathlib import Path
-          with zipfile.ZipFile('/tmp/source/orion_anytime_wu_frozen.zip') as z:
-            for n in z.namelist():
-              if n.startswith(('research_a_orion_anytime/','raw_day01/','题目/A题/','source_metadata/')):z.extract(n,'.')
-          Path('/tmp/wu_results').mkdir()
+          import os,json,urllib.request
+          root='https://api.github.com/repos/yellkiin/model_competition/actions/runs/36106800532'
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
+          data=json.load(urllib.request.urlopen(urllib.request.Request(root,headers=headers)))
+          if data['status']!='completed':
+            urllib.request.urlopen(urllib.request.Request(root+'/cancel',data=b'{}',headers=headers,method='POST')).read()
+            print('Cancellation requested for duplicate run 36106800532 only')
+          else:print('Duplicate already completed; retain evidence and exclude from primary selection')
+          print('Primary 36106285863 is not cancelled or rerun. No solver invocation in this workflow.')
           PY
-      - name: Fixed official replay and actual cache diagnostics
-        run: python -u -m research_a_orion_track_anytime.prepare --cases ${{ matrix.case }} --workers 1 --out /tmp/wu_results/preparation
-      - name: Same-machine warm then cold, matched budgets
-        run: |
-          python -u -m research_a_orion_track_anytime.runner --cases ${{ matrix.case }} --questions 1,2,3 --cores 2,5 --modes warm,cold --methods old,combined --seconds 30 --max-evaluations 16 --total-seconds 1400 --pair-seconds 60 --workers auto --max-workers 2 --seed-manifest /tmp/wu_results/preparation/seed_manifest.json --out /tmp/wu_results/paired30
-          cat /tmp/wu_results/paired30/run_summary.json
-      - name: Persist execution source and dependencies
-        if: always()
-        run: |
-          mkdir -p /tmp/wu_results/source
-          cp research_a_orion_track_anytime/*.py /tmp/wu_results/source/
-          echo 'ff326e037312bec791efb465d7c0d161df84b8e3' > /tmp/wu_results/EXECUTION_COMMIT.txt
-          python --version > /tmp/wu_results/python_version.txt
-          python -m pip show psutil > /tmp/wu_results/psutil_version.txt
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: wu-real-case-${{ matrix.case }}
-          path: /tmp/wu_results
-          compression-level: 6
-          if-no-files-found: error
