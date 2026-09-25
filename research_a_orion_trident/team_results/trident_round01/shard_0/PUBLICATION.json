@@ -1,1 +1,36 @@
-{"source_run":"C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition_trident_host0\\research_a_orion_trident\\runs\\round01\\shard_0","archive_parts":[{"path":"evidence.zip","bytes":4184870}],"archive_format":"ZIP with run/ prefix; concatenate parts in listed order","shard_status":{"complete":false,"expected_main":476,"expected_pairs":170,"saved_legal_main":2,"complete_main":1,"partial_main":1,"not_started_main":474,"paired":0,"reason":"frozen release real-case gate stopped after Windows persistence PermissionError","report":"report/report.json","coverage":"report/paper_data/SHARD_0_COVERAGE.json"},"all_candidate_files":true,"selected_plan_count":2,"selected_outputs_complete":false,"main_count":2,"pair_count":0,"formal_100_complete":false,"automatic_upload":false,"restore_command":"python -m research_a_orion_trident.unpack_results <this-directory> --out <new-directory>"}
+{
+  "source_run": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition_trident_host0\\research_a_orion_trident\\runs\\round01\\shard_0",
+  "archive_parts": [
+    {
+      "path": "evidence.zip",
+      "bytes": 4184870
+    }
+  ],
+  "archive_format": "ZIP with run/ prefix; concatenate parts in listed order",
+  "shard_status": {
+    "complete": false,
+    "expected_main": 476,
+    "expected_pairs": 170,
+    "saved_legal_main": 2,
+    "complete_main": 1,
+    "partial_main": 1,
+    "not_started_main": 474,
+    "paired": 0,
+    "reason": "frozen release real-case gate stopped after Windows persistence PermissionError",
+    "report": "report/report.json",
+    "coverage": "report/paper_data/SHARD_0_COVERAGE.json"
+  },
+  "all_candidate_files": true,
+  "selected_plan_count": 2,
+  "selected_outputs_complete": false,
+  "main_count": 2,
+  "pair_count": 0,
+  "formal_100_complete": false,
+  "automatic_upload": false,
+  "restore_command": "python -m research_a_orion_trident.unpack_results <this-directory> --out <new-directory>",
+  "raw_location": {
+    "index": "RAW_ASSETS.json",
+    "tag": "orion-trident_round01-shard-0-20260925-152648",
+    "kind": "GitHub Release"
+  }
+}
