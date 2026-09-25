@@ -1,3 +1,9 @@
+# 当前 GitHub 交付状态
+
+代码已发布到 **PR #38**：https://github.com/yellkiin/model_competition/pull/38
+
+固定分支：`integration/orion-trident-publish-20260925`。三台正式主机应直接 fetch/switch 此分支，并记录相同 HEAD；不再创建重复代码 PR。下面原有 `publish_code.ps1` 说明只作为离线包/灾难恢复时的备用发布方法。
+
 # 获取已发布代码与运行
 
 代码已经提交到 `yellkiin/model_competition` 的 PR #38：
