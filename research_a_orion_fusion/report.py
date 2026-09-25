@@ -9,20 +9,33 @@ from research_a_orion_anytime.worker import audit
 
 def prefixes(folder):
     req=read(folder/'request.json');s=read(folder/'progress.json')
-    events=s.get('improvement_events',[]);start=s.get('search_started_seconds')
-    elapsed=s.get('elapsed_seconds',0);rows=[]
+    events=s.get('improvement_events',[]);search_start=s.get('search_started_seconds')
+    elapsed=s.get('elapsed_seconds',0);phases=s.get('phase_events',[])
+    execution=read(folder/'execution.json') if (folder/'execution.json').is_file() else {}
+    observed=execution.get('wall_seconds',elapsed);rows=[]
     seed_cost=req.get('source_seed_seconds')
-    for cutoff in (5,10,20,30,60,120,300,600):
-        for phase in ('local_total','refinement'):
-            origin=0 if phase=='local_total' else start
+    for cutoff in range(0,601,30):
+        for axis in ('local_total','search_only'):
+            origin=0 if axis=='local_total' else search_start
             if origin is None:continue
             absolute=origin+cutoff
             valid=[e for e in events if e['elapsed_seconds']<=absolute]
             best=valid[-1] if valid else None
+            phase=[p for p in phases if p['elapsed_seconds']<=min(absolute,observed)]
+            current=phase[-1] if phase else {}
+            calls=[a for a in s.get('attempts',[]) if a.get('completed_seconds',float('inf'))<=absolute]
             rows.append({'case':req['case'],'q':req['q'],'n':req['n'],'components':req['components'],
-                         'phase':phase,'cutoff_seconds':cutoff,'best_makespan':best['makespan'] if best else None,
+                         'time_axis':axis,'cutoff_seconds':cutoff,'best_makespan':best['makespan'] if best else None,
+                         'best_added_copy_bytes':best.get('added_copy_bytes') if best else None,
+                         'winning_source':best.get('source',best.get('family')) if best else None,
+                         'winning_candidate':best.get('name') if best else None,
+                         'active_phase':current.get('phase'),'optimization_stage':current.get('optimization_stage'),'active_source':current.get('source'),
+                         'completed_evaluations':len(calls),'local_budget_seconds':req.get('job_seconds',req.get('seconds')),
                          'source_seed_seconds':seed_cost,'has_valid_incumbent':best is not None,
-                         'ended_before_cutoff':elapsed<absolute,'observed_run_seconds':elapsed})
+                         'ended_before_cutoff':observed<absolute,
+                         'point_kind':'stopped_hold' if observed<absolute else 'observed',
+                         'observed_run_seconds':observed,
+                         'known_end_to_end_seconds':None if seed_cost is None else seed_cost+min(absolute,observed)})
     return rows
 
 
@@ -32,7 +45,7 @@ def collect(roots,destination,official=None,verify=True,require_complete=False):
     for root in map(Path,roots):
         m=root/'run_settings.json'
         if m.is_file():
-            x=read(m);policies.add((x['version'],x['components'],x.get('fifo_module'),x['seconds'],x['large_seconds'],x['max_evaluations']))
+            x=read(m);policies.add((x['version'],x['components'],x.get('fifo_module'),x['seconds'],x['large_seconds'],x['max_evaluations'],x.get('source_policy'),x.get('stop_gap')))
         man=root/'manifest.json'
         if man.is_file():manifests.append(read(man))
         for p in sorted((root/'jobs').glob('*/summary.json')):
@@ -44,7 +57,7 @@ def collect(roots,destination,official=None,verify=True,require_complete=False):
     rows=[];trajectory=[];checks=[];pair_checks=[];last_case=None;g=None
     of,cfgfile=official_root(official);cfg=Config.read(cfgfile)
     for (case,q,n),(s,folder,root) in sorted(by_key.items()):
-        row={k:s.get(k) for k in ('case','q','n','components','status','makespan','added_copy_bytes','partition_added_copy_bytes','spill_added_copy_bytes','cache_hit_rate','selected_family','selected_name','baseline_makespan','raw_candidate_makespan','regression_retained','seed_replay_seconds','candidate_generation_seconds','official_eval_seconds','source_seed_seconds','end_to_end_seconds')}
+        row={k:s.get(k) for k in ('case','q','n','components','status','makespan','added_copy_bytes','partition_added_copy_bytes','spill_added_copy_bytes','cache_hit_rate','selected_family','selected_name','baseline_makespan','raw_candidate_makespan','regression_retained','seed_replay_seconds','candidate_generation_seconds','official_eval_seconds','source_seed_seconds','end_to_end_seconds','stop_reason','job_seconds','selected_plan_ready_seconds')}
         row['local_seconds']=s.get('execution',{}).get('wall_seconds')
         row['reference']=ref.get(case);row['speedup']=ref[case]/s['makespan'] if case in ref and s.get('makespan') else None
         row['relative_to_seed']=s['baseline_makespan']/s['makespan'] if s.get('baseline_makespan') and s.get('makespan') else None
@@ -56,10 +69,10 @@ def collect(roots,destination,official=None,verify=True,require_complete=False):
         if q==3 and pair.is_file():
             ps=read(pair)
             if ps['status']=='ok' and s['status']=='ok':
-                # Direct object equality, no source-file fingerprint stage.
                 if read(pair.parent/'plan.json')!=read(folder/'plan.json'):raise ValueError('Q3/no-L2 pairing plan differs')
                 row['no_l2_makespan']=ps['makespan'];row['same_plan_cache_speedup']=ps['makespan']/s['makespan'];pair_ok=True
                 row['pair_seconds']=ps.get('execution',{}).get('wall_seconds')
+                row['no_l2_added_copy_bytes']=ps.get('added_copy_bytes')
         row['pair_status']='ok' if pair_ok else ('missing' if q==3 else 'not_applicable')
         if (folder/'progress.json').is_file():trajectory.extend(prefixes(folder))
         if verify and s['status']=='ok':
@@ -92,5 +105,7 @@ def collect(roots,destination,official=None,verify=True,require_complete=False):
             'active_policies':list(policies),'memory_scope':'official Step3 peak fields; not independent allocation replay'}
     csv_write(dest/'per_case.csv',rows);csv_write(dest/'budget_prefixes.csv',trajectory)
     write(dest/'report.json',report);write(dest/'verification.json',{'main':checks,'pairs':pair_checks})
+    from .paper import build
+    build(dest,rows,by_key,trajectory)
     if require_complete and not complete:raise ValueError('1400 main plus 500 paired records not complete; see report.json')
     return report
