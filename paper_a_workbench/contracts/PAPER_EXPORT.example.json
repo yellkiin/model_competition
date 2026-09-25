@@ -1,0 +1,18 @@
+{
+  "schema":1,
+  "repository":"yellkiin/model_competition",
+  "publication_id":"REPLACE_WITH_ACTUAL_PUBLICATION_ID",
+  "publication_state":"planned",
+  "algorithm_revision":"REPLACE_WITH_ACTUAL_COMMIT",
+  "official_revision":"REPLACE_WITH_ACTUAL_COMMIT",
+  "result_revision":"REPLACE_WITH_ACTUAL_COMMIT",
+  "method_paths":["REPLACE_WITH_FINAL_ALGORITHM_PACKAGE_AND_DEPENDENCIES"],
+  "result_paths":["REPLACE_WITH_ONE_FINAL_PUBLICATION_ROOT"],
+  "config":"题目/A题/通用神经网络处理器下的多核调度问题  附件/data/config.txt",
+  "config_local":"REPLACE_WITH_LOCAL_ORIGINAL_CONFIG",
+  "recorded_version":"REPLACE_WITH_ACTUAL_RECORD_VERSION",
+  "protocol":{"budget_scope":"graph_question_core","seconds":600,"mode":"REPLACE_WITH_ACTUAL_PROTOCOL","clock_includes":["startup","parse","seed_replay","construction","evaluation","save","REVIEW_PAIR_BUDGET"],"historical_cost_policy":"retain known cost; unknown remains null"},
+  "runs":["REPLACE_WITH_LOCAL_SHARD_0","REPLACE_WITH_LOCAL_SHARD_1","REPLACE_WITH_LOCAL_SHARD_2"],
+  "assets":[],
+  "layout":{"jobs":"jobs/*/summary.json","request":"request.json","plan":"plan.json","response":"result.json.gz","progress":"progress.json","inline_pair_plan":"same_plan_no_l2_plan.json","inline_pair_response":"same_plan_no_l2_result.json.gz","external_pair_dir":"pairs/{job}","external_pair_plan":"plan.json","external_pair_response":"result.json.gz"}
+}
