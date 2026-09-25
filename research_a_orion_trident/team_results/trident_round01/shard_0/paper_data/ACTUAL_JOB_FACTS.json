@@ -1,0 +1,37 @@
+{
+  "campaign_wall_seconds": 14.452105522155762,
+  "jobs": [
+    {
+      "case": "case_002",
+      "q": 1,
+      "n": 2,
+      "makespan": 130549,
+      "baseline_makespan": 130549,
+      "selected_family": "seed",
+      "selected_name": "replayed_reference",
+      "attempt_count": 20,
+      "official_eval_seconds": 10.366832599858753,
+      "added_copy_bytes": 1585152,
+      "spill_added_copy_bytes": 0,
+      "cache_hit_rate": null,
+      "pair_status": null,
+      "wall_seconds": 13.875
+    },
+    {
+      "case": "case_002",
+      "q": 3,
+      "n": 2,
+      "makespan": 127007,
+      "baseline_makespan": 128272,
+      "selected_family": "memory/reuse_bands",
+      "selected_name": "fixed_owner_bands_16",
+      "attempt_count": 32,
+      "official_eval_seconds": 9.376729399897158,
+      "added_copy_bytes": 1178112,
+      "spill_added_copy_bytes": 390144,
+      "cache_hit_rate": 0.3113815318539728,
+      "pair_status": null,
+      "wall_seconds": 14.140999999945052
+    }
+  ]
+}
