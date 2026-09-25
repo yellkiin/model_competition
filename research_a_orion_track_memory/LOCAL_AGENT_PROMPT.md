@@ -48,3 +48,35 @@ Windows 优先沿用 `D:\python\python.exe`、Python 3.12.x、CPU-only。只检�
 分别记录构造、候选生成、原评估、输出/失败和总耗时；冷启动与续优化分开。阶段B从阶段A种子继续时，seed成本包含实际取得种子的原 solve + added 时间，不能清零。30/60/120/300 秒必须来自同一持续轨迹。
 
 最终只提交 `research_a_orion_track_memory/` 的代码、Markdown、CSV和原响应位置索引，不重复提交原图、config或论文。大响应按仓库已有结果传输方式处理，不把整个工作区二次打包当作研究前置条件。不自动合并 PR，不上传赛事平台。
+
+
+---
+
+## memory-v4 下一轮：进入100图前的组合实验
+
+本分支新增 `plugin_adaptive_v4.py`。不要替换结构线/Anytime线，把它作为一个候选源加入联合池。
+
+先在同一机器完成五核小批次：
+
+```powershell
+& .\research_a_orion_track_memory\run_adaptive_v4_windows.ps1 \
+  -Cases 36,48,68,84,85,86,97 \
+  -Questions 1,2,3 -Cores 5 \
+  -Seconds 120 -MaxEvaluations 28 -TotalSeconds 1800 \
+  -Workers auto \
+  -Out .\research_a_orion_track_memory\results\adaptive_v4_local
+```
+
+已有上一阶段 run 时可用 `-SeedRun <run目录>` 续优化，种子成本会继续累计，不能清零。
+
+组合规则：
+- 结构线已经做核迁移时，可在代码里用 `make_proposer(allow_core_migration=False)` 避免重复自由度；
+- private-island 图优先 micro-wave，不再无条件运行全图 depth bands；
+- 候选本身允许变差，最终选择只能接受官方 `(Makespan, added_copy_bytes)` 改善；
+- Q3 的新选中方案继续做同方案 no-L2；
+- 100图前先固定代码，再跑完整五核；确认平均上升后再以同一参数补2/3/4核。
+
+工具失败处理保持分层：
+- shell git clone 不可用时，用 GitHub Connector / PR25 payload 恢复所需输入，不能阻塞本地实验；
+- Connector 写动作不可用时先完成真实实验和普通文本结果，最后再发布；
+- 不把整个工作区二次压成 opaque 大包作为研究前置步骤。
