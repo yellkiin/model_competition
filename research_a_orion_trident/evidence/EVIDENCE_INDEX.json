@@ -3,19 +3,46 @@
   "experiment_version_scope": "Multiple explicitly labelled development versions trident-1.0 through trident-1.3; no best-of-versions performance table",
   "new_experiments_during_publication": 0,
   "ordinary_git_records": {
-    "selected_arms": {"path": "all_measured_arms.csv", "rows": 32},
-    "improvements": {"path": "all_improvement_events.csv", "rows": 159},
-    "thirty_second_prefixes": {"path": "anytime_30_seconds.csv", "rows": 1974},
-    "fifo_plan_checks": {"path": "fifo_accepted_mapping_checks.csv", "rows": 16},
-    "selected_response_check_receipts": {"path": "selected_response_checks.json", "main_responses": 32, "q3_same_plan_pairs": 17},
-    "actual_selected_plans": {"index": "available_seeds/AVAILABLE_SEEDS.json", "plans": 20}
+    "selected_arms": {
+      "path": "all_measured_arms.csv",
+      "rows": 32
+    },
+    "improvements": {
+      "path": "all_improvement_events.csv",
+      "rows": 159
+    },
+    "thirty_second_prefixes": {
+      "path": "anytime_30_seconds.csv",
+      "rows": 1974
+    },
+    "fifo_plan_checks": {
+      "path": "fifo_accepted_mapping_checks.csv",
+      "rows": 16
+    },
+    "selected_response_check_receipts": {
+      "path": "selected_response_checks.json",
+      "main_responses": 32,
+      "q3_same_plan_pairs": 17
+    },
+    "actual_selected_plans": {
+      "index": "available_seeds/AVAILABLE_SEEDS.json",
+      "plans": 20
+    }
   },
   "full_raw_archive": {
     "filename": "TRIDENT_REAL_EVIDENCE_20260925.zip",
     "bytes": 107595313,
     "location_kind": "conversation attachment, not a GitHub Release asset",
     "uploaded_to_github": false,
-    "contains": ["candidate plans", "original full official responses", "requests", "progress", "logs", "versioned source snapshots", "candidate_calls.csv with 1200 rows"],
+    "contains": [
+      "candidate plans",
+      "original full official responses",
+      "requests",
+      "progress",
+      "logs",
+      "versioned source snapshots",
+      "candidate_calls.csv with 1200 rows"
+    ],
     "optional_install_command": "python -m research_a_orion_trident.install_evidence <path-to-TRIDENT_REAL_EVIDENCE_20260925.zip>"
   },
   "full_original_git_bundle": {
@@ -24,5 +51,9 @@
     "local_commit": "b05c5a65405ea936009e52b27e562d772c4ab0bf"
   },
   "seed_response_policy": "Twenty original seed responses remain in the full archive. Git includes the actual two-field plans and metadata. Host runs evaluate available seed plans at their target q/n inside the configuration budget.",
-  "publication_materialization": "Literal recorded numeric sequences and CSV strings are expanded losslessly; no evaluator or solver runs during file publication. Publication receipts contain actual expanded file sizes/counts."
+  "publication_materialization": "Literal recorded numeric sequences and CSV strings are expanded losslessly; no evaluator or solver runs during file publication. Publication receipts contain actual expanded file sizes/counts.",
+  "remote_publication": "GitHub PR #38, branch integration/orion-trident-publish-20260925",
+  "raw": "Complete raw candidate/request/plan/official-response archive is retained in TRIDENT_REAL_EVIDENCE_20260925.zip / full bundle; ordinary PR Git carries measured CSVs, selected plan files and check summaries.",
+  "figures": "Paper plots are reproducible from committed CSVs with plot_local_evidence.py / plot_paper.py; binary figure copies are kept in the delivery package rather than required for solving.",
+  "available_seed_responses": "Selected plan JSON files are committed; compressed official responses are in the complete evidence package."
 }
