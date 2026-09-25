@@ -29,3 +29,10 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'build(Trident): publish exact source and recorded plans/tables [skip ci]'
           git push origin HEAD:integration/orion-trident-publish-20260925
+      - name: Read back published delivery files
+        uses: actions/upload-artifact@v4
+        with:
+          name: trident-published-source-and-records
+          path: research_a_orion_trident/
+          include-hidden-files: true
+          retention-days: 7

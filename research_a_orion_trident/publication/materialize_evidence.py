@@ -1,8 +1,8 @@
 """Lossless publication of already-recorded plans and CSV fields.
 
-The input files contain literal measured strings and integer runs. This module
-only expands that storage representation. It never generates candidates,
-executes an evaluator, fits a curve, or substitutes later values into a prefix.
+Inputs contain literal measured strings and integer runs. This expands a storage
+representation only, without candidate generation, evaluation, curve fitting,
+or substitution of later results into earlier time prefixes.
 """
 from pathlib import Path
 from itertools import accumulate
@@ -61,13 +61,16 @@ def column(c, row_count):
         return [c['constant']] * row_count
     if 'values' in c:
         return c['values']
-    if 'indices' in c:
-        return [c['dictionary'][i] for i in c['indices']]
-    return [c['dictionary'][i] for i, count in c['runs'] for _ in range(count)]
+    if 'indices' in c or 'indices_parts' in c:
+        indices = c['indices'] if 'indices' in c else expand(c['indices_parts'])
+        return [c['dictionary'][i] for i in indices]
+    runs = c['runs'] if 'runs' in c else expand(c['run_parts'])
+    return [c['dictionary'][i] for i, count in runs for _ in range(count)]
 
 
 def tables():
     receipt = []
+    overrides = [json.loads(p.read_text(encoding='utf8')) for p in sorted(HERE.glob('column_override_*.json'))]
     for path in sorted(HERE.glob('table_*.json')):
         data = json.loads(path.read_text(encoding='utf8'))
         cols = list(data.get('columns', []))
@@ -75,6 +78,10 @@ def tables():
             cols.extend(json.loads((HERE / part).read_text(encoding='utf8'))['columns'])
         if len(cols) != len(data['header']):
             raise ValueError('Missing table columns: ' + data['filename'])
+        for correction in overrides:
+            if correction['filename'] == data['filename']:
+                for i, c in correction['columns'].items():
+                    cols[int(i)] = c
         decoded = [column(c, data['row_count']) for c in cols]
         if any(len(c) != data['row_count'] for c in decoded):
             raise ValueError('Incomplete table rows: ' + data['filename'])
