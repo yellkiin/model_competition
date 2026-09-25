@@ -1,0 +1,8 @@
+{
+  "failed_q3_prior_seconds": 14.140999999945052,
+  "complete_q1_reused_from": "trident-1.3",
+  "source_head": "854d8775ee378e14089fade6e30fd83b0a832842",
+  "version": "trident-1.3-win-save.1",
+  "note": "Do not concatenate failed and retry trajectories; charge both costs. This is a persistence fix, not a new solver strategy.",
+  "base_head": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1"
+}
