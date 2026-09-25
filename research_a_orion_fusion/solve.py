@@ -83,6 +83,10 @@ def run(request):
                 row['result_retained']=keep
                 if keep:
                     write(out/rn,r);meta['ready_seconds']=time.monotonic()-start
+                    if time.monotonic()>=deadline:
+                        row.update(status='persisted_after_wall_limit',accepted=False,
+                                   completed_seconds=meta['ready_seconds'])
+                        save();return row
                 else: row['result_file']=None
                 if is_baseline:
                     if old_baseline is None or (tval,bytes_)<(old_baseline['makespan'],old_baseline['added_copy_bytes']): state['baseline']=dict(meta)

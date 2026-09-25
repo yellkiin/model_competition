@@ -12,7 +12,7 @@ from research_a_orion_anytime.core import (bounds, estimate, make_plan, map_grou
     plan_view, planned_traffic, memory_proxy, neighbours)
 from research_a_orion_track_structure.plugin import (linear_blocks, nonuniform_blocks,
     pack_within_phase)
-from research_a_orion_track_structure.safe_refine_plugin import propose as local_structure
+from research_a_orion_track_structure.safe_refine_plugin import local_families, constructive_family
 from research_a_orion_track_memory.coherent_v4 import candidates as mem
 
 
@@ -21,19 +21,41 @@ def expired(deadline):
 
 
 def wrap(g, n, cfg, q, plan, name, family, context, memory_score=False):
-    plan_view(g, plan)
+    # The unified host chooses a SOURCE using observed gains/costs, not this
+    # candidate's old full FIFO/live-memory proxy. Preserve candidate order and
+    # all necessary-condition bounds; avoid computing an unused full proxy.
     bd = bounds(g, cfg, n, q, plan)
-    if memory_score:
-        old_bytes = sum(planned_traffic(g, context['plan'], q))
-        new_bytes = sum(planned_traffic(g, plan, q))
-        peak = memory_proxy(g, plan, cfg, q)['predicted_peak']
-        pressure = max((peak.get(p, 0) / cfg.capacity[p] for p in cfg.capacity), default=0)
-        proxy = {'score': bd['candidate_lower'] + .08 * max(0, new_bytes-old_bytes)/cfg.bandwidth
-                 + .005 * max(0, pressure-1) * context['official_result']['makespan'],
-                 'predicted_peak': peak, 'heuristic_only': True}
-    else:
-        proxy = estimate(g, plan, cfg, q)
-    return {'plan': plan, 'name': name, 'family': family, 'bounds': bd, 'proxy': proxy}
+    return {'plan': plan, 'name': name, 'family': family, 'bounds': bd,
+            'proxy': {'score': bd['candidate_lower'], 'used_for_ranking': False}}
+
+
+def local_structure(g,n,cfg,q,context,feedback,deadline):
+    """Same source cycle/primitives as safe_refine_plugin.propose, cheap wrapper."""
+    for i,seed in enumerate(context.get('effective_core_seeds',[])):
+        if expired(deadline):return
+        from research_a_orion_track_structure.plugin import pad_plan
+        yield wrap(g,n,cfg,q,pad_plan(seed['plan'],n),'validated_alternative_'+str(i),'structure/seed_reuse',context)
+    constructors=iter(constructive_family(g,n,cfg,q));done=False;previous=None;streams={}
+    cycle=('move','joint','constructor','swap','move','split');turn=0
+    while not expired(deadline):
+        live=context.get('plan')
+        if live is None:return
+        if live is not previous:streams=local_families(g,n,cfg,q,context);previous=live
+        if not any(v is not None for v in streams.values()) and done:return
+        family=cycle[turn%len(cycle)];turn+=1
+        if family=='constructor':
+            if done:continue
+            stream=constructors
+        else:
+            stream=streams.get(family)
+            if stream is None:continue
+        try:name,p=next(stream)
+        except StopIteration:
+            if family=='constructor':done=True
+            else:streams[family]=None
+            continue
+        try:yield wrap(g,n,cfg,q,p,name,'structure/'+family,context)
+        except ValueError as exc:feedback.append({'name':name,'family':'structure/'+family,'status':'structural_invalid','error':str(exc)})
 
 
 def structure(g, n, cfg, q, context, feedback, deadline):

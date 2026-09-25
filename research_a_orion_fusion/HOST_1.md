@@ -1,26 +1,29 @@
-# 主机2：完整SMF研究与正式分片
+# 主机2：ORION SMF 2.3完整运行与结果发布
 
-在yellkiin/model_competition拉取完整PR #37，独立工作区运行，不覆盖其他实验。阅读research_a_orion_fusion/README.md、REVIEW.md、EXPERIMENT_PLAN.md，然后实际执行。
+在yellkiin/model_competition拉取分支`feat/orion-fusion-smf-consolidated-20260925`对应的完整PR；已合并则使用包含该提交的main。独立工作区运行，不改其他仍在跑的目录。阅读research_a_orion_fusion/README.md、CONSOLIDATION_2_3.md、EXPERIMENT_PLAN.md后实际执行，不只复述命令。
 
-原题DOCX在题目/A题；图/config/官方评估器在同名“通用神经网络处理器下的多核调度问题  附件”；文献在调研/A题_文献库。S是结构/分核，M是驻留/Task边界，F是真实FIFO与候选机会分配，已经在同一共享最好解算法中组合。主要依据实际plan/响应，不把报告数字当可用方案。
+问题源DOCX在题目/A题；原始图/config/官方评估器在“题目/A题/通用神经网络处理器下的多核调度问题  附件/”。文献在调研/A题_文献库。结构S、驻留M、FIFO/候选时间分配F已共享一个最好解；默认先S/M短阶段，再联合F。原图/config/Step1–3不改，不重复计084微波次为缓存收益。
 
-取得day01完整100图参考表和selected_plans.zip，不能只有原某台50图。程序自动读取仓库已有好方案，并解包本PR的6份实际种子；本会话26方案包或本地更强结果用-ExtraPlans补入。所有种子目标场景重评，历史取得成本未知不填零。
+取得day01完整100图表和selected_plans.zip，不能仅有原机器50图。入口恢复随代码提供的19份真实强方案，并发现研究目录已有可用plan；本地更多好方案用-ExtraPlans传入。只有报告数字但没有实际plan的目标如实列缺失，不造种子。种子在目标小问/核数重新评估，历史完整成本未知不写零。
 
-每(图,小问,核数)本次最多600秒，包括回放、构造、评估及保存；每30秒记录已有最好解和来源/阶段。近界/充分停滞可提前停止，不空转。三台算法参数一致。
+每(图,q,n)本次从进程启动到保存最好解最多600秒，含读图、种子回放、构造、原评估。每30秒保存已有最好值、候选来源和优化阶段；无改进或近界可早停，停止后持有值不冒称还在搜索。正式缓存对照/诊断/参数研究另计。主流程最多12小时，同目录恢复不刷新时钟。
 
-你是分片1。Windows优先D:\python\python.exe、Python3.12 x64、CPU-only，无求解pip依赖。不符合的机器自行配置独立解释器并传-Python，不影响正在运行环境。不要哈希/指纹、冒烟、pytest/unittest、全仓审计前置；启动必需检查后跑真实图，保留官方合法性检查。自动workers目标留25%CPU/RAM；workers不是NPU核数。
+你负责分片1，三台算法与预算相同、仅分片路径不同。默认按旧工作量+规模分成34/33/33图，每图全部核数/问题留同机。Windows优先D:\python\python.exe，Python3.12 x64、CPU-only，无新增求解依赖。不符则本机Agent配置独立解释器并传-Python，不升级正在运行的环境。不要哈希/指纹、冒烟、pytest/unittest或全仓审计前置；启动必需项后直接真实图，保留官方合法性检查。
+
+自动workers依据整机CPU/RAM和实际作业峰值留25%余量；workers与题目核心数不同，不为拉满内存制造空负载。使用默认SourcePolicy staged，不让三台各自更换策略后混报。
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_fusion\run_windows.ps1 -ShardIndex 1 -Out 'research_a_orion_fusion\runs\round02_smf_shard_1'
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_fusion\run_windows.ps1 -ShardIndex 1 -Out 'research_a_orion_fusion\runs\round03_smf23_shard_1'
 ```
 
-先本片两个本轮未测过的组合配置，通过后自动跑本片全部图、三问和要求核数；先行结果复用，不三台各跑100图。之后同方案无L2、问题配置SM/SF/MF及必要S/M/F、缓存九格、论文数据。默认12小时绝对截止，续跑不重置；团队共同DeadlineUtc时三台传同一个值。
+先本片两个本轮未验证的真实小配置，通过自动继续本片；先行成绩复用，不重复全100图。正式1400主+500同方案对照分布在三片。没有明显原因的差配置先SM/SF/MF，再必要S/M/F；完整共用种子、原配置和预算不变，诊断成本单列。旧好解不被差候选覆盖，但raw候选表现仍报告，不能用保留种子冒充每个组件有效。少核方案须补空核后在目标核数重新评估，不能直接复制分数。
 
-效果差先看真实attempts：候选生成贵就缩小/缓存；Spill查容量微波次；命中高而低收益查真正尾部依赖；增核退化将较少核好方案补空核后目标重评。保留已有好解但raw候选质量另报。改算法/预算另开根，不事后用消融最好值覆盖固定策略主表。
+效果不好依次查看attempts与阶段数据：候选生成占时多则缓存/限制生成批量；高Spill查有限微波次；高命中低收益查控制最后完成的读；新模块首评不足查来源公平；改进停滞看实际连续曲线，不默认无限加预算。改算法/参数使用新输出根，不边跑边改Python。主样本和消融不事后取最低值混成固定策略主表。
 
-完成或到点后读shard_status、report、paper_data、mechanism_status，保留失败/缺失。已有GitHub授权下实际执行：
+完成或截止后读取shard_status、report、paper_data和mechanism_status；保留全部缺失/失败。已有GitHub授权下实际执行：
+
 ```powershell
-.\research_a_orion_fusion\publish_results.ps1 -RunRoot 'research_a_orion_fusion\runs\round02_smf_shard_1' -ShardIndex 1
+.\research_a_orion_fusion\publish_results.ps1 -RunRoot 'research_a_orion_fusion\runs\round03_smf23_shard_1' -ShardIndex 1
 ```
 
-只写research_a_orion_fusion/team_results/round02_smf/shard_1/，结果分支results/orion-round02_smf-shard-1-<时间>。上传实际方案、响应、30秒轨迹、逐图表、阶段、论文数据和错误，40MiB分块。提交PR不自动合并，不覆盖另外两台。不以只给命令代替执行。
+只发布`research_a_orion_fusion/team_results/round03_smf23/shard_1/`，结果分支`results/orion-round03_smf23-shard-1-<时间>`。上传实际两字段方案、原响应、逐例表、30秒曲线、优化阶段、论文数据及参数网格，原档案40MiB分块，提交完整结果PR不自动合并、不覆盖另两台、不上传赛事平台。返回实际PR链接和有效/缺失数，而不是声称命令写好就已运行。

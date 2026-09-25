@@ -6,11 +6,11 @@ Repair-v6's useful principle (preserve a representative before sorting a batch)
 is applied by the host's one-candidate source warm-up, not by patching upstream.
 """
 from __future__ import annotations
-from collections import defaultdict
+from collections import defaultdict, deque
 from math import log, sqrt
 from statistics import median
 import time
-from research_a_orion_anytime.core import bounds, plan_view
+from research_a_orion_anytime.core import bounds, plan_view, topological
 from research_a_orion_track_anytime.trace import read_requests, operations
 
 FUSION_API = 1
@@ -25,6 +25,12 @@ def proposed_moves(g, n, cfg, q, context, feedback, deadline):
     if len(seqs) != n:
         raise ValueError('FIFO proposal target core count differs')
     mapping, groups, _, _ = plan_view(g, plan)
+    # All F candidates retain membership and core owners. The existing Q3
+    # necessary-condition bounds do not depend on within-core group order.
+    parent_bounds = bounds(g,cfg,n,q,plan)
+    group_pred = {s:set() for s in groups}
+    for v,parents in g.pred.items():
+        group_pred[mapping[v]].update(mapping[u] for u in parents if mapping[u]!=mapping[v])
     positions = [{s:i for i,s in enumerate(seq)} for seq in seqs]
     group_work = {s:sum(g.duration[u] for u in us) for s,us in groups.items()}
     ends = {c['core_id']:max((o['end'] for o in c['ops']),default=0) for c in raw['per_core_timeline']}
@@ -69,7 +75,11 @@ def proposed_moves(g, n, cfg, q, context, feedback, deadline):
         seen.add(key)
         p={'node_to_subgraph':dict(plan['node_to_subgraph']),'core_schedules':new}
         try:
-            bd=bounds(g,cfg,n,q,p)
+            pred={s:set(ps) for s,ps in group_pred.items()}
+            for seq in new:
+                for a,b in zip(seq,seq[1:]):pred[b].add(a)
+            topological(groups,pred)
+            bd=parent_bounds
         except ValueError as exc:
             feedback.append({'source':'f','status':'order_invalid','name':name,'error':str(exc)})
             return None
@@ -171,22 +181,31 @@ def propose(g,n,cfg,q,context,feedback,deadline):
 
 
 def select_source(sources, state, context, remaining_seconds):
-    rows=[r for r in state['attempts'] if r.get('source') in sources and r.get('status')!='running']
-    grouped={s:[r for r in rows if r['source']==s] for s in sources}
-    counts={s:len(v) for s,v in grouped.items()}
+    # Equivalent sufficient statistics for the original selector, bounded to
+    # eight recent records per source. Avoid rescanning the full trace each turn.
+    cache=context.setdefault('_selector_stats',{'scanned':0,'counts':defaultdict(int),
+                       'last':defaultdict(int),'recent':defaultdict(lambda:deque(maxlen=8))})
+    for i in range(cache['scanned'],len(state['attempts'])):
+        r=state['attempts'][i]
+        if r.get('status')=='running':break
+        s=r.get('source');cache['counts'][s]+=1
+        cache['last'][s]=r['index'];cache['recent'][s].append(r);cache['scanned']=i+1
+    grouped={s:list(cache['recent'][s]) for s in sources}
+    counts={s:cache['counts'][s] for s in sources}
+    row_count=sum(counts.values())
     empty=[s for s in sources if counts[s]<2]
     if empty:return min(empty,key=lambda s:(counts[s],list(sources).index(s)))
-    last={s:max((r['index'] for r in grouped[s]),default=0) for s in sources}
+    last={s:cache['last'][s] for s in sources}
     counter=max(last.values(),default=0)
     oldest=min(sources,key=lambda s:(last[s],counts[s]))
-    if counter-last[oldest]>=8 or len(rows)%4==3:return oldest
+    if counter-last[oldest]>=8 or row_count%4==3:return oldest
     costs={s:max(.02,median([r.get('generation_seconds',0)+r.get('eval_and_audit_seconds',r.get('eval_seconds',.1)) for r in grouped[s][-8:]])) for s in sources}
     admitted=[s for s in sources if 1.15*costs[s]+.1<remaining_seconds]
     choices=admitted or list(sources)
     def priority(s):
         recent=grouped[s][-8:]
         reward=sum(r.get('gain_fraction',0) for r in recent)/max(1,len(recent))
-        explore=.012*sqrt(log(2+len(rows))/(1+counts[s]))
+        explore=.012*sqrt(log(2+row_count)/(1+counts[s]))
         failure=sum(r.get('status')!='ok' for r in recent)
         return (reward+explore)/(costs[s]*(1+failure/max(1,len(recent))))
     return max(choices,key=lambda s:(priority(s),-last[s]))

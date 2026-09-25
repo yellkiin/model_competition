@@ -1,6 +1,6 @@
 # 本轮实验协议
 
-固定fusion-smf-2.2，默认SMF、原配置；真实S/M/F已有种子在目标场景重新评估。三台只改变分片与路径，不各自择模块/预算后拼成同算法。主流程续优化，历史池取得成本未知不填零。
+固定fusion-smf-2.3，默认SMF、原配置；真实S/M/F已有种子在目标场景重新评估。三台只改变分片与路径，不各自择模块/预算后拼成同算法。主流程续优化，历史池取得成本未知不填零。
 
 每(图,小问,核数)最多600秒，含启动、回放、构造、评估、保存。30秒采点，早停持有标记；2048次评估上限。每台总截止默认12小时，重启不刷新。
 
@@ -14,6 +14,8 @@
 
 三机按day01实际工作量+图规模LPT分成34/33/33，一个图全部配置留同机；CPUworkers不同于NPU核数。资源余量目标25%，实际利用率和准入决策记录。
 
-各片只发布team_results/round02_smf/shard_N：真实响应/方案/尝试/阶段日志、40MiB分块、CSV、PUBLICATION、selected_plans和paper_data。新建结果PR不合并。收集使用--require-complete，combined不覆盖各片。
+各片只发布team_results/round03_smf23/shard_N：真实响应/方案/尝试/阶段日志、40MiB分块、CSV、PUBLICATION、selected_plans和paper_data。新建结果PR不合并。收集使用--require-complete，combined不覆盖各片。
 
 本轮本地结果见REVIEW和evidence/smf_review。064全配置及参数网格验证执行/导出路径；local_checked使其不再作为强制先行样本。新的百图结果由三台实际运行产生。
+
+2.3当前源的真实追加验证见CONSOLIDATION_2_3及evidence/consolidated23_*；旧PR37验证与本轮分开，不混入新的百图均值。

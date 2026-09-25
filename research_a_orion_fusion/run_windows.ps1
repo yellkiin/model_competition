@@ -2,7 +2,7 @@
     [string]$Python = 'D:\python\python.exe',
     [ValidateRange(0,2)][int]$ShardIndex = 0,
     [string]$Out = '',
-    [string]$Prepared = 'research_a_orion_fusion\runs\prepared_round02_smf',
+    [string]$Prepared = 'research_a_orion_fusion\runs\prepared_round03_smf23',
     [string]$Official = '',
     [string]$Reference = 'research_a_orion_anytime\team_results\day01\combined_final',
     [string]$BaselinePlans = '',
@@ -23,7 +23,7 @@
 $ErrorActionPreference = 'Stop'
 Set-Location (Split-Path -Parent $PSScriptRoot)
 if (-not (Test-Path $Python)) { throw "Python missing: $Python. Pass an existing Python 3.12 x64 interpreter; do not alter another running experiment." }
-if (-not $Out) { $Out = "research_a_orion_fusion\runs\round02_smf_shard_$ShardIndex" }
+if (-not $Out) { $Out = "research_a_orion_fusion\runs\round03_smf23_shard_$ShardIndex" }
 $env:PYTHONUTF8 = '1'
 & $Python -c "import struct,sys; assert sys.version_info >= (3,12) and struct.calcsize('P') == 8, 'Python >=3.12 x64 required'"
 if ($LASTEXITCODE -ne 0) { throw 'Interpreter does not meet the startup requirement.' }

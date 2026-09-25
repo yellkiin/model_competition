@@ -2,7 +2,7 @@
   [string]$Python = 'D:\python\python.exe',
   [Parameter(Mandatory=$true)][string]$RunRoot,
   [ValidateRange(0,2)][int]$ShardIndex = 0,
-  [string]$Round = 'round02_smf',
+  [string]$Round = 'round03_smf23',
   [string]$Branch = ''
 )
 $ErrorActionPreference = 'Stop'
