@@ -1,0 +1,103 @@
+{
+  "frozen_head": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+  "shard_index": 2,
+  "graph_count": 33,
+  "original_successful_main": 460,
+  "original_expected_main": 462,
+  "original_missing_main": [
+    [
+      "case_076",
+      0,
+      1
+    ],
+    [
+      "case_091",
+      0,
+      1
+    ]
+  ],
+  "nonbaseline_successful_main": 429,
+  "nonbaseline_expected_main": 429,
+  "same_plan_no_l2_pairs": 165,
+  "same_plan_pair_checks": 165,
+  "original_independent_checks": 460,
+  "original_shard_complete": false,
+  "historical_retained_baseline": {
+    "case": "case_076",
+    "makespan": 6185113,
+    "status": "ok",
+    "source": "retained_reference_20260926/shard_2/PROVENANCE.json",
+    "not_a_fresh_evaluator_run": true
+  },
+  "case_091_baseline": "missing; further recomputation waived by user",
+  "supplementary_attempts": [
+    {
+      "key": "case_076_q0_n1",
+      "status": "failed",
+      "makespan": null,
+      "execution": {
+        "reason": "configuration_wall_limit",
+        "returncode": 1,
+        "wall_seconds": 601.219000000041,
+        "wall_cap_seconds": 600.0,
+        "workers_at_start": 1,
+        "worker_cpu_seconds_last_sample": 594.71875,
+        "retry": true,
+        "original_attempt_seconds": 600.7029999999795
+      }
+    },
+    {
+      "key": "case_091_q0_n1",
+      "status": "failed",
+      "makespan": null,
+      "execution": {
+        "reason": "worker_error",
+        "returncode": 4294967295,
+        "wall_seconds": 532.7649999999558,
+        "wall_cap_seconds": 600.0,
+        "workers_at_start": 1,
+        "worker_cpu_seconds_last_sample": 525.359375,
+        "retry": true,
+        "original_attempt_seconds": 600.9219999999623
+      }
+    }
+  ],
+  "retry_091_reason_override": "Explicit user cancellation; wrapper worker_error is not a new crash.",
+  "original_report_mean_speedup_denominator": 31,
+  "raw_main_and_report_unchanged": true,
+  "scope": "Shard 2 only. Original fixed-budget results and historical/retry evidence remain separate.",
+  "process_exit": {
+    "head": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+    "branch": "integration/orion-trident-publish-20260925",
+    "root": "E:\\handoff_20260924\\orion_trident_host2",
+    "python": "C:\\Users\\13925\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "supervisor_pid": 25956,
+    "started_utc": "2026-09-25T15:32:11.898919+00:00",
+    "command": [
+      "C:\\Users\\13925\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\handoff_20260924\\orion_trident_host2\\research_a_orion_trident\\run_windows.ps1",
+      "-Python",
+      "C:\\Users\\13925\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-ShardIndex",
+      "2",
+      "-FetchInputs",
+      "-Seconds",
+      "600",
+      "-Hours",
+      "12"
+    ],
+    "shard_index": 2,
+    "expected_main": 462,
+    "expected_pairs": 165,
+    "state": "exited",
+    "child_pid": 33744,
+    "exit_code": 1,
+    "finished_utc": "2026-09-25T17:57:03.527214+00:00"
+  },
+  "prepared_utc": "2026-09-25T18:05:14.674478+00:00"
+}

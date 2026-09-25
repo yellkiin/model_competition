@@ -1,0 +1,28 @@
+{
+  "source_run": "E:\\handoff_20260924\\orion_trident_host2\\research_a_orion_trident\\runs\\round01\\shard_2",
+  "archive_parts": [],
+  "archive_format": "Full local ZIP provided separately by user; not available as complete remote assets",
+  "shard_status": {
+    "complete": false,
+    "expected_main": 462,
+    "expected_pairs": 165,
+    "report": "report/report.json",
+    "fifo_pending": false
+  },
+  "all_candidate_files": true,
+  "selected_plan_count": 460,
+  "selected_outputs_complete": false,
+  "main_count": 460,
+  "pair_count": 165,
+  "formal_100_complete": false,
+  "automatic_upload": false,
+  "restore_command": "Extract the user-provided FULL ZIP into a new directory; see HANDOFF_README.md. Do not concatenate partial Release assets.",
+  "raw_location": {
+    "kind": "user_managed_local_copy",
+    "archive_name": "ORION_Trident_trident-1.3_round01_shard2_FULL_20260926.zip",
+    "upload_cancelled_by_user": true,
+    "partial_release_not_complete": true
+  },
+  "github_scope": "reports, verification and aggregate tables only; plans/raw evaluator responses/per-attempt traces are in the local full archive",
+  "selected_plans_location": "local full archive: research_a_orion_trident/runs/round01/shard_2/report/plans"
+}
