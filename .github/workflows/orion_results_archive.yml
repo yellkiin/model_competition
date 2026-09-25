@@ -3,20 +3,18 @@ on:
   pull_request:
     branches: [main]
     types: [opened, synchronize]
-    paths:
-      - '.github/workflows/orion_results_archive.yml'
-      - '.github/actions/orion-results-ingest/**'
+    paths: ['.github/workflows/orion_results_archive.yml']
 permissions:
   contents: write
   actions: read
 concurrency:
-  group: orion-existing-results-publication-20260925
+  group: orion-existing-results-server-archive-20260925
   cancel-in-progress: false
 jobs:
   archive:
     if: github.event.pull_request.head.ref == 'orion/archive-structure-results-20260925-0455' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,24 +22,8 @@ jobs:
           fetch-depth: 1
           filter: blob:none
           sparse-checkout: |
-            .github/actions/orion-results-ingest
-            .github/workflows
             research_a_orion_track_structure/results/publication_20260925_0455
-      - name: Receive requested files through a single-use artifact upload
-        uses: ./.github/actions/orion-results-ingest
+      - name: Archive existing artifacts and restore exact uploaded CSVs
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Publish archives and small result files
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p=Path('research_a_orion_track_structure/results/publication_20260925_0455/archive_publish.py')
-          s=p.read_text()
-          s=s.replace("    shutil.rmtree('.github/actions/orion-results-ingest')", "    # Temporary workflow cleanup is performed by the connector after upload.")
-          s=s.replace("    Path('.github/workflows/orion_results_archive.yml').unlink()", "    # Keep workflow deletion out of this job's contents-only write permission.")
-          s=s.replace("git('add','-A','--',str(ROOT),'.github/actions/orion-results-ingest','.github/workflows/orion_results_archive.yml')", "git('add','-A','--',str(ROOT))")
-          p.write_text(s)
-          PY
-          python research_a_orion_track_structure/results/publication_20260925_0455/archive_publish.py
+        run: python research_a_orion_track_structure/results/publication_20260925_0455/archive_publish.py
