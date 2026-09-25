@@ -1,4 +1,4 @@
-name: Archive existing ORION result files
+name: Finalize ORION result archive links
 on:
   pull_request:
     branches: [main]
@@ -8,13 +8,13 @@ permissions:
   contents: write
   actions: read
 concurrency:
-  group: orion-existing-results-server-archive-20260925
+  group: orion-existing-results-finalize-20260925
   cancel-in-progress: false
 jobs:
-  archive:
+  finalize:
     if: github.event.pull_request.head.ref == 'orion/archive-structure-results-20260925-0455' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,15 +23,62 @@ jobs:
           filter: blob:none
           sparse-checkout: |
             research_a_orion_track_structure/results/publication_20260925_0455
-      - name: Archive existing artifacts and restore exact uploaded CSVs
+      - name: Verify live release and update links without executing experiments
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           python - <<'PY'
+          import importlib.util,json,urllib.request,urllib.error,shutil,zipfile
           from pathlib import Path
-          p=Path('research_a_orion_track_structure/results/publication_20260925_0455/archive_publish.py')
-          s=p.read_text()
-          s=s.replace("API+'/'+endpoint,data=body", "API+('/'+endpoint if endpoint else ''),data=body")
-          p.write_text(s)
+          from datetime import datetime,timezone
+          root=Path('research_a_orion_track_structure/results/publication_20260925_0455')
+          spec=importlib.util.spec_from_file_location('archive',root/'archive_publish.py')
+          m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+          manifest=json.loads((root/'PUBLISHED_MANIFEST.json').read_text())
+          release=m.api('releases/'+str(manifest['release_id']))
+          if release['draft']:raise RuntimeError('Release is still draft')
+          for run in (36046578817,36047055409):
+              name=f'run_{run}_historical_logs.zip'
+              if any(a['name']==name for a in manifest['assets']):continue
+              try:
+                  req=urllib.request.Request(m.API+f'/actions/runs/{run}/logs',headers=m.HEADERS)
+                  try:r=urllib.request.build_opener(m.NoRedirect()).open(req,timeout=60)
+                  except urllib.error.HTTPError as e:
+                      if e.code not in (301,302,303,307,308):raise RuntimeError(f'Log HTTP {e.code}') from None
+                      url=e.headers.get('Location','')
+                      if not url.startswith('https://'):raise RuntimeError('Invalid log redirect')
+                      r=urllib.request.urlopen(url,timeout=120)
+                  target=m.WORK/name
+                  with r,target.open('wb') as f:shutil.copyfileobj(r,f)
+                  if not zipfile.is_zipfile(target):raise RuntimeError('Log response is not ZIP')
+                  asset=m.upload(release,target)
+                  manifest['assets'].append({'name':name,'asset_id':asset['id'],'url':asset['browser_download_url'],'size_bytes':asset['size'],'state':asset['state'],'source':'historical_workflow_logs_only','source_run_id':run,'not_original_plan_response_archive':True})
+                  with zipfile.ZipFile(target) as z,(root/'ARCHIVE_MEMBERS.csv').open('a',encoding='utf-8',newline='') as f:
+                      import csv
+                      w=csv.writer(f)
+                      for x in z.infolist():w.writerow([name,x.filename,x.file_size,x.compress_size])
+              except Exception as e:
+                  manifest.setdefault('historical_log_errors',[]).append({'run_id':run,'error':str(e)})
+          live=m.api(f"releases/{release['id']}/assets?per_page=100")
+          byid={a['id']:a for a in live}
+          readme=(root/'README.md').read_text()
+          replacements={}
+          for a in manifest['assets']:
+              item=byid[a['asset_id']]
+              if item['state']!='uploaded' or item['size']!=a['size_bytes']:raise RuntimeError('Published size/state mismatch')
+              replacements[a['url']]=item['browser_download_url']
+              readme=readme.replace(a['url'],item['browser_download_url'])
+              a['url']=item['browser_download_url']
+          manifest.update(release_url=release['html_url'],asset_count=len(manifest['assets']),asset_bytes=sum(a['size_bytes'] for a in manifest['assets']),release_published_at=release['published_at'],download_links_verified_at_utc=datetime.now(timezone.utc).isoformat(),asset_metadata_verified=True)
+          readme+='\n## 补存的历史日志\n\n'
+          for a in manifest['assets']:
+              if a['source']=='historical_workflow_logs_only':readme+=f"- [{a['name']}]({a['url']})：历史执行日志，不是原始plan/response包，不填补原包缺失。\n"
+          (root/'README.md').write_text(readme,encoding='utf8')
+          m.dump(root/'PUBLISHED_MANIFEST.json',manifest)
+          m.csvout(root/'ASSETS.csv',manifest['assets'])
+          m.dump(root/'PUBLICATION_VERIFICATION.json',{'release_id':release['id'],'release_url':release['html_url'],'draft':release['draft'],'prerelease':release['prerelease'],'asset_count':len(manifest['assets']),'asset_bytes':manifest['asset_bytes'],'every_listed_asset_state_uploaded':True,'every_listed_asset_length_matches':True,'new_experiments':0,'all_prior_evidence_uploaded':False,'pending':manifest['pending_or_missing']})
+          m.git('config','user.name','github-actions[bot]');m.git('config','user.email','41898282+github-actions[bot]@users.noreply.github.com')
+          m.git('add','-A','--',str(root));m.git('commit','-m','results(structure): verify published download URLs and distinguish original artifacts from logs')
+          m.git('push','origin','HEAD:'+m.BRANCH)
+          print('VERIFIED',release['html_url'],len(manifest['assets']),manifest['asset_bytes'],flush=True)
           PY
-          python research_a_orion_track_structure/results/publication_20260925_0455/archive_publish.py
