@@ -2,7 +2,7 @@
 
 ## 当前 A 实验任务优先
 
-用户要求直接跑A时，读`research_a/LOCAL_PROMPT.md`和`research_a/README.md`并实际启动实验。Windows使用`D:\python\python.exe`，CPU-only。不要先跑全仓库审计、哈希、安全测试、冒烟、单元测试或其他题数据恢复；不要重复询问已提供的环境。运行缺少的A输入由启动器按需补齐。
+用户要求直接跑A时，先读`ORION_START_HERE.md`和`research_a_orion_unified/PLAN.md`，再按对应`HOST_0/1/2.md`实际启动实验。Windows使用`D:\python\python.exe`，CPU-only。不要先跑全仓库审计、哈希、安全测试、冒烟、单元测试或其他题数据恢复；不要重复询问已提供的环境。运行缺少的A输入由启动器按需补齐。
 
 E题目录及专用调研已移除，不恢复、不下载、不继续研究该题。A不依赖其他题数据。修改原题/官方评估器不能作为提升性能的手段；失败和未完成成绩如实保留。
 

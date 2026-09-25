@@ -1,39 +1,5 @@
-# 主机2提示词：ORION Trident
+# 历史实验入口
 
-你负责`yellkiin/model_competition`的Trident主机2。先读取本目录`LOCAL_AGENT_PROMPT.md`并完整执行其中共同约定。本机专属参数是 **ShardIndex=2**，33图、462主配置、165个Q3同方案配对。
+此计划已归档：`history/orion_plans/trident_v13/HOST_2.md`。
 
-代码已在 **PR #38**：https://github.com/yellkiin/model_competition/pull/38
-分支：`integration/orion-trident-publish-20260925`。与另外两台固定同一提交；只写`research_a_orion_trident/`，不修改并行Fusion或三线源目录、原图/config/官方评估器。
-
-本机图号：
-`004 005 007 008 011 013 015 017 018 025 029 045 046 047 048 052 054 056 062 063 066 068 076 077 078 082 084 086 089 090 091 093 096`
-
-## 获取与启动
-
-在已有已授权仓库中，建立不存在的新worktree路径，保护正在执行的其他实验：
-
-```powershell
-git fetch --filter=blob:none --no-tags origin integration/orion-trident-publish-20260925
-git worktree add --no-checkout --detach D:\orion_trident_host2 FETCH_HEAD
-git -C D:\orion_trident_host2 sparse-checkout set research_a_orion_trident
-git -C D:\orion_trident_host2 checkout --detach
-Set-Location D:\orion_trident_host2
-git rev-parse HEAD
-& .\research_a_orion_trident\run_windows.ps1 -ShardIndex 2 -FetchInputs -Seconds 600 -Hours 12
-```
-
-优先D:\python\python.exe、64位Python3.12.x、CPU-only。首次`-FetchInputs`分批取本片原图、原评估器/config、正式方案、三线研究、DOCX/PDF，准备阶段独立计时；以后去掉开关复用。只检查启动项，直接真图，不加冒烟/单测/哈希/全仓审计。两个本机新配置通过后自动继续本片并复用，不重复整合小样本。
-
-每配置600秒包含搜索和Q3同一plan无L2配对；每30秒记录真实最好解与阶段，早停持有、不倒填。自动workers按实际负载留25%CPU/RAM。保留实际好种子，官方更优才更新。明显差距才用原配置剩余预算做SM/SF/MF，必要S/M/F；同机同起点，诊断单列。
-
-输入：`research_a_orion_trident/runs/assets_shard_2/`
-求解：`research_a_orion_trident/runs/round01/shard_2/`
-发布：`research_a_orion_trident/team_results/trident_round01/shard_2/`
-
-## 结束或截止后发布
-
-```powershell
-& .\research_a_orion_trident\publish_results.ps1 -RunRoot .\research_a_orion_trident\runs\round01\shard_2 -ShardIndex 2 -Round trident_round01
-```
-
-保留全部主表/配对、30秒曲线、候选成本、计划/官方响应和源码快照。结果脚本新建本片分支/PR，大原始包40MiB分块进本仓库Release并读回确认。只发布2号片，不重开代码PR，不自动合并，不重复三台100图。所有失败和未启动键照实保留，批次时钟不重置。
+新实验统一使用仓库根目录 `ORION_START_HERE.md` 和 `research_a_orion_unified/PLAN.md`。旧代码及已有结果路径保留，供原实验恢复、核对和复现；不要同时按两套旧计划重跑百图。
