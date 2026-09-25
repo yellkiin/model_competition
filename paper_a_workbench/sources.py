@@ -56,15 +56,12 @@ def sync(repo, profile_path, home, *, fetch=False, metadata_only=False, workers=
     """Resolve each mutable ref ONCE; keep every prior snapshot untouched."""
     profile=read(profile_path);git=GitSource(repo)
     sid=stamp();out=fresh(Path(home)/'数据'/'ORION_论文资料'/'snapshots'/sid)
-    rows=[];resolved={};errors=[];hydrated=set()
+    rows=[];resolved={};errors=[]
     batch_size=max(1,int(profile.get('batch_size',16)))
     for group in profile['sources']:
         ref=group['ref']
         if ref not in resolved:resolved[ref]=git.resolve(ref,fetch=fetch)
         rev=resolved[ref];items=[]
-        hydration_key=(rev,tuple(group['paths']))
-        if lfs and not metadata_only and hydration_key not in hydrated:
-            git.hydrate(rev,group['paths']);hydrated.add(hydration_key)
         for prefix in group['paths']:
             items.extend(git.entries(rev,prefix))
         selected={}
@@ -82,7 +79,11 @@ def sync(repo, profile_path, home, *, fetch=False, metadata_only=False, workers=
             try:
                 data=git.get(rev,path)
                 if data.startswith(b'version https://git-lfs.github.com/spec/'):
-                    if lfs:data=git.lfs_data(data)
+                    if lfs:
+                        pointer=data
+                        try:data=git.lfs_data(pointer)
+                        except FileNotFoundError:
+                            git.hydrate(rev,[path]);data=git.lfs_data(pointer)
                     else:return dict(source=group['id'],path=path,revision=rev,blob=blob,status='lfs_pointer',bytes=len(data))
                 dest=within(out,group['id']+'/'+path);dest.parent.mkdir(parents=True,exist_ok=True)
                 dest.write_bytes(data)
