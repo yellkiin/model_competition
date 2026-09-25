@@ -1,0 +1,39 @@
+name: ORION Fusion SMF source intake
+on:
+  pull_request:
+    paths: ['.github/workflows/orion_fusion_smf_intake.yml']
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - name: Export requested source and actual A inputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          roots = ['research_a_orion_fusion','research_a_orion_track_anytime','research_a_orion_track_structure','research_a_orion_track_memory','research_a_orion_anytime']
+          files=set()
+          for root in roots:
+              for p in Path(root).rglob('*'):
+                  if p.is_file() and p.suffix in ('.py','.md','.ps1','.json','.csv') and p.stat().st_size<5000000 and 'runs' not in p.parts:
+                      files.add(p)
+          for p in Path('题目/A题').rglob('*'):
+              if p.is_file() and (p.suffix in ('.py','.docx') or p.name=='config.txt' or p.name in {f'case_{i:03d}.json' for i in (1,5,16,24,44,48,59,64,73,83,84,86,90,92)}): files.add(p)
+          for name in ('调研/A题_文献.json','调研/A题_文献库/README.md','调研/A题_文献库/方法对照与阅读顺序.md','research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip'):
+              p=Path(name)
+              if p.is_file(): files.add(p)
+          with zipfile.ZipFile('orion_smf_intake.zip','w',zipfile.ZIP_DEFLATED,compresslevel=3) as z:
+              for p in sorted(files): z.write(p,p.as_posix())
+          print('Exported',len(files),'files; no solver or test suite executed.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-smf-current-source
+          path: orion_smf_intake.zip
+          retention-days: 7
