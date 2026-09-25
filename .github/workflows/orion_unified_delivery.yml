@@ -1,0 +1,73 @@
+name: ORION Unified source delivery and real Windows cases
+on:
+  pull_request:
+    paths:
+      - '.orion_unified_delivery/**'
+      - '.github/workflows/orion_unified_delivery.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          lfs: false
+          sparse-checkout: |
+            research_a_orion_trident
+            research_a_orion_fusion
+            .orion_unified_delivery
+            .github/workflows
+      - name: Expand reviewed files and archive only old plan documents
+        run: python .orion_unified_delivery/install.py
+      - name: Commit complete readable source; remove one-use transport
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse research_a_orion_unified history/orion_plans ORION_START_HERE.md README.md AGENTS.md research_a_orion_fusion research_a_orion_trident .github/workflows/orion_unified_delivery.yml .orion_unified_delivery
+          git commit -m 'feat(A): publish Unified comparison implementation and archive prior experiment plans'
+          git push origin "HEAD:$BRANCH"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-unified-complete-source
+          path: |
+            research_a_orion_unified
+            history/orion_plans
+            ORION_START_HERE.md
+          retention-days: 14
+  actual_windows_graphs:
+    needs: install
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          lfs: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research_a_orion_unified/
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/code/
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/config.txt
+            /题目/A题/通用神经网络处理器下的多核调度问题  附件/data/case_044.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.5'
+          architecture: x64
+      - name: Original graph 044 Q1 and Q3 with inline same-plan Q2
+        shell: pwsh
+        run: |
+          $env:PYTHONUTF8 = '1'
+          python -m research_a_orion_unified.real_run --out runs/windows_real --cases 044:1:2 044:3:2 --seconds 45 --workers 1
+          if ($LASTEXITCODE -ne 0) { throw 'Actual graph job incomplete; inspect original records.' }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: orion-unified-real-windows-results
+          path: runs/windows_real
+          retention-days: 30
