@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-09-25T13:00:51Z",
+  "original_orion_source": "b513a98f86183a8c1b41d67a547f06fa9d578e2a",
+  "structure_source": "frozen input export run 36104651803; safe_refine_plugin + plugin",
+  "memory_source": "memory-coherent-4.4 from same export",
+  "fifo_and_fusion_source": "PR37 exported delivered source run 36135039764 artifact10863796071 commit4546b88336048dc5950d6fe8437059a122cd4096",
+  "fifo_origin": "PR34 peer-v4, PR36 reconcile-v6 review; PR37 event-only faster adapter",
+  "official_source": "untouched original files in frozen input export",
+  "scope": "only research_a_orion_trident is a delivery change; upstream research and official files untouched",
+  "runtime_dependencies": "S/M/ORION core frozen inside vendor; F+controller local. Original evaluator stays external, byte-preserved.",
+  "version": "trident-1.3",
+  "implementation_review": "Source-specific candidate bodies retained; local scheduling, deadline, replay and reporting changes are independently versioned. See experiment source_snapshot for the version actually executed."
+}

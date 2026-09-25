@@ -1,0 +1,17 @@
+﻿experiment,arm,index,name,mapping_unchanged,owner_unchanged,makespan,previous_makespan
+diagnostic_011_q3_n5,f,7,fifo_fill_advance_t1000000169_c0_s160_32_to31,True,True,43585,43759
+diagnostic_011_q3_n5,f,9,fifo_cold_inflight_c2_s68_13_to14,True,True,43584,43585
+diagnostic_011_q3_n5,f,11,fifo_cold_inflight_c0_s96_19_to20,True,True,43583,43584
+diagnostic_011_q3_n5,f,23,fifo_fill_advance_t1000000081_c0_s161_33_to32,True,True,43514,43583
+diagnostic_011_q3_n5,f,27,fifo_cold_inflight_c0_s100_19_to21,True,True,43513,43514
+diagnostic_011_q3_n5,f,30,fifo_cold_inflight_c0_s96_19_to20,True,True,43421,43513
+diagnostic_011_q3_n5,mf,8,fifo_cold_inflight_c4_s169_33_to34,True,True,43686,43704
+diagnostic_011_q3_n5,mf,22,fifo_cold_inflight_c0_s132_28_to29,True,True,43455,43621
+diagnostic_011_q3_n5,mf,29,fifo_cold_inflight_c2_s53_10_to11,True,True,43453,43455
+finalcode_011_and_carry,case_011_q3_n5,13,fifo_cold_inflight_c4_s169_33_to34,True,True,43686,43704
+integration_new_configs_v1,case_083_q3_n4,14,fifo_cold_inflight_c2_s219_54_to55,True,True,229104,229284
+integration_new_configs_v1,case_083_q3_n4,48,fifo_cold_inflight_c2_s187_46_to47,True,True,224192,228616
+release_v12_time_budget,case_011_q3_n5,12,fifo_fill_advance_t1000000169_c0_s160_32_to31,True,True,43585,43759
+release_v13_cold_coverage,case_011_q3_n5,9,fifo_cold_inflight_c2_s68_13_to14,True,True,43516,43519
+release_v13_cold_coverage,case_011_q3_n5,19,fifo_cold_inflight_c3_s139_27_to29,True,True,43446,43448
+release_v13_cold_coverage,case_011_q3_n5,21,fifo_cold_inflight_c3_s143_27_to28,True,True,43421,43446

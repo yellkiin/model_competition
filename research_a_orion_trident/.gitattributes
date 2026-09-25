@@ -1,0 +1,7 @@
+*.py text eol=lf
+*.md text eol=lf
+*.csv text eol=lf
+*.ps1 text eol=crlf
+*.zip -filter -diff -merge
+*.part* -filter -diff -merge
+*.gz -filter -diff -merge

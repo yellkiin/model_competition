@@ -1,0 +1,140 @@
+{
+  "purpose": "existing evidence publication only",
+  "new_official_evaluations": 0,
+  "plans": [
+    {
+      "path": "evidence/available_seeds/case_011_q1_n2/plan.json",
+      "bytes": 5553,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q1_n3/plan.json",
+      "bytes": 5557,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q1_n4/plan.json",
+      "bytes": 5561,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q1_n5/plan.json",
+      "bytes": 5565,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q2_n2/plan.json",
+      "bytes": 5845,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q2_n3/plan.json",
+      "bytes": 5563,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q2_n4/plan.json",
+      "bytes": 5849,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q2_n5/plan.json",
+      "bytes": 7023,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q3_n1/plan.json",
+      "bytes": 5843,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q3_n2/plan.json",
+      "bytes": 5845,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q3_n3/plan.json",
+      "bytes": 7019,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q3_n4/plan.json",
+      "bytes": 9461,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_011_q3_n5/plan.json",
+      "bytes": 7023,
+      "operations": 688,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_024_q2_n2/plan.json",
+      "bytes": 78095,
+      "operations": 5959,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_044_q1_n4/plan.json",
+      "bytes": 12400,
+      "operations": 1364,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_059_q2_n3/plan.json",
+      "bytes": 27087,
+      "operations": 2752,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_083_q3_n4/plan.json",
+      "bytes": 40583,
+      "operations": 3844,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_084_q2_n2/plan.json",
+      "bytes": 78816,
+      "operations": 8616,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_084_q3_n3/plan.json",
+      "bytes": 109878,
+      "operations": 8616,
+      "source": "literal recorded plan, losslessly expanded"
+    },
+    {
+      "path": "evidence/available_seeds/case_086_q3_n2/plan.json",
+      "bytes": 53402,
+      "operations": 5274,
+      "source": "literal recorded plan, losslessly expanded"
+    }
+  ],
+  "tables": [
+    {
+      "path": "evidence/anytime_30_seconds.csv",
+      "bytes_before_git_eol": 366157,
+      "data_rows": 1974,
+      "source": "all literal recorded strings; no recomputed time values"
+    },
+    {
+      "path": "evidence/all_improvement_events.csv",
+      "bytes_before_git_eol": 19729,
+      "data_rows": 159,
+      "source": "all literal recorded strings; no recomputed time values"
+    }
+  ]
+}
