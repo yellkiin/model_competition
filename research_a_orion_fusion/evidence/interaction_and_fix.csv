@@ -1,0 +1,9 @@
+stage,case,q,n,components,status,baseline_makespan,makespan,attempt_count,stop_reason,wall_seconds,candidate_generation_seconds
+focused_interaction,case_044,3,5,m,ok,46827,41698,117,nonimproving_call_limit,27.93477990500014,2.362506774000849
+focused_interaction,case_044,3,5,s,ok,46827,39490,113,nonimproving_call_limit,28.937861830000088,2.824898610999412
+focused_interaction,case_044,3,5,sm,ok,46827,41577,81,nonimproving_call_limit,20.48894894600005,1.962484255000163
+focused_interaction,case_086,3,5,m,ok,48028,47641,54,budget,62.22447523400001,5.564500476999456
+focused_interaction,case_086,3,5,s,ok,48028,46258,49,budget,62.65510021399996,7.042104703999485
+focused_interaction,case_086,3,5,sm,ok,48028,46361,49,budget,62.456520097000066,6.3101423200002955
+source_stop_revision,case_044,3,5,sm,ok,46827,39490,173,all_sources_nonimproving,43.40400283300005,3.946340478997172
+source_stop_revision,case_086,3,5,sm,ok,48028,46361,48,search_timeout,62.277306253999996,6.3091651139995975

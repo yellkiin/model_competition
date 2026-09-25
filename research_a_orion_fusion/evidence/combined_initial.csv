@@ -1,0 +1,11 @@
+case,q,n,components,status,baseline_makespan,makespan,selected_family,selected_name,candidate_generation_seconds,official_eval_seconds,attempt_count
+case_024,2,5,sm,ok,2225709,695284,base/local,critical_producer_colocate,3.1060831139996026,30.979282365000017,24
+case_024,3,5,sm,ok,2227340,693470,base/local,critical_producer_colocate,3.7278841969996392,30.217800176000196,23
+case_044,1,5,sm,ok,69212,60741,memory/producer_release,producer_release_1000000275_4,0.8149171520000209,5.650331354000514,32
+case_044,2,5,sm,ok,67069,45343,structure/effective_cores,day01_effective_3,0.7418009689996552,5.675674141000059,32
+case_044,3,5,sm,ok,46827,44250,base/local,bottleneck_frontier_split,0.6810386970004174,6.003874349999819,32
+case_059,2,5,sm,ok,150455,149931,structure/move,move_g761_to4,2.982971633999796,18.434657742000013,32
+case_084,2,5,sm,ok,391700,285686,memory/coherent_micro_wave,micro_wave_e2_s2,4.053669474000003,34.833823799000015,16
+case_084,3,5,sm,ok,391700,285686,memory/coherent_micro_wave,micro_wave_e2_s2,5.189584579999632,33.84803115400018,14
+case_086,2,5,sm,ok,54188,50532,structure/split,prefix_split_g0_0.5_to4,2.9276913290001403,31.49098482399961,32
+case_086,3,5,sm,ok,48028,47421,structure/swap,swap_g164_g166,3.6817291309996563,30.446790036999687,29
