@@ -48,6 +48,8 @@ def main() -> None:
         installer = importlib.import_module('install')
         home = root / 'temporary_paper_home'
         home.mkdir()
+        # PR42 installation creates this folder before package_inputs is used.
+        (home / '题目').mkdir()
         agents = home / 'AGENTS.md'
         agents.write_text('preserved synthetic agent entry\n', encoding='utf-8')
         original_agents = agents.read_bytes()
