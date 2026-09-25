@@ -13,6 +13,7 @@ import traceback
 from .storage import read, write, plan_key, incumbent_from_job
 from .selector import select_candidate, selection_details, family_statistics, stop_reason
 from .plugin import propose
+from .structural import propose_structural, _private_island_features
 
 
 def _frontier(g, n, cfg, q):
@@ -115,33 +116,48 @@ def solve(request):
     streams = deque([('frontier', iter(_frontier(g, n, cfg, q)))])
     pool, queued, generation_cost = [], set(), {}
     expanded, rounds, last_fifo_source = False, 0, None
+    last_structural_source = None
     fifo_enabled = request['method'] in ('combined','fifo')
     adaptive = request['method'] in ('budget','combined')
-    revised = request.get('revision') in ('v2','v3')
+    revised = request.get('revision') in ('v2','v3','v4')
     last_local_source = None
 
     def add_streams():
-        nonlocal expanded, last_fifo_source, last_local_source, pool, queued
+        nonlocal expanded, last_fifo_source, last_local_source, last_structural_source, pool, queued
         if not expanded and best:
-            streams.extend([('stage', iter(_prioritized_stages(g,n,cfg,q,deadline) if request.get('revision')=='v3' else stage_candidates(g,n,cfg,q))),
+            streams.extend([('stage', iter(_prioritized_stages(g,n,cfg,q,deadline) if request.get('revision') in ('v3','v4') else stage_candidates(g,n,cfg,q))),
                             ('finer', iter(fine_candidates(g, n, cfg, q)))])
             expanded = True
         if revised and best:
             source = plan_key(best['plan'])
             if source != last_local_source:
-                # Discard only stale incumbent-specific streams; global construction remains.
-                retained = [(name, stream) for name, stream in streams if name not in ('fifo','upstream_local')]
+                # Discard incumbent-specific candidates after an accepted improvement.
+                retained = [(name, stream) for name, stream in streams if name not in ('fifo','upstream_local','structural')]
                 streams.clear(); streams.extend(retained)
-                stale = [c for c in pool if c['family'].startswith('anytime/fifo')]
-                pool[:] = [c for c in pool if not c['family'].startswith('anytime/fifo')]
+                stale = [c for c in pool if c['family'].startswith(('anytime/fifo','anytime/struct_'))]
+                pool[:] = [c for c in pool if not c['family'].startswith(('anytime/fifo','anytime/struct_'))]
                 for c in stale:queued.discard(plan_key(c['plan']))
-                state['stale_fifo_discarded'] = state.get('stale_fifo_discarded',0)+len(stale)
+                state['stale_incumbent_candidates_discarded'] = state.get('stale_incumbent_candidates_discarded',0)+len(stale)
                 def anchored(parent=best):
                     yield from neighbours(g,parent['plan'],cfg,q,parent['official_result'],limit=12)
                     yield from mutations(g,parent['plan'],cfg,q,parent['official_result'],1)
                     yield from joint_window(g,parent['plan'],cfg,q,parent['official_result'],1)
                 streams.appendleft(('upstream_local',iter(anchored())))
                 last_local_source=source
+        if request.get('revision')=='v4' and best:
+            source = plan_key(best['plan'])
+            if source != last_structural_source:
+                private_now = False
+                if q in (2,3):
+                    try:
+                        f = _private_island_features(g,cfg,q,best)
+                        private_now = f['private_islands'] and f['ratio'] > 1.08
+                        if private_now: state['private_island_features'] = f
+                    except Exception as exc:
+                        state['construction_errors'].append(dict(family='structural_features',error=str(exc)))
+                if private_now or state.get('local_improvements',0) >= 2 or calls >= 4:
+                    streams.appendleft(('structural',iter(propose_structural(g,n,cfg,q,best,deadline))))
+                    last_structural_source = source
         if fifo_enabled and best:
             source = plan_key(best['plan'])
             if source != last_fifo_source:
@@ -210,6 +226,11 @@ def solve(request):
         if revised:gap = gap/(1+gap) # exactly the original solver's U/L threshold
         reason = stop_reason(history, best_time, lower, gap,
                              request.get('stagnation_calls', 12), request.get('minimum_calls', 16)) if adaptive else None
+        if request.get('revision')=='v4' and best_time and len(g.ops) >= 2000:
+            relative_gap = max(0.0, (best_time-lower)/best_time)
+            if relative_gap <= request.get('near_bound_budget_gap', .0205):
+                reason = reason or 'certified_near_bound_budget_stop'
+                state['near_bound_relative_gap'] = relative_gap
         if reason == 'stagnation_heuristic_not_optimality':
             statistics_now = family_statistics(history)
             untried_pool = any(statistics_now.get(c['family'], {}).get('calls', 0) == 0 for c in pool)
