@@ -1,0 +1,36 @@
+{
+  "release_id": 396332916,
+  "release_url": "https://github.com/yellkiin/model_competition/releases/tag/orion-structure-results-20260925-0455",
+  "draft": false,
+  "prerelease": true,
+  "asset_count": 19,
+  "asset_bytes": 232788087,
+  "every_listed_asset_state_uploaded": true,
+  "every_listed_asset_length_matches": true,
+  "new_experiments": 0,
+  "all_prior_evidence_uploaded": false,
+  "pending": [
+    {
+      "name": "ORION_structure_recheck_20260925_raw_local.zip",
+      "size_bytes": 72928491,
+      "status": "available_locally_not_uploaded",
+      "reason": "Container DNS/network blocks binary transfer. Local v3/v4 original responses are not replaced by CI results."
+    },
+    {
+      "name": "ORION_structure_recheck_20260925_code_reports.zip",
+      "size_bytes": 1448778,
+      "status": "exact_attachment_not_uploaded",
+      "reason": "Available locally; full aggregate CSV/report bytes uploaded separately and Git-tracked snapshots archived, but original 17 PNGs and exact 219-member attachment are not claimed uploaded."
+    },
+    {
+      "name": "ORION_safe_refine_20260925_code_plans_report.zip",
+      "status": "not_recovered",
+      "reason": "Unavailable in current runtime and Library. Cannot reconstruct selected plans, seed pool or original plots from score tables."
+    },
+    {
+      "name": "ORION_safe_refine_20260925_raw.zip",
+      "status": "not_recovered",
+      "reason": "Unavailable; PR31 original candidate responses and full trajectories remain missing."
+    }
+  ]
+}

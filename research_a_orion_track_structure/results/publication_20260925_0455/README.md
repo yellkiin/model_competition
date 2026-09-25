@@ -8,23 +8,23 @@
 
 |附件|字节数|下载|
 |---|---:|---|
-|run_36085958693_artifact_10844700264.zip|15273926|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36085958693_artifact_10844700264.zip)|
-|run_36085958693_artifact_10844436271.zip|37707350|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36085958693_artifact_10844436271.zip)|
-|run_36085958693_artifact_10844341222.zip|28083442|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36085958693_artifact_10844341222.zip)|
-|run_36085958693_artifact_10844265253.zip|2983134|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36085958693_artifact_10844265253.zip)|
-|run_36085958693_artifact_10844170482.zip|11406584|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36085958693_artifact_10844170482.zip)|
-|run_36085958693_artifact_10843858504.zip|18213767|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36085958693_artifact_10843858504.zip)|
-|run_36085958693_artifact_10843813692.zip|65289391|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36085958693_artifact_10843813692.zip)|
-|run_36046726567_artifact_10829028488.zip|28255987|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36046726567_artifact_10829028488.zip)|
-|run_36048331790_artifact_10829414796.zip|24170191|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36048331790_artifact_10829414796.zip)|
-|run_36046094858_artifact_10828791683.zip|14436|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/run_36046094858_artifact_10828791683.zip)|
-|PR30_git_snapshot_a0da7b746449.zip|226840|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/PR30_git_snapshot_a0da7b746449.zip)|
-|PR31_git_snapshot_9550ac947af1.zip|65443|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/PR31_git_snapshot_9550ac947af1.zip)|
-|ORION_exact_aggregate_CSV_reports_20260925.zip|88674|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/ORION_exact_aggregate_CSV_reports_20260925.zip)|
-|ORION_structure_recheck_per_case_20260925.csv|522407|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/ORION_structure_recheck_per_case_20260925.csv)|
-|ORION_structure_recheck_trajectory_20260925.csv|434696|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/ORION_structure_recheck_trajectory_20260925.csv)|
-|ORION_structure_recheck_REPORT_20260925.md|14573|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/ORION_structure_recheck_REPORT_20260925.md)|
-|ORION_safe_refine_results_20260925.md|5585|[下载](https://github.com/yellkiin/model_competition/releases/download/untagged-44f3860b93dc1990d2ab/ORION_safe_refine_results_20260925.md)|
+|run_36085958693_artifact_10844700264.zip|15273926|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36085958693_artifact_10844700264.zip)|
+|run_36085958693_artifact_10844436271.zip|37707350|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36085958693_artifact_10844436271.zip)|
+|run_36085958693_artifact_10844341222.zip|28083442|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36085958693_artifact_10844341222.zip)|
+|run_36085958693_artifact_10844265253.zip|2983134|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36085958693_artifact_10844265253.zip)|
+|run_36085958693_artifact_10844170482.zip|11406584|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36085958693_artifact_10844170482.zip)|
+|run_36085958693_artifact_10843858504.zip|18213767|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36085958693_artifact_10843858504.zip)|
+|run_36085958693_artifact_10843813692.zip|65289391|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36085958693_artifact_10843813692.zip)|
+|run_36046726567_artifact_10829028488.zip|28255987|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36046726567_artifact_10829028488.zip)|
+|run_36048331790_artifact_10829414796.zip|24170191|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36048331790_artifact_10829414796.zip)|
+|run_36046094858_artifact_10828791683.zip|14436|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36046094858_artifact_10828791683.zip)|
+|PR30_git_snapshot_a0da7b746449.zip|226840|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/PR30_git_snapshot_a0da7b746449.zip)|
+|PR31_git_snapshot_9550ac947af1.zip|65443|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/PR31_git_snapshot_9550ac947af1.zip)|
+|ORION_exact_aggregate_CSV_reports_20260925.zip|88674|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/ORION_exact_aggregate_CSV_reports_20260925.zip)|
+|ORION_structure_recheck_per_case_20260925.csv|522407|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/ORION_structure_recheck_per_case_20260925.csv)|
+|ORION_structure_recheck_trajectory_20260925.csv|434696|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/ORION_structure_recheck_trajectory_20260925.csv)|
+|ORION_structure_recheck_REPORT_20260925.md|14573|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/ORION_structure_recheck_REPORT_20260925.md)|
+|ORION_safe_refine_results_20260925.md|5585|[下载](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/ORION_safe_refine_results_20260925.md)|
 
 完整聚合CSV和报告也可在 `aggregate_attachments/` 直接查看，恢复摘要在 `pr31_recovered_summary/`。PR31原提交的四个文件冻结在 `pr31_repository_snapshot/`；不把其中历史“完整包已交付”文字当作本次上传证据。
 
@@ -57,3 +57,8 @@ PR30七图CI包按原GitHub artifact分别转存，保留原始成员；不是�
   }
 ]
 ```
+
+## 补存的历史日志
+
+- [run_36046578817_historical_logs.zip](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36046578817_historical_logs.zip)：历史执行日志，不是原始plan/response包，不填补原包缺失。
+- [run_36047055409_historical_logs.zip](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36047055409_historical_logs.zip)：历史执行日志，不是原始plan/response包，不填补原包缺失。
