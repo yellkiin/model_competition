@@ -1,0 +1,10 @@
+{
+  "scope":"real cold configurations; first_valid is NOT the original single-core benchmark",
+  "system":"Linux CPython3.13.5",
+  "rows":[
+    {"case":"case_044","q":1,"n":2,"selected_audit":true,"makespan":63171,"cold_first_valid":131105,"wall_seconds":24.24378494008056,"cap_seconds":60.0,"pair_status":null,"no_l2_makespan":null},
+    {"case":"case_044","q":3,"n":2,"selected_audit":true,"makespan":45377,"cold_first_valid":58696,"wall_seconds":26.836143049306656,"cap_seconds":60.0,"pair_status":"ok","no_l2_makespan":50849,"pair_seconds":0.21424115800004984},
+    {"case":"case_059","q":3,"n":5,"selected_audit":true,"makespan":150455,"cold_first_valid":150667,"wall_seconds":48.264966894421605,"cap_seconds":60.0,"pair_status":"ok","no_l2_makespan":150455,"pair_seconds":0.5069460670001718}
+  ],
+  "all_selected_audits_pass":true
+}

@@ -1,3 +1,5 @@
+> 问题 A 当前入口：[`ORION_START_HERE.md`](ORION_START_HERE.md)。旧 Fusion / Trident 计划在 `history/orion_plans/`。
+
 # 数学建模竞赛资料与 A 题实验
 
 当前保留 A、B、C、D、F 题。E 题目录及其专用调研资料已从当前分支移除；A 不依赖其他题目的数据。原题、A 官方评估器和其他保留题目的原始附件不修改。

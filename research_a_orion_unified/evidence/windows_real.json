@@ -1,0 +1,14 @@
+{
+  "system": "Windows Server 2025 x64",
+  "python": "3.12.5",
+  "workers": 1,
+  "workflow_run": 36173491379,
+  "artifact_id": 10880628491,
+  "source_commit": "692df2d3941d61e38374229fba58fb0087b6ef67",
+  "scope": "two real original-graph configurations, not 100 cases or multiple user hosts",
+  "rows": [
+    {"case":"case_044","q":1,"n":2,"makespan":63171,"wall_seconds":39.299020120620696,"cap_seconds":45.0,"selected_audit":true,"status":"ok","pair_status":null,"no_l2_makespan":null},
+    {"case":"case_044","q":3,"n":2,"makespan":45377,"wall_seconds":35.737805637359656,"cap_seconds":45.0,"selected_audit":true,"status":"ok","pair_status":"ok","no_l2_makespan":50849,"same_plan_equal":true,"paired_audit":true}
+  ],
+  "complete": true
+}
