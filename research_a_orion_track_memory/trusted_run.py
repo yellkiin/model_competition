@@ -4,7 +4,7 @@ This adapter accepts trusted baseline metrics at explicit user request. All new
 candidates pass unchanged OfficialSession; rejected attempts remain on disk.
 """
 from __future__ import annotations
-import argparse,csv,gzip,json,os,platform,sys,time,traceback,subprocess
+import argparse,csv,gzip,json,os,platform,sys,time,traceback,subprocess,importlib
 from pathlib import Path
 from collections import deque
 from .run import resources, rss, terminate
@@ -43,8 +43,11 @@ def worker(req):
     state['construction_seconds']=time.monotonic()-started
     state['lower']=bounds(g,cfg,req['n'],req['q'])['global_lower']
     diagnostics=[]
-    from . import local_repair
-    proposal = local_repair.propose if req.get('proposal')=='local' else reuse_repair.propose
+    if req.get('plugin'):
+        proposal = importlib.import_module(req['plugin']).propose
+    else:
+        from . import local_repair
+        proposal = local_repair.propose if req.get('proposal')=='local' else reuse_repair.propose
     stream=proposal(g,req['n'],cfg,req['q'],incumbent={'plan':seed,'official_result':old_result},feedback=diagnostics,deadline=deadline)
     while time.monotonic()<deadline and state['evaluations']<req['max_evaluations']:
         st=time.monotonic()
@@ -147,7 +150,7 @@ def export(root):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--request');p.add_argument('--root',default='.');p.add_argument('--out');p.add_argument('--cases',nargs='+',type=int);p.add_argument('--questions',nargs='+',type=int,default=[1,2]);p.add_argument('--cores',nargs='+',type=int,default=[5]);p.add_argument('--seconds',type=float,default=120);p.add_argument('--max-evaluations',type=int,default=16);p.add_argument('--workers',default='auto');p.add_argument('--total-seconds',type=float,default=1200);p.add_argument('--shards',type=int,default=1);p.add_argument('--shard-index',type=int,default=0);p.add_argument('--export',action='store_true');p.add_argument('--proposal',choices=['epochs','local'],default='epochs');p.add_argument('--seed-run');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--request');p.add_argument('--root',default='.');p.add_argument('--out');p.add_argument('--cases',nargs='+',type=int);p.add_argument('--questions',nargs='+',type=int,default=[1,2]);p.add_argument('--cores',nargs='+',type=int,default=[5]);p.add_argument('--seconds',type=float,default=120);p.add_argument('--max-evaluations',type=int,default=16);p.add_argument('--workers',default='auto');p.add_argument('--total-seconds',type=float,default=1200);p.add_argument('--shards',type=int,default=1);p.add_argument('--shard-index',type=int,default=0);p.add_argument('--export',action='store_true');p.add_argument('--proposal',choices=['epochs','local'],default='epochs');p.add_argument('--plugin',default='');p.add_argument('--seed-run');a=p.parse_args()
     if a.request:worker(read(a.request));return
     root=Path(a.root).resolve();out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
     if not a.export and (out/'manifest.json').exists():p.error('Output run already exists; use a fresh directory, not overwrite/resume')
@@ -189,9 +192,10 @@ def main():
                     elif not pm['result_file']:old['no_l2_makespan']=pr['old'].get('no_l2_makespan','')
                     if pm['result_file']:old['cache_hit_rate']=str(read(pd/pm['result_file'])['official_result'].get('cache_stats',{}).get('hit_rate',''))
                     else:old['cache_hit_rate']=pr['old'].get('cache_hit_rate','')
-                jobs.append(dict(proposal=a.proposal,parent_run=str(previous) if previous else '',case=f'case_{case:03}',q=q,n=n,old=old,seed_plan=str(seed_path),graph=str(off/f'data/case_{case:03}.json'),official=str(off),config=str(off/'data/config.txt'),job=str(out/f'jobs/case_{case:03}_q{q}_n{n}'),seconds=a.seconds,max_evaluations=a.max_evaluations))
+                jobs.append(dict(proposal=a.proposal,plugin=a.plugin,parent_run=str(previous) if previous else '',case=f'case_{case:03}',q=q,n=n,old=old,seed_plan=str(seed_path),graph=str(off/f'data/case_{case:03}.json'),official=str(off),config=str(off/'data/config.txt'),job=str(out/f'jobs/case_{case:03}_q{q}_n{n}'),seconds=a.seconds,max_evaluations=a.max_evaluations))
     workers=a.workers
-    write(out/'manifest.json',dict(proposal=a.proposal,seed_run=str(previous) if previous else '',version=reuse_repair.VERSION if a.proposal=='epochs' else 'memory-local-2.3',python=sys.version,platform=platform.platform(),workers=workers,cases=cases,q=a.questions,n=a.cores,seconds=a.seconds,max_evaluations=a.max_evaluations,total_seconds=a.total_seconds,baseline_policy='trusted published metrics, zero baseline evaluations'))
+    plugin_version=getattr(importlib.import_module(a.plugin),'VERSION',a.plugin) if a.plugin else (reuse_repair.VERSION if a.proposal=='epochs' else 'memory-local-2.3')
+    write(out/'manifest.json',dict(proposal=a.proposal,plugin=a.plugin,seed_run=str(previous) if previous else '',version=plugin_version,python=sys.version,platform=platform.platform(),workers=workers,cases=cases,q=a.questions,n=a.cores,seconds=a.seconds,max_evaluations=a.max_evaluations,total_seconds=a.total_seconds,baseline_policy='trusted published metrics, zero baseline evaluations'))
     deadline=time.monotonic()+a.total_seconds
     run_queue(jobs,workers,deadline,out)
     export(out)
