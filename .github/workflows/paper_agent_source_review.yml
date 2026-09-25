@@ -1,0 +1,52 @@
+name: Paper agent source review export
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/paper_agent_source_review.yml'
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 48cedcc9f0053b6afdc7e2db11cc5b45519b8337
+          sparse-checkout: |
+            20hw_myskill_distribution
+            各种建模agent/华为杯整合Agent
+            题目/A题
+            调研/A题_文献库
+            调研/A题_文献.json
+            research_a_orion_fusion
+            research_a_orion_trident
+            research_a_orion_review_3pc
+          sparse-checkout-cone-mode: false
+          lfs: false
+      - name: Copy source documents without experiments or fonts
+        shell: python
+        run: |
+          import json, shutil
+          from pathlib import Path
+          roots=['20hw_myskill_distribution','各种建模agent/华为杯整合Agent','research_a_orion_fusion','research_a_orion_trident','research_a_orion_review_3pc','调研/A题_文献库']
+          allowed={'.md','.py','.json','.toml','.yaml','.yml','.tex','.sty','.cls','.bib','.ps1','.txt','.csv'}
+          out=Path('paper_review_export'); out.mkdir()
+          files=[]
+          for base in roots:
+            for p in Path(base).rglob('*'):
+              if not p.is_file() or p.suffix.lower() not in allowed: continue
+              if any(x in {'.git','node_modules','.venv','__pycache__','raw','runs','images','figures'} for x in p.parts): continue
+              if p.stat().st_size>3000000: continue
+              if '数据' in p.parts or 'inputs' in p.parts: continue
+              target=out/p; target.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(p,target)
+              files.append({'path':str(p),'bytes':p.stat().st_size})
+          for p in [Path('调研/A题_文献.json'),*Path('题目/A题').glob('*.docx')]:
+            if p.is_file():
+              target=out/p; target.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(p,target)
+          (out/'EXPORT.json').write_text(json.dumps({'revision':'48cedcc9f0053b6afdc7e2db11cc5b45519b8337','purpose':'read-only source review, no experiments executed','files':files},ensure_ascii=False,indent=2),encoding='utf-8')
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-agent-review-sources
+          path: paper_review_export/
+          retention-days: 14
