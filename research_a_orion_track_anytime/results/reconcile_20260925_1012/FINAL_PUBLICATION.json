@@ -1,0 +1,41 @@
+{
+  "repository": "yellkiin/model_competition",
+  "new_pr": 36,
+  "new_branch": "orion/anytime-reconcile-20260925-1012",
+  "base_pr": 34,
+  "base_branch_not_modified": "orion/track-anytime_wu",
+  "preserved_base_head": "27f7aa073bd7f91a1b1b9842eb2c9eb48117bf37",
+  "preservation_check": "All final differences from the frozen peer head are added files in research_a_orion_track_anytime; no inherited file changed or deleted.",
+  "post_v3_commit_attribution": {
+    "complete_interval_commits": 17,
+    "earlier_helper_commits": {"author": "Darklord258", "count": 8, "first": "6110eaedcdd0fa73632fc962ef62a269a3e6d767", "last": "6ff9a8f52674449656832b2ea38ad1457ea2ddfa"},
+    "peer_v4_commits": {"author": "r1293870729-dev", "count": 9, "first": "c6c91edc1c467b4649ded538f9bbbfae91e0b1e4", "last": "27f7aa073bd7f91a1b1b9842eb2c9eb48117bf37", "contributions": ["private-island structural micro-wave", "FIFO fill/eviction-aware candidates", "v4 integration and near-bound stop", "measured report and evidence index"]},
+    "note": "Git authors identify recorded accounts, not independently the identity of an AI. Preserve both groups. Our current additions are isolated in PR36."
+  },
+  "experiment_run": 36123440945,
+  "experiment_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+  "expected_search_arms": 36,
+  "actual_search_arms": 36,
+  "official_selected_valid": 36,
+  "same_plan_no_l2_pairs_valid": 30,
+  "new_vs_peer_comparison": {"win": 1, "tie": 10, "loss": 1},
+  "historical_local_v4_v5_originals_recovered": false,
+  "replacement_policy": "reconcile-v6; freshly reimplemented and measured, not recovered historical bytes",
+  "release_url": "https://github.com/yellkiin/model_competition/releases/tag/anytime-reconcile-20260925-1012",
+  "raw_archives": {"count": 7, "bytes": 100488180, "details": "EVIDENCE_INDEX.json"},
+  "code_document_results_archive": {
+    "asset_id": 588131442,
+    "name": "Anytime_PR34_reconciliation_complete_20260925.zip",
+    "size_bytes": 605440,
+    "state": "uploaded",
+    "url": "https://github.com/yellkiin/model_competition/releases/download/anytime-reconcile-20260925-1012/Anytime_PR34_reconciliation_complete_20260925.zip",
+    "source_commit": "0dee0a4a39092925016eb7e93ecd7bda16f524e0",
+    "packaging_run": 36124794436,
+    "packaging_new_experiments": 0,
+    "contains": ["preserved peer implementation", "new reconciliation implementation", "Chinese comparison document", "36 selected plans and result tables", "portable seed index and Windows entry"]
+  },
+  "temporary_workflows_removed": true,
+  "automatic_merge": false,
+  "local_preflight_note": "A separate local 044 pilot and one portable fixed-plan replay are ancillary, not pooled with the 36 cloud arms. Their exact local wrappers are not claimed in the seven cloud archives.",
+  "comparison_document": "research_a_orion_track_anytime/RECONCILIATION_COMPARISON.md"
+}
