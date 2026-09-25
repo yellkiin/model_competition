@@ -1,0 +1,32 @@
+name: ORION structure independent recheck
+on:
+  pull_request:
+    branches: [main]
+    paths: ['.github/workflows/orion_structure_recheck.yml']
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            research_a_orion_anytime
+            research_a_orion_track_structure
+            research_a_orion_review_3pc
+            tools
+            题目/A题
+            调研/A题_文献库
+      - name: Export frozen original source and selected raw evidence
+        run: python -m research_a_orion_track_structure.recheck_export
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-recheck-sources
+          path: /tmp/orion_recheck_sources.zip
+          compression-level: 0
+          if-no-files-found: error
