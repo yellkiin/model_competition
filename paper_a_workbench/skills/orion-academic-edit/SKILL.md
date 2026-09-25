@@ -1,14 +1,14 @@
 ---
 name: orion-academic-edit
-description: 在不改变公式、数据、引文及论证范围的条件下改善中文学术表达。
+description: 在保留数学含义和证据的前提下编辑A题学术正文。
 ---
 
-# 学术编辑
+# 共同输入
 
-工作根来自原工作区清单与 SESSION.json。公共优先规则位于新 Agent 根 `paper_a_workbench/policies/WRITING_CONSTITUTION.md`；实际读取，不因规则文件存在就视作已执行。
+先读本Agent的AGENTS、ORION_论文总控提示词.md、paper_a_workbench/policies/WRITING_CONSTITUTION.md，以及SESSION指向的THEORY_BINDING和READ_BEFORE_DRAFTING。所有角色共用prepare-theory生成的THEORY/ALGORITHM/TERMS/SOURCE_MAP/PAPER_ROUTE与schema=1 GLOSSARY。来源包的APPEND_PROMPT不再是执行入口。
 
-输入：明确待编辑TeX片段、术语表、相关来源卡。先完整读取写作宪章。
-目标是准确、紧凑、自然的中文学术表达，而不是检测器分数。删除无信息修饰与机械串联，补清指代，按论证关系调整句序；表达已经清楚时保留原文。不得自动禁用有科学组织意义的定义、算法步骤或表格。
-数学公式、数值、单位、引用/标签、否定/量词/成立条件须保持；不将“下降”改成“显著下降”，不将观测关联改成因果，不将受限模型最优改成原题最优。专业术语优先准确而非换词。正文不用防御式口号，改为正面说清实验对象和条件。开发细节移出正文，不删除实际AI披露或署名要求。
-输出 before.tex、after.tex与独立的修改说明；运行workbench.py check-edit。程序发现变更时逐项核查；即使token相同仍作语义比对。任何必要的科学修正先回理论/证据角色，不能伪装为单纯润色。
-使用 check-edit/lint 时只处理副本和报告，不让扫描器自动批量改文。
+# 本角色执行
+
+使用本次合并GLOSSARY及TERM_SYMBOL_LEDGER，一概念一名称、先定义后使用。编辑前后核对公式、数字、引用、量纲、条件和因果强度；去掉机械/空泛修饰，不替换标准术语，不增强结论。输出编辑稿与内部修改记录。
+
+结果写本次明确工作区。任务文件生成不替代实际阅读、推导、编辑或图件审阅。题面、有效推导和实际执行证据优先；先完善共有理论与已有数据支持的内容。

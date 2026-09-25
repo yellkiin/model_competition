@@ -1,0 +1,56 @@
+{
+  "project_defaults": {
+    "project_matches": true,
+    "agent_inside_project": true,
+    "default_data_root": "C:\\Users\\LEGION\\Desktop\\数据"
+  },
+  "real_archive": {
+    "source": "TRIDENT_REAL_EVIDENCE_20260925.zip",
+    "bytes": 107595313,
+    "extracted_files": 3010,
+    "record_policy": "Source archive bytes unchanged; original JSON and paths unchanged; no remote transfer.",
+    "joined_zip_created": false
+  },
+  "actual_records": {
+    "main": 14,
+    "pairs": 5,
+    "errors": [],
+    "formal_ready": false,
+    "original_singlecore": "184697",
+    "q3_n5": "41849",
+    "version": "trident-1.1",
+    "experiment": "finalcode_011_and_carry"
+  },
+  "continuous_parts": {"parts": 2, "files": 10, "records_equal": true, "joined_zip_created": false},
+  "native_theory": {
+    "origin_pr": 44,
+    "origin_commit": "20539cef853ea496055c8ad5652c7ac3a6113237",
+    "local_import_commit": "210863544f2b2f2a7b0f4a06633f3a0b68e41f15",
+    "source_files": 17,
+    "errors": [],
+    "theory_files": 7,
+    "schema": 1,
+    "terms": 29,
+    "canonical_makespan": "总体任务执行时间",
+    "alignment_state": "pending_semantic_review"
+  },
+  "file_input": {
+    "theory_present": true,
+    "glossary_present": true,
+    "local_catalogue_present": true,
+    "all_inputs_are_files": true,
+    "workspace_started": false
+  },
+  "adoption": {"theory_preserved": true, "unknown_versions_retained": true},
+  "glossary_lint": {
+    "findings": [],
+    "mechanical_clear": true,
+    "scope": "Only the explicitly ordered manuscript body files; appendices/logs are not silently treated as prose."
+  },
+  "cli": {"paths": true, "prepare_theory": true, "lint_with_session_glossary": true},
+  "windows_wrapper_review": {"uses_readonly_HOME_variable": false, "utf8_bom": true, "native_windows_executed": false},
+  "correction_during_check": "The isolated intake harness had not created the question inbox. package_inputs now creates that inbox and publishes its capsule via a temporary ZIP; rerun reached the original FILE-input command successfully.",
+  "scope": {"new_solver_calls": 0, "new_official_evaluator_calls": 0, "full_template_install": false, "actual_pdf_generation": false},
+  "reviewed_theory_final_commit": "e79a992f4dc757ae3cd435087c8242fc631c60aa",
+  "theory_final_difference": "GitHub compare of 20539cef..e79a992f returned only removal of temporary workflow; theory files unchanged."
+}

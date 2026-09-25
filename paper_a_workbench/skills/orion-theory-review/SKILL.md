@@ -1,14 +1,14 @@
 ---
 name: orion-theory-review
-description: 核对A题统一模型、推导与代码，使理论和实际算法相符。
+description: 核对A题统一理论、实际执行语义、证明与符号。
 ---
 
-# 理论核对
+# 共同输入
 
-工作根来自原工作区清单与 SESSION.json。公共优先规则位于新 Agent 根 `paper_a_workbench/policies/WRITING_CONSTITUTION.md`；实际读取，不因规则文件存在就视作已执行。
+先读本Agent的AGENTS、ORION_论文总控提示词.md、paper_a_workbench/policies/WRITING_CONSTITUTION.md，以及SESSION指向的THEORY_BINDING和READ_BEFORE_DRAFTING。所有角色共用prepare-theory生成的THEORY/ALGORITHM/TERMS/SOURCE_MAP/PAPER_ROUTE与schema=1 GLOSSARY。来源包的APPEND_PROMPT不再是执行入口。
 
-输入：原题、原评估语义、最终方法源码、policies/THEORY_BLUEPRINT.md、术语表和原始文献。
-先给出操作/张量图、划分、核映射、核内子图序，以及各问评估函数；三类候选作为同一可行域内的互补变换组织。无需把来源仓库名称写成理论名。为每一命题列前提、结论、证明与代码实现位置。
-对偏序无环、核序相容和完整执行合法性逐层区分。全局松弛界仅约束全局最优值，候选下界只约束该候选；固定顺序的零COPY诊断不等于全图下界。局部DP的最优性限定在其状态、候选集和目标。可行 incumbent 的时间单调性针对已完成评估的累积集合，不延伸成“所有图严格提升”。
-审查同核Task合并、共享DDR争用、FIFO发射查找/完成填充。保持公式量纲、时间预算范围和标准术语一致。算法复杂度按真实代码分生成、选择、原评估调用分析，不用单一大O掩盖原模拟器成本。
-输出：求解/论文理论/定义与命题.md、证明.md、理论实现对应.csv、术语.json。文件路径只在对应表，正文用数学名称。数学前提或反例涉及结论范围时用明确条件表述，保留严谨性，不写泛化防御性口号。
+# 本角色执行
+
+完整读THEORY/ALGORITHM/TERMS/SOURCE_MAP/PAPER_ROUTE及所引用原文。按实际执行版本核对定义、变量域、Task/容量/FIFO、下界、命题、来源选择和停止。输出THEORY_ALIGNMENT、METHOD_TO_CODE与符号定义，记录数学条件和真实代码对应。
+
+结果写本次明确工作区。任务文件生成不替代实际阅读、推导、编辑或图件审阅。题面、有效推导和实际执行证据优先；先完善共有理论与已有数据支持的内容。
