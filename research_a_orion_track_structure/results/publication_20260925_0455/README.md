@@ -62,3 +62,8 @@ PR30七图CI包按原GitHub artifact分别转存，保留原始成员；不是�
 
 - [run_36046578817_historical_logs.zip](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36046578817_historical_logs.zip)：历史执行日志，不是原始plan/response包，不填补原包缺失。
 - [run_36047055409_historical_logs.zip](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36047055409_historical_logs.zip)：历史执行日志，不是原始plan/response包，不填补原包缺失。
+
+## 补存的历史日志
+
+- [run_36046578817_historical_logs.zip](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36046578817_historical_logs.zip)：历史执行日志，不是原始plan/response包，不填补原包缺失。
+- [run_36047055409_historical_logs.zip](https://github.com/yellkiin/model_competition/releases/download/orion-structure-results-20260925-0455/run_36047055409_historical_logs.zip)：历史执行日志，不是原始plan/response包，不填补原包缺失。
