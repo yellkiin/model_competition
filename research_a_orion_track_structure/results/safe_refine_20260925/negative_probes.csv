@@ -1,0 +1,7 @@
+experiment,family,case,q,n,variant,status,makespan,added_copy_bytes,generation_seconds,official_eval_seconds,measured_eval_wall_seconds,total_seconds,protected_seed_makespan,incumbent_retained,used_in_default_policy
+pilot_chain_024_q2,naive_chain_chunk,024,2,5,chunk2,ok,1547896,76488184,0.04452542000001358,,2.182871725000041,,695284,True,False
+pilot_chain_024_q2,naive_chain_chunk,024,2,5,chunk1,ok,4189611,238230632,0.06918223200000284,,2.941877455999986,,695284,True,False
+pilot_chain_024_q2,naive_chain_chunk,024,2,5,chunk3,ok,1544634,73145424,0.04600283299998864,,2.0299205549999897,,695284,True,False
+probe_regions_024_q1,barrier_regions,024,1,5,reserve0_rotate0,ok,1102915,39327648,0.023240741999870806,2.1642002429998684,,2.5668879909999305,1067515,True,False
+probe_regions_024_q1,barrier_regions,024,1,5,reserve1_rotate0,ok,1092018,39327448,0.021075833999930182,1.8313149160001103,,2.246678433999932,1067515,True,False
+probe_regions_024_q1,barrier_regions,024,1,5,reserve0_rotate1,ok,1157515,39327648,0.018958465999958207,2.1116442830000324,,2.5714861849999124,1067515,True,False
