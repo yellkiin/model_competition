@@ -1,0 +1,508 @@
+{
+  "authorized_at": "2026-09-26T01:39:51.693390+08:00",
+  "user_instruction": "Q1/Q2 single-core baselines need not be computed again; reuse existing results.",
+  "scope": "Shard 1 Q0/n1 shared baseline for Q1/Q2 only",
+  "do_not_rerun_baselines": true,
+  "do_not_change_active_solver": true,
+  "historical_reuse_must_be_labeled": true,
+  "no_backfill_into_current_anytime": true,
+  "final_collection_pending": false,
+  "entries": [
+    {
+      "case": "case_003",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 602212,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_003_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 27.23399999999674,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_006",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 82837,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_006_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.26600000000325963,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_009",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 153261,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_009_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 5.344000000011874,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_010",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 86969,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_010_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.25,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_012",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 59088,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_012_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.389999999984866,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_019",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 81144,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_019_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.28200000000651926,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_027",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 2363952,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_027_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.75,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_038",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 1364555,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_038_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 8.25,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_040",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 253454,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_040_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 1.547000000020489,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_041",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 6003957,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_041_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 119.95299999997951,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_042",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 1686740,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_042_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 5.5,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_043",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 677656,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_043_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 13.23499999998603,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_044",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 154407,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_044_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.5780000000086147,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_049",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 196276,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_049_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 2.7969999999913853,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_051",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 607628,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_051_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.7190000000118744,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_055",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 118835,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_055_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.46899999998277053,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_057",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 59726,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_057_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.35899999999674037,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_059",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 829473,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_059_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 2.0940000000118744,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_061",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 77191,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_061_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.4529999999795109,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_070",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 117300,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_070_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.375,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_071",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 18919,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_071_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.264999999984866,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_072",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 23897828,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_072_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 283.4539999999979,
+      "current_attempt_status": "failed",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_073",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 10081626,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_073_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 11.562999999994645,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_074",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 1682239,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_074_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 3.25,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_075",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 1441809,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_075_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 13.71899999998277,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_081",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 151795,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_081_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 3.125,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_085",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 3187899,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_085_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 105.75,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_087",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 3974071,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_087_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 207.7970000000205,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_088",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 243623,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_088_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 1.687000000005355,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_092",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 4815554,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_092_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 69.79700000002049,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_095",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 2084853,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_095_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 7.5310000000172295,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_097",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 11491509,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_097_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 25.030999999988126,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    },
+    {
+      "case": "case_098",
+      "q": 0,
+      "n": 1,
+      "applies_to": [
+        "Q1/n1",
+        "Q2/n1"
+      ],
+      "historical_makespan": 177430,
+      "seed_plan": "D:\\桌面\\model_competition\\research_a_orion_trident\\host1\\research_a_orion_trident\\runs\\assets_shard_1\\reference_plans\\q0\\n1\\case_098_multicore_res.json",
+      "plan_exists": true,
+      "historical_solve_seconds": 0.42199999999138527,
+      "current_attempt_status": "ok",
+      "current_attempt_preserved": true
+    }
+  ],
+  "final_collection_receipt": "research_a_orion_trident/runs/final_collection/shard_1/COLLECTION_RECEIPT.json"
+}
