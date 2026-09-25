@@ -1,0 +1,11 @@
+﻿case,q,n,method,mode,run_id,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,has_valid_incumbent,evaluations
+case_084,3,5,old,cold_start,comparison,observed_prefix,30,30,30.0,503472,2507412,4.98024120507198,True,3
+case_084,3,5,old,cold_start,comparison,stopped_carry_forward,60,30.04079168199999,30.04079168199999,503472,2507412,4.98024120507198,True,3
+case_084,3,5,old,cold_start,comparison,stopped_carry_forward,120,30.04079168199999,30.04079168199999,503472,2507412,4.98024120507198,True,3
+case_084,3,5,old,cold_start,comparison,stopped_carry_forward,300,30.04079168199999,30.04079168199999,503472,2507412,4.98024120507198,True,3
+case_084,3,5,old,cold_start,comparison,stopped_carry_forward,600,30.04079168199999,30.04079168199999,503472,2507412,4.98024120507198,True,3
+case_084,3,5,combined,cold_start,comparison,stopped_carry_forward,30,29.34468034699998,29.34468034699998,391700,2507412,6.401358182282359,True,5
+case_084,3,5,combined,cold_start,comparison,stopped_carry_forward,60,29.34468034699998,29.34468034699998,391700,2507412,6.401358182282359,True,5
+case_084,3,5,combined,cold_start,comparison,stopped_carry_forward,120,29.34468034699998,29.34468034699998,391700,2507412,6.401358182282359,True,5
+case_084,3,5,combined,cold_start,comparison,stopped_carry_forward,300,29.34468034699998,29.34468034699998,391700,2507412,6.401358182282359,True,5
+case_084,3,5,combined,cold_start,comparison,stopped_carry_forward,600,29.34468034699998,29.34468034699998,391700,2507412,6.401358182282359,True,5
