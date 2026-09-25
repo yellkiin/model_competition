@@ -38,6 +38,22 @@ def _frontier(g, n, cfg, q):
     yield candidate(g, cfg, q, one_core(g, n), 'single_core_fallback', 'frontier')
 
 
+def _prioritized_stages(g,n,cfg,q,deadline):
+    """Bounded lookahead of existing stage candidates, no new partition logic.
+
+    Charge generation of the eight fixed-grid members before the first yield;
+    evaluate the lowest existing proxy first. Leave expensive stage DP lazy.
+    """
+    from research_a_orion_anytime.strategies import stage_candidates
+    stream=iter(stage_candidates(g,n,cfg,q));batch=[]
+    for _ in range(8):
+        if time.monotonic()+.05>=deadline:break
+        try:batch.append(next(stream))
+        except StopIteration:break
+    yield from sorted(batch,key=lambda c:(c['proxy']['score'],c['name']))
+    yield from stream
+
+
 def _family(value):
     return value if value.startswith('anytime/') else 'anytime/' + value
 
@@ -101,13 +117,13 @@ def solve(request):
     expanded, rounds, last_fifo_source = False, 0, None
     fifo_enabled = request['method'] in ('combined','fifo')
     adaptive = request['method'] in ('budget','combined')
-    revised = request.get('revision') == 'v2'
+    revised = request.get('revision') in ('v2','v3')
     last_local_source = None
 
     def add_streams():
         nonlocal expanded, last_fifo_source, last_local_source, pool, queued
         if not expanded and best:
-            streams.extend([('stage', iter(stage_candidates(g, n, cfg, q))),
+            streams.extend([('stage', iter(_prioritized_stages(g,n,cfg,q,deadline) if request.get('revision')=='v3' else stage_candidates(g,n,cfg,q))),
                             ('finer', iter(fine_candidates(g, n, cfg, q)))])
             expanded = True
         if revised and best:
