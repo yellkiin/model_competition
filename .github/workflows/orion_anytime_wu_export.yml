@@ -1,28 +1,174 @@
-name: ORION Anytime Wu duplicate-run guard
+name: Anytime Wu revision replication and collection
 on:
   pull_request:
     branches: [main]
 permissions:
   contents: read
-  actions: write
+  actions: read
+concurrency:
+  group: wu-v2-once
+  cancel-in-progress: false
 jobs:
-  guard:
+  freeze:
     if: github.event.pull_request.head.ref == 'orion/track-anytime_wu'
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    outputs:
+      active: ${{ steps.claim.outputs.active }}
+      commit: ${{ steps.claim.outputs.commit }}
     steps:
-      - name: Cancel only the accidentally duplicated study, preserve primary run
+      - uses: actions/checkout@v4
+        with:
+          ref: orion/track-anytime_wu
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_anytime
+      - id: claim
+        shell: bash
+        run: |
+          set -euo pipefail
+          LOCK=research_a_orion_track_anytime/results/wu_20260925_0649/V2_CLAIM.txt
+          if test -f "$LOCK"; then echo 'active=no' >> "$GITHUB_OUTPUT"; exit 0; fi
+          python research_a_orion_track_anytime/apply_revision2.py
+          mkdir -p "$(dirname "$LOCK")"
+          echo "$GITHUB_RUN_ID" > "$LOCK"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research_a_orion_track_anytime/adapter.py research_a_orion_track_anytime/runner.py "$LOCK"
+          git commit -m 'fix(anytime-wu): persist measured v2 source and one-shot experiment claim'
+          git push origin HEAD:orion/track-anytime_wu
+          echo 'active=yes' >> "$GITHUB_OUTPUT"
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  revision:
+    needs: freeze
+    if: needs.freeze.outputs.active == 'yes'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {case: '044', modes: warm}
+          - {case: '083', modes: warm}
+          - {case: '086', modes: warm}
+          - {case: '001', modes: 'warm,cold'}
+          - {case: '059', modes: 'warm,cold'}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.freeze.outputs.commit }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_anytime
+      - uses: actions/download-artifact@v4
+        with:
+          name: orion-anytime-wu-frozen-inputs
+          run-id: 36104651803
+          github-token: ${{ github.token }}
+          path: /tmp/source
+      - name: Restore unchanged inputs and process measurement dependency
+        run: |
+          python -m pip install --user psutil==7.0.0
+          python - <<'PY'
+          import zipfile
+          with zipfile.ZipFile('/tmp/source/orion_anytime_wu_frozen.zip') as z:
+            for n in z.namelist():
+              if n.startswith(('research_a_orion_anytime/','raw_day01/','题目/A题/')):z.extract(n,'.')
+          PY
+      - name: Fresh seed verification then real revision comparison
+        run: |
+          python -u -m research_a_orion_track_anytime.prepare --cases ${{ matrix.case }} --workers 1 --out /tmp/wu_v2/preparation
+          python -u -m research_a_orion_track_anytime.runner --cases ${{ matrix.case }} --questions 3 --cores 5 --methods old,combined --modes '${{ matrix.modes }}' --revision v2 --seconds 120 --max-evaluations 128 --total-seconds 700 --pair-seconds 30 --workers 1 --seed-manifest /tmp/wu_v2/preparation/seed_manifest.json --out /tmp/wu_v2/comparison
+      - if: always()
+        run: |
+          mkdir -p /tmp/wu_v2/source
+          cp research_a_orion_track_anytime/*.py /tmp/wu_v2/source/
+          echo '${{ needs.freeze.outputs.commit }}' > /tmp/wu_v2/EXECUTION_COMMIT.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wu-v2-case-${{ matrix.case }}
+          path: /tmp/wu_v2
+          compression-level: 6
+  collect:
+    needs: [freeze, revision]
+    if: always() && needs.freeze.outputs.active == 'yes'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: orion/track-anytime_wu
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_anytime
+      - name: Wait only for already-running primary study
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           python - <<'PY'
-          import os,json,urllib.request
-          root='https://api.github.com/repos/yellkiin/model_competition/actions/runs/36106800532'
-          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
-          data=json.load(urllib.request.urlopen(urllib.request.Request(root,headers=headers)))
-          if data['status']!='completed':
-            urllib.request.urlopen(urllib.request.Request(root+'/cancel',data=b'{}',headers=headers,method='POST')).read()
-            print('Cancellation requested for duplicate run 36106800532 only')
-          else:print('Duplicate already completed; retain evidence and exclude from primary selection')
-          print('Primary 36106285863 is not cancelled or rerun. No solver invocation in this workflow.')
+          import os,time,json,urllib.request
+          url='https://api.github.com/repos/yellkiin/model_competition/actions/runs/36106285863'
+          for i in range(40):
+            r=json.load(urllib.request.urlopen(urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})))
+            if r['status']=='completed':print(r['conclusion']);break
+            time.sleep(15)
+          else:raise SystemExit('Primary not finished; do not fabricate results')
           PY
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: wu-real-case-*
+          run-id: 36106285863
+          github-token: ${{ github.token }}
+          path: /tmp/wu_collect/primary
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: wu-v2-case-*
+          path: /tmp/wu_collect/v2
+      - name: Preserve derived tables and actual source metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          DEST=research_a_orion_track_anytime/results/wu_20260925_0649
+          python -m research_a_orion_track_anytime.collect_results --input /tmp/wu_collect/primary --out "$DEST/ci_primary"
+          python - <<'PY'
+          from pathlib import Path
+          import csv,json,shutil,os,urllib.request
+          d=Path('research_a_orion_track_anytime/results/wu_20260925_0649');v=d/'ci_revision';v.mkdir(exist_ok=True)
+          rows=[]
+          for f in Path('/tmp/wu_collect/v2').glob('*/comparison/all_jobs.json'):
+            data=json.loads(f.read_text());rows.extend({k:x for k,x in r.items() if not isinstance(x,(dict,list))} for r in data)
+            dest=v/f.parent.parent.name;dest.mkdir(exist_ok=True)
+            for name in ['per_case.csv','trajectory.csv','manifest.json','run_summary.json','worker_waves.json']:shutil.copy(f.parent/name,dest/name)
+          keys=list(dict.fromkeys(k for r in rows for k in r))
+          with (v/'per_case.csv').open('w',encoding='utf-8-sig',newline='') as f:
+            w=csv.DictWriter(f,keys);w.writeheader();w.writerows(rows)
+          evidence={'primary_run':36106285863,'revision_run':int(os.environ['GITHUB_RUN_ID']),'input_export_run':36104651803,'excluded_startup_failure':36106178564,'excluded_cancelled_duplicate':36106800532,'new_experiments_in_collection':0,'v2_rows':len(rows),'artifacts':[]}
+          for rid in [36106285863,int(os.environ['GITHUB_RUN_ID'])]:
+            url=f'https://api.github.com/repos/yellkiin/model_competition/actions/runs/{rid}/artifacts?per_page=100'
+            evidence['artifacts'].extend(json.load(urllib.request.urlopen(urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})))['artifacts'])
+          (d/'CI_EVIDENCE_INDEX.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$DEST"
+          if ! git diff --cached --quiet; then git commit -m 'results(anytime-wu): persist all primary and revision summaries with original artifact IDs'; git push origin HEAD:orion/track-anytime_wu; fi
+          python - <<'PY'
+          import zipfile
+          from pathlib import Path
+          with zipfile.ZipFile('/tmp/wu_published_code_tables.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for f in Path('research_a_orion_track_anytime').rglob('*'):
+              if f.is_file() and '__pycache__' not in f.parts:z.write(f,str(f))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wu-published-code-tables
+          path: /tmp/wu_published_code_tables.zip
