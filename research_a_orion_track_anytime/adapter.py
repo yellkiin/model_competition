@@ -312,6 +312,8 @@ def solve(request):
                         if best else (float('inf'), float('inf')))
             row.update(makespan=score[0], added_copy_bytes=score[1], improved=score < previous, improved_makespan=score[0] < previous[0])
             if score < previous:
+                if previous[0] != float('inf'):
+                    state['local_improvements'] = state.get('local_improvements', 0) + 1
                 meta = dict(makespan=score[0], added_copy_bytes=score[1], 
                             plan_file=plan_path, result_file=result_path, elapsed_seconds=row['completed_seconds'])
                 best = dict(plan=c['plan'], official_result=raw, response=response, meta=meta)
