@@ -10,7 +10,8 @@ from copy import deepcopy
 import time
 from research_a_orion_anytime.core import plan_view, make_plan, estimate, bounds
 from .reuse_repair import plan_key
-from .plugin import _peak_window\nfrom .policy import search_state
+from .plugin import _peak_window
+from .policy import search_state
 VERSION='memory-local-2.3'
 
 
@@ -18,8 +19,8 @@ def propose(g,n,cfg,q,incumbent=None,feedback=None,deadline=None):
     if incumbent is None:return
     p=incumbent['plan'];m,groups,owner,order=plan_view(g,p)
     if len(p['core_schedules'])!=n:raise ValueError('NPU core mismatch')
-    upper=incumbent.get('official_result',{}).get('makespan',float('inf'))
-    if upper<=1.04*bounds(g,cfg,n,q)['global_lower']:return
+    state=search_state(g,cfg,n,q,incumbent);upper=state['upper']
+    if not state['should_search']:return
     seen={plan_key(p)};pool=[];trials=0
     pred={s:set() for s in groups}
     for u in g.topo:pred[m[u]].update(m[v] for v in g.pred[u] if m[v]!=m[u])
@@ -56,18 +57,15 @@ def propose(g,n,cfg,q,incumbent=None,feedback=None,deadline=None):
             for a,b in zip(uses,uses[1:]):
                 distance=positions[b]-positions[a]
                 if distance>1:reuse.append((size*distance,t,a,b))
-    # Pull producer work earlier, or release a target after its local prerequisites.
     for _,t,a,b in sorted(edges,reverse=True)[:20]:
         for s in (a,b):
             for delta in (1,3,6):shift(s,positions[s]-delta,f'transfer_pull_{s}_{delta}')
-        # Tensor-set affinity, not case identifiers or unrestricted remapping.
         for moved,dest in ((a,owner[b]),(b,owner[a])):
             trial=make_plan([groups[s] for s in order],[dest if s==moved else owner[s] for s in order],n)
             add(trial,f'tensor_colocate_{t}_{moved}_{dest}',{'tensor':t,'moved_subgraph':moved,'destination':dest,'fixed_partition':True})
     for _,t,a,b in sorted(reuse,reverse=True)[:20]:
         shift(b,positions[a]+1,f'reuse_pull_{t}_{b}')
         shift(a,positions[b]-1,f'producer_late_{t}_{a}')
-    # Local independent swaps outside the first three positions of each core.
     for seq in p['core_schedules']:
         for i in range(1,len(seq)):
             if seq[i-1] not in pred[seq[i]]:
