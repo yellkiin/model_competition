@@ -1,5 +1,5 @@
-# ORION Trident SMF publication
+# Trident shard 0：报告与离线数据交接
 
-Selected plans: 476. Main records: 476. Cache pairs: 169. This shard complete: False. Full 100-case complete: False.
+476个合法主结果（464正常、12时限），169/170同方案配对。严格整片完成=false。
 
-See per_case.csv and paper_data for plot tables. Raw records are in the archive parts listed by PUBLICATION.json. Partial publications retain their actual incomplete status.
+先读RUN_OUTCOME.md、ROUND_SUMMARY.json、HANDOFF_README.md。只发布报告与表格；完整原始数据由用户复制离线ZIP。此前Release分卷不完整，不能作为完整数据来源。
