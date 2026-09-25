@@ -1,0 +1,84 @@
+{
+  "purpose": "source publication only",
+  "experiments_run": 0,
+  "files": [
+    {
+      "path": "research_a_orion_trident/campaign.py",
+      "bytes": 22132,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/campaign.py"
+    },
+    {
+      "path": "research_a_orion_trident/report.py",
+      "bytes": 11499,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/report.py"
+    },
+    {
+      "path": "research_a_orion_trident/fifo.py",
+      "bytes": 9913,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/fifo.py"
+    },
+    {
+      "path": "research_a_orion_trident/paper.py",
+      "bytes": 6662,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/paper.py"
+    },
+    {
+      "path": "research_a_orion_trident/mechanisms.py",
+      "bytes": 5574,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/mechanisms.py"
+    },
+    {
+      "path": "research_a_orion_trident/seeds.py",
+      "bytes": 4045,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/seeds.py"
+    },
+    {
+      "path": "research_a_orion_trident/restore_seeds.py",
+      "bytes": 1765,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/restore_seeds.py"
+    },
+    {
+      "path": "research_a_orion_trident/export_results.py",
+      "bytes": 4841,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/export_results.py"
+    },
+    {
+      "path": "research_a_orion_trident/plot_paper.py",
+      "bytes": 3626,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/plot_paper.py"
+    },
+    {
+      "path": "research_a_orion_trident/unpack_results.py",
+      "bytes": 1435,
+      "source_ref": "4546b88336048dc5950d6fe8437059a122cd4096",
+      "source_path": "research_a_orion_fusion/unpack_results.py"
+    },
+    {
+      "path": "research_a_orion_trident/vendor/structure/plugin.py",
+      "bytes": 8107,
+      "source_ref": "b513a98f86183a8c1b41d67a547f06fa9d578e2a",
+      "source_path": "research_a_orion_track_structure/plugin.py"
+    },
+    {
+      "path": "research_a_orion_trident/vendor/structure/safe_refine_plugin.py",
+      "bytes": 10018,
+      "source_ref": "b513a98f86183a8c1b41d67a547f06fa9d578e2a",
+      "source_path": "research_a_orion_track_structure/safe_refine_plugin.py"
+    },
+    {
+      "path": "research_a_orion_trident/vendor/memory/coherent_v4/candidates.py",
+      "bytes": 22668,
+      "source_ref": "b513a98f86183a8c1b41d67a547f06fa9d578e2a",
+      "source_path": "research_a_orion_track_memory/coherent_v4/candidates.py"
+    }
+  ]
+}
