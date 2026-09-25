@@ -1,0 +1,41 @@
+name: Export ORION theory input package
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - paper_a_theory/**
+      - .github/workflows/orion_theory_pack.yml
+permissions:
+  contents: read
+jobs:
+  package:
+    if: github.event.pull_request.head.ref == 'docs/orion-pr38-theory-v1-20260926'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: paper_a_theory
+      - name: Check synthetic document binding only
+        run: |
+          python paper_a_theory/check_binding.py > /tmp/BINDING_CHECK.json
+          cat /tmp/BINDING_CHECK.json
+      - name: Package authored files without source literature or experiments
+        run: |
+          git archive --format=zip --output=/tmp/ORION_PR38_Theory_Package_v1.zip HEAD paper_a_theory
+          git rev-parse HEAD > /tmp/THEORY_PACKAGE_COMMIT.txt
+          python - <<'PY'
+          import zipfile
+          with zipfile.ZipFile('/tmp/ORION_PR38_Theory_Package_v1.zip','a',zipfile.ZIP_DEFLATED) as z:
+              z.write('/tmp/BINDING_CHECK.json','BINDING_CHECK.json')
+              z.write('/tmp/THEORY_PACKAGE_COMMIT.txt','THEORY_PACKAGE_COMMIT.txt')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-pr38-theory-v1
+          path: /tmp/ORION_PR38_Theory_Package_v1.zip
+          if-no-files-found: error
+          retention-days: 90
