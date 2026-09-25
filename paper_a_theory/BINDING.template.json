@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "binding_id": "theory-pr38-first-draft",
+  "workspace": "REPLACE_WITH_NEW_PAPER_WORKSPACE",
+  "repo_root": "REPLACE_WITH_READONLY_IMPLEMENTATION_CHECKOUT",
+  "implementation_root": "research_a_orion_trident",
+  "implementation_commit": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+  "source_mode": "git",
+  "implementation_files": ["solve.py", "sources.py", "selector.py", "fifo.py", "vendor/orion/core.py", "paper.py"],
+  "execution_manifest": null,
+  "problem_file": "题目/A题/通用神经网络处理器下的多核调度问题.docx",
+  "official_root": "题目/A题/通用神经网络处理器下的多核调度问题  附件",
+  "config_file": "题目/A题/通用神经网络处理器下的多核调度问题  附件/data/config.txt",
+  "literature_root": "调研/A题_文献库",
+  "workbench_entry": null,
+  "result_runs": [],
+  "result_adapter": {
+    "format": "unbound",
+    "main_table": null,
+    "q3_pairs": null,
+    "trajectory": null,
+    "plan_field": null,
+    "response_field": null,
+    "implementation_commit_field": null,
+    "configuration_id_field": null
+  },
+  "notes": "本模板需由本地Agent按真实工作区和执行版本填充。结果尚未到达可以保持空列表；脚本不把来源绑定视为实验或理论核验通过。后续目录迁移仅改路径映射，策略或语义变更还须复核正文。"
+}
