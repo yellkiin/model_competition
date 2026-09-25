@@ -26,4 +26,12 @@ jobs:
       - name: Archive existing artifacts and restore exact uploaded CSVs
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python research_a_orion_track_structure/results/publication_20260925_0455/archive_publish.py
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('research_a_orion_track_structure/results/publication_20260925_0455/archive_publish.py')
+          s=p.read_text()
+          s=s.replace("API+'/'+endpoint,data=body", "API+('/'+endpoint if endpoint else ''),data=body")
+          p.write_text(s)
+          PY
+          python research_a_orion_track_structure/results/publication_20260925_0455/archive_publish.py
