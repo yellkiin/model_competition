@@ -1,0 +1,28 @@
+name: ORION SMF delivered source export
+on:
+  pull_request:
+    paths: ['.github/workflows/orion_smf_delivery_view.yml']
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - name: Export actual delivered directory
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          with zipfile.ZipFile('orion_smf_delivered.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in Path('research_a_orion_fusion').rglob('*'):
+                  if p.is_file():z.write(p,p.as_posix())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orion-smf-delivered-source
+          path: orion_smf_delivered.zip
+          retention-days: 7
