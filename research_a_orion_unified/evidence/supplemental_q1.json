@@ -1,0 +1,12 @@
+{
+  "scope":"Supplemental real Q1 matched comparison, same original day01 plan, same Linux host, one worker, 40-second search cap and 256 evaluation cap; complete official responses retained",
+  "case":"case_044", "q":1, "n":3, "seed_makespan":61864,
+  "rows":[
+    {"arm":"fusion","makespan":60727,"wall_seconds":40.00062804900017,"calls":187,"generation_seconds":2.0862065699952836,"official_seconds":30.06805472199767,"reaudit_ok":true},
+    {"arm":"trident","makespan":61498,"wall_seconds":19.571509889000026,"calls":88,"generation_seconds":1.2155750770016311,"official_seconds":14.663981405999493,"reaudit_ok":true},
+    {"arm":"unified","makespan":61498,"wall_seconds":19.622601427999598,"calls":90,"generation_seconds":1.4198071629994047,"official_seconds":14.947077502999946,"reaudit_ok":true}
+  ],
+  "extended_source_probe":{"change":"S per-parent output cap 72 to256 plus one additional move rotation slot; not the default policy", "makespan":61498,"wall_seconds":36.81765227699998,"calls":182,"reaudit_ok":true,"outcome":"Additional work did not improve this result. S cap alone is not established as the cause of the gap."},
+  "default_policy_changed":false,
+  "six_configuration_summary":{"versus_fusion":{"wins":2,"ties":2,"losses":2,"geomean_old_over_new":1.006462365735981},"versus_trident":{"wins":1,"ties":5,"losses":0,"geomean_old_over_new":1.0099739076102758}}
+}
