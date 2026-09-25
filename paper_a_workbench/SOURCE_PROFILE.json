@@ -3,12 +3,16 @@
   "repository": "yellkiin/model_competition",
   "batch_size": 16,
   "active_publication": null,
-  "method_selection": "准备阶段读取已合并的两份整合源；正式写作以所选PAPER_EXPORT的algorithm_revision与method_paths为准",
+  "result_delivery": "local",
+  "local_data_root": "C:\\Users\\LEGION\\Desktop\\数据",
+  "method_selection": "准备阶段核读共同框架；正文按本地实验包对应的实际 algorithm_revision/method_paths 对齐。",
   "sources": [
     {"id":"problem","ref":"main","paths":["题目/A题"],"required":true},
     {"id":"literature","ref":"main","paths":["调研/A题_文献.json","调研/A题_文献库"],"required":true},
+    {"id":"theory_pr38_v1","ref":"main","paths":["paper_a_theory"],"required":true,"text_only":true,"role":"PR44 merged theory: mandatory common input, resolved once per snapshot"},
     {"id":"method","ref":"main","paths":["research_a_orion_fusion","research_a_orion_trident","research_a_orion_anytime"],"exclude_parts":["evidence","results","team_results","publication","runs"],"text_only":true,"required":true},
-    {"id":"historical_baseline","ref":"main","paths":["research_a_orion_anytime/team_results/day01/latest.json","research_a_orion_anytime/team_results/day01/combined_final/per_case.csv","research_a_orion_anytime/team_results/day01/combined_final/cache_pairs.csv","research_a_orion_anytime/team_results/day01/combined_final/improvements.csv","research_a_orion_anytime/team_results/day01/combined_final/budget_prefixes.csv","research_a_orion_anytime/team_results/day01/combined_final/lower_tail.csv","research_a_orion_anytime/team_results/day01/combined_final/REPORT.md","research_a_orion_anytime/team_results/day01/combined_final/SOURCE_PUBLICATIONS.json"],"required":false,"text_only":true,"role":"historical reference only; never replace a pending current publication"},
+    {"id":"reports","ref":"main","paths":["research_a_orion_trident/team_results","research_a_orion_fusion/team_results"],"required":false,"reports_only":true,"exclude_parts":["raw","runs","jobs","attempts","selected","available_seeds","inputs"],"role":"report metadata and aggregate tables; match to desktop raw packages"},
+    {"id":"historical_baseline","ref":"main","paths":["research_a_orion_anytime/team_results/day01/latest.json","research_a_orion_anytime/team_results/day01/combined_final/per_case.csv","research_a_orion_anytime/team_results/day01/combined_final/cache_pairs.csv","research_a_orion_anytime/team_results/day01/combined_final/improvements.csv","research_a_orion_anytime/team_results/day01/combined_final/budget_prefixes.csv","research_a_orion_anytime/team_results/day01/combined_final/lower_tail.csv","research_a_orion_anytime/team_results/day01/combined_final/REPORT.md"],"required":false,"reports_only":true,"role":"labelled historical reference"},
     {"id":"writing_reference","ref":"48cedcc9f0053b6afdc7e2db11cc5b45519b8337","paths":["各种建模agent/华为杯整合Agent/huaweicup_agent/bridge.py","各种建模agent/华为杯整合Agent/huaweicup_agent/workflow.py","各种建模agent/awesome-ai-research-writing/README.md"],"text_only":true,"required":false}
   ]
 }

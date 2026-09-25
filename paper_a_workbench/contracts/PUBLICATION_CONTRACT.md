@@ -1,46 +1,25 @@
-# 路径独立的论文资料接口 v1
+# 论文发布接口：方法/官方语义固定，原数据本地读取
 
-算法运行器、论文工作台、GitHub发布三者通过一份明确选定的 `PAPER_EXPORT.json` 联系，不相互接管流程。此文件可放在未来任意最终结果目录。当前 examples 为 planned 格式样例；不是已完成实验。
+PAPER_EXPORT声明一个明确实验集合，和算法目录名称无关。原始执行包、报告、理论和论文是不同层次；所有结果须能定位到真正原记录。
 
-## 发布方提供
+## 必需字段
 
-- publication_id / publication_state：唯一批次及 planned、partial、final；final须来自实际发布判断。
-- algorithm_revision、official_revision、result_revision：各自实际 Git 提交；方法、官方文件、结果不必同提交。
-- method_paths：保持包结构和全部导入依赖的目录/文件，不只是 solver.py；config为原配置仓库路径。
-- result_paths：同一方法/协议下的完整选中结果、论文数据及原始归档清单。不是挑选数值最好的若干行。
-- protocol：实际 budget_scope、seconds、计时组成、冷/暖启动、历史成本口径及机器信息来源。两个根目录下字段相同不等于协议相同。
-- runs：恢复后本地不重叠作业根；可用绝对路径或相对本地 spec 的路径。layout 描述 summary/plan/response/progress及inline/external配对位置。目录改名只更改映射。
-- expected_cases：正式默认100张；小样本必须显式给实际清单。记录缺失不能通过缩小 expected_cases 伪装成百图。
-- assets（可选）：明确的 GitHub Release tag及names，或artifact id及filename。先检查实际对象与存储状态，不把PR文字中提到的包当成已经取得的包。
+`publication_id`、`publication_state`（planned/partial/final）、`algorithm_revision`、`official_revision`、`method_paths`、`config`、`protocol`。
 
-`config_local` 是接收端解析到的实际配置原件，不用旧机器路径。`recorded_version` 可校验原 summary/request 的版本标签；固定源码提交另写 algorithm_revision。版本标签是关联线索，科学对应仍由理论/证据角色核对。
+正式final的algorithm_revision和official_revision均为实际40/64位Git提交；准备/部分资料可保留null并等待原记录对齐，不填造提交。未知版本时adopt保留准备阶段来源，理论绑定保持待对齐。method_paths保留完整模块及依赖；config为官方配置在相应提交的路径。protocol明确budget_scope（graph_question_core或graph_all_questions_cores）、seconds、主机/worker/冷或续优化/种子成本口径，不由文件夹名推定。
 
-`adopt-export` 验证固定提交与实际路径后生成新 SOURCE_PROFILE；`sync` 只读Git对象按源复制到新快照。`assets` 使用本机现有 gh 授权读取指定文件；`unpack --parts` 严格按参数给定顺序恢复分卷，保留原记录JSON。不同分卷格式先读它们自身清单；本工具只支持组成标准ZIP的连续字节分卷。
+`result_delivery`默认local。`result_revision`记录Git报告提交，`result_paths`列报告路径；纯本地未发布报告时可为null和空列表。对原文件、源代码和实际指标的验证不因报告上传状态而省略。
 
-## 接收端规范化输出
+`runs`和`config_local`由local-spec填写为本机实际路径；`layout`按原始存储布局配置。默认格式是jobs/*/summary.json、同目录plan.json/result.json.gz/progress.json及精确同方案配对，未来改变目录只调整映射，不重写原JSON路径。
 
-`intake` 是原记录读取和一致性检查，不执行算法或官方模拟器。它输出：
+## 理论与来源
 
-|文件|内容|
-|---|---|
-|main.csv|逐图q/n、真实makespan、原始单核、额外COPY/Spill、命中、时间、选中方案和响应路径|
-|pairs.csv|同一完整Q3方案的有/无L2周期、两侧额外搬运、缓存比、字节命中及响应引用|
-|anytime.csv|每30秒已有最好解与阶段、实际时钟、停止后持有状态；不填补未知早期值|
-|improvement_events.csv|原progress逐次改善事件；时间与来源原样保留|
-|means.csv|先逐图比值后算术平均和中位数；计数与预期分母保留|
-|appendix_q1/2/3.csv|逐问附录；Q1/Q2一核明确为原基准约定|
-|ACTUAL_PROTOCOLS.json|每个原request/summary中实际版本、时间帽、模式、机器执行记录|
-|RAW_INDEX.json|来源summary到本次复制的原始方案/响应的对应关系|
-|INTAKE_STATUS.json|缺项、冲突、样本、配对状态和formal_ready|
+adopt-export完整保留`theory_pr38_v1`以及文献源，只替换所选method/results；不把理论源当作实验发布。理论提交由SOURCE_LOCK固定，算法锚点不同先做实际语义对齐。#44已合并，默认从main读取；需要采用后续开发版时指定明确ref，再按更新协议固定新版。
 
-Q1/Q2一核不伪造为两百次新实验。标准正式键为100×14主记录，500个同方案配对。各分片重复键直接报冲突，不选择其中更小的值。缺失官方响应、审查失败、方案不同、配置变化、非默认敏感性、混合版本都要先解决。没有完整原始数据的CSV可用于内部了解，但不通过本接口进入正式实验段。
+`expected_cases`声明本数据集真实图集合。正式100图标准覆盖为1400主配置与500同方案配对；缺失或特殊基准处理写入原始记账与论文范围。主数据和参数/诊断分别建接口文件，不逐行挑最优混成主结果。
 
-正式结果之外的参数研究、机制剖析和定向消融分别运行独立 intake 或来源适配，单独记录cohort/协议/代码。主数据集不被它们覆盖。
+## 文件与计时
 
-## 论文依赖接口
+读取实际summary、完整plan、官方response、progress。Q3无L2侧必须是同一个完整plan在Q2语义的响应。先逐图求加速比再算术平均。每30秒点只用当时已验证并可用的解；历史种子成本未知时保持未知，追加时间仍独立提供。
 
-工作区 `求解/论文证据/主张依赖.json` 每条记录：
-`id, statement, section, source_id, locator, formula_or_metric, selection, unit, denominator, method_revision, publication_id, dependent_figures, review_state`。
-术语表记录：`term, symbol, definition, origin, first_definition, uses, aliases`。正文只用论文术语与符号，接口字段留在工作记录。
-
-更新时比较文件内容对应的Git对象ID和数据键；变动沿依赖传播到公式、伪代码、图表、段落、摘要。无关章节不为“更新”而改写。SOURCE_LOCK固定一次阅读的来源，SESSION绑定唯一工作区。自动读取工具不授予主张或稿件“完成”状态。
+结果数据从桌面原件读取。GitHub只同步源码、原题、文献、理论与报告；默认assets拒绝隐式原始ZIP下载。未来用户明确改变传输策略时才另外启用。

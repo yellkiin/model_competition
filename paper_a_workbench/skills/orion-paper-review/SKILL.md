@@ -1,12 +1,14 @@
 ---
 name: orion-paper-review
-description: 按题面、数学、数据、术语与实际PDF逐项审查论文。
+description: 独立审查A题论文的题面对应、理论、术语、数据和图文。
 ---
 
-# 独立审阅
+# 共同输入
 
-工作根来自原工作区清单与 SESSION.json。公共优先规则位于新 Agent 根 `paper_a_workbench/policies/WRITING_CONSTITUTION.md`；实际读取，不因规则文件存在就视作已执行。
+先读本Agent的AGENTS、ORION_论文总控提示词.md、paper_a_workbench/policies/WRITING_CONSTITUTION.md，以及SESSION指向的THEORY_BINDING和READ_BEFORE_DRAFTING。所有角色共用prepare-theory生成的THEORY/ALGORITHM/TERMS/SOURCE_MAP/PAPER_ROUTE与schema=1 GLOSSARY。来源包的APPEND_PROMPT不再是执行入口。
 
-最好使用独立上下文，先读原题、论文、真实结果/图件和源码，再读作者自评。逐问检查题目任务是否完成；模型变量与约束、公式/算法一致性、下界与最优性范围、单位和分母、同方案配对、时间曲线、科学引用与匿名要求。
-按实际章节顺序运行术语lint，定位未定义、漂移、实现字段进入正文等问题，再全文人工阅读。检查重写后是否改强结论、偷换总体/子集、丢失否定或引用。具体科学局限用条件和实际现象表达，不把开发审计话术填进正文。
-使用原论文/图件/附录工具，实际打开终图与PDF页，检查公式、字体、遮挡、分页、图注和引用。输出带位置、依据、修改项、复核状态的审阅记录；不自动填写队员签署，不预测获奖，不把工具通过当科学真理。论文修订完成后才运行原finish。
+# 本角色执行
+
+先读原题与共同理论，再读实际版本和原记录，最后读稿件。按章节顺序检查符号首次定义、后续使用、数字分母、同方案配对和量纲；实际检查图件/PDF。独立上下文可用时分开审阅，记录真实完成步骤。
+
+结果写本次明确工作区。任务文件生成不替代实际阅读、推导、编辑或图件审阅。题面、有效推导和实际执行证据优先；先完善共有理论与已有数据支持的内容。

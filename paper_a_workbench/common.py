@@ -1,8 +1,8 @@
-"""Small UTF-8/path helpers; source snapshots are immutable, not experiment runs."""
+"""Small UTF-8/path helpers; snapshots are inputs, not experiment executions."""
 from __future__ import annotations
-import csv, gzip, json, re
-from pathlib import Path
-from datetime import datetime, timezone
+import csv,gzip,json,re
+from pathlib import Path,PurePosixPath
+from datetime import datetime,timezone
 
 
 def read(path):
@@ -11,25 +11,25 @@ def read(path):
         return json.load(f)
 
 
-def write(path, value):
+def write(path,value):
     p=Path(path);p.parent.mkdir(parents=True,exist_ok=True)
     t=p.with_name(p.name+'.tmp')
     t.write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
     t.replace(p)
 
 
-def csv_write(path, rows):
+def csv_write(path,rows):
     p=Path(path);p.parent.mkdir(parents=True,exist_ok=True)
     fields=list(dict.fromkeys(k for r in rows for k in r))
     with p.open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
 
 
-def within(root, relative):
-    root=Path(root).resolve();p=Path(relative)
-    if p.is_absolute() or '..' in p.parts or re.match(r'^[A-Za-z]:',str(relative)):
+def within(root,relative):
+    root=Path(root).resolve();value=str(relative).replace('\\','/');p=PurePosixPath(value)
+    if p.is_absolute() or '..' in p.parts or any(':' in part for part in p.parts):
         raise ValueError(f'Expected a relative path: {relative}')
-    out=(root/p).resolve();out.relative_to(root)
+    out=(root/Path(*p.parts)).resolve();out.relative_to(root)
     return out
 
 

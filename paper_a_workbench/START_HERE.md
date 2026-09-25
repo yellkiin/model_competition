@@ -1,46 +1,21 @@
-# 零上下文本地 Codex：从这里开始
+# 从当前Codex项目开始
 
-任务：采用团队已经完成的方法和最终正式实验写A题论文。先准备统一理论与写作工作区；最终结果到位后补齐结果、图件、摘要、附件。不是再次自动设计或训练一个新模型。
+本包修补#42：安装盘符改为当前项目；#44理论直接进入Agent；实验大包改读用户桌面目录。
 
-代码交付：GitHub PR #42，分支 `docs/orion-paper-workbench-20260926`，新增目录 `paper_a_workbench/`。它和算法运行目录分离。原题、参考文献及实验来源通过 SOURCE_PROFILE / PAPER_EXPORT 配置，不绑定最终算法目录名称。
-
-## 第一次接手
-
-1. 先定位本机已有模板的真实AGENTS.md：默认 `E:\20hw_myskill_distribution\AGENTS.md`；若解压多了一层，检查 `E:\20hw_myskill_distribution\20hw_myskill_distribution\AGENTS.md`。保留现有workshop_v1、原数据、共享规范，不切换正在跑实验的仓库分支。
-2. 在新的专用缓存 `E:\orion_paper_repo` 获取本PR。使用现有授权：
+1. 在做任何cd之前，把当前Codex项目的绝对路径记为PROJECT_ROOT。此值在本次部署中保持固定。仓库为yellkiin/model_competition，工具目录为paper_a_workbench。取得本修补PR的实际head并记录；所有新增工具放到PROJECT_ROOT下，不切换正在跑实验的checkout。
+2. 已有授权仓库可用git show/archive从指定提交只导出paper_a_workbench；也可在PROJECT_ROOT/.orion_paper_cache/repository做独立的`--filter=blob:none --no-checkout`克隆，在该缓存检出本工具目录。缓存只是资料来源，不成为新的项目根。
+3. 运行本目录BOOTSTRAP_LOCAL.ps1，显式传入原PROJECT_ROOT。Python优先用本机现有3.11+。模板从项目自身、单层/双层20hw_myskill_distribution定位；缺失时脚本从授权冻结版本恢复共享资源。不导入旧论文、实验输出或完成状态。
 
 ```powershell
-# 仅在 E:\orion_paper_repo 尚不存在时执行clone。
-gh repo clone yellkiin/model_competition E:\orion_paper_repo -- --filter=blob:none --no-checkout
-git -C E:\orion_paper_repo fetch origin docs/orion-paper-workbench-20260926
-git -C E:\orion_paper_repo sparse-checkout set --cone paper_a_workbench
-git -C E:\orion_paper_repo checkout --detach FETCH_HEAD
+$project=(Get-Location).Path
+# $tool 为本修补PR中实际取得的 paper_a_workbench 路径
+& "$tool\BOOTSTRAP_LOCAL.ps1" -ProjectRoot $project -DataRoot 'C:\Users\LEGION\Desktop\数据'
 ```
 
-已有专用缓存时读取状态并复用；有未保存修改就另建缓存，不做reset --hard。准备阶段读取main的最新资料，sync会固定一次实际提交。
+4. 默认生成PROJECT_ROOT/ORION_Paper_Agent。阅读该目录AGENTS和ORION_论文总控提示词.md，显式读取其skills；继续操作以它为工作根，PROJECT_ROOT仍使用SESSION值。若新开会话，从这个Agent根启动。默认目录已存在且有本次SESSION时续接，不复制第二套，也不猜workshop编号。
+5. BOOTSTRAP会同步必需理论源并调用prepare-theory，还会建立桌面数据目录清单。若数据尚未拷齐，先按THEORY/ALGORITHM/PAPER_ROUTE推进理论准备；正式实验选择后再local-spec/intake。
+6. package-inputs生成真实DOCX与ZIP。完整读取原工作流、实际版权/使用约定后，通过START_COMMAND中的真实文件参数创建工作区，再bind；该步骤由原workshop分配路径。
 
-3. 完整读取本目录README、AGENT_COMPARISON、写作宪章、LOCAL_CODEX_PROMPT。按本机实际解释器和模板路径运行：
+不用叠加PR44的APPEND_PROMPT，也不另行运行它的安装/绑定工具。其科学正文、TERMS、SOURCE_MAP和论文路线已经作为必需输入随资料ZIP传入六个角色。
 
-```powershell
-& E:\orion_paper_repo\paper_a_workbench\BOOTSTRAP_LOCAL.ps1 -Repo E:\orion_paper_repo -Template E:\20hw_myskill_distribution -Home E:\ORION_Paper_Agent -Python D:\python\python.exe
-```
-
-模板路径多一层时调整-Template；已有合适Python时调整-Python。新根存在且有SESSION时按记录续接，不重复安装。脚本不会开始正式工作区；原版权声明及共享规范保留。
-
-4. 从 `E:\ORION_Paper_Agent` 开启后续Codex上下文，完整执行：
-
-`E:\ORION_Paper_Agent\ORION_论文总控提示词.md`
-
-先读取所有规则，实际核对输入，按原workshop入口创建新工作区，普通文件和科学技术选择自主完成。最终数据未出时先做理论工作稿、来源卡、术语/符号表、方法—实现对应和图件计划。新实验数字、结果图、摘要结论等到明确正式发布后从原记录生成。
-
-## 后续有实验或方法更新
-
-完整执行：
-
-`E:\ORION_Paper_Agent\ORION_论文更新提示词.md`
-
-它读取本次SESSION绑定的工作区，发现新发布候选，固定新来源，比较真实代码/协议/结果变化，沿论文依赖只改受影响部分。最终算法目录改变只更新PAPER_EXPORT映射；数学行为改变则同步定义/命题/推导。通过原add-input登记资料，结束后重新审阅PDF与finish。不会自动重跑整套优化、强推代码或上传赛事。
-
-## 本次用户写作要求
-
-术语有来源、先定义后使用、全文一致；三问用统一决策和目标组织理论。正文只写方法、理论、实验设计和客观结果，不写代码字段、PR历史、交接/审计话术或无关内容。不用“不声称”等防御式套话；成立条件正面表述。润色不改数字、公式、引用、量纲、因果强度或科学范围。按照题目要求给完整结果，再补充有真实证据支持的必要机理和验证。
+本次代码发布与本地论文生产是两个阶段。写作任务默认只读GitHub；实验大包读桌面原件，不自动上传或下载原始Release分卷。

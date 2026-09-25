@@ -1,13 +1,13 @@
-# ORION 论文增量修订子任务
+# ORION 论文更新：同一项目、同一生产会话
 
-从 `E:\ORION_Paper_Agent` 启动。完整读取根 AGENTS、写作宪章、本文件和 `.agents/skills/orion-change-integrator/SKILL.md`。读取 `.orion_paper/SESSION.json` 得到已登记 workspace_root，读取旧 SOURCE_LOCK/PUBLICATION/主张依赖记录；缺少绑定时先定位并确认本次官方工作区，不猜最大编号。
+完整读取当前Agent的AGENTS、ORION_论文总控提示词.md及SESSION。工作区只使用SESSION.workspace_root，不按目录编号猜测，也不另起算法设计。
 
-1. 使用已有授权 Git 缓存 fetch 最新发布索引与相关 PR，**只读取**。既有最终稿、原始实验、模板和算法不修改。发现候选 publication、方法文件、配置、原文、输出结构的变化，保存新的来源快照；不同目录名经 PAPER_EXPORT 的映射接入。
-2. 对旧新 SOURCE_LOCK 执行 `changes`，对照最终算法源码作语义判断：纯路径/日志变化、策略/停止/构造变化、评估语义/参数变化、实验分母/样本/预算变化分别处理。路径改名不自动等于方法改变，函数改名也不自动等于仅工程改变。
-3. 固定选定的实际提交与 publication；同一正式数据集必须有明确版本与分片集合，不按逐例最好数字拼接。将新增资料包作为文件通过原 `workshop.py add-input --reason` 登记到同一工作区。
-4. 保存修订前主稿和依赖清单。用新的 layout 执行 intake，检查原方案、响应、Q3同方案配对、样本与时间口径；记录旧新键集合、实际新增/删除/更正项。没有最终完整实验时，继续修正理论和已受影响的内部说明，不用旧完整数字填充新实验。
-5. 只重建受影响的数表/图件，随后更新对应结果段、图注、摘要和结论；方法改变则连同定义、伪代码、命题条件/证明/复杂度一起审阅。主张到输入文件、公式/图表/章节的依赖写入工作记录。
-6. 新术语先登记来源和首次定义位置，再贯穿全文；对已有概念不反复换名。结果更正写成客观最终数据；开发变化过程留在修订日志，不进入论文科学章节。
-7. 对修改片段执行 check-edit，按实际章节顺序执行 lint；再做数学、因果范围、引文、图件和 PDF 实读复核。旧图或旧通过记录受影响即重审，不重新登记旧输出冒充新审查。最后调用原 finish；当前任务不自动上传赛事或后台持续轮询。
+从SESSION.repo_cache发现新的报告、方法提交和PR44理论更新。实验原数据继续从SESSION.local_data_root读取，默认C:\Users\LEGION\Desktop\数据。scan-local刷新本地目录/归档清单，与新的报告轮次对应；无原始包的报告不自动补造数据，也不自动拉取大Release。
 
-产物：`求解/论文修订/本次修订.md`、新的来源与主张依赖记录、变动的正式图表/正文、重新编译和审核后的PDF。报告采用的 publication/代码/配置版本与实际修改的章节，不把文件时间戳当新实验完成证明。
+保留当前active_publication，选择新实验时用新的PAPER_EXPORT执行adopt-export；理论源theory_pr38_v1由工具保留。sync创建新快照并固定所有提交；changes对比SOURCE_LOCK。目录变化更新映射；新数据重算图表；候选/选择/停止/计时行为变化同步算法段；执行语义变化重审模型与证明。PR44仍在更新时，本次始终使用已经固定的提交。
+
+prepare-theory生成新理论输入及schema=1术语表。package-inputs输出真实文件，按原add-input登记到同一工作区；再prepare-theory --workspace指向该明确工作区。实际更新THEORY_ALIGNMENT、TERM_SYMBOL_LEDGER、METHOD_TO_CODE和RESULT_BINDING，六个角色读取同一新输入，不叠加来源包的APPEND_PROMPT。
+
+本地新数据经local-spec/intake进入新的派生目录，主结果、定向消融、参数研究、历史对照分别管理。旧表和旧稿保留，只重写依赖已变内容的正文、图、摘要、结论与附录。使用新术语表lint、check-edit及独立语义审核，编译后实际查看PDF，完成原工作流后重新finish。
+
+本任务默认只读仓库并在项目内写论文，不运行百图、不上传实验大包、不自动合并或提交赛事。
