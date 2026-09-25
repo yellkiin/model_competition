@@ -1,43 +1,44 @@
-# Anytime Wu: FIFO时序与有限候选选择
+# Anytime Wu v4 方法
 
-本分支从 main `b513a98f86183a8c1b41d67a547f06fa9d578e2a` 新建，旧 `orion/track-anytime` 不变。只研究已有方案中的合法子图次序、候选首评、校准、成本准入与停止。没有更改官方图/config/评估器、公共 solver/campaign 或其他研究线。
+## 1. 不变的官方语义
 
-## 独立接口与来源
+唯一真分数是原官方 evaluator 的全局 Makespan。Q3 只在 COPY_IN issue 时查 cache，completion 时 fill；hit 不刷新 FIFO。Cache read 与 DDR 是不同带宽池。代码不增加 delay/sleep、不改 op/cycles/tensor、不改 FIFO/LRU 规则。
 
-`plugin.propose(g,n,cfg,q,incumbent=None,feedback=None,deadline=None)` 返回COMMON候选：name/family/plan/proxy/bounds。family为anytime/前缀，plan只含官方两个字段。该FIFO生成器只对同核已有子图做前后插入及两核联合插入，不改分组、核归属或计算时长。`selector.select_candidate(candidates,history,remaining_seconds)` 只返回现有候选索引或None，不执行评估、不隐藏修改方案。
+## 2. FIFO 候选
 
-storage.py、trace.py、diagnose.py以PR26提交`eaf9a67f86d54b87e3a6f80d815bea5593bf8d0e`为来源。selector/adapter在其源代码上做本轮独立修改；runner/plugin/prepare/event_audit和结果汇总为本轮实现。完整.py已入库；materialize_lineage.py与apply_revision2.py仅记录一次性来源转换，正常运行不要调用它们覆盖已有版本。
+`plugin.propose(...)` 只重新排列已有同核子图：
 
-## FIFO事件，而非命中率代理
+- consumer-window：`cold_inflight/evicted_inflight` 后移消费者，`evicted` 前移消费者；
+- fill-advance：从真实 event 找到 `earliest_pending_completion` 对应的先前读取，把填充者已有子图前移；
+- evictor-delay：从真实 `last_eviction` 找到实际驱逐该 tensor 的 fill，把驱逐者已有子图后移；
+- 少量两核联合候选。
 
-官方COPY_IN发射时查找，完成时填充；命中不刷新FIFO驻留顺序。操作完成时若条目已被驱逐仍可能重新填入。事件列表同一时间的原始顺序保持不变。trace.read_requests根据真实事件识别cold_first、cold_inflight、evicted_inflight、evicted、oversize和hit；event_audit验证每次查找/填充时刻及最老条目驱逐顺序。它是对原记录的解释，不是替换官方缓存模拟器。
+优先级只决定评估顺序，不冒充反事实 Makespan。每个方案仍先经 `plan_view`，然后原 evaluator。
 
-未命中且相同张量尚在读取中的请求，尝试把该请求所在完整子图后移，让合法工作自然占用窗口；已被驱逐的请求尝试前移。优先级结合字节潜在传输节省、请求完成时刻及其核结束时刻；这是排序启发式，不是准确的关键路径收益，更不是下界。v1.1保留最多16个单核候选，另留空间给联合变换，总数最多24。每个候选均先通过现有plan_view，再由未修改官方评估器裁决。禁止sleep/delay、LRU替换和修改读时长。
+## 3. 结构触发候选
 
-固定观测持续时间的关键性诊断保留原始依赖、Pipe/内存依赖及跨核COPY弧。其slack只能解释当前执行；共享DDR竞争已进入观测持续时间，因此不能由zero-slack字节直接得出缓存反事实收益。真正无L2对照始终为相同Q3方案重新调用Q2。
+`structural.py` 不看 case ID。tail-rebalance 只有在观测最慢核结束差≥1.5% Makespan，且该核 schedule 长度显著高于中位数时才生成；取最晚5个子图×两个较轻核，再按已有 timing proxy 排序。当前分支还保留并行研究中加入的 private-island micro-wave，仍由结构特征触发且最终必须原评估。
 
-## 候选预算控制
+结构流不会在一开始抢占短预算：tail类只有在已有真实改善或常规调用达到门槛后进入。024 的真实失败/修复正是这一准入规则依据。
 
-小队列惰性生成，避免一次性付出完整候选库构造成本。先评估可用候选族，再对历史官方/代理比值作向1收缩的中位数校准；用本机观测评估时间的保守分位数决定准入。外机时间不进入速度模型。历史质量可输入，但本轮主实验从重新验证的种子开始，没有独立证明历史质量迁移的增益。
+## 4. 预算与停止
 
-`queue`是同一惰性执行器+静态proxy、不加FIFO；`fifo`加FIFO但不启用自适应选择；`budget`只启用预算选择；`combined`两者结合。`old`直接调用原solver。前四个之间的消融更适合区分FIFO与预算机制；old/combined差异还包括惰性构造和上游邻域执行方式，不能将全部收益归给FIFO。
+- 候选族首评 + 历史官方/proxy 比值的收缩校准；
+- 当前机器评估耗时决定是否还能安全准入；外机 wall-clock 不进入当前速度模型；
+- incumbent 改善后丢弃其旧 FIFO/结构/局部邻域，重新锚定；
+- 全局 lower-bound gap 保留原语义；
+- v4 对大图且 `(U-L)/U<=2.05%` 启用 `certified_near_bound_budget_stop`。这是预算策略，不是最优证明。
 
-## 真实失败驱动的v2
+059 Q3五核因此保留150,524且0次新增评估；Q2也由全局gap直接停止。
 
-v1.1长轨迹044在57次评估后启发式停滞停止，结果45863；同条件原solver继续128次得到42323。原因之一是incumbent变化后仍有锚定旧解的局部流，且启发式停滞没有保护尚未充分探索的新局部邻域。
+## 5. 安全续优化与冷启动
 
-v2显式重新锚定上游neighbours/mutations/joint_window，清掉旧FIFO待评候选，并在upstream_local未消耗前不触发停滞停止。没有重写这些划分/内存修复算法。v2本地044在120秒/128次上限下得到42075，旧版42323；但083仍输给旧版，因此不是普遍优越性证明。修正包含联合变化，没有声称已单独分解每项贡献。
+warm 模式从重新验证的 seed 开始，任何新候选变差都不会替换 incumbent。case_048：15秒 cold old=117,513、cold v4=124,681；把old结果作为真实 incumbent 后，15秒 v4 warm=116,941。
 
-另一个实测发现：v1.1的gap=.02表示1-L/U，旧solver表示U/L-1，两者并非完全相同。v2将输入gap转换为gap/(1+gap)，对齐原solver阈值。主七图v1.1结果保留该限制，不能把阈值边界上的提前停止全部说成调度改进。
+因此v4推荐作为已有ORION/其它合法方案之后的 continuation layer，而不是单独替换 cold constructor。
 
-## 时间、保底与工况
+## 6. 实验口径
 
-暖启动两臂得到同一已重新验证的正式方案；历史种子取得时间和新验证时间单列。冷启动不给免费种子。只有完成官方评估和合法性检查的候选可替换incumbent；父进程实际观察到完整文件的时间决定30/60/120/300前缀，超时后完成的结果不进入此前前缀。停止后持有值明确标注。种子成本源于历史机器，不能用来宣称当前机器更快。
+本轮新增核心门：七图Q3/五核正式seed暖启动；024 v3/v4 20秒同机等预算；024/044/059 Q1/Q2五核10秒门控；048额外cold负结果和warm recovery；最终七个Q3 plan全部严格相同plan重放Q2/no-L2。
 
-workers在完整匹配比较块之间依CPU配额、可用RAM、已观测RSS和进程异常调整，块内保持资源政策；不是NPU核数。主CI同一个case的old/new同机，不把七台矩阵机器的时间直接混为单机速度提升。本地长轨迹也有少量并发，应视为观察而非显著性结论。
-
-新执行器保存每次评估计划与完整响应；old沿用原solver的尝试表及improver存储规则，未追加保存每个被拒绝旧候选的完整响应。不关闭原官方校验。
-
-## 验收边界
-
-最新PR31/32摘要包含更好044/084/086方案但完整plan/response未在可用云端证据中找到。本轮使用可追溯day01原方案做机制/算法对照，不将击败day01称为超过最新研究成果。没有100图新跑、正式一至五核新曲线或600秒矩阵，也没有替换全局三线集成器。未通过的对照和启动失败保留；是否扩大由小样本正负结果决定。
+此前PR34的 `ci_primary` 已覆盖七图×Q1/Q2/Q3×2/5核×cold/warm×old/combined，本轮不重复那张完整矩阵；v4只补针对已发现失败模式的定向证据。
