@@ -29,3 +29,26 @@ COSMA的额外字节目标不能直接替代本题Makespan。085 Q2从epoch16继
 - HMCOS： https://chengcheng-wan.github.io/paper/22-DAC.pdf ，DOI `10.1145/3489517.3530472`。
 
 本地原文路径为仓库 `调研/A题_文献库/pdf/` 下的对应文件。官方DOCX问题1/2正文明确要求1–5核平均加速比曲线；问题3要求相同核数的no-L2/L2对照。详细规则、精确张量计费公式、停止和时间语义见 [FROZEN_RULES.md](FROZEN_RULES.md)。
+
+
+---
+
+## v4 新增阅读：受控并行宽度与隔离子图
+
+### A08 IOS
+
+实际用于解释“所有 ready 操作立即打开”并不总是好事：过宽并行会放大资源竞争/活跃集合，同时破坏后续阶段利用率。v4 将这一点缩小为赛题允许的方案自由度：private-island 图只打开有限组件批次，并在批内做2/3阶段交错。
+
+没有移植 IOS 的算子融合、图改写或设备专用搜索空间，也没有把论文目标函数当成本题官方 Makespan。
+
+### A31 Parallel Scheduling of DAGs under Memory Constraints
+
+用于理解并行展开宽度与内存峰值的矛盾。v4 的 component live peak 只是候选批宽代理，最终仍以官方 L1/UB 峰值和 Spill 为准；没有向原图加入虚拟依赖，没有用平均内存或逐边字节替代 Tensor 活跃集合。
+
+### A46 Iterative Graph Optimization
+
+隔离子图、祖先/后继闭包的局部变换视角用于有限 Tensor 端点 hull。v4 只重新安排官方允许的两个 plan 字段，不融合算子、不改变原计算 DAG。
+
+### 与既有 A16/A17/A18/A39 的组合
+
+A39 继续约束无环收缩；A16 COSMA 提供 create/preserve/spill/retrieve 视角；A17 SERENITY 提供活跃集/部分拓扑顺序；A18 HMCOS 提供峰值相关层级拆解。以上都只作为候选构造依据，官方 evaluator 仍是唯一成绩与容量依据。

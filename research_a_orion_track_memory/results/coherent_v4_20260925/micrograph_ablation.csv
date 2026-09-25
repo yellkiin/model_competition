@@ -1,0 +1,7 @@
+case,q,n,candidate,makespan,added_copy_bytes,spill_added_copy_bytes,selected,note
+case_084,2,5,trusted_parent,391700,9925632,0,false,frozen-v3/day01 parent
+case_084,2,5,historical_global_depth_bands,1305922,49856640,39931008,false,measured v3 regression that motivated the structural guard
+case_084,2,5,whole_component_serial,503472,0,0,false,communication removed but compute overlap collapsed
+case_084,2,5,bounded_wave_envelope_1.0,292272,0,0,false,zero-Spill capacity-bounded wave
+case_084,2,5,bounded_wave_envelope_1.5,286992,0,0,false,wider batch retained more pipeline overlap
+case_084,2,5,bounded_wave_envelope_2.0,285686,322560,322560,true,best official Makespan; small Spill traded for overlap

@@ -1,0 +1,5 @@
+case,q,n,method,mode,budget_seconds,best_makespan,added_copy_bytes,actual_stop_seconds,stopped_before_prefix,prefix_kind
+case_084,2,5,memory-coherent-4.4,warm_start,30,285686,322560,72.61,false,completed_events_only
+case_084,2,5,memory-coherent-4.4,warm_start,60,285686,322560,72.61,false,completed_events_only
+case_084,2,5,memory-coherent-4.4,warm_start,120,285686,322560,72.61,true,stopped_carry_forward
+case_084,2,5,memory-coherent-4.4,warm_start,300,285686,322560,72.61,true,stopped_carry_forward
