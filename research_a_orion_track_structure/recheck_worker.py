@@ -14,7 +14,7 @@ def corrected(req):
     out=Path(req['job']);out.mkdir(parents=True,exist_ok=True)
     start=time.monotonic();deadline=start+req['seconds']
     q,n=req['q'],req['n']
-    s=dict(case=req['case'],q=q,n=n,status='initializing',attempts=[],incumbent=None,construction_errors=[],candidate_generation_seconds=0.,evaluations=0,actual_route='structure_v2',identity=req['identity'])
+    s=dict(case=req['case'],q=q,n=n,status='initializing',attempts=[],incumbent=None,construction_errors=[],candidate_generation_seconds=0.,evaluations=0,actual_route='structure_v4',identity=req['identity'])
     def save():s['elapsed_seconds']=time.monotonic()-start;atomic_json(out/'progress.json',s)
     save();t=time.monotonic();session=OfficialSession(req['official'],req['graph'],req['config']);g,cfg=session.graph,session.cfg
     s['construction_seconds']=time.monotonic()-t;context={};best=(math.inf,math.inf);seen=set()
@@ -25,8 +25,19 @@ def corrected(req):
         atomic_json(out/'seed_plan.json',plan);gzwrite(out/'seed_result.json.gz',res)
         best=(res['official_result']['makespan'],res['official_result']['data_movement_bytes']['added_copy_bytes'])
         s['incumbent']={**seed,'plan_file':'seed_plan.json','result_file':'seed_result.json.gz','elapsed_seconds':0.,'from_seed':True,'evaluation':0}
-        context.update(plan=plan,official_result=res['official_result']);save()
+        context.update(plan=plan,official_result=res['official_result'])
+        # v4: the common validated seed need not be evaluated twice unchanged.
+        seen.add((tuple(sorted(plan['node_to_subgraph'].items())),tuple(map(tuple,plan['core_schedules']))))
+        save()
     initial=iter(propose(g,n,cfg,q,context,s['attempts'],deadline));locals_=deque();initial_done=False;iteration=0;no_gain=0
+    if context.get('plan') is not None:
+        # v3: seed neighbours must be explored even when every new constructor loses.
+        # The same freshly validated seed is supplied to all comparison arms.
+        tick=time.monotonic()
+        locals_.extend(local_proposals(g,n,cfg,q,context,0,deadline))
+        s['candidate_generation_seconds']+=time.monotonic()-tick
+        s['warm_initial_neighbours']=len(locals_);save()
+        iteration=1
     while time.monotonic()<deadline and s['evaluations']<req['max_evaluations']:
         tick=time.monotonic();c=None
         try:
@@ -86,7 +97,7 @@ def main():
                 route='legacy';from research_a_orion_anytime.solver import solve
             else:solve=solve_structure
             del g
-        elif req['method']=='corrected':route='structure_v2';solve=corrected
+        elif req['method']=='corrected':route='structure_v4';solve=corrected
         else:raise ValueError('unknown method')
         seconds=time.monotonic()-t
         atomic_json(out/'routing.json',dict(requested_method=req['method'],actual_route=route,routing_seconds=seconds))

@@ -47,7 +47,13 @@ def propose(g,n,cfg,q,incumbent=None,feedback=None,deadline=None):
         for c in stage_candidates(g,n,cfg,q,include_dp=True):
             if expired():return
             stages.append(c)
-        for c in sorted(stages,key=lambda c:(c['proxy']['score'],c['name']))[:2]:
+        # v4: preserve a DP-family representative, not just the two best proxies.
+        # Real Q2/Q3 short-operation graphs exposed optimistic non-DP ranking.
+        # This is bounded constructor coverage, not a replacement budget controller.
+        ranked=sorted(stages,key=lambda c:(c['proxy']['score'],c['name']))
+        dp=next((c for c in ranked if c['family']=='stage_dp'),None)
+        ordinary=next((c for c in ranked if c['family']!='stage_dp'),None)
+        for c in [x for x in (dp,ordinary) if x is not None]:
             x=wrap(c['plan'],'retained_'+c['name'],'existing_stage_dp')
             if x:yield x
     elif independent:yield from legacy()

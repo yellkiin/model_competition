@@ -1,0 +1,28 @@
+{
+  "arms": 399,
+  "statuses": {
+    "ok": 331,
+    "timeout": 5,
+    "ok_with_timeout": 63
+  },
+  "source_versions": {
+    "ci_v2b": 276,
+    "local_v3": 84,
+    "local_v4": 39
+  },
+  "pair_requests": 127,
+  "pair_started": 127,
+  "pair_completed": 127,
+  "pair_valid": 127,
+  "completed_evaluations_within_budget": 5027,
+  "stopped": {
+    "evaluation_cap": 248,
+    "candidate_space_exhausted": 43,
+    "neighbourhood_round_cap": 11,
+    "finite_candidate_pool_exhausted": 23,
+    "parent_deadline": 68,
+    "sixteen_completed_nonimproving_attempts": 6
+  },
+  "formal_complete": false,
+  "scope": "Independent real selected-case studies. Versions, phases and seeds must not be pooled as equivalent arms."
+}

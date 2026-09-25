@@ -1,0 +1,100 @@
+{
+  "schema_version": 2,
+  "repository": "yellkiin/model_competition",
+  "main_commit": "e04b2bf5df946f48714c66ba84d61bd4b90ece00",
+  "published_commit": "91f0ca1aa0b911a124601a0c460a7fbeff33771f",
+  "experiment_commit": "b4e8cd9ca3a5e0b23d515ad27c1c9a595b642ada",
+  "ci_run_id": 36085958693,
+  "ci_version": "v2b",
+  "ci_artifacts": [
+    {
+      "case": "001",
+      "artifact_id": 10844265253,
+      "name": "orion-recheck-case-001",
+      "expires_at": "2026-12-24T02:22:05Z",
+      "downloaded_archive": "orion_recheck_001_36085958693.zip",
+      "raw_layout": "fixed/,warm30/,cold30_cap8/,source/ and completed cold300_* phases; case044 also warm_cross_core/",
+      "url": "https://github.com/yellkiin/model_competition/actions/runs/36085958693/artifacts/10844265253"
+    },
+    {
+      "case": "016",
+      "artifact_id": 10844436271,
+      "name": "orion-recheck-case-016",
+      "expires_at": "2026-12-24T02:22:05Z",
+      "downloaded_archive": "orion_recheck_016_36085958693.zip",
+      "raw_layout": "fixed/,warm30/,cold30_cap8/,source/ and completed cold300_* phases; case044 also warm_cross_core/",
+      "url": "https://github.com/yellkiin/model_competition/actions/runs/36085958693/artifacts/10844436271"
+    },
+    {
+      "case": "024",
+      "artifact_id": 10843813692,
+      "name": "orion-recheck-case-024",
+      "expires_at": "2026-12-24T02:22:05Z",
+      "downloaded_archive": "orion_recheck_024_36085958693.zip",
+      "raw_layout": "fixed/,warm30/,cold30_cap8/,source/ and completed cold300_* phases; case044 also warm_cross_core/",
+      "url": "https://github.com/yellkiin/model_competition/actions/runs/36085958693/artifacts/10843813692"
+    },
+    {
+      "case": "044",
+      "artifact_id": 10844700264,
+      "name": "orion-recheck-case-044",
+      "expires_at": "2026-12-24T02:22:05Z",
+      "downloaded_archive": "orion_recheck_044_36085958693.zip",
+      "raw_layout": "fixed/,warm30/,cold30_cap8/,source/ and completed cold300_* phases; case044 also warm_cross_core/",
+      "url": "https://github.com/yellkiin/model_competition/actions/runs/36085958693/artifacts/10844700264"
+    },
+    {
+      "case": "048",
+      "artifact_id": 10844341222,
+      "name": "orion-recheck-case-048",
+      "expires_at": "2026-12-24T02:22:05Z",
+      "downloaded_archive": "orion_recheck_048_36085958693.zip",
+      "raw_layout": "fixed/,warm30/,cold30_cap8/,source/ and completed cold300_* phases; case044 also warm_cross_core/",
+      "url": "https://github.com/yellkiin/model_competition/actions/runs/36085958693/artifacts/10844341222"
+    },
+    {
+      "case": "059",
+      "artifact_id": 10843858504,
+      "name": "orion-recheck-case-059",
+      "expires_at": "2026-12-24T02:22:05Z",
+      "downloaded_archive": "orion_recheck_059_36085958693.zip",
+      "raw_layout": "fixed/,warm30/,cold30_cap8/,source/ and completed cold300_* phases; case044 also warm_cross_core/",
+      "url": "https://github.com/yellkiin/model_competition/actions/runs/36085958693/artifacts/10843858504"
+    },
+    {
+      "case": "064",
+      "artifact_id": 10844170482,
+      "name": "orion-recheck-case-064",
+      "expires_at": "2026-12-24T02:22:05Z",
+      "downloaded_archive": "orion_recheck_064_36085958693.zip",
+      "raw_layout": "fixed/,warm30/,cold30_cap8/,source/ and completed cold300_* phases; case044 also warm_cross_core/",
+      "url": "https://github.com/yellkiin/model_competition/actions/runs/36085958693/artifacts/10844170482"
+    }
+  ],
+  "frozen_source_export": {
+    "run_id": 36084731975,
+    "artifact_id": 10843114510,
+    "not_an_experiment": true
+  },
+  "local_runs": {
+    "fixed": "recheck_20260925_0207/replays/",
+    "v3": "recheck_local_v3_warm_20260925/",
+    "v4": [
+      "recheck_local_v4_cold_20260925/",
+      "recheck_local_v4_q1_064/",
+      "recheck_local_v4_300_064/"
+    ],
+    "regenerated_candidates": "recheck_local_016_chain_regeneration/",
+    "source_snapshots": "recheck_20260925_0207/source_v2b/,source_v3/,source_v4/ and mechanism_064/source_v2_initial/"
+  },
+  "local_machine": "Linux, CPU only, Python3.13.5; not Windows/Python3.12 results",
+  "local_raw_archive": "ORION_structure_recheck_20260925_raw_local.zip",
+  "ci_raw_bundle": "ORION_structure_recheck_20260925_raw_ci.zip",
+  "code_report_archive": "ORION_structure_recheck_20260925_code_reports.zip",
+  "formal_complete": false,
+  "not_started_extensions": [
+    "016 cold300_q1 three arms",
+    "016 cold300_q2 three arms"
+  ],
+  "note": "Raw local archive is delivered as a conversation attachment, not falsely assigned a GitHub artifact ID. All missing/carry-forward/route distinctions remain. No source input/PDF duplication in delivery."
+}
