@@ -1,0 +1,11 @@
+﻿case,q,n,method,mode,run_id,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,has_valid_incumbent,evaluations
+case_086,3,5,old,warm_start,comparison,observed_prefix,30,30,69.92706198800536,48028,118403,2.465291080203215,True,8
+case_086,3,5,old,warm_start,comparison,observed_prefix,60,60,99.92706198800536,47771,118403,2.4785539343953444,True,18
+case_086,3,5,old,warm_start,comparison,observed_prefix,120,120,159.92706198800536,45706,118403,2.590535159497659,True,33
+case_086,3,5,old,warm_start,comparison,stopped_carry_forward,300,120.032642554,159.95970454200537,45706,118403,2.590535159497659,True,33
+case_086,3,5,old,warm_start,comparison,stopped_carry_forward,600,120.032642554,159.95970454200537,45706,118403,2.590535159497659,True,33
+case_086,3,5,combined,warm_start,comparison,observed_prefix,30,30,69.92706198800536,47647,118403,2.4850043024744477,True,13
+case_086,3,5,combined,warm_start,comparison,observed_prefix,60,60,99.92706198800536,45548,118403,2.5995213840344253,True,30
+case_086,3,5,combined,warm_start,comparison,stopped_carry_forward,120,119.35579121699999,159.28285320500535,45131,118403,2.623540360284505,True,67
+case_086,3,5,combined,warm_start,comparison,stopped_carry_forward,300,119.35579121699999,159.28285320500535,45131,118403,2.623540360284505,True,67
+case_086,3,5,combined,warm_start,comparison,stopped_carry_forward,600,119.35579121699999,159.28285320500535,45131,118403,2.623540360284505,True,67

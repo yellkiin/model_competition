@@ -1,0 +1,38 @@
+[
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7374249984,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 0
+    },
+    "units": [
+      [
+        "case_059",
+        3,
+        5,
+        "warm"
+      ]
+    ],
+    "elapsed_seconds": 0.013960975000003373
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7347621888,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 108855296
+    },
+    "units": [
+      [
+        "case_059",
+        3,
+        5,
+        "cold"
+      ]
+    ],
+    "elapsed_seconds": 17.964228289000005
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7324995584,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 0
+    },
+    "units": [
+      [
+        "case_084",
+        1,
+        2,
+        "warm"
+      ]
+    ],
+    "elapsed_seconds": 0.006719954000004691
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7355068416,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 239620096
+    },
+    "units": [
+      [
+        "case_084",
+        1,
+        5,
+        "warm"
+      ]
+    ],
+    "elapsed_seconds": 47.45502755499996
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7326760960,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 245964800
+    },
+    "units": [
+      [
+        "case_084",
+        2,
+        2,
+        "warm"
+      ]
+    ],
+    "elapsed_seconds": 96.289145916
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7343685632,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 316878848
+    },
+    "units": [
+      [
+        "case_084",
+        2,
+        5,
+        "warm"
+      ]
+    ],
+    "elapsed_seconds": 152.37016596099994
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7344021504,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 316878848
+    },
+    "units": [
+      [
+        "case_084",
+        3,
+        2,
+        "warm"
+      ]
+    ],
+    "elapsed_seconds": 209.03445017999996
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7233073152,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 387141632
+    },
+    "units": [
+      [
+        "case_084",
+        3,
+        5,
+        "warm"
+      ]
+    ],
+    "elapsed_seconds": 272.86042896299995
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7218475008,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 387141632
+    },
+    "units": [
+      [
+        "case_084",
+        1,
+        2,
+        "cold"
+      ]
+    ],
+    "elapsed_seconds": 337.44869740400003
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7323992064,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 387141632
+    },
+    "units": [
+      [
+        "case_084",
+        1,
+        5,
+        "cold"
+      ]
+    ],
+    "elapsed_seconds": 390.603064585
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7323680768,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 387141632
+    },
+    "units": [
+      [
+        "case_084",
+        2,
+        2,
+        "cold"
+      ]
+    ],
+    "elapsed_seconds": 450.71628321199995
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7336620032,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 387141632
+    },
+    "units": [
+      [
+        "case_084",
+        2,
+        5,
+        "cold"
+      ]
+    ],
+    "elapsed_seconds": 506.35337499199994
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7304282112,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 387141632
+    },
+    "units": [
+      [
+        "case_084",
+        3,
+        2,
+        "cold"
+      ]
+    ],
+    "elapsed_seconds": 565.506698919
+  },
+  {
+    "workers": 1,
+    "resources": {
+      "available_bytes": 7214977024,
+      "cpu_budget": 2,
+      "predicted_worker_bytes": 734003200,
+      "peak_observed_bytes": 392839168
+    },
+    "units": [
+      [
+        "case_084",
+        3,
+        5,
+        "cold"
+      ]
+    ],
+    "elapsed_seconds": 625.061427886
+  }
+]
