@@ -1,0 +1,29 @@
+{
+  "run_label": "v4_structural_fifo_20260925",
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "cpu_only": true
+  },
+  "official_attachment": "题目/A题/通用神经网络处理器下的多核调度问题  附件",
+  "official_evaluator_modified": false,
+  "formal_seed_source": "raw_day01 refinement progress/plan/response from frozen GitHub export run 36104651803 / artifact 10850846702",
+  "new_q3_same_plan_pairs_completed": 7,
+  "selected_rows": 7,
+  "matched_case024": [
+    {"revision":"v3","budget_seconds":20,"evaluation_cap":16,"makespan":2218901,"evaluations":5,"elapsed_seconds":18.27821850400005},
+    {"revision":"v4","budget_seconds":20,"evaluation_cap":16,"makespan":2217280,"evaluations":5,"elapsed_seconds":18.065010876000088}
+  ],
+  "exploratory_case048": [
+    {"phase":"cold_gate","method":"old","budget_seconds":15,"status":"timeout_with_incumbent","makespan":117513,"evaluations":6,"no_l2_makespan":117600},
+    {"phase":"cold_gate","method":"combined","budget_seconds":15,"status":"ok","makespan":124681,"evaluations":12,"no_l2_makespan":124717},
+    {"phase":"warm_continuation","method":"combined","budget_seconds":15,"status":"ok","makespan":116941,"evaluations":12,"no_l2_makespan":117098}
+  ],
+  "evidence_boundary": [
+    "v4 target results are warm-start continuation unless explicitly marked cold_gate",
+    "case_084 retains formal seed; no new v4 score claimed",
+    "hybrid_100 is a ledger, not a 100-graph rerun",
+    "case_048 cold regression is retained",
+    "all selected Q3 rows use exact same-plan Q2/no-L2 replay and passed official audit"
+  ]
+}
