@@ -1,0 +1,6 @@
+case,n,with_l2,without_l2,cache_speedup,hit_rate,same_plan,with_l2_added_bytes,without_l2_added_bytes,plan,no_l2_plan,no_l2_response
+case_011,1,184697,184697,1.0,0.0,True,0,0,evidence/case_011_q3_n1/plan.json,evidence/case_011_q3_n1/no_l2_plan.json,evidence/case_011_q3_n1/no_l2_result.json.gz
+case_011,2,92646,92646,1.0,0.0,True,180224,180224,evidence/case_011_q3_n2/plan.json,evidence/case_011_q3_n2/no_l2_plan.json,evidence/case_011_q3_n2/no_l2_result.json.gz
+case_011,3,64442,64751,1.0047950094658762,0.21297602256699577,True,1308672,1308672,evidence/case_011_q3_n3/plan.json,evidence/case_011_q3_n3/no_l2_plan.json,evidence/case_011_q3_n3/no_l2_result.json.gz
+case_011,4,46808,46880,1.00153819859853,0.1357142857142857,True,704512,704512,evidence/case_011_q3_n4/plan.json,evidence/case_011_q3_n4/no_l2_plan.json,evidence/case_011_q3_n4/no_l2_result.json.gz
+case_011,5,41849,42887,1.0248034600587828,0.2708333333333333,True,1626112,1626112,evidence/case_011_q3_n5/plan.json,evidence/case_011_q3_n5/no_l2_plan.json,evidence/case_011_q3_n5/no_l2_result.json.gz

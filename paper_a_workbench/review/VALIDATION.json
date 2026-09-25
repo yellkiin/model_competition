@@ -1,0 +1,18 @@
+{
+  "task":"read existing evidence and check delivery interfaces; no solver run",
+  "input_archive":"TRIDENT_REAL_EVIDENCE_20260925.zip",
+  "input_run":"finalcode_011_and_carry",
+  "records":"case_011 only",
+  "checks":[
+    {"name":"existing_record_intake","result":{"schema":1,"publication_id":"existing_case011_record_intake","formal_ready":false,"expected_cases":1,"main_count":14,"valid_main_count":14,"pair_count":5,"errors":[],"missing_main":[],"missing_pairs":[],"interpretation":"arithmetic mean of per-case speedups; one explicitly selected publication","method_review":"required before scientific acceptance; no solver was executed"}},
+    {"name":"actual_case011_counts","main":14,"pairs":5,"n1_conventions":2,"formal_ready":false,"q0":"184697","q3_n5":"41849"},
+    {"name":"duplicate_key","detected":true,"message":"Duplicate configuration across runs: ('case_011', 0, 1); choose disjoint shards"},
+    {"name":"renamed_root_and_layout","same_14_values":true,"same_5_pairs":true},
+    {"name":"different_real_plan_pair","detected":true,"errors":[{"key":["case_011",3,5],"error":"Q3/no-L2 pair uses different complete plans"}]},
+    {"name":"academic_rewrite_locks","result":{"protected_elements_equal":true,"changed":{},"next":"Review logical relations and units in context; equality checks preserve tokens, not the entire meaning."},"semantic_review":"Definition, same-plan denominator, lookup/fill timing and no-refresh meaning manually retained."},
+    {"name":"changed_equation_and_citation","result":{"protected_elements_equal":false,"changed":{"math":{"removed":{"$R=T_0/T_3$":1},"added":{"$R=T_3/T_0$":1}},"citations":{"removed":{"\\cite{problemA}":1},"added":{"\\cite{ansor}":1}}},"next":"Review logical relations and units in context; equality checks preserve tokens, not the entire meaning."}},
+    {"name":"exported_template_inventory","result":{"template_root":"/mnt/data/paper_agent_work/source/20hw_myskill_distribution/20hw_myskill_distribution","ready":false,"missing":[".agents/skills",".agents/skills/academic-figure-skill/SKILL.md",".agents/skills/modelviz-skill-main/SKILL.md",".agents/skills/gmcm-abstract/SKILL.md",".agents/skills/gmcm-supporting-materials/SKILL.md"],"note":"Checks actual file locations. Skill assets and visual quality are reviewed in their own stages."},"note":"Text-only source export omitted .agents; original local template required for full installation. No fake installed/finished status."}
+  ],
+  "new_official_evaluations":0,
+  "full_paper_generated":false
+}
