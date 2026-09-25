@@ -41,3 +41,16 @@ workers在完整匹配比较块之间依CPU配额、可用RAM、已观测RSS和�
 ## 验收边界
 
 最新PR31/32摘要包含更好044/084/086方案但完整plan/response未在可用云端证据中找到。本轮使用可追溯day01原方案做机制/算法对照，不将击败day01称为超过最新研究成果。没有100图新跑、正式一至五核新曲线或600秒矩阵，也没有替换全局三线集成器。未通过的对照和启动失败保留；是否扩大由小样本正负结果决定。
+
+
+## 2026-09-25 v4 structural continuation
+
+The v4 controller adds one case-agnostic structural family before expensive generic exploration when the incumbent is still far from the global lower bound.
+
+- **Private-island trigger:** at least 8 weak compute components; at least 75% of ops belong to components of at most 32 ops; external inputs are overwhelmingly component-private; and the incumbent is more than 8% above the global lower bound.
+- **Micro-wave candidate:** keep each independent component closed, assign whole components by current pipe work, estimate each component's L1/UB live peak, then open only a bounded batch and split each batch into two topological stages. The live-peak estimate only sizes the proposal; official Step2/Step3 remains authoritative.
+- **Long-tail candidate:** if a core finishes materially later and also owns a longer subgraph sequence, try a small number of late-subgraph moves/splits toward light cores.
+- **Acceptance:** no structural proxy may replace the incumbent. Only a successful unchanged official evaluation with a better (Makespan, added COPY bytes) tuple is accepted.
+- **Budget guard:** for revision v4, large graphs with (U-L)/U <= 2.05% stop before spending new evaluations.
+
+No branch uses a case identifier. In the measured small sample, the private-island trigger fired on 084 but not on the connected/high-sharing controls; 001 has a similar island shape but is already near its lower bound and is filtered by the gap guard.
