@@ -1,32 +1,123 @@
 name: ORION structure independent recheck
 on:
   pull_request:
+    types: [edited]
     branches: [main]
-    paths: ['.github/workflows/orion_structure_recheck.yml']
 permissions:
   contents: read
+  actions: read
 jobs:
-  export:
+  experiment:
+    if: github.event.pull_request.head.ref == 'orion/track-structure-recheck-20260925-0202'
+    strategy:
+      fail-fast: false
+      matrix:
+        case: ['001','016','024','044','048','059','064']
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 29
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
           filter: blob:none
+          sparse-checkout-cone-mode: false
           sparse-checkout: |
-            research_a_orion_anytime
-            research_a_orion_track_structure
-            research_a_orion_review_3pc
-            tools
-            题目/A题
-            调研/A题_文献库
-      - name: Export frozen original source and selected raw evidence
-        run: python -m research_a_orion_track_structure.recheck_export
-      - uses: actions/upload-artifact@v4
+            /research_a_orion_track_structure/recheck_source_bundle.b64
+      - uses: actions/download-artifact@v4
         with:
           name: orion-recheck-sources
-          path: /tmp/orion_recheck_sources.zip
-          compression-level: 0
-          if-no-files-found: error
+          run-id: 36084731975
+          github-token: ${{ github.token }}
+          path: /tmp/frozen-transfer
+      - name: Restore immutable inputs and load additive source
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import base64,io,zipfile
+          from pathlib import Path
+          root=Path.cwd()
+          with zipfile.ZipFile('/tmp/frozen-transfer/orion_recheck_sources.zip') as z:
+              for name in z.namelist():
+                  if not (root/name).resolve().is_relative_to(root):raise ValueError(name)
+              z.extractall(root)
+          track=root/'research_a_orion_track_structure'
+          data=base64.b64decode((track/'recheck_source_bundle.b64').read_text(),validate=True)
+          allowed={'plugin_recheck.py','recheck_evidence.py','recheck_worker.py','recheck_run.py','recheck_case.py'}
+          with zipfile.ZipFile(io.BytesIO(data)) as z:
+              if set(z.namelist())!=allowed:raise ValueError('unexpected source files')
+              z.extractall(track)
+          print('Frozen source and selected official input restored; no official files modified.')
+          PY
+      - name: Real fixed replay then warm and cold comparison
+        env:
+          RECHECK_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: >-
+          python -u -m research_a_orion_track_structure.recheck_case
+          --case ${{ matrix.case }}
+          --wall-seconds 1500
+          --out research_a_orion_track_structure/results/recheck_20260925_run_${{ github.run_id }}/case_${{ matrix.case }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: orion-recheck-case-${{ matrix.case }}
+          path: research_a_orion_track_structure/results/recheck_20260925_run_${{ github.run_id }}/case_${{ matrix.case }}
+          if-no-files-found: warn
+          compression-level: 3
+  collect:
+    needs: experiment
+    if: always() && github.event.pull_request.head.ref == 'orion/track-structure-recheck-20260925-0202'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: orion/track-structure-recheck-20260925-0202
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_structure
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: orion-recheck-case-*
+          path: /tmp/recheck-artifacts
+      - name: Preserve result tables and source without changing public implementation
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          python - <<'PY'
+          import json,os,shutil,urllib.request
+          from pathlib import Path
+          root=Path('research_a_orion_track_structure');out=root/'results'/('recheck_20260925_run_'+os.environ['GITHUB_RUN_ID'])
+          out.mkdir(parents=True,exist_ok=False)
+          completed=[]
+          source=False
+          for case in sorted(Path('/tmp/recheck-artifacts').glob('orion-recheck-case-*')):
+              dst=out/('case_'+case.name.rsplit('-',1)[1])
+              for p in case.rglob('*'):
+                  if not p.is_file():continue
+                  if p.suffix=='.csv' or p.name in ('suite_manifest.json','suite_summary.json','run_summary.json','manifest.json'):
+                      q=dst/p.relative_to(case);q.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,q)
+              if not source and (case/'source').exists():
+                  for name in ('plugin_recheck.py','recheck_evidence.py','recheck_worker.py','recheck_run.py','recheck_case.py'):
+                      shutil.copy2(case/'source'/name,root/name)
+                  source=True
+              completed.append(case.name)
+          url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/actions/runs/'+os.environ['GITHUB_RUN_ID']+'/artifacts?per_page=100'
+          req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+          with urllib.request.urlopen(req) as r:artifacts=json.load(r)['artifacts']
+          info={'workflow_run_id':int(os.environ['GITHUB_RUN_ID']),'executed_head':os.environ['EXPECTED_HEAD'],'artifacts':[{'id':a['id'],'name':a['name'],'size_in_bytes':a['size_in_bytes'],'expires_at':a['expires_at']} for a in artifacts],'downloaded_cases':completed,'formal_complete':False,'note':'Raw responses, plans, progress, failures and source snapshots are retained inside each artifact. CI success is not experiment completeness.'}
+          (out/'EVIDENCE_INDEX.json').write_text(json.dumps(info,indent=2),encoding='utf8')
+          PY
+          git config user.name 'orion-recheck-agent'
+          git config user.email 'orion-recheck-agent@users.noreply.github.com'
+          git add research_a_orion_track_structure/plugin_recheck.py research_a_orion_track_structure/recheck_evidence.py research_a_orion_track_structure/recheck_worker.py research_a_orion_track_structure/recheck_run.py research_a_orion_track_structure/recheck_case.py research_a_orion_track_structure/results/recheck_20260925_run_${{ github.run_id }}
+          git diff --cached --quiet || git commit -m 'results(structure): preserve bounded seven-case independent real recheck'
+          git push origin HEAD:orion/track-structure-recheck-20260925-0202
