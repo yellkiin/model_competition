@@ -1,0 +1,5 @@
+name: Receive requested ORION result archives
+description: One-use encrypted upload session for existing experiment files, not an experiment runner.
+runs:
+  using: node24
+  main: main.cjs
