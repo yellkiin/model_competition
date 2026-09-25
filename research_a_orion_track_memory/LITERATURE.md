@@ -1,26 +1,31 @@
-# 实际阅读与实现边界
+# 实际阅读、实现与适用边界
 
-先读仓库 `调研/A题_文献库/README.md`、`方法对照与阅读顺序.md`，再核对 `调研/A题_文献.json`。以下原文是方法依据，不是最新 ORION 实验数据，也不把论文效果外推成本题收益。本次没有下载或复制文献到提交目录。
+先读仓库 `调研/A题_文献库/README.md`、`方法对照与阅读顺序.md`，再按 `调研/A题_文献.json` 找原文。本轮通过既有 GitHub 输入 artifact 将 A39/A16/A17/A18 四篇原始 PDF、官方 DOCX、配置与评估器下载到容器的只读参考目录；读取正文，并查看相关页面。没有将论文、原图或官方代码重复提交到本研究目录。
 
-|仓库编号|本次核读原文位置|实际采用|未采用的自由度/保证|
+## 本轮核读与代码对应
+
+|原文|核读位置|落到代码的机制|不可迁移的自由度或保证|
 |---|---|---|---|
-|A39，Multilevel Acyclic Hypergraph Partitioning，ALENEX 2021|原文 PDF 第3–5页，定义与§3.1–3.2；第5页另作视觉核对|张量生产/消费集合、收缩必须保无环；实施后重新检查商图与核顺序|原文 tail→head；多 head 情况不能套单 head 收缩。没有重做 n-level 全局划分；`lambda-1` 不当 COPY 精确成本|
-|A16，COSMA，2023|原文 PDF 第3–4页、§III，状态约束；第3页视觉核对|区分 preserve/spill/retrieve，分析额外 I/O 与驻留的交换|不优化连续地址，不自由决定 Spill，不自由重排块内算子，不把其 ILP 称为本题精确解|
-|A17，SERENITY，MLSys 2020|正式 PDF 第4页§3/§3.1及图4–5视觉核对，后续DP段落|已完成集合的重复子问题、局部窗口的峰值 DP|不做 identity graph rewriting，不采用单设备内存最优性保证，也不另写整条预算控制线|
-|A18，HMCOS，DAC 2022|作者 PDF 第3页§3.1–3.2文本、第4页算法1–2文本；网页截图未成功，不声称视觉核对|峰值相关分组的局部展开、活跃值及最后一次使用的概念|NAS cell 边界和支配关系分组不是输入自带信息；当前深度分带不是完整复现 HMCOS|
-|A02，Acyclic Partitioning of Large DAGs，CCGrid 2017|本地原文模型/无环划分段落|沿用项目既有合法构造与完整结构检查|不重写结构线；顶点权重之和不是 L1/UB 峰值|
-|I/O 下界背景|原题共享 DDR 条件与既有 core.bounds 源码|使用已有可证明的必要条件界，明确固定方案界与全局界|没有建立新的红蓝卵石强界，没有把允许重算的模型套入固定图|
+|A39，Multilevel Acyclic Hypergraph Partitioning，ALENEX 2021|PDF第3–5页，商图定义、§3.1–3.2、多head限制|按张量生产/消费集合计费；fixed-owner band与switch-rank防止跨核离开后重新进入同组；每次收缩检查商图/核序列|tail→head；connectivity的λ−1不是本题COPY计费。没有重做n-level全局划分，也不声称复现论文划分器|
+|A16，COSMA，2023|PDF第3–4页§III，create/preserve/spill/retrieve与额外I/O目标|驻留状态用于解释边界改变如何影响官方Spill；参数集合触发分带是候选而非合法性判据|不自由选择Spill/retrieve，不优化连续地址，不改变块内原算子语义；其ILP不是A的精确模型|
+|A17，SERENITY，MLSys2020|PDF第4–6页，部分顺序、活跃集合与搜索|在固定合法子图集合上做有限顺序窗口；比较分开的L1/UB前沿峰值|不做graph rewriting，不移植单设备内存最优性或其预算控制器；前沿不等于官方物理峰值|
+|A18，HMCOS，DAC2022|PDF第2–4页，stable/transient footprint、层级化及算法1–2；本轮另查看第2页定义|粗细边界分解，考察峰值附近的层级展开，而不是只追求少Task|本题没有给定NAS cell；当前dependency-depth epochs不是完整HMCOS。单设备峰值保证不适用于多核Makespan|
 
-## 原文来源
+A02 的无环构造思想沿用既有 ORION 实现；本轮重点重读上面四篇，没有声称重新精读资料库全部52篇。I/O下界使用原 `core.bounds` 的必要条件：计算路径、分核算力与强制外部访问；未建立新的红蓝卵石强界，不把允许重算的模型套入本题。
 
-A39：<https://arxiv.org/abs/2002.02962>，PDF <https://arxiv.org/pdf/2002.02962>。
+## 从文献机制到真实反例
 
-COSMA：<https://arxiv.org/abs/2311.18246>，PDF <https://arxiv.org/pdf/2311.18246>。
+073 的前轮成功说明 preserve/spill 的交换有用，但不能据此把每张差图都归因于溢出。本轮085五核旧方案和新方案均零Spill。Q2固定核分带16阶段保持所有操作核归属与pre-Spill搬运量不变，却使Makespan从1,346,698降至1,129,936周期；随后张量端点局部迁移再降至1,124,776。这里支持的是合法边界/顺序会改变执行依赖与Pipe重叠，而不是“消除了本来不存在的Spill”。
 
-SERENITY：<https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf>。
+COSMA的额外字节目标不能直接替代本题Makespan。085 Q2从epoch16继续局部迁移时，COPY不与计算重叠的时间并集从5,933升至6,554周期，Makespan却进一步下降。这一单项诊断也不是应被单调优化的目标。新候选最终只按原官方周期比较，搬运仅作平分次级目标。
 
-HMCOS：<https://chengcheng-wan.github.io/paper/22-DAC.pdf>，DOI `10.1145/3489517.3530472`。
+`convex_coalesce` 内部用shared touched-tensor字节排序是启发式，之前注释称其为精确收益不准确，已修正。完成候选的pre-Spill读/写总量由完整生产者/消费者集合重新计算。内存窗口只表示组边界前沿，不表示官方插入COPY之后的全物理生存区间。
 
-A02：<https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf>。
+## 原文与赛题定位
 
-HMCOS 的算法1根据峰值时仍活跃值的定义位置展开相关层级块，再调度；SERENITY 将重复部分调度合并为 DP 子问题。这里的迁移是缩小到已合法子图的局部候选，而非替换官方 Step1/2/3。COSMA 原文显式含创建、保持、换出与取回变量，这些在本题只能用于解释官方产生的流量，不能写成用户可提交的张量置换策略。
+- A39： https://arxiv.org/abs/2002.02962 ，原PDF https://arxiv.org/pdf/2002.02962 。
+- COSMA： https://arxiv.org/abs/2311.18246 ，原PDF https://arxiv.org/pdf/2311.18246 。
+- SERENITY： https://proceedings.mlsys.org/paper_files/paper/2020/file/79c36fe64e04b80fc44845bb9fe73242-Paper.pdf 。
+- HMCOS： https://chengcheng-wan.github.io/paper/22-DAC.pdf ，DOI `10.1145/3489517.3530472`。
+
+本地原文路径为仓库 `调研/A题_文献库/pdf/` 下的对应文件。官方DOCX问题1/2正文明确要求1–5核平均加速比曲线；问题3要求相同核数的no-L2/L2对照。详细规则、精确张量计费公式、停止和时间语义见 [FROZEN_RULES.md](FROZEN_RULES.md)。
