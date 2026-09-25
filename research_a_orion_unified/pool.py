@@ -35,7 +35,7 @@ def summarize(req,execution):
              'construction_seconds':state.get('construction_seconds'),
              'end_to_end_seconds':None if req.get('source_seed_seconds') is None else req['source_seed_seconds']+execution['wall_seconds'],
              'attempt_count':len(state.get('attempts',[])),
-             'optimization_complete':execution.get('reason')!='worker_error',
+             'optimization_complete':execution.get('reason') in ('completed','configuration_wall_limit'),
              'source_errors':state.get('generator_notes',[]),
              'request':'request.json','progress':'progress.json'}
     if inc and status=='ok':
