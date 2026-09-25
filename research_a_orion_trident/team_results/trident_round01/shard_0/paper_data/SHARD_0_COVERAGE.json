@@ -1,0 +1,3820 @@
+{
+  "expected_main": 476,
+  "expected_pairs": 170,
+  "complete_main": 1,
+  "partial_main": 1,
+  "failed_without_incumbent": 0,
+  "not_started_main": 474,
+  "paired": 0,
+  "missing_pairs": 170,
+  "rows": [
+    {
+      "case": "case_001",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_001",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_001",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_001",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_001",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_001",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_002",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_002",
+      "q": 1,
+      "n": 2,
+      "status": "complete",
+      "makespan": 130549,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 3,
+      "n": 2,
+      "status": "partial_worker_error",
+      "makespan": 127007,
+      "pair_status": "missing"
+    },
+    {
+      "case": "case_002",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_002",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_002",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_002",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_014",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_014",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_014",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_014",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_014",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_014",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_016",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_016",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_016",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_016",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_016",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_016",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_020",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_020",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_020",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_020",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_020",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_020",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_021",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_021",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_021",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_021",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_021",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_021",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_022",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_022",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_022",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_022",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_022",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_022",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_023",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_023",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_023",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_023",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_023",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_023",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_024",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_024",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_024",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_024",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_024",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_024",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_026",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_026",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_026",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_026",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_026",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_026",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_028",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_028",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_028",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_028",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_028",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_028",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_030",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_030",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_030",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_030",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_030",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_030",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_031",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_031",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_031",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_031",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_031",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_031",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_032",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_032",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_032",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_032",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_032",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_032",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_033",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_033",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_033",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_033",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_033",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_033",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_034",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_034",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_034",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_034",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_034",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_034",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_035",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_035",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_035",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_035",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_035",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_035",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_036",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_036",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_036",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_036",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_036",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_036",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_037",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_037",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_037",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_037",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_037",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_037",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_039",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_039",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_039",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_039",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_039",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_039",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_050",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_050",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_050",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_050",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_050",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_050",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_053",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_053",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_053",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_053",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_053",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_053",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_058",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_058",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_058",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_058",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_058",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_058",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_060",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_060",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_060",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_060",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_060",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_060",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_064",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_064",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_064",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_064",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_064",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_064",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_065",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_065",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_065",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_065",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_065",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_065",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_067",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_067",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_067",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_067",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_067",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_067",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_069",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_069",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_069",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_069",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_069",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_069",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_079",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_079",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_079",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_079",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_079",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_079",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_080",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_080",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_080",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_080",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_080",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_080",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_083",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_083",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_083",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_083",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_083",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_083",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_094",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_094",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_094",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_094",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_094",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_094",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_099",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_099",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_099",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_099",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_099",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_099",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_100",
+      "q": 0,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 3,
+      "n": 1,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_100",
+      "q": 1,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 2,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 3,
+      "n": 2,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_100",
+      "q": 1,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 2,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 3,
+      "n": 3,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_100",
+      "q": 1,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 2,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 3,
+      "n": 4,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    },
+    {
+      "case": "case_100",
+      "q": 1,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 2,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_applicable"
+    },
+    {
+      "case": "case_100",
+      "q": 3,
+      "n": 5,
+      "status": "not_started_gate_failure",
+      "makespan": null,
+      "pair_status": "not_started"
+    }
+  ]
+}
