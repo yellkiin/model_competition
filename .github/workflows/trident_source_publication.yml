@@ -1,10 +1,9 @@
-name: Trident source publication only
+name: Trident source and recorded-data publication only
 on:
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
-      - 'research_a_orion_trident/publication/derived_*.json'
-      - 'research_a_orion_trident/publication/materialize_sources.py'
+      - 'research_a_orion_trident/publication/**'
       - '.github/workflows/trident_source_publication.yml'
 permissions:
   contents: write
@@ -20,11 +19,13 @@ jobs:
           fetch-depth: 1
           lfs: false
           sparse-checkout: research_a_orion_trident
-      - name: Materialize exact previously delivered source
-        run: python research_a_orion_trident/publication/materialize_sources.py
-      - name: Commit publication, no experiments
+      - name: Copy exact frozen source and literal recorded data
+        run: |
+          python research_a_orion_trident/publication/materialize_sources.py
+          python research_a_orion_trident/publication/materialize_evidence.py
+      - name: Commit publication without running experiments
         run: |
           git add -- research_a_orion_trident
           if git diff --cached --quiet; then exit 0; fi
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'build(Trident): materialize exact frozen source for delivery [skip ci]'
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'build(Trident): publish exact source and recorded plans/tables [skip ci]'
           git push origin HEAD:integration/orion-trident-publish-20260925
