@@ -40,7 +40,7 @@ def api(endpoint,method='GET',data=None,missing_ok=False):
     if data is not None:body=json.dumps(data,ensure_ascii=False).encode();headers['Content-Type']='application/json'
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(urllib.request.Request(API+'/'+endpoint,data=body,headers=headers,method=method),timeout=90) as r:return json.load(r)
+            with urllib.request.urlopen(urllib.request.Request(API+('/'+endpoint if endpoint else ''),data=body,headers=headers,method=method),timeout=90) as r:return json.load(r)
         except urllib.error.HTTPError as e:
             if e.code==404 and missing_ok:return None
             if e.code in (429,500,502,503,504) and attempt<3:time.sleep(3*(attempt+1));continue
