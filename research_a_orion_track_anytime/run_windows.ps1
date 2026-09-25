@@ -1,13 +1,13 @@
 param(
     [string]$PythonExe = 'D:\python\python.exe',
-    [string]$Cases = '083,086',
-    [string]$Questions = '3',
-    [string]$Cores = '5',
+    [string]$Cases = '001,024,044,059,083,084,086',
+    [string]$Questions = '1,2,3',
+    [string]$Cores = '2,5',
     [string]$Methods = 'old,combined',
     [string]$Modes = 'warm',
-    [string]$Revision = 'v2',
+    [string]$Revision = 'v4',
     [double]$Seconds = 120,
-    [double]$TotalSeconds = 700,
+    [double]$TotalSeconds = 2400,
     [int]$MaxEvaluations = 128,
     [double]$PairSeconds = 30,
     [string]$Workers = 'auto',
@@ -20,7 +20,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $Repo = Split-Path -Parent $PSScriptRoot
 if (-not (Test-Path -LiteralPath $PythonExe)) { throw "Python not found: $PythonExe" }
-if ($Out -eq '') { $Out = 'research_a_orion_track_anytime/results/wu_local_' + (Get-Date -Format 'yyyyMMdd_HHmmss') + '_s' + $ShardIndex }
+if ($Out -eq '') { $Out = 'research_a_orion_track_anytime/results/wu_v4_' + (Get-Date -Format 'yyyyMMdd_HHmmss') + '_s' + $ShardIndex }
 Push-Location $Repo
 try {
     if (-not (Test-Path -LiteralPath $SeedManifest)) { throw "Seed manifest not found: $SeedManifest" }
