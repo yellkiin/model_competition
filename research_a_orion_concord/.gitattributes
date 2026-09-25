@@ -1,0 +1,6 @@
+*.zip -filter -diff -merge -text
+*.gz -filter -diff -merge -text
+*.part* -filter -diff -merge -text
+*.csv text eol=lf
+*.md text eol=lf
+*.py text eol=lf

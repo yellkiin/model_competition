@@ -1,0 +1,14 @@
+{
+  "version": "concord-1.2",
+  "base_commit": "055bb20a3b660f23d2179d732c82234aa1e8ba0a",
+  "branch": "feat/orion-concord-graph600-20260925",
+  "scope": "Only research_a_orion_concord; no changes to peer fusion, source tracks or official inputs",
+  "upstream_packages": ["research_a_orion_anytime", "research_a_orion_track_structure", "research_a_orion_track_memory", "research_a_orion_track_anytime"],
+  "memory": "coherent-v4.4",
+  "fifo_comparison": "PR34 peer-v4 and PR36 reconcile-v6, 36 matched 30-second arms",
+  "read_only_peer": "PR37 source artifact10863796071, reviewed only",
+  "original_inputs": "Original A archive and frozen artifact10850846702; all100 original graph JSONs available locally",
+  "raw_day01": "Seven selected graphs from both FINAL archives, complete five derived CSVs",
+  "clock": "whole graph <=600 seconds; all requested q/n, pairs, conditional ablations and enabled studies share cap",
+  "environment": "Linux CPython3.13.5 CPU-only; cgroup4CPU/4GiB; Windows3.12 entry delivered, not claimed Windows-measured"
+}
