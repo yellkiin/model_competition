@@ -1,0 +1,30 @@
+name: Anytime reconciliation source export
+on:
+  pull_request:
+    branches: ['orion/track-anytime_wu']
+    paths: ['.github/workflows/anytime_reconcile.yml']
+permissions:
+  contents: read
+jobs:
+  export:
+    if: github.event.pull_request.head.ref == 'orion/anytime-reconcile-20260925-1012'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_anytime
+      - name: Preserve exact source and author-neutral lineage
+        run: |
+          git archive --format=zip -o /tmp/pr34_exact_source.zip HEAD research_a_orion_track_anytime
+          git rev-parse HEAD > /tmp/export_commit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pr34-exact-source-for-reconciliation
+          path: |
+            /tmp/pr34_exact_source.zip
+            /tmp/export_commit.txt
+          if-no-files-found: error
