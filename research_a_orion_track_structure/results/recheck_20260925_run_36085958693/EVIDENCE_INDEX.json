@@ -1,0 +1,59 @@
+{
+  "workflow_run_id": 36085958693,
+  "executed_head": "b4e8cd9ca3a5e0b23d515ad27c1c9a595b642ada",
+  "artifacts": [
+    {
+      "id": 10844700264,
+      "name": "orion-recheck-case-044",
+      "size_in_bytes": 15273926,
+      "expires_at": "2026-12-24T02:22:05Z"
+    },
+    {
+      "id": 10844436271,
+      "name": "orion-recheck-case-016",
+      "size_in_bytes": 37707350,
+      "expires_at": "2026-12-24T02:22:05Z"
+    },
+    {
+      "id": 10844341222,
+      "name": "orion-recheck-case-048",
+      "size_in_bytes": 28083442,
+      "expires_at": "2026-12-24T02:22:05Z"
+    },
+    {
+      "id": 10844265253,
+      "name": "orion-recheck-case-001",
+      "size_in_bytes": 2983134,
+      "expires_at": "2026-12-24T02:22:05Z"
+    },
+    {
+      "id": 10844170482,
+      "name": "orion-recheck-case-064",
+      "size_in_bytes": 11406584,
+      "expires_at": "2026-12-24T02:22:05Z"
+    },
+    {
+      "id": 10843858504,
+      "name": "orion-recheck-case-059",
+      "size_in_bytes": 18213767,
+      "expires_at": "2026-12-24T02:22:05Z"
+    },
+    {
+      "id": 10843813692,
+      "name": "orion-recheck-case-024",
+      "size_in_bytes": 65289391,
+      "expires_at": "2026-12-24T02:22:05Z"
+    }
+  ],
+  "downloaded_cases": [
+    "orion-recheck-case-001",
+    "orion-recheck-case-016",
+    "orion-recheck-case-024",
+    "orion-recheck-case-044",
+    "orion-recheck-case-048",
+    "orion-recheck-case-059",
+    "orion-recheck-case-064"
+  ],
+  "formal_complete": false,
+  "note": "Raw responses, plans, progress, failures and source snapshots are retained inside each artifact. CI success is not experiment completeness."
+}

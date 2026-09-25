@@ -1,0 +1,13 @@
+﻿case,q,n,method,requested_method,actual_route,run_id,mode,seed_id,rep,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,added_copy_bytes,evaluations,has_valid_incumbent
+064,1,5,old,old,legacy,cold300_q1,cold_start,,0,running_prefix,30,30,30.0,12263,19116,1.5588355214874012,101946,78,True
+064,1,5,old,old,legacy,cold300_q1,cold_start,,0,stopped_carry_forward,60,53.54612079499998,53.54612079499998,12263,19116,1.5588355214874012,101946,148,True
+064,1,5,old,old,legacy,cold300_q1,cold_start,,0,stopped_carry_forward,120,53.54612079499998,53.54612079499998,12263,19116,1.5588355214874012,101946,148,True
+064,1,5,old,old,legacy,cold300_q1,cold_start,,0,stopped_carry_forward,300,53.54612079499998,53.54612079499998,12263,19116,1.5588355214874012,101946,148,True
+064,1,5,published,published,structure_published,cold300_q1,cold_start,,0,stopped_carry_forward,30,4.42410259899998,4.42410259899998,17149,19116,1.114700565630649,125100,16,True
+064,1,5,published,published,structure_published,cold300_q1,cold_start,,0,stopped_carry_forward,60,4.42410259899998,4.42410259899998,17149,19116,1.114700565630649,125100,16,True
+064,1,5,published,published,structure_published,cold300_q1,cold_start,,0,stopped_carry_forward,120,4.42410259899998,4.42410259899998,17149,19116,1.114700565630649,125100,16,True
+064,1,5,published,published,structure_published,cold300_q1,cold_start,,0,stopped_carry_forward,300,4.42410259899998,4.42410259899998,17149,19116,1.114700565630649,125100,16,True
+064,1,5,corrected,corrected,structure_v2,cold300_q1,cold_start,,0,stopped_carry_forward,30,6.3761080419999985,6.3761080419999985,12273,19116,1.5575653874358348,102014,21,True
+064,1,5,corrected,corrected,structure_v2,cold300_q1,cold_start,,0,stopped_carry_forward,60,6.3761080419999985,6.3761080419999985,12273,19116,1.5575653874358348,102014,21,True
+064,1,5,corrected,corrected,structure_v2,cold300_q1,cold_start,,0,stopped_carry_forward,120,6.3761080419999985,6.3761080419999985,12273,19116,1.5575653874358348,102014,21,True
+064,1,5,corrected,corrected,structure_v2,cold300_q1,cold_start,,0,stopped_carry_forward,300,6.3761080419999985,6.3761080419999985,12273,19116,1.5575653874358348,102014,21,True

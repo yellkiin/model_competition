@@ -1,0 +1,13 @@
+﻿case,q,n,method,requested_method,actual_route,run_id,mode,seed_id,rep,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,added_copy_bytes,evaluations,has_valid_incumbent
+044,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,30,11.828251968000018,11.828251968000018,62107,154407,2.4861448789991467,2226368,28,True
+044,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,60,11.828251968000018,11.828251968000018,62107,154407,2.4861448789991467,2226368,28,True
+044,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,120,11.828251968000018,11.828251968000018,62107,154407,2.4861448789991467,2226368,28,True
+044,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,300,11.828251968000018,11.828251968000018,62107,154407,2.4861448789991467,2226368,28,True
+044,2,5,published,published,legacy,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,68597,154407,2.250929340933277,2935040,49,True
+044,2,5,published,published,legacy,cold300_q2,cold_start,,0,running_prefix,60,60,60.0,66362,154407,2.3267381935444984,2790656,92,True
+044,2,5,published,published,legacy,cold300_q2,cold_start,,0,running_prefix,120,120,120.0,60156,154407,2.566776381408338,2320288,170,True
+044,2,5,published,published,legacy,cold300_q2,cold_start,,0,stopped_carry_forward,300,171.86339320200005,171.86339320200005,59961,154407,2.5751238304898183,2306848,256,True
+044,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,68597,154407,2.250929340933277,2935040,49,True
+044,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,60,60,60.0,66362,154407,2.3267381935444984,2790656,92,True
+044,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,120,120,120.0,60156,154407,2.566776381408338,2320288,170,True
+044,2,5,old,old,legacy,cold300_q2,cold_start,,0,stopped_carry_forward,300,171.81210762299997,171.81210762299997,59961,154407,2.5751238304898183,2306848,256,True

@@ -1,0 +1,13 @@
+﻿case,q,n,method,requested_method,actual_route,run_id,mode,seed_id,rep,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,added_copy_bytes,evaluations,has_valid_incumbent
+024,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,695284,2555343,3.6752506889271146,499564,9,True
+024,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,60,53.16669371399996,53.16669371399996,695284,2555343,3.6752506889271146,499564,23,True
+024,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,120,53.16669371399996,53.16669371399996,695284,2555343,3.6752506889271146,499564,23,True
+024,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,300,53.16669371399996,53.16669371399996,695284,2555343,3.6752506889271146,499564,23,True
+024,2,5,published,published,structure_published,cold300_q2,cold_start,,0,stopped_carry_forward,30,23.404928606999988,23.404928606999988,695284,2555343,3.6752506889271146,499564,12,True
+024,2,5,published,published,structure_published,cold300_q2,cold_start,,0,stopped_carry_forward,60,23.404928606999988,23.404928606999988,695284,2555343,3.6752506889271146,499564,12,True
+024,2,5,published,published,structure_published,cold300_q2,cold_start,,0,stopped_carry_forward,120,23.404928606999988,23.404928606999988,695284,2555343,3.6752506889271146,499564,12,True
+024,2,5,published,published,structure_published,cold300_q2,cold_start,,0,stopped_carry_forward,300,23.404928606999988,23.404928606999988,695284,2555343,3.6752506889271146,499564,12,True
+024,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,2229400,2555343,1.1462021171615682,2884324,9,True
+024,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,60,60,60.0,2206663,2555343,1.1580123471504258,2884368,17,True
+024,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,120,120,120.0,2162775,2555343,1.1815112529042548,3081088,33,True
+024,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,300,300,300.0,2027148,2555343,1.2605606497404236,3146976,82,True

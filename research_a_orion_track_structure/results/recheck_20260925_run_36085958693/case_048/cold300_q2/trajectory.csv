@@ -1,0 +1,13 @@
+﻿case,q,n,method,requested_method,actual_route,run_id,mode,seed_id,rep,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,added_copy_bytes,evaluations,has_valid_incumbent
+048,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,30,15.490520908000008,15.490520908000008,99729,222220,2.2282385264065616,1268760,29,True
+048,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,60,15.490520908000008,15.490520908000008,99729,222220,2.2282385264065616,1268760,29,True
+048,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,120,15.490520908000008,15.490520908000008,99729,222220,2.2282385264065616,1268760,29,True
+048,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,300,15.490520908000008,15.490520908000008,99729,222220,2.2282385264065616,1268760,29,True
+048,2,5,published,published,structure_published,cold300_q2,cold_start,,0,stopped_carry_forward,30,7.39873895300002,7.39873895300002,99581,222220,2.231550195318384,1268760,16,True
+048,2,5,published,published,structure_published,cold300_q2,cold_start,,0,stopped_carry_forward,60,7.39873895300002,7.39873895300002,99581,222220,2.231550195318384,1268760,16,True
+048,2,5,published,published,structure_published,cold300_q2,cold_start,,0,stopped_carry_forward,120,7.39873895300002,7.39873895300002,99581,222220,2.231550195318384,1268760,16,True
+048,2,5,published,published,structure_published,cold300_q2,cold_start,,0,stopped_carry_forward,300,7.39873895300002,7.39873895300002,99581,222220,2.231550195318384,1268760,16,True
+048,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,117600,222220,1.889625850340136,943704,32,True
+048,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,60,60,60.0,116037,222220,1.9150788110688832,963416,68,True
+048,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,120,120,120.0,115002,222220,1.9323142206222501,951256,142,True
+048,2,5,old,old,legacy,cold300_q2,cold_start,,0,stopped_carry_forward,300,204.68962953600004,204.68962953600004,114834,222220,1.9351411602835398,940728,256,True

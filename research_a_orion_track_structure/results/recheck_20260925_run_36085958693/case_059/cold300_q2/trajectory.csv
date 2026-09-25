@@ -1,0 +1,13 @@
+﻿case,q,n,method,requested_method,actual_route,run_id,mode,seed_id,rep,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,added_copy_bytes,evaluations,has_valid_incumbent
+059,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,150524,829473,5.510569743031012,5599232,21,True
+059,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,60,60,60.0,150524,829473,5.510569743031012,5599232,46,True
+059,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,120,120,120.0,150000,829473,5.52982,5675008,88,True
+059,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,300,300,300.0,149338,829473,5.554333123518462,5648384,211,True
+059,2,5,published,published,legacy,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,150524,829473,5.510569743031012,5599232,21,True
+059,2,5,published,published,legacy,cold300_q2,cold_start,,0,running_prefix,60,60,60.0,150524,829473,5.510569743031012,5599232,46,True
+059,2,5,published,published,legacy,cold300_q2,cold_start,,0,running_prefix,120,120,120.0,150000,829473,5.52982,5675008,87,True
+059,2,5,published,published,legacy,cold300_q2,cold_start,,0,running_prefix,300,300,300.0,149338,829473,5.554333123518462,5660672,210,True
+059,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,30,7.9242549900000085,7.9242549900000085,150782,829473,5.501140719714555,2072576,10,True
+059,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,60,7.9242549900000085,7.9242549900000085,150782,829473,5.501140719714555,2072576,10,True
+059,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,120,7.9242549900000085,7.9242549900000085,150782,829473,5.501140719714555,2072576,10,True
+059,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,300,7.9242549900000085,7.9242549900000085,150782,829473,5.501140719714555,2072576,10,True

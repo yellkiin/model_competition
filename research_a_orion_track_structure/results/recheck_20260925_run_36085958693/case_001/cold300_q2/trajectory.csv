@@ -1,0 +1,13 @@
+﻿case,q,n,method,requested_method,actual_route,run_id,mode,seed_id,rep,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,added_copy_bytes,evaluations,has_valid_incumbent
+001,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,47502,233110,4.9073723211654245,4608,126,True
+001,2,5,old,old,legacy,cold300_q2,cold_start,,0,running_prefix,60,60,60.0,47502,233110,4.9073723211654245,4608,252,True
+001,2,5,old,old,legacy,cold300_q2,cold_start,,0,stopped_carry_forward,120,60.80230991700002,60.80230991700002,47502,233110,4.9073723211654245,4608,256,True
+001,2,5,old,old,legacy,cold300_q2,cold_start,,0,stopped_carry_forward,300,60.80230991700002,60.80230991700002,47502,233110,4.9073723211654245,4608,256,True
+001,2,5,published,published,legacy,cold300_q2,cold_start,,0,running_prefix,30,30,30.0,47502,233110,4.9073723211654245,4608,127,True
+001,2,5,published,published,legacy,cold300_q2,cold_start,,0,stopped_carry_forward,60,59.588496007,59.588496007,47502,233110,4.9073723211654245,4608,256,True
+001,2,5,published,published,legacy,cold300_q2,cold_start,,0,stopped_carry_forward,120,59.588496007,59.588496007,47502,233110,4.9073723211654245,4608,256,True
+001,2,5,published,published,legacy,cold300_q2,cold_start,,0,stopped_carry_forward,300,59.588496007,59.588496007,47502,233110,4.9073723211654245,4608,256,True
+001,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,30,1.3365832000000069,1.3365832000000069,47502,233110,4.9073723211654245,4608,6,True
+001,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,60,1.3365832000000069,1.3365832000000069,47502,233110,4.9073723211654245,4608,6,True
+001,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,120,1.3365832000000069,1.3365832000000069,47502,233110,4.9073723211654245,4608,6,True
+001,2,5,corrected,corrected,structure_v2,cold300_q2,cold_start,,0,stopped_carry_forward,300,1.3365832000000069,1.3365832000000069,47502,233110,4.9073723211654245,4608,6,True

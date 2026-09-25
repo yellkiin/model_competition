@@ -1,0 +1,13 @@
+﻿case,q,n,method,requested_method,actual_route,run_id,mode,seed_id,rep,phase,budget_seconds,elapsed_seconds,total_elapsed_seconds,best_makespan,baseline,speedup,added_copy_bytes,evaluations,has_valid_incumbent
+044,2,5,corrected,corrected,structure_v2,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,30,1.7909854490000043,33.97480977100116,45343,154407,3.4053106322916435,1057984,1,True
+044,2,5,corrected,corrected,structure_v2,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,60,1.7909854490000043,33.97480977100116,45343,154407,3.4053106322916435,1057984,1,True
+044,2,5,corrected,corrected,structure_v2,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,120,1.7909854490000043,33.97480977100116,45343,154407,3.4053106322916435,1057984,1,True
+044,2,5,corrected,corrected,structure_v2,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,300,1.7909854490000043,33.97480977100116,45343,154407,3.4053106322916435,1057984,1,True
+044,2,5,published,published,structure_published,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,30,2.339541238999999,34.52336556100116,45343,154407,3.4053106322916435,1057984,8,True
+044,2,5,published,published,structure_published,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,60,2.339541238999999,34.52336556100116,45343,154407,3.4053106322916435,1057984,8,True
+044,2,5,published,published,structure_published,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,120,2.339541238999999,34.52336556100116,45343,154407,3.4053106322916435,1057984,8,True
+044,2,5,published,published,structure_published,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,300,2.339541238999999,34.52336556100116,45343,154407,3.4053106322916435,1057984,8,True
+044,2,5,old,old,legacy,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,30,4.679812047000013,36.86363636900117,45343,154407,3.4053106322916435,1057984,8,True
+044,2,5,old,old,legacy,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,60,4.679812047000013,36.86363636900117,45343,154407,3.4053106322916435,1057984,8,True
+044,2,5,old,old,legacy,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,120,4.679812047000013,36.86363636900117,45343,154407,3.4053106322916435,1057984,8,True
+044,2,5,old,old,legacy,warm_cross_core,warm_start,044_final_n3_padded_n5,0,stopped_carry_forward,300,4.679812047000013,36.86363636900117,45343,154407,3.4053106322916435,1057984,8,True
