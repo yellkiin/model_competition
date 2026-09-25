@@ -1,0 +1,12 @@
+case,q,n,capacity_bytes,bandwidth_bytes_per_cycle,mode,official_default,status,makespan,cache_hit_rate,added_copy_bytes,reused_main_result
+case_064,3,5,262144,60,fixed_plan,False,ok,9586,0.3067003999020648,104530,False
+case_064,3,5,262144,250,fixed_plan,False,ok,9565,0.270137925406023,104530,False
+case_064,3,5,262144,500,fixed_plan,False,ok,9564,0.270137925406023,104530,False
+case_064,3,5,1048576,60,fixed_plan,False,ok,9586,0.3067003999020648,104530,False
+case_064,3,5,1048576,250,fixed_plan,True,ok,9565,0.270137925406023,,True
+case_064,3,5,1048576,500,fixed_plan,False,ok,9564,0.270137925406023,104530,False
+case_064,3,5,4194304,60,fixed_plan,False,ok,9586,0.3067003999020648,104530,False
+case_064,3,5,4194304,250,fixed_plan,False,ok,9565,0.270137925406023,104530,False
+case_064,3,5,4194304,500,fixed_plan,False,ok,9564,0.270137925406023,104530,False
+case_064,3,5,262144,60,bounded_readaptation,False,ok,9539,0.2836384260345772,113010,False
+case_064,3,5,4194304,500,bounded_readaptation,False,ok,9506,0.2902603476498558,113746,False

@@ -1,60 +1,78 @@
-# ORION Fusion：结构与驻留联合续优化
+# ORION Fusion SMF：600秒内的三线组合调度
 
-当前交付完成两条研究线的统一入口，FIFO研究线预留插件与选择接口。独立目录 `research_a_orion_fusion`，不改已运行的 ORION、两个研究目录、官方图/config/评估器。默认 `sm`；问题1/2/3均可运行，硬件FIFO始终按第三问原规则执行。
+当前算法版本 `fusion-smf-2.2`。结构 S、内存驻留 M、真实 FIFO 事件与候选分配 F 已全部接入同一求解过程。不是三套程序各跑完后拼均值，也不重复把 FIFO 研究中的 private-island 微波次算作 F 的贡献：该原语已由 M 提供。
 
 ## 方法
 
-以目标图/小问/核数下的已知方案起步，重新调用原评估器确认其实际分数。结构源提供链优先、非均匀阶段、局部迁移和较少核方案补空核；内存源提供固定核驻留分带、有限生产者前缀释放、Tensor端点联合迁移和受控微波次；任一源得到更好方案，立即成为其他源的父方案。结构→内存、内存→结构是真的在同一方案上改进，不是拼接两张成绩表。
+S 负责关键路径、分组/分核、较少核好解在目标核数的重新评估；M 负责 Task 边界、Tensor 集合交易、容量受控微波次；F 根据真实读发射/完成/驱逐事件提出重排，并按本实例实际收益/成本分配候选机会。
 
-宿主轮流向各候选源取一个方案，先评估、保存，再生成下一份。只有可信候选下界严格超过已知最好周期才剪枝。按 `(Makespan, added_copy_bytes)` 取最小；不能用驻留代理或缓存命中率代替主目标。新版停滞控制需所有活跃来源都已经尝试足够次无收益，而不是一个全局计数提前饿死某一来源。
+先让 S/M/原有局部候选完成短时结构与驻留下降，再引入 F 联合改进。共享已验证 incumbent；其他来源改变方案后，耗尽的来源可以在新方案上重新产生候选。停滞同时检查真实时间与各来源尝试条件，避免多了一个来源就更早停止。只用可信下界剪枝；近似内存、FIFO 和代价分数不作真实性能。
 
-内存微波次预先缓存各组件拓扑序、驻留代理和深度。已在官方084图核对与上游固定参数生成的方案完全相同；一次测量生成耗时0.408秒降到0.058秒，后续不同参数生成约0.0046秒。该数字只计候选生成，不声称官方评估同倍提速。
+最新 FIFO 资料中 repair-v6 与 peer-v4 的暖启动结果一致，冷启动有一胜一负，因此未整体覆盖现有求解器。接入 peer-v4 的三类事件重排与有界长窗口，保留候选代表/来源公平性；不接入约2%的激进早停，默认剩余相对改善证书阈值为0.25%。
 
-## 本轮已做的实际验证
+## 单例时间
 
-见 `REVIEW.md` 和 `evidence/`。本轮没有运行新100图，没有把未完成FIFO算作通过。主组合测试为10个配置；对实际冲突另做2图各SM/S/M；084旧分带恶化和新微波次均调用原评估复现；新增调度器还跑了001整图14主+5配对的真实小流程。机器环境为Linux，Windows脚本留给本地同入口执行。
+一个配置=(一张图，一个小问，一个核数) 的本次进程从启动至保存结果最多600秒：包含读图、历史方案重新评估、构造、搜索、原评估和结果保存，不是免费回放后再搜索600秒。600是用户本轮工程上限；本次提取的原DOCX文字为“合理时间”，未把未出现的数字引文写成已核验题文。
 
-**已知好方案作为候选保留，不强制接受新方案。** 输出周期不劣于输入且已重新原评估通过的baseline。原报告里只有更好数值却缺方案的项另列 `published_target_gap`，不能凭数字构造一个不存在的保底。通过 `-ExtraPlans` 传入这些真实方案的导出目录，宿主会一并评估并保留更好的起点。
+父进程到点结束进程树并记录清理时间；操作系统清理可能略超过帽，不把这段算成额外有效搜索。队列等待另算批次时间。截止前尚无有效解就记录失败。
 
-## Windows三机
+本轮从已有实际方案续优化。历史取得成本已知时单列，未知时留空，不能把历史池说成600秒冷启动生成。冷启动对照须去掉seed/alternatives，在独立输出根运行，不混入续优化均值。
 
-在包含各研究目录和原附件的仓库根运行：
+## Windows与三机
 
-```powershell
-.\research_a_orion_fusion\run_windows.ps1 -ShardIndex 0
-.\research_a_orion_fusion\run_windows.ps1 -ShardIndex 1
-.\research_a_orion_fusion\run_windows.ps1 -ShardIndex 2
-```
-
-上面三行分别在三台运行，不是在一台重复启动。优先 `D:\python\python.exe`，Python>=3.12 x64、标准库、CPU-only。`-Python` 可传本机现有解释器。只做解释器启动必要检查，不加入哈希、冒烟、单元或环境跑分步骤。
-
-`prepare` 从已发布完整day01逐例表及 selected_plans.zip 读取种子，依据已有实际作业时间和图规模作LPT负载分配，图数34/33/33。三台必须从同一完整表生成相同分片；不能分别只读自己原来的50图。图的所有核数/小问留在同一台。原始JSON缺失时只补本片A数据，不恢复其他题。
-
-运行先做2个不重复本轮已测键的真实组合配置，随后接着完成本片全部配置，先行结果直接复用。第一、二问2–5核，第三问1–5核，原始无L2单核基准每图1份：共1400主记录和500个同方案无L2对照，三片目标分别为476/462/462主记录及170/165/165配对。
-
-默认小图追加120秒、大图300秒、96次原评估上限；初始种子回放单独记时，另有300秒上限。默认8小时本机截止，78%留主任务、12%配对、10%诊断及收集。`-DeadlineUtc` 可给三机共同截止；同目录续跑不重置时钟。总截止能停止作业，不能保证任何机器在此时间内完成；缺失明确列出，不把未跑键填入成功数。
-
-## 自动workers及25%余量
-
-`Workers=0` 自动。最多 floor(0.75×可用逻辑CPU)，结合整机已使用内存、活跃进程实际峰值与CPU占用逐步招入进程；可用RAM不足25%时暂停招入，已在运行的作业继续受截止约束。Linux容器识别cgroup CPU/RAM限制，Windows用系统接口，无psutil依赖。
-
-这是资源准入目标，不是硬内存配额：进程瞬间峰值和其他程序会造成波动。不制造负载来凑75%，不结束用户其他进程。`resources.jsonl`记录决策和实际占用，效果不好先检查该日志，再设置较小 `-Workers`。workers与题目NPU核数无关。
-
-## 回归与有选择的消融
-
-主方案保留baseline，但同时记录不含baseline的 `raw_candidate_best`。组合候选均劣于种子，或尚未达到两条研究线已发布的更强目标时，才加入诊断队列。每片默认最多6配置，其余排队，不跑全100图全因子。
-
-现版只有SM：诊断S/M。F真正接入后先SM/SF/MF，仍无法解释再S/M/F。所有变体起点、核数和预算相同。诊断结果单列，不静默混入统一策略主表；实际更好的方案可经 `-ExtraPlans` 作为下一轮起点。保留诊断总成本、超时、无效与无收益次数。
-
-## 时间与发布
-
-`budget_prefixes.csv`保留5/10/20/30/60/120/300/600秒的实际best-so-far。初始回放前不填最终值。分别记录本地总时间、追加时间和已知历史主路径成本；使用额外历史方案池时完整成本未知则留空，不能算作零。不同机器的秒数不直接证明算法更快。
+在完整仓库checkout中运行，无新增pip依赖。参考解释器 `D:\python\python.exe`，Python3.12 x64/CPU-only；其他机器用 `-Python` 指定已有兼容解释器。原题/数据为 `题目/A题/通用神经网络处理器下的多核调度问题  附件/`，文献为 `调研/A题_文献库/`。原图/config/Step1–3及官方评估器不变。
 
 ```powershell
-$py='D:\python\python.exe'
-& $py -m research_a_orion_fusion.export_results --root research_a_orion_fusion\runs\round01_shard_0 --out research_a_orion_fusion\team_results\round01\shard_0 --include-all-candidates
-# 三片取回分别解到三个目录后：
-& $py -m research_a_orion_fusion.campaign collect pc0\run pc1\run pc2\run --out research_a_orion_fusion\team_results\round01\combined --require-complete
+# 三台分别用0、1、2，其他算法参数相同
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_fusion\run_windows.ps1 `
+  -ShardIndex 0 -Out 'research_a_orion_fusion\runs\round02_smf_shard_0'
 ```
 
-三个主机提示词在 `HOST_0.md`/`HOST_1.md`/`HOST_2.md`。发布目录按主机隔离；不覆盖day01，不自动合并PR，不自动提交赛事平台。所有通过方案只含官方两个字段。缓存配对逐对象核对同一方案，最终核验继续使用原评估链；内存峰值依然来自官方Step3字段。
+默认600秒、2048次评估上限、SMF、自动workers、12小时整批截止。600秒是上限而非必须耗尽；候选耗尽、充分停滞或证书接近可早停。同根恢复不重新获得12小时。
+
+所有主机使用同一份day01百图参考表和selected_plans.zip生成34/33/33分片；按旧实际成本+规模LPT平衡。一图全部小问/核数在同一台。已有S/M/F真实好方案自动从仓库选中结果目录发现；本次另提供6份实际好方案的可读游程记录，Windows入口解包后直接作为候选种子，仍在目标场景原评估。完整26方案包或其他本地目录通过 `-ExtraPlans '目录1','目录2'` 补充。只有数字没有plan时只记录目标差距，不虚构seed。
+
+不运行哈希、冒烟、单元测试或全仓审计前置。启动必需项后直接跑本片两个尚未做过的真实SMF配置，通过即继续全片，先行结果复用。官方校验与最终时间线复核保留。缺数据只补本片A图。
+
+自动worker逐渐增加；逻辑CPU最多约75%，整机RAM保留25%为准入目标，同时考虑其他软件与已观察作业峰值。不是瞬时绝对配额，不凑内存负载、不杀他人进程。`resources.jsonl` 保存实际利用率和决定。
+
+## 执行顺序
+
+先真实新组合小样本，再本片全部主配置；每个选定Q3方案用原Q2作同方案无L2对照。仅对raw候选退化或落后于已发布强目标的配置做SM/SF/MF，仍不清楚才S/M/F；每片默认最多6个，余项留队列。最后选缓存低/高收益的两个小图作九格参数研究，默认格复用主结果，另两角点作60秒适配，不计正式均值。
+
+整批截止预留：主阶段80%、配对到90%、定向诊断到95%、最后余量做缓存研究与收集。时间不足保留缺失，不删配置。诊断/参数实验成本单列，不伪称主结果免费组成。
+
+## 必需结果与论文数据
+
+1400主记录：100原始单核基准+1200个三问二至五核方案+100个Q3单核方案。另500个Q3同方案无L2对照。Q1/2单核曲线从原始基准派生，明示来源，不增造独立主键。
+
+`report/paper_data/`包含三问附录、1–5核均值/中位数/P10/P90、逐例搬运/Spill/命中、同方案缓存比、每30秒真实最好解、来源/阶段、每次改善、候选成本、Pipe利用率及图结构。`optimization_phase_seconds.csv`区分结构驻留阶段和联合阶段。`stopped_hold`是早停后持有，不表示继续搜索。早期无解留空，不倒填最终值。
+
+可选画图用matplotlib，求解不依赖它：
+```powershell
+& 'D:\python\python.exe' -m research_a_orion_fusion.plot_paper `
+  --data 'research_a_orion_fusion\runs\round02_smf_shard_0\report\paper_data' `
+  --out 'research_a_orion_fusion\runs\round02_smf_shard_0\report\figures'
+```
+
+完成/截止后按用户要求，用本机已有GitHub授权实际发布：
+```powershell
+.\research_a_orion_fusion\publish_results.ps1 `
+  -RunRoot 'research_a_orion_fusion\runs\round02_smf_shard_0' -ShardIndex 0
+```
+
+只写 `research_a_orion_fusion/team_results/round02_smf/shard_N/`，新建独立结果PR，不自动合并。原始档案按40MiB分块，附顺序清单；图/官方代码/文献不重复上传，selected_plans.zip单独提供。
+
+三片到齐后：
+```powershell
+& 'D:\python\python.exe' -m research_a_orion_fusion.unpack_results '<片0发布目录>' --out '<片0新目录>'
+# 同样恢复另两片，然后
+& 'D:\python\python.exe' -m research_a_orion_fusion.campaign collect '<片0新目录>\run' '<片1新目录>\run' '<片2新目录>\run' `
+  --out 'research_a_orion_fusion\team_results\round02_smf\combined' --require-complete
+```
+
+## 无收益时
+
+先看progress：某来源没首评查选择公平性；长期生成但少评估查候选规模和缓存；高Spill查有限微波次；高命中低收益查真正控制尾部的读；增核退化将少核方案补空核后目标重评。通过S/M/F开关定向消融，同起点/本机/预算，不能用异机秒数作同条件结论。
+
+保留seed不等于新模块有效，因此额外记录raw候选最好值。改变算法或预算另开根，不事后挑消融结果覆盖固定策略表。未知历史成本不填零。当前新100图未跑；真实局部结果、负结果和修正见REVIEW.md。

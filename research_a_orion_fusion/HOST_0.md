@@ -1,29 +1,26 @@
-# 主机1：ORION Fusion分片0
+# 主机1：完整SMF研究与正式分片
 
-你在 yellkiin/model_competition 的问题A仓库。先取得本次ORION Fusion完整PR，使用 research_a_orion_fusion，不切换或改动其他机器正在运行的目录。先阅读README.md、REVIEW.md、FIFO_INTERFACE.md；现阶段启用结构S+内存M，FIFO研究分支及_wu尚未整合，不把它们当已验证第三组件。
+在yellkiin/model_competition拉取完整PR #37，独立工作区运行，不覆盖其他实验。阅读research_a_orion_fusion/README.md、REVIEW.md、EXPERIMENT_PLAN.md，然后实际执行。
 
-题目与原配置/评估代码在“题目/A题/通用神经网络处理器下的多核调度问题  附件”；文献在“调研/A题_文献库/”。现有ORION在research_a_orion_anytime，两个完成研究目录是research_a_orion_track_structure和research_a_orion_track_memory。新宿主导入它们，只在允许的两个方案字段上组合优化，不改原图、Tensor、cycles、config或官方Spill/FIFO。
+原题DOCX在题目/A题；图/config/官方评估器在同名“通用神经网络处理器下的多核调度问题  附件”；文献在调研/A题_文献库。S是结构/分核，M是驻留/Task边界，F是真实FIFO与候选机会分配，已经在同一共享最好解算法中组合。主要依据实际plan/响应，不把报告数字当可用方案。
 
-取得day01完整combined_final表、selected_plans.zip及两条研究线已经能读取的真实更好方案。若某报告只有数值缺plan，按publication清单查归档；暂时拿不到就保留published_target_gap，不造种子。真实更好方案统一导出qN/nN/case_NNN_multicore_res.json并用-ExtraPlans传入，程序会重新官方评估并保留更好解。不要只拿自己原来的50图准备分片；三台须用同一完整100图清单，按manifest分成34/33/33图，不按旧奇偶分片重复跑。
+取得day01完整100图参考表和selected_plans.zip，不能只有原某台50图。程序自动读取仓库已有好方案，并解包本PR的6份实际种子；本会话26方案包或本地更强结果用-ExtraPlans补入。所有种子目标场景重评，历史取得成本未知不填零。
 
-优先D:\python\python.exe、Python3.12.x x64、CPU-only。不匹配时由你配置独立解释器并传-Python，不更换旧进程环境。不做哈希、冒烟、单元/pytest、全仓审计或环境跑分，检查启动必需项后直接跑真实图。官方合法性与最终时间线检查保留。workers=0自动，目标CPU/RAM留25%余量；不手动塞满全部核，也不结束其他程序。实际resources.jsonl记录峰值和调度，若存在压力先调整workers。
+每(图,小问,核数)本次最多600秒，包括回放、构造、评估及保存；每30秒记录已有最好解和来源/阶段。近界/充分停滞可提前停止，不空转。三台算法参数一致。
 
-执行下面属于本机的命令。默认小图追加120秒、大图300秒，先2个未在本轮测过的真实组合键，然后通过才接着运行本片全部三问与核数，先行结果复用。已有输出同参数可恢复，不重置截止；不同参数或FIFO版本开新目录。三机需要同一个全局时限时共同传入-DeadlineUtc。本轮建议不超过8小时，阶段预留给Q3配对和诊断。缺图只补本片A输入，不下载其他题。
+你是分片0。Windows优先D:\python\python.exe、Python3.12 x64、CPU-only，无求解pip依赖。不符合的机器自行配置独立解释器并传-Python，不影响正在运行环境。不要哈希/指纹、冒烟、pytest/unittest、全仓审计前置；启动必需检查后跑真实图，保留官方合法性检查。自动workers目标留25%CPU/RAM；workers不是NPU核数。
 
-每个候选原评估后才更新最好方案；旧好解作为候选保留。不能因为单个候选或小样本局部变差否定整个优化。出现raw候选整体不佳、或低于真实已发布目标时，查看diagnostic_queue.json：当前SM按需运行S、M；F真正接入之后才三选二，必要时三选一。不得默认启动完整百图消融，也不把诊断的事后最优悄悄混入固定组合主表。明确更好的方案可供下一轮续优化。
-
-记录实际best-so-far随时间的变化，区别本轮追加、种子取得成本和本地总成本；不能倒填早期，没有完整历史成本就留空。所有失败、超时和无收益记录保留。三个小问输出都要齐，Q3对最终方案做同方案无L2比较。核数指题目NPU核数，与CPU workers不同。
-
-结束后执行本机的export命令，确认报告、所有选中方案和官方结果都在本机独立发布目录。把本机报告、精简逐例表、资源/时间曲线及原始证据包提交独立PR或按现有仓库大附件方式发布，README写明包地址。不能覆盖day01、另一台结果或改公共求解器。只回报实际完成和缺失键；不要把单片说成100图全部完成。我们之后统一收取三片并检查1400主+500配对。
-
-本机运行：
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_fusion\run_windows.ps1 -ShardIndex 0 -Out research_a_orion_fusion\runs\round01_shard_0
+powershell -NoProfile -ExecutionPolicy Bypass -File .\research_a_orion_fusion\run_windows.ps1 -ShardIndex 0 -Out 'research_a_orion_fusion\runs\round02_smf_shard_0'
 ```
 
-本机发布：
+先本片两个本轮未测过的组合配置，通过后自动跑本片全部图、三问和要求核数；先行结果复用，不三台各跑100图。之后同方案无L2、问题配置SM/SF/MF及必要S/M/F、缓存九格、论文数据。默认12小时绝对截止，续跑不重置；团队共同DeadlineUtc时三台传同一个值。
+
+效果差先看真实attempts：候选生成贵就缩小/缓存；Spill查容量微波次；命中高而低收益查真正尾部依赖；增核退化将较少核好方案补空核后目标重评。保留已有好解但raw候选质量另报。改算法/预算另开根，不事后用消融最好值覆盖固定策略主表。
+
+完成或到点后读shard_status、report、paper_data、mechanism_status，保留失败/缺失。已有GitHub授权下实际执行：
 ```powershell
-& 'D:\python\python.exe' -m research_a_orion_fusion.export_results --root research_a_orion_fusion\runs\round01_shard_0 --out research_a_orion_fusion\team_results\round01\shard_0 --include-all-candidates
+.\research_a_orion_fusion\publish_results.ps1 -RunRoot 'research_a_orion_fusion\runs\round02_smf_shard_0' -ShardIndex 0
 ```
 
-结果分支使用 `results/orion-fusion-round01-shard-0`，只提交 `research_a_orion_fusion/team_results/round01/shard_0/`。若更换了解释器，运行和发布都使用同一个实际路径。
+只写research_a_orion_fusion/team_results/round02_smf/shard_0/，结果分支results/orion-round02_smf-shard-0-<时间>。上传实际方案、响应、30秒轨迹、逐图表、阶段、论文数据和错误，40MiB分块。提交PR不自动合并，不覆盖另外两台。不以只给命令代替执行。

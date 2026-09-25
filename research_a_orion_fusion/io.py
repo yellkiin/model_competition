@@ -17,7 +17,7 @@ def write(path, value):
     p = Path(path); p.parent.mkdir(parents=True, exist_ok=True)
     tmp = p.with_name(p.name + '.tmp')
     op = gzip.open if p.suffix == '.gz' else open
-    with op(tmp, 'wt', encoding='utf8') as f:
+    with op(tmp, 'wt', encoding='utf8', **({'compresslevel': 1} if p.suffix == '.gz' else {})) as f:
         json.dump(value, f, ensure_ascii=False, separators=(',', ':'), allow_nan=False)
     tmp.replace(p)
 

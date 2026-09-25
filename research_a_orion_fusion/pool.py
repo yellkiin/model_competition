@@ -21,7 +21,9 @@ def summarize(req,execution):
              'seed_replay_seconds':state.get('seed_replay_seconds'),
              'candidate_generation_seconds':state.get('candidate_generation_seconds'),
              'official_eval_seconds':state.get('official_eval_seconds'),
-             'source_seed_seconds':req.get('source_seed_seconds'),
+             'source_seed_seconds':req.get('source_seed_seconds'),'job_seconds':req.get('job_seconds',req.get('seconds')),
+             'cache_overrides':req.get('cache_overrides'),'stop_reason':state.get('stop_reason'),
+             'graph_features':state.get('graph_features'), 'phase_events':state.get('phase_events',[]),
              'end_to_end_seconds':None if req.get('source_seed_seconds') is None else req['source_seed_seconds']+execution['wall_seconds'],
              'attempt_count':len(state.get('attempts',[])),
              'source_errors':state.get('generator_notes',[]),
@@ -29,7 +31,7 @@ def summarize(req,execution):
     if inc and status=='ok':
         summary.update(makespan=inc['makespan'],added_copy_bytes=inc['added_copy_bytes'],
                        selected_name=inc['name'],selected_family=inc['family'],
-                       certificate=inc['certificate'])
+                       certificate=inc['certificate'],selected_plan_ready_seconds=inc.get('ready_seconds'))
         shutil.copyfile(out/inc['plan_file'],out/'plan.json')
         shutil.copyfile(out/inc['result_file'],out/'result.json.gz')
         summary.update(plan='plan.json',result='result.json.gz')
@@ -62,6 +64,14 @@ def run_jobs(jobs,out,deadline_epoch,max_workers=0,reserve=.25):
                     if old!=req:raise ValueError(f'Changed request; use a new run directory: {folder}')
                     results.append(read(prior));continue
                 write(folder/'request.json',req)
+                dynamic=[]
+                if req.get('campaign_jobs_root') and 's' in req.get('components','') and req['q']>0:
+                    for prior in Path(req['campaign_jobs_root']).glob(req['case']+'_q*_n*/summary.json'):
+                        old=read(prior)
+                        if old.get('status')=='ok' and old['q']>0 and old['n']<=req['n'] and (old['q'],old['n'])!=(req['q'],req['n']):
+                            dynamic.append({'path':str(prior.parent/'plan.json'),'name':f'current_q{old["q"]}_n{old["n"]}', 'observed_source_makespan':old['makespan']})
+                    dynamic.sort(key=lambda x:x['observed_source_makespan'])
+                write(folder/'runtime.json',{'launched_epoch':time.time(),'dynamic_alternatives':dynamic[:3]})
                 log=(folder/'worker.log').open('w',encoding='utf8')
                 p=subprocess.Popen([sys.executable,'-m','research_a_orion_fusion.solve',str((folder/'request.json').resolve())],
                                    cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,
@@ -70,25 +80,17 @@ def run_jobs(jobs,out,deadline_epoch,max_workers=0,reserve=.25):
                                'workers_at_start':sample['target_workers']})
             for a in active[:]:
                 p=a['proc'];req=a['request'];elapsed=time.monotonic()-a['start'];reason=None
-                folder=Path(req['out']);progress=folder/'progress.json'
-                state={}
-                if progress.is_file():
-                    try:state=read(progress)
-                    except (OSError,json.JSONDecodeError):pass
+                folder=Path(req['out'])
                 if now>=deadline_epoch:reason='campaign_deadline'
-                elif state.get('phase')=='search':
-                    # Each subprocess owns its own monotonic origin; compare its
-                    # relative search deadline against elapsed launcher time.
-                    if now>=state.get('search_deadline_epoch',now+state['search_deadline_seconds']-elapsed)+.5:reason='search_timeout'
-                elif elapsed>=req.get('seed_timeout',240)+req['seconds']:
-                    reason='job_timeout'
-                elif state.get('phase')=='seed_replay' and elapsed>=req.get('seed_timeout',240):reason='seed_timeout'
+                elif elapsed>=min(600,req.get('job_seconds',req.get('seconds',600))):reason='configuration_wall_limit'
                 if reason:terminate(p)
                 if p.poll() is not None:
                     a['log'].close();active.remove(a)
                     execution={'reason':reason or ('completed' if p.returncode==0 else 'worker_error'),
                         'returncode':p.returncode,'wall_seconds':time.monotonic()-a['start'],
-                        'peak_rss_bytes':a['peak_rss'],'workers_at_start':a['workers_at_start']}
+                        'peak_rss_bytes':a['peak_rss'],'workers_at_start':a['workers_at_start'],
+                        'wall_cap_seconds':min(600,req.get('job_seconds',req.get('seconds',600))),
+                        'late_cleanup_seconds':max(0,time.monotonic()-a['start']-min(600,req.get('job_seconds',req.get('seconds',600))))}
                     write(folder/'execution.json',execution)
                     r=summarize(req,execution);results.append(r)
                     print(f"{folder.name}: {r['status']} {r.get('baseline_makespan')} -> {r.get('makespan')} [{execution['reason']}]",flush=True)

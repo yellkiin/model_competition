@@ -1,2 +1,2 @@
-"""ORION Fusion: shared incumbent, composable scheduling candidates."""
-VERSION = 'fusion-sm-1.0'
+"""ORION Fusion: jointly improve structure, residence and observed FIFO timing."""
+VERSION = 'fusion-smf-2.2'

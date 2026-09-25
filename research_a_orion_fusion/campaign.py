@@ -5,6 +5,7 @@ from pathlib import Path
 from . import VERSION
 from .io import ROOT,read,write,csv_read,csv_write,official_root,required_keys,key_name,plan_path,install_plan_archive
 from .pool import run_jobs
+from .seeds import catalogue
 from .report import collect
 
 DEFAULT_RESULTS=ROOT/'research_a_orion_anytime/team_results/day01/combined_final'
@@ -72,6 +73,9 @@ def requests(manifest,settings,out,official,config,extra_roots):
     shard=manifest['shards'][settings['shard_index']]
     roots=[Path(manifest['reference_plans'])]
     extras=[Path(x).resolve() for x in extra_roots]
+    known, missing_seeds=catalogue(extras)
+    write(out/'seed_catalogue.json',{'entries':[{'key':key,'plans':v} for key,v in sorted(known.items())],
+                                     'missing_declared_plans':missing_seeds})
     specs=[]
     for case in shard['cases']:
         graph=official/'data'/f'{case}.json'
@@ -88,14 +92,18 @@ def requests(manifest,settings,out,official,config,extra_roots):
                 for x in smaller[:1]:
                     if int(x['makespan'])<int(r['makespan']):
                         alt.append({'path':str(plan_path(roots[0],case,q,int(x['n']))),'name':f'effective_n{x["n"]}'})
-            baseline_alts=[]
-            for root in extras:
-                p=plan_path(root,case,q,n)
-                if p.is_file():baseline_alts.append({'path':str(p),'name':'available_external_seed'})
+            baseline_alts=list(known.get((case,q,n),[])) if q>0 else []
+            if q>0 and 's' in settings['components']:
+                for (cc,qq,nn),entries in known.items():
+                    if cc==case and qq>0 and nn<=n and (qq,nn)!=(q,n):
+                        for ent in entries[:1]:
+                            alt.append({'path':ent['path'],'name':f'published_q{qq}_n{nn}'})
             specs.append({'out':str(out/'jobs'/key_name(case,q,n)),'case':case,'q':q,'n':n,
                 'official':str(official),'config':str(config),'graph':str(graph),'version':VERSION,
                 'mode':'warm','components':settings['components'],'fifo_module':settings.get('fifo_module'),
-                'seconds':seconds,'seed_timeout':settings['seed_timeout'],'max_evaluations':settings['max_evaluations'],
+                'seconds':seconds,'job_seconds':seconds,'seed_timeout':settings['seed_timeout'],
+                'campaign_jobs_root':str(out/'jobs'),'source_policy':settings.get('source_policy','staged'),
+                'stop_gap':settings.get('stop_gap',.0025),'max_evaluations':settings['max_evaluations'],
                 'seed_plan':str(plan_path(roots[0],case,q,n)),'reference_makespan':int(r['makespan']),
                 'source_seed_seconds':costs.get((case,q,n)) if not baseline_alts and not alt else None,
                 'known_day01_main_path_seconds':costs.get((case,q,n)),
@@ -104,11 +112,9 @@ def requests(manifest,settings,out,official,config,extra_roots):
 
 
 def pilot_keys(specs,features,shard):
-    # New fused configurations, not unit/smoke/environment tests. Cases used in
-    # shipped local evidence are excluded; they need not be repeated on Windows.
     done_path=Path(__file__).parent/'evidence/local_checked.json'
     done={tuple(x) for x in read(done_path)['keys']} if done_path.is_file() else set()
-    choices=[s for s in specs if s['n']==5 and s['q'] in (1+shard%2,3) and (s['case'],s['q'],s['n']) not in done]
+    choices=[s for s in specs if s['n']==2 and s['q'] in (1+shard%2,3) and (s['case'],s['q'],s['n']) not in done]
     choices.sort(key=lambda s:(features[s['case']]['ops']>=5000,features[s['case']]['components']>100,s['case'],s['q']))
     selected=[];qs=set()
     for s in choices:
@@ -127,7 +133,7 @@ def pair_requests(specs,out,settings):
         target=out/'pairs'/key_name(req['case'],3,req['n'])
         pairs.append({**req,'q':2,'out':str(target),'components':'',
                       'fixed_plan':str(plan),'reference_makespan':None,'seed_plan':None,
-                      'alternatives':[],'baseline_alternatives':[],'seconds':1,
+                      'alternatives':[],'baseline_alternatives':[],'seconds':settings['seed_timeout'],'job_seconds':settings['seed_timeout'],
                       'seed_timeout':settings['seed_timeout']})
     return pairs
 
@@ -152,7 +158,6 @@ def diagnose(specs,manifest,out,settings,deadline,max_workers,reserve):
     selected.sort(key=lambda x:(-x[0],x[1]['case'],x[1]['q'],x[1]['n']))
     chosen=selected[:settings['ablation_limit']]
     active=list(settings['components']);pairs=list(itertools.combinations(active,2)) if len(active)>=3 else ([(x,) for x in active] if len(active)>1 else [])
-    # All variants start from the SAME original seed set, not the fused winner.
     stages=[]
     for _,req,reason in chosen:
         for mask in pairs:
@@ -163,8 +168,10 @@ def diagnose(specs,manifest,out,settings,deadline,max_workers,reserve):
     if len(active)>=3:
         for _,req,reason in chosen:
             group=[r for r in results if (r['case'],r['q'],r['n'])==(req['case'],req['q'],req['n'])]
-            # If removing one component restores a useful response, stop at 3-choose-2.
-            found=any(r['status']=='ok' and r.get('raw_candidate_makespan') is not None and r['raw_candidate_makespan']<=r.get('baseline_makespan',0) for r in group)
+            main=read(Path(req['out'])/'summary.json')
+            published=manifest['historical_targets'].get(key_name(req['case'],req['q'],req['n']),{})
+            goal=min(main.get('baseline_makespan',float('inf')),published.get('makespan',float('inf')))
+            found=any(r['status']=='ok' and r.get('raw_candidate_makespan') is not None and r['raw_candidate_makespan']<=goal for r in group)
             if not found:
                 for component in active:
                     singles.append({**req,'components':component,
@@ -181,20 +188,25 @@ def run(args):
     manifest=read(args.manifest);out=Path(args.out).resolve();out.mkdir(parents=True,exist_ok=True)
     if not 0<=args.shard_index<len(manifest['shards']):raise ValueError('Invalid shard index')
     if args.components not in ('s','m','sm','sf','mf','smf','f'):raise ValueError('Use s/m/sm/sf/mf/smf/f')
-    if 'f' in args.components and not args.fifo_module:raise ValueError('F is reserved: supply completed --fifo-module adapter explicitly')
+    if 'f' in args.components and not args.fifo_module:args.fifo_module='research_a_orion_fusion.fifo'
     settings={'version':VERSION,'components':args.components,'fifo_module':args.fifo_module,
               'seconds':args.seconds,'large_seconds':args.large_seconds,'max_evaluations':args.calls,
-              'seed_timeout':args.seed_timeout,'shard_index':args.shard_index,'ablation_limit':args.ablation_limit}
+              'seed_timeout':args.seed_timeout,'shard_index':args.shard_index,'ablation_limit':args.ablation_limit,
+              'source_policy':args.source_policy,'stop_gap':args.stop_gap}
     path=out/'run_settings.json'
     if path.is_file() and read(path)!=settings:raise ValueError('Changed method/budget; use a new output directory')
     write(path,settings);write(out/'manifest.json',manifest)
     clock=out/'clock.json'
-    if not clock.is_file():write(clock,{'started_epoch':time.time(),'deadline_epoch':args.deadline_epoch or time.time()+args.hours*3600})
+    if not clock.is_file():
+        now=time.time();end=args.deadline_epoch or now+args.hours*3600
+        duration=max(0,end-now)
+        write(clock,{'started_epoch':now,'deadline_epoch':end,'main_deadline':now+.80*duration,
+                     'pair_deadline':now+.90*duration,'diagnostic_deadline':now+.95*duration})
     deadline=read(clock)['deadline_epoch'];now=time.time()
     official,config=official_root(args.official)
     specs=requests(manifest,settings,out,official,config,args.extra_plans)
-    # Leave a fixed portion of the REMAINING campaign for pairs, collection and diagnosis.
-    remaining=max(0,deadline-now);main_deadline=now+remaining*.78;pair_deadline=now+remaining*.90
+    remaining=max(0,deadline-now);stored_clock=read(clock)
+    main_deadline=stored_clock['main_deadline'];pair_deadline=stored_clock['pair_deadline']
     def run_batch(batch,phase,limit):return run_jobs(batch,out/phase,limit,args.workers,args.reserve)
     pilot=pilot_keys(specs,manifest['features'],args.shard_index)
     results=run_batch(pilot,'pilot_resources',min(main_deadline,now+max(600,remaining*.12)))
@@ -204,11 +216,13 @@ def run(args):
                            'fifo_pending':'f' not in args.components,'basis':'real official cases plus shipped local integrated runs'})
     if args.pilot_only:return 0
     pilot_names={x['out'] for x in pilot}
-    # Level ordering makes future lower-core inheritance straightforward; each graph is owned by one host.
     rest=sorted((x for x in specs if x['out'] not in pilot_names),key=lambda x:(x['n'],x['q'],-manifest['features'][x['case']]['ops'],x['case']))
     run_batch(rest,'main_resources',main_deadline)
     pairs=pair_requests(specs,out,settings);run_batch(pairs,'pair_resources',pair_deadline)
-    diagnose(specs,manifest,out,settings,deadline-120,args.workers,args.reserve)
+    diagnose(specs,manifest,out,settings,stored_clock['diagnostic_deadline'],args.workers,args.reserve)
+    if not args.skip_mechanisms and time.time()<deadline-90:
+        from .mechanisms import run as mechanism_run
+        mechanism_run(out,out/'mechanisms',deadline-90,args.workers,args.reserve,adapt=True)
     report=collect([out],out/'report',official,verify=True)
     expected=len(manifest['shards'][args.shard_index]['cases'])*14
     expected_pairs=len(manifest['shards'][args.shard_index]['cases'])*5
@@ -224,12 +238,13 @@ def main(argv=None):
     a.add_argument('--baseline-plans');a.add_argument('--cases',nargs='+');a.add_argument('--shards',type=int,default=3)
     a=sub.add_parser('run');a.add_argument('--manifest',required=True);a.add_argument('--out',required=True)
     a.add_argument('--official');a.add_argument('--shard-index',type=int,required=True);a.add_argument('--workers',type=int,default=0)
-    a.add_argument('--reserve',type=float,default=.25);a.add_argument('--seconds',type=float,default=120)
-    a.add_argument('--large-seconds',type=float,default=300);a.add_argument('--calls',type=int,default=96)
-    a.add_argument('--seed-timeout',type=float,default=300);a.add_argument('--hours',type=float,default=8)
-    a.add_argument('--deadline-epoch',type=float);a.add_argument('--components',default='sm');a.add_argument('--fifo-module')
+    a.add_argument('--reserve',type=float,default=.25);a.add_argument('--seconds',type=float,default=600)
+    a.add_argument('--large-seconds',type=float,default=600);a.add_argument('--calls',type=int,default=2048)
+    a.add_argument('--seed-timeout',type=float,default=600);a.add_argument('--hours',type=float,default=12)
+    a.add_argument('--deadline-epoch',type=float);a.add_argument('--components',default='smf');a.add_argument('--fifo-module')
+    a.add_argument('--source-policy',choices=['balanced','feedback','staged'],default='staged');a.add_argument('--stop-gap',type=float,default=.0025)
     a.add_argument('--extra-plans',action='append',default=[]);a.add_argument('--ablation-limit',type=int,default=6)
-    a.add_argument('--pilot-only',action='store_true')
+    a.add_argument('--pilot-only',action='store_true');a.add_argument('--skip-mechanisms',action='store_true')
     a=sub.add_parser('collect');a.add_argument('roots',nargs='+');a.add_argument('--out',required=True);a.add_argument('--official')
     a.add_argument('--require-complete',action='store_true')
     args=p.parse_args(argv)
@@ -239,7 +254,7 @@ def main(argv=None):
     if args.command=='collect':
         r=collect(args.roots,args.out,args.official,require_complete=args.require_complete)
         print(r);return 0
-    if args.seconds<=0 or args.large_seconds<=0 or args.seed_timeout<=0 or args.hours<=0 or args.calls<1 or not 0<args.reserve<1:
+    if not 0<args.seconds<=600 or not 0<args.large_seconds<=600 or not 0<args.seed_timeout<=600 or not 0<=args.stop_gap<1 or args.hours<=0 or args.calls<1 or not 0<args.reserve<1:
         p.error('Positive time/call limits and 0<reserve<1 required')
     return run(args)
 
