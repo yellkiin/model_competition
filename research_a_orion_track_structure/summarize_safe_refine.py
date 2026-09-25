@@ -5,7 +5,20 @@ from pathlib import Path
 from collections import Counter,defaultdict
 ROOT=Path(__file__).resolve().parents[1]
 
+def local_path(p):
+    p=Path(p)
+    if p.exists():return p
+    # Result archives keep original paths as provenance. Resolve their suffix
+    # beneath a new checkout without editing any recorded result or score.
+    parts=p.parts
+    marker='research_a_orion_track_structure'
+    if marker in parts:
+        candidate=ROOT.joinpath(*parts[parts.index(marker):])
+        if candidate.exists():return candidate
+    return p
+
 def read(p):
+    p=local_path(p)
     with (gzip.open(p,'rt',encoding='utf-8-sig') if str(p).endswith('.gz') else open(p,encoding='utf-8-sig')) as f:return json.load(f)
 def csvwrite(p,rows):
     keys=list(dict.fromkeys(k for r in rows for k in r))
@@ -32,14 +45,14 @@ def main():
         pair_ok=False
         if s['q']==3 and pair.get('plan_file') and pair.get('result_file'):
             pr=read(pair['result_file']);pair_ok=read(pair['plan_file'])==plan and pr.get('status')=='ok' and pr['audit']['ok']
-        b=int(f['baseline']);row=dict(case=s['case'],q=s['q'],n=s['n'],formal_makespan=int(f['makespan']),seed_makespan=s['seed_makespan'],old_warm_makespan=old.get('makespan'),safe_warm_makespan=safe.get('makespan'),selected_makespan=s['makespan'],baseline=b,formal_speedup=b/int(f['makespan']),seed_speedup=b/s['seed_makespan'],selected_speedup=b/s['makespan'],new_reduction_pct=100*(1-s['makespan']/s['seed_makespan']),total_reduction_vs_formal_pct=100*(1-s['makespan']/int(f['makespan'])),winning_arm=(winning or {}).get('method','seed'),winning_name=s['winning_name'],added_copy_bytes=raw['data_movement_bytes']['added_copy_bytes'],spill_added_copy_bytes=raw['data_movement_bytes'].get('spill_added_copy_bytes'),lower=result['audit']['certificate']['global_lower'],portfolio_seconds=s['portfolio_seconds'],seed_validation_seconds=s['seed_validation_seconds'],seed_solve_seconds=s.get('seed_solve_seconds'),total_solve_seconds=None if s.get('seed_solve_seconds') is None else s['seed_solve_seconds']+s['seed_validation_seconds']+s['portfolio_seconds'],no_l2_makespan=pair.get('makespan') if pair_ok else None,cache_speedup=pair['makespan']/s['makespan'] if pair_ok else None,pair_status='ok' if pair_ok else 'missing' if s['q']==3 else 'not_applicable',no_regression=True)
+        b=int(f['baseline']);row=dict(case=s['case'],q=s['q'],n=s['n'],formal_makespan=int(f['makespan']),seed_makespan=s['seed_makespan'],old_warm_makespan=old.get('makespan'),safe_warm_makespan=safe.get('makespan'),selected_makespan=s['makespan'],baseline=b,formal_speedup=b/int(f['makespan']),seed_speedup=b/s['seed_makespan'],selected_speedup=b/s['makespan'],new_reduction_pct=100*(1-s['makespan']/s['seed_makespan']),total_reduction_vs_formal_pct=100*(1-s['makespan']/int(f['makespan'])),winning_arm=(winning or {}).get('method','seed'),winning_name=s['winning_name'],added_copy_bytes=raw['data_movement_bytes']['added_copy_bytes'],spill_added_copy_bytes=raw['data_movement_bytes'].get('spill_added_copy_bytes'),lower=result['audit']['certificate']['global_lower'],portfolio_seconds=s['portfolio_seconds'],seed_validation_seconds=s['seed_validation_seconds'],seed_solve_seconds=s.get('seed_solve_seconds'),total_solve_seconds=None,known_primary_path_seconds=None if s.get('seed_solve_seconds') is None else s['seed_solve_seconds']+s['seed_validation_seconds']+s['portfolio_seconds'],historical_pool_cost_complete=False,no_l2_makespan=pair.get('makespan') if pair_ok else None,cache_speedup=pair['makespan']/s['makespan'] if pair_ok else None,pair_status='ok' if pair_ok else 'missing' if s['q']==3 else 'not_applicable',no_regression=True)
         rows.append(row)
         for t in (30,60,120,300,600):
             obs=[o for o in s['observations'] if o['elapsed_seconds']<=t];best=min(obs,key=lambda x:x['makespan']) if obs else None
-            prefixes.append(dict(case=s['case'],q=s['q'],n=s['n'],mode='costed_warm_portfolio',budget_seconds=t,elapsed_seconds=min(t,s['portfolio_seconds']),phase='stopped_carry_forward' if t>s['portfolio_seconds'] else 'running_prefix',best_makespan=best['makespan'] if best else None,speedup=b/best['makespan'] if best else None,total_elapsed_seconds=None if s.get('seed_solve_seconds') is None else s['seed_solve_seconds']+s['seed_validation_seconds']+min(t,s['portfolio_seconds'])))
+            prefixes.append(dict(case=s['case'],q=s['q'],n=s['n'],mode='costed_warm_portfolio',budget_seconds=t,elapsed_seconds=min(t,s['portfolio_seconds']),phase='stopped_carry_forward' if t>s['portfolio_seconds'] else 'running_prefix',best_makespan=best['makespan'] if best else None,speedup=b/best['makespan'] if best else None,total_elapsed_seconds=None,known_primary_path_elapsed_seconds=None if s.get('seed_solve_seconds') is None else s['seed_solve_seconds']+s['seed_validation_seconds']+min(t,s['portfolio_seconds'])))
         diagnostics[str(key)]={'cores':[dict(core=c['core_id'],end=max((o['end'] for o in c['ops']),default=0),ops=len(c['ops']),groups=len(plan['core_schedules'][c['core_id']])) for c in raw['per_core_timeline']], 'audit':result['audit'],'data_movement':raw['data_movement_bytes']}
     for r in jobs:
-        jp=Path(r['job'])/'progress.json'
+        jp=local_path(Path(r['job'])/'progress.json')
         if not jp.exists():continue
         state=read(jp)
         for e in state.get('attempts',[]):
