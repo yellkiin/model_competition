@@ -13,8 +13,11 @@
   },
   "related_interfaces": {
     "paper_workbench_pr": 42,
+    "paper_workbench_inspected_commit": "eb2bb14d67a8d2770e276b77411f779f43f94b49",
     "paper_workbench_root_hint": "paper_a_workbench",
-    "paper_workbench_schema_assumed": false,
+    "paper_workbench_source_profile_schema": 1,
+    "paper_workbench_native_route": "SOURCE_PROFILE -> sync -> SOURCE_LOCK -> package-inputs -> workshop file input",
+    "later_workbench_versions_require_interface_review": true,
     "alternative_implementation_pr": 40,
     "alternative_implementation_commit": "065624ab6ed136ad623b9ad6689fb21015084915",
     "alternative_implementation_root_hint": "research_a_orion_fusion",
@@ -23,18 +26,25 @@
   "files": [
     "README.md", "THEORY.md", "ALGORITHM.md", "TERMS.json", "SOURCE_MAP.md",
     "PAPER_ROUTE.md", "references.bib", "APPEND_PROMPT.md", "BINDING.template.json",
-    "bind_theory.py", "check_binding.py", "MANIFEST.json"
+    "bind_theory.py", "check_binding.py", "MANIFEST.json", "PR42_COMPATIBILITY.md",
+    "extend_workbench_profile.py", "check_workbench_compat.py"
   ],
   "reading_order": ["README.md", "THEORY.md", "ALGORITHM.md", "TERMS.json", "SOURCE_MAP.md", "PAPER_ROUTE.md", "references.bib"],
   "integration": {
     "timing": "before manuscript drafting, even when the prompt is appended last",
-    "destination_pattern": "<workspace>/theory_input/orion-pr38-theory-v1/<new_binding_id>/",
-    "handoff": "THEORY_HANDOFF.md",
+    "preferred_append_prompt": "PR42_COMPATIBILITY.md",
+    "general_requirements_prompt": "APPEND_PROMPT.md",
+    "native_profile_source_id": "theory_pr38_v1",
+    "native_snapshot_member": "theory_pr38_v1/paper_a_theory/THEORY.md",
+    "native_installation": "Extend a new local profile, preserve its selected publication, sync and package inputs through the inspected PR42 entry",
+    "fallback_destination_pattern": "<workspace>/theory_input/orion-pr38-theory-v1/<new_binding_id>/",
+    "fallback_handoff": "THEORY_HANDOFF.md",
     "receipt": "THEORY_BINDING.json",
     "writes_existing_agents_or_results": false,
-    "waits_for_pr42_merge": false,
+    "requires_theory_pr_merge": false,
     "network_or_solver_in_binding_script": false,
-    "automatic_semantic_validation": false
+    "automatic_semantic_validation": false,
+    "glossary_compatibility": "TERMS is not a drop-in PR42 GLOSSARY; create a new semantically merged schema-1 workspace glossary"
   },
   "canonical_result_requirements": [
     "graph_id", "question", "npu_core_count", "run_id", "implementation_commit",
