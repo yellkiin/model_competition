@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "package_id": "orion-pr38-theory-v1",
+  "version": "1.0.0",
+  "repository": "yellkiin/model_competition",
+  "branch": "docs/orion-pr38-theory-v1-20260926",
+  "directory": "paper_a_theory",
+  "theoretical_anchor": {
+    "pr": 38,
+    "commit": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+    "implementation_root": "research_a_orion_trident",
+    "binding_rule": "This is the inspected theory anchor, not an assertion that all future experiments use this code"
+  },
+  "related_interfaces": {
+    "paper_workbench_pr": 42,
+    "paper_workbench_root_hint": "paper_a_workbench",
+    "paper_workbench_schema_assumed": false,
+    "alternative_implementation_pr": 40,
+    "alternative_implementation_commit": "065624ab6ed136ad623b9ad6689fb21015084915",
+    "alternative_implementation_root_hint": "research_a_orion_fusion",
+    "alternative_requires_semantic_review": true
+  },
+  "files": [
+    "README.md", "THEORY.md", "ALGORITHM.md", "TERMS.json", "SOURCE_MAP.md",
+    "PAPER_ROUTE.md", "references.bib", "APPEND_PROMPT.md", "BINDING.template.json",
+    "bind_theory.py", "check_binding.py", "MANIFEST.json"
+  ],
+  "reading_order": ["README.md", "THEORY.md", "ALGORITHM.md", "TERMS.json", "SOURCE_MAP.md", "PAPER_ROUTE.md", "references.bib"],
+  "integration": {
+    "timing": "before manuscript drafting, even when the prompt is appended last",
+    "destination_pattern": "<workspace>/theory_input/orion-pr38-theory-v1/<new_binding_id>/",
+    "handoff": "THEORY_HANDOFF.md",
+    "receipt": "THEORY_BINDING.json",
+    "writes_existing_agents_or_results": false,
+    "waits_for_pr42_merge": false,
+    "network_or_solver_in_binding_script": false,
+    "automatic_semantic_validation": false
+  },
+  "canonical_result_requirements": [
+    "graph_id", "question", "npu_core_count", "run_id", "implementation_commit",
+    "policy", "hardware_config", "mode", "budget_seconds", "seed_provenance",
+    "selected_plan", "official_response", "available_at_seconds", "baseline_definition",
+    "q3_same_plan_no_l2_response"
+  ],
+  "result_provenance": {
+    "new_solver_experiments_in_this_package": 0,
+    "includes_performance_numbers": false,
+    "future_results_auto_trusted": false,
+    "separate_main_diagnostic_sensitivity_and_cumulative_best": true,
+    "source_pdfs_redistributed": false
+  },
+  "precedence": [
+    "user constraints and original problem / unchanged official evaluation semantics",
+    "actual frozen execution source, valid derivation and original evidence",
+    "this theory package after semantic alignment",
+    "generic writing-agent templates and stylistic preferences"
+  ]
+}
