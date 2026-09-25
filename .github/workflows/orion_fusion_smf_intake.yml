@@ -1,39 +1,65 @@
-name: ORION Fusion SMF source intake
+name: ORION SMF measured-source delivery
 on:
   pull_request:
-    paths: ['.github/workflows/orion_fusion_smf_intake.yml']
+    paths: ['.orion_smf_transfer/READY.json']
 permissions:
-  contents: read
+  contents: write
 jobs:
-  export:
+  deliver:
+    if: github.head_ref == 'feat/orion-fusion-smf-600s-20260925'
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref }}
           lfs: false
-      - name: Export requested source and actual A inputs
+      - name: Restore measured files and actual selected plans
         run: |
           python - <<'PY'
           from pathlib import Path
-          import zipfile
-          roots = ['research_a_orion_fusion','research_a_orion_track_anytime','research_a_orion_track_structure','research_a_orion_track_memory','research_a_orion_anytime']
-          files=set()
-          for root in roots:
-              for p in Path(root).rglob('*'):
-                  if p.is_file() and p.suffix in ('.py','.md','.ps1','.json','.csv') and p.stat().st_size<5000000 and 'runs' not in p.parts:
-                      files.add(p)
-          for p in Path('题目/A题').rglob('*'):
-              if p.is_file() and (p.suffix in ('.py','.docx') or p.name=='config.txt' or p.name in {f'case_{i:03d}.json' for i in (1,5,16,24,44,48,59,64,73,83,84,86,90,92)}): files.add(p)
-          for name in ('调研/A题_文献.json','调研/A题_文献库/README.md','调研/A题_文献库/方法对照与阅读顺序.md','research_a_orion_anytime/team_results/day01/combined_final/selected_plans.zip'):
+          import base64,json,zlib,struct,shutil,zipfile
+          temp=Path('.orion_smf_transfer')
+          spec=json.loads((temp/'READY.json').read_text())
+          text=''.join((temp/name).read_text().strip() for name in spec['parts'])
+          payload=json.loads(zlib.decompress(base64.b64decode(text)))
+          allowed=Path('research_a_orion_fusion').resolve()
+          def target(name):
               p=Path(name)
-              if p.is_file(): files.add(p)
-          with zipfile.ZipFile('orion_smf_intake.zip','w',zipfile.ZIP_DEFLATED,compresslevel=3) as z:
-              for p in sorted(files): z.write(p,p.as_posix())
-          print('Exported',len(files),'files; no solver or test suite executed.')
+              if allowed not in p.resolve().parents: raise ValueError('Unexpected output path')
+              p.parent.mkdir(parents=True,exist_ok=True)
+              return p
+          for name,content in payload['files'].items():
+              p=target(name)
+              p.write_text(content,encoding='utf-8-sig' if p.suffix=='.ps1' else 'utf8')
+          official=next(Path('题目/A题').glob('*附件'))
+          for name,entry in payload['indexed_plans'].items():
+              graph=json.loads((official/'data'/(entry['case']+'.json')).read_text(encoding='utf-8-sig'))
+              ids=sorted(o['id'] for o in graph['ops'] if o['op'] not in ('COPY_IN','COPY_OUT'))
+              fmt=entry['format']
+              if fmt not in ('H','I'): raise ValueError('Unexpected integer encoding')
+              binary=zlib.decompress(base64.b64decode(entry['groups']))
+              owners=struct.unpack('<'+fmt*len(ids),binary)
+              plan={'node_to_subgraph':dict(zip(map(str,ids),owners)),'core_schedules':entry['core_schedules']}
+              target(name).write_text(json.dumps(plan,ensure_ascii=False,separators=(',',':')),encoding='utf8')
+          print('Restored',len(payload['files']),'source/record files and',len(payload['indexed_plans']),'actual selected plans; no solver executed.')
+          shutil.rmtree(temp)
+          Path('.github/workflows/orion_fusion_smf_intake.yml').unlink()
+          with zipfile.ZipFile('orion_smf_delivered.zip','w',zipfile.ZIP_DEFLATED,compresslevel=3) as z:
+              for p in Path('research_a_orion_fusion').rglob('*'):
+                  if p.is_file(): z.write(p,p.as_posix())
           PY
+      - name: Commit full sources to this PR only
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- research_a_orion_fusion .orion_smf_transfer .github/workflows/orion_fusion_smf_intake.yml
+          git commit -m 'feat(A): complete measured SMF integration, 600-second jobs and three-host paper outputs'
+          git push origin "HEAD:$HEAD_BRANCH"
       - uses: actions/upload-artifact@v4
         with:
-          name: orion-smf-current-source
-          path: orion_smf_intake.zip
+          name: orion-smf-delivered-source
+          path: orion_smf_delivered.zip
           retention-days: 7
