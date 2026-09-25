@@ -23,6 +23,10 @@ jobs:
         run: |
           python paper_a_theory/check_binding.py > /tmp/BINDING_CHECK.json
           cat /tmp/BINDING_CHECK.json
+      - name: Check actual PR42 source sync and input packaging
+        run: |
+          python paper_a_theory/check_workbench_compat.py --repo . > /tmp/PR42_COMPAT_CHECK.json
+          cat /tmp/PR42_COMPAT_CHECK.json
       - name: Package authored files without source literature or experiments
         run: |
           git archive --format=zip --output=/tmp/ORION_PR38_Theory_Package_v1.zip HEAD paper_a_theory
@@ -30,8 +34,8 @@ jobs:
           python - <<'PY'
           import zipfile
           with zipfile.ZipFile('/tmp/ORION_PR38_Theory_Package_v1.zip','a',zipfile.ZIP_DEFLATED) as z:
-              z.write('/tmp/BINDING_CHECK.json','BINDING_CHECK.json')
-              z.write('/tmp/THEORY_PACKAGE_COMMIT.txt','THEORY_PACKAGE_COMMIT.txt')
+              for name in ('BINDING_CHECK.json','PR42_COMPAT_CHECK.json','THEORY_PACKAGE_COMMIT.txt'):
+                  z.write('/tmp/'+name,name)
           PY
       - uses: actions/upload-artifact@v4
         with:
