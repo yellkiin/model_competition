@@ -1,0 +1,21 @@
+{
+  "version": "memory-coherent-4.4",
+  "scope": "seven_graph_five_core_warm_start_validation",
+  "graphs": 7,
+  "questions": [1, 2, 3],
+  "npu_cores": [5],
+  "configurations": 21,
+  "makespan_improved": 16,
+  "retained_parent": 5,
+  "selected_regressions": 0,
+  "equal_added_budget": {"wins": 3, "ties": 1, "losses": 0},
+  "case_084_q2": {
+    "parent_makespan": 391700,
+    "selected_makespan": 285686,
+    "reduction_pct": 27.065100842481492,
+    "selected_added_copy_bytes": 322560,
+    "selected_spill_added_copy_bytes": 322560
+  },
+  "full_100_graph_new_run": false,
+  "cold_start_comparison": false
+}
