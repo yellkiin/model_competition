@@ -29,3 +29,19 @@ python -m research_a_orion_track_memory.run --cases 5 51 73 90 92 83 --questions
 主实验 `memory-1.3` + 当时 `adapter-1.3`，144 条方案有效、48 条同方案无 L2 有效。主 CSV 后用 1.4 汇总器重导出，原表保留；不得把重导出叫作以新适配器重跑。1.4 补记进程启动偏移、种子重评时间、正式一核语义、外部种子及从未启动作业恢复。
 
 本地 ORION 依赖由连接器所读源码函数体暂存，注释/文档字符串有缩减，并非字节一致的 Git checkout；双方使用同一依赖副本，官方评估器由原附件完整取得且未修改。PR 中不提交该依赖副本。目标图与 day01 原包的完整传输尚缺，所以不能声称已重放 092 的获胜候选。详见证据索引。
+
+
+---
+
+## memory-coherent-4.4（本 PR 增量）
+
+在 frozen-3.0 之上新增可组合候选源：`plugin_adaptive_v4.py` 与 `coherent_v4/`。它不替换现有 `plugin.py`，也不修改公共 solver/campaign。
+
+主要新增：
+- private-island 结构识别：大量独立小组件时禁止无条件全图深度分带；
+- capacity-bounded micro-wave：整组件闭合后分小批、批内分阶段交错，在驻留峰值与计算重叠之间取平衡；
+- 一般图保留 fixed-owner bands、Q1 producer release cut、有限 Tensor 端点集合迁移；
+- `make_proposer(Options(...))` 可关闭核迁移等自由度，便于和结构/Anytime线放到同一候选池；
+- `trusted_run.py --plugin research_a_orion_track_memory.plugin_adaptive_v4` 可直接实测，不改变旧 epochs/local 默认行为。
+
+实测见 `results/coherent_v4_20260925/`。七图五核 21 配置中 16 个 Makespan 严格下降、5 个保留；084 Q2/Q3 从 391,700 降到 285,686。详细机制见 `COHERENT_V4.md`。
