@@ -7,62 +7,8 @@ permissions:
   contents: read
   actions: read
 jobs:
-  freeze:
-    if: github.event.pull_request.head.ref == 'orion/track-anytime_wu'
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    permissions:
-      contents: write
-      actions: read
-    outputs:
-      code_commit: ${{ steps.source.outputs.commit }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: orion/track-anytime_wu
-          fetch-depth: 1
-          filter: blob:none
-          sparse-checkout: research_a_orion_track_anytime
-      - uses: actions/download-artifact@v4
-        with:
-          name: orion-anytime-wu-frozen-inputs
-          run-id: 36104651803
-          github-token: ${{ github.token }}
-          path: /tmp/source
-      - name: Materialize documented prior lineage, not experiments
-        id: source
-        shell: bash
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          import zipfile
-          with zipfile.ZipFile('/tmp/source/orion_anytime_wu_frozen.zip') as z:
-            for n in z.namelist():
-              if n.startswith('prior_pr26/'):z.extract(n,'.')
-          PY
-          python research_a_orion_track_anytime/materialize_lineage.py
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research_a_orion_track_anytime/*.py
-          if ! git diff --cached --quiet; then
-            git commit -m 'feat(anytime-wu): freeze complete executable independent source'
-            git push origin HEAD:orion/track-anytime_wu
-          fi
-          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          python - <<'PY'
-          from pathlib import Path
-          import zipfile,subprocess,json
-          d=Path('research_a_orion_track_anytime')
-          with zipfile.ZipFile('/tmp/wu_executable.zip','w',zipfile.ZIP_DEFLATED) as z:
-            for f in d.glob('*.py'):z.write(f,str(f))
-            z.writestr('WU_EXECUTION_COMMIT.json',json.dumps({'commit':subprocess.check_output(['git','rev-parse','HEAD']).decode().strip(),'policy':'wu-v1.1'}))
-          PY
-      - uses: actions/upload-artifact@v4
-        with:
-          name: wu-frozen-executable
-          path: /tmp/wu_executable.zip
   experiment:
-    needs: freeze
+    if: github.event.pull_request.head.ref == 'orion/track-anytime_wu'
     runs-on: ubuntu-latest
     timeout-minutes: 28
     strategy:
@@ -73,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.freeze.outputs.code_commit }}
+          ref: ff326e037312bec791efb465d7c0d161df84b8e3
           fetch-depth: 1
           filter: blob:none
           sparse-checkout: research_a_orion_track_anytime
@@ -83,10 +29,11 @@ jobs:
           run-id: 36104651803
           github-token: ${{ github.token }}
           path: /tmp/source
-      - name: Restore unchanged official inputs and raw selected-record provenance
+      - name: Restore immutable inputs and required dependency
         shell: bash
         run: |
           set -euo pipefail
+          python -m pip install --user psutil==7.0.0
           python - <<'PY'
           import zipfile
           from pathlib import Path
@@ -95,19 +42,20 @@ jobs:
               if n.startswith(('research_a_orion_anytime/','raw_day01/','题目/A题/','source_metadata/')):z.extract(n,'.')
           Path('/tmp/wu_results').mkdir()
           PY
-          python -c "import psutil"
       - name: Fixed official replay and actual cache diagnostics
         run: python -u -m research_a_orion_track_anytime.prepare --cases ${{ matrix.case }} --workers 1 --out /tmp/wu_results/preparation
-      - name: Same-machine warm then cold, same budgets, immutable official evaluator
+      - name: Same-machine warm then cold, matched budgets
         run: |
           python -u -m research_a_orion_track_anytime.runner --cases ${{ matrix.case }} --questions 1,2,3 --cores 2,5 --modes warm,cold --methods old,combined --seconds 30 --max-evaluations 16 --total-seconds 1400 --pair-seconds 60 --workers auto --max-workers 2 --seed-manifest /tmp/wu_results/preparation/seed_manifest.json --out /tmp/wu_results/paired30
           cat /tmp/wu_results/paired30/run_summary.json
-      - name: Persist the exact execution commit
+      - name: Persist execution source and dependencies
         if: always()
         run: |
           mkdir -p /tmp/wu_results/source
           cp research_a_orion_track_anytime/*.py /tmp/wu_results/source/
-          echo '${{ needs.freeze.outputs.code_commit }}' > /tmp/wu_results/EXECUTION_COMMIT.txt
+          echo 'ff326e037312bec791efb465d7c0d161df84b8e3' > /tmp/wu_results/EXECUTION_COMMIT.txt
+          python --version > /tmp/wu_results/python_version.txt
+          python -m pip show psutil > /tmp/wu_results/psutil_version.txt
       - uses: actions/upload-artifact@v4
         if: always()
         with:
