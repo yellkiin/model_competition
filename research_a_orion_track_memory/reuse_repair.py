@@ -9,13 +9,16 @@ from collections import defaultdict
 from copy import deepcopy
 import math
 import time
-from research_a_orion_anytime.core import plan_view, make_plan, bounds, planned_traffic\nfrom .policy import search_state
+from research_a_orion_anytime.core import plan_view, make_plan, bounds, planned_traffic
+from .policy import search_state
 
 VERSION = 'memory-reuse-2.2'
+
 
 def plan_key(p):
     return (tuple(sorted((int(u), s) for u, s in p['node_to_subgraph'].items())),
             tuple(tuple(x) for x in p['core_schedules']))
+
 
 def fixed_owner_epochs(g, plan, bins, cohort_size=0):
     """Retile the EXISTING mapping into dependency-depth epochs.
@@ -36,11 +39,13 @@ def fixed_owner_epochs(g, plan, bins, cohort_size=0):
     band_of = {u:min(bins-1, rank[depth[u]]*bins//max(1,len(levels))) for u in g.ops}
     return _pack_convex_epochs(g, owner, band_of, comp_index, cohort_size, len(plan['core_schedules']))
 
-def convex_coalesce(g, plan, cfg, q, max_nodes, max_rounds=3):
-    """Greedily coalesce adjacent SAME-core Tasks only after quotient validation.
 
-    Candidate preference uses exact pre-Spill tensor-set savings; the candidate
-    as a whole is not accepted without a makespan evaluation. Core mapping stays.
+def convex_coalesce(g, plan, cfg, q, max_nodes, max_rounds=3):
+    """Coalesce adjacent same-core Tasks only after quotient validation.
+
+    Shared touched bytes rank trials heuristically, NOT exact savings. The exact
+    pre-Spill total is recomputed for the finished candidate below. Acceptance
+    requires a makespan evaluation. Core mapping stays unchanged.
     """
     p=deepcopy(plan)
     for _ in range(max_rounds):
@@ -67,9 +72,10 @@ def convex_coalesce(g, plan, cfg, q, max_nodes, max_rounds=3):
         if not changed:break
     return p
 
+
 def _pack_convex_epochs(g, owner, band_of, comp_index, cohort_size, n):
-    # Within an epoch every cross-core edge raises rank. Grouping by
-    # (cohort,epoch,rank,core) therefore cannot create an owner-reentry cycle.
+    # Within each epoch, every cross-core edge raises switch rank. Internal
+    # dependency edges cannot leave a group and return through another owner.
     switch_rank={};parts=defaultdict(set)
     for u in g.topo:
         batch=comp_index[u]//cohort_size if cohort_size else 0
@@ -78,6 +84,7 @@ def _pack_convex_epochs(g, owner, band_of, comp_index, cohort_size, n):
         parts[batch,band_of[u],switch_rank[u],owner[u]].add(u)
     keys=sorted(parts)
     return make_plan([parts[k] for k in keys],[k[3] for k in keys],n)
+
 
 def parameter_epochs(g, plan, cfg, fraction):
     m,groups,owners,_=plan_view(g,plan); owner={u:owners[m[u]] for u in g.ops}
@@ -96,6 +103,7 @@ def parameter_epochs(g, plan, cfg, fraction):
         for u in by_depth[d]:band_of[u]=band
     comps=sorted(g.components,key=lambda c:min(c));ci={u:i for i,c in enumerate(comps) for u in c}
     return _pack_convex_epochs(g,owner,band_of,ci,0,len(plan['core_schedules']))
+
 
 def boundary_load_repair(g,plan,cfg,q,max_moves):
     """Local whole-subgraph migrations, trading tensor sets against load.
@@ -119,6 +127,7 @@ def boundary_load_repair(g,plan,cfg,q,max_moves):
         if best is None:break
         score,sg,p=best;owner[sg]=light
     return p
+
 
 def critical_task_migrations(g,plan,cfg,q,steps=12,deadline=None):
     """Bounded repair of critical Task releases, not total-load-only migration.
@@ -149,8 +158,6 @@ def critical_task_migrations(g,plan,cfg,q,steps=12,deadline=None):
             prev_core[owner[s]]=s
         chain=[];u=max(finish,key=finish.get)
         while u is not None:chain.append(u);u=critical_parent[u]
-        # Fixed small neighbourhood: expensive critical Tasks first, alternate
-        # positions along the chain so equal heavy tasks are not always starved.
         focus=sorted(chain,key=lambda x:-(weight[x]+(reads[x]+writes[x])/cfg.bandwidth))[:20]
         best=None
         for sg in focus:
@@ -172,11 +179,9 @@ def propose(g,n,cfg,q,incumbent=None,feedback=None,deadline=None):
     m,groups,owner,order=plan_view(g,p)
     if n!=len(p['core_schedules']):raise ValueError('NPU core count mismatch')
     stream=[]
-    global_lb=bounds(g,cfg,n,q)['global_lower']
-    upper=(incumbent.get('official_result') or {}).get('makespan',math.inf)
-    if upper <= 1.04*global_lb:
-        return
-    # Semantic retiming, NOT a new global partition or a replacement controller.
+    state=search_state(g,cfg,n,q,incumbent)
+    global_lb=state['lower'];upper=state['upper']
+    if not state['should_search']:return
     for count in (8,16,32,64,4,128):
         stream.append((f'fixed_owner_epochs_{count}',lambda c=count:fixed_owner_epochs(g,p,c),{'bins':count,'cores_unchanged':True}))
     if q==1:
@@ -206,9 +211,7 @@ def propose(g,n,cfg,q,incumbent=None,feedback=None,deadline=None):
                               'pre_spill_saved_bytes':old-traffic,'not_a_performance_prediction':True},
                        bounds=bd,mechanism=meta,generation_seconds=time.monotonic()-started)
         except ValueError as exc:
-            # A failed construction is kept as feedback, not a scored candidate.
             if feedback is not None:feedback.append(dict(name=name,status='structural_rejected',error=str(exc)))
-
     if q==1 and upper>1.6*global_lb:
         for step,trial in critical_task_migrations(g,p,cfg,q,deadline=deadline):
             if deadline is not None and time.monotonic()>=deadline:return
