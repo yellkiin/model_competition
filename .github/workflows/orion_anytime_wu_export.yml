@@ -1,85 +1,117 @@
-name: ORION Anytime Wu frozen input export
+name: ORION Anytime Wu real paired study
 on:
   pull_request:
     branches: [main]
     paths: ['.github/workflows/orion_anytime_wu_export.yml']
 permissions:
   contents: read
+  actions: read
 jobs:
-  export:
+  freeze:
     if: github.event.pull_request.head.ref == 'orion/track-anytime_wu'
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 8
+    permissions:
+      contents: write
+      actions: read
+    outputs:
+      code_commit: ${{ steps.source.outputs.commit }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: b513a98f86183a8c1b41d67a547f06fa9d578e2a
+          ref: orion/track-anytime_wu
           fetch-depth: 1
           filter: blob:none
-          sparse-checkout: |
-            research_a_orion_anytime
-            research_a_orion_review_3pc
-            research_a_orion_track_anytime
-            research_a_orion_track_memory
-            research_a_orion_track_structure
-            tools/a_input_payloads
-            tools/restore_a_inputs.py
-            题目/A题
-            调研/A题_文献库
-            调研/A题_文献.json
-      - name: Restore only selected original graph bytes
-        run: |
-          python tools/restore_a_inputs.py --payload-dir tools/a_input_payloads --output-dir /tmp/wu_inputs --cases 1 24 44 59 83 84 86
-      - name: Pack frozen code, rules, literature, selected raw records
+          sparse-checkout: research_a_orion_track_anytime
+      - uses: actions/download-artifact@v4
+        with:
+          name: orion-anytime-wu-frozen-inputs
+          run-id: 36104651803
+          github-token: ${{ github.token }}
+          path: /tmp/source
+      - name: Materialize documented prior lineage, not experiments
+        id: source
         shell: bash
         run: |
+          set -euo pipefail
           python - <<'PY'
-          import io,json,subprocess,zipfile
+          import zipfile
+          with zipfile.ZipFile('/tmp/source/orion_anytime_wu_frozen.zip') as z:
+            for n in z.namelist():
+              if n.startswith('prior_pr26/'):z.extract(n,'.')
+          PY
+          python research_a_orion_track_anytime/materialize_lineage.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research_a_orion_track_anytime/*.py
+          if ! git diff --cached --quiet; then
+            git commit -m 'feat(anytime-wu): freeze complete executable independent source'
+            git push origin HEAD:orion/track-anytime_wu
+          fi
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          python - <<'PY'
           from pathlib import Path
-          cases={'001','024','044','059','083','084','086'}
-          out=Path('/tmp/orion_anytime_wu_frozen.zip')
-          off=Path('题目/A题/通用神经网络处理器下的多核调度问题  附件')
-          with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=3) as w:
-            for folder in ['research_a_orion_anytime','research_a_orion_review_3pc','research_a_orion_track_anytime','research_a_orion_track_memory','research_a_orion_track_structure']:
-              d=Path(folder)
-              if not d.exists(): continue
-              for f in d.rglob('*'):
-                if not f.is_file() or '__pycache__' in f.parts: continue
-                if f.suffix in {'.py','.md','.csv','.json','.ps1','.zip'} and not ('shard_0' in f.parts or 'shard_1' in f.parts) and f.stat().st_size<8000000:
-                  w.write(f,str(f))
-            for f in off.joinpath('code').rglob('*'):
-              if f.is_file(): w.write(f,str(f))
-            for f in Path('题目/A题').glob('*.docx'): w.write(f,str(f))
-            for f in Path('/tmp/wu_inputs').iterdir():
-              if f.is_file():w.write(f,str(off/'data'/f.name))
-            for f in Path('调研/A题_文献库').glob('*'):
-              if f.is_file():w.write(f,str(f))
-            meta=Path('调研/A题_文献.json')
-            if meta.exists():w.write(meta,str(meta))
-            for prefix in ['A12_','A16_','A17_','A33_','A40_','A42_','A49_']:
-              for f in Path('调研/A题_文献库/pdf').glob(prefix+'*.pdf'):w.write(f,str(f))
-            for shard,mname in [('shard_0','TRANSFER_PARTS.json'),('shard_1','ARCHIVE_PARTS.json')]:
-              d=Path('research_a_orion_anytime/team_results/day01')/shard/'final'
-              m=json.loads((d/mname).read_text(encoding='utf-8-sig'))
-              zpath=Path('/tmp')/(shard+'.zip')
-              with zpath.open('wb') as dst:
-                for part in m['parts']:dst.write((d/part['name']).read_bytes())
-              with zipfile.ZipFile(zpath) as z:
-                for member in z.namelist():
-                  if not member.endswith('/') and any('case_'+c+'_q' in member for c in cases):
-                    w.writestr('raw_day01/'+shard+'/'+member,z.read(member))
-              for f in d.glob('*.json'):w.write(f,'source_metadata/'+shard+'/'+f.name)
-            subprocess.run(['git','fetch','--depth=1','--filter=blob:none','origin','eaf9a67f86d54b87e3a6f80d815bea5593bf8d0e'],check=True)
-            names=subprocess.check_output(['git','ls-tree','-r','--name-only','FETCH_HEAD','research_a_orion_track_anytime']).decode().splitlines()
-            for name in names:
-              b=subprocess.check_output(['git','show','FETCH_HEAD:'+name])
-              w.writestr('prior_pr26/'+name,b)
-            w.writestr('WU_SOURCE_MANIFEST.json',json.dumps({'main':'b513a98f86183a8c1b41d67a547f06fa9d578e2a','prior_anytime':'eaf9a67f86d54b87e3a6f80d815bea5593bf8d0e','cases':sorted(cases),'purpose':'source and original evidence export, not new experiments'},indent=2))
-          print('PACKED',out.stat().st_size)
+          import zipfile,subprocess,json
+          d=Path('research_a_orion_track_anytime')
+          with zipfile.ZipFile('/tmp/wu_executable.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for f in d.glob('*.py'):z.write(f,str(f))
+            z.writestr('WU_EXECUTION_COMMIT.json',json.dumps({'commit':subprocess.check_output(['git','rev-parse','HEAD']).decode().strip(),'policy':'wu-v1.1'}))
           PY
       - uses: actions/upload-artifact@v4
         with:
+          name: wu-frozen-executable
+          path: /tmp/wu_executable.zip
+  experiment:
+    needs: freeze
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    strategy:
+      fail-fast: false
+      max-parallel: 7
+      matrix:
+        case: ['001','024','044','059','083','084','086']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.freeze.outputs.code_commit }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: research_a_orion_track_anytime
+      - uses: actions/download-artifact@v4
+        with:
           name: orion-anytime-wu-frozen-inputs
-          path: /tmp/orion_anytime_wu_frozen.zip
-          compression-level: 0
+          run-id: 36104651803
+          github-token: ${{ github.token }}
+          path: /tmp/source
+      - name: Restore unchanged official inputs and raw selected-record provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import zipfile
+          from pathlib import Path
+          with zipfile.ZipFile('/tmp/source/orion_anytime_wu_frozen.zip') as z:
+            for n in z.namelist():
+              if n.startswith(('research_a_orion_anytime/','raw_day01/','题目/A题/','source_metadata/')):z.extract(n,'.')
+          Path('/tmp/wu_results').mkdir()
+          PY
+          python -c "import psutil"
+      - name: Fixed official replay and actual cache diagnostics
+        run: python -u -m research_a_orion_track_anytime.prepare --cases ${{ matrix.case }} --workers 1 --out /tmp/wu_results/preparation
+      - name: Same-machine warm then cold, same budgets, immutable official evaluator
+        run: |
+          python -u -m research_a_orion_track_anytime.runner --cases ${{ matrix.case }} --questions 1,2,3 --cores 2,5 --modes warm,cold --methods old,combined --seconds 30 --max-evaluations 16 --total-seconds 1400 --pair-seconds 60 --workers auto --max-workers 2 --seed-manifest /tmp/wu_results/preparation/seed_manifest.json --out /tmp/wu_results/paired30
+          cat /tmp/wu_results/paired30/run_summary.json
+      - name: Persist the exact execution commit
+        if: always()
+        run: |
+          mkdir -p /tmp/wu_results/source
+          cp research_a_orion_track_anytime/*.py /tmp/wu_results/source/
+          echo '${{ needs.freeze.outputs.code_commit }}' > /tmp/wu_results/EXECUTION_COMMIT.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wu-real-case-${{ matrix.case }}
+          path: /tmp/wu_results
+          compression-level: 6
           if-no-files-found: error
