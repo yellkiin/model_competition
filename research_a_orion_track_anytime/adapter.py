@@ -101,13 +101,31 @@ def solve(request):
     expanded, rounds, last_fifo_source = False, 0, None
     fifo_enabled = request['method'] in ('combined','fifo')
     adaptive = request['method'] in ('budget','combined')
+    revised = request.get('revision') == 'v2'
+    last_local_source = None
 
     def add_streams():
-        nonlocal expanded, last_fifo_source
+        nonlocal expanded, last_fifo_source, last_local_source, pool, queued
         if not expanded and best:
             streams.extend([('stage', iter(stage_candidates(g, n, cfg, q))),
                             ('finer', iter(fine_candidates(g, n, cfg, q)))])
             expanded = True
+        if revised and best:
+            source = plan_key(best['plan'])
+            if source != last_local_source:
+                # Discard only stale incumbent-specific streams; global construction remains.
+                retained = [(name, stream) for name, stream in streams if name not in ('fifo','upstream_local')]
+                streams.clear(); streams.extend(retained)
+                stale = [c for c in pool if c['family'].startswith('anytime/fifo')]
+                pool[:] = [c for c in pool if not c['family'].startswith('anytime/fifo')]
+                for c in stale:queued.discard(plan_key(c['plan']))
+                state['stale_fifo_discarded'] = state.get('stale_fifo_discarded',0)+len(stale)
+                def anchored(parent=best):
+                    yield from neighbours(g,parent['plan'],cfg,q,parent['official_result'],limit=12)
+                    yield from mutations(g,parent['plan'],cfg,q,parent['official_result'],1)
+                    yield from joint_window(g,parent['plan'],cfg,q,parent['official_result'],1)
+                streams.appendleft(('upstream_local',iter(anchored())))
+                last_local_source=source
         if fifo_enabled and best:
             source = plan_key(best['plan'])
             if source != last_fifo_source:
@@ -172,12 +190,14 @@ def solve(request):
     checkpoint()
     while time.monotonic() < deadline and calls < request.get('max_evaluations', 64):
         best_time = best['official_result']['makespan'] if best else None
-        reason = stop_reason(history, best_time, lower, request.get('gap_tolerance', .02),
+        gap = request.get('gap_tolerance', .02)
+        if revised:gap = gap/(1+gap) # exactly the original solver's U/L threshold
+        reason = stop_reason(history, best_time, lower, gap,
                              request.get('stagnation_calls', 12), request.get('minimum_calls', 16)) if adaptive else None
         if reason == 'stagnation_heuristic_not_optimality':
             statistics_now = family_statistics(history)
             untried_pool = any(statistics_now.get(c['family'], {}).get('calls', 0) == 0 for c in pool)
-            constructive_pending = any(name in ('frontier', 'stage', 'finer') for name, _ in streams)
+            constructive_pending = any(name in (('frontier','stage','finer','upstream_local') if revised else ('frontier','stage','finer')) for name,_ in streams)
             if untried_pool or constructive_pending:
                 reason = None
                 state['stagnation_deferred_for_family_coverage'] = True
