@@ -1,0 +1,20 @@
+{
+  "source_zip": "Figure_1_1_v4_14_annotations.zip",
+  "source_pdf": "workflow_mono_v3.pdf",
+  "annotations": [
+    {"id":1,"comment_original":"这个字改大一点","source_screenshot":"images/annotation_01.png","implemented":"“命中读”22→29单位，移动到外弧右侧；不再靠白色遮盖覆盖线条。"},
+    {"id":2,"comment_original":"删掉这个部分","source_screenshot":"images/annotation_02.png","implemented":"删除顶部总标题、副标题、图号及两条标题横线，视窗从235单位处开始。"},
+    {"id":3,"comment_original":"这个箭头调整一下，有点变形","source_screenshot":"images/annotation_03.png","implemented":"删除B迁移旧三股曲线，换成起终点清楚的单条平滑向下曲线。"},
+    {"id":4,"comment_original":"左边的两个箭头备注上COPY_IN和COPY_OUT，然后删去右边COPY_IN的并且调整箭头位置，让箭头能够完整露出来，不要遮挡","source_screenshot":"images/annotation_04.png","implemented":"左侧出核弧标COPY_OUT、入核弧标COPY_IN；删除右侧重复标注；四条箭头端部完整露出。"},
+    {"id":5,"comment_original":"首先删掉这个位置的公式，然后把文字“输入：计算图......”改为原始计算图\n构造大致与02相似","source_screenshot":"images/annotation_05.png","implemented":"删除G=(T∪O,E)；输入说明换成框内“原始计算图”，层级与02一致。"},
+    {"id":6,"comment_original":"这个公式提到上面那张图的位置上去，作为上面那张图的说明，保持格式不变","source_screenshot":"images/annotation_06.png","implemented":"原Computer Modern划分集合公式原路径不变，移到上方原始图的右上留白。"},
+    {"id":7,"comment_original":"这里与02的“依据收益与成本...”那里的形式一样，也加一个方框框起来。这个框的标题你自己起一个或者用论文中的名字（主要是表达由上面那张图通过切图后放到k1、k2中得到下面那张图），把“原始算子与.....” 依旧保持当前的样式（作为副标题），然后你生成标题参考02“依据收益与成本...”这个标题样式。然后放置在上下两个图的中间，承接上一个图的箭头，并从这伸出一个箭头指向下方那个图。","source_screenshot":"images/annotation_07.png","implemented":"新增“子图划分与归核”框，保留原副标题及其字号，补上图→框→核心布局两段连接。"},
+    {"id":8,"comment_original":"把这里k1和k2改为核心k1与核心k2","source_screenshot":"images/annotation_08.png","implemented":"复用第三版“核心k_1/核心k_2”中文与数学组合对象，补全左侧两条核心标签。"},
+    {"id":9,"comment_original":"删掉这一部分","source_screenshot":"images/annotation_09.png","implemented":"删除“停止时”、输出短箭头和输出区域；反馈改进和预算内迭代回路保留。"},
+    {"id":10,"comment_original":"删掉这条横着的虚线","source_screenshot":"images/annotation_10.png","implemented":"仅删除DDR和L2间的水平虚线，保留并重画填充弧线。"},
+    {"id":11,"comment_original":"把这个立方体的长度改短，然后删掉文字部分的Q3。","source_screenshot":"images/annotation_11.png","implemented":"L2前面宽度457→330单位，保留剖面排线；文字为“只读 L2 · FIFO”。"},
+    {"id":12,"comment_original":"删掉这一部分，删掉Q3","source_screenshot":"images/annotation_12.png","implemented":"标题改为“FIFO 复用时序”，只删除末尾“ · Q3”。"},
+    {"id":13,"comment_original":"删掉这段文字，然后和02多领域协同顶上那个依据收益与成本分配搜索机会那个标题的框，然后做一个样式差不多的，写上总体评价部分，表达这个意思。","source_screenshot":"images/annotation_13.png","implemented":"删除“候选示意：迁移B”；新增与02层级相近的“总体评价”标题框。"},
+    {"id":14,"comment_original":"让它对应的那个虚线的箭头弧度往它这边弯曲一点，弧度要大一点， 贴近这段文字。","source_screenshot":"images/annotation_14.png","implemented":"将填充虚线改为左向大弧，更接近原两行说明，起终点仍为DDR→L2。"}
+  ]
+}
