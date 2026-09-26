@@ -1,0 +1,25 @@
+{
+  "source_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw60\\result.json.gz",
+  "study_id": "shard0:fixed_plan:case_080:cap262144:bw60",
+  "cache_event_rows": 13,
+  "timeline_rows": 20,
+  "focus_tensors": [
+    1000000001,
+    1000000187
+  ],
+  "first_cross_core_ddr_overlap_in_selection": [
+    {
+      "core": 0,
+      "op_id": 1000001675,
+      "start": 0,
+      "end": 345
+    },
+    {
+      "core": 1,
+      "op_id": 1000001837,
+      "start": 0,
+      "end": 345
+    }
+  ],
+  "description": "Saved official event trace: tensor 1000000001 is inserted, evicted, then misses again; tensor 1000000187 has hit events. Pipe/DDR table shows recorded operation intervals; overlap is temporal, not a quantified causal bandwidth effect."
+}

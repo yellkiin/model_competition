@@ -1,0 +1,83 @@
+{
+  "title": "面向多核计算图的联合调度与分层存储优化",
+  "title_lines": [
+    "面向多核计算图的联合调度",
+    "与分层存储优化"
+  ],
+  "keywords": [
+    "计算图调度",
+    "联合决策",
+    "多邻域迭代",
+    "分层存储",
+    "先进先出缓存"
+  ],
+  "abstract_tex_path": "摘要.tex",
+  "abstract_evidence_path": "摘要依据.json",
+  "references_evidence_path": "引用依据.json",
+  "first_chapters_evidence_path": "../求解/题意写作依据.json",
+  "first_chapters_review_path": "../求解/前三章审阅.json",
+  "chapters": [
+    {
+      "chapter_id": "section1",
+      "title": "问题重述",
+      "role": "preliminary",
+      "order": 1,
+      "tex_path": "章节内容/01_问题重述.tex"
+    },
+    {
+      "chapter_id": "section2",
+      "title": "模型假设",
+      "role": "preliminary",
+      "order": 2,
+      "tex_path": "章节内容/02_模型假设.tex"
+    },
+    {
+      "chapter_id": "section3",
+      "title": "关键性符号说明",
+      "role": "preliminary",
+      "order": 3,
+      "tex_path": "章节内容/03_关键性符号说明.tex"
+    },
+    {
+      "chapter_id": "q1",
+      "title": "问题一求解与分析",
+      "role": "problem",
+      "order": 4,
+      "tex_path": "章节内容/04_问题一.tex",
+      "abstract_type": "optimization",
+      "depends_on_previous": false
+    },
+    {
+      "chapter_id": "q2",
+      "title": "问题二求解与分析",
+      "role": "problem",
+      "order": 5,
+      "tex_path": "章节内容/05_问题二.tex",
+      "abstract_type": "optimization",
+      "depends_on_previous": true
+    },
+    {
+      "chapter_id": "q3",
+      "title": "问题三求解与分析",
+      "role": "problem",
+      "order": 6,
+      "tex_path": "章节内容/06_问题三.tex",
+      "abstract_type": "optimization",
+      "depends_on_previous": true
+    },
+    {
+      "chapter_id": "section7",
+      "title": "模型评价与展望",
+      "role": "evaluation",
+      "order": 7,
+      "tex_path": "章节内容/90_模型评价与展望.tex"
+    },
+    {
+      "chapter_id": "section8",
+      "title": "参考文献",
+      "role": "references",
+      "order": 8,
+      "tex_path": "章节内容/98_参考文献.tex"
+    }
+  ]
+}

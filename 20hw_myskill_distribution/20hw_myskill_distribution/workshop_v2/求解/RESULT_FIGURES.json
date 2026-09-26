@@ -1,0 +1,185 @@
+[
+  {
+    "id": "q1_mean",
+    "question": 1,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_mean.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_mean.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_mean.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "means.csv",
+      "pairs.csv"
+    ],
+    "meaning": "各核数平均加速比；第三问以同一方案无L2评价对照"
+  },
+  {
+    "id": "q2_mean",
+    "question": 2,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_mean.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_mean.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_mean.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "means.csv",
+      "pairs.csv"
+    ],
+    "meaning": "各核数平均加速比；第三问以同一方案无L2评价对照"
+  },
+  {
+    "id": "q3_mean",
+    "question": 3,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_mean.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_mean.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_mean.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "means.csv",
+      "pairs.csv"
+    ],
+    "meaning": "各核数平均加速比；第三问以同一方案无L2评价对照"
+  },
+  {
+    "id": "q1_distribution",
+    "question": 1,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_distribution.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_distribution.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_distribution.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "main.csv"
+    ],
+    "meaning": "第一问2至5核100图经验累计分布"
+  },
+  {
+    "id": "q1_anytime",
+    "question": 1,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_anytime.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_anytime.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_anytime.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "anytime.csv"
+    ],
+    "meaning": "仅使用采样点前已经取得的方案；灰色不以前缀后的结果补齐"
+  },
+  {
+    "id": "q1_bound",
+    "question": 1,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_bound.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_bound.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_bound.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "main.csv"
+    ],
+    "meaning": "第一问五核周期及全局下界；等值线不是最优性证明"
+  },
+  {
+    "id": "q2_distribution",
+    "question": 2,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_distribution.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_distribution.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_distribution.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "main.csv"
+    ],
+    "meaning": "两个独立寻优结果的逐图配对分布；无显著性星号"
+  },
+  {
+    "id": "q2_copy",
+    "question": 2,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_copy.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_copy.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_copy.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "main.csv"
+    ],
+    "meaning": "按额外COPY字节变化排序分为四组，每组25张图且每一连线均为同图配对"
+  },
+  {
+    "id": "q2_sources",
+    "question": 2,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_sources.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_sources.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_sources.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "source_summary.csv"
+    ],
+    "meaning": "实际调用及改善记录的描述性比较，不解释为关闭来源的因果消融"
+  },
+  {
+    "id": "q3_pairs",
+    "question": 3,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_pairs.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_pairs.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_pairs.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "pairs.csv"
+    ],
+    "meaning": "每个核数均为100图同一完整方案缓存对照"
+  },
+  {
+    "id": "q3_hit_gain",
+    "question": 3,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_hit_gain.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_hit_gain.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_hit_gain.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "pairs.csv"
+    ],
+    "meaning": "五核缓存命中与周期改善的逐图关系，不进行因果拟合"
+  },
+  {
+    "id": "q3_parameters",
+    "question": 3,
+    "language": "zh-CN",
+    "files": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_parameters.pdf",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_parameters.svg",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_parameters.png"
+    ],
+    "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+    "inputs": [
+      "../studies/cache_parameter_grid.csv"
+    ],
+    "meaning": "六图54组固定方案实测参数格；12组重新调整方案不混入"
+  }
+]

@@ -1,0 +1,1586 @@
+{
+  "schema": 1,
+  "source_policy": "saved plan, summary and official response only; original grid CSV locates runs but supplies no output numbers",
+  "shards": {
+    "shard0": {
+      "run_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run",
+      "diagnostic_count": 24,
+      "cache_grid_count": 22,
+      "cache_cases": [
+        "case_001",
+        "case_080"
+      ],
+      "cache_grid_locator": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1": {
+      "run_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1",
+      "diagnostic_count": 6,
+      "cache_grid_count": 22,
+      "cache_cases": [
+        "case_006",
+        "case_044"
+      ],
+      "cache_grid_locator": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2": {
+      "run_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2",
+      "diagnostic_count": 2,
+      "cache_grid_count": 22,
+      "cache_cases": [
+        "case_004",
+        "case_046"
+      ],
+      "cache_grid_locator": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    }
+  },
+  "diagnostic_groups": {
+    "shard0": {
+      "case_020_q3_n2": {
+        "arms": [
+          {
+            "study_id": "shard0:case_020_q3_n2:f",
+            "components": "f",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 266580,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n2:m",
+            "components": "m",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 266580,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n2:mf",
+            "components": "mf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 266580,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n2:s",
+            "components": "s",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 266580,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n2:sf",
+            "components": "sf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 266580,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n2:sm",
+            "components": "sm",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 266580,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          }
+        ],
+        "same_seed_plan_among_present": true,
+        "all_seed_plans_present": true,
+        "same_budget": true,
+        "same_initial_makespan": true
+      },
+      "case_020_q3_n3": {
+        "arms": [
+          {
+            "study_id": "shard0:case_020_q3_n3:f",
+            "components": "f",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 177950,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n3:m",
+            "components": "m",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 177950,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n3:mf",
+            "components": "mf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 177950,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n3:s",
+            "components": "s",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 177950,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n3:sf",
+            "components": "sf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 177950,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_020_q3_n3:sm",
+            "components": "sm",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 177950,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          }
+        ],
+        "same_seed_plan_among_present": true,
+        "all_seed_plans_present": true,
+        "same_budget": true,
+        "same_initial_makespan": true
+      },
+      "case_021_q3_n4": {
+        "arms": [
+          {
+            "study_id": "shard0:case_021_q3_n4:f",
+            "components": "f",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 1550324,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_021_q3_n4:m",
+            "components": "m",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 1550324,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_021_q3_n4:mf",
+            "components": "mf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 1550324,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_021_q3_n4:s",
+            "components": "s",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 1550324,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_021_q3_n4:sf",
+            "components": "sf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 1550324,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_021_q3_n4:sm",
+            "components": "sm",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 1550324,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          }
+        ],
+        "same_seed_plan_among_present": true,
+        "all_seed_plans_present": true,
+        "same_budget": true,
+        "same_initial_makespan": true
+      },
+      "case_036_q3_n2": {
+        "arms": [
+          {
+            "study_id": "shard0:case_036_q3_n2:f",
+            "components": "f",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 466068,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_036_q3_n2:m",
+            "components": "m",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 466068,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_036_q3_n2:mf",
+            "components": "mf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 466068,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_036_q3_n2:s",
+            "components": "s",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 466068,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_036_q3_n2:sf",
+            "components": "sf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 466068,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard0:case_036_q3_n2:sm",
+            "components": "sm",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 466068,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          }
+        ],
+        "same_seed_plan_among_present": true,
+        "all_seed_plans_present": true,
+        "same_budget": true,
+        "same_initial_makespan": true
+      }
+    },
+    "shard1": {
+      "case_059_q3_n2": {
+        "arms": [
+          {
+            "study_id": "shard1:case_059_q3_n2:f",
+            "components": "f",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 369318,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard1:case_059_q3_n2:m",
+            "components": "m",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 369318,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard1:case_059_q3_n2:mf",
+            "components": "mf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 369318,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard1:case_059_q3_n2:s",
+            "components": "s",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 369318,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard1:case_059_q3_n2:sf",
+            "components": "sf",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 369318,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          },
+          {
+            "study_id": "shard1:case_059_q3_n2:sm",
+            "components": "sm",
+            "budget_seconds": 120.0,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 369318,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": true
+          }
+        ],
+        "same_seed_plan_among_present": true,
+        "all_seed_plans_present": true,
+        "same_budget": true,
+        "same_initial_makespan": true
+      }
+    },
+    "shard2": {
+      "case_076_q1_n4": {
+        "arms": [
+          {
+            "study_id": "shard2:case_076_q1_n4:m",
+            "components": "m",
+            "budget_seconds": 4.8360000000102445,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 1617717,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": null
+          },
+          {
+            "study_id": "shard2:case_076_q1_n4:s",
+            "components": "s",
+            "budget_seconds": 4.8360000000102445,
+            "seed_mode": "warm",
+            "seed_plan_present": true,
+            "initial_makespan": 1617717,
+            "response_status": "ok",
+            "audit_ok": true,
+            "plan_pair_same": null
+          }
+        ],
+        "same_seed_plan_among_present": true,
+        "all_seed_plans_present": true,
+        "same_budget": true,
+        "same_initial_makespan": true
+      }
+    }
+  },
+  "cache_fixed_plan_groups": {
+    "shard0": {
+      "case_001": {
+        "cells": [
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap262144:bw60",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap262144:bw250",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap262144:bw500",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap1048576:bw60",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap1048576:bw250",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": true
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap1048576:bw500",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap4194304:bw60",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap4194304:bw250",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_001:cap4194304:bw500",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          }
+        ],
+        "same_plan_all_cells": true,
+        "count": 9
+      },
+      "case_080": {
+        "cells": [
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap262144:bw60",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap262144:bw250",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap262144:bw500",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap1048576:bw60",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap1048576:bw250",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": true
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap1048576:bw500",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap4194304:bw60",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap4194304:bw250",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard0:fixed_plan:case_080:cap4194304:bw500",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          }
+        ],
+        "same_plan_all_cells": true,
+        "count": 9
+      }
+    },
+    "shard1": {
+      "case_006": {
+        "cells": [
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap262144:bw60",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap262144:bw250",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap262144:bw500",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap1048576:bw60",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap1048576:bw250",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": true
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap1048576:bw500",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap4194304:bw60",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap4194304:bw250",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_006:cap4194304:bw500",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          }
+        ],
+        "same_plan_all_cells": true,
+        "count": 9
+      },
+      "case_044": {
+        "cells": [
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap262144:bw60",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap262144:bw250",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap262144:bw500",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap1048576:bw60",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap1048576:bw250",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": true
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap1048576:bw500",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap4194304:bw60",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap4194304:bw250",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard1:fixed_plan:case_044:cap4194304:bw500",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          }
+        ],
+        "same_plan_all_cells": true,
+        "count": 9
+      }
+    },
+    "shard2": {
+      "case_004": {
+        "cells": [
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap262144:bw60",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap262144:bw250",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap262144:bw500",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap1048576:bw60",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap1048576:bw250",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": true
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap1048576:bw500",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap4194304:bw60",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap4194304:bw250",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_004:cap4194304:bw500",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          }
+        ],
+        "same_plan_all_cells": true,
+        "count": 9
+      },
+      "case_046": {
+        "cells": [
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap262144:bw60",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap262144:bw250",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap262144:bw500",
+            "capacity_bytes": 262144,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap1048576:bw60",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap1048576:bw250",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": true
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap1048576:bw500",
+            "capacity_bytes": 1048576,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap4194304:bw60",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 60,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap4194304:bw250",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 250,
+            "same_main_plan": true,
+            "default": false
+          },
+          {
+            "study_id": "shard2:fixed_plan:case_046:cap4194304:bw500",
+            "capacity_bytes": 4194304,
+            "bandwidth_bytes_per_cycle": 500,
+            "same_main_plan": true,
+            "default": false
+          }
+        ],
+        "same_plan_all_cells": true,
+        "count": 9
+      }
+    }
+  },
+  "source_paths": {
+    "shard0:case_020_q3_n2:f": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\f\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\f\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\f\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\f\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\f\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\f\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n2:m": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\m\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\m\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\m\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\m\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\m\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\m\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n2:mf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\mf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\mf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\mf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\mf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\mf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\mf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n2:s": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\s\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\s\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\s\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\s\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\s\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\s\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n2:sf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n2:sm": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sm\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sm\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sm\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sm\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sm\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n2\\sm\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n3:f": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\f\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\f\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\f\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\f\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\f\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\f\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n3:m": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\m\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\m\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\m\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\m\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\m\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\m\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n3:mf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\mf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\mf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\mf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\mf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\mf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\mf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n3:s": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\s\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\s\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\s\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\s\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\s\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\s\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n3:sf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_020_q3_n3:sm": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sm\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sm\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sm\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sm\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sm\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_020_q3_n3\\sm\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_021_q3_n4:f": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\f\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\f\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\f\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\f\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\f\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\f\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_021_q3_n4:m": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\m\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\m\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\m\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\m\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\m\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\m\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_021_q3_n4:mf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\mf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\mf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\mf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\mf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\mf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\mf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_021_q3_n4:s": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\s\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\s\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\s\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\s\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\s\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\s\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_021_q3_n4:sf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_021_q3_n4:sm": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sm\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sm\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sm\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sm\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sm\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_021_q3_n4\\sm\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_036_q3_n2:f": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\f\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\f\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\f\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\f\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\f\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\f\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_036_q3_n2:m": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\m\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\m\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\m\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\m\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\m\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\m\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_036_q3_n2:mf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\mf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\mf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\mf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\mf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\mf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\mf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_036_q3_n2:s": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\s\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\s\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\s\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\s\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\s\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\s\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_036_q3_n2:sf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:case_036_q3_n2:sm": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sm\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sm\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sm\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sm\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sm\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\diagnostics\\case_036_q3_n2\\sm\\same_plan_no_l2_result.json.gz"
+    },
+    "shard0:fixed_plan:case_001:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_001:cap262144:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_001:cap262144:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap262144_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_001:cap1048576:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap1048576_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap1048576_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap1048576_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_001:cap1048576:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_001:cap1048576:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap1048576_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap1048576_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap1048576_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_001:cap4194304:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_001:cap4194304:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_001:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_001_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap262144:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap262144:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap262144_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap1048576:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap1048576_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap1048576_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap1048576_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap1048576:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap1048576:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap1048576_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap1048576_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap1048576_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap4194304:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap4194304:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:fixed_plan:case_080:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\fixed\\case_080_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:bounded_readaptation:case_001:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_001_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_001_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_001_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:bounded_readaptation:case_001:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_001_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_001_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_001_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_001_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:bounded_readaptation:case_080:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_080_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_080_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_080_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard0:bounded_readaptation:case_080:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_080_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_080_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\adapted\\case_080_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\jobs\\case_080_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:case_059_q3_n2:f": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\f\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\f\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\f\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\f\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\f\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\f\\same_plan_no_l2_result.json.gz"
+    },
+    "shard1:case_059_q3_n2:m": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\m\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\m\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\m\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\m\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\m\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\m\\same_plan_no_l2_result.json.gz"
+    },
+    "shard1:case_059_q3_n2:mf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\mf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\mf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\mf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\mf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\mf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\mf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard1:case_059_q3_n2:s": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\s\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\s\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\s\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\s\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\s\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\s\\same_plan_no_l2_result.json.gz"
+    },
+    "shard1:case_059_q3_n2:sf": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sf\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sf\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sf\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sf\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sf\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sf\\same_plan_no_l2_result.json.gz"
+    },
+    "shard1:case_059_q3_n2:sm": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sm\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sm\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sm\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sm\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sm\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\diagnostics\\case_059_q3_n2\\sm\\same_plan_no_l2_result.json.gz"
+    },
+    "shard1:fixed_plan:case_006:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_006:cap262144:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_006:cap262144:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap262144_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_006:cap1048576:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap1048576_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap1048576_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap1048576_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_006:cap1048576:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_006:cap1048576:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap1048576_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap1048576_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap1048576_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_006:cap4194304:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_006:cap4194304:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_006:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_006_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap262144:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap262144:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap262144_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap1048576:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap1048576_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap1048576_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap1048576_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap1048576:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap1048576:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap1048576_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap1048576_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap1048576_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap4194304:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap4194304:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:fixed_plan:case_044:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\fixed\\case_044_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:bounded_readaptation:case_006:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_006_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_006_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_006_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:bounded_readaptation:case_006:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_006_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_006_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_006_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_006_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:bounded_readaptation:case_044:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_044_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_044_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_044_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard1:bounded_readaptation:case_044:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_044_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_044_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\adapted\\case_044_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\jobs\\case_044_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:case_076_q1_n4:m": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\m\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\m\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\m\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\m\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\m\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\m\\same_plan_no_l2_result.json.gz"
+    },
+    "shard2:case_076_q1_n4:s": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\s\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\s\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\s\\result.json.gz",
+      "progress": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\s\\progress.json",
+      "seed_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\s\\seed_plan.json",
+      "pair_response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\diagnostics\\case_076_q1_n4\\s\\same_plan_no_l2_result.json.gz"
+    },
+    "shard2:fixed_plan:case_004:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_004:cap262144:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_004:cap262144:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap262144_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_004:cap1048576:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap1048576_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap1048576_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap1048576_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_004:cap1048576:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_004:cap1048576:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap1048576_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap1048576_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap1048576_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_004:cap4194304:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_004:cap4194304:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_004:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_004_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap262144:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap262144:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap262144_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap1048576:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap1048576_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap1048576_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap1048576_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap1048576:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap1048576:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap1048576_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap1048576_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap1048576_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap4194304:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap4194304:bw250": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw250\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw250\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw250\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:fixed_plan:case_046:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\fixed\\case_046_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:bounded_readaptation:case_004:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_004_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_004_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_004_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:bounded_readaptation:case_004:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_004_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_004_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_004_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_004_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:bounded_readaptation:case_046:cap262144:bw60": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_046_cap262144_bw60\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_046_cap262144_bw60\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_046_cap262144_bw60\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    },
+    "shard2:bounded_readaptation:case_046:cap4194304:bw500": {
+      "summary": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_046_cap4194304_bw500\\summary.json",
+      "plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_046_cap4194304_bw500\\plan.json",
+      "response": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\adapted\\case_046_cap4194304_bw500\\result.json.gz",
+      "main_plan": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\jobs\\case_046_q3_n5\\plan.json",
+      "locator_csv": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\mechanisms\\cache_parameter_grid.csv"
+    }
+  }
+}

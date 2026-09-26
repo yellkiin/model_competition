@@ -1,0 +1,25 @@
+\documentclass[tikz,border=1.5mm]{standalone}
+\usepackage[UTF8,fontset=windows]{ctex}
+\setCJKmainfont[AutoFakeBold=1.5]{SimSun}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\definecolor{navy}{HTML}{17324D}\definecolor{blue}{HTML}{2878A5}\definecolor{teal}{HTML}{218C83}\definecolor{orange}{HTML}{D9873F}\definecolor{ink}{HTML}{243746}\definecolor{muted}{HTML}{647789}\definecolor{pale}{HTML}{F3F7FA}\definecolor{pblue}{HTML}{E9F2F8}\definecolor{pteal}{HTML}{E8F4F1}\definecolor{porange}{HTML}{FCF1E7}
+\tikzset{box/.style={draw=navy!65,fill=white,rounded corners=1.5mm,line width=.6pt,text=ink,align=center,font=\fontsize{7.5}{9}\selectfont,text width=30mm,minimum height=9mm,inner sep=1mm},sm/.style={box,font=\fontsize{7}{8.3}\selectfont},store/.style={box,draw=teal!80!black,fill=pteal},heading/.style={text=navy,font=\fontsize{8}{9}\selectfont\bfseries,anchor=west},lab/.style={text=muted,align=center,font=\fontsize{6.8}{8}\selectfont},arr/.style={-{Stealth[length=1.7mm]},draw=blue,line width=.65pt},data/.style={-{Stealth[length=1.7mm]},draw=teal,line width=.7pt},wait/.style={-{Stealth[length=1.7mm]},draw=orange,densely dashed,line width=.7pt}}
+\begin{document}
+\begin{tikzpicture}[x=1mm,y=1mm]
+\path[fill=pale,rounded corners=2mm](0,0)rectangle(160,76);
+\node[sm,text width=30mm](issue)at(19,64){COPY\_IN 发射\\逻辑张量 $t$};
+\node[diamond,draw=navy!70,fill=pblue,aspect=2,inner sep=1mm,text=ink,align=center,font=\fontsize{7}{8}\selectfont,text width=25mm,minimum height=10mm](lookup)at(59,64){先进先出缓存\\按逻辑标识查询};
+\draw[arr](issue.east)--(lookup.west);
+\node[sm,text width=29mm](hit)at(97,69){命中：保持原队位};\node[sm,text width=29mm](miss)at(97,55){未命中：发起 DDR 读取};
+\draw[data](lookup.east)--(73,64)|-node[pos=.28,above,lab]{命中}(hit.west);\draw[arr](lookup.east)--(73,64)|-node[pos=.28,below,lab]{未命中}(miss.west);
+\node[store,text width=29mm](l2)at(139,69){二级缓存 L2\\独立读池：250 B/周期};\node[store,text width=29mm](ddr)at(139,55){DDR 片外存储\\共享读写池：60 B/周期};
+\draw[data](hit.east)--(l2.west);\draw[data](miss.east)--(ddr.west);
+\node[sm,text width=34mm,fill=porange](done)at(119,40){DDR 读完成事件\\此时才尝试填充};\draw[arr](ddr.south)--(done.north);
+\node[heading]at(5,31){FIFO 队列：只按插入顺序移动};
+\node[sm,text width=31mm](old)at(31,21){最早插入\\优先驱逐};\node[sm,text width=27mm](resident)at(79,21){已驻留项};\node[sm,text width=31mm](new)at(127,21){最近插入};
+\draw[arr](old.east)--(resident.west);\draw[arr](resident.east)--(new.west);\draw[arr](old.west)--(5,21);\node[lab,anchor=west]at(5,26){驱逐};
+\draw[data](done.south)--(119,34)-|(new.north);
+\node[lab,anchor=west,align=left,text width=148mm]at(6,9){命中不刷新队位；未命中仅在 DDR 读取完成时入队，超容量按先进先出驱逐；大于 L2 容量的张量不驻留。};
+\node[lab,anchor=west,align=left,text width=148mm]at(6,4){跨核写出仍经 DDR，完成后等待 500 周期再释放 COPY\_IN；填充完成前重复发射仍可能未命中。};
+\end{tikzpicture}\end{document}

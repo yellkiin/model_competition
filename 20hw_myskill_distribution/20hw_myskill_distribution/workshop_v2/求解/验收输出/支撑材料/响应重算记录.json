@@ -1,0 +1,31 @@
+{
+  "kind": "selected_response_recomputation",
+  "status": "completed_response_only",
+  "official_solver_or_evaluator_invoked": false,
+  "command": [
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\.venv\\Scripts\\python.exe",
+    "-B",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\提交附件\\支撑材料文件\\其他支撑材料\\复现程序\\reproduce.py",
+    "--package-root",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\提交附件",
+    "--output",
+    "D:\\华为杯写作\\.orion_paper_cache\\reproduction_20260926"
+  ],
+  "process_exit_code": 0,
+  "report": {
+    "main_configurations": 1400,
+    "paired_configurations": 500,
+    "baseline_cases": 100,
+    "comparison_mismatches": [],
+    "source": "selected official evaluation responses"
+  },
+  "outputs": [
+    "D:\\华为杯写作\\.orion_paper_cache\\reproduction_20260926\\recomputed_main.csv",
+    "D:\\华为杯写作\\.orion_paper_cache\\reproduction_20260926\\recomputed_pairs.csv",
+    "D:\\华为杯写作\\.orion_paper_cache\\reproduction_20260926\\recomputed_means.csv",
+    "D:\\华为杯写作\\.orion_paper_cache\\reproduction_20260926\\mean_speedup.svg",
+    "D:\\华为杯写作\\.orion_paper_cache\\reproduction_20260926\\reproduction_report.json"
+  ],
+  "output_recorded_at_utc": "2026-09-25T21:38:52.946742+00:00",
+  "scope": "Read 1400 selected official responses and 500 same-plan Q3/Q2 responses; recomputed values and compared reference cycle counts. No independent solver rerun or full package audit."
+}

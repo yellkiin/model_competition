@@ -1,0 +1,332 @@
+[
+  {
+    "page": 1,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_001.png",
+    "text_start": "中国研究生创新实践系列大赛\n中国研究生创新实践系列大赛\n中国研究生创新实践系列大赛\n中国研究生创新实践系列大赛\n中国研究生创新实践系列大赛\n中国研究生创新实践系列大赛\n“华为杯”第二十三届中国研究生\n“华为杯”第二十三届中国研究生\n“华为杯”第二十三届中国研究生\n“华为杯”第二十三届中国研究生\n“华为杯”第二十三届中国"
+  },
+  {
+    "page": 2,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_002.png",
+    "text_start": "目录\n1\n问题重述. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n1.1\n问题背景. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+  },
+  {
+    "page": 3,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_003.png",
+    "text_start": "5.4.1\n核数扩展与逐图周期. . . . . . . . . . . . . . . . . . . . . . . . . .\n24\n5.4.2\nCOPY 量、驻留压力与反例\n. . . . . . . . . . . . . . . . . . . . . .\n26\n5.4.3\n来源记录与结论边界. . . ."
+  },
+  {
+    "page": 4,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_004.png",
+    "text_start": "1 问题重述\n1.1 问题背景\n神经网络的计算可表示为带有数据依赖的有向无环图。模型推理或训练中的一次执\n行，既需要安排算子在计算单元上的先后关系，也需要使输入、中间结果和输出在核内\n存储与核外主存之间流转。本题考虑由多个同构人工智能核心组成的神经网络处理器：\n各核拥有独立的矩阵、向量和搬运流水线及私有L1、UB 存储"
+  },
+  {
+    "page": 5,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_005.png",
+    "text_start": "问题一对应无核间同步机制的场景A。每个子图独立构成一个执行任务，所有跨\n子图依赖均通过DDR 交接；同核任务切换及跨核前驱任务完成后还须遵守题定等待。\n需要在2～5 核配置下建立切图与调度模型并生成方案，尽可能缩短总体任务执行时间\n（Makespan），同时控制总额外数据搬运量。正文应按题定单核基准，给出1～5 核的平"
+  },
+  {
+    "page": 6,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_006.png",
+    "text_start": "2 模型假设\n本题给出的计算图、硬件配置与评估程序构成模型的既定条件。计算图中的张量大\n小、核内计算周期、依赖方向和输入输出位置固定；方案只决定非边界搬运算子的子图\n归属、子图的核心分配以及每核的子图顺序。原始边界搬运、跨任务交接、容量不足时\n的换出与取回、流水线占用和共享带宽竞争均按题目规定生成与评价。下列条件用于说"
+  },
+  {
+    "page": 7,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_007.png",
+    "text_start": "表3.1\n（续）\n类别\n符号\n含义\n单位\n索引\nK\n可用同构核心的集合，K = {1, . . . , n}\n—\n参数\nn\n当前配置的核心数\n核\n参数\nbt\n张量t 的大小\nB\n参数\npv\n计算算子v 的题给服务周期\n周期\n参数\nBr\n片上存储区r 的容量，r ∈{L1, UB}\nB\n参数\nβDDR\n所有核心共享的DD"
+  },
+  {
+    "page": 8,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_008.png",
+    "text_start": "4 问题一求解与分析\n4.1 问题的描述与分析\n第一问中，每个子图均作为一个独立执行任务。子图划得过细，虽然容易将计算量\n分散到多个核心，却增加了任务切换和跨子图搬运；子图过大，又可能压低并行度，并\n加剧片上存储压力。因此，子图划分、核心归属和核内子图顺序应联合决定。本文用一\n个完整方案描述三项决策，再以固定执行规则得"
+  },
+  {
+    "page": 9,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_009.png",
+    "text_start": "4.2 联合决策模型与统一目标\n4.2.1 计算图、张量与划分\n沿用题面，原始二部有向无环图记为G = (T ∪O, E)，其中T 为张量集合，O 为操\n作集合。定义需要分配的非边界搬运算子集合\nV = {o ∈O : type(o) /∈{COPY_IN, COPY_OUT}}.\n(4.1)\n原始算子的类型和计算周期"
+  },
+  {
+    "page": 10,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_010.png",
+    "text_start": "Cq 即总体任务执行时间（Makespan），单位为周期；Dq 是按题面口径计算的额外COPY\n字节。本文以Cq 为主目标，周期相同则选择Dq 较小者，即\nlex\nmin\nx∈Fq\n\u0000Cq(x), Dq(x)\n\u0001\n.\n(4.7)\n这一处理避免为周期和字节引入缺乏物理依据的加权系数。额外COPY 字节衡量搬运操\n作规模，"
+  },
+  {
+    "page": 11,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_011.png",
+    "text_start": "任务边界使粒度选择出现双重影响。合并子图可以消除两者之间的一部分任务切换\n和边界搬运，但也固定了更多算子的共同归核，减少跨核重叠机会。进一步合并还可能\n延长张量驻留区间，引发自动换出。故单纯最小化边界张量大小，或者单纯均衡算子周\n期总和，都不足以决定总体任务执行时间（Makespan）。\n4.3.2 固定核内调度与片上"
+  },
+  {
+    "page": 12,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_012.png",
+    "text_start": "4.4 下界、候选过滤与质量界\n4.4.1 对全体方案有效的下界\n取所有可行方案都保留的计算依赖图Gc，其中算子v 的固定服务周期为pv，计算\n流水线类型为ρ(v)。定义计算路径、流水线负载和必要DDR 流量下界：\nLpath =\nmax\nP 为Gc 中依赖路径\nX\nv∈P\npv,\n(4.11)\nLload = max"
+  },
+  {
+    "page": 13,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_013.png",
+    "text_start": "4.4.3 可行上界与相对差距\n令C∗\nq 为全局最优周期，当前可行周期为U。当0 < L ≤C∗\nq ≤U 时，\n0 ≤U −C∗\nq\nU\n≤1 −L\nU ,\n0 ≤U\nC∗\nq\n−1 ≤U\nL −1.\n(4.15)\n第一式量化相对于当前方案仍可能减少的比例，第二式以最优值为分母；二者不能互换。\n本文以第一式右侧作为"
+  },
+  {
+    "page": 14,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_014.png",
+    "text_start": "足后，比较指数\nIa = ¯ga + 0.012\np\nlog(2 + N)/(1 + Na)\nmax(0.005, bca)(1 + ra)\n.\n(4.16)\n近期统计窗口为最近八次调用。前项奖励已观察到的改进，第二项为尚未充分尝试的来\n源保留机会，分母计入运行成本和失败倾向。搜索资源根据测量反馈分配的思路与程序\n自动"
+  },
+  {
+    "page": 15,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_015.png",
+    "text_start": "事件。只有结果可行，且(Cq(y), Dq(y)) <lex (Cq(x), Dq(x))，才令x ←y 并更新父方\n案代号；取得的解在评价和保存完成后才计为可用。\n5. 检查全局下界相对差距、评价次数、墙钟预算、来源耗尽和停滞条件。第三问结束主\n搜索后，对已选同一方案另作无缓存评价，配对结果不参与主搜索的接受判断。\n"
+  },
+  {
+    "page": 16,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_016.png",
+    "text_start": "4.6.3 两张五核图的方案展开\n真实五核方案能够说明“子图数”与“执行任务数”在两问中的差别。图80 在第一\n问选出3 个子图，核心序列长度为(1, 1, 1, 0, 0)：五个核心可用，但只有三个核心承担工作，\n三个子图分别构成Task，最终总体任务执行时间为100325 周期，额外COPY 为3047424\nB。"
+  },
+  {
+    "page": 17,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_017.png",
+    "text_start": "4.7 实验指标与第一问结果\n4.7.1 统一评价与核数扩展\n实验使用题面提供的100 个计算图及固定参数，统一以周期评价。对图i，记原始\n整图单核周期为Ti,0，本问n 核方案周期为Ci,1,n，定义\nSi,q,n = Ti,0\nCi,q,n\n,\nSq,n =\n1\n100\n100\nX\ni=1\nSi,q,n.\n(4.1"
+  },
+  {
+    "page": 18,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_018.png",
+    "text_start": "4.7.2 逐例分布及低收益图\n图4.5 展示二至五核加速比的经验分布。五核配置下，100 个图的加速比介于1.5157\n与6.3928，其中6 个图低于2，9 个图超过5。均值低于中位数，说明少数低收益图对总\n体平均值有明显影响。仅说明大多数图接近五倍不足以描述完整分布。\n1\n2\n3\n4\n5\n6\n逐图加速比\n0%\n2"
+  },
+  {
+    "page": 19,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_019.png",
+    "text_start": "0\n60\n120\n180\n240\n300\n360\n420\n480\n540\n600\n原搜索已用时间 / 秒\n001\n020\n040\n060\n080\n100\n图编号\n灰色：尚无可用记录\n每 30 秒已取得的可用方案\n0%\n20%\n40%\n60%\n80%\n100%\n相对最终周期的超额比例\n图4.6\n第一问五核每30 秒可用解"
+  },
+  {
+    "page": 20,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_020.png",
+    "text_start": "104\n105\n106\n107\n全局下界 / 周期\n104\n105\n106\n107\n五核总体任务执行时间 / 周期\n周期等于下界\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n下界 / 当前周期\n图4.7\n第一问五核可行周期与全局下界\n本问建立了后两问共同使用的决策、执行和接受框架。结果表明，联合改变划分、\n"
+  },
+  {
+    "page": 21,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_021.png",
+    "text_start": "5 问题二求解与分析\n5.1 问题的描述与分析\n第二问延续第4 节的完整方案x = (P, a, π)、总体任务执行时间Cq 和额外COPY\n字节Dq，但重新界定执行任务：一个核心上的全部子图共同构成一个Task。这个变化\n并未取消子图划分与核内顺序。子图仍规定算子的归核、局部先后与跨核边界；改变的\n是同核子图之间的状"
+  },
+  {
+    "page": 22,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_022.png",
+    "text_start": "5.2 核心级任务的执行模型\n5.2.1 同核驻留与跨核交接\n对核心k，令πk = (i1, . . . , imk)，其全部子图属于同一Task，任务标识为k。同核相\n邻子图按方案顺序执行，但任务边界不在两者之间重复建立。若张量t 的生产者和后续\n消费者均位于k，且执行过程未将相应缓冲换出，则消费者可读取本核驻留实例"
+  },
+  {
+    "page": 23,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_023.png",
+    "text_start": "5.2.2 活跃集、自动换出与共享带宽\n同核跨子图驻留带来存储机会，也增加活跃区间。令Lk,r(τ; x) 表示在时刻τ，核心\nk 的存储区r ∈{L1, UB} 中仍占据空间的缓冲实例。每个时刻仍须满足第4 节式(4.9)\n的容量约束；同一逻辑张量在不同核心形成的副本分别占空间。一个按子图顺序估计的\n峰值代理可记为\n"
+  },
+  {
+    "page": 24,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_024.png",
+    "text_start": "独立的微小计算分量组成时，候选可把完整分量分配到核心，按容量估计限制每波同时\n展开的分量数，并将每波划成少量顺序阶段。这一“微波”宽度只是根据分量活跃峰值\n估计的提案尺度，不是满足真实容量的证明。两族候选分别适用于连接较多和较分散的\n结构，均需经过同一完整评价。\n生产者前缀拆分也是方法库中的候选：当第一问的长子图阻碍跨"
+  },
+  {
+    "page": 25,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_025.png",
+    "text_start": "1\n2\n3\n4\n5\n核心数\n1\n2\n3\n4\n5\n平均加速比\n1.0000\n2.1168\n3.0153\n3.7868\n4.4538\n100 图逐例比值的算术平均\n核数参照线\n本问最终方案\n图5.10\n第二问各核数平均加速比\n比较，逐图再定义\nRi = Ci,1,5\nCi,2,5\n,\ni = 1, . . . , 100."
+  },
+  {
+    "page": 26,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_026.png",
+    "text_start": "5.4.2 COPY 量、驻留压力与反例\n第二问五核额外COPY 字节的均值为8094619.10 B，中位数为1310458 B，均低于第\n一问的14585335.66 B 和1990466 B。但逐图并非一致下降：第二问有50 图的额外COPY\n更少、12 图相同、38 图更多。图5.12 按各图的COPY 量变化"
+  },
+  {
+    "page": 27,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_027.png",
+    "text_start": "0\n5000\n10000\n15000\n20000\n完成评价的候选数\n基础候选\n结构候选\n驻留候选\n8589\n15656\n8819\n0.0%\n2.0%\n4.0%\n6.0%\n8.0%\n周期改善次数 / 评价次数\n5.16%（443 次）\n4.73%（740 次）\n4.00%（353 次）\n图5.13\n第二问候选来源的调用与"
+  },
+  {
+    "page": 28,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_028.png",
+    "text_start": "6 问题三求解与分析\n6.1 问题的描述与分析\n第三问保留第二问的核心级Task、子图划分、核心归属与核内顺序，并在各核的读\n入路径前加入容量为1048576 B 的共享只读L2。缓存改变的是一部分COPY_IN 的服务\n路径，不改变计算图的依赖、写出要求或方案变量。若读入命中，数据经L2 带宽池服\n务；未命中时仍经D"
+  },
+  {
+    "page": 29,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_029.png",
+    "text_start": "6.2 共享只读L2 的事件模型\n6.2.1 发射查询、完成填充与FIFO 顺序\n记全局缓存状态Q(τ) 为按成功填入先后排列的逻辑张量标识队列，其容量用队列\n内张量字节之和计。对张量t 的一次读入请求r，在其实际发射时刻sr 查询Q(sr)。若\n命中，则读入由L2 池服务，且该次命中不将t 移至队尾；若未命中，则请求"
+  },
+  {
+    "page": 30,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_030.png",
+    "text_start": "请求以独占服务周期表示的剩余量满足\nwj(τ + ∆) = max\n\u001a\n0, wj(τ) −\n∆\n|Ah(τ)|\n\u001b\n,\nj ∈Ah(τ),\nh ∈{D, L}.\n(6.24)\n这里两种wj 分别按本池带宽换算，不能把60 与250 简单相加为单条读请求的带宽。\nDDR 写出和未命中读仍与其他DDR 请求争用；命中读虽"
+  },
+  {
+    "page": 31,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_031.png",
+    "text_start": "6.3.2 同方案配对的识别量\n令xi,3,n 为图i、n 核下第三问选出的完整方案。将同一个方案分别置于有L2 和无\nL2 的执行环境，定义\nRL2\ni,n = C2(xi,3,n)\nC3(xi,3,n).\n(6.26)\n两次执行保持P, a, π 一致，改变的是缓存规则；若同一配置的配对响应完整且可行，\n式(6.2"
+  },
+  {
+    "page": 32,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_032.png",
+    "text_start": "1\n2\n3\n4\n5\n核心数\n1\n2\n3\n4\n5\n平均加速比\n1.1008\n2.1222\n3.0320\n3.8376\n4.5978\n100 图逐例比值的算术平均\n核数参照线\n同方案，无二级缓存（L2）\n同方案，有二级缓存（L2）\n图6.16\n第三问各核数主结果及同方案无L2 参考\n核心数配对数平均周期比中位周期比改善相同"
+  },
+  {
+    "page": 33,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_033.png",
+    "text_start": "算路径、Pipe 负载与可证明必要流量的松弛，不能把缓存未命中次数直接加进全局下界。\n0%\n10%\n20%\n30%\n40%\n50%\n60%\n70%\n80%\nL2 字节命中率\n1.0\n1.2\n1.4\n1.6\n1.8\n2.0\n同方案无 L2 周期 / 有 L2 周期\n图 046\n图 001\n图6.18\n字节命中率与同方案缓"
+  },
+  {
+    "page": 34,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_034.png",
+    "text_start": "60\n250\n500\nL2 带宽 /（字节/周期）\n0.25\n1\n4\nL2 容量 / MiB\n47.50\n47.50\n47.50\n47.50\n47.50\n47.50\n47.50\n47.50\n47.50\n图 001\n60\n250\n500\nL2 带宽 /（字节/周期）\n0.25\n1\n4\nL2 容量 / MiB\n79.17\n"
+  },
+  {
+    "page": 35,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_035.png",
+    "text_start": "因此，若一次消费者读入发射于st，要利用这段驻留期，需要该发射在完成填充之\n后、首次淘汰之前，即落入相应事件序上的区间。设首次淘汰时刻为et，对无同刻歧义\n的事件有\nft ≤st < et.\n(6.27)\n若填充、淘汰或查询具有相同周期，还须使用执行器在该周期内的实际事件顺序判断端\n点；周期相等并不等价于队列状态相同。"
+  },
+  {
+    "page": 36,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_036.png",
+    "text_start": "张量甲在周期0 的读取未命中，读入于周期345 完成后进入缓存。周期5254 的一次\n新填入将它淘汰；当另一核心在周期10823 再次读入甲时，访问已落在这段驻留窗口之\n外，因此再次未命中。甲在周期11337 重新填入，于周期15878 再次被淘汰；周期21536\n的下一次读取仍未命中。原图中存在重复消费，但这些消费跨"
+  },
+  {
+    "page": 37,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_037.png",
+    "text_start": "7 模型评价与展望\n7.1 模型优点\n第一，三问使用同一完整方案x = (P, a, π) 与字典序目标。子图划分、归核和核内\n顺序并非轮流独立确定，而是通过各问的执行映射共同作用于总体任务执行时间。第一\n问的子图级Task、第二问的核心级Task 以及第三问的FIFO 缓存，都能在统一方案空间\n内比较。这使模型可以明"
+  },
+  {
+    "page": 38,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_038.png",
+    "text_start": "7.3 模型的推广与改进\n可进一步发展针对事件耦合的增量评价。候选只移动少量完整子图时，先确定受影\n响的依赖后继、同核Pipe 队列和张量生命周期，再从最早变化事件向后更新；若能证明\n未波及部分的状态和就绪时刻不变，即可避免每次从头执行全图。增量结果仍应与完整\n事件语义等价，并在状态变化越过核心或带宽池时扩大重算范围。"
+  },
+  {
+    "page": 39,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_039.png",
+    "text_start": "8 参考文献\n[1] Özkaya M Y, Benoit A, Uçar B, et al., A Scalable Clustering-Based Task Scheduler for\nHomogeneous Processors Using DAG Partitioning, 2019 IEEE Interna"
+  },
+  {
+    "page": 40,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_040.png",
+    "text_start": "9 附录\n附录1：附件文件及内容\n序号\n文件夹名称\n主要内容\n1\n问题一\n完整方法源码、代码环境说明和Task/调度逐例结果表。\n2\n问题二\n完整方法源码、代码环境说明和跨核交接/DDR 逐例结果表。\n3\n问题三\n完整方法源码、代码环境说明和L2/FIFO 同方案配对逐例结果\n表。\n4\n其他数据\n100 个原始计算图、"
+  },
+  {
+    "page": 41,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_041.png",
+    "text_start": "78\nif time.monotonic()>=deadline:\n79\npersist(out/rn,r)\n80\nrow.update(status='completed_after_search_limit',completed_secon ⌋\nds=time.monotonic()‐start,\n,→\n81\nev"
+  },
+  {
+    "page": 42,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_042.png",
+    "text_start": "Task 分组与候选构造（片段2）\n21\ndef wrap(g,n,cfg,q,p,name,family,epoch):\n22\n# Source‐specific ordering already exists upstream. A full memory/timing proxy\n23\n# that the so"
+  },
+  {
+    "page": 43,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_043.png",
+    "text_start": "359\nreads += size * len(cs ‐ ps)\n360\nwrites += size * sum(g.terminal[t] or bool(cs ‐ {p}) for p in ps)\n361\nelse:\n362\nif not ps:\n363\nreads += size * len(cs)\n364\n"
+  },
+  {
+    "page": 44,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_044.png",
+    "text_start": "402\nowner = {u: core[m[u]] for u in g.ops}\n403\ncore_load = max((max(g.loads(u for u in g.ops if owner[u] == k).values(),\ndefault=0)\n,→\n404\nfor k in range(n)), d"
+  },
+  {
+    "page": 45,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_045.png",
+    "text_start": "27\nmapping, groups, _, _ = plan_view(g, plan)\n28\npositions = [{s:i for i,s in enumerate(seq)} for seq in seqs]\n29\ngroup_work = {s:sum(g.duration[u] for u in us)"
+  },
+  {
+    "page": 46,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_046.png",
+    "text_start": "同一完整计划的无L2 官方配对（片段2）\n253\nstreams={s:None for s in manager.available()}\n254\nstate['family_counts']=dict(family_counts);state['source_stalls']=dict(sour ⌋\nce_stal"
+  },
+  {
+    "page": 47,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_047.png",
+    "text_start": "图编号\n1 核周期\n1 核额外COPY/B\n2 核周期\n2 核额外COPY/B\n图025\n4,863,026\n0\n2,431,840\n27,648\n图026\n99,203\n0\n51,136\n19,488\n图027\n2,363,952\n1,400,832\n1,120,962\n1,744,896\n图028\n43,836,0"
+  },
+  {
+    "page": 48,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_048.png",
+    "text_start": "图编号\n1 核周期\n1 核额外COPY/B\n2 核周期\n2 核额外COPY/B\n图100\n151,223\n0\n76,840\n55,296\n表9.8\n问题一逐例结果：3、4 核\n图编号\n3 核周期\n3 核额外COPY/B\n4 核周期\n4 核额外COPY/B\n图001\n78,545\n2,304\n58,984\n3,456\n图"
+  },
+  {
+    "page": 49,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_049.png",
+    "text_start": "图编号\n3 核周期\n3 核额外COPY/B\n4 核周期\n4 核额外COPY/B\n图067\n20,503,402\n86,178,560\n15,573,083\n82,792,576\n图068\n203,282\n4,543,290\n182,864\n4,307,652\n图069\n10,847\n213,840\n10,732\n261"
+  },
+  {
+    "page": 50,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_050.png",
+    "text_start": "图编号\n5 核周期\n5 核额外COPY/B\n图034\n177,773\n3,653,632\n图035\n92,432\n267,396\n图036\n187,182\n4,608\n图037\n43,800\n1,925,120\n图038\n287,328\n8,299,532\n图039\n403,350\n7,725,056\n图040\n110"
+  },
+  {
+    "page": 51,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_051.png",
+    "text_start": "表9.10\n问题二逐例结果：1、2 核\n图编号\n1 核周期\n1 核额外COPY/B\n2 核周期\n2 核额外COPY/B\n图001\n233,110\n0\n116,868\n1,152\n图002\n261,945\n0\n127,390\n1,181,184\n图003\n602,212\n0\n304,083\n2,966,846\n图004\n"
+  },
+  {
+    "page": 52,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_052.png",
+    "text_start": "图编号\n1 核周期\n1 核额外COPY/B\n2 核周期\n2 核额外COPY/B\n图074\n1,682,239\n6,070,280\n823,784\n7,430,180\n图075\n1,441,809\n0\n706,423\n3,238,406\n图076\n6,185,113\n28,280,832\n3,084,437\n26,401"
+  },
+  {
+    "page": 53,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_053.png",
+    "text_start": "图编号\n3 核周期\n3 核额外COPY/B\n4 核周期\n4 核额外COPY/B\n图041\n1,993,803\n34,537,500\n1,493,500\n36,428,800\n图042\n557,972\n7,477,824\n421,578\n11,356,748\n图043\n246,592\n674,748\n225,545\n86"
+  },
+  {
+    "page": 54,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_054.png",
+    "text_start": "图编号\n5 核周期\n5 核额外COPY/B\n图008\n65,706\n294,912\n图009\n60,567\n1,061,928\n图010\n20,127\n331,080\n图011\n39,329\n1,337,344\n图012\n13,786\n50,112\n图013\n54,363\n32,768\n图014\n3,637,679\n9"
+  },
+  {
+    "page": 55,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_055.png",
+    "text_start": "图编号\n5 核周期\n5 核额外COPY/B\n图083\n199,734\n5,736,832\n图084\n285,686\n322,560\n图085\n897,331\n37,614,932\n图086\n46,397\n1,815,608\n图087\n864,851\n12,687,110\n图088\n77,808\n2,034,172\n图0"
+  },
+  {
+    "page": 56,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_056.png",
+    "text_start": "图编号\n1 核周期\n1 核额外COPY/B\n2 核周期\n2 核额外COPY/B\n图050\n143,136\n665,104\n78,745\n485,524\n图051\n607,628\n0\n318,295\n393,884\n图052\n169,942\n91,648\n80,005\n1,119,386\n图053\n1,367,418\n6"
+  },
+  {
+    "page": 57,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_057.png",
+    "text_start": "图编号\n3 核周期\n3 核额外COPY/B\n4 核周期\n4 核额外COPY/B\n图017\n51,791\n426,516\n39,707\n492,200\n图018\n332,384\n3,741,696\n252,409\n5,694,848\n图019\n22,970\n287,524\n18,443\n380,228\n图020\n177,"
+  },
+  {
+    "page": 58,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_058.png",
+    "text_start": "图编号\n3 核周期\n3 核额外COPY/B\n4 核周期\n4 核额外COPY/B\n图092\n1,339,219\n7,521,472\n999,256\n17,233,696\n图093\n25,103\n16,384\n19,743\n24,576\n图094\n27,531\n211,968\n21,738\n318,816\n图095\n433"
+  },
+  {
+    "page": 59,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_059.png",
+    "text_start": "图编号\n5 核周期\n5 核额外COPY/B\n图059\n150,246\n5,713,920\n图060\n173,733\n3,576,064\n图061\n16,981\n104,960\n图062\n587,941\n82,944\n图063\n221,161\n67,584\n图064\n9,227\n95,122\n图065\n10,267\n74"
+  },
+  {
+    "page": 60,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_060.png",
+    "text_start": "图编号\n核数\n无L2 周期\n有L2 周期\n无L2 额外COPY/B\n有L2 额外COPY/B\n字节命中率\n图006\n1\n73,271\n73,271\n44,076\n44,076\n0.000000\n图006\n2\n37,602\n37,602\n128,396\n128,396\n0.191146\n图006\n3\n25,659\n25,"
+  },
+  {
+    "page": 61,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_061.png",
+    "text_start": "图编号\n核数\n无L2 周期\n有L2 周期\n无L2 额外COPY/B\n有L2 额外COPY/B\n字节命中率\n图021\n1\n6,517,945\n6,509,573\n4,552,704\n4,552,704\n0.486511\n图021\n2\n3,177,619\n3,176,969\n3,579,904\n3,579,904\n0.48"
+  },
+  {
+    "page": 62,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_062.png",
+    "text_start": "图编号\n核数\n无L2 周期\n有L2 周期\n无L2 额外COPY/B\n有L2 额外COPY/B\n字节命中率\n图036\n1\n931,510\n931,510\n0\n0\n0.000000\n图036\n2\n466,068\n466,068\n1,152\n1,152\n0.000000\n图036\n3\n311,345\n311,345\n2,30"
+  },
+  {
+    "page": 63,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_063.png",
+    "text_start": "图编号\n核数\n无L2 周期\n有L2 周期\n无L2 额外COPY/B\n有L2 额外COPY/B\n字节命中率\n图051\n1\n607,628\n607,628\n0\n0\n0.000000\n图051\n2\n318,596\n318,295\n393,884\n393,884\n0.499788\n图051\n3\n227,412\n227,412\n"
+  },
+  {
+    "page": 64,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_064.png",
+    "text_start": "图编号\n核数\n无L2 周期\n有L2 周期\n无L2 额外COPY/B\n有L2 额外COPY/B\n字节命中率\n图066\n1\n326,438\n326,438\n6,144\n6,144\n0.000000\n图066\n2\n198,368\n198,071\n1,821,228\n1,821,228\n0.126329\n图066\n3\n146,"
+  },
+  {
+    "page": 65,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_065.png",
+    "text_start": "图编号\n核数\n无L2 周期\n有L2 周期\n无L2 额外COPY/B\n有L2 额外COPY/B\n字节命中率\n图081\n1\n151,795\n151,795\n0\n0\n0.000000\n图081\n2\n76,026\n76,026\n1,392,980\n1,392,980\n0.000000\n图081\n3\n51,943\n51,943\n"
+  },
+  {
+    "page": 66,
+    "image": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\page_066.png",
+    "text_start": "图编号\n核数\n无L2 周期\n有L2 周期\n无L2 额外COPY/B\n有L2 额外COPY/B\n字节命中率\n图096\n1\n73,473\n73,473\n22,584\n22,584\n0.000000\n图096\n2\n36,559\n36,346\n196,484\n196,484\n0.340914\n图096\n3\n26,694\n26,"
+  }
+]

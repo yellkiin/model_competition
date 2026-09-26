@@ -1,0 +1,13 @@
+{
+  "record_type": "actual_ai_assistance_disclosure",
+  "date": "2026-09-26",
+  "organization": "OpenAI",
+  "roles": [
+    {"model":"GPT-6","role":"根任务统筹、主审、理论与原始结果对齐、正文审阅","basis":"当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"},
+    {"model":"GPT-6-sol","role":"专题资料和部分论文内容协助","basis":"当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"},
+    {"model":"GPT-6-luna","role":"图件制作与排版协助","basis":"当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"}
+  ],
+  "verification": "AI产出须以原文卡、题面、实际执行记录和规范化数据核对；AI工具不作为学术论据。此文件记录角色分工，不声称独立保存了全部对话回执。",
+  "bibliography_key": "ai_tool_disclosure",
+  "template_conflict": "参考文献证据.schema.json模板把工具固定为DeepSeek-V4.1-Flash、日期2026-09-23，与实际使用不符；未照模板虚构DeepSeek使用。"
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "status": "satisfied",
+  "checked_at": "2026-09-25T20:53:45.815747+00:00",
+  "workspace": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1",
+  "requirements_sha256": "2856edf858771669d0f036f0c50c92cf4582e9c1877fe28ffa985e42de64a345",
+  "catalog_sha256": "9a49680a664bf9d97514e59e949d98fd1ddae6fddad46f3188affd3ee9ddcebb",
+  "python": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\.venv\\Scripts\\python.exe",
+  "path_entries": [],
+  "variables": {},
+  "persistent_status": "unexamined",
+  "results": [
+    {
+      "capability": "python",
+      "status": "satisfied",
+      "provider": "cpython",
+      "version": "3.12.8",
+      "path": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\.venv\\Scripts\\python.exe",
+      "detail": "",
+      "tests": [
+        {
+          "name": "python.exe",
+          "returncode": 0,
+          "output": "pip 24.3.1 from D:\\��Ϊ��д��\\ORION_Paper_Agent\\workshop_v1\\.venv\\Lib\\site-packages\\pip (python 3.12)"
+        }
+      ]
+    },
+    {
+      "capability": "workflow-core",
+      "status": "satisfied",
+      "provider": "workflow-core-python",
+      "version": "[[\"jsonschema\", \"4.26.0\"], [\"PyYAML\", \"6.0.3\"], [\"pydantic\", \"2.13.5\"], [\"packaging\", \"26.3\"]]",
+      "path": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\.venv\\Scripts\\python.exe",
+      "detail": "",
+      "tests": [
+        {
+          "name": "python.exe",
+          "returncode": 1,
+          "output": "Traceback (most recent call last):\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'packaging'"
+        },
+        {
+          "name": "python.exe",
+          "returncode": 0,
+          "output": "[[\"jsonschema\", \"4.26.0\"], [\"PyYAML\", \"6.0.3\"], [\"pydantic\", \"2.13.5\"], [\"packaging\", \"26.3\"]]"
+        }
+      ]
+    },
+    {
+      "capability": "pdf",
+      "status": "not_applicable",
+      "provider": null,
+      "version": "",
+      "path": null,
+      "detail": "未启用的条件或可选需求",
+      "tests": []
+    },
+    {
+      "capability": "paper-python",
+      "status": "not_applicable",
+      "provider": null,
+      "version": "",
+      "path": null,
+      "detail": "未启用的条件或可选需求",
+      "tests": []
+    },
+    {
+      "capability": "word",
+      "status": "satisfied",
+      "provider": "word-python",
+      "version": "[[\"python-docx\", \"1.2.0\"], [\"lxml\", \"6.1.3\"]]",
+      "path": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\.venv\\Scripts\\python.exe",
+      "detail": "",
+      "tests": [
+        {
+          "name": "python.exe",
+          "returncode": 1,
+          "output": "Traceback (most recent call last):\n  File \"C:\\Program Files\\Python312\\Lib\\importlib\\metadata\\__init__.py\", line 397, in from_name\n    return next(cls.discover(name=name))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nStopIteration\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 5, in <module>\n  File \"C:\\Program Files\\Python312\\Lib\\importlib\\metadata\\__init__.py\", line 889, in version\n    return distribution(distribution_name).version\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python312\\Lib\\importlib\\metadata\\__init__.py\", line 862, in distribution\n    return Distribution.from_name(distribution_name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python312\\Lib\\importlib\\metadata\\__init__.py\", line 399, in from_name\n    raise PackageNotFoundError(name)\nimportlib.metadata.PackageNotFoundError: No package metadata was found for python-docx"
+        },
+        {
+          "name": "python.exe",
+          "returncode": 0,
+          "output": "[[\"python-docx\", \"1.2.0\"], [\"lxml\", \"6.1.3\"]]"
+        }
+      ]
+    },
+    {
+      "capability": "latex",
+      "status": "not_applicable",
+      "provider": null,
+      "version": "",
+      "path": null,
+      "detail": "未启用的条件或可选需求",
+      "tests": []
+    },
+    {
+      "capability": "fonts",
+      "status": "not_applicable",
+      "provider": null,
+      "version": "",
+      "path": null,
+      "detail": "未启用的条件或可选需求",
+      "tests": []
+    },
+    {
+      "capability": "drawio",
+      "status": "not_applicable",
+      "provider": null,
+      "version": "",
+      "path": null,
+      "detail": "未启用的条件或可选需求",
+      "tests": []
+    }
+  ]
+}

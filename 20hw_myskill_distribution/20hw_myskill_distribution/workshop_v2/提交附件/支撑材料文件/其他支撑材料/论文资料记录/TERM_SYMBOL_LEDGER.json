@@ -1,0 +1,267 @@
+{
+  "schema": 1,
+  "status": "reviewed_against_final_manuscript_and_actual_method",
+  "source_binding": "求解/论文理论/bindings/20260925T204725662983Z",
+  "scope": "正文先定义后使用；代码与版本路径只留内部映射",
+  "terms": [
+    {
+      "name": "原始计算图",
+      "symbol": "G=(T∪O,E)",
+      "unit": null,
+      "definition": "题面给出的张量—操作二部有向图，E⊆(T×O)∪(O×T)",
+      "source": "题面§1.2",
+      "first_use": "模型章首段",
+      "later_use": "全部三问"
+    },
+    {
+      "name": "张量集合",
+      "symbol": "T",
+      "unit": null,
+      "definition": "原图张量节点集合",
+      "source": "题面§1.2",
+      "first_use": "计算图定义",
+      "later_use": "依赖与存储"
+    },
+    {
+      "name": "原始操作集合",
+      "symbol": "O",
+      "unit": null,
+      "definition": "包含原始COPY_IN/COPY_OUT的操作节点集合",
+      "source": "题面§1.2",
+      "first_use": "计算图定义",
+      "later_use": "待分配集合定义"
+    },
+    {
+      "name": "待分配非COPY算子集合",
+      "symbol": "V",
+      "unit": null,
+      "definition": "V={o∈O:type(o)∉{COPY_IN,COPY_OUT}}；方案恰覆盖V",
+      "source": "题面§1.3及附录B.5",
+      "first_use": "计算图定义后",
+      "later_use": "划分与可行性"
+    },
+    {
+      "name": "算子服务周期",
+      "symbol": "p_v",
+      "unit": "周期",
+      "definition": "待分配计算算子的固定计算服务量；DDR搬运完成时刻另由事件求得",
+      "source": "题面§1.2及附录D",
+      "first_use": "模型输入",
+      "later_use": "计算下界"
+    },
+    {
+      "name": "张量大小",
+      "symbol": "b_t",
+      "unit": "字节",
+      "definition": "逻辑张量t的大小",
+      "source": "题面§1.2",
+      "first_use": "模型输入",
+      "later_use": "容量、带宽、额外COPY"
+    },
+    {
+      "name": "核集合与核数",
+      "symbol": "K={1,…,n}",
+      "unit": "核",
+      "definition": "可用同构NPU核心；允许部分核空闲",
+      "source": "题面§1.1",
+      "first_use": "联合决策定义",
+      "later_use": "全部三问"
+    },
+    {
+      "name": "子图划分",
+      "symbol": "𝒫=(V₁,…,Vₘ)",
+      "unit": null,
+      "definition": "对V的非空、互斥、完全覆盖",
+      "source": "题面§1.3；A02",
+      "first_use": "联合决策定义",
+      "later_use": "商图及候选邻域"
+    },
+    {
+      "name": "核心映射",
+      "symbol": "a(i)",
+      "unit": "核心编号",
+      "definition": "子图i的核心归属",
+      "source": "题面§1.3；A49",
+      "first_use": "联合决策定义",
+      "later_use": "Task和通信"
+    },
+    {
+      "name": "核内子图顺序",
+      "symbol": "π_k",
+      "unit": null,
+      "definition": "第k核全部子图各一次的排列，可为空",
+      "source": "题面§1.3",
+      "first_use": "联合决策定义",
+      "later_use": "顺序约束、FIFO邻域"
+    },
+    {
+      "name": "完整方案",
+      "symbol": "x=(𝒫,a,π)",
+      "unit": null,
+      "definition": "唯一提交决策为划分、归核及核内子图顺序",
+      "source": "题面§1.3；绑定THEORY§1",
+      "first_use": "联合决策定义",
+      "later_use": "目标、算法、证明"
+    },
+    {
+      "name": "子图依赖图（商图）",
+      "symbol": "H(𝒫)",
+      "unit": null,
+      "definition": "跨子图依赖收缩得到的有向图；加入核内顺序边后应无环",
+      "source": "题面附录B.5；A02",
+      "first_use": "可行性定义",
+      "later_use": "结构邻域"
+    },
+    {
+      "name": "执行任务",
+      "symbol": "Task，χ_q",
+      "unit": null,
+      "definition": "第一问每子图一个Task，第二三问每核心全部子图一个Task",
+      "source": "题面§1.5、附录D.2",
+      "first_use": "三问差异表",
+      "later_use": "交接与等待",
+      "distinguish_from": "算子、子图、主机求解作业、Ansor调优任务"
+    },
+    {
+      "name": "计算及搬运流水线",
+      "symbol": "ρ(v)",
+      "unit": null,
+      "definition": "PIPE_M/V/MTE2/MTE3各自独占；不同Pipe依条件可并行",
+      "source": "题面附录A、C、D",
+      "first_use": "统一执行模型",
+      "later_use": "约束及负载下界"
+    },
+    {
+      "name": "实际片上缓冲实例集合",
+      "symbol": "ℬ_{k,r}(t)",
+      "unit": null,
+      "definition": "时刻t第k核存储区r∈{L1,UB}已分配尚未释放的缓冲实例",
+      "source": "题面附录C/D；A16",
+      "first_use": "容量约束",
+      "later_use": "Spill解释"
+    },
+    {
+      "name": "Spill",
+      "symbol": "D_spill",
+      "unit": "字节",
+      "definition": "官方固定Step2在容量不足时自动形成的换出、取回搬运",
+      "source": "题面附录C.2；A16",
+      "first_use": "统一执行模型",
+      "later_use": "额外COPY与驻留候选",
+      "distinguish_from": "求解器自主换出决策"
+    },
+    {
+      "name": "只读L2先进先出队列",
+      "symbol": "Q_e",
+      "unit": null,
+      "definition": "事件e前已完成填充的缓存条目；命中不刷新插入位置",
+      "source": "题面附录D.5",
+      "first_use": "第三问执行语义",
+      "later_use": "缓存时序邻域"
+    },
+    {
+      "name": "总体任务执行时间（Makespan）",
+      "symbol": "C_q(x)=max_j f_j",
+      "unit": "周期",
+      "definition": "全部扩展操作完成时刻的最大值；正文统一使用此中文名",
+      "source": "题面§1.4；附录D",
+      "first_use": "优化目标",
+      "later_use": "三问结果、下界与停止"
+    },
+    {
+      "name": "官方额外COPY字节",
+      "symbol": "D_q(x)",
+      "unit": "字节",
+      "definition": "官方评估输出相对原图新增COPY的字节口径，作为同周期并列准则",
+      "source": "题面§1.4；官方评估",
+      "first_use": "优化目标",
+      "later_use": "逐问结果",
+      "distinguish_from": "实际DDR服务字节、L2命中字节、Spill子项"
+    },
+    {
+      "name": "字典序目标",
+      "symbol": "J_q(x)=(C_q(x),D_q(x))",
+      "unit": "周期，字节",
+      "definition": "先比较周期，同周期再比较额外COPY字节",
+      "source": "绑定THEORY§4；锚点solve.py",
+      "first_use": "优化目标",
+      "later_use": "接受规则及单调性"
+    },
+    {
+      "name": "全局下界",
+      "symbol": "L",
+      "unit": "周期",
+      "definition": "在明确依赖/资源/强制流量条件下对全部可行方案有效的完成周期下界",
+      "source": "绑定THEORY§5；锚点core.py:bounds",
+      "first_use": "下界命题",
+      "later_use": "相对差距与停止"
+    },
+    {
+      "name": "候选专属下界",
+      "symbol": "L(x)",
+      "unit": "周期",
+      "definition": "固定候选的归核、交接等以后成立的下界，仅用于该候选过滤",
+      "source": "绑定THEORY§5；锚点core.py:bounds",
+      "first_use": "候选过滤命题",
+      "later_use": "算法预检"
+    },
+    {
+      "name": "主机搜索时间",
+      "symbol": "τ",
+      "unit": "秒",
+      "definition": "从主机开始到可用方案保存的墙钟时间，与设备周期分开",
+      "source": "绑定THEORY§7；锚点solve.py",
+      "first_use": "算法预算",
+      "later_use": "时间—质量曲线"
+    },
+    {
+      "name": "同方案缓存加速比",
+      "symbol": "R_{i,n}=C₂(x_{i,3,n})/C₃(x_{i,3,n})",
+      "unit": "无量纲",
+      "definition": "固定第三问选中同一方案分别按无/有L2语义评价",
+      "source": "题面问题3；绑定THEORY§7",
+      "first_use": "第三问指标",
+      "later_use": "结果图表"
+    }
+  ],
+  "synonym_policy": {
+    "最大完成时间": "正文统一改为总体任务执行时间（Makespan）",
+    "总时延": "若指C_q则统一为总体任务执行时间（Makespan）",
+    "缓存命中率": "先说明按字节还是按请求计数；本文若使用默认指字节命中率",
+    "额外数据搬运量": "与官方额外COPY字节D_q对应；不得与实际DDR服务字节互换"
+  },
+  "pending_root_review": [
+    "最终运行源码与锚点的语义对齐",
+    "第三问逻辑别名和同一时刻事件顺序",
+    "下界强制DDR流量证书",
+    "实际结果变量及图注单位"
+  ],
+  "final_review_record": "验收输出/最终审阅.json",
+  "supplementary_symbols": [
+    {
+      "symbol": "f_t",
+      "definition": "一次成功填入缓存的事件时刻；同周期按执行器事件顺序解释",
+      "first_use": "第三问6.5.1",
+      "later_use": "FIFO窗口证明和逐事件图"
+    },
+    {
+      "symbol": "e_t",
+      "definition": "该次驻留的首次淘汰事件时刻",
+      "first_use": "第三问6.5.1",
+      "later_use": "命中窗口上端点"
+    },
+    {
+      "symbol": "A_t(τ)",
+      "definition": "t成功填入后、至τ时成功插入并排在t后面的新对象累计字节，命中及不驻留对象不重复计入",
+      "unit": "字节",
+      "first_use": "第三问命题4",
+      "later_use": "FIFO淘汰条件与证明"
+    },
+    {
+      "symbol": "s_t",
+      "definition": "消费者COPY_IN发射并查询缓存的事件时刻",
+      "first_use": "第三问6.5.1",
+      "later_use": "命中窗口f_t≤s_t<e_t"
+    }
+  ]
+}

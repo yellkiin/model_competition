@@ -1,0 +1,30 @@
+{
+  "schema": 2,
+  "created_at": "20260925T205438862843Z",
+  "theory_revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+  "source_snapshot": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z",
+  "theory_source_id": "theory_pr38_v1",
+  "theory_package": "orion-pr38-theory-v1",
+  "inspected_implementation_anchor": {
+    "pr": 38,
+    "commit": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+    "implementation_root": "research_a_orion_trident",
+    "binding_rule": "This is the inspected theory anchor, not an assertion that all future experiments use this code"
+  },
+  "publication": null,
+  "implementation_revision": null,
+  "method_paths": null,
+  "glossary": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z\\GLOSSARY.json",
+  "input_root": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z",
+  "alignment_state": "pending_semantic_review",
+  "reading_order": [
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z\\THEORY.md",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z\\ALGORITHM.md",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z\\TERMS.json",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z\\SOURCE_MAP.md",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z\\PAPER_ROUTE.md",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z\\references.bib",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\论文理论\\bindings\\20260925T204725662983Z\\MANIFEST.json"
+  ],
+  "manuscript_route": "联合决策 → 统一执行 → 多邻域迭代改进；三问分别特化任务与存储语义。"
+}

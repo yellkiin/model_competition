@@ -1,0 +1,842 @@
+{
+  "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+  "candidates": [
+    {
+      "path": "research_a_orion_anytime/team_results/day01/PUBLICATION.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "d22bb9447dc7021e8e13fb11e1475eaddb4d826a",
+      "publication": {
+        "schema_version": 1,
+        "iteration_id": "day01",
+        "events": [
+          {
+            "schema_version": 1,
+            "iteration_id": "day01",
+            "stage": "combined_final",
+            "path": "combined_final/",
+            "payload_commit": "ce085fcd24acf68e2df37bcb2b72019e1a055778",
+            "remote_verified": true,
+            "published_at_utc": "2026-09-24T12:47:32.393Z",
+            "formal_complete": true,
+            "graphs": 100,
+            "valid_main": 1400,
+            "valid_pairs": 500,
+            "independent_checks": 1400,
+            "per_machine_comparison": "MACHINE_COMPARISON.md",
+            "preserved_shards": [
+              {
+                "shard_index": 0,
+                "path": "shard_0/",
+                "final_commit": "a6ff10eb501200b390934c688b2f95223fe8c634"
+              },
+              {
+                "shard_index": 1,
+                "path": "shard_1/",
+                "final_commit": "8c4f60ee33fdc3cbf92b894517f75b9670ec08df",
+                "payload_commit": "348b1373badf7a67beeb2a517c80d2159bd0b4a6",
+                "user_explicitly_requested_preservation": true
+              }
+            ],
+            "preservation_policy": "Keep shard_1 raw transfer, refinement_complete, final, per-case results, failures and original budgets independently. Keep shard_0 independently too. Combined report does not replace or select between shards."
+          }
+        ]
+      }
+    },
+    {
+      "path": "research_a_orion_anytime/team_results/day01/latest.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "dd027d99b7ed19f964745d7554b9a6f33e35c303",
+      "publication": {
+        "schema_version": 1,
+        "iteration_id": "day01",
+        "stage": "combined_final",
+        "path": "combined_final/",
+        "payload_commit": "ce085fcd24acf68e2df37bcb2b72019e1a055778",
+        "remote_verified": true,
+        "published_at_utc": "2026-09-24T12:47:32.393Z",
+        "formal_complete": true,
+        "graphs": 100,
+        "valid_main": 1400,
+        "valid_pairs": 500,
+        "independent_checks": 1400,
+        "per_machine_comparison": "MACHINE_COMPARISON.md",
+        "preserved_shards": [
+          {
+            "shard_index": 0,
+            "path": "shard_0/",
+            "final_commit": "a6ff10eb501200b390934c688b2f95223fe8c634"
+          },
+          {
+            "shard_index": 1,
+            "path": "shard_1/",
+            "final_commit": "8c4f60ee33fdc3cbf92b894517f75b9670ec08df",
+            "payload_commit": "348b1373badf7a67beeb2a517c80d2159bd0b4a6",
+            "user_explicitly_requested_preservation": true
+          }
+        ],
+        "preservation_policy": "Keep shard_1 raw transfer, refinement_complete, final, per-case results, failures and original budgets independently. Keep shard_0 independently too. Combined report does not replace or select between shards."
+      }
+    },
+    {
+      "path": "research_a_orion_anytime/team_results/day01/shard_0/PUBLICATION.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "774a90abdad82a12c3835c0261f8d1cd7755cde9",
+      "publication": {
+        "schema_version": 1,
+        "iteration_id": "day01",
+        "shard_index": 0,
+        "events": [
+          {
+            "stage": "refinement_complete",
+            "path": "refinement_complete/",
+            "payload_commit": "a9475f4fcb038ce4ac23aa322254a0543f026cd9",
+            "remote_verified": true,
+            "published_at_utc": "2026-09-24T12:15:30.138141+00:00"
+          },
+          {
+            "stage": "final",
+            "path": "final/",
+            "payload_commit": "a6ff10eb501200b390934c688b2f95223fe8c634",
+            "remote_verified": true,
+            "published_at_utc": "2026-09-24T12:41:01.085146+00:00",
+            "archive_manifest": "final/TRANSFER_PARTS.json",
+            "archive_bytes": 498612048,
+            "parts": 6
+          }
+        ]
+      }
+    },
+    {
+      "path": "research_a_orion_anytime/team_results/day01/shard_0/latest.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "4384f2a6bd4e5ea30b09a9e700bfa4d16ac3950b",
+      "publication": {
+        "schema_version": 1,
+        "iteration_id": "day01",
+        "shard_index": 0,
+        "stage": "final",
+        "path": "final/",
+        "payload_commit": "a6ff10eb501200b390934c688b2f95223fe8c634",
+        "remote_verified": true,
+        "published_at_utc": "2026-09-24T12:41:01.085146+00:00",
+        "archive_manifest": "final/TRANSFER_PARTS.json",
+        "archive_bytes": 498612048,
+        "parts": 6
+      }
+    },
+    {
+      "path": "research_a_orion_anytime/team_results/day01/shard_1/PUBLICATION.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "43bf5a1a34e40cc65b3eb1d1651b7a1f9e3c00ba",
+      "publication": {
+        "schema_version": 1,
+        "iteration_id": "day01",
+        "shard_index": 1,
+        "repository": "yellkiin/model_competition",
+        "branch": "codex/orion-team-run-20260924",
+        "payload_commit": "348b1373badf7a67beeb2a517c80d2159bd0b4a6",
+        "confirmed_remote_commit": "348b1373badf7a67beeb2a517c80d2159bd0b4a6",
+        "published_at_utc": "2026-09-24T11:56:44.992584+00:00",
+        "uploaded": true,
+        "stages": {
+          "refinement_complete": {
+            "manifest": "refinement_complete/ARCHIVE_PARTS.json",
+            "archive_name": "team_day01_shard1_refinement_complete.zip",
+            "archive_bytes": 569834331,
+            "part_count": 12
+          },
+          "final": {
+            "manifest": "final/ARCHIVE_PARTS.json",
+            "archive_name": "team_day01_shard1_final.zip",
+            "archive_bytes": 624575904,
+            "part_count": 13
+          }
+        },
+        "verification": "Remote branch tree and manifest readback; all prepared paths retained and all part sizes confirmed. No new checksums.",
+        "historical_status_note": "Stage PHASE_STATUS and LOCAL_DELIVERY preserve their original snapshot-time uploaded=false fields. This publication record confirms subsequent GitHub delivery."
+      }
+    },
+    {
+      "path": "research_a_orion_anytime/team_results/day01/shard_1/latest.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "8c0b8dfd66c12f893b9d18e252c919f9fe2242cd",
+      "publication": {
+        "schema_version": 1,
+        "iteration_id": "day01",
+        "shard_index": 1,
+        "stage": "final",
+        "path": "final/",
+        "published_at_utc": "2026-09-24T11:56:44.992584+00:00",
+        "payload_commit": "348b1373badf7a67beeb2a517c80d2159bd0b4a6",
+        "archive_manifest": "final/ARCHIVE_PARTS.json",
+        "publication_record": "PUBLICATION.json"
+      }
+    },
+    {
+      "path": "research_a_orion_track_anytime/results/reconcile_20260925_1012/FINAL_PUBLICATION.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "e08d0ce3482ccaded2c14104f3ad321b97bea360",
+      "publication": {
+        "repository": "yellkiin/model_competition",
+        "new_pr": 36,
+        "new_branch": "orion/anytime-reconcile-20260925-1012",
+        "base_pr": 34,
+        "base_branch_not_modified": "orion/track-anytime_wu",
+        "preserved_base_head": "27f7aa073bd7f91a1b1b9842eb2c9eb48117bf37",
+        "preservation_check": "All final differences from the frozen peer head are added files in research_a_orion_track_anytime; no inherited file changed or deleted.",
+        "post_v3_commit_attribution": {
+          "complete_interval_commits": 17,
+          "earlier_helper_commits": {
+            "author": "Darklord258",
+            "count": 8,
+            "first": "6110eaedcdd0fa73632fc962ef62a269a3e6d767",
+            "last": "6ff9a8f52674449656832b2ea38ad1457ea2ddfa"
+          },
+          "peer_v4_commits": {
+            "author": "r1293870729-dev",
+            "count": 9,
+            "first": "c6c91edc1c467b4649ded538f9bbbfae91e0b1e4",
+            "last": "27f7aa073bd7f91a1b1b9842eb2c9eb48117bf37",
+            "contributions": [
+              "private-island structural micro-wave",
+              "FIFO fill/eviction-aware candidates",
+              "v4 integration and near-bound stop",
+              "measured report and evidence index"
+            ]
+          },
+          "note": "Git authors identify recorded accounts, not independently the identity of an AI. Preserve both groups. Our current additions are isolated in PR36."
+        },
+        "experiment_run": 36123440945,
+        "experiment_commit": "404b9d31cbb8bf86f281e5add5dc0ab6f05a1c8d",
+        "expected_search_arms": 36,
+        "actual_search_arms": 36,
+        "official_selected_valid": 36,
+        "same_plan_no_l2_pairs_valid": 30,
+        "new_vs_peer_comparison": {
+          "win": 1,
+          "tie": 10,
+          "loss": 1
+        },
+        "historical_local_v4_v5_originals_recovered": false,
+        "replacement_policy": "reconcile-v6; freshly reimplemented and measured, not recovered historical bytes",
+        "release_url": "https://github.com/yellkiin/model_competition/releases/tag/anytime-reconcile-20260925-1012",
+        "raw_archives": {
+          "count": 7,
+          "bytes": 100488180,
+          "details": "EVIDENCE_INDEX.json"
+        },
+        "code_document_results_archive": {
+          "asset_id": 588131442,
+          "name": "Anytime_PR34_reconciliation_complete_20260925.zip",
+          "size_bytes": 605440,
+          "state": "uploaded",
+          "url": "https://github.com/yellkiin/model_competition/releases/download/anytime-reconcile-20260925-1012/Anytime_PR34_reconciliation_complete_20260925.zip",
+          "source_commit": "0dee0a4a39092925016eb7e93ecd7bda16f524e0",
+          "packaging_run": 36124794436,
+          "packaging_new_experiments": 0,
+          "contains": [
+            "preserved peer implementation",
+            "new reconciliation implementation",
+            "Chinese comparison document",
+            "36 selected plans and result tables",
+            "portable seed index and Windows entry"
+          ]
+        },
+        "temporary_workflows_removed": true,
+        "automatic_merge": false,
+        "local_preflight_note": "A separate local 044 pilot and one portable fixed-plan replay are ancillary, not pooled with the 36 cloud arms. Their exact local wrappers are not claimed in the seven cloud archives.",
+        "comparison_document": "research_a_orion_track_anytime/RECONCILIATION_COMPARISON.md"
+      }
+    },
+    {
+      "path": "research_a_orion_trident/team_results/trident_round01/shard_0/PUBLICATION.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "ef74ffc07f26c0e049eb7a3dd9fdff4e553699cb",
+      "publication": {
+        "source_run": "C:\\Users\\LEGION\\Documents\\ChatGPT\\华为杯\\model_competition_trident_host0\\research_a_orion_trident\\runs\\round01\\shard_0",
+        "archive_parts": [
+          {
+            "path": "evidence.zip",
+            "bytes": 4184870
+          }
+        ],
+        "archive_format": "ZIP with run/ prefix; concatenate parts in listed order",
+        "shard_status": {
+          "complete": false,
+          "expected_main": 476,
+          "expected_pairs": 170,
+          "saved_legal_main": 2,
+          "complete_main": 1,
+          "partial_main": 1,
+          "not_started_main": 474,
+          "paired": 0,
+          "reason": "frozen release real-case gate stopped after Windows persistence PermissionError",
+          "report": "report/report.json",
+          "coverage": "report/paper_data/SHARD_0_COVERAGE.json"
+        },
+        "all_candidate_files": true,
+        "selected_plan_count": 2,
+        "selected_outputs_complete": false,
+        "main_count": 2,
+        "pair_count": 0,
+        "formal_100_complete": false,
+        "automatic_upload": false,
+        "restore_command": "python -m research_a_orion_trident.unpack_results <this-directory> --out <new-directory>",
+        "raw_location": {
+          "index": "RAW_ASSETS.json",
+          "tag": "orion-trident_round01-shard-0-20260925-152648",
+          "kind": "GitHub Release"
+        }
+      }
+    },
+    {
+      "path": "research_a_orion_trident/team_results/trident_round01/shard_1/PUBLICATION.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "70736828d6405a505d6f5d2cbc10fdd81b6398e1",
+      "publication": {
+        "experiment": "ORION Trident trident-1.3 round01 host1 shard1",
+        "graph_count": 33,
+        "main_result_count": 462,
+        "same_plan_pair_count": 165,
+        "authorized_scope_complete": true,
+        "frozen_head": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+        "canonical_report": "RUN_OUTCOME.md",
+        "canonical_tables": "derived/",
+        "github_scope": "reports and aggregate tables only",
+        "raw_location": {
+          "kind": "user_managed_local_copy",
+          "archive_name": "ORION_Trident_trident-1.3_round01_HOST1_shard1_FULL_20260926.zip",
+          "release_upload": false
+        },
+        "archive_parts": []
+      }
+    },
+    {
+      "path": "research_a_orion_trident/team_results/trident_round01/shard_2/PUBLICATION.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "f296a8acf53b7158ac69c0932bfacb22818062bb",
+      "publication": {
+        "source_run": "E:\\handoff_20260924\\orion_trident_host2\\research_a_orion_trident\\runs\\round01\\shard_2",
+        "archive_parts": [],
+        "archive_format": "Full local ZIP provided separately by user; not available as complete remote assets",
+        "shard_status": {
+          "complete": false,
+          "expected_main": 462,
+          "expected_pairs": 165,
+          "report": "report/report.json",
+          "fifo_pending": false
+        },
+        "all_candidate_files": true,
+        "selected_plan_count": 460,
+        "selected_outputs_complete": false,
+        "main_count": 460,
+        "pair_count": 165,
+        "formal_100_complete": false,
+        "automatic_upload": false,
+        "restore_command": "Extract the user-provided FULL ZIP into a new directory; see HANDOFF_README.md. Do not concatenate partial Release assets.",
+        "raw_location": {
+          "kind": "user_managed_local_copy",
+          "archive_name": "ORION_Trident_trident-1.3_round01_shard2_FULL_20260926.zip",
+          "upload_cancelled_by_user": true,
+          "partial_release_not_complete": true
+        },
+        "github_scope": "reports, verification and aggregate tables only; plans/raw evaluator responses/per-attempt traces are in the local full archive",
+        "selected_plans_location": "local full archive: research_a_orion_trident/runs/round01/shard_2/report/plans"
+      }
+    },
+    {
+      "path": "research_a_orion_trident/team_results/trident_round01_savefix/shard_0/PUBLICATION.json",
+      "revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+      "blob": "fe37e3fe0bcbf63795aa61653daeb8cee384c605",
+      "publication": {
+        "source_run": "offline package: 01_actual_run/round01_savefix_shard0_raw.zip/run",
+        "archive_parts": [
+          {
+            "path": "evidence.zip.part001",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part002",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part003",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part004",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part005",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part006",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part007",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part008",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part009",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part010",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part011",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part012",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part013",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part014",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part015",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part016",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part017",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part018",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part019",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part020",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part021",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part022",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part023",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part024",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part025",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part026",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part027",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part028",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part029",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part030",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part031",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part032",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part033",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part034",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part035",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part036",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part037",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part038",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part039",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part040",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part041",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part042",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part043",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part044",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part045",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part046",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part047",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part048",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part049",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part050",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part051",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part052",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part053",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part054",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part055",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part056",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part057",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part058",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part059",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part060",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part061",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part062",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part063",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part064",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part065",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part066",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part067",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part068",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part069",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part070",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part071",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part072",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part073",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part074",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part075",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part076",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part077",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part078",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part079",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part080",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part081",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part082",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part083",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part084",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part085",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part086",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part087",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part088",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part089",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part090",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part091",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part092",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part093",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part094",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part095",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part096",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part097",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part098",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part099",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part100",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part101",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part102",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part103",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part104",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part105",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part106",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part107",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part108",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part109",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part110",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part111",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part112",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part113",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part114",
+            "bytes": 41943040
+          },
+          {
+            "path": "evidence.zip.part115",
+            "bytes": 12748184
+          }
+        ],
+        "archive_format": "ZIP with run/ prefix; concatenate parts in listed order",
+        "shard_status": {
+          "complete": false,
+          "expected_main": 476,
+          "expected_pairs": 170,
+          "report": "report/report.json",
+          "fifo_pending": false
+        },
+        "all_candidate_files": true,
+        "selected_plan_count": 476,
+        "selected_outputs_complete": false,
+        "main_count": 476,
+        "pair_count": 169,
+        "formal_100_complete": false,
+        "automatic_upload": false,
+        "restore_command": "python -m research_a_orion_trident.unpack_results <this-directory> --out <new-directory>",
+        "raw_location": {
+          "kind": "offline ZIP copied manually by user",
+          "filename": "ORION_Trident_shard0_round01_savefix_FULL_20260926.zip",
+          "remote_release_complete": false
+        },
+        "raw_upload_cancelled_by_user": true,
+        "plan_delivery": "offline package only; selected_plans.zip removed from current Git tree"
+      }
+    }
+  ],
+  "selection": "Match report metadata to the local raw archives and choose one publication/cohort."
+}

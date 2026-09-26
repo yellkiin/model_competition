@@ -1,0 +1,33 @@
+\documentclass[tikz,border=1.5mm]{standalone}
+\usepackage[UTF8,fontset=windows]{ctex}
+\setCJKmainfont[AutoFakeBold=1.5]{SimSun}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\definecolor{navy}{HTML}{17324D}\definecolor{blue}{HTML}{2878A5}\definecolor{teal}{HTML}{218C83}\definecolor{orange}{HTML}{D9873F}\definecolor{ink}{HTML}{243746}\definecolor{muted}{HTML}{647789}\definecolor{pale}{HTML}{F3F7FA}\definecolor{pblue}{HTML}{E9F2F8}\definecolor{pteal}{HTML}{E8F4F1}\definecolor{porange}{HTML}{FCF1E7}
+\tikzset{box/.style={draw=navy!65,fill=white,rounded corners=1.5mm,line width=.6pt,text=ink,align=center,font=\fontsize{7.5}{9}\selectfont,text width=30mm,minimum height=9mm,inner sep=1mm},sm/.style={box,font=\fontsize{7}{8.3}\selectfont},store/.style={box,draw=teal!80!black,fill=pteal},heading/.style={text=navy,font=\fontsize{8}{9}\selectfont\bfseries,anchor=west},lab/.style={text=muted,align=center,font=\fontsize{6.8}{8}\selectfont},arr/.style={-{Stealth[length=1.7mm]},draw=blue,line width=.65pt},data/.style={-{Stealth[length=1.7mm]},draw=teal,line width=.7pt},wait/.style={-{Stealth[length=1.7mm]},draw=orange,densely dashed,line width=.7pt}}
+\begin{document}
+\begin{tikzpicture}[x=1mm,y=1mm]
+\path[fill=pale,rounded corners=2mm] (0,0) rectangle (160,88);
+\node[heading] at (5,82) {联合决策：构造一个完整候选方案};
+\node[sm,text width=32mm] (p) at (25,73) {子图划分 $\mathcal P$};
+\node[sm,text width=32mm] (a) at (62,73) {核心归属 $a$};
+\node[sm,text width=32mm] (pi) at (99,73) {核内顺序 $\boldsymbol\pi$};
+\node[sm,fill=pblue,text width=32mm] (x) at (136,73) {完整候选 $x$};
+\draw[arr](p)--(a);\draw[arr](a)--(pi);\draw[arr](pi)--(x);
+
+\node[box,text width=43mm,minimum height=20mm] (q1) at (27,51) {\textbf{问题一｜子图级任务}\\跨子图数据经 DDR；同核切换等待 100 周期；跨核依赖等待 1000 周期};
+\node[box,text width=43mm,minimum height=20mm] (q2) at (80,51) {\textbf{问题二｜核心级任务}\\同核片上驻留；跨核写出完成后等待 500 周期，再释放读入};
+\node[box,text width=43mm,minimum height=20mm] (q3) at (133,51) {\textbf{问题三｜加入 L2 FIFO（二级缓存）}\\沿用跨核交接；按逻辑张量查询，命中与未命中分池读服务};
+\draw[arr](x.south)--(136,64)--(27,64)--(q1.north);\draw[arr](136,64)--(80,64)--(q2.north);\draw[arr](136,64)--(133,64)--(q3.north);
+\node[lab] at (80,38) {同一方案空间，三种执行规则，统一的周期与搬运目标};
+\node[box,text width=48mm,minimum height=12mm,fill=pblue] (eval) at (48,28) {按场景重建任务、搬运与存储事件\\离散事件执行并检查可行性};
+\node[box,text width=40mm,minimum height=12mm] (metric) at (112,28) {总体任务执行时间 $C_q$\\与额外搬运量 $D_q$};
+\draw[arr](eval)--(metric);
+\node[heading] at (40,15) {邻域搜索与反馈};
+\node[sm,text width=33mm] (move) at (26,7) {生成结构、驻留或顺序邻域};
+\node[sm,text width=33mm] (screen) at (70,7) {预检并筛除下界劣解};
+\node[sm,text width=36mm,fill=porange] (accept) at (116,7) {完整评价；可行且字典序改善才接受};
+\node[sm,text width=24mm] (inc) at (150,7) {更新当前解};
+\draw[arr](move)--(screen);\draw[arr](screen)--(accept);\draw[arr](accept)--(inc);
+\draw[wait](inc.north)--(150,19)--(26,19)--(move.north);
+\end{tikzpicture}\end{document}

@@ -1,0 +1,19 @@
+\documentclass[tikz,border=1.5mm]{standalone}
+\usepackage[UTF8,fontset=windows]{ctex}
+\setCJKmainfont[AutoFakeBold=1.5]{SimSun}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\definecolor{navy}{HTML}{17324D}\definecolor{blue}{HTML}{2878A5}\definecolor{teal}{HTML}{218C83}\definecolor{orange}{HTML}{D9873F}\definecolor{ink}{HTML}{243746}\definecolor{muted}{HTML}{647789}\definecolor{pale}{HTML}{F3F7FA}\definecolor{pblue}{HTML}{E9F2F8}\definecolor{pteal}{HTML}{E8F4F1}\definecolor{porange}{HTML}{FCF1E7}
+\tikzset{box/.style={draw=navy!65,fill=white,rounded corners=1.5mm,line width=.6pt,text=ink,align=center,font=\fontsize{7.5}{9}\selectfont,text width=30mm,minimum height=9mm,inner sep=1mm},sm/.style={box,font=\fontsize{7}{8.3}\selectfont},store/.style={box,draw=teal!80!black,fill=pteal},heading/.style={text=navy,font=\fontsize{8}{9}\selectfont\bfseries,anchor=west},lab/.style={text=muted,align=center,font=\fontsize{6.8}{8}\selectfont},arr/.style={-{Stealth[length=1.7mm]},draw=blue,line width=.65pt},data/.style={-{Stealth[length=1.7mm]},draw=teal,line width=.7pt},wait/.style={-{Stealth[length=1.7mm]},draw=orange,densely dashed,line width=.7pt}}
+\begin{document}
+\begin{tikzpicture}[x=1mm,y=1mm]
+\path[fill=pale,rounded corners=2mm](0,0)rectangle(160,68);
+\node[heading]at(5,62){核心 1：两个子图任务按序执行};
+\node[box](g1)at(35,51){子图 $G_1$\\任务 1};\node[box](g2)at(125,51){子图 $G_2$\\任务 2};
+\draw[arr](g1.east)--node[above,lab,text width=49mm]{同核切换等待 100 周期}(g2.west);
+\node[sm](out)at(35,32){边界写出\\COPY\_OUT};\node[store](ddr)at(80,32){DDR 片外存储\\共享带宽池};\node[sm](in)at(125,32){边界读入\\COPY\_IN};
+\draw[data](g1.south)--(out.north);\draw[data](out.east)--(ddr.west);\draw[data](ddr.east)--(in.west);\draw[data](in.north)--(g2.south);
+\node[heading]at(5,22){核心 2};\node[box](g3)at(125,13){子图 $G_3$\\任务 3};
+\draw[wait](g2.east)--(153,51)--(153,13)--(g3.east);`n\node[lab,text width=43mm]at(69,15){跨核前驱完成后等待 1000 周期};
+\node[lab,anchor=west,align=left,text width=146mm]at(6,3){示例数据边 $G_1\to G_2$ 跨子图，即使同核也经 DDR；跨核依赖另受固定等待约束。};
+\end{tikzpicture}\end{document}

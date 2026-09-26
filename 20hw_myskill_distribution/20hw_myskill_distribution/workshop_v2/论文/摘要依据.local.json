@@ -1,0 +1,119 @@
+{
+  "record_type": "current_abstract_to_normalized_combined_evidence",
+  "abstract_source": "论文/摘要.tex",
+  "data_root": "求解/规范化数据/combined",
+  "measurement_definition": "加速比为每图基准周期除以该问该核数周期，报告100图逐图比值的算术平均；同方案缓存比固定第三问方案，分别按无/有L2语义评价。周期和额外COPY字节为不同量。",
+  "questions": [
+    {
+      "chapter_id": "问题一",
+      "method": {
+        "abstract": "每子图一个Task；多邻域迭代改进；可行且字典序改善才接受",
+        "sources": [
+          "论文/章节内容/04_问题一.tex",
+          "求解/THEORY_ALIGNMENT.md",
+          "求解/METHOD_TO_CODE.csv"
+        ]
+      },
+      "values": [
+        {
+          "claim": "五核平均加速比3.9180",
+          "source": "求解/规范化数据/combined/SUMMARY.json#/questions/q1/five_core_mean",
+          "unrounded": 3.9179853062705785
+        },
+        {
+          "claim": "五核中位数4.4227",
+          "source": "求解/规范化数据/combined/SUMMARY.json#/questions/q1/five_core_median",
+          "unrounded": 4.422735062896114
+        },
+        {
+          "claim": "88图未产生自动换出",
+          "source": "求解/规范化数据/combined/SUMMARY.json#/questions/q1/zero_spill_count",
+          "value": 88
+        },
+        {
+          "claim": "五核额外搬运均值14585335.66 B",
+          "source": "求解/规范化数据/combined/SUMMARY.json#/questions/q1/mean_added_copy_bytes",
+          "value": 14585335.66
+        }
+      ],
+      "validation": "每30秒前缀仅来自当时已保存可用解；定位求解/规范化数据/combined/anytime.csv和anytime_summary.csv，不能以后来终值回填。"
+    },
+    {
+      "chapter_id": "问题二",
+      "method": {
+        "abstract": "每核心全部子图构成一个Task；同核可延续驻留，跨核写出后500周期释放读入；采用驻留与交接候选",
+        "sources": [
+          "论文/章节内容/05_问题二.tex",
+          "求解/THEORY_ALIGNMENT.md",
+          "求解/METHOD_TO_CODE.csv"
+        ]
+      },
+      "values": [
+        {
+          "claim": "五核平均加速比4.4538",
+          "source": "求解/规范化数据/combined/SUMMARY.json#/questions/q2/five_core_mean",
+          "unrounded": 4.4538064457658715
+        },
+        {
+          "claim": "100图中89图周期短于第一问",
+          "source": "求解/规范化数据/combined/ANALYSIS.json#/cross_question/q2_better_q1",
+          "value": 89
+        },
+        {
+          "claim": "五核额外搬运均值8094619.10 B",
+          "source": "求解/规范化数据/combined/SUMMARY.json#/questions/q2/mean_added_copy_bytes",
+          "unrounded": 8094619.1
+        }
+      ],
+      "validation": "逐图搬运存在增减，摘要仅陈述均值；逐图依据main.csv与cross_question.csv。"
+    },
+    {
+      "chapter_id": "问题三",
+      "method": {
+        "abstract": "只读L2按COPY_IN发射查询、完成填充、FIFO淘汰；基于缓存事件移动完整子图",
+        "sources": [
+          "论文/章节内容/06_问题三.tex",
+          "论文/章节内容/缓存事件补充.tex",
+          "求解/THEORY_ALIGNMENT.md"
+        ]
+      },
+      "values": [
+        {
+          "claim": "五核主实验平均加速比4.5978",
+          "source": "求解/规范化数据/combined/SUMMARY.json#/questions/q3/five_core_mean",
+          "unrounded": 4.597829265850352
+        },
+        {
+          "claim": "100图×5核数=500组同方案对照",
+          "source": "求解/规范化数据/combined/SUMMARY.json#/paired_configurations；combined/pairs.csv",
+          "value": 500,
+          "repair_note": "case_014五核无L2响应由combined/supplemental/case_014_q3n5_same_plan_no_l2/result.json.gz补齐，见pairs.csv该行"
+        },
+        {
+          "claim": "五核平均无缓存/有缓存周期比1.0558",
+          "source": "求解/规范化数据/combined/pair_summary.csv#n=5.mean_cache_speedup",
+          "unrounded": 1.0558429548125037
+        },
+        {
+          "claim": "五核77图缩短、23图相同",
+          "source": "求解/规范化数据/combined/pair_summary.csv#n=5.improved,equal",
+          "values": [
+            77,
+            23
+          ]
+        },
+        {
+          "claim": "六图54组固定方案参数评价",
+          "source": "求解/规范化数据/studies/cache_parameter_grid.csv#mode=fixed_plan（54行）；论文/章节内容/06_问题三.tex:80",
+          "value": 54
+        }
+      ],
+      "validation": "缓存读带宽和命中率的非单调例见论文/章节内容/缓存事件补充.tex；其数值应回指逐事件及参数格原记录。"
+    }
+  ],
+  "scope_notes": [
+    "本记录映射当前摘要，不改写摘要。",
+    "THEORY_ALIGNMENT.md已经更新为500组完整配对，并记录case_014授权补算的来源。",
+    "SUMMARY.json的official_response_count=1400与baseline_values=100是当前规范化统计；其中case_072和case_091基准值来自明确标记的晚期补算，不属于原600秒主运行。"
+  ]
+}

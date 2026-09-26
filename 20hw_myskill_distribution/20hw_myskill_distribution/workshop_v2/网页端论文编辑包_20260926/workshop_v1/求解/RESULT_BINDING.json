@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "kind": "selected_production_binding",
+  "project_root": "D:\\华为杯写作",
+  "session_path": "D:\\华为杯写作\\ORION_Paper_Agent\\.orion_paper\\SESSION.json",
+  "session_modified": false,
+  "catalogue": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\local_catalogues\\20260925T205039649376Z.json",
+  "publication_family": "ORION Trident round01, three nonoverlapping shards; shard0 Windows savefix variant",
+  "publication_state": "complete_selected_main_and_same_plan_pairs_with_authorized_supplements",
+  "single_algorithm_revision": null,
+  "single_revision_note": "shard0 delivery identifies 854d... / trident-1.3-win-save.1; shards1/2 identify frozen 489e... / trident-1.3. Do not misstate a single exact commit for all three.",
+  "method_paths": [
+    "research_a_orion_trident"
+  ],
+  "snapshot_method_root": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\method\\research_a_orion_trident",
+  "snapshot_git_revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+  "original_algorithm_pr": 38,
+  "frozen_original_algorithm_revision": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+  "original_official_semantics": "official files unchanged per delivery records; no independent byte comparison performed",
+  "protocol": {
+    "budget_scope": "graph_question_core",
+    "seconds": 600,
+    "mode": "warm where recorded; use per-job seed_mode and execution",
+    "max_evaluations": 2048,
+    "seed_cost_policy": "preserve historical, current, retry and retained-response cost separately"
+  },
+  "layout": {
+    "jobs": "jobs/*/summary.json",
+    "plan": "plan.json",
+    "response": "result.json.gz",
+    "progress": "progress.json",
+    "inline_pair_plan": "same_plan_no_l2_plan.json",
+    "inline_pair_response": "same_plan_no_l2_result.json.gz",
+    "diagnostics": "diagnostics/*/*/summary.json",
+    "mechanisms": "mechanisms/{fixed,adapted}/*/summary.json",
+    "paper_data": "report/paper_data/"
+  },
+  "shards": [
+    {
+      "shard_index": 0,
+      "catalogue_entry": "local_0003",
+      "source_archive": "D:\\数据\\ORION_Trident_shard0_round01_savefix_FULL_20260926.zip",
+      "run_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run",
+      "config_local": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\shard0_outer\\records\\03_inputs\\official\\data\\config.txt",
+      "executed_source_snapshot": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run\\source_snapshot",
+      "algorithm_version": "trident-1.3-win-save.1",
+      "algorithm_revision_claimed_by_delivery": "854d8775ee378e14089fade6e30fd83b0a832842",
+      "git_report_root": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\reports\\research_a_orion_trident\\team_results\\trident_round01_savefix\\shard_0",
+      "local_report_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\shard0_outer\\records\\07_publication",
+      "main_job_count": 476,
+      "main_status_counts": {
+        "ok": 476
+      },
+      "q3_pair_status_counts": {
+        "ok": 169,
+        "missing": 1
+      },
+      "same_plan_file_equal_count": 169,
+      "real_progress_count": 476,
+      "diagnostic_summary_count": 24,
+      "cache_grid_rows": 22,
+      "cache_grid_cases": [
+        "case_001",
+        "case_080"
+      ],
+      "nested_catalogue_entry": "nested_host0_actual_run",
+      "nested_source_archive": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\shard0_outer\\records\\01_actual_run\\round01_savefix_shard0_raw.zip",
+      "outer_materialization": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\shard0_outer\\UNPACK_RECEIPT.json",
+      "raw_materialization": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\UNPACK_RECEIPT.json",
+      "result_publication": {
+        "pr": 45,
+        "head": "92e56c52027527bc6ba749dd952607e269c81c1d",
+        "source": "outer PACKAGE_MANIFEST.json"
+      }
+    },
+    {
+      "shard_index": 1,
+      "catalogue_entry": "local_0002",
+      "source_archive": "D:\\数据\\ORION_Trident_host1_delivery\\ORION_Trident_trident-1.3_round01_HOST1_shard1_FULL_20260926.zip",
+      "run_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1",
+      "config_local": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\assets_shard_1\\official\\data\\config.txt",
+      "executed_source_snapshot": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1\\source_snapshot",
+      "algorithm_version": "trident-1.3",
+      "algorithm_revision_claimed_by_delivery": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+      "git_report_root": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\reports\\research_a_orion_trident\\team_results\\trident_round01\\shard_1",
+      "local_report_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\team_results\\trident_round01\\shard_1",
+      "main_job_count": 462,
+      "main_status_counts": {
+        "ok": 461,
+        "failed": 1
+      },
+      "q3_pair_status_counts": {
+        "ok": 164,
+        "missing": 1
+      },
+      "same_plan_file_equal_count": 164,
+      "real_progress_count": 462,
+      "diagnostic_summary_count": 6,
+      "cache_grid_rows": 22,
+      "cache_grid_cases": [
+        "case_006",
+        "case_044"
+      ],
+      "raw_materialization": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\UNPACK_RECEIPT.json",
+      "result_publication": {
+        "latest_pr": 48,
+        "archive_receipt_commit": "2685677d8db709234ed0b70c45797d7142368e84",
+        "source": "D:\\数据\\ORION_Trident_host1_delivery\\ARCHIVE_RECEIPT.json"
+      }
+    },
+    {
+      "shard_index": 2,
+      "catalogue_entry": "local_0004",
+      "source_archive": "D:\\数据\\Trident_round01_shard2_20260926\\ORION_Trident_trident-1.3_round01_shard2_FULL_20260926.zip",
+      "run_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2",
+      "config_local": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\assets_shard_2\\official\\data\\config.txt",
+      "executed_source_snapshot": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\source_snapshot",
+      "algorithm_version": "trident-1.3",
+      "algorithm_revision_claimed_by_delivery": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+      "git_report_root": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\reports\\research_a_orion_trident\\team_results\\trident_round01\\shard_2",
+      "local_report_root": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\reports",
+      "main_job_count": 462,
+      "main_status_counts": {
+        "ok": 460,
+        "failed": 2
+      },
+      "q3_pair_status_counts": {
+        "ok": 165
+      },
+      "same_plan_file_equal_count": 165,
+      "real_progress_count": 462,
+      "diagnostic_summary_count": 2,
+      "cache_grid_rows": 22,
+      "cache_grid_cases": [
+        "case_004",
+        "case_046"
+      ],
+      "raw_materialization": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\UNPACK_RECEIPT.json",
+      "result_publication": {
+        "pr": 43,
+        "head": "d9a8ff884bc0b59e8973a4d11c6ac0d6af1ef1fd",
+        "source": "D:\\数据\\Trident_round01_shard2_20260926\\REPORTS_ONLY_PUBLISH_RECEIPT.json"
+      }
+    }
+  ],
+  "runs": [
+    "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host0\\records\\run",
+    "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\round01\\shard_1",
+    "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2"
+  ],
+  "config_local_by_shard": [
+    "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\shard0_outer\\records\\03_inputs\\official\\data\\config.txt",
+    "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\assets_shard_1\\official\\data\\config.txt",
+    "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\assets_shard_2\\official\\data\\config.txt"
+  ],
+  "audit": "D:\\华为杯写作\\.orion_paper_cache\\intake\\RAW_RECORD_AUDIT.json",
+  "special_evidence": "D:\\华为杯写作\\.orion_paper_cache\\intake\\SPECIAL_EVIDENCE.json",
+  "non_primary_records": {
+    "host1_recovery": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host1\\records\\research_a_orion_trident\\runs\\save_recovery_20260925\\shard_1\\attempt_001",
+    "host2_recovery": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\recovery_20260926\\shard_2",
+    "host2_retained_reference": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\retained_reference_20260926\\shard_2"
+  },
+  "not_a_final_PAPER_EXPORT": true,
+  "normalized_root": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\规范化数据\\combined",
+  "baseline_value_evidence": [
+    {
+      "case": "case_072",
+      "value": 23897828,
+      "source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\补算\\pr38_missing_20260926\\case_072_q0_n1\\result.json.gz",
+      "official_response_available": true,
+      "scope": "authorized_late_recalculation_not_original_600s_budget"
+    },
+    {
+      "case": "case_091",
+      "value": 9186769,
+      "source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\补算\\pr38_missing_20260926\\case_091_q0_n1\\result.json.gz",
+      "official_response_available": true,
+      "scope": "authorized_late_recalculation_not_original_600s_budget"
+    }
+  ],
+  "main_selection": "three disjoint declared shards plus explicitly recorded continuation; no best-of selection",
+  "data_presentation": "按统一评价规则计算；计量单位为周期。物理运行主机信息不改写。",
+  "source_index": "规范化数据/combined/SOURCE_INDEX.json",
+  "original_missing_records": [
+    "host1 case_072 Q0/n1 historical makespan/plan lacks stored official response in selected original job",
+    "host0 case_014 Q3/n5 same-plan no-L2 response absent",
+    "host2 case_091 Q0/n1 original and retry have no valid response; 076 only has separately retained historic official response"
+  ],
+  "pending_evidence": [],
+  "recalculation_manifest": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\补算\\pr38_missing_20260926\\RECALCULATION_MANIFEST.json",
+  "final_counts": {
+    "main_configurations": 1400,
+    "official_response_count": 1400,
+    "baseline_values": 100,
+    "same_plan_pairs": 500
+  },
+  "final_data_root": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\规范化数据\\combined",
+  "latest_binding_note": "原分片记账保留；规范化输出纳入三项实际补算。原搜索时间前缀不变。"
+}

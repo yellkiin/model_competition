@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "events": [
+    {
+      "action": "venv_create",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "",
+      "time": "2026-09-25T20:53:19.451439+00:00"
+    },
+    {
+      "action": "pip_offline_cache",
+      "name": "python.exe",
+      "returncode": 1,
+      "output": "Looking in links: d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\HuaweiCupWorkflow\\cache\\wheels\n\nERROR: Could not find a version that satisfies the requirement jsonschema<5,>=4.18 (from versions: none)\nERROR: No matching distribution found for jsonschema<5,>=4.18",
+      "time": "2026-09-25T20:53:24.248745+00:00"
+    },
+    {
+      "action": "pip_download",
+      "source": "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "Looking in indexes: https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple\nCollecting jsonschema<5,>=4.18\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl (90 kB)\nCollecting PyYAML<7,>=6\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/86/bf/899e81e4cce32febab4fb42bb97dcdf66bc135272882d1987881a4b519e9/pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)\nCollecting pydantic<3,>=2\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl (472 kB)\nCollecting packaging<27,>=23\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl (129 kB)\nCollecting attrs>=22.2.0 (from jsonschema<5,>=4.18)\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl (67 kB)\nCollecting jsonschema-specifications>=2023.03.6 (from jsonschema<5,>=4.18)\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)\nCollecting referencing>=0.28.4 (from jsonschema<5,>=4.18)\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl (26 kB)\nCollecting rpds-py>=0.25.0 (from jsonschema<5,>=4.18)\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/04/3a/f0ee4d4dde9d3b69dedf1b5f74e7a40017046d55052d173e418c6a94f960/rpds_py-2026.6.3-cp312-cp312-win_amd64.whl (220 kB)\nCollecting annotated-types>=0.6.0 (from pydantic<3,>=2)\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl (13 kB)\nCollecting pydantic-core==2.46.5 (from pydantic<3,>=2)\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/cf/c9/4c19f41b84cf6b622a72fbeed7665b25d47a187d68d47d0d430c07f23268/pydantic_core-2.46.5-cp312-cp312-win_amd64.whl (2.0 MB)\n     ---------------------------------------- 2.0/2.0 MB 10.4 MB/s eta 0:00:00\nCollecting typing-extensions>=4.14.1 (from pydantic<3,>=2)\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl (45 kB)\nCollecting typing-inspection>=0.4.2 (from pydantic<3,>=2)\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl (14 kB)\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\jsonschema-4.26.0-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\pyyaml-6.0.3-cp312-cp312-win_amd64.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\pydantic-2.13.5-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\pydantic_core-2.46.5-cp312-cp312-win_amd64.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\packaging-26.3-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\annotated_types-0.8.0-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\attrs-26.1.0-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\jsonschema_specifications-2025.9.1-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\referencing-0.37.0-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\rpds_py-2026.6.3-cp312-cp312-win_amd64.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\typing_extensions-4.16.0-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\typing_inspection-0.4.4-py3-none-any.whl",
+      "time": "2026-09-25T20:53:31.638557+00:00"
+    },
+    {
+      "action": "pip_install",
+      "source": "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "Looking in links: d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\HuaweiCupWorkflow\\cache\\wheels\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\jsonschema-4.26.0-py3-none-any.whl\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\pyyaml-6.0.3-cp312-cp312-win_amd64.whl\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\pydantic-2.13.5-py3-none-any.whl\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\packaging-26.3-py3-none-any.whl\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\attrs-26.1.0-py3-none-any.whl (from jsonschema<5,>=4.18)\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\jsonschema_specifications-2025.9.1-py3-none-any.whl (from jsonschema<5,>=4.18)\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\referencing-0.37.0-py3-none-any.whl (from jsonschema<5,>=4.18)\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\rpds_py-2026.6.3-cp312-cp312-win_amd64.whl (from jsonschema<5,>=4.18)\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\annotated_types-0.8.0-py3-none-any.whl (from pydantic<3,>=2)\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\pydantic_core-2.46.5-cp312-cp312-win_amd64.whl (from pydantic<3,>=2)\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\typing_extensions-4.16.0-py3-none-any.whl (from pydantic<3,>=2)\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\typing_inspection-0.4.4-py3-none-any.whl (from pydantic<3,>=2)\nInstalling collected packages: typing-extensions, rpds-py, PyYAML, packaging, attrs, annotated-types, typing-inspection, referencing, pydantic-core, pydantic, jsonschema-specifications, jsonschema\nSuccessfully installed PyYAML-6.0.3 annotated-types-0.8.0 attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 packaging-26.3 pydantic-2.13.5 pydantic-core-2.46.5 referencing-0.37.0 rpds-py-2026.6.3 typing-extensions-4.16.0 typing-inspection-0.4.4",
+      "time": "2026-09-25T20:53:36.143157+00:00"
+    },
+    {
+      "action": "pip_offline_cache",
+      "name": "python.exe",
+      "returncode": 1,
+      "output": "Looking in links: d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\HuaweiCupWorkflow\\cache\\wheels\n\nERROR: Could not find a version that satisfies the requirement python-docx<2,>=1.1 (from versions: none)\nERROR: No matching distribution found for python-docx<2,>=1.1",
+      "time": "2026-09-25T20:53:38.703277+00:00"
+    },
+    {
+      "action": "pip_download",
+      "source": "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "Looking in indexes: https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple\nCollecting python-docx<2,>=1.1\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/d0/00/1e03a4989fa5795da308cd774f05b704ace555a70f9bf9d3be057b680bcf/python_docx-1.2.0-py3-none-any.whl (252 kB)\nCollecting lxml<7,>=5\n  Downloading https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/3a/5b/6ed903e4e6278a020c8a6f0dbbe78030d041840a6b4a64ea441a1e414077/lxml-6.1.3-cp312-cp312-win_amd64.whl (4.0 MB)\n     ---------------------------------------- 4.0/4.0 MB 7.7 MB/s eta 0:00:00\nCollecting typing_extensions>=4.9.0 (from python-docx<2,>=1.1)\n  File was already downloaded d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\typing_extensions-4.16.0-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\python_docx-1.2.0-py3-none-any.whl\nSaved d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\lxml-6.1.3-cp312-cp312-win_amd64.whl",
+      "time": "2026-09-25T20:53:42.451754+00:00"
+    },
+    {
+      "action": "pip_install",
+      "source": "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple",
+      "name": "python.exe",
+      "returncode": 0,
+      "output": "Looking in links: d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\HuaweiCupWorkflow\\cache\\wheels\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\python_docx-1.2.0-py3-none-any.whl\nProcessing d:\\��Ϊ��д��\\.orion_paper_cache\\localappdata\\huaweicupworkflow\\cache\\wheels\\lxml-6.1.3-cp312-cp312-win_amd64.whl\nRequirement already satisfied: typing_extensions>=4.9.0 in d:\\��Ϊ��д��\\orion_paper_agent\\workshop_v1\\.venv\\lib\\site-packages (from python-docx<2,>=1.1) (4.16.0)\nInstalling collected packages: lxml, python-docx\nSuccessfully installed lxml-6.1.3 python-docx-1.2.0",
+      "time": "2026-09-25T20:53:45.320941+00:00"
+    }
+  ]
+}

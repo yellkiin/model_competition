@@ -1,0 +1,64 @@
+{
+  "conclusion": "reviewed_for_delivery",
+  "reviewed_at": "2026-09-26T06:10:13.001425+08:00",
+  "pdf": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\论文.pdf",
+  "pages": 66,
+  "body_pages": [
+    4,
+    38
+  ],
+  "body_page_count": 35,
+  "references_page": 39,
+  "appendix_pages": [
+    40,
+    66
+  ],
+  "figures": 20,
+  "actual_visual_work": {
+    "initial_67_page_version": "主审查看全部20张正式图及摘要/前三章/引用关键页；GPT-6-sol逐页查看正文9–39，GPT-6-luna逐页查看附录41–67，记录保留原页码。",
+    "final_66_page_version": "主审查看最终1–66页全部页面缩览，并逐页复看摘要、目录、19、20、27、38页；同时复看调整后的每30秒热图与FIFO机制图。首轮逐页审阅结果随摘要合并向前移一页；正文内容与附录数值未在终轮改变。",
+    "rendered_pages": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终页面\\PAGE_INDEX.json",
+    "initial_reviews": [
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\正文视觉审阅.json",
+      "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\附录视觉审阅.json"
+    ]
+  },
+  "changes_after_review": [
+    "题目手工分两行，消除孤立末字",
+    "摘要压为一页，数值对应最终规范化主表",
+    "每30秒热图用非线性色阶增强浅色差异，色条仍标实际百分比",
+    "两问配对点连线与散点横向位置一致",
+    "FIFO机制图DDR标为共享读写池",
+    "下界图紧接结论，推广小节整体排布"
+  ],
+  "visual_findings": [
+    "中文标题、坐标、图例及说明清楚；题面缩写和数学符号保留",
+    "未见公式缺字、图片遮挡、表格横向裁切或代码越框",
+    "附录逐例长表和代码均可放大阅读，续页表头及最后图100五核记录完整",
+    "问题一、二及评价章末仍有留白，保持各问分章起页；附录少数长表首段较短"
+  ],
+  "compilation": {
+    "method": "project-local XeLaTeX and BibTeX with official template",
+    "last_two_passes_exit_code": 0,
+    "log": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\compile.log",
+    "undefined_reference_or_missing_glyph_observed": false,
+    "residual_log_observations": "长表caption的overfull及部分underfull诊断仍存在；实际查看相应页未见裁切或文字覆盖。"
+  },
+  "numerical_work": {
+    "normalization": "combined/main.csv与pairs.csv由选定原响应及明确补算生成",
+    "main_configurations": 1400,
+    "paired_configurations": 500,
+    "baseline_cases": 100,
+    "authorized_official_evaluations": 3,
+    "reproduction": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\支撑材料\\响应重算记录.json",
+    "reproduction_scope": "从已选官方响应重算主表与配对，比较周期无差异；此步骤未重新运行求解器。"
+  },
+  "scientific_review": [
+    "联合划分、归核、核序与总体任务执行时间目标贯通三问",
+    "Task边界、片上容量、COPY交接、两池共享带宽和FIFO事件定义与实际方法对应",
+    "有限预算与字典序接受性质保留其条件；下界与局部代理区分",
+    "500组缓存对照使用同一完整方案，参数54项固定方案与12项再适配分开",
+    "原题全文和10篇按论点核读的原文支持术语与引用；FIFO窗口命题为本文按执行规则推导"
+  ],
+  "completion_policy": "按用户指示不运行哈希、冒烟、新求解模型筛选及模板虚构AI门禁；以实际审阅完成本地SESSION，原workshop审计状态不伪造。"
+}

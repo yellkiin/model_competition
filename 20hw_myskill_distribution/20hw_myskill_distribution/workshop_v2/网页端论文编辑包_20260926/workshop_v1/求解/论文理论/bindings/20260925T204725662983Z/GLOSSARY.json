@@ -1,0 +1,956 @@
+{
+  "schema": 1,
+  "terms": [
+    {
+      "id": "makespan",
+      "term": "总体任务执行时间",
+      "english": "Makespan",
+      "unit": "时钟周期",
+      "source": {
+        "theory": [
+          "R0",
+          "A42"
+        ],
+        "original_workbench": "题面§1.4"
+      },
+      "avoid_aliases": [
+        "总求解周期"
+      ],
+      "symbol": "C_q(x)",
+      "definition": "完整执行中全部操作完成时刻的最大值。",
+      "theory_source_ids": [
+        "R0",
+        "A42"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "最大完成时间",
+      "first_definition": null,
+      "used_in_sections": [],
+      "base_source": "题面§1.4"
+    },
+    {
+      "id": "solve-time",
+      "term": "求解时间",
+      "unit": "秒",
+      "source": {
+        "theory": [
+          "C1",
+          "C6"
+        ],
+        "original_workbench": "题面§1.3与实际计时协议"
+      },
+      "avoid_aliases": [
+        "CPU周期加速比"
+      ],
+      "english": "search wall-time budget",
+      "symbol": "tau_max",
+      "definition": "主机墙钟秒数；包括配置规定的解析、构造、评价、保存与配对，不与设备周期相加。",
+      "theory_source_ids": [
+        "C1",
+        "C6"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "搜索时间预算",
+      "first_definition": null,
+      "used_in_sections": [],
+      "base_source": "题面§1.3与实际计时协议"
+    },
+    {
+      "id": "task",
+      "term": "执行任务",
+      "english": "Task",
+      "source": {
+        "theory": [
+          "R0"
+        ],
+        "original_workbench": "题面§1.2与§1.5"
+      },
+      "avoid_aliases": [
+        "原子簇"
+      ],
+      "symbol": "chi_q",
+      "definition": "题目固定执行组织：第一问子图级，第二三问核心级；首次定义后可统一写Task。",
+      "theory_source_ids": [
+        "R0"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "执行任务",
+      "first_definition": null,
+      "used_in_sections": [],
+      "base_source": "题面§1.2与§1.5"
+    },
+    {
+      "id": "fifo",
+      "term": "FIFO",
+      "english": "FIFO replacement",
+      "source": {
+        "theory": [
+          "R0",
+          "R3"
+        ],
+        "original_workbench": "题面附录D.5"
+      },
+      "definition_pattern": "先进先出.{0,20}FIFO",
+      "avoid_aliases": [],
+      "symbol": "Q_e",
+      "definition": "按缓存条目的插入先后驱逐；命中不刷新插入位置。",
+      "theory_source_ids": [
+        "R0",
+        "R3"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "先进先出替换",
+      "first_definition": null,
+      "used_in_sections": [],
+      "base_source": "题面附录D.5"
+    },
+    {
+      "id": "dag",
+      "term": "DAG",
+      "english": "Directed Acyclic Graph",
+      "source": "题面§1.2",
+      "definition_pattern": "有向无环.{0,30}DAG",
+      "avoid_aliases": []
+    },
+    {
+      "id": "spill",
+      "term": "缓存换入换出",
+      "english": "spill and retrieval",
+      "source": {
+        "theory": [
+          "R0",
+          "A16"
+        ],
+        "original_workbench": "题面附录C.2"
+      },
+      "avoid_aliases": [],
+      "symbol": "D_spill",
+      "definition": "固定内存处理因容量不足产生的备份或恢复搬运。首次解释后统一用Spill。",
+      "theory_source_ids": [
+        "R0",
+        "A16"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "溢出换出与取回",
+      "first_definition": null,
+      "used_in_sections": [],
+      "base_source": "题面附录C.2"
+    },
+    {
+      "id": "partition",
+      "term": "子图划分",
+      "english": "graph partition",
+      "symbol": "P=(V_1,...,V_m)",
+      "definition": "覆盖全部待分配算子且互不相交的非空算子子集。",
+      "theory_source_ids": [
+        "R0",
+        "A02"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "子图划分",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0",
+          "A02"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "hit",
+      "term": "字节命中率",
+      "unit": "比例或百分比",
+      "source": {
+        "theory": [
+          "R3"
+        ],
+        "original_workbench": "题面§1.4"
+      },
+      "avoid_aliases": [
+        "次数命中率"
+      ],
+      "english": "byte hit rate",
+      "symbol": "H_bytes",
+      "definition": "命中L2的读取字节除以全部相关读取字节；请求次数命中率另命名。",
+      "theory_source_ids": [
+        "R3"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "字节命中率",
+      "first_definition": null,
+      "used_in_sections": [],
+      "base_source": "题面§1.4"
+    },
+    {
+      "id": "lower",
+      "term": "全局下界",
+      "source": {
+        "theory": [
+          "C5",
+          "THEORY_properties"
+        ],
+        "original_workbench": "当前实现及独立证明卡"
+      },
+      "avoid_aliases": [],
+      "english": "global lower bound",
+      "symbol": "L",
+      "definition": "对当前问题与硬件参数下所有可行方案成立的必要完成周期下界。",
+      "theory_source_ids": [
+        "C5",
+        "THEORY_properties"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "全局下界",
+      "first_definition": null,
+      "used_in_sections": [],
+      "base_source": "当前实现及独立证明卡"
+    },
+    {
+      "id": "islands",
+      "term": "互不依赖的连通分量",
+      "source": "当前图结构及A02/A49适用性卡",
+      "avoid_aliases": [
+        "private-island",
+        "micro-wave",
+        "闭岛"
+      ]
+    },
+    {
+      "id": "computation_graph",
+      "term": "计算图",
+      "english": "computation graph",
+      "symbol": "G",
+      "definition": "固定算子、张量及其有向依赖构成的图。",
+      "theory_source_ids": [
+        "R0",
+        "A49"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "计算图",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0",
+          "A49"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "operator",
+      "term": "算子",
+      "english": "operator",
+      "symbol": "v in V",
+      "definition": "需要分配的原始非边界搬运操作；固定计算周期p_v。",
+      "theory_source_ids": [
+        "R0"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "算子",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "tensor",
+      "term": "张量",
+      "english": "tensor",
+      "symbol": "t in T; b_t",
+      "definition": "连接生产者与消费者的数据对象；b_t以字节计。",
+      "theory_source_ids": [
+        "R0",
+        "A39"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "张量",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0",
+          "A39"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "acyclic_partition",
+      "term": "无环划分",
+      "source": "A02/A39；正文阅读后补页码",
+      "avoid_aliases": []
+    },
+    {
+      "id": "quotient",
+      "term": "子图依赖图",
+      "english": "quotient graph",
+      "symbol": "H(P)",
+      "definition": "将每个子图收缩为顶点、保留跨子图依赖；首次出现注明商图。",
+      "theory_source_ids": [
+        "A02"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "子图依赖图",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "A02"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "mapping",
+      "term": "核心映射",
+      "english": "processor mapping",
+      "symbol": "a",
+      "definition": "每个子图对应一个核心；算子核心归属为a(g(v))。",
+      "theory_source_ids": [
+        "R0",
+        "A49"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "核心映射",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0",
+          "A49"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "core_order",
+      "term": "核内子图顺序",
+      "english": "per-core subgraph order",
+      "symbol": "pi_k",
+      "definition": "分配给第k核的子图排列；允许为空。",
+      "theory_source_ids": [
+        "R0"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "核内子图顺序",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "pipe",
+      "term": "流水线",
+      "english": "Pipe",
+      "symbol": "rho(v)",
+      "definition": "单核内部独占执行资源；Cube与Vector等不同Pipe可依赖允许地重叠。",
+      "theory_source_ids": [
+        "R0"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "流水线",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "residency",
+      "term": "片上驻留",
+      "english": "on-chip residency",
+      "symbol": "B_{k,r}(t)",
+      "definition": "实际仍占用L1/UB的缓冲实例集合，不是所有被触及张量的集合。",
+      "theory_source_ids": [
+        "R0",
+        "A16"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "片上驻留",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0",
+          "A16"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "extra_copy",
+      "term": "额外COPY字节量",
+      "english": "additional COPY bytes",
+      "symbol": "D_q(x)",
+      "definition": "官方生成操作与Spill的字节计数口径，作为周期并列时的次级准则。",
+      "theory_source_ids": [
+        "R3"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "额外COPY字节量",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R3"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "ddr_traffic",
+      "term": "DDR实际服务字节量",
+      "english": "DDR-served bytes",
+      "symbol": "B_DDR",
+      "definition": "按事件中实际服务资源为DDR的请求统计，使用前明确是否含输出及Spill。",
+      "theory_source_ids": [
+        "R3"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "DDR实际服务字节量",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R3"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "critical_path",
+      "term": "关键路径",
+      "english": "critical path",
+      "symbol": "L_path",
+      "definition": "式(8)专指保留计算依赖上的最长计算路径；实际执行关键路径须包含真实等待与资源约束并另行重建。",
+      "theory_source_ids": [
+        "R0",
+        "A01"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "关键路径",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0",
+          "A01"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "effective_cores",
+      "term": "实际参与计算的核心数",
+      "english": "active compute cores",
+      "symbol": "n_active",
+      "definition": "至少承担一个计算操作的核心数量；可以小于目标核数n。",
+      "theory_source_ids": [
+        "R0"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "实际参与计算的核心数",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "incumbent",
+      "term": "当前最好可行方案",
+      "english": "incumbent solution",
+      "symbol": "x^(k)",
+      "definition": "截至当前已通过同一执行规则评价、目标字典序最好的可用方案。",
+      "theory_source_ids": [
+        "C1",
+        "A42"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "当前最好可行方案",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "C1",
+          "A42"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "multi_neighborhood",
+      "term": "多邻域迭代改进",
+      "english": "iterative improvement with multiple neighborhoods",
+      "symbol": "N_a(x)",
+      "definition": "多类完整候选共同修改同一方案、统一评价并迭代更新；是本文方法描述而非新造理论名称。",
+      "theory_source_ids": [
+        "A42",
+        "C1",
+        "C2"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "多邻域迭代改进",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "A42",
+          "C1",
+          "C2"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "candidate_lower",
+      "term": "候选专属下界",
+      "english": "candidate-specific lower bound",
+      "symbol": "L(x)",
+      "definition": "固定该候选决策之后的下界；仅用于该候选过滤。",
+      "theory_source_ids": [
+        "C5"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "候选专属下界",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "C5"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "relative_gap",
+      "term": "最大可能周期减少比例上界",
+      "english": "upper bound on possible relative makespan reduction",
+      "symbol": "1-L/U",
+      "definition": "分母为当前方案周期U；与U/L-1分开定义。",
+      "theory_source_ids": [
+        "THEORY_properties",
+        "C1"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "最大可能周期减少比例上界",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "THEORY_properties",
+          "C1"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "speedup",
+      "term": "加速比",
+      "english": "speedup",
+      "symbol": "S_{i,q,n}",
+      "definition": "固定原图无L2单核周期T_i^(0)除以同图所选方案周期。",
+      "theory_source_ids": [
+        "R0",
+        "C6"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "加速比",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0",
+          "C6"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    },
+    {
+      "id": "cache_ratio",
+      "term": "同方案缓存收益比",
+      "english": "same-plan cache speedup",
+      "symbol": "R_{i,n}",
+      "definition": "第三问同一方案的无L2周期除以有L2周期；不是独立第二问最优值与第三问最优值之比。",
+      "theory_source_ids": [
+        "R0",
+        "C6"
+      ],
+      "theory_source_document": "SOURCE_MAP.md",
+      "original_theory_term": "同方案缓存收益比",
+      "first_definition": null,
+      "used_in_sections": [],
+      "source": {
+        "theory": [
+          "R0",
+          "C6"
+        ],
+        "original_workbench": null
+      },
+      "avoid_aliases": []
+    }
+  ],
+  "term_decisions": [
+    {
+      "id": "spill",
+      "source_term": "溢出换出与取回",
+      "canonical": "缓存换入换出",
+      "reason": "同概念保留原题规范词；保留理论原定义供语义核对。"
+    },
+    {
+      "id": "fifo",
+      "source_term": "先进先出替换",
+      "canonical": "FIFO",
+      "reason": "同概念保留原题规范词；保留理论原定义供语义核对。"
+    },
+    {
+      "id": "makespan",
+      "source_term": "最大完成时间",
+      "canonical": "总体任务执行时间",
+      "reason": "题面用语；首次定义说明等于全部完成时刻的最大值。"
+    },
+    {
+      "id": "makespan",
+      "source_term": "最大完成时间",
+      "canonical": "总体任务执行时间",
+      "reason": "同概念保留原题规范词；保留理论原定义供语义核对。"
+    },
+    {
+      "id": "solve-time",
+      "source_term": "搜索时间预算",
+      "canonical": "求解时间",
+      "reason": "同概念保留原题规范词；保留理论原定义供语义核对。"
+    }
+  ],
+  "mathematical_symbols": [
+    {
+      "id": "computation_graph",
+      "zh": "计算图",
+      "en": "computation graph",
+      "symbol": "G",
+      "definition": "固定算子、张量及其有向依赖构成的图。",
+      "source": [
+        "R0",
+        "A49"
+      ]
+    },
+    {
+      "id": "operator",
+      "zh": "算子",
+      "en": "operator",
+      "symbol": "v in V",
+      "definition": "需要分配的原始非边界搬运操作；固定计算周期p_v。",
+      "source": [
+        "R0"
+      ]
+    },
+    {
+      "id": "tensor",
+      "zh": "张量",
+      "en": "tensor",
+      "symbol": "t in T; b_t",
+      "definition": "连接生产者与消费者的数据对象；b_t以字节计。",
+      "source": [
+        "R0",
+        "A39"
+      ]
+    },
+    {
+      "id": "partition",
+      "zh": "子图划分",
+      "en": "graph partition",
+      "symbol": "P=(V_1,...,V_m)",
+      "definition": "覆盖全部待分配算子且互不相交的非空算子子集。",
+      "source": [
+        "R0",
+        "A02"
+      ]
+    },
+    {
+      "id": "quotient",
+      "zh": "子图依赖图",
+      "en": "quotient graph",
+      "symbol": "H(P)",
+      "definition": "将每个子图收缩为顶点、保留跨子图依赖；首次出现注明商图。",
+      "source": [
+        "A02"
+      ]
+    },
+    {
+      "id": "mapping",
+      "zh": "核心映射",
+      "en": "processor mapping",
+      "symbol": "a",
+      "definition": "每个子图对应一个核心；算子核心归属为a(g(v))。",
+      "source": [
+        "R0",
+        "A49"
+      ]
+    },
+    {
+      "id": "core_order",
+      "zh": "核内子图顺序",
+      "en": "per-core subgraph order",
+      "symbol": "pi_k",
+      "definition": "分配给第k核的子图排列；允许为空。",
+      "source": [
+        "R0"
+      ]
+    },
+    {
+      "id": "task",
+      "zh": "执行任务",
+      "en": "Task",
+      "symbol": "chi_q",
+      "definition": "题目固定执行组织：第一问子图级，第二三问核心级；首次定义后可统一写Task。",
+      "source": [
+        "R0"
+      ],
+      "distinguish_from": "算子、子图、主机搜索作业、Ansor中的编译调优任务"
+    },
+    {
+      "id": "pipe",
+      "zh": "流水线",
+      "en": "Pipe",
+      "symbol": "rho(v)",
+      "definition": "单核内部独占执行资源；Cube与Vector等不同Pipe可依赖允许地重叠。",
+      "source": [
+        "R0"
+      ],
+      "distinguish_from": "论文流程、软件流水线与BSP超步"
+    },
+    {
+      "id": "residency",
+      "zh": "片上驻留",
+      "en": "on-chip residency",
+      "symbol": "B_{k,r}(t)",
+      "definition": "实际仍占用L1/UB的缓冲实例集合，不是所有被触及张量的集合。",
+      "source": [
+        "R0",
+        "A16"
+      ]
+    },
+    {
+      "id": "spill",
+      "zh": "溢出换出与取回",
+      "en": "spill and retrieval",
+      "symbol": "D_spill",
+      "definition": "固定内存处理因容量不足产生的备份或恢复搬运。首次解释后统一用Spill。",
+      "source": [
+        "R0",
+        "A16"
+      ]
+    },
+    {
+      "id": "fifo",
+      "zh": "先进先出替换",
+      "en": "FIFO replacement",
+      "symbol": "Q_e",
+      "definition": "按缓存条目的插入先后驱逐；命中不刷新插入位置。",
+      "source": [
+        "R0",
+        "R3"
+      ]
+    },
+    {
+      "id": "makespan",
+      "zh": "最大完成时间",
+      "en": "makespan",
+      "symbol": "C_q(x)",
+      "definition": "完整执行中最晚操作完成的时刻，单位为周期；首次定义后统一用该中文名或同一英文。",
+      "source": [
+        "R0",
+        "A42"
+      ]
+    },
+    {
+      "id": "extra_copy",
+      "zh": "额外COPY字节量",
+      "en": "additional COPY bytes",
+      "symbol": "D_q(x)",
+      "definition": "官方生成操作与Spill的字节计数口径，作为周期并列时的次级准则。",
+      "source": [
+        "R3"
+      ],
+      "distinguish_from": "实际DDR服务字节量、缓存命中字节量、网络割边数"
+    },
+    {
+      "id": "ddr_traffic",
+      "zh": "DDR实际服务字节量",
+      "en": "DDR-served bytes",
+      "symbol": "B_DDR",
+      "definition": "按事件中实际服务资源为DDR的请求统计，使用前明确是否含输出及Spill。",
+      "source": [
+        "R3"
+      ],
+      "distinguish_from": "额外COPY字节量"
+    },
+    {
+      "id": "byte_hit_rate",
+      "zh": "字节命中率",
+      "en": "byte hit rate",
+      "symbol": "H_bytes",
+      "definition": "命中L2的读取字节除以全部相关读取字节；请求次数命中率另命名。",
+      "source": [
+        "R3"
+      ]
+    },
+    {
+      "id": "critical_path",
+      "zh": "关键路径",
+      "en": "critical path",
+      "symbol": "L_path",
+      "definition": "式(8)专指保留计算依赖上的最长计算路径；实际执行关键路径须包含真实等待与资源约束并另行重建。",
+      "source": [
+        "R0",
+        "A01"
+      ]
+    },
+    {
+      "id": "effective_cores",
+      "zh": "实际参与计算的核心数",
+      "en": "active compute cores",
+      "symbol": "n_active",
+      "definition": "至少承担一个计算操作的核心数量；可以小于目标核数n。",
+      "source": [
+        "R0"
+      ]
+    },
+    {
+      "id": "incumbent",
+      "zh": "当前最好可行方案",
+      "en": "incumbent solution",
+      "symbol": "x^(k)",
+      "definition": "截至当前已通过同一执行规则评价、目标字典序最好的可用方案。",
+      "source": [
+        "C1",
+        "A42"
+      ]
+    },
+    {
+      "id": "multi_neighborhood",
+      "zh": "多邻域迭代改进",
+      "en": "iterative improvement with multiple neighborhoods",
+      "symbol": "N_a(x)",
+      "definition": "多类完整候选共同修改同一方案、统一评价并迭代更新；是本文方法描述而非新造理论名称。",
+      "source": [
+        "A42",
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "id": "global_lower",
+      "zh": "全局下界",
+      "en": "global lower bound",
+      "symbol": "L",
+      "definition": "对当前问题与硬件参数下所有可行方案成立的必要完成周期下界。",
+      "source": [
+        "C5",
+        "THEORY_properties"
+      ]
+    },
+    {
+      "id": "candidate_lower",
+      "zh": "候选专属下界",
+      "en": "candidate-specific lower bound",
+      "symbol": "L(x)",
+      "definition": "固定该候选决策之后的下界；仅用于该候选过滤。",
+      "source": [
+        "C5"
+      ]
+    },
+    {
+      "id": "relative_gap",
+      "zh": "最大可能周期减少比例上界",
+      "en": "upper bound on possible relative makespan reduction",
+      "symbol": "1-L/U",
+      "definition": "分母为当前方案周期U；与U/L-1分开定义。",
+      "source": [
+        "THEORY_properties",
+        "C1"
+      ]
+    },
+    {
+      "id": "host_budget",
+      "zh": "搜索时间预算",
+      "en": "search wall-time budget",
+      "symbol": "tau_max",
+      "definition": "主机墙钟秒数；包括配置规定的解析、构造、评价、保存与配对，不与设备周期相加。",
+      "source": [
+        "C1",
+        "C6"
+      ]
+    },
+    {
+      "id": "speedup",
+      "zh": "加速比",
+      "en": "speedup",
+      "symbol": "S_{i,q,n}",
+      "definition": "固定原图无L2单核周期T_i^(0)除以同图所选方案周期。",
+      "source": [
+        "R0",
+        "C6"
+      ]
+    },
+    {
+      "id": "cache_ratio",
+      "zh": "同方案缓存收益比",
+      "en": "same-plan cache speedup",
+      "symbol": "R_{i,n}",
+      "definition": "第三问同一方案的无L2周期除以有L2周期；不是独立第二问最优值与第三问最优值之比。",
+      "source": [
+        "R0",
+        "C6"
+      ]
+    }
+  ],
+  "internal_to_manuscript": {
+    "S": "结构与负载候选",
+    "M": "驻留相关候选",
+    "F": "缓存时序候选",
+    "B": "基础构造与局部候选",
+    "epoch": "生成局部候选所依据的父方案版本；正文通常直接说父方案",
+    "private_islands": "输入基本私有的独立小组件；须先定义判据，不当新理论专名",
+    "micro_wave": "容量约束下的组件分批与阶段顺序",
+    "tensor_transaction": "依赖相关算子的联合调整",
+    "source_warmup": "候选来源的初次评价阶段，不是芯片预热",
+    "worker": "主机并发求解进程，实验环境术语；与NPU核数n分开"
+  },
+  "review_state": "source-merged; fill definition/use locations during actual manuscript review"
+}

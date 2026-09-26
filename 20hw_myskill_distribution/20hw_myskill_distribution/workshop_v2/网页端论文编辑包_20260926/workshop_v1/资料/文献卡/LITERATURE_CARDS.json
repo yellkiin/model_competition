@@ -1,0 +1,253 @@
+[
+  {
+    "id": "A49",
+    "title": "A Scalable Clustering-Based Task Scheduler for Homogeneous Processors Using DAG Partitioning",
+    "authors": "M. Yusuf Özkaya; Anne Benoit; Bora Uçar; Julien Herrmann; Ümit V. Catalyürek",
+    "year": 2019,
+    "venue": "2019 IEEE International Parallel and Distributed Processing Symposium (IPDPS)",
+    "doi": "10.1109/IPDPS.2019.00026",
+    "url": "https://ieeexplore.ieee.org/document/8820781/",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A49_2019.pdf",
+    "physical_pages_read": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "physical_pages_visually_reviewed": [
+      2
+    ],
+    "visual_observation": "物理页2右栏写明先分K≥p簇再调度簇内各任务，并明确“schedule tasks ... not the clusters”；同页模型规定duplex single-port通信与同处理器通信零代价。",
+    "supported_claim": "分组可限制共同处理器归属，同时仍进行任务级列表调度；粒度影响通信局部性与并行性。",
+    "transfer_boundary": "不能把原文称为原子簇调度；其同核免费通信与端口通信模型不对应第一问同核跨Task DDR、后两问共享带宽及固定等待。最终优劣必须按本题完整执行规则评价。",
+    "proposed_manuscript_location": "问题分析的联合决策动机；结构构造与映射。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A02",
+    "title": "Acyclic Partitioning of Large Directed Acyclic Graphs",
+    "authors": "Herrmann, J.; Kho, J.; Uçar, B.; Kaya, K.; Çatalyürek, Ü. V.",
+    "year": 2017,
+    "venue": "IEEE/ACM CCGrid",
+    "doi": "10.1109/CCGRID.2017.101",
+    "url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A02_2017_Acyclic_DAG_Partitioning.pdf",
+    "physical_pages_read": [
+      2,
+      3,
+      4
+    ],
+    "physical_pages_visually_reviewed": [
+      3
+    ],
+    "visual_observation": "物理页3右栏Definition 4.3明确粗化后仍须无环；Theorem 1说明收缩边的安全条件与替代路径有关，页上有粗化、初分、反粗化三阶段叙述。",
+    "supported_claim": "对有向无环图分组时，应保持分组商图无环；多级粗化及反粗化可组织可行分组候选。",
+    "transfer_boundary": "原目标为权重平衡下最小割，不包含本题L1/UB瞬时峰值、Pipe与DDR争用；单个子图的局部条件不能替代全部分组和核序的完整可行性检查。",
+    "proposed_manuscript_location": "统一模型的无环约束；结构邻域设计。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A39",
+    "title": "Multilevel Acyclic Hypergraph Partitioning",
+    "authors": "Merten Popp; Sebastian Schlag; Christian Schulz; Daniel Seemaier",
+    "year": 2021,
+    "venue": "2021 Proceedings of the Workshop on Algorithm Engineering and Experiments (ALENEX), pp. 1-15",
+    "doi": "10.1137/1.9781611976472.1",
+    "url": "https://epubs.siam.org/doi/10.1137/1.9781611976472.1",
+    "pdf_version": "arXiv预印本（2020），引用对应ALENEX 2021正式论文",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A39_2021.pdf",
+    "physical_pages_read": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "physical_pages_visually_reviewed": [
+      3,
+      5
+    ],
+    "visual_observation": "物理页3定义有向超边的tail/head及商图；式(λ−1)(Π)是跨分区连接度代理。物理页5 §3.2进一步写出多head超边的收缩限制与FixCyclic流程。",
+    "supported_claim": "共享张量可用生产者tail到多个消费者head的有向超边表达；分组须维护商图无环。",
+    "transfer_boundary": "不能把tail/head方向反置；λ−1连接度不是官方COPY字节或Makespan恒等式，也不声称实现原文n-level、FM、memetic全流程。",
+    "proposed_manuscript_location": "统一模型张量集合表示；结构候选的数据复用代理。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A16",
+    "title": "Combined Scheduling, Memory Allocation and Tensor Replacement for Minimizing Off-Chip Data Accesses of DNN Accelerators",
+    "authors": "Yi Li; Aarti Gupta; Sharad Malik",
+    "year": 2023,
+    "venue": "arXiv preprint arXiv:2311.18246",
+    "doi": "10.48550/arXiv.2311.18246",
+    "url": "https://arxiv.org/abs/2311.18246",
+    "pdf_version": "arXiv预印本",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A16_2023_COSMA.pdf",
+    "physical_pages_read": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "physical_pages_visually_reviewed": [
+      4
+    ],
+    "visual_observation": "物理页4式(9)约束地址与大小不超内存预算，式(10)约束驻留张量地址互不重叠，式(12)最小化Spill/Retrieve字节；同页区分固定调度的内存子问题。",
+    "supported_claim": "张量创建、驻留、换出、取回的状态及额外片外访问可解释分组/顺序引起的存储压力。",
+    "transfer_boundary": "原文允许联合选算子顺序、张量置换及连续地址；本题这些由固定执行规则确定，且容量按缓冲实例/虚拟字节计。只迁移状态分析与候选评分思想，不套原ILP最优性。",
+    "proposed_manuscript_location": "执行模型的L1/UB驻留及Spill；驻留相关邻域。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A42",
+    "title": "Efficient Multi-Processor Scheduling in Increasingly Realistic Models",
+    "authors": "Pál András Papp; Georg Anegg; Aikaterini Karanasiou; Albert-Jan N. Yzelman",
+    "year": 2024,
+    "venue": "Proceedings of the 36th ACM Symposium on Parallelism in Algorithms and Architectures (SPAA 2024), pp. 463-474",
+    "doi": "10.1145/3626183.3659972",
+    "url": "https://doi.org/10.1145/3626183.3659972",
+    "pdf_version": "作者公开预印本（24页），引用对应SPAA 2024会议版",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A42_2024.pdf",
+    "physical_pages_read": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "physical_pages_visually_reviewed": [
+      5
+    ],
+    "visual_observation": "物理页5 §4.3从已可行BSP调度出发，尝试节点跨处理器或邻近超步的小步迁移并只接受合法且低成本方案；§4.4另有全局/局部ILP，不应混入本文已实现机制。",
+    "supported_claim": "多初值和可行解上的局部迁移为有限预算改进提供通用搜索框架。",
+    "transfer_boundary": "BSP将计算与通信按超步计费，NUMA/通信计划也是其决策；本题有重叠的离散事件与固定通信规则。不能继承其BSP代价、ILP最优性或论文实验收益。",
+    "proposed_manuscript_location": "多邻域迭代改进总流程与可行性接受规则。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A01",
+    "title": "Performance-Effective and Low-Complexity Task Scheduling for Heterogeneous Computing",
+    "authors": "Topcuoglu, H.; Hariri, S.; Wu, M.-Y.",
+    "year": 2002,
+    "venue": "IEEE TPDS 13(3):260–274",
+    "doi": "10.1109/71.993206",
+    "url": "https://openaccess.marmara.edu.tr/entities/publication/feba5344-0457-405a-8cb2-1d26f8963e33",
+    "pdf_version": "作者机构保存的正式发表PDF；文字编码异常，已视觉核对首页",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A01_2002_HEFT_CPOP.pdf",
+    "physical_pages_read": [
+      4,
+      5,
+      6
+    ],
+    "physical_pages_visually_reviewed": [
+      5
+    ],
+    "visual_observation": "物理页5（期刊印刷页264）图2确为HEFT伪代码：先按上行rank排序，再对每个处理器计算插入式EFT并选最早完成者；同页式(8)给平均计算/通信代价递归rank。",
+    "supported_claim": "DAG任务的关键性排序与最早完成时刻映射可作为初始构造思路。",
+    "transfer_boundary": "原文面向异构处理器、边通信代价和任务级列表调度；本题是同构核、双Pipe、共享DDR与固定Task语义，rank/EFT只作候选代理，不能称复现完整HEFT或用其EFT替代官方执行周期。",
+    "proposed_manuscript_location": "方法章初始方案与基础候选；文献综述中一句说明经典列表调度。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A12",
+    "title": "Ansor: Generating High-Performance Tensor Programs for Deep Learning",
+    "authors": "Zheng, L.; Jia, C.; Sun, M.; Wu, Z.; et al.",
+    "year": 2020,
+    "venue": "USENIX OSDI:863–879",
+    "doi": null,
+    "url": "https://www.usenix.org/conference/osdi20/presentation/zheng",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A12_2020_Ansor.pdf",
+    "physical_pages_read": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "physical_pages_visually_reviewed": [
+      9,
+      10
+    ],
+    "visual_observation": "物理页9 §5.2明确用实测程序更新学习成本模型；物理页10（印刷871）§6将调优时间分配给子图任务，表2展示端到端目标，并说明先round-robin暖启再依据收益选择。",
+    "supported_claim": "有限搜索资源可依据已观测收益分配，完整测量用于校准候选评价。",
+    "transfer_boundary": "Ansor的task是调优任务而非本题执行Task；其程序重写、tiling、GBDT成本模型和梯度式时间分配未在本题实施。仅引用测量反馈的设计思想，本文来源优先级式是自定义启发式。",
+    "proposed_manuscript_location": "候选来源选择与搜索预算分配；避免把代理分数写成执行结果。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A08",
+    "title": "IOS: Inter-Operator Scheduler for CNN Acceleration",
+    "authors": "Ding, Y.; Zhu, L.; Jia, Z.; Pekhimenko, G.; Han, S.",
+    "year": 2021,
+    "venue": "Proceedings of Machine Learning and Systems 3",
+    "doi": null,
+    "url": "https://proceedings.mlsys.org/paper_files/paper/2021/hash/1f8053a67ec8e0b57455713cefdd8218-Abstract.html",
+    "pdf_version": "公开全文（出版方/作者/机构来源，保留原版权页）",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A08_2021_IOS.pdf",
+    "physical_pages_read": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "physical_pages_visually_reviewed": [
+      4
+    ],
+    "visual_observation": "物理页4图3显示先做算子合并的stage，再在另一stage并行两个组；图4以ending集合递归分解，正文式Q={(S_i,T_i)}定义stage及其并行策略。",
+    "supported_claim": "算子分组粒度与组间并行度相互作用，阶段化分组可提供调度候选组织思路。",
+    "transfer_boundary": "IOS的stage全序、算子合并/改写及单GPU profile代价不符合本题可提交变量；不可直接采用其动态规划最优性或把stage叫本题Task。",
+    "proposed_manuscript_location": "相关工作中分组与并行性权衡；结构候选动机。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A17",
+    "title": "Ordering Chaos: Memory-Aware Scheduling of Irregularly Wired Neural Networks for Edge Devices",
+    "authors": "Byung Hoon Ahn; Jinwon Lee; Jamie Menjay Lin; Hsin-Pai Cheng; Jilei Hou; Hadi Esmaeilzadeh",
+    "year": 2020,
+    "venue": "Proceedings of Machine Learning and Systems 2 (MLSys 2020)",
+    "doi": null,
+    "url": "https://proceedings.mlsys.org/paper_files/paper/2020/hash/79c36fe64e04b80fc44845bb9fe73242-Abstract.html",
+    "pdf_version": "正式发表PDF或作者公开稿",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A17_2020_SERENITY.pdf",
+    "physical_pages_read": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "physical_pages_visually_reviewed": [
+      4
+    ],
+    "visual_observation": "物理页4图4完整显示图重写、软预算、动态规划调度；图5展示零入度集合的记忆化搜索，正文目标为最小峰值activation内存。",
+    "supported_claim": "合法拓扑顺序改变活跃张量集合与峰值存储占用，活跃集可指导顺序候选。",
+    "transfer_boundary": "原文研究边缘设备单图算子顺序及峰值内存，还允许图重写；本题原算子图不可改、核内只能重排子图、主目标是Makespan，Spill由固定规则生成。",
+    "proposed_manuscript_location": "驻留相关候选的活跃集分析；存储与顺序耦合的相关工作。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  },
+  {
+    "id": "A40",
+    "title": "A cache-aware DAG scheduling method on multicores: Exploiting node affinity and deferred executions",
+    "authors": "Huixuan Yi; Yuanhai Zhang; Zhiyang Lin; Haoran Chen; Yiyang Gao; Xiaotian Dai; Shuai Zhao",
+    "year": 2025,
+    "venue": "Journal of Systems Architecture 161:103372",
+    "doi": "10.1016/j.sysarc.2025.103372",
+    "url": "https://www.sciencedirect.com/science/article/pii/S138376212500044X",
+    "pdf_version": "White Rose机构仓储作者稿",
+    "pdf_path": "D:\\华为杯写作\\ORION_Paper_Agent\\数据\\ORION_论文资料\\snapshots\\20260925T204725662983Z\\literature\\调研\\A题_文献库\\pdf\\A40_2025.pdf",
+    "physical_pages_read": [
+      1,
+      4,
+      5,
+      6
+    ],
+    "physical_pages_visually_reviewed": [
+      4,
+      5
+    ],
+    "visual_observation": "物理页4图2及文字明确每核L1、簇共享L2、包容式缓存和LRU替换；物理页5图3/式(1)的Cache Reuse Profile基于同一周期DAG节点连续释放间的复用距离。",
+    "supported_claim": "缓存亲和与节点执行时序可影响DAG调度效果，可作为寻找复用机会的背景。",
+    "transfer_boundary": "本题一次图执行、COPY_IN发射查找且完成填充、共享只读FIFO（命中不刷新）；原文LRU复用距离与延后执行策略不能直接预测FIFO命中或充当第三问算法。",
+    "proposed_manuscript_location": "第三问相关工作及FIFO机制差异；不作为FIFO命中率公式来源。",
+    "review_level": "相关模型/算法段落及列明关键页；未声称通读全文或复现算法"
+  }
+]

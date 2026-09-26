@@ -1,0 +1,157 @@
+% Physical title measurements supplement (never replace) final PDF inspection.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{gmcm-layout}[2026/09/08 GMCM physical layout contract]
+\RequirePackage{caption}
+\RequirePackage{hyperref}
+\newsavebox{\GMCMCaptionBox}
+\newdimen\GMCMCaptionLimit
+\newcounter{GMCMCaptionID}
+\newwrite\GMCMLayoutFile
+\newif\ifGMCMSymbolTableActive
+\AtBeginDocument{\immediate\openout\GMCMLayoutFile=\jobname.gmcmlayout\relax}
+\AtEndDocument{\immediate\closeout\GMCMLayoutFile}
+\makeatletter
+% Paragraph anchors identify prose in the final PDF without counting floats,
+% tables, lists or their white space. They add no printable text or spacing.
+\newwrite\GMCMProseFile
+\newcounter{GMCMProseID}
+\newif\ifGMCMProseBoxed
+% Evaluation has its own stream and role-selected section number. No spacing
+% is added; ordinary list paragraphs count alongside natural prose.
+\providecommand{\GMCMEvaluationSection}{0}
+\newwrite\GMCMEvaluationFile
+\newcounter{GMCMEvaluationID}
+\def\GMCMEvaluationCurrent{0}
+\def\GMCMEnumerateEnvironment{enumerate}
+\def\GMCMItemizeEnvironment{itemize}
+\AtBeginDocument{\immediate\openout\GMCMEvaluationFile=\jobname.gmcmevaluation\relax
+  \begingroup\fontsize{12pt}{18pt}\selectfont
+  \immediate\write\GMCMEvaluationFile{format|\the\baselineskip|\the\textheight|\the\textwidth|\f@size}%
+  \endgroup}
+\AtEndDocument{\immediate\closeout\GMCMEvaluationFile}
+\AddToHook{para/begin}{%
+  \def\GMCMEvaluationCurrent{0}%
+  \ifnum\GMCMEvaluationSection>0\relax
+  \ifnum\value{section}=\GMCMEvaluationSection\relax
+    \ifnum\value{subsection}>0\relax
+    \ifnum\value{subsection}<4\relax
+      \def\GMCMEvaluationRole{excluded}%
+      \ifGMCMProseBoxed\else\ifinner\else
+        \ifx\@currenvir\GMCMDocumentEnvironment\def\GMCMEvaluationRole{body}\fi
+        \ifx\@currenvir\GMCMEnumerateEnvironment\def\GMCMEvaluationRole{body}\fi
+        \ifx\@currenvir\GMCMItemizeEnvironment\def\GMCMEvaluationRole{body}\fi
+      \fi\fi
+      \stepcounter{GMCMEvaluationID}%
+      \edef\GMCMEvaluationCurrent{\arabic{GMCMEvaluationID}}%
+      \immediate\write\GMCMEvaluationFile{prose|\GMCMEvaluationCurrent|\arabic{subsection}|\the\baselineskip|\the\textheight|\the\textwidth|\f@size|\GMCMEvaluationRole}%
+      \hypertarget{gmcm.evaluation.begin.\GMCMEvaluationCurrent}{}%
+    \fi\fi
+  \fi\fi}
+\AddToHook{para/end}{%
+  \ifnum\GMCMEvaluationCurrent>0\relax
+    \hypertarget{gmcm.evaluation.end.\GMCMEvaluationCurrent}{}%
+    \def\GMCMEvaluationCurrent{0}%
+  \fi}
+% Unrestricted paragraphs inside a vbox are not reliably detected by
+% \ifinner. LaTeX restores paragraph settings for parboxes, footnotes and
+% floats inside their local group; keep an explicit, equally scoped flag.
+\AddToHook{cmd/@parboxrestore/after}{\GMCMProseBoxedtrue}
+% End the center's outer paragraph before tabular cleanup can discard its
+% local tracking state. This is the natural paragraph boundary of center.
+\AddToHook{env/center/end}{\ifnum\value{section}=1\relax\par\fi}
+% tabular otherwise starts its outer paragraph from inside a temporary
+% alignment group, losing that paragraph's local end-marker identity.
+\AddToHook{env/tabular/before}{\ifnum\value{section}=1\relax\leavevmode\fi}
+\def\GMCMProseCurrent{0}
+\def\GMCMDocumentEnvironment{document}
+\AtBeginDocument{\immediate\openout\GMCMProseFile=\jobname.gmcmprose\relax
+  \begingroup\fontsize{12pt}{18pt}\selectfont
+  \immediate\write\GMCMProseFile{format|\the\baselineskip|\the\textheight|\the\textwidth|\f@size}%
+  \endgroup}
+\AtEndDocument{\immediate\closeout\GMCMProseFile}
+\AddToHook{para/begin}{%
+  \def\GMCMProseCurrent{0}%
+  \ifnum\value{section}=1\relax
+    \ifnum\value{subsection}>0\relax
+      \ifnum\value{subsection}<3\relax
+        \def\GMCMProseRole{excluded}%
+        \ifx\@currenvir\GMCMDocumentEnvironment\ifGMCMProseBoxed\else\ifinner\else
+          \def\GMCMProseRole{body}%
+        \fi\fi\fi
+        \stepcounter{GMCMProseID}%
+        \edef\GMCMProseCurrent{\arabic{GMCMProseID}}%
+        \immediate\write\GMCMProseFile{prose|\GMCMProseCurrent|\arabic{subsection}|\the\baselineskip|\the\textheight|\the\textwidth|\f@size|\GMCMProseRole}%
+        \hypertarget{gmcm.prose.begin.\GMCMProseCurrent}{}%
+      \fi
+    \fi
+  \fi}
+\AddToHook{para/end}{%
+  \ifnum\GMCMProseCurrent>0\relax
+    \hypertarget{gmcm.prose.end.\GMCMProseCurrent}{}%
+    \def\GMCMProseCurrent{0}%
+  \fi}
+\DeclareCaptionFormat{gmcmshort}{%
+  \sbox{\GMCMCaptionBox}{#1#2#3}%
+  \GMCMCaptionLimit=\linewidth
+  \ifdim\GMCMCaptionLimit>\textwidth\GMCMCaptionLimit=\textwidth\fi
+  \ifdim\wd\GMCMCaptionBox>\GMCMCaptionLimit
+    \PackageError{gmcm-layout}{Caption exceeds one line at the prescribed font}%
+      {Shorten the title. Move conditions and explanations to prose or a separate note.
+       Do not reduce the font, tracking or margins.}%
+  \fi
+  \stepcounter{GMCMCaptionID}%
+  \immediate\write\GMCMLayoutFile{caption|\arabic{GMCMCaptionID}|\ifGMCMSymbolTableActive symboltable\else\@captype\fi|\csname the\@captype\endcsname|\the\wd\GMCMCaptionBox|\the\GMCMCaptionLimit|\f@size|\the\ht\GMCMCaptionBox|\the\dp\GMCMCaptionBox}%
+  \hypertarget{gmcm.caption.\arabic{GMCMCaptionID}}{\usebox{\GMCMCaptionBox}}\par
+}
+\makeatother
+% Notes are prose, not formal captions. They may wrap at the normal font size.
+\newcommand{\GMCMNote}[2]{\par\smallskip\begingroup\leftskip=0pt\rightskip=0pt\parfillskip=0pt plus 1fil\normalfont\songti\zihao{-4}\noindent #1：#2\par\endgroup}
+\newcommand{\GMCMFigureNote}[1]{\GMCMNote{图注}{#1}}
+\newcommand{\GMCMTableNote}[1]{\GMCMNote{表注}{#1}}
+% This separate family affects only the abstract heading, never the cover title.
+\setCJKfamilyfont{gmcmabstract}[AutoFakeBold=2.15]{LiSu}
+\newcommand{\GMCMAbstractHeading}{{\CJKfamily{gmcmabstract}\fontsize{18pt}{24pt}\selectfont\bfseries 摘 要：}}
+% End destinations follow float drainage; they do not add a printable line.
+\newcommand{\GMCMChapterEnd}[1]{\par\FloatBarrier\nobreak
+  \nointerlineskip\vbox to 0pt{\hypertarget{gmcm.chapter.end.#1}{}\vss}}
+% Symbol-table parameters are project choices, in PDF points (bp = 1/72 inch).
+% They are NOT claimed as numerical requirements of GB/T 7713.2—2022.
+\RequirePackage{longtable}
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\IfFontExistsTF{SimSun}{\setCJKfamilyfont{gmcmsymbol}{SimSun}}{%
+  \PackageError{gmcm-layout}{SimSun is required for the key symbol table}{Install the prescribed font; no silent fallback.}}
+\newsavebox{\GMCMSymbolNoteBox}
+\newlength{\GMCMSymbolNoteHeight}
+\newcommand{\GMCMSymbolFont}{\normalfont\CJKfamily{gmcmsymbol}\fontsize{12bp}{18bp}\selectfont}
+\DeclareCaptionFont{gmcmsymbol}{\GMCMSymbolFont}
+\newcommand{\GMCMSymbolRow}[4]{#1 & \ensuremath{#2} & #3 & #4\tabularnewline}
+% One logical table. Headers and three explicit rules are repeated per page.
+\newenvironment{GMCMSymbolTable}[1]{%
+  \par\begingroup\GMCMSymbolTableActivetrue\GMCMSymbolFont
+  \xeCJKsetup{PunctStyle=plain}% Full-width punctuation has measurable centred advances.
+  \setlength{\tabcolsep}{4bp}\setlength{\LTpre}{6bp}\setlength{\LTpost}{0bp}%
+  \renewcommand{\arraystretch}{1.12}%
+  \sbox{\GMCMSymbolNoteBox}{\parbox{\textwidth}{%
+    \normalfont\CJKfamily{gmcmsymbol}\fontsize{10.5bp}{15bp}\selectfont
+    \raggedright 注：#1\par}}%
+  \setlength{\GMCMSymbolNoteHeight}{\dimexpr\ht\GMCMSymbolNoteBox+\dp\GMCMSymbolNoteBox+6bp\relax}%
+  \captionsetup[table]{font={gmcmsymbol},textfont={},labelfont={}}%
+  \begin{longtable}{@{}>{\centering\arraybackslash}p{.18\textwidth}
+    >{\centering\arraybackslash}p{.18\textwidth}
+    >{\centering\arraybackslash}p{\dimexpr.50\textwidth-24bp\relax}
+    >{\centering\arraybackslash}p{.14\textwidth}@{}}
+  \caption{关键性符号说明}\label{tab:key-symbols}\\
+  \toprule[1.5bp] 类别 & 符号 & 含义 & 单位\\
+  \midrule[.75bp]\endfirsthead
+  \caption[]{（续）}\\
+  \toprule[1.5bp] 类别 & 符号 & 含义 & 单位\\
+  \midrule[.75bp]\endhead
+  \bottomrule[1.5bp]\endfoot
+  \bottomrule[1.5bp]
+  \noalign{\kern\GMCMSymbolNoteHeight}\endlastfoot
+}{%
+  \end{longtable}\nobreak\vskip-\GMCMSymbolNoteHeight
+  \nobreak\vskip6bp\nointerlineskip\noindent\usebox{\GMCMSymbolNoteBox}\par
+  \endgroup}
+\endinput

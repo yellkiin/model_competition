@@ -1,0 +1,1550 @@
+{
+  "providers": [
+    {
+      "capabilities": "",
+      "capability_review": {
+        "observation": "",
+        "reviewed": false,
+        "tool_ref": ""
+      },
+      "data_structures": "",
+      "gallery_review_path": "",
+      "limitations": "",
+      "previews": [],
+      "resource_digest": "e53726256aef699d157b93e81096f8cbf83a23ba5c23f66db23b8a5a75cb0028",
+      "skill_root": ".agents/skills/academic-figure-skill",
+      "source_skill": "academic-figure-skill"
+    },
+    {
+      "capabilities": "",
+      "capability_review": {
+        "observation": "",
+        "reviewed": false,
+        "tool_ref": ""
+      },
+      "data_structures": "",
+      "gallery_review_path": "",
+      "limitations": "",
+      "previews": [
+        {
+          "error": "",
+          "path": "templates/01_CLU_clustering_reduction/01_CLU_001/assets/preview.png",
+          "sha256": "700dd971f614bfafb553e6bb8b0a63d9b87eec7caa37a32fc37ccd435618d25a",
+          "template_id": "clu_pca_correlation_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/clu_pca_correlation_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "089852841b767d3d8345de7d46d418a09bd7b38f3df4074f8a1dfc64a06ea7a1",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/01_CLU_clustering_reduction/01_CLU_002/assets/preview.png",
+          "sha256": "9fcc0aa9217abbdc27f485f55b662326923222311e192f76959d3ecd83aec3ac",
+          "template_id": "clu_spearman_cluster_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/clu_spearman_cluster_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "e56990fa96a229ca032bbf29a32dda79960b87bd6da92c7d75b9f9094a885dd3",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/01_CLU_clustering_reduction/01_CLU_003/assets/preview.png",
+          "sha256": "96e06d06ea6f2ad8f06489f3e7b1d6cfeffcf521e3d01ccc06d6e12b7949e84d",
+          "template_id": "clu_pcoa_permanova",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/clu_pcoa_permanova_1.png",
+              "reviewed": false,
+              "sha256": "26dc1403f4ba7b52816fb9b1c22b2d662db25a80e2b9e4999294c91ab48141e7",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/01_CLU_clustering_reduction/01_CLU_004/assets/preview.png",
+          "sha256": "730d7ac422015459c58d47d3798cfc5db6bd06821b2c82946ce4ba503ae89668",
+          "template_id": "clu_rda_biplot",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/clu_rda_biplot_1.png",
+              "reviewed": false,
+              "sha256": "38233e0cb7ec8c73867ba83bd6d318486bcf47ecfcfebeb51b7b88e4e7f088f2",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_001/assets/preview.png",
+          "sha256": "6468ed276eb78a21a29d8233b0daf489e126fb6831b77b62ade011729ba73c10",
+          "template_id": "cmp_circular_barplot",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_circular_barplot_1.png",
+              "reviewed": false,
+              "sha256": "22677b199c037143eaabbd93732d4b3cc9672b76e37829eeec23ce4f2d24ba4f",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_002/assets/preview.png",
+          "sha256": "580efd907d4a5a49aa0fc588c0c3b8dda5198e3e755004597b9be719f40cd0be",
+          "template_id": "cmp_ternary_scatter",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_ternary_scatter_1.png",
+              "reviewed": false,
+              "sha256": "3baf117e9a2d22eed2f2a2c7ed3bf6a48341d91b8e8ad5d2d3cc6b9068bb1acb",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_003/assets/preview.png",
+          "sha256": "3f3d72fae2a3ac470d15229926b6d2ff6502c4e0395683bfddd602b004850d0e",
+          "template_id": "cmp_correlation_stacked_bar",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_correlation_stacked_bar_1.png",
+              "reviewed": false,
+              "sha256": "08480518deb85c60d31bb1e5a13368c4c56dd03cb01c7e9518122ec52c38df10",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_004/assets/preview.png",
+          "sha256": "0528f7c23980455c1334960dfe4820f2d139d78c7af30f1485e0f4ed770c3ece",
+          "template_id": "cmp_flowing_percentage_stack",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_flowing_percentage_stack_1.png",
+              "reviewed": false,
+              "sha256": "09366dc32c42ac518722ac5904e7b5781dcb82bfd2f51782ef29626549b0182b",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_005/assets/preview.png",
+          "sha256": "b86dd8b852dfe31a340390bd5fa0030a17a0fcf140d86ddc406f2e5c692cf0f6",
+          "template_id": "cmp_gradient_single_factor_bar",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_gradient_single_factor_bar_1.png",
+              "reviewed": false,
+              "sha256": "b86dd8b852dfe31a340390bd5fa0030a17a0fcf140d86ddc406f2e5c692cf0f6",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_006/assets/preview.png",
+          "sha256": "1dc264542a2a2bca513e0e725fbd75120bf49da0d6885d98117129ff726a6a17",
+          "template_id": "cmp_horizontal_percentage_stack",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_horizontal_percentage_stack_1.png",
+              "reviewed": false,
+              "sha256": "b59446ec182ca66436d16d6250cef4243e13efda15d7891cf7a19bbd0c01c9ab",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_007/assets/preview.png",
+          "sha256": "10882262501a3a6226ba3ebb5f64d0cce7529b407826a947365d88e376b380e2",
+          "template_id": "cmp_multi_donut_charts",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_multi_donut_charts_1.png",
+              "reviewed": false,
+              "sha256": "9eba4cf7dc2f158ab7799674e9e245bfbc256ecd1c751f5ac7997be398aea1b7",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_008/assets/preview.png",
+          "sha256": "6f4a959ce3eebd1b7fdcd71fad3cfce094c6ebefabb86cc71fab237f5e04d051",
+          "template_id": "cmp_multi_metric_radar",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_multi_metric_radar_1.png",
+              "reviewed": false,
+              "sha256": "d4128863d9021db6d8d37a335cad407f4609dfccb187f858701fb58bae391ea8",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_009/assets/preview.png",
+          "sha256": "ca4902fc5577be8357c3cab1d305eeaa27ae7201825807c1446849d989ac3f59",
+          "template_id": "cmp_nightingale_rose_grid",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_nightingale_rose_grid_1.png",
+              "reviewed": false,
+              "sha256": "7bb57f44b0a90886b65729bb827d684f545af6ec72260b2860905e0cdd2015ce",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_010/assets/preview.png",
+          "sha256": "85b9ff2b39ac73bc27b780a70503dbebded1bc8e6c9bf6cd1327fc4e6560422d",
+          "template_id": "cmp_stack_pie_box_report",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_stack_pie_box_report_1.png",
+              "reviewed": false,
+              "sha256": "59593767a255092feda8bd43a272282998d019da4c9a1a70d9aa5d0d9c494676",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_011/assets/preview.png",
+          "sha256": "1cd321263c47496d6ca05c5e22eda2fbd4c13b4f2b90c55514c8466f064714f4",
+          "template_id": "cmp_radial_stacked_bar",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_radial_stacked_bar_1.png",
+              "reviewed": false,
+              "sha256": "f41dbd7aac6da43c10c38adcead3b063a76ebe3e06310a449830fccf6bd96438",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_012/assets/preview.png",
+          "sha256": "50de47176b304d1bf9ea227388970cfb4d12ff7d0173aee0829af47953bda318",
+          "template_id": "cmp_shap_heatmap_bar_report",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_shap_heatmap_bar_report_1.png",
+              "reviewed": false,
+              "sha256": "1f659b1e2085c075df7c153f7c01db7a2f29d0abca9c3baeac7c91ff1a9379c8",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_013/assets/preview.png",
+          "sha256": "1d9ffdf02de11b3db3d515500e278e1fc665c424a5871fe9d31b3f10f21f3c1e",
+          "template_id": "cmp_3d_ribbon_chart",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_3d_ribbon_chart_1.png",
+              "reviewed": false,
+              "sha256": "73ebd3cf7b5a2f2f9a384bf41c39f8684cf04abba586e1f835fe3c9545d53d5c",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_014/assets/preview.png",
+          "sha256": "59ddf2db10ad90f3ecc92196674438099fcbfec26ad5d0836018219f1e61676e",
+          "template_id": "cmp_3d_waterfall_distribution",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_3d_waterfall_distribution_1.png",
+              "reviewed": false,
+              "sha256": "2217fa0880c85af292186ac4e2a5f008dc7ddfdc73637bc707ca28eb140c9a8b",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_015/assets/preview.png",
+          "sha256": "301a88ceed1c436bd96fd9f5d3fce286d054efad9001f70d1717ae72ce57839d",
+          "template_id": "cmp_3d_stacked_surface",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_3d_stacked_surface_1.png",
+              "reviewed": false,
+              "sha256": "527948841c1a8bd9f4ff4b7cb44558528b118ecb9e228980c4f620561bbf85ee",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/02_CMP_comparison_ranking/02_CMP_016/assets/preview.png",
+          "sha256": "1df4dd3da45b0208a038deae1912237eb79557937ecbb9ad1916ab7bca7a4ccd",
+          "template_id": "cmp_3d_bar_chart",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/cmp_3d_bar_chart_1.png",
+              "reviewed": false,
+              "sha256": "f2ddd45763b81c0e309c6285e5f91d5bc83fc4c64fc287c0ee3002793e8f224b",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/03_EVL_composite_evaluation/03_EVL_001/assets/preview.png",
+          "sha256": "2841404c6c7bc5cd6aa63513bbd47747e90e7874d8007babcd3333353e8c7f6b",
+          "template_id": "evl_ml_metric_circular_dashboard",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/evl_ml_metric_circular_dashboard_1.png",
+              "reviewed": false,
+              "sha256": "237a92dd6e555f3444f6fc29275298b7015d4bacebbf5513f9bc704dd72bd2b8",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/03_EVL_composite_evaluation/03_EVL_002/assets/preview.png",
+          "sha256": "c8b61314ae6275a2ad1e130b38958f77cdb0aac3cd9120686c95106b600f7cac",
+          "template_id": "evl_multiomics_circular_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/evl_multiomics_circular_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "7ab1ff9bd8bbe506de3f9a50c0aa8a1d72c36b7026e7c26af76d1023783a83a6",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/04_DIS_distribution_uncertainty/04_DIS_001/assets/preview.png",
+          "sha256": "60d18e04c2f025cbe5efeb05e826b7bc8fb8a5ca43441b5f87970bb0ea237783",
+          "template_id": "dis_combined_boxplot_grid",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/dis_combined_boxplot_grid_1.png",
+              "reviewed": false,
+              "sha256": "60d18e04c2f025cbe5efeb05e826b7bc8fb8a5ca43441b5f87970bb0ea237783",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/04_DIS_distribution_uncertainty/04_DIS_002/assets/preview.png",
+          "sha256": "848c3f2bf5de89e5f8168827bac7585eddbad854ead9820529814ed983ad7daa",
+          "template_id": "dis_ridgeline_distribution",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/dis_ridgeline_distribution_1.png",
+              "reviewed": false,
+              "sha256": "1d830124ad780afaa052eea4f880edd7a44c7577de0755e5ffcad200720d83be",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/04_DIS_distribution_uncertainty/04_DIS_003/assets/preview.png",
+          "sha256": "25ee571b1a4a6b226d5f189159ba6ac2a0a835640efd29afe9142090bfc30cc2",
+          "template_id": "dis_violin_mean_change_grid",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/dis_violin_mean_change_grid_1.png",
+              "reviewed": false,
+              "sha256": "25ee571b1a4a6b226d5f189159ba6ac2a0a835640efd29afe9142090bfc30cc2",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/04_DIS_distribution_uncertainty/04_DIS_004/assets/preview.png",
+          "sha256": "34c39ef833877544ce0ab56e79714b2b0cb6d4a80b854b3ac9779cb16d99a7f8",
+          "template_id": "dis_rank_sum_violin_box",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/dis_rank_sum_violin_box_1.png",
+              "reviewed": false,
+              "sha256": "7fa3096bfe9114bf187d2ab99c50e483db27c03a3b6d31c3930b12cee10918c6",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/04_DIS_distribution_uncertainty/04_DIS_005/assets/preview.png",
+          "sha256": "f5b1271c8fe28e4e7c9ba954e7e507def098b01fa3afe3d07a580bf3380414a9",
+          "template_id": "dis_radial_bar_error_significance",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/dis_radial_bar_error_significance_1.png",
+              "reviewed": false,
+              "sha256": "1de05beb7c836f0ca8f2f1bce0406331677d0f35f36df3caa4edf2b8a3f0acb9",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/04_DIS_distribution_uncertainty/04_DIS_006/assets/preview.png",
+          "sha256": "02fc2c8c57364c668c863fd6d2cb929cda01cfe8ff8c0d86366f363ec0e590ab",
+          "template_id": "dis_tukey_hsd_violin_grid",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/dis_tukey_hsd_violin_grid_1.png",
+              "reviewed": false,
+              "sha256": "02fc2c8c57364c668c863fd6d2cb929cda01cfe8ff8c0d86366f363ec0e590ab",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/05_MPN_multi_panel_report/05_MPN_001/assets/preview.png",
+          "sha256": "728c66a9d592b8b59cc400e9cfb8417cbcb01df162d15949a4286177c817f41b",
+          "template_id": "mpn_rf_importance_correlation",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/mpn_rf_importance_correlation_1.png",
+              "reviewed": false,
+              "sha256": "7abfcd98fdb7708ea31198abc28d7873fe5f55e5a58f9989d202faa5e18baf08",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/05_MPN_multi_panel_report/05_MPN_002/assets/preview.png",
+          "sha256": "5f9a256d1b46c9f6433cbfde2959f5400855d4973cb94a6e357067b7cbbc8ede",
+          "template_id": "mpn_scatter_matrix_timeseries_regression",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/mpn_scatter_matrix_timeseries_regression_1.png",
+              "reviewed": false,
+              "sha256": "5f9a256d1b46c9f6433cbfde2959f5400855d4973cb94a6e357067b7cbbc8ede",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/05_MPN_multi_panel_report/05_MPN_003/assets/preview.png",
+          "sha256": "d0e99e35c71a93c161e81d3d08492263f2d3e1520ab6973ce423ccecf5c7ee89",
+          "template_id": "mpn_plot_postprocessing_grid",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/mpn_plot_postprocessing_grid_1.png",
+              "reviewed": false,
+              "sha256": "e6f5b9e100a7d3b62ffc925893af9408f771ff4a4d7a4dce29e449d08c71dc1c",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/05_MPN_multi_panel_report/05_MPN_004/assets/preview.png",
+          "sha256": "83a083392a11437b0cd8cbf7889ab23a0fabb29bc56d2a4f26063750c090bbe9",
+          "template_id": "mpn_3d_surface_scatter_report",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/mpn_3d_surface_scatter_report_1.png",
+              "reviewed": false,
+              "sha256": "7e07c30b91dbe5e0dc73774092e57ae11b530394f496ca873d91491045c70f17",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/06_NET_network_flow/06_NET_001/assets/preview.png",
+          "sha256": "ef57f0002858af6a171780736198d87f4d3abc95c1e35caade82bd242964f3b3",
+          "template_id": "net_chord_relationship",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/net_chord_relationship_1.png",
+              "reviewed": false,
+              "sha256": "e0b5bedbc55f072914d9507725d174fd9b8629041b64910db01e457d8bcee9ac",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/06_NET_network_flow/06_NET_002/assets/preview.png",
+          "sha256": "a898cdfeabdbfeed5385181f93e68f8218dde8cced9f311b4dffafc46b4af692",
+          "template_id": "net_multi_set_venn",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/net_multi_set_venn_1.png",
+              "reviewed": false,
+              "sha256": "427a5cc4d7688bcbe99c296a0cbe05e08a9534806c05e8666288b73416ab52e1",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/07_OPT_optimization_decision/07_OPT_001/assets/preview.png",
+          "sha256": "72d31bb8e56ab9caa7602584f46f547a8126b886f5852cf0de03ff264080371e",
+          "template_id": "opt_hants_parameter_selection",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/opt_hants_parameter_selection_1.png",
+              "reviewed": false,
+              "sha256": "86528053a03ed95a0bd45d8e9b06976de62906596c5c0bf985f4cb984cd4d698",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_001/assets/preview.png",
+          "sha256": "b1929ee03978add063986658b6dcb3fc1726a6fe500323413f7a90d032824173",
+          "template_id": "prd_multi_model_roc",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_multi_model_roc_1.png",
+              "reviewed": false,
+              "sha256": "14b9c8cd837bc37a1997af656949c1a63ada60a9392897d0e19c11034ca51ff4",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_002/assets/preview.png",
+          "sha256": "b279bc87314d2a4f54f67c2912d88c3f653768a42f12a953d17a5aa68718591c",
+          "template_id": "prd_multi_model_regression_fit",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_multi_model_regression_fit_1.png",
+              "reviewed": false,
+              "sha256": "f8cdea4281298e436ee171d9c566c0d88813450a0474955fcc474e3a1f692593",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_003/assets/preview.png",
+          "sha256": "fe813a2c3b3fa78d5340eace6842662249fdad519724f50102f6fb8481d799d0",
+          "template_id": "prd_regression_learning_curve",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_regression_learning_curve_1.png",
+              "reviewed": false,
+              "sha256": "c94231ecbc4cf011bc09544516712dc216720e3a59c8dc61ef72dc8e1829f932",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_004/assets/preview.png",
+          "sha256": "fe2a062866a27dc00d9de13b593fe6f7f24e539a2b47462423230704d25c4332",
+          "template_id": "prd_grouped_regression_fit",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_grouped_regression_fit_1.png",
+              "reviewed": false,
+              "sha256": "99a7caff2518474c55540506e5be8e489ae967ef45bdf28151753246e86786cf",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_005/assets/preview.png",
+          "sha256": "91d6e56445c775cf552906a77478b5ba90640e3f632a7ea6940e2d03bfc3a7e2",
+          "template_id": "prd_regression_evaluation_panels",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_regression_evaluation_panels_1.png",
+              "reviewed": false,
+              "sha256": "91d6e56445c775cf552906a77478b5ba90640e3f632a7ea6940e2d03bfc3a7e2",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_006/assets/preview.png",
+          "sha256": "de62fe25a570ccf108dcdfe9374a916ccb5e865914a03d65c932dabf75633d5f",
+          "template_id": "prd_taylor_diagram",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_taylor_diagram_1.png",
+              "reviewed": false,
+              "sha256": "69c9a4042f22391ed0598d5998daaf8e4f1273db5333f8cb805a28f97a03a71a",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_007/assets/preview.png",
+          "sha256": "d18fa9c30c7e1fb7727e345f945ee12ba662e87b374644d8233c5c32315981f0",
+          "template_id": "prd_voting_ensemble_learning_curve",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_voting_ensemble_learning_curve_1.png",
+              "reviewed": false,
+              "sha256": "ec61fc18c4c7e0cff2f401525a937235b059731e381bbe0d72392b94580f943f",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_008/assets/preview.png",
+          "sha256": "360a29a73aa746059a79fea1d08ab1e6318b3dc998c91b11199950cc1bb740e6",
+          "template_id": "prd_xgboost_binary_shap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_xgboost_binary_shap_1.png",
+              "reviewed": false,
+              "sha256": "616c0d3b3ae2b33bd92608f76d136fc0d743f1d1250d3f265a4d34b7c3d7dd2c",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_009/assets/preview.png",
+          "sha256": "65fd7f4f19a208d1833af5a410d5ad5daf64bb5da9714ea0f970adee174fa5b8",
+          "template_id": "prd_xgboost_multiclass_shap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_xgboost_multiclass_shap_1.png",
+              "reviewed": false,
+              "sha256": "eff2e083713ae47775e1523239b20fd4cb6b83202491ed5608990fbdd1124bdd",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/08_PRD_prediction_evaluation/08_PRD_010/assets/preview.png",
+          "sha256": "4b6275ff573735dcd16fdc43e76e3d9b99853f2d902d949d05852b3f4e9078f4",
+          "template_id": "prd_xgboost_regression_ale_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/prd_xgboost_regression_ale_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "b75a63305c84412cf8c46ab23afb7d639ddfd512b4e173f7fe23e4a3ae78ca25",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_001/assets/preview.png",
+          "sha256": "94fa128f43d832959a00268b2310511974e2af7987aa372f5c5aa0dfb72f801a",
+          "template_id": "rel_lollipop_bubble_coefficients",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_lollipop_bubble_coefficients_1.png",
+              "reviewed": false,
+              "sha256": "622b74ad9b94770c41396881da7fb8d1e538e061572ab32eadf83ef7970d749e",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_002/assets/preview.png",
+          "sha256": "02ee9f88c05c2a2f27525f2b0674096205fbce8bf48d39dfbedd062cfa3e2092",
+          "template_id": "rel_radial_effect_chart",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_radial_effect_chart_1.png",
+              "reviewed": false,
+              "sha256": "5d75c40607acb10300e9b64a934c0b1a248c70a8c749835bf90a6d2ab787ff3d",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_003/assets/preview.png",
+          "sha256": "1d6e353609af584318f058f1f5fc1630835fc3886035e2bd16468a2b760082c4",
+          "template_id": "rel_multilayer_encoded_correlation_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_multilayer_encoded_correlation_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "8e6c1bfc3bbb8348c59d0c8635140e8ef90737772a8541f3386324176bd5919b",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_004/assets/preview.png",
+          "sha256": "9a5b9c68b2bed082adc3c40ff77fbcbec58321dc7357cedbd7a07501d77256f3",
+          "template_id": "rel_network_correlation_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_network_correlation_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "d32b67684d708a338c2cd3e705915cd38c48435d3e7f4dec31b89c3a4c92ce3c",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_005/assets/preview.png",
+          "sha256": "416511a7bfaf0d28bb92a02808f25ffb7d4fb2aa728572d4eff199789a6dec61",
+          "template_id": "rel_diagonal_split_triangular_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_diagonal_split_triangular_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "603b729e8f117b9bcb4de42f89dd09febcc864b16da4301bb4f52766c819f34e",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_006/assets/preview.png",
+          "sha256": "51821b011b7b820d600ae6fe5fed40c5cc61e64092349b212bd64684f9b9e724",
+          "template_id": "rel_scatter_error_colormap_regression",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_scatter_error_colormap_regression_1.png",
+              "reviewed": false,
+              "sha256": "1df50baf66857dd69e4a070c81aa314360ef09a3b9913c6a4d426aa9ce0a3f88",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_007/assets/preview.png",
+          "sha256": "7db921a0cff656c25473b685f4e18c35553ec4175566804580df75111897b8e5",
+          "template_id": "rel_fdr_correlation_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_fdr_correlation_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "83300480e11620a10e708765efb55adf7fd9905d69b8c939a3e82596bc7d9298",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_008/assets/preview.png",
+          "sha256": "88dd27ab33cd3f3d10db4b7a17d24a31310faaf2a895f39436f0740403bf450f",
+          "template_id": "rel_circular_grouped_correlation_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_circular_grouped_correlation_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "bb9f2089de68ca9d0beeb2845723033f758a113e6c56a279d73f16dd5205152a",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_009/assets/preview.png",
+          "sha256": "9f0585626df78393f173e4ea27ead5e51e589716657288ebfed08ced505421bb",
+          "template_id": "rel_grouped_correlation_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_grouped_correlation_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "feac3e14bca8360c27a0739eb5673fee62c4af99d7205361f09c26babd15178c",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_010/assets/preview.png",
+          "sha256": "3af3a89da3daff3ee75ebb78f68ae4da025e91d9c64adbfb8d532016e4a4003c",
+          "template_id": "rel_grouped_correlation_bubble_matrix",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_grouped_correlation_bubble_matrix_1.png",
+              "reviewed": false,
+              "sha256": "6e01c7b54686cecb7b0ecd602ef57909449f63c5c1b2b5a9b72c6650b96659c1",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_011/assets/preview.png",
+          "sha256": "b1186aceca34e526bcf892d65f0c6eeb0bdadb496cac5385b0a9fb4c0d82dfde",
+          "template_id": "rel_bar_association_matrix",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_bar_association_matrix_1.png",
+              "reviewed": false,
+              "sha256": "1ac2ff66252b2c432c338e27d77189888b4d4577f9db118ea9206286468d155e",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_012/assets/preview.png",
+          "sha256": "c8f0b269679d2b53816bdbffbc8f163d1f1035777b387b5d03d4b90e8c8576f8",
+          "template_id": "rel_interaction_bubble_matrix",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_interaction_bubble_matrix_1.png",
+              "reviewed": false,
+              "sha256": "0c7e7625e311938f48a1ed0c0ad90485f120cc331647656d9992bf0b9a52b74c",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_013/assets/preview.png",
+          "sha256": "b4c1d014e95c78c454d8bac76673dc4fbaa52e197b789ce05e6a3a776ea15ac7",
+          "template_id": "rel_mantel_network_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_mantel_network_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "0b1be90eb8c61af7066299f4bae09a61a559b89686d57722a7bd1387fb9e24c0",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_014/assets/preview.png",
+          "sha256": "56f59b249a3d00b3f43abb247723f5d05b932ef088eaa04cd0a4e522d3293bfe",
+          "template_id": "rel_multiclass_scatter_matrix",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_multiclass_scatter_matrix_1.png",
+              "reviewed": false,
+              "sha256": "fbfc32325c1094480285329fd7161b319ff7f06952f7cbe5ec352fbc71be3ae4",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_015/assets/preview.png",
+          "sha256": "db72c3d671ac5572167701d2d767f1bcfbf0ee583e8bdd37b67cf6829ec3e951",
+          "template_id": "rel_pearson_correlation_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_pearson_correlation_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "ecc2c9db7f4b10adeaf79bb9e8cdb663df14affe81ecb8e306677e1ea0e58069",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_016/assets/preview.png",
+          "sha256": "f35c187184c1f9368d90fbae6fcfae712b8f4d7ed3eaf6269dc9c528dbbd66aa",
+          "template_id": "rel_petal_correlation_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_petal_correlation_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "bdf69a1d7a3d0efd3e4779ada8c5e4577a7699bc4756146ec8cfa9705b9b92ea",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_017/assets/preview.png",
+          "sha256": "58837e41e361bcb4ac372984af5611230cc517519f68d9ecc3b6bac473d8658b",
+          "template_id": "rel_grouped_regression_marginal_scatter",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_grouped_regression_marginal_scatter_1.png",
+              "reviewed": false,
+              "sha256": "5cde0d021d33a3c0df94e0cf90346b2ade571f4419584032d34cccf1b290ba49",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_018/assets/preview.png",
+          "sha256": "cd52c163fba2570685caef399582061220dd055f0f2b616571f6b873799dcbab",
+          "template_id": "rel_scatter_matrix_network",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_scatter_matrix_network_1.png",
+              "reviewed": false,
+              "sha256": "3e82102c2bb398a7e4bce6661deb7af6b84916c14f537a964fa5c6c95a9bdbb5",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_019/assets/preview.png",
+          "sha256": "5c444495f74bfe35526f5ac3bcc4d5d206389786a58440cf59755edd23f8a45f",
+          "template_id": "rel_pairplot_seamless_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_pairplot_seamless_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "1afb191bdfb89fd3eff6671946f99ee0099bb01092712bfb04276086eab105f3",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_020/assets/preview.png",
+          "sha256": "1b86132edb04380d9bc60e9d87b73f5f2ecb99f21777a29a8d3d1debbf1bccbd",
+          "template_id": "rel_sem_effect_decomposition",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_sem_effect_decomposition_1.png",
+              "reviewed": false,
+              "sha256": "60f6d372513025bc1532b94eef9225939efe2e3bae6e120e1e7127375bc4b2e9",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/09_REL_relationship_correlation/09_REL_021/assets/preview.png",
+          "sha256": "502d16445a2ebfd8eae7c2a49d7b5632b2be3eb63c71257b2f51e6ee2a2a70d8",
+          "template_id": "rel_network_radar_report",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/rel_network_radar_report_1.png",
+              "reviewed": false,
+              "sha256": "c8313dd9f115b6156209731e0177f5ac4aced5dc2875bdc193db54f74baf73b7",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_001/assets/preview.png",
+          "sha256": "2f7c0ad64c7fe1e6703e7fab13a06132fe1db6c132cc30d7e1a272210be6d5ad",
+          "template_id": "sen_grouped_rf_shap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_grouped_rf_shap_1.png",
+              "reviewed": false,
+              "sha256": "2ee9b7cb9cd2b9df36f40967ea541059625c5af900cd869e6e8585f827c31e83",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_002/assets/preview.png",
+          "sha256": "defe39c27fe8d4d40d9d7b345f658b19e723193f87215527f7967d6e3c130bdf",
+          "template_id": "sen_grouped_shap_top_features",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_grouped_shap_top_features_1.png",
+              "reviewed": false,
+              "sha256": "fb409d9c3ddb09d3a033f03a33bcd96137c2c9b0d5eb5c8ba49ea7a989340a4f",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_003/assets/preview.png",
+          "sha256": "db057135174fe25d25f5fdb4c3556483a9b043895098f549a2c2bc9f3ba578e3",
+          "template_id": "sen_shap_importance_dependence",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_importance_dependence_1.png",
+              "reviewed": false,
+              "sha256": "96e1af8c045651d81f86afbf9ed5dbb9b69722467ede01335a0aa693abeca937",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_004/assets/preview.png",
+          "sha256": "decabc08cdd27d678bdbc6f08064b63f4138d1bf538df2288ddcd4fe38b0e5ad",
+          "template_id": "sen_shap_importance_rose",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_importance_rose_1.png",
+              "reviewed": false,
+              "sha256": "366399bd6361038372c602004b771293aeea1e0d3aec3982f40b27ce83a59b48",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_005/assets/preview.png",
+          "sha256": "a6c0fb5769a40cc01b80d7208d133314057123f7ae8728c10da33e3672513eb0",
+          "template_id": "sen_gam_contour_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_gam_contour_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "03bdf1831110d13c686ec286b5e4a87dacb8ded33b719d564cb255d4cca2037b",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_006/assets/preview.png",
+          "sha256": "8ef9362061406cf833258e3fb5c2488737ac8a36de2849cd3d4b4aae67103b0a",
+          "template_id": "sen_gam_partial_residual",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_gam_partial_residual_1.png",
+              "reviewed": false,
+              "sha256": "cdf240f5fa45f7e88139acef983c74138be849906eb49fda06f8bf022a8475d7",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_007/assets/preview.png",
+          "sha256": "00dd17eb6dafbb7d5370f9673b29343b7f2b4d1251d5e6d07e2e49f9d098b51e",
+          "template_id": "sen_shap_dependence_distribution_threshold",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_dependence_distribution_threshold_1.png",
+              "reviewed": false,
+              "sha256": "00dd17eb6dafbb7d5370f9673b29343b7f2b4d1251d5e6d07e2e49f9d098b51e",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_008/assets/preview.png",
+          "sha256": "03982ed9f6328b77819ff2c1a85f59a83d3dbccb3bf8cb30e3caaada1b5eab63",
+          "template_id": "sen_shap_gam_feature_effects",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_gam_feature_effects_1.png",
+              "reviewed": false,
+              "sha256": "03982ed9f6328b77819ff2c1a85f59a83d3dbccb3bf8cb30e3caaada1b5eab63",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_009/assets/preview.png",
+          "sha256": "c095feaae27dde63870ae31792dac1d5cc212c6c89d47fcb44d5f958d35c03fc",
+          "template_id": "sen_shap_interaction_dependence",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_interaction_dependence_1.png",
+              "reviewed": false,
+              "sha256": "268dcce04411ab5c55dd5dd5b2384155a324c8915ef97966cec137dae5b09f77",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_010/assets/preview.png",
+          "sha256": "4f57842cf889a837ebd73887ba34647a0fa6e46181db0a15d85290293ad88da9",
+          "template_id": "sen_shap_top_dependence_grid",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_top_dependence_grid_1.png",
+              "reviewed": false,
+              "sha256": "52a17a1081a8c2081a1865911f28afd1b8df955acc8bf0f864bd23259e077134",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_011/assets/preview.png",
+          "sha256": "fadeb40afc7ecbb6ca9ebae20cc6ec2c1a67876a372694534985e01ace2994cc",
+          "template_id": "sen_shap_interaction_network",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_interaction_network_1.png",
+              "reviewed": false,
+              "sha256": "8ff61dffba5de1a50a6371e2fab2f56717543026e345a8239c33fcb25f519172",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_012/assets/preview.png",
+          "sha256": "73d5fa6abd71d1174bbebefa5db5cadc9ce4fef6af078c408215f5558fa7cf5b",
+          "template_id": "sen_shap_interaction_matrix_heatmap",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_interaction_matrix_heatmap_1.png",
+              "reviewed": false,
+              "sha256": "983bd34bf24d46107797a8ff9576058cabc54343c70a905d712c94ef206b3768",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_013/assets/preview.png",
+          "sha256": "7b17d9c71de608e03c13635c708d07eba8345330b066337dec830ff7b128f144",
+          "template_id": "sen_shap_pdp_combo",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_shap_pdp_combo_1.png",
+              "reviewed": false,
+              "sha256": "cd953d67f53bd6a868ca0557cbdbfb985abadc49915547c308261b470305d7dc",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_014/assets/preview.png",
+          "sha256": "b7fda8d3c4931a8ea58e9c000754cd3e03873c3e9cad35a77a7e0accb14ad6b8",
+          "template_id": "sen_multi_target_shap_polynomial_fit",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_multi_target_shap_polynomial_fit_1.png",
+              "reviewed": false,
+              "sha256": "e7c8404ebef1af06c782a80b6877d93ac3e083b24a517e135f9d29e66e92660f",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/10_SEN_sensitivity_robustness/10_SEN_015/assets/preview.png",
+          "sha256": "f538ec4ec94768ca22ec5b2ac2f791f6c77dc5ab63735abb743f88c78401cc14",
+          "template_id": "sen_2d_pdp_contour",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/sen_2d_pdp_contour_1.png",
+              "reviewed": false,
+              "sha256": "f538ec4ec94768ca22ec5b2ac2f791f6c77dc5ab63735abb743f88c78401cc14",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/11_SPA_spatial_geographic/11_SPA_001/assets/preview.png",
+          "sha256": "33f38f61ea4331f8a521ea6f8ad0323b0eafa0c019b6b745d1dd0316bf285195",
+          "template_id": "spa_pixelwise_standardized_regression",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/spa_pixelwise_standardized_regression_1.png",
+              "reviewed": false,
+              "sha256": "09bee481a57ae8220d29ae111c108fcc24bc91160f8940602613c74b953ecb8a",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/11_SPA_spatial_geographic/11_SPA_002/assets/preview.png",
+          "sha256": "a8e3239e6035bcae911847afeabc73844ac9c1a5eea0a104dc66e095da9bd748",
+          "template_id": "spa_moving_window_partial_correlation",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/spa_moving_window_partial_correlation_1.png",
+              "reviewed": false,
+              "sha256": "87c7c3063a0eb48ec5fe1da9ce4cee5ceeef825b73a269880e9e0369c810bd39",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/11_SPA_spatial_geographic/11_SPA_003/assets/preview.png",
+          "sha256": "c65d7d9115b3c5f5af8ffdbe83693a2e1174083d832fff457eb599f779043812",
+          "template_id": "spa_moving_window_rf_shap_drivers",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/spa_moving_window_rf_shap_drivers_1.png",
+              "reviewed": false,
+              "sha256": "ddc510e0325c2ce2936ad8c37b543652d608944be050d001f803298fad2754eb",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/11_SPA_spatial_geographic/11_SPA_004/assets/preview.png",
+          "sha256": "a59c3bd28f05f3cc2d8996d887bcb4f80de7e319a619040fa36058e76c3de1a9",
+          "template_id": "spa_xgboost_geoshapley",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/spa_xgboost_geoshapley_1.png",
+              "reviewed": false,
+              "sha256": "a59c3bd28f05f3cc2d8996d887bcb4f80de7e319a619040fa36058e76c3de1a9",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/12_TRD_trend_time_series/12_TRD_001/assets/preview.png",
+          "sha256": "78f1e0825cfde726c766e9272a6026857fb16cacbd9a0fef3fdfdd3eed28028d",
+          "template_id": "trd_dual_axis_bar_line",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/trd_dual_axis_bar_line_1.png",
+              "reviewed": false,
+              "sha256": "63435ddc52d25e9d0e10c185997f6188eaa9c4dbdd47fe0f0c288482c0c5d65c",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/12_TRD_trend_time_series/12_TRD_002/assets/preview.png",
+          "sha256": "d39f9aea7cc4d2f85eab855f7666543eebd3a31e5c74949c9912ba5312e9a5cd",
+          "template_id": "trd_lag_correlation_analysis",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/trd_lag_correlation_analysis_1.png",
+              "reviewed": false,
+              "sha256": "16d36b394015561ccf18ddcc365b973c97432e2a30cb30bcf6c328c2e7ffe271",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/12_TRD_trend_time_series/12_TRD_003/assets/preview.png",
+          "sha256": "1fec98d6aad8b85f489b6f54e37229516d392f4c8eb212219b1f46c81d5f7334",
+          "template_id": "trd_smoothed_trend_curves",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/trd_smoothed_trend_curves_1.png",
+              "reviewed": false,
+              "sha256": "a55986b48ce3cdb111dfe0570a27538e791ccd74d6ef55b105d2282b914ab5f6",
+              "tool_ref": ""
+            }
+          ]
+        },
+        {
+          "error": "",
+          "path": "templates/12_TRD_trend_time_series/12_TRD_004/assets/preview.png",
+          "sha256": "b9a2d47ee3469497bf80f02435488093a7305864e6c269c052cac00dc0e7c231",
+          "template_id": "trd_composite_line_bar_dual_axis",
+          "unavailable_reason": "",
+          "views": [
+            {
+              "observation": "",
+              "page": 1,
+              "path": "求解/绘图能力预检_modelviz/trd_composite_line_bar_dual_axis_1.png",
+              "reviewed": false,
+              "sha256": "732b0d88704c42b98af69e872ff02135c00cab386d093b8ba99980fa40965e6b",
+              "tool_ref": ""
+            }
+          ]
+        }
+      ],
+      "resource_digest": "78a8e124e0a22444bc393c4318b372a21231c65a209fd1f03b7551e92960d72f",
+      "skill_root": ".agents/skills/modelviz-skill-main",
+      "source_skill": "modelviz-skill"
+    }
+  ],
+  "runtime": "codex",
+  "schema_version": "1.0"
+}

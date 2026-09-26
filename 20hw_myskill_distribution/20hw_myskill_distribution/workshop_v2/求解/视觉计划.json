@@ -1,0 +1,288 @@
+{
+  "schema": "project_local_visual_plan_v1",
+  "status": "rendered_and_visually_reviewed",
+  "total_figures": 20,
+  "policy": "用户授权自主设计中文科研图，不要求照搬参考图",
+  "figures": [
+    {
+      "id": "roadmap",
+      "question": "总体",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\01_问题重述.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\总体\\图片\\roadmap.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\总体\\roadmap.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\总体\\roadmap.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\总体\\roadmap.tex"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\总体\\图片\\roadmap.tex",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q1_task",
+      "question": "问题一",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\04_问题一.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_task.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_task.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_task.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_task.tex"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_task.tex",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q1_mean",
+      "question": "问题一",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\04_问题一.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_mean.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_mean.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_mean.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_mean.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q1_distribution",
+      "question": "问题一",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\04_问题一.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_distribution.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_distribution.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_distribution.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_distribution.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q1_anytime",
+      "question": "问题一",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\04_问题一.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_anytime.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_anytime.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_anytime.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_anytime.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q1_bound",
+      "question": "问题一",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\04_问题一.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_bound.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_bound.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_bound.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_bound.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q2_task",
+      "question": "问题二",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\05_问题二.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_task.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_task.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_task.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_task.tex"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_task.tex",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q2_mean",
+      "question": "问题二",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\05_问题二.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_mean.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_mean.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_mean.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_mean.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q2_distribution",
+      "question": "问题二",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\05_问题二.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_distribution.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_distribution.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_distribution.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_distribution.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q2_copy",
+      "question": "问题二",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\05_问题二.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_copy.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_copy.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_copy.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_copy.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q2_sources",
+      "question": "问题二",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\05_问题二.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_sources.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_sources.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_sources.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_sources.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q3_fifo",
+      "question": "问题三",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\06_问题三.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_fifo.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_fifo.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_fifo.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_fifo.tex"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_fifo.tex",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q3_mean",
+      "question": "问题三",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\06_问题三.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_mean.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_mean.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_mean.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_mean.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q3_pairs",
+      "question": "问题三",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\06_问题三.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_pairs.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_pairs.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_pairs.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_pairs.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q3_hit_gain",
+      "question": "问题三",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\06_问题三.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_hit_gain.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_hit_gain.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_hit_gain.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_hit_gain.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q3_parameters",
+      "question": "问题三",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\06_问题三.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_parameters.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_parameters.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_parameters.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_parameters.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_results.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q3_trace",
+      "question": "问题三",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\章节内容\\缓存事件补充.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_trace.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_trace.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_trace.png",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_trace.svg"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_trace.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q1_overview",
+      "question": "问题一",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\综合图片段\\q1.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题一\\图片\\q1_overview.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_overview.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_overview.svg",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题一\\q1_overview.png"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_overviews.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q2_overview",
+      "question": "问题二",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\综合图片段\\q2.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题二\\图片\\q2_overview.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_overview.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_overview.svg",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题二\\q2_overview.png"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_overviews.py",
+      "review": "actual_render_viewed"
+    },
+    {
+      "id": "q3_overview",
+      "question": "问题三",
+      "language": "zh-CN",
+      "paper_chapter": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\综合图片段\\q3.tex",
+      "paper_input": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\问题三\\图片\\q3_overview.pdf",
+      "formal_files": [
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_overview.pdf",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_overview.svg",
+        "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\正式图件\\问题三\\q3_overview.png"
+      ],
+      "editable_source": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\draw_overviews.py",
+      "review": "actual_render_viewed"
+    }
+  ]
+}

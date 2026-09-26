@@ -1,0 +1,93 @@
+{
+  "q1": {
+    "superlinear_cases": 9,
+    "best": "case_084",
+    "worst": "case_048",
+    "smallest_speedup": 1.5156909687408346,
+    "largest_speedup": 6.392838749483711,
+    "below_two_cases": 6,
+    "mean_wall_seconds": 266.57343999999983,
+    "median_wall_seconds": 157.03100000001723,
+    "global_bound_within_1pct": 1,
+    "stops": {
+      "": 13,
+      "all_sources_nonimproving": 29,
+      "estimated_time_admission": 18,
+      "sources_exhausted": 40
+    }
+  },
+  "q2": {
+    "superlinear_cases": 22,
+    "best": "case_084",
+    "worst": "case_064",
+    "smallest_speedup": 1.991872460143795,
+    "largest_speedup": 8.776810904279523,
+    "below_two_cases": 1,
+    "mean_wall_seconds": 262.5104200000002,
+    "median_wall_seconds": 148.23449999999139,
+    "global_bound_within_1pct": 6,
+    "stops": {
+      "all_sources_nonimproving": 57,
+      "budget": 1,
+      "estimated_time_admission": 26,
+      "sources_exhausted": 16
+    }
+  },
+  "q3": {
+    "superlinear_cases": 35,
+    "best": "case_084",
+    "worst": "case_064",
+    "smallest_speedup": 2.071745962934865,
+    "largest_speedup": 8.776810904279523,
+    "below_two_cases": 0,
+    "mean_wall_seconds": 266.40250000000117,
+    "median_wall_seconds": 182.69550000000163,
+    "global_bound_within_1pct": 6,
+    "stops": {
+      "": 1,
+      "all_sources_nonimproving": 60,
+      "budget": 4,
+      "estimated_time_admission": 25,
+      "sources_exhausted": 10
+    }
+  },
+  "cross_question": {
+    "q2_better_q1": 89,
+    "q2_equal_q1": 9,
+    "q2_worse_q1": 2,
+    "mean_q1_over_q2": 1.1728166309575971,
+    "q3_better_q2": 66,
+    "q3_equal_q2": 18,
+    "q3_worse_q2": 16
+  },
+  "pair_regressions": [
+    {
+      "case": "case_079",
+      "n": "4",
+      "with_l2": "7614798",
+      "without_l2": "7614729",
+      "cache_speedup": "0.9999909386959444",
+      "hit_rate": "0.28038861274288296",
+      "same_plan": "True",
+      "with_l2_added_bytes": "30445568",
+      "without_l2_added_bytes": "30445568",
+      "plan": "shard0/evidence\\case_079_q3_n4\\plan.json",
+      "no_l2_plan": "shard0/evidence\\case_079_q3_n4\\no_l2_plan.json",
+      "no_l2_response": "shard0/evidence\\case_079_q3_n4\\no_l2_result.json.gz"
+    }
+  ],
+  "largest_cache_gain": {
+    "case": "case_046",
+    "n": "5",
+    "with_l2": "49119",
+    "without_l2": "95050",
+    "cache_speedup": "1.9350963985423155",
+    "hit_rate": "0.7132060202747129",
+    "same_plan": "True",
+    "with_l2_added_bytes": "3527040",
+    "without_l2_added_bytes": "3527040",
+    "plan": "shard2/evidence\\case_046_q3_n5\\plan.json",
+    "no_l2_plan": "shard2/evidence\\case_046_q3_n5\\no_l2_plan.json",
+    "no_l2_response": "shard2/evidence\\case_046_q3_n5\\no_l2_result.json.gz"
+  }
+}

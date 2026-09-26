@@ -1,0 +1,645 @@
+{
+  "sources": [
+    {
+      "id": "problem_docx",
+      "path": "题目/A题_20260925T204725662983Z.docx",
+      "kind": "problem"
+    },
+    {
+      "id": "A49",
+      "path": "求解/文献原文/A49_2019.pdf",
+      "kind": "verified_external"
+    },
+    {
+      "id": "A08",
+      "path": "求解/文献原文/A08_2021_IOS.pdf",
+      "kind": "verified_external"
+    }
+  ],
+  "context": {
+    "object_scene": [
+      {
+        "text": "多个同构AI核心与共享DDR的多核NPU",
+        "source": {
+          "source_id": "problem_docx",
+          "location": "正文/附录P0005",
+          "quote": "个同构 AI 核心与共享核外主存"
+        }
+      }
+    ],
+    "difficulty_causes": [
+      {
+        "text": "切图改变并行与边界搬运、归核改变跨核交接、顺序改变驻留和换出",
+        "source": {
+          "source_id": "problem_docx",
+          "location": "正文/附录P0023",
+          "quote": "切图改变子图规模、并行空间和通信边界"
+        }
+      }
+    ],
+    "scope_exclusions": [
+      {
+        "text": "只为非COPY_IN/COPY_OUT操作指定子图；边界搬运由评估程序重构",
+        "source": {
+          "source_id": "problem_docx",
+          "location": "正文/附录P0025",
+          "quote": "核内操作节点为除COPY_IN/COPY_OUT 外所有节点"
+        }
+      }
+    ],
+    "shared_conditions": [
+      {
+        "text": "全部测试用例、固定配置及题给评估程序",
+        "source": {
+          "source_id": "problem_docx",
+          "location": "正文/附录P0047",
+          "quote": "题目给定的全部测试用例和固定配置参数"
+        }
+      },
+      {
+        "text": "总体任务执行时间为主要指标，额外数据搬运量为次要指标",
+        "source": {
+          "source_id": "problem_docx",
+          "location": "正文/附录P0030",
+          "quote": "总体任务执行时间（Makespan）：最重要指标"
+        }
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "order": 1,
+      "original_id": "问题1",
+      "source": {
+        "source_id": "problem_docx",
+        "location": "正文/附录P0046",
+        "quote": "场景 A 下，每个子图独立构成一个 Task，所有跨子图数据均须经 DDR 中转。参赛者需建立多核切图与调度模型并设计求解算法，为每个非 COPY_IN/COPY_OUT 操作分配子图 id"
+      },
+      "inputs": [
+        "题给计算图",
+        "固定配置",
+        "2～5核配置"
+      ],
+      "action": "建立场景A切图与调度模型并生成可执行方案",
+      "object": "非COPY算子的子图归属、核心分配及核内子图顺序",
+      "conditions": [
+        "每子图一个Task",
+        "跨子图数据经DDR",
+        "同核/跨核固定等待"
+      ],
+      "outputs": [
+        "1～5核平均加速比折线图",
+        "逐用例Makespan和总额外搬运量",
+        "可复现Python程序"
+      ],
+      "validation": [
+        "全部测试用例按固定配置用题给评估程序评价"
+      ],
+      "depends_on": [],
+      "required_methods": [],
+      "subtasks": [
+        {
+          "original_id": "问题1-正文",
+          "source": {
+            "source_id": "problem_docx",
+            "location": "正文/附录P0048",
+            "quote": "正文：给出 1～5 个核的平均加速比折线图，作为关键算法结果。单核基准 Makespan 由核内调度算法在整图上计算，单核加速比定义为 1；对于  核配置，加速比定义为单核配置下核内调度所得"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "正文应按题定单核基准，给出1～5核的平均加速比折线图",
+            "observation": "单核基准和正文曲线要求均在此句"
+          },
+          "literal_requirements": [
+            "1～5核"
+          ]
+        },
+        {
+          "original_id": "问题1-附录附件",
+          "source": {
+            "source_id": "problem_docx",
+            "location": "正文/附录P0049",
+            "quote": "附录：逐用例列出赛题评估程序给出的结果，包括 Makespan 和总额外数据搬运量。"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "附录须逐用例列出评估得到的总体任务执行时间（Makespan）与总额外数据搬运量，并提供规定格式的程序附件",
+            "observation": "逐例指标和程序交付已覆盖"
+          },
+          "literal_requirements": []
+        }
+      ],
+      "coverage": {
+        "status": "verified",
+        "restatement_quote": "问题一对应无核间同步机制的场景A。每个子图独立构成一个执行任务，所有跨子图依赖均通过DDR交接；同核任务切换及跨核前驱任务完成后还须遵守题定等待。需要在2～5核配置下建立切图与调度模型并生成方案，尽可能缩短总体任务执行时间（Makespan），同时控制总额外数据搬运量。正文应按题定单核基准，给出1～5核的平均加速比折线图；附录须逐用例列出评估得到的总体任务执行时间（Makespan）与总额外数据搬运量，并提供规定格式的程序附件。",
+        "observation": "场景A的Task与DDR边界、目标、核数及三类提交输出均在1.2表述"
+      },
+      "literal_requirements": [
+        "2～5核"
+      ]
+    },
+    {
+      "order": 2,
+      "original_id": "问题2",
+      "source": {
+        "source_id": "problem_docx",
+        "location": "正文/附录P0053",
+        "quote": "场景 B 下，每个核心上的全部子图合并为一个 Task：同核子图可直接复用 L1/UB 中的数据，跨核依赖则通过 COPY_OUT/COPY_IN 和固定同步延迟完成。参赛者需在问题 1 的"
+      },
+      "inputs": [
+        "场景B",
+        "题给计算图和容量配置",
+        "2～5核配置"
+      ],
+      "action": "在容量约束下建立并求解切图与调度模型",
+      "object": "同一核心内驻留与跨核COPY交接",
+      "conditions": [
+        "每核心一个Task",
+        "L1/UB容量",
+        "跨核COPY及固定同步延迟"
+      ],
+      "outputs": [
+        "1～5核平均加速比折线图",
+        "逐用例Makespan和总额外搬运量",
+        "可复现Python程序"
+      ],
+      "validation": [
+        "全部测试用例按固定配置用题给评估程序评价"
+      ],
+      "depends_on": [
+        "问题1"
+      ],
+      "required_methods": [],
+      "subtasks": [
+        {
+          "original_id": "问题2-正文",
+          "source": {
+            "source_id": "problem_docx",
+            "location": "正文/附录P0055",
+            "quote": "正文：给出场景 B 下 1～5 个核的平均加速比折线图，加速比定义与问题 1 相同。"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "正文同样给出1～5核的平均加速比折线图",
+            "observation": "正文曲线及相同基准已覆盖"
+          },
+          "literal_requirements": [
+            "1～5核"
+          ]
+        },
+        {
+          "original_id": "问题2-附录附件",
+          "source": {
+            "source_id": "problem_docx",
+            "location": "正文/附录P0056",
+            "quote": "附录：逐个用例地列出赛题评估程序给出的结果，包括 Makespan和总额外数据搬运量。"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "附录逐用例报告评估周期与总额外数据搬运量，附件给出可复现程序",
+            "observation": "逐例指标和程序交付已覆盖"
+          },
+          "literal_requirements": []
+        }
+      ],
+      "coverage": {
+        "status": "verified",
+        "restatement_quote": "问题二对应具有核间同步机制的场景B。同一核心上的全部子图合为一个执行任务，满足容量与依赖条件时，前一子图的数据可在L1或UB中供后一子图使用；跨核依赖仍经\\texttt{COPY\\_OUT}/\\texttt{COPY\\_IN}及固定同步延迟完成。需要在严格满足L1、UB容量约束下，沿用切图、归核与核内顺序三个决策，为2～5核配置进一步缩短总体任务执行时间（Makespan）并减少额外搬运。正文同样给出1～5核的平均加速比折线图，附录逐用例报告评估周期与总额外数据搬运量，附件给出可复现程序。",
+        "observation": "场景B的Task、驻留、容量、跨核交接与输出均在1.2表述"
+      },
+      "literal_requirements": [
+        "2～5核"
+      ]
+    },
+    {
+      "order": 3,
+      "original_id": "问题3",
+      "source": {
+        "source_id": "problem_docx",
+        "location": "正文/附录P0059",
+        "quote": "本问题在场景 B 的基础上引入所有核心共享的只读 L2 Cache，要求参赛者研究其容量和带宽对多核切图与调度的影响，并建立相应模型、设计求解算法。L2 容量为 1 MB、带宽为 250 b"
+      },
+      "inputs": [
+        "场景B",
+        "共享只读L2配置",
+        "无L2对照"
+      ],
+      "action": "研究L2容量与带宽影响并建立调度模型",
+      "object": "L2资源下的多核切图和调度",
+      "conditions": [
+        "只读L2容量1048576 B",
+        "L2带宽250 B/周期",
+        "L2与DDR读带宽独立"
+      ],
+      "outputs": [
+        "1～5核无L2/有L2对比曲线及加速比",
+        "逐用例两配置Makespan、额外搬运量、Cache命中率"
+      ],
+      "validation": [
+        "同核数无L2周期除以有L2周期",
+        "逐用例按官方评估程序评价"
+      ],
+      "depends_on": [
+        "问题2"
+      ],
+      "required_methods": [],
+      "subtasks": [
+        {
+          "original_id": "问题3-正文",
+          "source": {
+            "source_id": "problem_docx",
+            "location": "正文/附录P0061",
+            "quote": "正文：给出 1～5 核下无 L2 与只读 Cache 两种配置的对比曲线，并报告相同核数下只读 Cache 相对无 L2 基线的加速比；该加速比定义为无 L2 时的 Makespan 与只读"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "正文应给出1～5核下无L2与有只读L2两种配置的对比曲线",
+            "observation": "曲线范围、两配置和比值方向均已覆盖"
+          },
+          "literal_requirements": [
+            "1～5核"
+          ]
+        },
+        {
+          "original_id": "问题3-附录",
+          "source": {
+            "source_id": "problem_docx",
+            "location": "正文/附录P0062",
+            "quote": "附录：逐用例列出无 L2 与只读 Cache 两种配置的赛题评估程序给出的结果，包括 Makespan、总额外数据搬运量、Cache 命中率。"
+          },
+          "coverage": {
+            "status": "verified",
+            "restatement_quote": "附录须逐用例列出两种配置的周期、总额外数据搬运量及缓存命中率",
+            "observation": "两配置逐例三指标已覆盖"
+          },
+          "literal_requirements": []
+        }
+      ],
+      "coverage": {
+        "status": "verified",
+        "restatement_quote": "问题三在场景B之上加入所有核心共享的只读L2，其容量为1048576~B、带宽为250~B/周期，读服务带宽与DDR独立。需要研究L2容量和带宽对切图与调度的影响，建立相应模型并在核数变化时生成合法方案。正文应给出1～5核下无L2与有只读L2两种配置的对比曲线，并以同核数无L2的总体任务执行时间（Makespan）除以有L2的周期，报告只读缓存相对无L2配置的加速比；附录须逐用例列出两种配置的周期、总额外数据搬运量及缓存命中率。本文后续各章据此分别说明共同决策、场景差异、求解与评价的衔接关系，总体研究安排见图~\\ref{fig:roadmap}。",
+        "observation": "场景B基础上增加L2，容量/带宽、比较与输出均在1.2表述"
+      },
+      "literal_requirements": [
+        "1048576~B",
+        "250~B/周期"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "text": "所有核心却共用核外DDR的总带宽",
+      "kind": "problem",
+      "source": {
+        "source_id": "problem_docx",
+        "location": "正文/附录P0005",
+        "quote": "所有核心对DDR内数据的读取与写入共同竞争固定的总物理带宽"
+      }
+    },
+    {
+      "text": "题目规定的核内调度程序会在容量不足时自动插入换出和取回",
+      "kind": "problem",
+      "source": {
+        "source_id": "problem_docx",
+        "location": "正文/附录P0030",
+        "quote": "当 L1/UB 容量不足时，该阶段会自动插入缓存换出和缓存换入"
+      }
+    },
+    {
+      "text": "分组、任务映射和列表调度需要共同考虑通信与并行性",
+      "kind": "verified_external",
+      "source": {
+        "source_id": "A49",
+        "location": "PDF物理页2",
+        "quote": "schedule tasks within a part"
+      },
+      "citation_key": "A49"
+    },
+    {
+      "text": "算子级调度研究也展示了分组方式对并行执行机会的影响",
+      "kind": "verified_external",
+      "source": {
+        "source_id": "A08",
+        "location": "PDF物理页4",
+        "quote": "groups within the same stage are executed concurrently"
+      },
+      "citation_key": "A08"
+    },
+    {
+      "text": "第三问再加入各核共享的只读L2",
+      "kind": "problem",
+      "source": {
+        "source_id": "problem_docx",
+        "location": "正文/附录P0059",
+        "quote": "引入所有核心共享的只读 L2 Cache"
+      }
+    }
+  ],
+  "gaps": [],
+  "symbols": [
+    {
+      "symbol": "$G$",
+      "category": "集合",
+      "meaning": "原始张量—操作二部有向计算图，$G=(T\\cup O,E)$",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{$G$}{原始张量—操作二部有向计算图，$G=(T\\cup O,E)$}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$T$",
+      "category": "集合",
+      "meaning": "原始计算图的张量节点集合",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{$T$}{原始计算图的张量节点集合}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$O$",
+      "category": "集合",
+      "meaning": "原始计算图的操作节点集合，含边界搬运操作",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{$O$}{原始计算图的操作节点集合，含边界搬运操作}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$E$",
+      "category": "集合",
+      "meaning": "张量与操作之间的有向依赖边集合",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{$E$}{张量与操作之间的有向依赖边集合}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$V$",
+      "category": "集合",
+      "meaning": "待分配的非\\texttt{COPY\\_IN}/\\texttt{COPY\\_OUT}算子集合",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{集合}{$V$}{待分配的非\\texttt{COPY\\_IN}/\\texttt{COPY\\_OUT}算子集合}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$K$",
+      "category": "索引",
+      "meaning": "可用同构核心的集合，$K=\\{1,\\ldots,n\\}$",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{索引}{$K$}{可用同构核心的集合，$K=\\{1,\\ldots,n\\}$}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$n$",
+      "category": "参数",
+      "meaning": "当前配置的核心数",
+      "unit": "核",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{$n$}{当前配置的核心数}{核}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$b_t$",
+      "category": "参数",
+      "meaning": "张量$t$的大小",
+      "unit": "B",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{$b_t$}{张量$t$的大小}{B}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$p_v$",
+      "category": "参数",
+      "meaning": "计算算子$v$的题给服务周期",
+      "unit": "周期",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{$p_v$}{计算算子$v$的题给服务周期}{周期}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$B_r$",
+      "category": "参数",
+      "meaning": "片上存储区$r$的容量，$r\\in\\{L1,UB\\}$",
+      "unit": "B",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{$B_r$}{片上存储区$r$的容量，$r\\in\\{L1,UB\\}$}{B}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$\\beta_{\\mathrm{DDR}}$",
+      "category": "参数",
+      "meaning": "所有核心共享的DDR总服务带宽",
+      "unit": "B/周期",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{$\\beta_{\\mathrm{DDR}}$}{所有核心共享的DDR总服务带宽}{B/周期}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$\\beta_{\\mathrm{L2}}$",
+      "category": "参数",
+      "meaning": "第三问只读L2的独立读服务带宽",
+      "unit": "B/周期",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{参数}{$\\beta_{\\mathrm{L2}}$}{第三问只读L2的独立读服务带宽}{B/周期}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$\\mathcal P$",
+      "category": "变量",
+      "meaning": "待分配算子的非空互斥子图划分",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{变量}{$\\mathcal P$}{待分配算子的非空互斥子图划分}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$a$",
+      "category": "变量",
+      "meaning": "子图到核心的映射",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{变量}{$a$}{子图到核心的映射}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$\\boldsymbol\\pi$",
+      "category": "变量",
+      "meaning": "各核心的子图执行顺序组成的序列族",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{变量}{$\\boldsymbol\\pi$}{各核心的子图执行顺序组成的序列族}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$x$",
+      "category": "变量",
+      "meaning": "由划分、归核和核内顺序构成的完整方案，$x=(\\mathcal P,a,\\boldsymbol\\pi)$",
+      "unit": "—",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{变量}{$x$}{由划分、归核和核内顺序构成的完整方案，$x=(\\mathcal P,a,\\boldsymbol\\pi)$}{—}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$C_q(x)$",
+      "category": "指标",
+      "meaning": "问题$q$中方案$x$的总体任务执行时间（Makespan）",
+      "unit": "周期",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{指标}{$C_q(x)$}{问题$q$中方案$x$的总体任务执行时间（Makespan）}{周期}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$D_q(x)$",
+      "category": "指标",
+      "meaning": "问题$q$中方案$x$的官方总额外COPY字节量",
+      "unit": "B",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{指标}{$D_q(x)$}{问题$q$中方案$x$的官方总额外COPY字节量}{B}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$L$",
+      "category": "界",
+      "meaning": "对当前问题全部可行方案成立的周期下界",
+      "unit": "周期",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{界}{$L$}{对当前问题全部可行方案成立的周期下界}{周期}"
+      },
+      "uses": []
+    },
+    {
+      "symbol": "$U$",
+      "category": "界",
+      "meaning": "当前已验证可行方案的完成周期",
+      "unit": "周期",
+      "scope": "三问共同模型、参数或评价量",
+      "in_core_table": true,
+      "first_definition": {
+        "tex_path": "章节内容/03_关键性符号说明.tex",
+        "quote": "\\GMCMSymbolRow{界}{$U$}{当前已验证可行方案的完成周期}{周期}"
+      },
+      "uses": []
+    }
+  ],
+  "review": {
+    "reviewer": "literature_cards agent",
+    "reviewed_at": "2026-09-25T21:11:30.017837+00:00",
+    "bindings": {},
+    "findings": [
+      {
+        "severity": "style",
+        "message": "总体路线图尚待根代理插入并在最终PDF核对位置和净正文行数",
+        "resolved": false
+      }
+    ],
+    "task_coverage": {
+      "status": "pending",
+      "observation": "正文已起草；待根代理在完整章节、图件与最终PDF中逐项核验。"
+    },
+    "conditions_units_logic": {
+      "status": "pending",
+      "observation": "正文已起草；待根代理在完整章节、图件与最终PDF中逐项核验。"
+    },
+    "source_attribution": {
+      "status": "pending",
+      "observation": "正文已起草；待根代理在完整章节、图件与最终PDF中逐项核验。"
+    },
+    "method_assumption_result_separation": {
+      "status": "pending",
+      "observation": "正文已起草；待根代理在完整章节、图件与最终PDF中逐项核验。"
+    },
+    "dependencies_outputs_validation": {
+      "status": "pending",
+      "observation": "正文已起草；待根代理在完整章节、图件与最终PDF中逐项核验。"
+    },
+    "background_coherence": {
+      "status": "pending",
+      "observation": "正文已起草；待根代理在完整章节、图件与最终PDF中逐项核验。"
+    },
+    "natural_expression": {
+      "status": "pending",
+      "observation": "正文已起草；待根代理在完整章节、图件与最终PDF中逐项核验。"
+    },
+    "symbol_definitions": {
+      "status": "pending",
+      "observation": "正文已起草；待根代理在完整章节、图件与最终PDF中逐项核验。"
+    }
+  }
+}

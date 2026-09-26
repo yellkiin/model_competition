@@ -1,0 +1,26 @@
+\section{关键性符号说明}
+
+贯穿三问的主要符号见表~\ref{tab:key-symbols}。局部事件变量与算法参数在首次使用处定义。
+\begin{GMCMSymbolTable}{本表列出贯穿三问的公共符号，局部事件变量及算法参数在正文首次出现处定义。}
+\GMCMSymbolRow{集合}{G}{原始张量—操作二部有向计算图，$G=(T\cup O,E)$}{—}
+\GMCMSymbolRow{集合}{T}{原始计算图的张量节点集合}{—}
+\GMCMSymbolRow{集合}{O}{原始计算图的操作节点集合，含边界搬运操作}{—}
+\GMCMSymbolRow{集合}{E}{张量与操作之间的有向依赖边集合}{—}
+\GMCMSymbolRow{集合}{V}{待分配的非\texttt{COPY\_IN}/\texttt{COPY\_OUT}算子集合}{—}
+\GMCMSymbolRow{索引}{K}{可用同构核心的集合，$K=\{1,\ldots,n\}$}{—}
+\GMCMSymbolRow{参数}{n}{当前配置的核心数}{核}
+\GMCMSymbolRow{参数}{b_t}{张量$t$的大小}{B}
+\GMCMSymbolRow{参数}{p_v}{计算算子$v$的题给服务周期}{周期}
+\GMCMSymbolRow{参数}{B_r}{片上存储区$r$的容量，$r\in\{L1,UB\}$}{B}
+\GMCMSymbolRow{参数}{\beta_{\mathrm{DDR}}}{所有核心共享的DDR总服务带宽}{B/周期}
+\GMCMSymbolRow{参数}{\beta_{\mathrm{L2}}}{第三问只读L2的独立读服务带宽}{B/周期}
+\GMCMSymbolRow{变量}{\mathcal P}{待分配算子的非空互斥子图划分}{—}
+\GMCMSymbolRow{变量}{a}{子图到核心的映射}{—}
+\GMCMSymbolRow{变量}{\boldsymbol\pi}{各核心的子图执行顺序组成的序列族}{—}
+\GMCMSymbolRow{变量}{x}{由划分、归核和核内顺序构成的完整方案，$x=(\mathcal P,a,\boldsymbol\pi)$}{—}
+\GMCMSymbolRow{指标}{C_q(x)}{问题$q$中方案$x$的总体任务执行时间（Makespan）}{周期}
+\GMCMSymbolRow{指标}{D_q(x)}{问题$q$中方案$x$的官方总额外COPY字节量}{B}
+\GMCMSymbolRow{界}{L}{对当前问题全部可行方案成立的周期下界}{周期}
+\GMCMSymbolRow{界}{U}{当前已验证可行方案的完成周期}{周期}
+\end{GMCMSymbolTable}
+

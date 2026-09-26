@@ -1,0 +1,10 @@
+{
+  "original_builder": "D:\\华为杯写作\\ORION_Paper_Agent\\华为杯_论文规范模板\\tools\\build_latex.py",
+  "reused": "build_main body and copy_assets unchanged except the two named prerequisite calls",
+  "omitted_prerequisites": [
+    "model_selection.publish (existing method fixed by user)",
+    "require_structure fingerprint/model-selection gates (reviewed separately)"
+  ],
+  "authorization": "用户要求不另行设计方法、不做哈希或冒烟测试；普通环境适配自主完成",
+  "review_status": "Actual source and PDF review reported separately; no automatic PASS inferred."
+}

@@ -1,0 +1,23 @@
+\documentclass[tikz,border=1.5mm]{standalone}
+\usepackage[UTF8,fontset=windows]{ctex}
+\setCJKmainfont[AutoFakeBold=1.5]{SimSun}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\definecolor{navy}{HTML}{17324D}\definecolor{blue}{HTML}{2878A5}\definecolor{teal}{HTML}{218C83}\definecolor{orange}{HTML}{D9873F}\definecolor{ink}{HTML}{243746}\definecolor{muted}{HTML}{647789}\definecolor{pale}{HTML}{F3F7FA}\definecolor{pblue}{HTML}{E9F2F8}\definecolor{pteal}{HTML}{E8F4F1}\definecolor{porange}{HTML}{FCF1E7}
+\tikzset{box/.style={draw=navy!65,fill=white,rounded corners=1.5mm,line width=.6pt,text=ink,align=center,font=\fontsize{7.5}{9}\selectfont,text width=30mm,minimum height=9mm,inner sep=1mm},sm/.style={box,font=\fontsize{7}{8.3}\selectfont},store/.style={box,draw=teal!80!black,fill=pteal},heading/.style={text=navy,font=\fontsize{8}{9}\selectfont\bfseries,anchor=west},lab/.style={text=muted,align=center,font=\fontsize{6.8}{8}\selectfont},arr/.style={-{Stealth[length=1.7mm]},draw=blue,line width=.65pt},data/.style={-{Stealth[length=1.7mm]},draw=teal,line width=.7pt},wait/.style={-{Stealth[length=1.7mm]},draw=orange,densely dashed,line width=.7pt}}
+\begin{document}
+\begin{tikzpicture}[x=1mm,y=1mm]
+\path[fill=pale,rounded corners=2mm](0,0)rectangle(160,68);
+\node[heading]at(5,62){核心 1：一个任务内的片上驻留};
+\node[box](g1)at(31,52){子图 $G_1$\\生成张量 $u$};\node[box](g2)at(129,52){子图 $G_2$\\使用张量 $u$};
+\draw[arr](g1.east)--node[above,lab,text width=43mm]{同一核心任务内按序执行}(g2.west);
+\node[store,text width=35mm](ub)at(80,41){片上 L1 / UB\\张量 $u$ 可驻留};
+\draw[data](g1.south)--(ub.north west);\draw[data](ub.north east)--(g2.south);
+
+\node[sm](in)at(31,28){目标核读入\\COPY\_IN};\node[store](ddr)at(80,28){DDR 片外存储\\共享服务};\node[sm](out)at(129,28){来源核写出\\COPY\_OUT};
+\draw[data](out.west)--(ddr.east);\draw[data](ddr.west)--(in.east);\draw[data](g2.south)--(out.north);
+\node[box,text width=30mm](g3)at(31,10){子图 $G_3$\\目标操作};\draw[data](in.south)--(g3.north);
+\draw[wait](out.south)--(129,18)--(31,18)--(in.south);
+\node[lab,fill=pale,inner sep=1pt]at(80,18){写出完成后等待 500 周期};
+\node[lab,anchor=west,align=left,text width=146mm]at(6,3){同核子图不另建任务切换；驻留受片上容量与换出规则约束。跨核交接依次经过 COPY\_OUT、DDR 与 COPY\_IN。};
+\end{tikzpicture}\end{document}

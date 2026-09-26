@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "questions": [
+    {
+      "chapter_id": "q1",
+      "statements": [
+        {
+          "kind": "method",
+          "text": "多邻域迭代改进算法",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q1/method"
+        },
+        {
+          "kind": "conclusion",
+          "text": "稳定的多核收益",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q1/conclusion"
+        },
+        {
+          "kind": "validation",
+          "text": "全局下界",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q1/validation"
+        },
+        {
+          "kind": "value",
+          "text": "3.9180",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q1/five_core_mean",
+          "decimal_places": 4,
+          "key": true
+        }
+      ]
+    },
+    {
+      "chapter_id": "q2",
+      "statements": [
+        {
+          "kind": "method",
+          "text": "面向驻留与交接的候选改进",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q2/method"
+        },
+        {
+          "kind": "conclusion",
+          "text": "核心级 Task 的最终方案通常更快",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q2/conclusion"
+        },
+        {
+          "kind": "validation",
+          "text": "逐图周期",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q2/validation"
+        },
+        {
+          "kind": "value",
+          "text": "4.4538",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q2/five_core_mean",
+          "decimal_places": 4,
+          "key": true
+        }
+      ]
+    },
+    {
+      "chapter_id": "q3",
+      "statements": [
+        {
+          "kind": "method",
+          "text": "缓存时序候选",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q3/method"
+        },
+        {
+          "kind": "conclusion",
+          "text": "第三问的关键不是抽象地提高重复读取比例",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q3/conclusion"
+        },
+        {
+          "kind": "validation",
+          "text": "同方案配对",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q3/validation"
+        },
+        {
+          "kind": "value",
+          "text": "4.5978",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q3/five_core_mean",
+          "decimal_places": 4,
+          "key": true
+        },
+        {
+          "kind": "value",
+          "text": "1.0558",
+          "source_path": "论文/摘要事实.json",
+          "source_sha256": "39f17721a0db0331b187178e0ee8a365b5eb8dc99e74c79f4af2fdbfb475ef03",
+          "source_pointer": "/q3/five_core_pair_mean",
+          "decimal_places": 4,
+          "key": true
+        }
+      ]
+    }
+  ]
+}

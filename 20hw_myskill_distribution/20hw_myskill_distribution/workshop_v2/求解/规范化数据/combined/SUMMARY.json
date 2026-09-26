@@ -1,0 +1,236 @@
+{
+  "main_configurations": 1400,
+  "official_response_count": 1400,
+  "baseline_values": 100,
+  "paired_configurations": 500,
+  "means": [
+    {
+      "q": 1,
+      "n": 1,
+      "count": 100,
+      "mean_speedup": 1.0,
+      "median_speedup": 1.0,
+      "min_speedup": 1.0,
+      "max_speedup": 1.0
+    },
+    {
+      "q": 1,
+      "n": 2,
+      "count": 100,
+      "mean_speedup": 1.9832352091535908,
+      "median_speedup": 1.9810317815547063,
+      "min_speedup": 1.24453125,
+      "max_speedup": 3.648036174657953
+    },
+    {
+      "q": 1,
+      "n": 3,
+      "count": 100,
+      "mean_speedup": 2.71059937480608,
+      "median_speedup": 2.843999278268324,
+      "min_speedup": 1.459570894097885,
+      "max_speedup": 5.4659388665326745
+    },
+    {
+      "q": 1,
+      "n": 4,
+      "count": 100,
+      "mean_speedup": 3.385216355459945,
+      "median_speedup": 3.7003472032462996,
+      "min_speedup": 1.5139149095616038,
+      "max_speedup": 6.380572859411262
+    },
+    {
+      "q": 1,
+      "n": 5,
+      "count": 100,
+      "mean_speedup": 3.9179853062705785,
+      "median_speedup": 4.422735062896114,
+      "min_speedup": 1.5156909687408346,
+      "max_speedup": 6.392838749483711
+    },
+    {
+      "q": 2,
+      "n": 1,
+      "count": 100,
+      "mean_speedup": 1.0,
+      "median_speedup": 1.0,
+      "min_speedup": 1.0,
+      "max_speedup": 1.0
+    },
+    {
+      "q": 2,
+      "n": 2,
+      "count": 100,
+      "mean_speedup": 2.1167882020467346,
+      "median_speedup": 2.018880387517412,
+      "min_speedup": 1.5706186837564704,
+      "max_speedup": 3.653330147333085
+    },
+    {
+      "q": 2,
+      "n": 3,
+      "count": 100,
+      "mean_speedup": 3.015316480266515,
+      "median_speedup": 3.006422724211871,
+      "min_speedup": 1.7940872829657437,
+      "max_speedup": 5.472643461407507
+    },
+    {
+      "q": 2,
+      "n": 4,
+      "count": 100,
+      "mean_speedup": 3.7868172483247293,
+      "median_speedup": 3.9421074296033662,
+      "min_speedup": 1.9552009818962872,
+      "max_speedup": 7.071598392441656
+    },
+    {
+      "q": 2,
+      "n": 5,
+      "count": 100,
+      "mean_speedup": 4.4538064457658715,
+      "median_speedup": 4.714263094224686,
+      "min_speedup": 1.991872460143795,
+      "max_speedup": 8.776810904279523
+    },
+    {
+      "q": 3,
+      "n": 1,
+      "count": 100,
+      "mean_speedup": 1.1007509221326828,
+      "median_speedup": 1.042736050718585,
+      "min_speedup": 0.9969099007433421,
+      "max_speedup": 2.0540220557913083
+    },
+    {
+      "q": 3,
+      "n": 2,
+      "count": 100,
+      "mean_speedup": 2.1221938845147683,
+      "median_speedup": 2.0270591546322407,
+      "min_speedup": 1.52245938196878,
+      "max_speedup": 3.653330147333085
+    },
+    {
+      "q": 3,
+      "n": 3,
+      "count": 100,
+      "mean_speedup": 3.0320332611153127,
+      "median_speedup": 3.018208687881043,
+      "min_speedup": 1.766728280961183,
+      "max_speedup": 5.472643461407507
+    },
+    {
+      "q": 3,
+      "n": 4,
+      "count": 100,
+      "mean_speedup": 3.8376050420764836,
+      "median_speedup": 3.965606926037483,
+      "min_speedup": 1.9852528819192024,
+      "max_speedup": 7.094869444161489
+    },
+    {
+      "q": 3,
+      "n": 5,
+      "count": 100,
+      "mean_speedup": 4.597829265850352,
+      "median_speedup": 4.856497309016793,
+      "min_speedup": 2.071745962934865,
+      "max_speedup": 8.776810904279523
+    }
+  ],
+  "pairs": [
+    {
+      "n": 1,
+      "count": 100,
+      "mean_cache_speedup": 1.0002844524850667,
+      "median_cache_speedup": 1.0,
+      "improved": 28,
+      "equal": 72,
+      "regressed": 0,
+      "min_ratio": 1,
+      "max_ratio": 1.0049984897350703,
+      "mean_hit_rate": 0.05988487431312221
+    },
+    {
+      "n": 2,
+      "count": 100,
+      "mean_cache_speedup": 1.0046769687655241,
+      "median_cache_speedup": 1.0000746801895541,
+      "improved": 58,
+      "equal": 42,
+      "regressed": 0,
+      "min_ratio": 1,
+      "max_ratio": 1.2682763680303815,
+      "mean_hit_rate": 0.175706624426544
+    },
+    {
+      "n": 3,
+      "count": 100,
+      "mean_cache_speedup": 1.015586806149891,
+      "median_cache_speedup": 1.0009292183142593,
+      "improved": 66,
+      "equal": 34,
+      "regressed": 0,
+      "min_ratio": 1,
+      "max_ratio": 1.7294244365885991,
+      "mean_hit_rate": 0.2341885008711454
+    },
+    {
+      "n": 4,
+      "count": 100,
+      "mean_cache_speedup": 1.0303863218628446,
+      "median_cache_speedup": 1.0018087621911755,
+      "improved": 71,
+      "equal": 28,
+      "regressed": 1,
+      "min_ratio": 0.9999909386959444,
+      "max_ratio": 1.7294244365885991,
+      "mean_hit_rate": 0.2469830287093025
+    },
+    {
+      "n": 5,
+      "count": 100,
+      "mean_cache_speedup": 1.0558429548125037,
+      "median_cache_speedup": 1.007735024354472,
+      "improved": 77,
+      "equal": 23,
+      "regressed": 0,
+      "min_ratio": 1,
+      "max_ratio": 1.9350963985423155,
+      "mean_hit_rate": 0.3017429252710123
+    }
+  ],
+  "questions": {
+    "q1": {
+      "five_core_mean": 3.9179853062705785,
+      "five_core_median": 4.422735062896114,
+      "five_core_count": 100,
+      "mean_added_copy_bytes": 14585335.66,
+      "median_added_copy_bytes": 1990466.0,
+      "zero_spill_count": 88,
+      "mean_gap_upper": 0.33036490440021316
+    },
+    "q2": {
+      "five_core_mean": 4.4538064457658715,
+      "five_core_median": 4.714263094224686,
+      "five_core_count": 100,
+      "mean_added_copy_bytes": 8094619.1,
+      "median_added_copy_bytes": 1310458.0,
+      "zero_spill_count": 74,
+      "mean_gap_upper": 0.2461700133275163
+    },
+    "q3": {
+      "five_core_mean": 4.597829265850352,
+      "five_core_median": 4.856497309016793,
+      "five_core_count": 100,
+      "mean_added_copy_bytes": 8293721.4,
+      "median_added_copy_bytes": 1484117.0,
+      "zero_spill_count": 73,
+      "mean_gap_upper": 0.2248422957412503
+    }
+  },
+  "missing_pairs": [],
+  "arithmetic_mean": "mean of per-case T0/C; not ratio of totals"
+}

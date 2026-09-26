@@ -1,0 +1,26 @@
+{
+  "source_data": {
+    "main": "求解/规范化数据/combined/SUMMARY.json",
+    "pairs": "求解/规范化数据/combined/pair_summary.csv",
+    "cross_question": "求解/规范化数据/combined/ANALYSIS.json"
+  },
+  "q1": {
+    "method": "多邻域迭代改进算法",
+    "conclusion": {"text": "稳定的多核收益", "status": "verified"},
+    "validation": "全局下界",
+    "five_core_mean": {"value": 3.9179853062705785, "unit": "", "status": "verified"}
+  },
+  "q2": {
+    "method": "面向驻留与交接的候选改进",
+    "conclusion": {"text": "核心级 Task 的最终方案通常更快", "status": "verified"},
+    "validation": "逐图周期",
+    "five_core_mean": {"value": 4.4538064457658715, "unit": "", "status": "verified"}
+  },
+  "q3": {
+    "method": "缓存时序候选",
+    "conclusion": {"text": "第三问的关键不是抽象地提高重复读取比例", "status": "verified"},
+    "validation": "同方案配对",
+    "five_core_mean": {"value": 4.597829265850352, "unit": "", "status": "verified"},
+    "five_core_pair_mean": {"value": 1.0558429548125037, "unit": "", "status": "verified"}
+  }
+}

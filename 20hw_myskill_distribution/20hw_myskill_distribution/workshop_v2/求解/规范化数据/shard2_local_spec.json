@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "publication_id": "trident_round01_shard2",
+  "publication_state": "partial",
+  "result_delivery": "local",
+  "algorithm_revision": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1",
+  "official_revision": "dab710eccf955635a8357eebc69e2c87f4bac765",
+  "official_revision_role": "frozen repository reference for original problem and evaluator; local configuration and original responses govern experimental values",
+  "method_paths": [
+    "research_a_orion_trident"
+  ],
+  "config": "题目/A题/附件/data/config.txt",
+  "protocol": {
+    "budget_scope": "graph_question_core",
+    "seconds": 600,
+    "max_evaluations": 2048
+  },
+  "expected_cases": [
+    "case_004",
+    "case_005",
+    "case_007",
+    "case_008",
+    "case_011",
+    "case_013",
+    "case_015",
+    "case_017",
+    "case_018",
+    "case_025",
+    "case_029",
+    "case_045",
+    "case_046",
+    "case_047",
+    "case_048",
+    "case_052",
+    "case_054",
+    "case_056",
+    "case_062",
+    "case_063",
+    "case_066",
+    "case_068",
+    "case_076",
+    "case_077",
+    "case_078",
+    "case_082",
+    "case_084",
+    "case_086",
+    "case_089",
+    "case_090",
+    "case_091",
+    "case_093",
+    "case_096"
+  ],
+  "source_archive": "D:\\数据\\Trident_round01_shard2_20260926\\ORION_Trident_trident-1.3_round01_shard2_FULL_20260926.zip",
+  "actual_source_snapshot": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2\\source_snapshot",
+  "runs": [
+    "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\round01\\shard_2"
+  ],
+  "config_local": "D:\\华为杯写作\\.orion_paper_cache\\local_raw\\host2\\records\\research_a_orion_trident\\runs\\assets_shard_2\\official\\data\\config.txt",
+  "local_source_rule": "Explicit local runs; no raw download and no per-case best-of-versions selection"
+}

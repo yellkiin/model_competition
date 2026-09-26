@@ -1,0 +1,17 @@
+{
+  "status": "MANUAL_REVIEWED; original preflight was not overwritten because OS denied write access",
+  "original_preflight": "求解\\绘图能力预检.json",
+  "academic_gallery": {
+    "overview_pages_viewed": 23,
+    "visual_units": 135,
+    "contact_sheets": "求解/验收输出/academic_assets/assets_01.png-assets_23.png",
+    "observations": "LineTrend is appropriate for ordered core-count mean speedup and time trace; PairedBoxScatter encodes same-instance paired comparisons; MarginalDensity adds fitted/residual annotations that should be removed for COPY-vs-cycle scatter; Violin includes group distributions and inappropriate demo significance brackets; ConvergenceBand requires repeated seeds/true quantiles; ParameterSweep requires an actual two-parameter grid."
+  },
+  "modelviz_gallery": {
+    "overview_pages_viewed": 8,
+    "visual_units": 89,
+    "previews": "求解/绘图能力预检_modelviz/overview_01.png-overview_08.png",
+    "observations": "Viewed all reduced catalog overview sheets; trend, distribution, scatter, paired, sensitivity and 3D candidates exist. Avoid domain-specific encoding, illustrative statistics and unnecessary dual axes/3D."
+  },
+  "limitation": "The original workshop.py run returned FAIL at PDF capability because access to C:\\Users\\LEGION\\AppData\\Local\\HuaweiCupWorkflow was denied. Parent requested no smoke/solver runs. Tool-generated review receipt fields remain blank in original JSON; this manual record does not claim the gate passed."
+}

@@ -1,0 +1,33 @@
+\documentclass[UTF8,a4paper,10pt]{ctexart}
+\usepackage[margin=22mm]{geometry}
+\usepackage{longtable,array,booktabs,xurl,hyperref}
+\hypersetup{hidelinks}
+\setlength{\emergencystretch}{3em}
+\begin{document}
+\section*{环境与依赖说明}
+本文件由机器可读能力清单生成，独立于正式论文；不授予科学、视觉或论文验收通过。
+\par 正式支持：Windows 10/11 x64，PowerShell 5.1 以上。
+\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{.19\linewidth}>{\raggedright\arraybackslash}p{.27\linewidth}>{\raggedright\arraybackslash}p{.43\linewidth}}
+\toprule 能力 / 状态 & 提供者 / 版本 & 需求依据 \\ \midrule\endhead
+Python 工作区虚拟环境 / satisfied & 兼容 Python 3.12.8 & 工作流启动必需 \\
+工作流与结构校验 / satisfied & 工作流与结构校验 [["jsonschema", "4.26.0"], ["PyYAML", "6.0.3"], ["pydantic", "2.13.5"], ["packag & 执行已选共享工具 drawing\_sources.py \\
+PDF 读取、渲染与页面检查 / blocked & PDF 读取、渲染与页面检查  & 执行已选共享工具 drawing\_sources.py \\
+论文解析与代码排版 / not\_applicable & 论文解析与代码排版  & 读取题目/论文/结构图阶段按实际需要启用 \\
+XeLaTeX 论文编译 / not\_applicable & TeX Live / TinyTeX / MiKTeX  & 读取题目/论文/结构图阶段按实际需要启用 \\
+官方标题及中文正文字体 / not\_applicable & 系统合法字体  & 读取题目/论文/结构图阶段按实际需要启用 \\
+可编辑结构图导出 / not\_applicable & draw.io Desktop  & 读取题目/论文/结构图阶段按实际需要启用 \\
+可选 Word 文档生成 / satisfied & 可选 Word 文档生成 [["python-docx", "1.2.0"], ["lxml", "6.1.3"]] & 登记输入格式需要最小读取能力：.docx \\
+\bottomrule\end{longtable}
+\normalsize\section*{安装与复现}
+优先复用实测兼容的软件。Python 包安装到工作区虚拟环境；直接依赖见 requirements.txt，精确版本见 requirements.lock.txt。虚拟环境与下载缓存不提交。
+\par 国内 PyPI 镜像优先，失败时显式回退官方源；TeX 宏包仓库须与发行版年度兼容。字体须来自合法来源，不替换官方标题样式。
+\section*{来源}
+\noindent\url{https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple}\par
+\noindent\url{https://pypi.org/simple}\par
+\noindent\url{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet}\par
+\noindent\url{https://mirrors.ctan.org/systems/texlive/tlnet}\par
+\noindent\url{https://www.python.org/downloads/}\par
+\noindent\url{https://yihui.org/tinytex/}\par
+\noindent\url{https://github.com/jgraph/drawio-desktop/releases}\par
+\end{document}

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "publication_id": "trident_round01_shard1",
+  "formal_ready": false,
+  "expected_cases": 33,
+  "main_count": 462,
+  "valid_main_count": 461,
+  "pair_count": 164,
+  "errors": [
+    {
+      "key": [
+        "case_049",
+        3,
+        1
+      ],
+      "error": "[Errno 2] No such file or directory: 'D:\\\\华为杯写作\\\\.orion_paper_cache\\\\local_raw\\\\host1\\\\records\\\\research_a_orion_trident\\\\runs\\\\round01\\\\shard_1\\\\pairs\\\\case_049_q3_n1\\\\plan.json'"
+    },
+    {
+      "key": [
+        "case_072",
+        0,
+        1
+      ],
+      "error": "[Errno 2] No such file or directory: 'D:\\\\华为杯写作\\\\.orion_paper_cache\\\\local_raw\\\\host1\\\\records\\\\research_a_orion_trident\\\\runs\\\\round01\\\\shard_1\\\\jobs\\\\case_072_q0_n1\\\\plan.json'"
+    }
+  ],
+  "missing_main": [
+    [
+      "case_072",
+      0,
+      1
+    ]
+  ],
+  "missing_pairs": [
+    [
+      "case_049",
+      1
+    ]
+  ],
+  "interpretation": "arithmetic mean of per-case speedups; one explicitly selected publication",
+  "method_review": "required before scientific acceptance; no solver was executed"
+}
