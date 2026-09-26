@@ -1,45 +1,43 @@
-# 图1.1 · 线刻流程图第三版
+# 图1.1 · 线刻流程图第三版（字体与位置修订）
 
-以指定的 `ink_v2` 为唯一图形母版，保留六算子案例、子图包络、核心任务条、硬件剖面和排线质感；重新组织为“联合决策—多邻域协同—统一执行评价”，下方以单一反馈回路连接。第二版、论文正文和实验数据均保持原样。
+保留 ink_v2 的六算子案例、子图包络、核心任务条、硬件剖面和排线质感，不改论文正文、求解算法或实验数据。本目录为 PR #58 的修订版本；PR 合入 main 前，请从 PR 分支查看最新成图。
 
 ## 成图
 
-![第三版 · 灰阶](exports/workflow_mono_v3_preview.png)
+![灰阶完整预览](exports/workflow_mono_v3_preview.png)
 
-| 版本 | 可编辑SVG | 压缩SVG | 矢量PDF | 6000像素PNG | 预览 |
-|---|---|---|---|---|---|
-| 灰阶，与用户截图一致 | [SVG](assets/workflow_mono_v3.svg) | [SVGZ](assets/workflow_mono_v3.svgz) | [PDF](exports/workflow_mono_v3.pdf) | [PNG](exports/workflow_mono_v3.png) | [预览](exports/workflow_mono_v3_preview.png) |
-| 青绿·赭石，沿用第二版设色 | [SVG](assets/workflow_qinglu_v3.svg) | [SVGZ](assets/workflow_qinglu_v3.svgz) | [PDF](exports/workflow_qinglu_v3.pdf) | [PNG](exports/workflow_qinglu_v3.png) | [预览](exports/workflow_qinglu_v3_preview.png) |
+| 版本 | 跨电脑稳定 SVG | 文字可编辑 SVG | 矢量 PDF | 6000 像素 PNG |
+|---|---|---|---|---|
+| 灰阶 | [SVG](assets/workflow_mono_v3.svg) | [可编辑源图](assets/workflow_mono_v3_editable.svg) | [PDF](exports/workflow_mono_v3.pdf) | [PNG](exports/workflow_mono_v3.png) |
+| 青绿·赭石 | [SVG](assets/workflow_qinglu_v3.svg) | [可编辑源图](assets/workflow_qinglu_v3_editable.svg) | [PDF](exports/workflow_qinglu_v3.pdf) | [PNG](exports/workflow_qinglu_v3.png) |
 
-详细解释与图分开保存：[FIGURE_EXPLANATION.md](docs/FIGURE_EXPLANATION.md)。其中包含建议图注、可放在图后的正文段落，以及逐模块的完整说明。
+常规 `.svg` 与 `.svgz` 已将文字转换为矢量路径，不依赖查看电脑的字体。`_editable.svg` 保留中文和西文文字，编辑时需要本机宋体与 Times New Roman。公式以 Computer Modern 矢量保存，其 LaTeX 源在 `math_layout.py` 和公式对象的 `data-tex` 属性中。
 
-## 本版变化
+## 本次七项处理
 
-- 三个主模块的结果沿同一水平线排列，模块间主箭头减为两条；反馈连接保持单一回路，另设停止输出分支。
-- 删除底部全部图例，删除原04字典序判断与停止菱形，改为“保留更优方案、更新搜索依据”的概念说明。
-- 删除Step1/2/3、具体等待周期和硬件数值等过细文字；保留统一执行模型和主要目标。
-- 原始案例、四类候选插图、两核剖面及L2窗口继续使用第二版矢量，不以简单方框替代。
-- A、B、C、D统一为同一种纸面样式。旧稿中B的深色只用于提示“迁移B”，不代表不同类型；第三版改由迁移箭头和“迁移 B”短语表达，避免把颜色误读为额外语义。
-- 删除输出区“Q3：固定同一方案……”一行；同方案有无L2配对仍在独立图解和论文正文中说明。
-- 修正 `G=(T\cup O,E)`、核心下标、`COPY_IN`、`COPY_OUT` 和Makespan公式的位置与基线。
-- 灰阶和青绿版本布局与文字完全一致；图示不增加算法机制或实验成绩。
+1. **字体**：直接检查 `workshop_v2/论文/论文.pdf` 的字体资源和第9页公式，而不只依据模板。正文为 SimSun（宋体）与 Times New Roman；数学字体为 Computer Modern（CMMI12、CMSY10、CMR12 等）。先前说明中的 STIX / Liberation Serif 只是近似，不是论文实际字体，现已纠正。花体 P 改为 LaTeX `\mathcal{P}`，相关公式和上下标同步排版。
+2. **PR 冲突**：保持 PR #58 的第三版结构，以本次修订源文件为准；不以 main 的旧图生成脚本覆盖。是否可合并以 PR 页面实时状态为准，本流程不自动合并 main。
+3. **B 的深色**：旧色块仅提示迁移，不代表另一种任务类别。现在 A、B、C、D 使用统一纸面样式，由箭头与短语“迁移 B”表达操作。
+4. **底部文字**：删除“Q3：固定同一方案……”整行，输出说明重新定位。该实验对照口径仍可在独立图解中说明。
+5. **COPY 标注**：COPY_OUT、COPY_IN 分别居中放在对应搬运张量上方，保留白色描边避开背景线。
+6. **核心编号**：核心 k_1、k_2 居中对齐两组核心剖面，编号按真实数学下标排版。
+7. **图定义公式**：G=(T∪O,E) 放在左列输入行右侧的独立留白处，不再悬压在计算图上；Makespan 公式也统一了基线和下标。
 
-## 字体与公式
+## 字体与复现
 
-图中文字与 `workshop_v2` 论文采用同一类排版体系：西文优先 Times New Roman（Linux导出使用等宽兼容的 Liberation Serif），中文优先宋体/宋体兼容字体，数学符号优先 STIX Math。`𝒫`、核心下标及Makespan公式均使用数学字体和真实下标，不再依赖普通中文字体中的替代字形。
+本次正式成图使用 Windows 原生 SimSun 与 Times New Roman 生成实际文字路径，数学公式由与论文一致的 LaTeX Computer Modern 排版。缺少规定字体时导出脚本会报错，不会偷偷改用兼容字体。只保存图中实际使用的文字/公式矢量对象，不附带任何字体文件。
 
-SVG保留可编辑文字；PDF导出时将文字转换为矢量轮廓，因此不随查看机器的字体安装情况漂移。仓库不附带字体文件。
+`docs/FONT_AUDIT.json` 记录各文字对象实际采用的字体。`docs/EXPORT_RECEIPT.json` 记录 SVG/PDF 校验和、图面内容与结构检查；结构检查不替代人工查看成图。
 
-## 编辑与导出
+在仓库根目录、具备本地合法字体及 Inkscape 的 Windows 环境执行：
 
-依赖Python 3.10+及Inkscape。在仓库根目录执行：
-
-```bash
+```powershell
+python -m pip install fonttools
 python paper_a_figures/engraved_workflow/ink_v3/build.py
 ```
 
-默认读取相邻 `ink_v2/assets/` 中的灰阶和青绿SVG，生成本目录的SVG、SVGZ、PDF、6000像素PNG及1800像素预览。仅生成矢量源码可加 `--svg-only`；重建其他第二版配色可使用 `--palettes qianjiang yanlan`。可用 `--out <新目录>` 保留已有手改稿。
+生成流程已集成修订步骤，不会出现重新运行 build.py 后恢复旧字体、深色 B 或底部 Q3 文字的问题。已有 `assets/math_layout.json` 公式缓存时，无须安装 TeX；修改公式后重新生成缓存需要 pdflatex 与 PyMuPDF。仅生成保留文字的矢量中间稿可加 `--svg-only`，该稿在缺少宋体的电脑上显示可能被系统替换，正式插图应使用文字转曲后的 SVG 或 PDF。
 
-画布为420×255.5mm，适合论文横向整页或宽幅展示；需要缩小排版时优先采用矢量PDF。流程图解释、版本来源和视觉检查分别位于 `docs/`，不混入论文图像。
+GitHub 自动导出通过修改 `RENDER_REQUEST.json` 发起：Linux 排版公式 → Windows 原生字体转曲 → Linux 导出与结构校验。各阶段只传递图形和源码，不传递字体文件。流程只提交本目录，不合并 PR，也不运行求解实验。
 
-本次源版本：`70d4888886cd9f77037f7b010ce0241349ef056d` 的 `paper_a_figures/engraved_workflow/ink_v2/`。没有读取或参考PR #57。
+独立图解：[FIGURE_EXPLANATION.md](docs/FIGURE_EXPLANATION.md)。画布 420 × 255.5 mm；缩小插入论文时优先使用矢量 PDF。
