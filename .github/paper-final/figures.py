@@ -55,4 +55,18 @@ save(p,tr,doc,s)
 p,tr,doc,s=load('q3_hit_gain');H=float(tr.getroot().attrib['height'][:-2]);d=D[D.n==5].sort_values('case');xs=59.7490690909+d.cache_hit_rate.to_numpy()*466.809050647;ys=H-224.567311+(d.r.to_numpy()-1)*209.07363
 for el,x,y in zip(find(tr,'PathCollection_1').xpath('.//s:use',namespaces=NS),xs,ys):el.attrib.update({'x':f'{x:.6f}','y':f'{H-y:.6f}'})
 keys=re.findall(r'cm /(\w+) Do',s);key=max(set(keys),key=keys.count);s=marker_stream(s,key,np.c_[xs,ys]);save(p,tr,doc,s)
-print('Three Q3 plots updated in PDF/SVG/PNG with existing styles retained.')
+# The overview repeats the same formal observations in two small panels.
+p,tr,doc,s=load('q3_overview');H=float(tr.getroot().attrib['height'][:-2])
+g=find(tr,'line2d_17');path=g.find('s:path',NS);old=nums(path.attrib['d']);xs=old[:,0]
+ys=352.424930-(np.array([g.s.mean() for _,g in D.groupby('n')])-1)*22.03534875
+new=np.c_[xs,ys];s=replace_path(s,old,new,H);path.attrib['d']=pathdata(new)
+for el,(x,y) in zip(g.xpath('.//s:use',namespaces=NS),new):el.attrib.update({'x':f'{x:.6f}','y':f'{y:.6f}'})
+s=marker_stream(s,'M0',np.c_[xs,H-ys])
+d=D[D.n==5].sort_values('case');xs=286.180364+d.cache_hit_rate.to_numpy()*180.05512875;ys=352.525091-(d.r.to_numpy()-1)*92.116899
+for el,x,y in zip(find(tr,'PathCollection_1').xpath('.//s:use',namespaces=NS),xs,ys):el.attrib.update({'x':f'{x:.6f}','y':f'{y:.6f}'})
+s=marker_stream(s,'M1',np.c_[xs,H-ys])
+t=find(tr,'text_43').find('s:text',NS);old=t.text;new=f'五核平均加速比 {d.s.mean():.4f}';t.text=new
+a=old.rsplit(' ',1)[-1].encode('utf-16-be').decode('latin1');b=new.rsplit(' ',1)[-1].encode('utf-16-be').decode('latin1')
+if s.count(a)!=1:raise ValueError('Overview summary text must occur once')
+s=s.replace(a,b);save(p,tr,doc,s)
+print('Q3 plot observations and overview numerical panels updated; existing styles retained.')
