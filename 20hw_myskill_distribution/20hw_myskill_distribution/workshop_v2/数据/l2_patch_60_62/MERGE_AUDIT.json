@@ -1,0 +1,14 @@
+{
+  "sources": {"shard_0": 61, "shard_1": 62, "shard_2": 60},
+  "Q3_keys": 500, "graphs": 100, "changed": 90, "retained": 410, "regressed": 0,
+  "changed_graphs": 42, "selection_sources": {"portfolio_published": 88, "v1_published": 2},
+  "pairs_reported": 500, "new_pairs": 90, "inherited_pairs": 410,
+  "patch_denominator_count": 97, "paper_denominator_count": 100,
+  "existing_paper_baselines_reused": ["case_072", "case_076", "case_091"],
+  "checks_performed": {"changed_old_period_matches_existing_paper": 90, "changed_partition_plus_spill_equals_added": 90, "all_15_published_shard_means_match_recalculation": true},
+  "local_merge_method": "90 original changed CSV rows plus 410 unchanged exact integer time/byte rows from current manuscript appendix; 100 original baseline integers from the existing Q1 singlecore appendix",
+  "inherited_hit_rate_precision": "six decimals as already printed in current paper; displayed aggregate only four decimals; original CSVs are copied alongside for full-precision regeneration",
+  "new_five_core_mean": 4.633285839797243,
+  "new_five_core_cache_ratio_mean": 1.0559623270491574,
+  "not_performed": "No new scheduling/official simulation and no replay of the unuploaded full raw response packages."
+}
