@@ -1,0 +1,24 @@
+{
+  "bundle_file_count": 79,
+  "all_bundle_paths_present": true,
+  "non_document_files_match_supplied_bundle": true,
+  "local_build_command": [
+    "D:\\python\\python.exe",
+    "paper_a_figures/engraved_workflow/ink_v2/build.py",
+    "--all-palettes",
+    "--svg-only"
+  ],
+  "local_build_exit_code": 0,
+  "generated_svg_files": [
+    "workflow_mono.svg",
+    "workflow_qianjiang.svg",
+    "workflow_qinglu.svg",
+    "workflow_yanlan.svg"
+  ],
+  "inkscape_on_path": null,
+  "pdf_png_source": "supplied_bundle",
+  "original_pr": "https://github.com/yellkiin/model_competition/pull/53",
+  "default_edition": "ink_v2",
+  "default_palette": "qinglu",
+  "checked_local_document_links": 55
+}
