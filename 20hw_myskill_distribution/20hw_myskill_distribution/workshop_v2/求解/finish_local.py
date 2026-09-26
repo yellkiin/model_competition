@@ -45,14 +45,14 @@ def finish():
                   omitted=['artifact hashing', 'smoke tests', 'new solver selection',
                            'template hardcoded DeepSeek disclosure'],
                   pages=review['pages'],
-                  actual_work=['sentence-by-sentence manuscript review',
+                  actual_work=review.get('actual_work', ['sentence-by-sentence manuscript review',
                                'fixed-method execution semantics correction',
                                'figure/table/equation numbering and captions',
                                'numerical summaries recalculated from recorded cycles',
                                'XeLaTeX and bibliography compilation',
                                'actual rendered-page and figure review',
                                'dynamic appendix pagination and complete source excerpts',
-                               'illustrator content handoff and optional eight-job experiment package'],
+                               'illustrator content handoff and optional eight-job experiment package']),
                   experiments_run_this_review=0,
                   remaining_work=review['remaining_work'])
     report_path = R / '完成登记.local.json'
@@ -62,7 +62,7 @@ def finish():
                    completed_at=completed_at, completion_report=str(report_path),
                    paper_pdf=str(pdf_path), paper_tex=str(W/'论文/论文.tex'),
                    theory_binding=str(W/'求解/FINAL_THEORY_BINDING.json'),
-                   review_report=str(W/'求解/审校_20260926/修订报告.md'),
+                   review_report=review.get('report', str(W/'求解/审校_20260926/修订报告.md')),
                    figure_content_handoff=str(W/'求解/审校_20260926/图表内容交接报告.md'),
                    next_update_prompt=str(A/'ORION_论文更新提示词.md'))
     session_path.write_text(json.dumps(session, ensure_ascii=False, indent=2), encoding='utf-8')

@@ -50,8 +50,8 @@ try {
     foreach ($extension in @('aux','toc','bbl','log','gmcmevaluation','gmcmlayout','gmcmprose')) {
         Copy-Item -LiteralPath ('paper.' + $extension) -Destination ('论文.' + $extension) -Force
     }
-    Copy-Item -LiteralPath 'paper.pdf' -Destination '论文_审校版_20260926.pdf' -Force
-    Write-Output (Join-Path $paperDirectory '论文_审校版_20260926.pdf')
+    Copy-Item -LiteralPath 'paper.pdf' -Destination '论文_PR52复审版_20260926.pdf' -Force
+    Write-Output (Join-Path $paperDirectory '论文_PR52复审版_20260926.pdf')
 }
 finally {
     Set-Location -LiteralPath $previousLocation.Path

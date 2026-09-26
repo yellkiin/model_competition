@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-import hashlib
 import json
 import math
 import re
@@ -141,9 +140,17 @@ def validate_main_csv(rows: list[dict], q: int) -> dict:
         require(r.get("status") == "ok", f"q{q}: invalid status at {r.get('case')}")
         require(number(r.get("q"), integer=True) == q, f"Wrong question in q{q}")
         item = dict(case=case_id(r["case"]), q=q, n=number(r["n"], integer=True, minimum=1))
-        for field in ("makespan", "added_copy_bytes", "spill_added_copy_bytes"):
+        for field in ("makespan", "added_copy_bytes"):
             item[field] = number(r.get(field), integer=True, minimum=1 if field == "makespan" else 0)
-        require(item["spill_added_copy_bytes"] <= item["added_copy_bytes"], "Spill exceeds total extra COPY")
+        spill = r.get("spill_added_copy_bytes")
+        if spill is not None and str(spill).strip():
+            item["spill_added_copy_bytes"] = number(spill, integer=True)
+            require(item["spill_added_copy_bytes"] <= item["added_copy_bytes"], "Spill exceeds total extra COPY")
+        else:
+            # Some original single-core references report total COPY only.
+            # The paper's Spill statistics use five-core records.
+            require(q in (1, 2) and item["n"] == 1 and r.get("point") == "题设单核约定",
+                    f"Missing Spill value: q{q}/{item['case']}/{item['n']}")
         normalized.append(item)
     return unique(normalized, ("q", "case", "n"), {(q, c, n) for c in CASES for n in CORES})
 
@@ -339,8 +346,10 @@ def audit(workspace: Path, mode: str) -> dict:
     if mode == "csv":
         result["grid"] = check_grid(read_csv(data/"studies/cache_parameter_grid.csv"),main)
         result["anytime_q1_n5_30"] = check_anytime(read_csv(data/"combined/anytime.csv"))
+        result["unreported_reference_spill"] = [dict(q=q,case=c,n=n)
+            for (q,c,n),r in sorted(main.items()) if "spill_added_copy_bytes" not in r]
     result.update(status="PASS_SCOPED",mode=mode,limitations=limits,
-                  inputs=[dict(path=str(p.relative_to(workspace)),sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in used])
+                  inputs=[dict(path=str(p.relative_to(workspace)),bytes=p.stat().st_size) for p in used])
     return result
 
 
@@ -354,7 +363,7 @@ def markdown(result: dict) -> str:
         for n in sorted(CORES):
             lines.append(f"| {n} | " + " | ".join(f"{result['main_stats'][f'q{q}_n{n}']['mean_speedup']:.4f}" for q in (1,2,3))+" |")
         lines += ["", "## 计算结果", "", "```json", json.dumps({k:result[k] for k in ("comparisons_n5","q1_over_q2_n5","cache_stats","spill_n5")},ensure_ascii=False,indent=2), "```"]
-        for optional in ("grid","anytime_q1_n5_30"):
+        for optional in ("grid","anytime_q1_n5_30","unreported_reference_spill"):
             if optional in result:
                 lines += ["",f"{optional}：",json.dumps(result[optional],ensure_ascii=False)]
         lines += ["", "## 核验边界", ""] + ["- "+s for s in result["limitations"]]
