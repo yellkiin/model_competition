@@ -2,11 +2,13 @@
   "figure_id": "q1-F02",
   "row_count": 500,
   "input": "求解/图件数据/q1-F02.csv",
-  "input_sha256": "455cf977fb61efe4d78a30c61a8ee536bfb3943712e95a26509f8f59c3812f5f",
+  "input_sha256": "536f5b9a981590e8949852a579059eaa969fdf84914f3fabbefe759c24548a78",
   "output_pdf": "求解/正式图件/q1-F02.pdf",
+  "output_svg": "求解/正式图件/q1-F02.svg",
   "output_png": "求解/正式图件/q1-F02.png",
-  "pdf_sha256": "cde60ab52066e6525bf36a0d0540018cdde9ac69d26f38067a00e1d0402d9899",
-  "png_sha256": "d20178810c333ce65cec5c86857813f0d23d5c238726acb24875946d56d42d12",
+  "pdf_sha256": "ec13f0f71c237438c046b2dcacaba89f7e778fa3f8336ceb121fd4f5c8ae0098",
+  "svg_sha256": "86fd75f3f9bc9e1738714fc891cf025a7147a2c34279cf8fb25c1e0e3796c58c",
+  "png_sha256": "8dc8d9bed9eb3fe7cf6bde269129352bc86c7be3e947ac7e9d92a6e58451920c",
   "scientific_observation": "每核先逐例计算加速比再取100例平均；阴影是案例分位数，不是置信区间。",
   "status": "rendered_pending_visual_review"
 }

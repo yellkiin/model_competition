@@ -1,0 +1,116 @@
+{
+  "pdf": "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/综合图/q2-overview.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 57,
+  "text_trace_count": 122,
+  "stroke_path_count": 86,
+  "filled_region_count": 68,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 3,
+    "warn": 1,
+    "contained_fill_overlays": 53,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 1 stroked path(s)",
+      "text": "COPY",
+      "text_bbox": [
+        324.3869934082031,
+        66.87710571289062,
+        347.42840576171875,
+        73.85090637207031
+      ],
+      "other_text": null,
+      "other_bbox": [
+        331.65606689453125,
+        39.6845703125,
+        442.20806884765625,
+        93.54324340820312
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        5
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-text",
+      "page": 1,
+      "message": "Text boxes overlap by 56.5% of the smaller box",
+      "text": "同核子图合并",
+      "text_bbox": [
+        38.04100036621094,
+        172.458251953125,
+        99.40440368652344,
+        194.62515258789062
+      ],
+      "other_text": "中间量留在L1/UB",
+      "other_bbox": [
+        83.81900024414062,
+        186.69126892089844,
+        109.35990905761719,
+        195.25917053222656
+      ],
+      "object_count": 1,
+      "object_indexes": []
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-text",
+      "page": 1,
+      "message": "Text boxes overlap by 100.0% of the smaller box",
+      "text": "容量约束与Spill",
+      "text_bbox": [
+        349.08599853515625,
+        173.13523864746094,
+        410.60321044921875,
+        195.9361572265625
+      ],
+      "other_text": "DDR共享带宽",
+      "other_bbox": [
+        373.3970031738281,
+        186.73423767089844,
+        407.6686096191406,
+        195.30213928222656
+      ],
+      "object_count": 1,
+      "object_indexes": []
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "COPY",
+      "text_bbox": [
+        324.3869934082031,
+        66.87710571289062,
+        347.42840576171875,
+        73.85090637207031
+      ],
+      "other_text": null,
+      "other_bbox": [
+        331.65606689453125,
+        39.6845703125,
+        442.20806884765625,
+        93.54324340820312
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        5
+      ]
+    }
+  ]
+}

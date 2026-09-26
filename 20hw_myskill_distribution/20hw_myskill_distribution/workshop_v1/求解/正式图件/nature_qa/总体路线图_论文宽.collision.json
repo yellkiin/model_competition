@@ -1,0 +1,48 @@
+{
+  "pdf": "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/总体路线图_论文宽.pdf",
+  "auditable": true,
+  "verdict": "REVIEW REQUIRED",
+  "page_count": 1,
+  "visible_text_box_count": 33,
+  "text_trace_count": 122,
+  "stroke_path_count": 34,
+  "filled_region_count": 43,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 0,
+    "warn": 1,
+    "contained_fill_overlays": 64,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "图结构、配置与评价口径",
+      "text_bbox": [
+        176.3459930419922,
+        63.7360954284668,
+        275.82196044921875,
+        77.73882293701172
+      ],
+      "other_text": null,
+      "other_bbox": [
+        44.396446228027344,
+        66.182861328125,
+        407.7715148925781,
+        81.80306243896484
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        3
+      ]
+    }
+  ]
+}

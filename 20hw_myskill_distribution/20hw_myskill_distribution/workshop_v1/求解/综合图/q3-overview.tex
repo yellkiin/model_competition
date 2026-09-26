@@ -1,18 +1,26 @@
 \documentclass{article}
 \usepackage[paperwidth=160mm,paperheight=154mm,margin=0pt]{geometry}
-\usepackage[UTF8,fontset=windows]{ctex}
+\usepackage[UTF8,fontset=none]{ctex}
+\IfFontExistsTF{Microsoft YaHei}{%
+  \setCJKmainfont{Microsoft YaHei}
+  \setCJKsansfont{Microsoft YaHei}
+}{%
+  \setCJKmainfont{Noto Sans CJK SC}
+  \setCJKsansfont{Noto Sans CJK SC}
+}
 \usepackage{tikz}
 \usepackage{graphicx}
 \usetikzlibrary{arrows.meta,positioning,calc}
 \begin{document}
 \pagestyle{empty}\noindent
 \begin{tikzpicture}[x=1mm,y=1mm, every node/.style={font=\sffamily}]
-\definecolor{ink}{HTML}{26374F}
-\definecolor{cyan}{HTML}{E3F3F5}
-\definecolor{pink}{HTML}{F9E8EB}
-\definecolor{green}{HTML}{E7F4EB}
-\definecolor{cream}{HTML}{FFF3DD}
-\definecolor{blue}{HTML}{4A9DAD}
+\definecolor{ink}{HTML}{272727}
+\definecolor{cyan}{HTML}{E0F0F0}
+\definecolor{pink}{HTML}{E4CCD8}
+\definecolor{green}{HTML}{F0E0D0}
+\definecolor{cream}{HTML}{E0E0F0}
+\definecolor{blue}{HTML}{0F4D92}
+\definecolor{accentred}{HTML}{B64342}
 \fill[white] (0,0) rectangle (160,154);
 \fill[cyan] (0,113) rectangle (160,154);
 \fill[pink] (0,71) rectangle (160,110);
@@ -25,7 +33,7 @@
 \node[draw=blue!60,fill=cream,rounded corners=1mm,minimum width=22mm,minimum height=12mm,font=\fontsize{8}{9}\selectfont] (cache) at (122,137) {L2读池};
 \node[draw=blue!60,fill=white,rounded corners=1mm,minimum width=22mm,minimum height=12mm,font=\fontsize{8}{9}\selectfont] (ddr) at (122,121) {DDR读池};
 \draw[blue,thick,-{Latex[length=2mm]}] (query.north east)--node[above,font=\fontsize{7}{8}\selectfont]{命中}(cache.west);
-\draw[orange!85!black,thick,-{Latex[length=2mm]}] (query.south east)--node[below,font=\fontsize{7}{8}\selectfont]{未命中}(ddr.west);
+\draw[accentred,thick,-{Latex[length=2mm]}] (query.south east)--node[below,font=\fontsize{7}{8}\selectfont]{未命中}(ddr.west);
 
 \node[anchor=west,text=ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont] at (5,103) {02 方法与约束};
 \node[rounded corners=1mm,draw=blue!50,fill=white,minimum width=43mm,minimum height=19mm,align=center,text=ink,font=\sffamily\fontsize{8.6}{10.5}\selectfont] (a) at (26,89) {命中：Cache读池\\FIFO次序不刷新};
@@ -37,8 +45,8 @@
 \node[anchor=west,text=ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont] at (5,62) {03 实测结果与核验};
 \node[anchor=west,text=ink,font=\sffamily\bfseries\fontsize{8.8}{10.5}\selectfont] at (5,52) {100例五核同方案收益均值 $1.0260$；58例获益};
 \node[anchor=west,text=ink,font=\sffamily\fontsize{8.3}{10}\selectfont] at (5,44) {正式默认配置复核；六例54格非官方敏感性单独标识};
-\node[anchor=west] at (5,21) {\includegraphics[width=72mm,height=30mm,keepaspectratio]{E:/20hw_myskill_distribution/workshop_v1/求解/正式图件/q3-F02.pdf}};
-\node[anchor=east] at (155,21) {\includegraphics[width=72mm,height=30mm,keepaspectratio]{E:/20hw_myskill_distribution/workshop_v1/求解/正式图件/q3-F03.pdf}};
+\node[anchor=west] at (5,21) {\includegraphics[width=72mm,height=30mm,keepaspectratio]{../正式图件/q3-F02.pdf}};
+\node[anchor=east] at (155,21) {\includegraphics[width=72mm,height=30mm,keepaspectratio]{../正式图件/q3-F03.pdf}};
 \node[anchor=west,text=ink,font=\sffamily\fontsize{7.5}{9}\selectfont] at (5,4) {细节参见正文图 q3-F02、q3-F03；缩图仅作证据导航。};
 \end{tikzpicture}
 \end{document}

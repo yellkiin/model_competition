@@ -2,11 +2,13 @@
   "figure_id": "q2-F03",
   "row_count": 400,
   "input": "求解/图件数据/q2-F03.csv",
-  "input_sha256": "fadc3d29033fb17e63122694451ccf649d3106499b6e71d0e12143d2e1fc8944",
+  "input_sha256": "c413eed99d4d7a1755e52b7bfde08e025779b07f557f7b01b722d33a01046d10",
   "output_pdf": "求解/正式图件/q2-F03.pdf",
+  "output_svg": "求解/正式图件/q2-F03.svg",
   "output_png": "求解/正式图件/q2-F03.png",
-  "pdf_sha256": "23079631d210adac5858bb18032915b8b9225f1819b973a086d57efcf636b336",
-  "png_sha256": "8bca9ff41b4c9d2eac039d3405aa2f3dd1258dc3314c930ffeb8ab8016cefcd0",
+  "pdf_sha256": "a7e47252086d167e8f6529519a11530cb449848261ff45380ada86540d56ac41",
+  "svg_sha256": "62788607d643215c06d360015e51d27771e40f1cf81dc91ba016572006755370",
+  "png_sha256": "82dcbad823c51c64248ef650f236c7745369bc6fd55f8050764fa339b6dd573e",
   "scientific_observation": "每核100例新增字节均值按官方 partition/spill 分解；线表示两部分之和。",
   "status": "rendered_pending_visual_review"
 }

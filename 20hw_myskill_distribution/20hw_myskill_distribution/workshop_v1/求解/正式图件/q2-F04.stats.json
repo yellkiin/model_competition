@@ -2,11 +2,13 @@
   "figure_id": "q2-F04",
   "row_count": 100,
   "input": "求解/图件数据/q2-F04.csv",
-  "input_sha256": "d6d32548cffae0ee2bee60e6659aa95152493f4005283f6651b1e775dbbceb45",
+  "input_sha256": "e3700077f1070e5fa0dc7f8df7116eee9c73afe136b041135fedb10f2bb339c5",
   "output_pdf": "求解/正式图件/q2-F04.pdf",
+  "output_svg": "求解/正式图件/q2-F04.svg",
   "output_png": "求解/正式图件/q2-F04.png",
-  "pdf_sha256": "6eaffa33a8ead55813864b73c8ea10d5f78628ff313cddf18c99b103a0cea1d5",
-  "png_sha256": "4de5f4c28800313f120179e90b64bb5149ffd98e2d3fdd49be9739b49ae5c6d1",
+  "pdf_sha256": "1e7def962ab1eb14e362370f0006825345100ae917d28af19a2e8c35b73be611",
+  "svg_sha256": "d764d95ead20ee83d42346171644b4426c3609ad30adda283cd89a6638994ef4",
+  "png_sha256": "56be8a130bf4a54c443628ddb215c65a63bd2c0ac40e22ae63703797c7e9d85e",
   "scientific_observation": "容量峰值从原始官方时间线逐例读取；横轴是L1和UB两者比例的较大值；点面积单调编码操作数。",
   "status": "rendered_pending_visual_review"
 }
