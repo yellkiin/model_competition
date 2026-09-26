@@ -39,15 +39,19 @@ try {
     $env:TEXMF_OUTPUT_DIRECTORY = "$buildPath/"
     Set-Location -LiteralPath $buildPath
     Copy-Item -LiteralPath '参考文献.bib' -Destination 'references.bib' -Force
-    & "$texBin\xelatex.exe" -shell-escape -interaction=nonstopmode -halt-on-error '论文.tex' *> compile.log
+    & "$texBin\xelatex.exe" -shell-escape -interaction=nonstopmode -halt-on-error -jobname=paper '论文.tex' *> compile.log
     if ($LASTEXITCODE) { throw '首次编译失败，见论文/compile.log。' }
-    & "$texBin\bibtex.exe" '论文' *> bibtex_compile.log
+    & "$texBin\bibtex.exe" 'paper' *> bibtex_compile.log
     if ($LASTEXITCODE) { throw '参考文献编译失败，见论文/bibtex_compile.log。' }
     1..2 | ForEach-Object {
-        & "$texBin\xelatex.exe" -shell-escape -interaction=nonstopmode -halt-on-error '论文.tex' *> compile.log
+        & "$texBin\xelatex.exe" -shell-escape -interaction=nonstopmode -halt-on-error -jobname=paper '论文.tex' *> compile.log
         if ($LASTEXITCODE) { throw '编译失败，见论文/compile.log。' }
     }
-    Write-Output (Join-Path $paperDirectory '论文.pdf')
+    foreach ($extension in @('aux','toc','bbl','log','gmcmevaluation','gmcmlayout','gmcmprose')) {
+        Copy-Item -LiteralPath ('paper.' + $extension) -Destination ('论文.' + $extension) -Force
+    }
+    Copy-Item -LiteralPath 'paper.pdf' -Destination '论文_审校版_20260926.pdf' -Force
+    Write-Output (Join-Path $paperDirectory '论文_审校版_20260926.pdf')
 }
 finally {
     Set-Location -LiteralPath $previousLocation.Path

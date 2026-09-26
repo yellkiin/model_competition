@@ -1,10 +1,10 @@
 {
   "status": "COMPLETE_LOCAL_REVIEW",
-  "completed_at": "2026-09-26T06:10:41.740533+08:00",
+  "completed_at": "2026-09-26T18:28:24.735103+08:00",
   "workspace_root": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1",
   "review": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\验收输出\\最终审阅.json",
   "deliverables": [
-    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\论文.pdf",
+    "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\论文_审校版_20260926.pdf",
     "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\论文.tex",
     "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\交付清单.md",
     "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\视觉计划.json",
@@ -21,14 +21,26 @@
     "new solver selection",
     "template hardcoded DeepSeek disclosure"
   ],
+  "pages": 78,
   "actual_work": [
-    "fixed-method theory and literature review",
-    "raw-response normalization",
-    "three authorized official evaluations",
-    "selected-response numerical reproduction",
-    "Chinese vector figures and editable sources",
+    "sentence-by-sentence manuscript review",
+    "fixed-method execution semantics correction",
+    "figure/table/equation numbering and captions",
+    "numerical summaries recalculated from recorded cycles",
     "XeLaTeX and bibliography compilation",
     "actual rendered-page and figure review",
-    "supporting materials and dynamic appendix"
+    "dynamic appendix pagination and complete source excerpts",
+    "illustrator content handoff and optional eight-job experiment package"
+  ],
+  "experiments_run_this_review": 0,
+  "remaining_work": [
+    {
+      "item": "图4.5热图和其他图内标签的内容表达",
+      "status": "交给绘图者，要求见图表内容交接报告；本轮按用户要求不重做样式。"
+    },
+    {
+      "item": "两图四组邻域对照共8项",
+      "status": "可选增强，任务包已准备；尚未执行。"
+    }
   ]
 }

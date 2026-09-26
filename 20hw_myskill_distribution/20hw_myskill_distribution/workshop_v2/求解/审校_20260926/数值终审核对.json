@@ -1,0 +1,175 @@
+{
+  "source_files": [
+    "规范化数据\\combined\\appendix_q1.csv",
+    "规范化数据\\combined\\appendix_q2.csv",
+    "规范化数据\\combined\\appendix_q3.csv",
+    "规范化数据\\combined\\pairs.csv",
+    "规范化数据\\combined\\cross_question.csv",
+    "规范化数据\\combined\\anytime.csv"
+  ],
+  "main_rows": {
+    "q1": 500,
+    "q2": 500,
+    "q3": 500
+  },
+  "main_stats_by_question_and_n": {
+    "q1": {
+      "1": {
+        "rows": 100,
+        "mean_speedup": 1.0,
+        "mean_added_copy_bytes": 12416861.2,
+        "median_added_copy_bytes": 0.0,
+        "spill_positive_cases": 38
+      },
+      "2": {
+        "rows": 100,
+        "mean_speedup": 1.9832352091535908,
+        "mean_added_copy_bytes": 14633080.16,
+        "median_added_copy_bytes": 1622928.0,
+        "spill_positive_cases": 26
+      },
+      "3": {
+        "rows": 100,
+        "mean_speedup": 2.71059937480608,
+        "mean_added_copy_bytes": 14174980.26,
+        "median_added_copy_bytes": 1696987.0,
+        "spill_positive_cases": 17
+      },
+      "4": {
+        "rows": 100,
+        "mean_speedup": 3.385216355459945,
+        "mean_added_copy_bytes": 13568864.04,
+        "median_added_copy_bytes": 1855147.0,
+        "spill_positive_cases": 16
+      },
+      "5": {
+        "rows": 100,
+        "mean_speedup": 3.9179853062705785,
+        "mean_added_copy_bytes": 14585335.66,
+        "median_added_copy_bytes": 1990466.0,
+        "spill_positive_cases": 12
+      }
+    },
+    "q2": {
+      "1": {
+        "rows": 100,
+        "mean_speedup": 1.0,
+        "mean_added_copy_bytes": 12416861.2,
+        "median_added_copy_bytes": 0.0,
+        "spill_positive_cases": 38
+      },
+      "2": {
+        "rows": 100,
+        "mean_speedup": 2.1167882020467346,
+        "mean_added_copy_bytes": 6798521.8,
+        "median_added_copy_bytes": 937539.0,
+        "spill_positive_cases": 38
+      },
+      "3": {
+        "rows": 100,
+        "mean_speedup": 3.015316480266515,
+        "mean_added_copy_bytes": 7094020.44,
+        "median_added_copy_bytes": 1498124.0,
+        "spill_positive_cases": 32
+      },
+      "4": {
+        "rows": 100,
+        "mean_speedup": 3.7868172483247293,
+        "mean_added_copy_bytes": 7581532.48,
+        "median_added_copy_bytes": 1012037.0,
+        "spill_positive_cases": 26
+      },
+      "5": {
+        "rows": 100,
+        "mean_speedup": 4.4538064457658715,
+        "mean_added_copy_bytes": 8094619.1,
+        "median_added_copy_bytes": 1310458.0,
+        "spill_positive_cases": 26
+      }
+    },
+    "q3": {
+      "1": {
+        "rows": 100,
+        "mean_speedup": 1.1007509221326828,
+        "mean_added_copy_bytes": 5356941.14,
+        "median_added_copy_bytes": 108032.0,
+        "spill_positive_cases": 58
+      },
+      "2": {
+        "rows": 100,
+        "mean_speedup": 2.1221938845147683,
+        "mean_added_copy_bytes": 8468830.34,
+        "median_added_copy_bytes": 971779.0,
+        "spill_positive_cases": 41
+      },
+      "3": {
+        "rows": 100,
+        "mean_speedup": 3.0320332611153127,
+        "mean_added_copy_bytes": 7063819.7,
+        "median_added_copy_bytes": 1689975.0,
+        "spill_positive_cases": 33
+      },
+      "4": {
+        "rows": 100,
+        "mean_speedup": 3.8376050420764836,
+        "mean_added_copy_bytes": 7859996.08,
+        "median_added_copy_bytes": 1411832.0,
+        "spill_positive_cases": 28
+      },
+      "5": {
+        "rows": 100,
+        "mean_speedup": 4.597829265850352,
+        "mean_added_copy_bytes": 8293721.4,
+        "median_added_copy_bytes": 1484117.0,
+        "spill_positive_cases": 27
+      }
+    }
+  },
+  "n5_casewise_comparisons": {
+    "q2_vs_q1_makespan": {
+      "improved": 89,
+      "same": 9,
+      "worse": 2
+    },
+    "q2_vs_q1_added_copy": {
+      "improved": 50,
+      "same": 12,
+      "worse": 38
+    },
+    "q3_vs_q2_makespan": {
+      "improved": 66,
+      "same": 18,
+      "worse": 16
+    }
+  },
+  "cross_question_records": 100,
+  "same_plan_cache_pairs_n5": {
+    "count": 100,
+    "mean_ratio_no_l2_over_l2": 1.0558429548125037,
+    "median_ratio": 1.007735024354472,
+    "improved_count": 77,
+    "same_count": 23,
+    "worse_count": 0
+  },
+  "case_079_n4_pair": {
+    "case": "case_079",
+    "n": "4",
+    "with_l2": "7614798",
+    "without_l2": "7614729",
+    "cache_speedup": "0.9999909386959444",
+    "with_l2_added_bytes": "30445568",
+    "without_l2_added_bytes": "30445568"
+  },
+  "q1_n5_30_seconds": {
+    "rows": 100,
+    "distinct_cases": 100,
+    "has_solution": 93
+  },
+  "cache_parameter_grid": {
+    "total_records": 66,
+    "fixed_plan_records": 54,
+    "readapted_records": 12,
+    "audit_ok_false": 0
+  },
+  "scope_note": "Recomputed from recorded CSV values only; no experiment or official evaluator was rerun."
+}

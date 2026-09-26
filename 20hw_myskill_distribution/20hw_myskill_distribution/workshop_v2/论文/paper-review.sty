@@ -1,0 +1,25 @@
+% 本工作区的编号与附件清单修正；共享模板及类文件保持原样。
+\ProvidesPackage{paper-review}[2026/09/26 Local paper review corrections]
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\numberwithin{equation}{section}
+\renewcommand{\theHfigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\theHtable}{\arabic{section}.\arabic{table}}
+\renewcommand{\theHequation}{\arabic{section}.\arabic{equation}}
+% 本文最长表为500行，统一装入一个对齐块，续表头由longtable分页输出。
+\setcounter{LTchunksize}{1000}
+\renewcommand{\AppendixAttachmentTableBegin}{%
+  \begingroup
+  \songti\fontsize{12pt}{18pt}\selectfont
+  \renewcommand{\arraystretch}{1.18}%
+  \setlength{\tabcolsep}{4pt}%
+  \begin{longtable}{>{\centering\arraybackslash}p{1.0cm}p{3.0cm}p{10.0cm}}
+  \caption{附件文件及内容}\label{tab:attachments}\\
+  \toprule 序号 & 文件夹名称 & 主要内容 \\
+  \midrule\endfirsthead
+  \caption[]{附件文件及内容（续）}\\
+  \toprule 序号 & 文件夹名称 & 主要内容 \\
+  \midrule\endhead
+  \midrule\multicolumn{3}{r}{续下页}\\\endfoot
+  \bottomrule\endlastfoot
+}

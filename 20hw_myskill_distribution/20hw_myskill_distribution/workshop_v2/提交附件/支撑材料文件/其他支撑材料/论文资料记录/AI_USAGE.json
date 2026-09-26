@@ -3,11 +3,40 @@
   "date": "2026-09-26",
   "organization": "OpenAI",
   "roles": [
-    {"model":"GPT-6","role":"根任务统筹、主审、理论与原始结果对齐、正文审阅","basis":"当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"},
-    {"model":"GPT-6-sol","role":"专题资料和部分论文内容协助","basis":"当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"},
-    {"model":"GPT-6-luna","role":"图件制作与排版协助","basis":"当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"}
+    {
+      "model": "GPT-6",
+      "role": "根任务统筹、主审、理论与原始结果对齐、正文审阅",
+      "basis": "当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"
+    },
+    {
+      "model": "GPT-6-sol",
+      "role": "专题资料和部分论文内容协助",
+      "basis": "当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"
+    },
+    {
+      "model": "GPT-6-luna",
+      "role": "图件制作与排版协助",
+      "basis": "当前论文/参考文献.bib的ai_tool_disclosure条目及实际任务记录"
+    }
   ],
   "verification": "AI产出须以原文卡、题面、实际执行记录和规范化数据核对；AI工具不作为学术论据。此文件记录角色分工，不声称独立保存了全部对话回执。",
   "bibliography_key": "ai_tool_disclosure",
-  "template_conflict": "参考文献证据.schema.json模板把工具固定为DeepSeek-V4.1-Flash、日期2026-09-23，与实际使用不符；未照模板虚构DeepSeek使用。"
+  "template_conflict": "参考文献证据.schema.json模板把工具固定为DeepSeek-V4.1-Flash、日期2026-09-23，与实际使用不符；未照模板虚构DeepSeek使用。",
+  "review_sessions": [
+    {
+      "at": "2026-09-26T18:22:41.876306+08:00",
+      "scope": "本轮文本、理论定义、编号、数值与页面审校",
+      "models": [
+        "GPT-6",
+        "GPT-6-sol",
+        "GPT-6-luna"
+      ],
+      "roles": {
+        "GPT-6": "主审、逐句裁定、直接修订、页面检查、任务包审核",
+        "GPT-6-sol": "理论/文字/实验材料独立检查及任务包初稿",
+        "GPT-6-luna": "编号/文献/逐例数值复核"
+      },
+      "adoption": "各专题建议由主审核定；原始数据未改，未启动新实验，未重新设计求解器。"
+    }
+  ]
 }
