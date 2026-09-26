@@ -1,6 +1,6 @@
 # 交给后续 AI：开放的 Q3/L2 研究、实现与真实小批次验证
 
-请在 `yellkiin/model_competition` 接手问题三的 L2 优化研究，实际核查代码、提出方案、实现并跑真实官方小批次。当前资料分支：https://github.com/yellkiin/model_competition/tree/codex/l2-improvements-20260926。不要只阅读后给计划。
+请在 `yellkiin/model_competition` 接手问题三的 L2 优化研究，实际核查代码、提出方案、实现并跑真实官方小批次。当前资料 PR：https://github.com/yellkiin/model_competition/pull/54。不要只阅读后给计划。
 
 本次工作集中在仓库根目录 `L2提升/`。先读该目录的 `README.md`，再读 `orion_20260926/reports/` 中的最终报告、研究说明、覆盖记录、版本比较表及子目录运行说明；核对官方 A 题的题面、配置、Q2/Q3 评估语义和现有代码。附件或报告中的建议是待验证研究观点，不是必须照搬的方法限制。
 

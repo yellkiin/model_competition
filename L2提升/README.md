@@ -1,6 +1,6 @@
 # L2 提升：Q3 研究与实现共同入口
 
-本目录集中保存问题三的 L2 研究、实现、可复现实验和交接说明。当前交付分支：https://github.com/yellkiin/model_competition/tree/codex/l2-improvements-20260926。
+本目录集中保存问题三的 L2 研究、实现、可复现实验和交接说明。当前结果 PR：https://github.com/yellkiin/model_competition/pull/54。
 
 后续 AI 可以提出不同的方法、证伪现有解释或重新设计 Q3 候选生成；本目录不是要求延续某一种既定算法的清单。正式周期始终来自原官方评估器，Q1/Q2 原有入口、原图、题定配置和既有实验记录保持不变。
 
