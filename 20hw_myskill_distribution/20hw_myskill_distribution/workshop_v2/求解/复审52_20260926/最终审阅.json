@@ -1,0 +1,58 @@
+{
+  "pdf": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\论文_PR52复审版_20260926.pdf",
+  "pages": 78,
+  "body_pages": [
+    4,
+    37
+  ],
+  "references_page": 38,
+  "appendix_pages": [
+    39,
+    78
+  ],
+  "labels": 65,
+  "internal_links": 139,
+  "missing_references": [],
+  "missing_citations": [],
+  "duplicate_labels": [],
+  "label_target_mismatches": [],
+  "invalid_link_pages": [],
+  "missing_glyph": false,
+  "overfull": 20,
+  "underfull": 40,
+  "visual_review": "completed",
+  "conclusion": "reviewed_for_delivery",
+  "scope": "PR52 focused text and compilation review",
+  "reviewed_at": "2026-09-26T20:59:19.346353+08:00",
+  "report": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\复审52_20260926\\复审结论.md",
+  "source_pr": 52,
+  "source_merge_commit": "a6d42f1045f554723176a9a501d67765b2dea6e8",
+  "actual_work": [
+    "reviewed eight PR52 TeX files against execution code and data",
+    "corrected local-total time wording only",
+    "fixed CSV review handling of unreported single-core Spill components",
+    "completed CSV-to-TeX numerical comparison without hashes",
+    "compiled XeLaTeX/BibTeX and inspected 78 rendered pages",
+    "checked 65 label targets and 139 PDF internal links"
+  ],
+  "actual_visual_work": {
+    "pages": 78,
+    "method": "all-page contact sheets; full-size modified page 18",
+    "final_text_changed_pages": [
+      18
+    ],
+    "style_changes": false,
+    "observations": "无新增文字裁切、缺字、重叠或失去题头的长表断页；第62页098—100续表头保留。"
+  },
+  "numerical_review": "数值复核/result.json",
+  "remaining_work": [
+    {
+      "item": "图4.5等图内中文标签",
+      "status": "沿用绘图交接，横轴改为运行用时/秒；本轮图文件保留。"
+    },
+    {
+      "item": "两图四组邻域对照",
+      "status": "可选任务包沿用，本轮未执行。"
+    }
+  ]
+}
