@@ -23,3 +23,24 @@
   \midrule\multicolumn{3}{r}{续下页}\\\endfoot
   \bottomrule\endlastfoot
 }
+
+% 批注A008/A031：共同过程及两类专门候选的伪代码。
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\floatname{algorithm}{算法}
+\counterwithin{algorithm}{section}
+\providecommand{\theHalgorithm}{}
+\renewcommand{\theHalgorithm}{\arabic{section}.\arabic{algorithm}}
+\algrenewcommand\algorithmicrequire{\textbf{输入：}}
+\algrenewcommand\algorithmicensure{\textbf{输出：}}
+\algrenewcommand\algorithmicif{\textbf{若}}
+\algrenewcommand\algorithmicthen{\textbf{则}}
+\algrenewcommand\algorithmicelse{\textbf{否则}}
+\algrenewtext{EndIf}{\textbf{结束条件}}
+\algrenewcommand\algorithmicwhile{\textbf{当}}
+\algrenewcommand\algorithmicdo{\textbf{执行}}
+\algrenewtext{EndWhile}{\textbf{结束循环}}
+\algrenewcommand\algorithmicfor{\textbf{对}}
+\algrenewcommand\algorithmicforall{\textbf{对每个}}
+\algrenewtext{EndFor}{\textbf{结束循环}}
+\algrenewcommand\algorithmicreturn{\textbf{返回}}

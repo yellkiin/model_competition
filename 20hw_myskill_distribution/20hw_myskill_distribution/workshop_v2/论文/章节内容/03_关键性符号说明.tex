@@ -1,7 +1,7 @@
 \section{关键性符号说明}
 
-贯穿三问的主要符号见表~\ref{tab:key-symbols}。局部事件变量与算法参数在首次使用处定义。
-\begin{GMCMSymbolTable}{本表列出贯穿三问的公共符号，局部事件变量及算法参数在正文首次出现处定义。}
+本文的主要符号见表~\ref{tab:key-symbols}。局部事件变量与算法参数在首次使用处定义。
+\begin{GMCMSymbolTable}{本表列出本文的公共符号，局部事件变量及算法参数在正文首次出现处定义。}
 \GMCMSymbolRow{图}{G}{原始张量—操作二部有向计算图，$G=(T\cup O,E)$}{—}
 \GMCMSymbolRow{集合}{T}{原始计算图的张量节点集合}{—}
 \GMCMSymbolRow{集合}{O}{原始计算图的操作节点集合，含边界搬运操作}{—}
@@ -19,7 +19,7 @@
 \GMCMSymbolRow{变量}{\boldsymbol\pi}{各核心的子图执行顺序组成的序列族}{—}
 \GMCMSymbolRow{变量}{x}{由划分、归核和核内顺序构成的完整方案，$x=(\mathcal P,a,\boldsymbol\pi)$}{—}
 \GMCMSymbolRow{指标}{C_q(x)}{问题$q$中方案$x$的总体任务执行时间（Makespan）}{周期}
-\GMCMSymbolRow{指标}{D_q(x)}{问题$q$中方案$x$的官方总额外COPY字节量}{B}
+\GMCMSymbolRow{指标}{D_q(x)}{问题$q$中方案$x$的总额外数据搬运量（按额外COPY字节统计）}{B}
 \GMCMSymbolRow{界}{L}{对当前问题全部可行方案成立的周期下界}{周期}
 \GMCMSymbolRow{界}{U}{当前已验证可行方案的完成周期}{周期}
 \end{GMCMSymbolTable}
