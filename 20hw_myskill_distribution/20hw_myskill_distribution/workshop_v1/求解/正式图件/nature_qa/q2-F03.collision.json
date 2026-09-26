@@ -1,0 +1,73 @@
+{
+  "pdf": "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/正式图件/q2-F03.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 17,
+  "text_trace_count": 21,
+  "stroke_path_count": 19,
+  "filled_region_count": 22,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 1,
+    "warn": 1,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 2 stroked path(s)",
+      "text": "切图边界",
+      "text_bbox": [
+        409.09307861328125,
+        25.631397247314453,
+        433.0933837890625,
+        33.63139724731445
+      ],
+      "other_text": null,
+      "other_bbox": [
+        52.484771728515625,
+        24.63239288330078,
+        433.587890625,
+        46.864593505859375
+      ],
+      "object_count": 2,
+      "object_indexes": [
+        16,
+        20
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "切图边界",
+      "text_bbox": [
+        409.09307861328125,
+        25.631397247314453,
+        433.0933837890625,
+        33.63139724731445
+      ],
+      "other_text": null,
+      "other_bbox": [
+        429.587890625,
+        24.63239288330078,
+        433.587890625,
+        28.63239288330078
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        20
+      ]
+    }
+  ]
+}

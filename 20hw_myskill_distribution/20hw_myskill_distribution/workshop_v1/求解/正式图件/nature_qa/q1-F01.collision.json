@@ -1,0 +1,218 @@
+{
+  "pdf": "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/正式图件/q1-F01.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 21,
+  "text_trace_count": 29,
+  "stroke_path_count": 85,
+  "filled_region_count": 85,
+  "image_region_count": 1,
+  "summary": {
+    "fail": 4,
+    "warn": 4,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 1 stroked path(s)",
+      "text": "1千",
+      "text_bbox": [
+        91.9302749633789,
+        230.43251037597656,
+        105.93523406982422,
+        243.46450805664062
+      ],
+      "other_text": null,
+      "other_bbox": [
+        81.04666137695312,
+        219.81468200683594,
+        100.4281005859375,
+        231.94021606445312
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        8
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 1 stroked path(s)",
+      "text": "3千",
+      "text_bbox": [
+        182.9084014892578,
+        230.43251037597656,
+        196.91336059570312,
+        243.46450805664062
+      ],
+      "other_text": null,
+      "other_bbox": [
+        177.95401000976562,
+        219.81468200683594,
+        197.33544921875,
+        231.94021606445312
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        19
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 1 stroked path(s)",
+      "text": "1万",
+      "text_bbox": [
+        273.88653564453125,
+        230.43251037597656,
+        287.8914794921875,
+        243.46450805664062
+      ],
+      "other_text": null,
+      "other_bbox": [
+        274.8613586425781,
+        219.81468200683594,
+        294.2427978515625,
+        231.94021606445312
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        35
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 2 stroked path(s)",
+      "text": "3万",
+      "text_bbox": [
+        364.86468505859375,
+        230.43251037597656,
+        378.86962890625,
+        243.46450805664062
+      ],
+      "other_text": null,
+      "other_bbox": [
+        352.3872375488281,
+        219.81468200683594,
+        391.150146484375,
+        231.94021606445312
+      ],
+      "object_count": 2,
+      "object_indexes": [
+        41,
+        43
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "1千",
+      "text_bbox": [
+        91.9302749633789,
+        230.43251037597656,
+        105.93523406982422,
+        243.46450805664062
+      ],
+      "other_text": null,
+      "other_bbox": [
+        81.04666137695312,
+        219.81468200683594,
+        100.4281005859375,
+        231.94021606445312
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        8
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "3千",
+      "text_bbox": [
+        182.9084014892578,
+        230.43251037597656,
+        196.91336059570312,
+        243.46450805664062
+      ],
+      "other_text": null,
+      "other_bbox": [
+        177.95401000976562,
+        219.81468200683594,
+        197.33544921875,
+        231.94021606445312
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        19
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "1万",
+      "text_bbox": [
+        273.88653564453125,
+        230.43251037597656,
+        287.8914794921875,
+        243.46450805664062
+      ],
+      "other_text": null,
+      "other_bbox": [
+        274.8613586425781,
+        219.81468200683594,
+        294.2427978515625,
+        231.94021606445312
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        35
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 2 filled region(s)",
+      "text": "3万",
+      "text_bbox": [
+        364.86468505859375,
+        230.43251037597656,
+        378.86962890625,
+        243.46450805664062
+      ],
+      "other_text": null,
+      "other_bbox": [
+        352.3872375488281,
+        219.81468200683594,
+        391.150146484375,
+        231.94021606445312
+      ],
+      "object_count": 2,
+      "object_indexes": [
+        41,
+        43
+      ]
+    }
+  ]
+}

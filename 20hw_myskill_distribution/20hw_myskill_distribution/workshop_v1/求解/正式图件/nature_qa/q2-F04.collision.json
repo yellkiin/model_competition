@@ -1,0 +1,72 @@
+{
+  "pdf": "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/正式图件/q2-F04.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 22,
+  "text_trace_count": 28,
+  "stroke_path_count": 121,
+  "filled_region_count": 120,
+  "image_region_count": 1,
+  "summary": {
+    "fail": 1,
+    "warn": 1,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 1 stroked path(s)",
+      "text": "点面积 ∝ 非COPY操作数的对数",
+      "text_bbox": [
+        35.2433967590332,
+        212.2861785888672,
+        132.38623046875,
+        219.7861785888672
+      ],
+      "other_text": null,
+      "other_bbox": [
+        74.96932220458984,
+        212.82093811035156,
+        81.2989273071289,
+        219.15054321289062
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        49
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "点面积 ∝ 非COPY操作数的对数",
+      "text_bbox": [
+        35.2433967590332,
+        212.2861785888672,
+        132.38623046875,
+        219.7861785888672
+      ],
+      "other_text": null,
+      "other_bbox": [
+        74.96932220458984,
+        212.82093811035156,
+        81.2989273071289,
+        219.15054321289062
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        49
+      ]
+    }
+  ]
+}

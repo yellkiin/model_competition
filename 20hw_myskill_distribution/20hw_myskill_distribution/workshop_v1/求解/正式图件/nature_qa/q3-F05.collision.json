@@ -1,0 +1,72 @@
+{
+  "pdf": "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/正式图件/q3-F05.pdf",
+  "auditable": true,
+  "verdict": "REVIEW REQUIRED",
+  "page_count": 1,
+  "visible_text_box_count": 23,
+  "text_trace_count": 32,
+  "stroke_path_count": 16,
+  "filled_region_count": 28,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 0,
+    "warn": 2,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "命中字节",
+      "text_bbox": [
+        326.4469909667969,
+        185.34249877929688,
+        350.44732666015625,
+        193.34249877929688
+      ],
+      "other_text": null,
+      "other_bbox": [
+        98.80901336669922,
+        169.41615295410156,
+        424.0447692871094,
+        191.63356018066406
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        11000
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "未命中字节",
+      "text_bbox": [
+        396.84698486328125,
+        185.34249877929688,
+        428.847412109375,
+        193.34249877929688
+      ],
+      "other_text": null,
+      "other_bbox": [
+        98.80901336669922,
+        169.41615295410156,
+        424.0447692871094,
+        191.63356018066406
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        11000
+      ]
+    }
+  ]
+}

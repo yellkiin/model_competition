@@ -2,11 +2,13 @@
   "figure_id": "q3-F06",
   "row_count": 500,
   "input": "求解/图件数据/q3-F06.csv",
-  "input_sha256": "70fd7c2fbede8612a5be896adb2c43ed8cb824b9e83ad5c34d95bc97df2f5ae0",
+  "input_sha256": "837edd4927f2858d968e4d4cc9c37248fc066230adeb889b4ac239c42b50967a",
   "output_pdf": "求解/正式图件/q3-F06.pdf",
+  "output_svg": "求解/正式图件/q3-F06.svg",
   "output_png": "求解/正式图件/q3-F06.png",
-  "pdf_sha256": "62d763b166aa4eedaf69ec74e77ff46ac4f3944fe2033c7c631945e247a27e97",
-  "png_sha256": "598b1f08d8937ab3b2ea057933ab5668d2490ae76c733d19042285b5b51c33bd",
+  "pdf_sha256": "96b61b811f3fa2b128384f7e590587b7f02cb32e0921ed506f16a83c38fa8919",
+  "svg_sha256": "8d7c2e6acd5c196934ca7f7d75ccc72047ca2e74b6261904f1a3bde91b93f7b4",
+  "png_sha256": "880945e2f03210d94d511653b91b0f00d37f4ba780a4f5e0a91cefbcda4b42eb",
   "scientific_observation": "每个算例核数均固定问题三所选方案，再分别调用无L2和有L2官方评估；曲线为100例逐例加速比平均。",
   "status": "rendered_pending_visual_review"
 }

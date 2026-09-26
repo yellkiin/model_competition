@@ -1,6 +1,13 @@
 \documentclass{article}
 \usepackage[paperwidth=160mm,paperheight=154mm,margin=0pt]{geometry}
-\usepackage[UTF8,fontset=windows]{ctex}
+\usepackage[UTF8,fontset=none]{ctex}
+\IfFontExistsTF{Microsoft YaHei}{%
+  \setCJKmainfont{Microsoft YaHei}
+  \setCJKsansfont{Microsoft YaHei}
+}{%
+  \setCJKmainfont{Noto Sans CJK SC}
+  \setCJKsansfont{Noto Sans CJK SC}
+}
 \usepackage{tikz}
 \usepackage{graphicx}
 \usetikzlibrary{arrows.meta,positioning,calc}
@@ -40,8 +47,8 @@
 \node[anchor=west,text=ink,font=\sffamily\bfseries\fontsize{10}{12}\selectfont] at (5,62) {03 实测结果与核验};
 \node[anchor=west,text=ink,font=\sffamily\bfseries\fontsize{8.8}{10.5}\selectfont] at (5,52) {100例五核平均加速比 $3.5093$；中位数 $4.1473$};
 \node[anchor=west,text=ink,font=\sffamily\fontsize{8.3}{10}\selectfont] at (5,44) {500个所选配置通过官方评估与独立时间线核验};
-\node[anchor=west] at (5,21) {\includegraphics[width=72mm,height=30mm,keepaspectratio]{E:/20hw_myskill_distribution/workshop_v1/求解/正式图件/q1-F02.pdf}};
-\node[anchor=east] at (155,21) {\includegraphics[width=72mm,height=30mm,keepaspectratio]{E:/20hw_myskill_distribution/workshop_v1/求解/正式图件/q1-F03.pdf}};
+\node[anchor=west] at (5,21) {\includegraphics[width=72mm,height=30mm,keepaspectratio]{../正式图件/q1-F02.pdf}};
+\node[anchor=east] at (155,21) {\includegraphics[width=72mm,height=30mm,keepaspectratio]{../正式图件/q1-F03.pdf}};
 \node[anchor=west,text=ink,font=\sffamily\fontsize{7.5}{9}\selectfont] at (5,4) {细节参见正文图 q1-F02、q1-F03；缩图仅作证据导航。};
 \end{tikzpicture}
 \end{document}

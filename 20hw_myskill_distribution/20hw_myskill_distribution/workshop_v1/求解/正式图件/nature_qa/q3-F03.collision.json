@@ -1,0 +1,339 @@
+{
+  "pdf": "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/正式图件/q3-F03.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 49,
+  "text_trace_count": 68,
+  "stroke_path_count": 128,
+  "filled_region_count": 35,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 4,
+    "warn": 9,
+    "contained_fill_overlays": 13,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-page-clipping",
+      "page": 1,
+      "message": "Text extends beyond the final PDF page boundary",
+      "text": "时长",
+      "text_bbox": [
+        467.53125,
+        141.9500732421875,
+        476.88629150390625,
+        151.30499267578125
+      ],
+      "other_text": null,
+      "other_bbox": [
+        0.0,
+        0.0,
+        453.5433044433594,
+        257.9527587890625
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        60
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-page-clipping",
+      "page": 1,
+      "message": "Text extends beyond the final PDF page boundary",
+      "text": "/",
+      "text_bbox": [
+        468.25592041015625,
+        132.95730590820312,
+        477.24859619140625,
+        133.31964111328125
+      ],
+      "other_text": null,
+      "other_bbox": [
+        0.0,
+        0.0,
+        453.5433044433594,
+        257.9527587890625
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        61
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-page-clipping",
+      "page": 1,
+      "message": "Text extends beyond the final PDF page boundary",
+      "text": "千周期",
+      "text_bbox": [
+        468.398193359375,
+        111.4404296875,
+        478.11553955078125,
+        129.78802490234375
+      ],
+      "other_text": null,
+      "other_bbox": [
+        0.0,
+        0.0,
+        453.5433044433594,
+        257.9527587890625
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        62
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 4 stroked path(s)",
+      "text": "时长/千周期",
+      "text_bbox": [
+        240.61341857910156,
+        111.44041442871094,
+        251.19772338867188,
+        151.30502319335938
+      ],
+      "other_text": null,
+      "other_bbox": [
+        241.19183349609375,
+        78.82952880859375,
+        430.88775634765625,
+        152.04791259765625
+      ],
+      "object_count": 4,
+      "object_indexes": [
+        86,
+        87,
+        88,
+        89
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "0.00.51.0",
+      "text_bbox": [
+        6.880819320678711,
+        194.76812744140625,
+        35.15628433227539,
+        210.19395446777344
+      ],
+      "other_text": null,
+      "other_bbox": [
+        16.858766555786133,
+        137.75997924804688,
+        201.4782257080078,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        4
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "3.0",
+      "text_bbox": [
+        78.93598937988281,
+        223.94815063476562,
+        83.93595886230469,
+        229.94815063476562
+      ],
+      "other_text": null,
+      "other_bbox": [
+        16.858766555786133,
+        137.75997924804688,
+        201.4782257080078,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        4
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "带宽/B/周期",
+      "text_bbox": [
+        166.06385803222656,
+        216.5121307373047,
+        204.3534698486328,
+        246.09823608398438
+      ],
+      "other_text": null,
+      "other_bbox": [
+        16.858766555786133,
+        137.75997924804688,
+        201.4782257080078,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        4
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "500",
+      "text_bbox": [
+        199.62521362304688,
+        185.9405059814453,
+        206.28143310546875,
+        191.9405059814453
+      ],
+      "other_text": null,
+      "other_bbox": [
+        16.858766555786133,
+        137.75997924804688,
+        201.4782257080078,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        4
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "0.00.51.0",
+      "text_bbox": [
+        233.7986602783203,
+        194.76812744140625,
+        262.0741271972656,
+        210.19395446777344
+      ],
+      "other_text": null,
+      "other_bbox": [
+        243.77659606933594,
+        137.75997924804688,
+        428.39605712890625,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        68
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "时长/千周期",
+      "text_bbox": [
+        240.61341857910156,
+        111.44041442871094,
+        251.19772338867188,
+        151.30502319335938
+      ],
+      "other_text": null,
+      "other_bbox": [
+        243.77659606933594,
+        137.75997924804688,
+        428.39605712890625,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        68
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "3.0",
+      "text_bbox": [
+        305.85382080078125,
+        223.94815063476562,
+        310.8537902832031,
+        229.94815063476562
+      ],
+      "other_text": null,
+      "other_bbox": [
+        243.77659606933594,
+        137.75997924804688,
+        428.39605712890625,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        68
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "带宽/B/周期",
+      "text_bbox": [
+        392.98175048828125,
+        216.5121307373047,
+        431.27130126953125,
+        246.09823608398438
+      ],
+      "other_text": null,
+      "other_bbox": [
+        243.77659606933594,
+        137.75997924804688,
+        428.39605712890625,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        68
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "500",
+      "text_bbox": [
+        426.5430603027344,
+        185.9405059814453,
+        433.19927978515625,
+        191.9405059814453
+      ],
+      "other_text": null,
+      "other_bbox": [
+        243.77659606933594,
+        137.75997924804688,
+        428.39605712890625,
+        225.69198608398438
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        68
+      ]
+    }
+  ]
+}

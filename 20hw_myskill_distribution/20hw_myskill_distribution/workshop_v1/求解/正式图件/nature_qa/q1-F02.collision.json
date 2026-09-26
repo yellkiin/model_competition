@@ -1,0 +1,72 @@
+{
+  "pdf": "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/正式图件/q1-F02.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 20,
+  "text_trace_count": 29,
+  "stroke_path_count": 22,
+  "filled_region_count": 20,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 2,
+    "warn": 0,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 1 stroked path(s)",
+      "text": "1.779",
+      "text_bbox": [
+        131.02149963378906,
+        155.72393798828125,
+        146.55296325683594,
+        163.72393798828125
+      ],
+      "other_text": null,
+      "other_bbox": [
+        42.74010467529297,
+        38.60209655761719,
+        435.8031921386719,
+        200.8108367919922
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        2
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 1 stroked path(s)",
+      "text": "3.509",
+      "text_bbox": [
+        425.8188171386719,
+        85.35163116455078,
+        441.35028076171875,
+        93.35163116455078
+      ],
+      "other_text": null,
+      "other_bbox": [
+        42.74010467529297,
+        38.60209655761719,
+        435.8031921386719,
+        200.8108367919922
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        2
+      ]
+    }
+  ]
+}

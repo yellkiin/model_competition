@@ -2,11 +2,13 @@
   "figure_id": "q3-F03",
   "row_count": 54,
   "input": "求解/图件数据/q3-F03.csv",
-  "input_sha256": "0b3f018d08d3c7cae04a561e397f6de9c7a0f0e2f4562624bcc200913083c95e",
+  "input_sha256": "7e3a819b61312d7adc9de9bac4d3d2739b221d499ac8e024e029b42f4602deb6",
   "output_pdf": "求解/正式图件/q3-F03.pdf",
+  "output_svg": "求解/正式图件/q3-F03.svg",
   "output_png": "求解/正式图件/q3-F03.png",
-  "pdf_sha256": "a72dc9ecf52eac7693f8820aa92175afd07cb4531c85d7e9fd4725e9c7280d76",
-  "png_sha256": "634dff523029829437e4250b51ef6f4f0ca7c07869a502cc7fd0b434a6522a0e",
-  "scientific_observation": "两例九点实际网格，图题明确三维高度量纲；连面不表示额外模拟实验。",
+  "pdf_sha256": "10af60924bfee59e20b264e839fe5a74bdf53331e2e540cb9c09a57e11ff940e",
+  "svg_sha256": "b1fa3be7bce85b9f5e3f68d3a822d2ee06283c849e7801e8cc48cd48f5cabacd",
+  "png_sha256": "2a167c159cc9701b65ca38d8ac4a1c5a2de762f7481b322bd0228b962b682abf",
+  "scientific_observation": "只展示目的抽样中对配置敏感的两例；曲面连接九个真实网格点，插值面不代表额外实验。",
   "status": "rendered_pending_visual_review"
 }
