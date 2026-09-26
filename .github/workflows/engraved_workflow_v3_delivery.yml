@@ -4,35 +4,84 @@ on:
     branches: [main]
     paths:
       - .github/workflows/engraved_workflow_v3_delivery.yml
-      - paper_a_figures/engraved_workflow/ink_v3/**
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: engraved-workflow-v3-publication
+  cancel-in-progress: false
 jobs:
-  source:
-    if: github.event.pull_request.head.ref == 'figures/engraved-workflow-v3-20260926'
+  render:
+    if: github.event.pull_request.head.ref == 'figures/engraved-workflow-v3-20260926' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 70d4888886cd9f77037f7b010ce0241349ef056d
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
           filter: blob:none
           sparse-checkout: |
             paper_a_figures/engraved_workflow/ink_v2/assets
-            paper_a_figures/engraved_workflow/ink_v2/docs
-      - name: Package only the requested second-version source
+            paper_a_figures/engraved_workflow/ink_v3
+      - name: Install local vector renderer and CJK fonts
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq inkscape fonts-noto-cjk fonts-noto-core fonts-stix poppler-utils python3-pil
+      - name: Generate figure files and verify vector structure
+        env:
+          SOURCE_COMMIT: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          python paper_a_figures/engraved_workflow/ink_v3/build.py
           python - <<'PY'
-          import zipfile
+          import json,os,subprocess,xml.etree.ElementTree as ET
           from pathlib import Path
-          base=Path('paper_a_figures/engraved_workflow/ink_v2')
-          with zipfile.ZipFile('/tmp/engraved_v2_exact_inputs.zip','w',zipfile.ZIP_DEFLATED) as z:
-              for p in sorted((base/'assets').glob('*.svg')): z.write(p,p.relative_to(base))
-              for p in sorted((base/'docs').glob('*.md')): z.write(p,p.relative_to(base))
+          from PIL import Image
+          root=Path('paper_a_figures/engraved_workflow/ink_v3')
+          (root/'.gitignore').write_text('__pycache__/\n*.pyc\n')
+          (root/'.gitattributes').write_text('*.svg text eol=lf\n*.svgz -filter -diff -merge\n*.pdf -filter -diff -merge\n*.png -filter -diff -merge\n')
+          ns={'s':'http://www.w3.org/2000/svg'};checks=[]
+          for name in ['mono','qinglu']:
+              svg=root/'assets'/f'workflow_{name}_v3.svg';r=ET.parse(svg).getroot()
+              ids=[e.get('id') for e in r.iter() if e.get('id')]
+              texts=[''.join(t.itertext()) for t in r.findall('.//s:text',ns)]
+              links=[e for e in r.iter() if e.get('data-source')]
+              assert len(ids)==len(set(ids)) and not r.findall('.//s:image',ns)
+              assert len(links)==5 and r.find('.//*[@id="legend"]') is None
+              assert not any('字典序' in t or 'Step1' in t or '停止？' in t for t in texts)
+              png=root/'exports'/f'workflow_{name}_v3.png'
+              assert Image.open(png).size==(6000,3650)
+              assert (root/'exports'/f'workflow_{name}_v3.pdf').read_bytes().startswith(b'%PDF-')
+              checks.append({'palette':name,'svg_text_objects':len(texts),'concept_links':len(links),'png_size':[6000,3650]})
+          receipt={'source_commit':os.environ['SOURCE_COMMIT'],'v2_input_commit':'70d4888886cd9f77037f7b010ce0241349ef056d','workflow_run':os.environ['GITHUB_RUN_ID'],'renderer':subprocess.check_output(['inkscape','--version'],text=True).strip(),'checks':checks,'scope':'vector rendering and file publication, not solver experiments','new_experiments':0,'visual_review':'performed separately after downloading actual exported previews'}
+          (root/'docs/EXPORT_RECEIPT.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n')
+          PY
+          pdftoppm -scale-to 1800 -singlefile -png paper_a_figures/engraved_workflow/ink_v3/exports/workflow_mono_v3.pdf /tmp/pdf_mono_review
+          pdftoppm -scale-to 1800 -singlefile -png paper_a_figures/engraved_workflow/ink_v3/exports/workflow_qinglu_v3.pdf /tmp/pdf_qinglu_review
+      - name: Commit only the third version and package the full delivery
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add paper_a_figures/engraved_workflow/ink_v3
+          if ! git diff --cached --quiet; then
+            git commit -m 'fig(A): publish third-version editable SVG, PDF, PNG and explanation'
+            git push origin HEAD:figures/engraved-workflow-v3-20260926
+          fi
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile,subprocess
+          root=Path('paper_a_figures/engraved_workflow/ink_v3')
+          with zipfile.ZipFile('/tmp/Figure_1_1_ink_v3_complete.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(root.rglob('*')):
+                  if p.is_file() and '__pycache__' not in p.parts:z.write(p,p.relative_to(root))
+              z.writestr('PACKAGE_COMMIT.txt',subprocess.check_output(['git','rev-parse','HEAD']).decode())
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: engraved-v2-exact-inputs
-          path: /tmp/engraved_v2_exact_inputs.zip
+          name: figure-1-1-ink-v3-complete
+          path: |
+            /tmp/Figure_1_1_ink_v3_complete.zip
+            /tmp/pdf_mono_review.png
+            /tmp/pdf_qinglu_review.png
           if-no-files-found: error
