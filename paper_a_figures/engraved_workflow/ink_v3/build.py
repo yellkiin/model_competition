@@ -42,7 +42,7 @@ def path(p,d,color=None,sw=2,arrow=False,fill='none',**kw):
               marker_end=kw.pop('marker_end', 'url(#arrow)' if arrow else None),**kw)
 
 def text(p,x,y,s,size=30,fill=None,weight=400,anchor='start',**kw):
-    t=el(p,'text',x=x,y=y,font_size=size,fill=fill or C['ink'],font_weight=weight,
+    t=el(p,'text',x=x,y=y,font_size=size,fill=fill or C['ink'],font_weight=(700 if weight >= 550 else 400),
          text_anchor=anchor,**kw); t.text=s; return t
 
 def circle(p,x,y,r,fill='white',stroke=None,sw=2):
