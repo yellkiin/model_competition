@@ -1,0 +1,4 @@
+*.svg -filter -diff -merge
+*.svgz -filter -diff -merge
+*.pdf -filter -diff -merge
+*.png -filter -diff -merge
