@@ -1,0 +1,21 @@
+{
+  "kind": "designed_mechanism_example_not_experimental_data",
+  "operations": ["o1", "o2", "o3", "o4", "o5", "o6"],
+  "tensors": {
+    "t0": {"producer": null, "consumers": ["o1"]},
+    "t1": {"producer": "o1", "consumers": ["o2", "o3"]},
+    "t2": {"producer": "o2", "consumers": ["o4"]},
+    "t3": {"producer": "o3", "consumers": ["o5"]},
+    "t4": {"producer": "o4", "consumers": ["o6"]},
+    "t5": {"producer": "o5", "consumers": ["o6"]},
+    "t6": {"producer": "o6", "consumers": []}
+  },
+  "partition": {"A": ["o1"], "B": ["o2", "o4"], "C": ["o3", "o5"], "D": ["o6"]},
+  "parent_core_schedules": [["A", "B", "D"], ["C"]],
+  "migration_candidate_core_schedules": [["A", "D"], ["B", "C"]],
+  "residency_local_before": ["o2", "o3", "o4", "o5"],
+  "residency_local_after": ["o2", "o4", "o3", "o5"],
+  "split_example": {"B1": ["o2"], "B2": ["o4"]},
+  "fifo_window_proposal_event_order": ["fill", "proposed_read", "evict", "old_read"],
+  "note": "FIFO drawings propose a new order from the old trace; all times and feasibility must be re-evaluated. No numerical performance claims are made."
+}
