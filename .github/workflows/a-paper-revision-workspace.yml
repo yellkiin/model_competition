@@ -1,0 +1,43 @@
+name: A paper revision workspace
+on:
+  push:
+    branches: [docs/a-paper-annotations-20260927]
+    paths: ['.github/workflows/a-paper-revision-workspace.yml']
+permissions:
+  contents: read
+jobs:
+  source-snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          lfs: false
+          sparse-checkout: |
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/论文
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/论文理论
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/支撑材料源/方法源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/其他数据/官方评价代码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/题目
+            paper_a_figures/engraved_workflow/ink_v3
+      - name: Package only revision inputs; no solver or tests
+        shell: python
+        run: |
+          import pathlib, zipfile
+          w = pathlib.Path('20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2')
+          roots = [w/'论文', w/'求解/论文理论', w/'求解/支撑材料源/方法源码', w/'提交附件/支撑材料文件/其他数据/官方评价代码', pathlib.Path('paper_a_figures/engraved_workflow/ink_v3')]
+          singles = [w/'求解/THEORY_ALIGNMENT.md', w/'求解/METHOD_TO_CODE.csv', w/'求解/FINAL_THEORY_BINDING.json', w/'题目/A题_20260925T204725662983Z.docx']
+          files = set(singles)
+          for root in roots:
+              files.update(p for p in root.rglob('*') if p.is_file())
+          with zipfile.ZipFile('paper-revision-inputs.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(files):
+                  if p.exists() and p.suffix not in {'.pyc'} and '.git' not in p.parts:
+                      z.write(p, str(p))
+          print('Packaged revision sources only; no experiments, smoke tests or hash tests executed.')
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-revision-inputs
+          path: paper-revision-inputs.zip
+          retention-days: 3
