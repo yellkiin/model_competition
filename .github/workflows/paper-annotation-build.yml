@@ -31,10 +31,14 @@ jobs:
             paper_a_figures/engraved_workflow/ink_v3
             各种建模agent/MathModelAgent/backend/fonts
       - uses: r-lib/actions/setup-tinytex@v2
+      - uses: actions/cache@v4
+        with:
+          path: C:/Users/runneradmin/AppData/Roaming/TinyTeX
+          key: paper-native-tex-20260927-explicit-v1
       - name: Install TeX and rendering dependencies
         shell: pwsh
         run: |
-          tlmgr install collection-xetex collection-latexextra collection-langchinese collection-fontsrecommended tex-gyre latexmk
+          tlmgr install xetex ctex xecjk fandol fontspec lm tex-gyre amsmath amsfonts tools geometry graphics xcolor makecell booktabs multirow cprotect listings setspace caption enumitem ulem titlesec natbib etoolbox placeins hyperref needspace tocloft appendix pgf algorithms algorithmicx minted tcolorbox mdframed subfig siunitx colortbl xurl latexmk
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m pip install --quiet PyMuPDF fonttools latexminted
       - name: Apply manuscript revisions and compile only
