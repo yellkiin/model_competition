@@ -55,7 +55,7 @@ path,rect,ellipse{stroke-linecap:round;stroke-linejoin:round}
       <path d="M0 12L12 0" stroke="#9A655B" stroke-width=".55" opacity=".48" />
     </pattern>
     <style>
-/* Shared pigment roles; preserve black technical structure and white paper. */
+
 text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
 .serif,.math {font-family:'Noto Serif CJK SC',STIX,'Noto Serif',serif;}
 .muted {fill:#535E59;}
@@ -90,10 +90,7 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
 .panel-divider {fill:none;stroke:#202724;stroke-width:1;opacity:.16;}
 .v3-notes {font-size:27px;}
 </style>
-    <style id="paper-font-fix">
-/* Verified workshop_v2 PDF: SimSun text, Times New Roman Latin, Computer Modern mathematics. */
-text, .serif, .math {font-family:'Times New Roman','SimSun',serif;}
-</style>
+    <style id="paper-font-fix">text, .serif, .math {font-family:'Times New Roman','SimSun',serif;}</style>
   </defs>
   <g id="page-v3" inkscape:groupmode="layer" inkscape:label="版面与标题">
     <title>版面与标题</title>
@@ -772,14 +769,14 @@ text, .serif, .math {font-family:'Times New Roman','SimSun',serif;}
       <path class="hair" d="M2778,1060C2906.8,987.5 2883.2,959.6 2790,885" opacity=".55" />
       <path class="hair" d="M2778,1060C2917.2,1010.5 2896.8,938.4 2790,885" opacity=".55" />
       <path class="route local-link" d="M2778,1060C2912,999 2890,949 2790,885" marker-end="url(#arrow)" />
-      <text x="2190" y="946" font-size="22" text-anchor="middle" class="serif halo" id="text-122">COPY_OUT</text>
-      <text x="2821" y="946" font-size="22" text-anchor="middle" class="serif halo" id="text-123">COPY_IN</text>
-      <g transform="translate(2190,996) scale(0.78)">
+      <text x="2225" y="946" font-size="22" text-anchor="middle" class="serif halo" id="text-122">COPY_OUT</text>
+      <text x="2788" y="946" font-size="22" text-anchor="middle" class="serif halo" id="text-123">COPY_IN</text>
+      <g transform="translate(2225,996) scale(0.78)" id="copy-out-tensor-v3">
         <path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
         <path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
         <rect x="-22" y="-15" width="33" height="35" class="grid" />
       </g>
-      <g transform="translate(2821,1001) scale(0.78)">
+      <g transform="translate(2788,1001) scale(0.78)" id="copy-in-tensor-v3">
         <path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
         <path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
         <rect x="-22" y="-15" width="33" height="35" class="grid" />

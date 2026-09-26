@@ -27,11 +27,14 @@
   "finalizer_integrated": true,
   "finalizer": "finalize_v3.py",
   "b_operation_label": "迁移 B",
+  "copy_label_centers": {
+    "COPY_OUT": 2225,
+    "COPY_IN": 2788
+  },
   "alignment_fixes": [
     "graph definition",
     "core labels",
-    "COPY_IN",
-    "COPY_OUT",
+    "COPY labels and tensors clear of arcs",
     "makespan formula"
   ]
 }
