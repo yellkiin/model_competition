@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Finalize Figure 1.1 v3 after the ink_v2-based generator runs.
 
-This pass keeps the PR's original build.py as the geometric source of truth and
-applies typography/alignment corrections requested during review. It is safe to
-run repeatedly. Python 3.10+; Inkscape is needed unless --no-export is used.
+Preserves the original geometry and applies reviewed typography/alignment fixes.
+Computer Modern formulas are vectors. Native text outlines require the actual
+paper fonts; a missing font is an error, never a silent compatible substitution.
 """
 from __future__ import annotations
-
 import argparse
 import gzip
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -56,10 +56,8 @@ def ensure_font_style(root: ET.Element) -> None:
         defs.remove(old)
     style = ET.SubElement(defs, tag('style'), {'id': 'paper-font-fix'})
     style.text = """
-/* workshop_v2 typography: Times-style Latin, Song-style Chinese, STIX math. */
-text {font-family:'Times New Roman','SimSun','Liberation Serif','Tinos','Noto Serif CJK SC','Songti SC',serif;}
-.serif {font-family:'Times New Roman','Liberation Serif','Tinos','Noto Serif CJK SC','SimSun','Songti SC',serif;}
-.math {font-family:'STIX Math','STIX','Cambria Math','Times New Roman','Liberation Serif','Tinos',serif;}
+/* Verified workshop_v2 PDF: SimSun text, Times New Roman Latin, Computer Modern mathematics. */
+text, .serif, .math {font-family:'Times New Roman','SimSun',serif;}
 """
 
 
@@ -68,15 +66,8 @@ def ensure_graph_definition(root: ET.Element) -> None:
     existing = root.find('.//*[@id="graph-definition"]')
     if existing is None:
         existing = ET.SubElement(joint, tag('text'), {'id': 'graph-definition'})
-    set_plain_text(
-        existing,
-        'G = (T ∪ O, E)',
-        x=914,
-        y=380,
-        font_size=32,
-        text_anchor='end',
-        class_='math',
-    )
+    set_plain_text(existing, 'G = (T ∪ O, E)', x=914, y=380, font_size=32,
+                   text_anchor='end', class_='math')
 
 
 def normalize_b(root: ET.Element) -> None:
@@ -86,12 +77,7 @@ def normalize_b(root: ET.Element) -> None:
             path.attrib.pop('style', None)
             break
     set_attrs(find(root, 'text-024'), class_='serif')
-
-    targets = {
-        ('430', '1084'): 'text-031',
-        ('1677', '741'): 'text-063',
-        ('2572', '453'): 'text-114',
-    }
+    targets = {('430', '1084'): 'text-031', ('1677', '741'): 'text-063', ('2572', '453'): 'text-114'}
     found: set[tuple[str, str]] = set()
     for rect in root.iter(tag('rect')):
         key = (rect.get('x', ''), rect.get('y', ''))
@@ -99,12 +85,10 @@ def normalize_b(root: ET.Element) -> None:
             rect.set('class', 'paper')
             rect.attrib.pop('style', None)
             found.add(key)
-    missing = set(targets) - found
-    if missing:
-        raise ValueError(f'Missing B rectangles: {sorted(missing)}')
+    if set(targets) - found:
+        raise ValueError(f'Missing B rectangles: {sorted(set(targets) - found)}')
     for label in targets.values():
         set_attrs(find(root, label), class_='math')
-
     for node in root.iter(tag('text')):
         if ''.join(node.itertext()).strip() in {'候选示意：B 迁至 k₂', '候选示意：B 迁至 k2'}:
             set_plain_text(node, '候选示意：迁移 B', font_size=29, class_='bold')
@@ -115,14 +99,8 @@ def set_core_label(node: ET.Element, index: int, x: int) -> None:
         node.remove(child)
     set_attrs(node, x=x, y=424, font_size=30, text_anchor='middle', class_='bold')
     node.text = '核心 '
-    k = ET.SubElement(node, tag('tspan'), {'class': 'math'})
-    k.text = 'k'
-    sub = ET.SubElement(
-        node,
-        tag('tspan'),
-        {'baseline-shift': 'sub', 'font-size': '70%', 'class': 'math'},
-    )
-    sub.text = str(index)
+    ET.SubElement(node, tag('tspan'), {'class': 'math'}).text = 'k'
+    ET.SubElement(node, tag('tspan'), {'baseline-shift': 'sub', 'font-size': '70%', 'class': 'math'}).text = str(index)
     node.set('{' + XML + '}space', 'preserve')
     node.set('data-tight-text', 'true')
 
@@ -130,24 +108,10 @@ def set_core_label(node: ET.Element, index: int, x: int) -> None:
 def align_execution_labels(root: ET.Element) -> None:
     set_core_label(find(root, 'text-104'), 1, 2272)
     set_core_label(find(root, 'text-113'), 2, 2687)
-    set_plain_text(
-        find(root, 'text-122'),
-        'COPY_OUT',
-        x=2190,
-        y=946,
-        font_size=22,
-        text_anchor='middle',
-        class_='serif halo',
-    )
-    set_plain_text(
-        find(root, 'text-123'),
-        'COPY_IN',
-        x=2821,
-        y=946,
-        font_size=22,
-        text_anchor='middle',
-        class_='serif halo',
-    )
+    set_plain_text(find(root, 'text-122'), 'COPY_OUT', x=2190, y=946, font_size=22,
+                   text_anchor='middle', class_='serif halo')
+    set_plain_text(find(root, 'text-123'), 'COPY_IN', x=2821, y=946, font_size=22,
+                   text_anchor='middle', class_='serif halo')
 
 
 def fix_makespan_formula(root: ET.Element) -> None:
@@ -186,10 +150,9 @@ def write_svg(root: ET.Element, svg: Path) -> None:
     ET.indent(root, space='  ')
     tighten_mixed_text(root)
     ET.ElementTree(root).write(svg, encoding='utf-8', xml_declaration=True)
-    svgz = svg.with_suffix('.svgz')
-    with svgz.open('wb') as raw:
-        with gzip.GzipFile(fileobj=raw, mode='wb', mtime=0) as compressed:
-            compressed.write(svg.read_bytes())
+    with svg.with_suffix('.svgz').open('wb') as raw:
+        with gzip.GzipFile(fileobj=raw, mode='wb', mtime=0) as z:
+            z.write(svg.read_bytes())
 
 
 def export(svg: Path, out_dir: Path, width: int) -> None:
@@ -198,55 +161,50 @@ def export(svg: Path, out_dir: Path, width: int) -> None:
         raise RuntimeError('Final SVG is ready; install Inkscape to export PDF and PNG.')
     exports = out_dir / 'exports'
     exports.mkdir(parents=True, exist_ok=True)
-    jobs = [
-        (exports / f'{svg.stem}.pdf', ['--export-text-to-path']),
-        (exports / f'{svg.stem}.png', [f'--export-width={width}']),
-        (exports / f'{svg.stem}_preview.png', ['--export-width=1800']),
-    ]
+    jobs = [(exports / f'{svg.stem}.pdf', ['--export-text-to-path']),
+            (exports / f'{svg.stem}.png', [f'--export-width={width}']),
+            (exports / f'{svg.stem}_preview.png', ['--export-width=1800'])]
     for target, extra in jobs:
-        cmd = [
-            inkscape,
-            str(svg),
-            f'--export-filename={target}',
-            '--export-area-page',
-            '--export-background=white',
-            '--export-background-opacity=1',
-            *extra,
-        ]
-        run = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=180)
+        run = subprocess.run([inkscape, str(svg), f'--export-filename={target}', '--export-area-page',
+                              '--export-background=white', '--export-background-opacity=1', *extra],
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=180)
         if run.returncode:
             raise RuntimeError(run.stderr)
 
 
 def update_build_info(out_dir: Path, palettes: list[str]) -> None:
     info_path = out_dir / 'BUILD_INFO.json'
-    data: dict[str, object] = {}
-    if info_path.exists():
-        data = json.loads(info_path.read_text(encoding='utf-8'))
-    data.update(
-        {
-            'finalizer': 'finalize_v3.py',
-            'palettes': palettes,
-            'bottom_q3_note_removed': True,
-            'b_highlight_removed': True,
-            'b_operation_label': '迁移 B',
-            'font_alignment': 'workshop_v2 Times/SimSun-compatible text with STIX mathematics',
-            'alignment_fixes': ['graph definition', 'core labels', 'COPY_IN', 'COPY_OUT', 'makespan formula'],
-        }
-    )
+    data = json.loads(info_path.read_text(encoding='utf-8')) if info_path.exists() else {}
+    data.update({'finalizer': 'finalize_v3.py', 'palettes': palettes, 'bottom_q3_note_removed': True,
+                 'b_highlight_removed': True, 'b_operation_label': '迁移 B',
+                 'font_alignment': 'Verified paper fonts: SimSun / Times New Roman / Computer Modern',
+                 'alignment_fixes': ['graph definition', 'core labels', 'COPY_IN', 'COPY_OUT', 'makespan formula']})
     info_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+
+def native_outline(svg: Path) -> None:
+    from outline_native import NativeFonts, outline
+    outline(svg, NativeFonts(Path(os.environ.get('WINDIR', 'C:/Windows')) / 'Fonts'))
 
 
 def finalize(svg: Path, out_dir: Path, do_export: bool, width: int) -> None:
     root = ET.parse(svg).getroot()
-    ensure_font_style(root)
-    ensure_graph_definition(root)
-    normalize_b(root)
-    align_execution_labels(root)
-    fix_makespan_formula(root)
-    remove_bottom_q3_note(root)
-    write_svg(root, svg)
+    if root.get('data-text-outlined') == 'true':
+        if do_export:
+            export(svg, out_dir, width)
+        return
+    if root.find('.//*[@data-math-fonts]') is None:
+        ensure_font_style(root)
+        ensure_graph_definition(root)
+        normalize_b(root)
+        align_execution_labels(root)
+        fix_makespan_formula(root)
+        remove_bottom_q3_note(root)
+        from math_layout import apply_math
+        apply_math(root, out_dir / 'assets' / 'math_layout.json')
+        write_svg(root, svg)
     if do_export:
+        native_outline(svg)
         export(svg, out_dir, width)
 
 
@@ -266,7 +224,6 @@ def main() -> None:
         finalize(svg, args.out, not args.no_export, args.png_width)
         print(svg)
     update_build_info(args.out, args.palettes)
-
 
 if __name__ == '__main__':
     main()
