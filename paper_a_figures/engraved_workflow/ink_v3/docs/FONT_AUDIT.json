@@ -1,0 +1,1036 @@
+[
+  {
+    "file": "workflow_mono_v3.svg",
+    "editable_file": "workflow_mono_v3_editable.svg",
+    "fonts": [
+      "SimSun",
+      "Times New Roman",
+      "Computer Modern"
+    ],
+    "fallback_fonts": [],
+    "font_files_bundled": false,
+    "labels": [
+      {
+        "id": "figure-title",
+        "text": "计算图调度的联合优化",
+        "fonts": "SimSun",
+        "width": 600.0
+      },
+      {
+        "id": "figure-subtitle",
+        "text": "联合决策 · 多邻域协同 · 统一执行评价",
+        "fonts": "SimSun,Times New Roman",
+        "width": 516.6465
+      },
+      {
+        "id": null,
+        "text": "图 1.1  ·  方法总览",
+        "fonts": "SimSun,Times New Roman",
+        "width": 227.1572
+      },
+      {
+        "id": null,
+        "text": "01",
+        "fonts": "Times New Roman",
+        "width": 43.0
+      },
+      {
+        "id": null,
+        "text": "联合决策",
+        "fonts": "SimSun",
+        "width": 172.0
+      },
+      {
+        "id": null,
+        "text": "子图划分 · 核心映射 · 核内顺序",
+        "fonts": "SimSun,Times New Roman",
+        "width": 368.9824
+      },
+      {
+        "id": null,
+        "text": "输入：计算图、硬件配置与搜索预算",
+        "fonts": "SimSun",
+        "width": 448.0
+      },
+      {
+        "id": null,
+        "text": "原始算子与依赖保持不变",
+        "fonts": "SimSun",
+        "width": 286.0
+      },
+      {
+        "id": "text-023",
+        "text": "A",
+        "fonts": "Times New Roman",
+        "width": 23.8315
+      },
+      {
+        "id": "text-024",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 22.0107
+      },
+      {
+        "id": "text-025",
+        "text": "C",
+        "fonts": "Times New Roman",
+        "width": 22.0107
+      },
+      {
+        "id": "text-026",
+        "text": "D",
+        "fonts": "Times New Roman",
+        "width": 23.8315
+      },
+      {
+        "id": "text-030",
+        "text": "A",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-031",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-032",
+        "text": "D",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-034",
+        "text": "C",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": null,
+        "text": "核心映射 ",
+        "fonts": "SimSun,Times New Roman",
+        "width": 119.0
+      },
+      {
+        "id": null,
+        "text": "  ·  核内顺序 ",
+        "fonts": "SimSun,Times New Roman",
+        "width": 156.3242
+      },
+      {
+        "id": null,
+        "text": "02",
+        "fonts": "Times New Roman",
+        "width": 43.0
+      },
+      {
+        "id": null,
+        "text": "多邻域协同",
+        "fonts": "SimSun",
+        "width": 215.0
+      },
+      {
+        "id": null,
+        "text": "共享当前方案，探索互补改进",
+        "fonts": "SimSun",
+        "width": 351.0
+      },
+      {
+        "id": "selection-principle",
+        "text": "依据收益与成本分配搜索机会",
+        "fonts": "SimSun",
+        "width": 442.0
+      },
+      {
+        "id": null,
+        "text": "每轮选择一个来源",
+        "fonts": "SimSun",
+        "width": 216.0
+      },
+      {
+        "id": "text-045",
+        "text": "a",
+        "fonts": "Times New Roman",
+        "width": 11.0962
+      },
+      {
+        "id": "text-046",
+        "text": "基础构造",
+        "fonts": "SimSun",
+        "width": 124.0
+      },
+      {
+        "id": "text-047",
+        "text": "拓扑排序 · 分组粒度",
+        "fonts": "SimSun,Times New Roman",
+        "width": 238.4912
+      },
+      {
+        "id": "text-054",
+        "text": "形成初始候选",
+        "fonts": "SimSun",
+        "width": 162.0
+      },
+      {
+        "id": "text-055",
+        "text": "b",
+        "fonts": "Times New Roman",
+        "width": 12.5
+      },
+      {
+        "id": "text-056",
+        "text": "结构与负载",
+        "fonts": "SimSun",
+        "width": 155.0
+      },
+      {
+        "id": "text-057",
+        "text": "迁移 · 交换 · 切分",
+        "fonts": "SimSun,Times New Roman",
+        "width": 206.9824
+      },
+      {
+        "id": "text-060",
+        "text": "A",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-061",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 18.6758
+      },
+      {
+        "id": "text-062",
+        "text": "D",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-063",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-064",
+        "text": "C",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-067",
+        "text": "c",
+        "fonts": "Times New Roman",
+        "width": 11.0962
+      },
+      {
+        "id": "text-068",
+        "text": "数据驻留",
+        "fonts": "SimSun",
+        "width": 124.0
+      },
+      {
+        "id": "text-069",
+        "text": "调整分组与顺序",
+        "fonts": "SimSun",
+        "width": 189.0
+      },
+      {
+        "id": "text-082",
+        "text": "缩短同时驻留区间",
+        "fonts": "SimSun",
+        "width": 216.0
+      },
+      {
+        "id": "text-083",
+        "text": "d",
+        "fonts": "Times New Roman",
+        "width": 12.5
+      },
+      {
+        "id": "text-084",
+        "text": "FIFO 复用时序 · Q3",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 262.5
+      },
+      {
+        "id": "text-085",
+        "text": "保持划分与归核，仅调整顺序",
+        "fonts": "SimSun",
+        "width": 338.0
+      },
+      {
+        "id": "text-086",
+        "text": "驻留窗口",
+        "fonts": "SimSun",
+        "width": 112.0
+      },
+      {
+        "id": "text-091",
+        "text": "将读取移入驻留窗口",
+        "fonts": "SimSun",
+        "width": 243.0
+      },
+      {
+        "id": null,
+        "text": "03",
+        "fonts": "Times New Roman",
+        "width": 43.0
+      },
+      {
+        "id": null,
+        "text": "统一执行评价",
+        "fonts": "SimSun",
+        "width": 258.0
+      },
+      {
+        "id": null,
+        "text": "任务 · 存储 · 流水线 · 共享带宽",
+        "fonts": "SimSun,Times New Roman",
+        "width": 364.4736
+      },
+      {
+        "id": null,
+        "text": "候选示意：迁移 B",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 229.5928
+      },
+      {
+        "id": "text-105",
+        "text": "A",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-106",
+        "text": "D",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-107",
+        "text": "M",
+        "fonts": "Times New Roman",
+        "width": 19.5615
+      },
+      {
+        "id": "text-108",
+        "text": "V",
+        "fonts": "Times New Roman",
+        "width": 15.8877
+      },
+      {
+        "id": "text-109",
+        "text": "MTE2",
+        "fonts": "Times New Roman",
+        "width": 57.4385
+      },
+      {
+        "id": "text-110",
+        "text": "MTE3",
+        "fonts": "Times New Roman",
+        "width": 57.4385
+      },
+      {
+        "id": "text-111",
+        "text": "L1",
+        "fonts": "Times New Roman",
+        "width": 32.2144
+      },
+      {
+        "id": "text-112",
+        "text": "UB",
+        "fonts": "Times New Roman",
+        "width": 40.2856
+      },
+      {
+        "id": "text-114",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-115",
+        "text": "C",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-116",
+        "text": "M",
+        "fonts": "Times New Roman",
+        "width": 19.5615
+      },
+      {
+        "id": "text-117",
+        "text": "V",
+        "fonts": "Times New Roman",
+        "width": 15.8877
+      },
+      {
+        "id": "text-118",
+        "text": "MTE2",
+        "fonts": "Times New Roman",
+        "width": 57.4385
+      },
+      {
+        "id": "text-119",
+        "text": "MTE3",
+        "fonts": "Times New Roman",
+        "width": 57.4385
+      },
+      {
+        "id": "text-120",
+        "text": "L1",
+        "fonts": "Times New Roman",
+        "width": 32.2144
+      },
+      {
+        "id": "text-121",
+        "text": "UB",
+        "fonts": "Times New Roman",
+        "width": 40.2856
+      },
+      {
+        "id": "text-122",
+        "text": "COPY_OUT",
+        "fonts": "Times New Roman",
+        "width": 114.8984
+      },
+      {
+        "id": "text-123",
+        "text": "COPY_IN",
+        "fonts": "Times New Roman",
+        "width": 92.8984
+      },
+      {
+        "id": "text-124",
+        "text": "DDR · 共享带宽",
+        "fonts": "SimSun,Times New Roman",
+        "width": 229.1631
+      },
+      {
+        "id": "text-125",
+        "text": "只读 L2 · FIFO · Q3",
+        "fonts": "SimSun,Times New Roman",
+        "width": 252.4951
+      },
+      {
+        "id": "text-127",
+        "text": "未命中读 DDR",
+        "fonts": "SimSun,Times New Roman",
+        "width": 159.0332
+      },
+      {
+        "id": "text-128",
+        "text": "读完成后填充",
+        "fonts": "SimSun",
+        "width": 150.0
+      },
+      {
+        "id": "text-129",
+        "text": "命",
+        "fonts": "SimSun",
+        "width": 22.0
+      },
+      {
+        "id": "text-130",
+        "text": "中",
+        "fonts": "SimSun",
+        "width": 22.0
+      },
+      {
+        "id": "text-131",
+        "text": "读",
+        "fonts": "SimSun",
+        "width": 22.0
+      },
+      {
+        "id": null,
+        "text": "核心 ",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 67.5
+      },
+      {
+        "id": null,
+        "text": "核心 ",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 67.5
+      },
+      {
+        "id": null,
+        "text": "当前最好可行方案",
+        "fonts": "SimSun",
+        "width": 264.0
+      },
+      {
+        "id": null,
+        "text": "可行性与下界筛选",
+        "fonts": "SimSun",
+        "width": 216.0
+      },
+      {
+        "id": null,
+        "text": "完整候选 ",
+        "fonts": "SimSun,Times New Roman",
+        "width": 144.5
+      },
+      {
+        "id": null,
+        "text": "总体任务执行时间（Makespan）",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 447.8047
+      },
+      {
+        "id": null,
+        "text": "预算内继续迭代",
+        "fonts": "SimSun",
+        "width": 182.0
+      },
+      {
+        "id": null,
+        "text": "停止时",
+        "fonts": "SimSun",
+        "width": 78.0
+      },
+      {
+        "id": null,
+        "text": "反馈改进",
+        "fonts": "SimSun",
+        "width": 140.0
+      },
+      {
+        "id": null,
+        "text": "保留更优方案 · 更新搜索依据",
+        "fonts": "SimSun,Times New Roman",
+        "width": 359.3242
+      },
+      {
+        "id": null,
+        "text": "输出：调度方案 · 性能指标 · 时间—质量曲线",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 668.6777
+      }
+    ]
+  },
+  {
+    "file": "workflow_qinglu_v3.svg",
+    "editable_file": "workflow_qinglu_v3_editable.svg",
+    "fonts": [
+      "SimSun",
+      "Times New Roman",
+      "Computer Modern"
+    ],
+    "fallback_fonts": [],
+    "font_files_bundled": false,
+    "labels": [
+      {
+        "id": "figure-title",
+        "text": "计算图调度的联合优化",
+        "fonts": "SimSun",
+        "width": 600.0
+      },
+      {
+        "id": "figure-subtitle",
+        "text": "联合决策 · 多邻域协同 · 统一执行评价",
+        "fonts": "SimSun,Times New Roman",
+        "width": 516.6465
+      },
+      {
+        "id": null,
+        "text": "图 1.1  ·  方法总览",
+        "fonts": "SimSun,Times New Roman",
+        "width": 227.1572
+      },
+      {
+        "id": null,
+        "text": "01",
+        "fonts": "Times New Roman",
+        "width": 43.0
+      },
+      {
+        "id": null,
+        "text": "联合决策",
+        "fonts": "SimSun",
+        "width": 172.0
+      },
+      {
+        "id": null,
+        "text": "子图划分 · 核心映射 · 核内顺序",
+        "fonts": "SimSun,Times New Roman",
+        "width": 368.9824
+      },
+      {
+        "id": null,
+        "text": "输入：计算图、硬件配置与搜索预算",
+        "fonts": "SimSun",
+        "width": 448.0
+      },
+      {
+        "id": null,
+        "text": "原始算子与依赖保持不变",
+        "fonts": "SimSun",
+        "width": 286.0
+      },
+      {
+        "id": "text-023",
+        "text": "A",
+        "fonts": "Times New Roman",
+        "width": 23.8315
+      },
+      {
+        "id": "text-024",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 22.0107
+      },
+      {
+        "id": "text-025",
+        "text": "C",
+        "fonts": "Times New Roman",
+        "width": 22.0107
+      },
+      {
+        "id": "text-026",
+        "text": "D",
+        "fonts": "Times New Roman",
+        "width": 23.8315
+      },
+      {
+        "id": "text-030",
+        "text": "A",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-031",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-032",
+        "text": "D",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-034",
+        "text": "C",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": null,
+        "text": "核心映射 ",
+        "fonts": "SimSun,Times New Roman",
+        "width": 119.0
+      },
+      {
+        "id": null,
+        "text": "  ·  核内顺序 ",
+        "fonts": "SimSun,Times New Roman",
+        "width": 156.3242
+      },
+      {
+        "id": null,
+        "text": "02",
+        "fonts": "Times New Roman",
+        "width": 43.0
+      },
+      {
+        "id": null,
+        "text": "多邻域协同",
+        "fonts": "SimSun",
+        "width": 215.0
+      },
+      {
+        "id": null,
+        "text": "共享当前方案，探索互补改进",
+        "fonts": "SimSun",
+        "width": 351.0
+      },
+      {
+        "id": "selection-principle",
+        "text": "依据收益与成本分配搜索机会",
+        "fonts": "SimSun",
+        "width": 442.0
+      },
+      {
+        "id": null,
+        "text": "每轮选择一个来源",
+        "fonts": "SimSun",
+        "width": 216.0
+      },
+      {
+        "id": "text-045",
+        "text": "a",
+        "fonts": "Times New Roman",
+        "width": 11.0962
+      },
+      {
+        "id": "text-046",
+        "text": "基础构造",
+        "fonts": "SimSun",
+        "width": 124.0
+      },
+      {
+        "id": "text-047",
+        "text": "拓扑排序 · 分组粒度",
+        "fonts": "SimSun,Times New Roman",
+        "width": 238.4912
+      },
+      {
+        "id": "text-054",
+        "text": "形成初始候选",
+        "fonts": "SimSun",
+        "width": 162.0
+      },
+      {
+        "id": "text-055",
+        "text": "b",
+        "fonts": "Times New Roman",
+        "width": 12.5
+      },
+      {
+        "id": "text-056",
+        "text": "结构与负载",
+        "fonts": "SimSun",
+        "width": 155.0
+      },
+      {
+        "id": "text-057",
+        "text": "迁移 · 交换 · 切分",
+        "fonts": "SimSun,Times New Roman",
+        "width": 206.9824
+      },
+      {
+        "id": "text-060",
+        "text": "A",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-061",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 18.6758
+      },
+      {
+        "id": "text-062",
+        "text": "D",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-063",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-064",
+        "text": "C",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-067",
+        "text": "c",
+        "fonts": "Times New Roman",
+        "width": 11.0962
+      },
+      {
+        "id": "text-068",
+        "text": "数据驻留",
+        "fonts": "SimSun",
+        "width": 124.0
+      },
+      {
+        "id": "text-069",
+        "text": "调整分组与顺序",
+        "fonts": "SimSun",
+        "width": 189.0
+      },
+      {
+        "id": "text-082",
+        "text": "缩短同时驻留区间",
+        "fonts": "SimSun",
+        "width": 216.0
+      },
+      {
+        "id": "text-083",
+        "text": "d",
+        "fonts": "Times New Roman",
+        "width": 12.5
+      },
+      {
+        "id": "text-084",
+        "text": "FIFO 复用时序 · Q3",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 262.5
+      },
+      {
+        "id": "text-085",
+        "text": "保持划分与归核，仅调整顺序",
+        "fonts": "SimSun",
+        "width": 338.0
+      },
+      {
+        "id": "text-086",
+        "text": "驻留窗口",
+        "fonts": "SimSun",
+        "width": 112.0
+      },
+      {
+        "id": "text-091",
+        "text": "将读取移入驻留窗口",
+        "fonts": "SimSun",
+        "width": 243.0
+      },
+      {
+        "id": null,
+        "text": "03",
+        "fonts": "Times New Roman",
+        "width": 43.0
+      },
+      {
+        "id": null,
+        "text": "统一执行评价",
+        "fonts": "SimSun",
+        "width": 258.0
+      },
+      {
+        "id": null,
+        "text": "任务 · 存储 · 流水线 · 共享带宽",
+        "fonts": "SimSun,Times New Roman",
+        "width": 364.4736
+      },
+      {
+        "id": null,
+        "text": "候选示意：迁移 B",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 229.5928
+      },
+      {
+        "id": "text-105",
+        "text": "A",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-106",
+        "text": "D",
+        "fonts": "Times New Roman",
+        "width": 20.9429
+      },
+      {
+        "id": "text-107",
+        "text": "M",
+        "fonts": "Times New Roman",
+        "width": 19.5615
+      },
+      {
+        "id": "text-108",
+        "text": "V",
+        "fonts": "Times New Roman",
+        "width": 15.8877
+      },
+      {
+        "id": "text-109",
+        "text": "MTE2",
+        "fonts": "Times New Roman",
+        "width": 57.4385
+      },
+      {
+        "id": "text-110",
+        "text": "MTE3",
+        "fonts": "Times New Roman",
+        "width": 57.4385
+      },
+      {
+        "id": "text-111",
+        "text": "L1",
+        "fonts": "Times New Roman",
+        "width": 32.2144
+      },
+      {
+        "id": "text-112",
+        "text": "UB",
+        "fonts": "Times New Roman",
+        "width": 40.2856
+      },
+      {
+        "id": "text-114",
+        "text": "B",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-115",
+        "text": "C",
+        "fonts": "Times New Roman",
+        "width": 19.3428
+      },
+      {
+        "id": "text-116",
+        "text": "M",
+        "fonts": "Times New Roman",
+        "width": 19.5615
+      },
+      {
+        "id": "text-117",
+        "text": "V",
+        "fonts": "Times New Roman",
+        "width": 15.8877
+      },
+      {
+        "id": "text-118",
+        "text": "MTE2",
+        "fonts": "Times New Roman",
+        "width": 57.4385
+      },
+      {
+        "id": "text-119",
+        "text": "MTE3",
+        "fonts": "Times New Roman",
+        "width": 57.4385
+      },
+      {
+        "id": "text-120",
+        "text": "L1",
+        "fonts": "Times New Roman",
+        "width": 32.2144
+      },
+      {
+        "id": "text-121",
+        "text": "UB",
+        "fonts": "Times New Roman",
+        "width": 40.2856
+      },
+      {
+        "id": "text-122",
+        "text": "COPY_OUT",
+        "fonts": "Times New Roman",
+        "width": 114.8984
+      },
+      {
+        "id": "text-123",
+        "text": "COPY_IN",
+        "fonts": "Times New Roman",
+        "width": 92.8984
+      },
+      {
+        "id": "text-124",
+        "text": "DDR · 共享带宽",
+        "fonts": "SimSun,Times New Roman",
+        "width": 229.1631
+      },
+      {
+        "id": "text-125",
+        "text": "只读 L2 · FIFO · Q3",
+        "fonts": "SimSun,Times New Roman",
+        "width": 252.4951
+      },
+      {
+        "id": "text-127",
+        "text": "未命中读 DDR",
+        "fonts": "SimSun,Times New Roman",
+        "width": 159.0332
+      },
+      {
+        "id": "text-128",
+        "text": "读完成后填充",
+        "fonts": "SimSun",
+        "width": 150.0
+      },
+      {
+        "id": "text-129",
+        "text": "命",
+        "fonts": "SimSun",
+        "width": 22.0
+      },
+      {
+        "id": "text-130",
+        "text": "中",
+        "fonts": "SimSun",
+        "width": 22.0
+      },
+      {
+        "id": "text-131",
+        "text": "读",
+        "fonts": "SimSun",
+        "width": 22.0
+      },
+      {
+        "id": null,
+        "text": "核心 ",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 67.5
+      },
+      {
+        "id": null,
+        "text": "核心 ",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 67.5
+      },
+      {
+        "id": null,
+        "text": "当前最好可行方案",
+        "fonts": "SimSun",
+        "width": 264.0
+      },
+      {
+        "id": null,
+        "text": "可行性与下界筛选",
+        "fonts": "SimSun",
+        "width": 216.0
+      },
+      {
+        "id": null,
+        "text": "完整候选 ",
+        "fonts": "SimSun,Times New Roman",
+        "width": 144.5
+      },
+      {
+        "id": null,
+        "text": "总体任务执行时间（Makespan）",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 447.8047
+      },
+      {
+        "id": null,
+        "text": "预算内继续迭代",
+        "fonts": "SimSun",
+        "width": 182.0
+      },
+      {
+        "id": null,
+        "text": "停止时",
+        "fonts": "SimSun",
+        "width": 78.0
+      },
+      {
+        "id": null,
+        "text": "反馈改进",
+        "fonts": "SimSun",
+        "width": 140.0
+      },
+      {
+        "id": null,
+        "text": "保留更优方案 · 更新搜索依据",
+        "fonts": "SimSun,Times New Roman",
+        "width": 359.3242
+      },
+      {
+        "id": null,
+        "text": "输出：调度方案 · 性能指标 · 时间—质量曲线",
+        "fonts": "SimSun,Times New Roman Bold",
+        "width": 668.6777
+      }
+    ]
+  }
+]

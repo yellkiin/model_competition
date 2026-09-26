@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "palette": "mono",
+      "svg_sha256": "9bf32733958f3a6ba7ed1552bc1b54f11809ecfd140b0c76684b3a575280cbba",
+      "pdf_sha256": "95a99e2e37c763b946fb6511f1d5bf2e5469d98baec65feb69069617a3c27c37",
+      "semantic_label_count": 133,
+      "global_links": 5,
+      "font_independent": true,
+      "png_pixels": [
+        6000,
+        3650
+      ],
+      "uniform_b_blocks": true,
+      "bottom_q3_note_removed": true,
+      "math_font": "Computer Modern",
+      "editable_source_kept": true
+    },
+    {
+      "palette": "qinglu",
+      "svg_sha256": "f6274b5116776db714d26cf440dce0ce81dec3e1deac4124be2dbcee52b3d126",
+      "pdf_sha256": "c38025e8a6b75a6408ff6bb4e0f80db63c029dbdbd9cd5f1ab2b5ffcced1dacf",
+      "semantic_label_count": 133,
+      "global_links": 5,
+      "font_independent": true,
+      "png_pixels": [
+        6000,
+        3650
+      ],
+      "uniform_b_blocks": true,
+      "bottom_q3_note_removed": true,
+      "math_font": "Computer Modern",
+      "editable_source_kept": true
+    }
+  ],
+  "new_solver_experiments": 0,
+  "scope": "Figure typography, vector layout and deterministic exports only",
+  "visual_review": "Exported SVG and PDF previews require separate visual inspection"
+}

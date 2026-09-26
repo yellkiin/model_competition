@@ -1,0 +1,125 @@
+name: Engraved workflow v3 delivery
+on:
+  push:
+    branches: [figures/engraved-workflow-v3-20260926]
+    paths:
+      - paper_a_figures/engraved_workflow/ink_v3/RENDER_REQUEST.json
+permissions:
+  contents: write
+concurrency:
+  group: engraved-workflow-v3-publication
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            paper_a_figures/engraved_workflow/ink_v2/assets
+            paper_a_figures/engraved_workflow/ink_v3
+      - name: Prepare exact Computer Modern equations and editable SVG
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq texlive-latex-base texlive-latex-recommended
+          python -m pip install --quiet PyMuPDF fonttools
+          python paper_a_figures/engraved_workflow/ink_v3/build.py --svg-only
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v3-math-prepared
+          path: paper_a_figures/engraved_workflow/ink_v3/
+          retention-days: 3
+          include-hidden-files: true
+  native_fonts:
+    needs: prepare
+    runs-on: windows-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: v3-math-prepared
+          path: figure
+      - name: Use licensed native Windows fonts without redistributing fonts
+        shell: pwsh
+        run: |
+          python -m pip install --quiet fonttools
+          python figure/outline_native.py --out figure
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $bad = Get-ChildItem figure -Recurse -File | Where-Object { $_.Extension -in '.ttf','.otf','.ttc','.woff','.woff2','.pfb' }
+          if ($bad) { throw 'A font file must never be included in a delivery.' }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v3-native-outlines
+          path: figure/
+          retention-days: 3
+          include-hidden-files: true
+  publish:
+    needs: native_fonts
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            paper_a_figures/engraved_workflow/ink_v3
+      - uses: actions/download-artifact@v4
+        with:
+          name: v3-native-outlines
+          path: paper_a_figures/engraved_workflow/ink_v3
+      - name: Render and validate font-independent vector files
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq inkscape poppler-utils
+          python -m pip install --quiet Pillow
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          root=Path('paper_a_figures/engraved_workflow/ink_v3')
+          sys.path.insert(0,str(root))
+          from finalize_v3 import export
+          for name in ['mono','qinglu']:
+              export(root/'assets'/f'workflow_{name}_v3.svg',root,6000)
+          PY
+          python paper_a_figures/engraved_workflow/ink_v3/validate_v3.py
+          pdftoppm -scale-to 1800 -singlefile -png paper_a_figures/engraved_workflow/ink_v3/exports/workflow_mono_v3.pdf /tmp/pdf_mono_review
+          pdftoppm -scale-to 1800 -singlefile -png paper_a_figures/engraved_workflow/ink_v3/exports/workflow_qinglu_v3.pdf /tmp/pdf_qinglu_review
+      - name: Publish only the revised figure directory, without merging main
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add paper_a_figures/engraved_workflow/ink_v3
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix(figures): verified paper fonts, aligned labels, portable SVG and exports'
+            git push origin HEAD:figures/engraved-workflow-v3-20260926
+          fi
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess,zipfile
+          root=Path('paper_a_figures/engraved_workflow/ink_v3')
+          forbidden={'.ttf','.otf','.ttc','.woff','.woff2','.pfb'}
+          with zipfile.ZipFile('/tmp/Figure_1_1_ink_v3_revised.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(root.rglob('*')):
+                  if p.is_file() and '__pycache__' not in p.parts:
+                      assert p.suffix.lower() not in forbidden
+                      z.write(p,p.relative_to(root))
+              z.writestr('PACKAGE_COMMIT.txt',subprocess.check_output(['git','rev-parse','HEAD']).decode())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: figure-1-1-ink-v3-revised
+          path: |
+            /tmp/Figure_1_1_ink_v3_revised.zip
+            /tmp/pdf_mono_review.png
+            /tmp/pdf_qinglu_review.png
+          if-no-files-found: error
+          retention-days: 30
