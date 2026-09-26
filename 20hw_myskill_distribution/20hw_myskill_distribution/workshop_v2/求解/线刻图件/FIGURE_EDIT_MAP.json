@@ -1,0 +1,129 @@
+{
+  "paper_base": "PR #67",
+  "master": "PR #68 Figure 1.1 V5, complete exported qinglu assets",
+  "theme": "qinglu",
+  "redrawn": 19,
+  "reused_master": 1,
+  "figures": [
+    {
+      "number": "1.1",
+      "file": "workflow_qinglu_v5",
+      "action": "直接采用已完成V5青绿稿",
+      "meaning": "只切换论文引用与本地副本，不改母版"
+    },
+    {
+      "number": "4.1",
+      "file": "q1_overview",
+      "action": "重绘构造—邻域—执行示意",
+      "meaning": "用同图对象、核序迁移和Pipe投影替换重复缩图"
+    },
+    {
+      "number": "4.2",
+      "file": "q1_task",
+      "action": "重绘Task边界与DDR交接",
+      "meaning": "直线对齐；保留100/1000周期语义"
+    },
+    {
+      "number": "4.3",
+      "file": "q1_mean",
+      "action": "统一平均加速曲线",
+      "meaning": "100图逐图求比后平均；标注精确均值"
+    },
+    {
+      "number": "4.4",
+      "file": "q1_distribution",
+      "action": "统一经验分布",
+      "meaning": "保留每核数100图，统一核数线型"
+    },
+    {
+      "number": "4.5",
+      "file": "q1_anytime",
+      "action": "重构为搜索质量达成曲线",
+      "meaning": "三条有定义的曲线替代近同色热图"
+    },
+    {
+      "number": "4.6",
+      "file": "q1_bound",
+      "action": "重绘可行周期与下界",
+      "meaning": "去掉冗余颜色编码，保留全部100点和对数轴"
+    },
+    {
+      "number": "5.1",
+      "file": "q2_overview",
+      "action": "重绘驻留重组框架",
+      "meaning": "跨核张量—容量分批—完整评价"
+    },
+    {
+      "number": "5.2",
+      "file": "q2_task",
+      "action": "重绘同核驻留与跨核COPY",
+      "meaning": "端点对齐；明确跨核500周期释放"
+    },
+    {
+      "number": "5.3",
+      "file": "q2_mean",
+      "action": "统一平均加速曲线",
+      "meaning": "原数值不变"
+    },
+    {
+      "number": "5.4",
+      "file": "q2_distribution",
+      "action": "重绘逐图配对分布",
+      "meaning": "100对细线与真实点，保留较差实例"
+    },
+    {
+      "number": "5.5",
+      "file": "q2_copy",
+      "action": "改为速度—搬运散点",
+      "meaning": "全部100图、带符号COPY差、周期减少比例"
+    },
+    {
+      "number": "5.6",
+      "file": "q2_sources",
+      "action": "改为评价次数和改善次数条形",
+      "meaning": "消除双指标读图歧义，标注n/N及比率"
+    },
+    {
+      "number": "6.1",
+      "file": "q3_overview",
+      "action": "重绘完整第三问候选入口",
+      "meaning": "三个候选作用不同，统一检查—评价—接受，冻结方案配对"
+    },
+    {
+      "number": "6.2",
+      "file": "q3_fifo",
+      "action": "重绘FIFO查询/填充机制",
+      "meaning": "命中不刷新，每次COPY_IN完成尝试填充，队尾插入"
+    },
+    {
+      "number": "6.3",
+      "file": "q3_mean",
+      "action": "统一正式同方案核数曲线",
+      "meaning": "保留现稿500组正式值与配对"
+    },
+    {
+      "number": "6.4",
+      "file": "q3_pairs",
+      "action": "统一同方案周期比经验分布",
+      "meaning": "各核数100组，保留全部点"
+    },
+    {
+      "number": "6.5",
+      "file": "q3_hit_gain",
+      "action": "统一命中与收益散点",
+      "meaning": "字节命中率和真实同方案周期比，不作因果拟合"
+    },
+    {
+      "number": "6.6",
+      "file": "q3_parameters",
+      "action": "重绘固定方案参数网格",
+      "meaning": "54格共享比值色阶、千周期数值、默认点边框"
+    },
+    {
+      "number": "6.7",
+      "file": "q3_trace",
+      "action": "重绘事件与读请求时间线",
+      "meaning": "两个张量共用12000周期轴，实际事件及驻留区间"
+    }
+  ]
+}
