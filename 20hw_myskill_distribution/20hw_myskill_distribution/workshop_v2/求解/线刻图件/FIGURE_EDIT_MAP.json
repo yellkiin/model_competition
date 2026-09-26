@@ -15,7 +15,7 @@
     {
       "number": "4.1",
       "file": "q1_overview",
-      "action": "基础构造、迁移、交换、切分",
+      "action": "统一联合方案、候选改进、执行评价，使用单一方案反馈",
       "meaning": "与总图a—d对应",
       "editable_source": "求解/线刻图件/draw_mechanisms.py"
     },
@@ -57,7 +57,7 @@
     {
       "number": "5.1",
       "file": "q2_overview",
-      "action": "突出核心级任务及驻留候选",
+      "action": "统一联合方案、候选改进、执行评价，使用单一方案反馈",
       "meaning": "图内以中文说明周期优先、同周期减少搬运",
       "editable_source": "求解/线刻图件/draw_mechanisms.py"
     },
@@ -99,14 +99,14 @@
     {
       "number": "6.1",
       "file": "q3_overview",
-      "action": "并列候选汇入共同评价",
+      "action": "统一联合方案、候选改进、执行评价，使用单一方案反馈",
       "meaning": "继承a—e，增加f；保持完整方案反馈",
       "editable_source": "求解/线刻图件/draw_mechanisms.py"
     },
     {
       "number": "6.2",
       "file": "q3_fifo",
-      "action": "FIFO事件与水平淘汰对象",
+      "action": "保持FIFO事件语义，尝试填充连线改为直线",
       "meaning": "发射查询、完成填充、命中不刷新，队首淘汰",
       "editable_source": "求解/线刻图件/draw_mechanisms.py"
     },
@@ -145,5 +145,6 @@
       "meaning": "两个张量共用12000周期轴，实际事件及驻留区间",
       "editable_source": "求解/线刻图件/draw_trace.py"
     }
-  ]
+  ],
+  "latest_revision": "统一三环节、参数理论化与摘要精简（2026-09-27）"
 }
