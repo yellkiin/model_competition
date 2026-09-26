@@ -150,6 +150,7 @@ def q1_f01():
     fig.colorbar(hb, ax=ax, label="算例数", shrink=.82)
     ax.set(xlabel="非 COPY 操作数（对数刻度）", ylabel="最大弱连通块占比", title="100 个官方计算图的结构差异")
     ax.set_xticks([3, 3.5, 4, 4.5], ["1千", "3千", "1万", "3万"])
+    ax.tick_params(axis="x", pad=7)
     ax.set_ylim(0, 1.04)
     label(ax, .03, .94, f"n = {len(rows)}", va="top", fontsize=8)
     return save(name, fig, rows, "输入规模与最大弱连通块占比的联合分布；这是候选切图适用域，而非成绩分布。")
@@ -168,7 +169,7 @@ def q1_f02():
     ax.fill_between(core, lows, highs, color=PRIMARY, alpha=.14, label="案例10–90分位")
     ax.plot(core, means, color=PRIMARY, marker="o", ms=6, lw=2.1, label="100例平均加速比")
     for n, mean in zip(core, means):
-        ax.annotate(f"{mean:.3f}", (n, mean), xytext=(0, 7), textcoords="offset points",
+        ax.annotate(f"{mean:.3f}", (n, mean), xytext=(0, 12), textcoords="offset points",
                     ha="center", fontsize=8, color=INK)
     ax.set(xlabel="核心数", ylabel="相对原图单核的加速比", title="问题一：1–5核平均加速比")
     ax.set_xticks(core); ax.set_xlim(.85, 5.15); ax.set_ylim(.8, 5.5)
@@ -276,11 +277,11 @@ def q2_f01():
         y = i + .7 + (np.arange(len(vals)) % 11) / 60
         ax.scatter(vals, y, s=7, alpha=.36, color=PALETTE[i], zorder=3)
         ax.vlines(np.median(vals), i+.54, i+1.16, color=INK, lw=2.1, zorder=4)
-        ax.text(1.53, i+.85, f"均值 {vals.mean():.3f}  中位 {np.median(vals):.3f}", fontsize=7, va="center")
+        ax.text(1.66, i+.85, f"均值 {vals.mean():.3f}  中位 {np.median(vals):.3f}", fontsize=7, va="center")
     ax.axvline(1, color="#606060", ls="--", lw=.9)
     ax.set_yticks([i+.85 for i in range(4)], [f"{n}核" for n in range(2, 6)])
     ax.set(xlabel="同方案场景 A 时长 / 场景 B 时长", title="规则改变本身的成对收益")
-    ax.set_ylim(.4, 4.35); ax.set_xlim(.72, 1.78)
+    ax.set_ylim(.4, 4.35); ax.set_xlim(.72, 1.92)
     return save(name, fig, rows, "同一算例、核数、方案成对比较；散点纵向错开只为减少重叠，不表示额外变量。")
 
 
@@ -315,7 +316,8 @@ def q2_f03():
     ax.plot(x, part+spill, color=INK, marker="o", ms=4, lw=1)
     ax.set_xticks(x)
     ax.set(xlabel="核数", ylabel="平均新增 DDR 搬运 / MiB", title="问题二新增搬运的来源分解")
-    ax.legend(loc="upper right", frameon=False, fontsize=8)
+    ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1.0), borderaxespad=0,
+              frameon=False, fontsize=8)
     return save(name, fig, rows, "每核100例新增字节均值按官方 partition/spill 分解；线表示两部分之和。")
 
 
@@ -330,8 +332,6 @@ def q2_f04():
                     alpha=.78, edgecolor="white", lw=.4)
     fig.colorbar(sc, ax=ax, label="最大弱连通块占比", shrink=.85)
     ax.axvline(1, color="#606060", ls="--", lw=.9)
-    ax.text(.02, .03, "点面积 ∝ 非COPY操作数的对数", transform=ax.transAxes,
-            fontsize=7.5, color=INK, va="bottom")
     ax.set(xlabel="五核私有存储最大峰值 / 题定容量", ylabel="五核加速比",
            title="容量压力与调度收益")
     return save(name, fig, rows, "容量峰值从原始官方时间线逐例读取；横轴是L1和UB两者比例的较大值；点面积单调编码操作数。")
@@ -398,7 +398,8 @@ def q3_f02():
 
 def q3_f03():
     name = "q3-F03"; rows = read(name)
-    fig = plt.figure(figsize=(160/25.4, 91/25.4), layout="constrained")
+    fig = plt.figure(figsize=(160/25.4, 91/25.4))
+    fig.subplots_adjust(left=.035, right=.965, bottom=.10, top=.84, wspace=.02)
     cases = ["case_044", "case_083"]
     for index, case in enumerate(cases, 1):
         ax = fig.add_subplot(1, 2, index, projection="3d")
@@ -414,10 +415,12 @@ def q3_f03():
         ax.plot_surface(X, Y, mesh, cmap=NATURE_SEQ_CMAP, linewidth=.5, edgecolor=NEUTRAL_DARK,
                         antialiased=True, alpha=.92)
         ax.scatter(x, y, z, color=VIOLET, s=13, depthshade=False)
-        ax.set(xlabel="容量/MiB", ylabel="带宽/B/周期", zlabel="时长/千周期")
-        ax.set_title(case, pad=2, fontsize=9)
+        ax.set_xlabel("容量/MiB", fontsize=8, labelpad=2)
+        ax.set_ylabel("带宽/B/周期", fontsize=8, labelpad=3)
+        ax.set_zlabel("时长/千周期", fontsize=8, labelpad=-5)
+        ax.set_title(case, pad=1, fontsize=9)
         ax.view_init(elev=26, azim=-52)
-        ax.tick_params(labelsize=6, pad=0)
+        ax.tick_params(labelsize=5.7, pad=-1)
     fig.suptitle("容量×读带宽的实际九点评估响应（非官方配置）", fontsize=10)
     return save(name, fig, rows, "只展示目的抽样中对配置敏感的两例；曲面连接九个真实网格点，插值面不代表额外实验。")
 
