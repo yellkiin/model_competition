@@ -1,0 +1,46 @@
+% Data-only input filter: keep original generated appendix layouts/Q1/Q2.
+% Replaces only the source-identified changed Q3 rows; Q1/Q2 and layout remain.
+\ExplSyntaxOn
+\prop_new:N \g_ltwo_result_new_prop
+\prop_new:N \g_ltwo_pair_new_prop
+\NewDocumentCommand \LTwoResultRow { m m }
+ { \prop_gput:Nnx \g_ltwo_result_new_prop {#1}{\tl_to_str:n{#2}} }
+\NewDocumentCommand \LTwoPairRow { m m }
+ { \prop_gput:Nnx \g_ltwo_pair_new_prop {#1}{\tl_to_str:n{#2}} }
+\ior_new:N \l_ltwo_file_ior
+\tl_new:N \l_ltwo_output_tl
+\tl_new:N \l_ltwo_line_tl
+\tl_new:N \l_ltwo_key_tl
+\tl_new:N \l_ltwo_new_tl
+\tl_new:N \l_ltwo_cores_tl
+\seq_new:N \l_ltwo_match_seq
+\int_new:N \l_ltwo_question_int
+\cs_generate_variant:Nn \prop_get:NnNT {NVNT}
+\cs_new_protected:Npn \ltwo_replace:N #1
+ { \prop_get:NVNT #1 \l_ltwo_key_tl \l_ltwo_new_tl
+   { \tl_set_eq:NN \l_ltwo_line_tl \l_ltwo_new_tl } }
+\NewDocumentCommand \LTwoAppendixInput { m m }
+ { \group_begin:
+   \tl_clear:N \l_ltwo_output_tl \int_zero:N \l_ltwo_question_int
+   \ior_open:Nn \l_ltwo_file_ior {#2}
+   \ior_str_map_inline:Nn \l_ltwo_file_ior
+    { \tl_set:Nn \l_ltwo_line_tl {##1}
+      \regex_extract_once:nnNT {tab:appendix_q([123])_n([0-9]+)} {##1} \l_ltwo_match_seq
+       { \int_set:Nn \l_ltwo_question_int {\seq_item:Nn\l_ltwo_match_seq{2}}
+         \tl_set:Nx \l_ltwo_cores_tl {\seq_item:Nn\l_ltwo_match_seq{3}} }
+      \str_if_eq:nnTF {#1}{pairs}
+       { \regex_extract_once:nnNT {\A([0-9]{3})\s*\&\s*([1-5])\s*\&} {##1} \l_ltwo_match_seq
+          { \tl_set:Nx \l_ltwo_key_tl {\seq_item:Nn\l_ltwo_match_seq{2}/\seq_item:Nn\l_ltwo_match_seq{3}}
+            \ltwo_replace:N \g_ltwo_pair_new_prop } }
+       { \int_compare:nNnT {\l_ltwo_question_int}={3}
+          { \regex_extract_once:nnNT {\A([0-9]{3})\s*\&} {##1} \l_ltwo_match_seq
+             { \tl_set:Nx \l_ltwo_key_tl {\seq_item:Nn\l_ltwo_match_seq{2}/\l_ltwo_cores_tl}
+               \ltwo_replace:N \g_ltwo_result_new_prop } } }
+      \tl_put_right:Nx \l_ltwo_output_tl {\exp_not:V\l_ltwo_line_tl\char_generate:nn{10}{12}}
+    }
+   \ior_close:N \l_ltwo_file_ior
+   \exp_args:NV \tex_scantokens:D \l_ltwo_output_tl
+   \group_end:
+ }
+\ExplSyntaxOff
+\input{../数据/l2_patch_60_62/appendix_rows.tex}

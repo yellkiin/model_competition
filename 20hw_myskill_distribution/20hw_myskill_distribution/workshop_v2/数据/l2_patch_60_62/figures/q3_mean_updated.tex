@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+\begin{axis}[width=.91\textwidth,height=6.4cm,xlabel={NPU核数},ylabel={逐图平均加速比},xtick={1,2,3,4,5},ymin=.9,ymax=4.95,grid=major,legend pos=north west,legend style={draw=none},tick label style={font=\small}]
+\addplot+[mark=*] coordinates {(1,1.10088152) (2,2.12793261) (3,3.00367933) (4,3.76813776) (5,4.44223630)};\addlegendentry{更新后同方案无L2}
+\addplot+[mark=*] coordinates {(1,1.10118121) (2,2.13073595) (3,3.04277853) (4,3.85861928) (5,4.63328584)};\addlegendentry{更新后同方案有L2}
+\end{axis}
+\end{tikzpicture}
