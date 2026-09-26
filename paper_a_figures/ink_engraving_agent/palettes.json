@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "default": "qinglu",
+  "common": {
+    "paper": "#FFFFFF",
+    "ink": "#202724",
+    "muted": "#535E59",
+    "hair": "#6E7772",
+    "faint": "#B7BFBA",
+    "font_sans": [
+      "Noto Sans CJK SC",
+      "Microsoft YaHei",
+      "sans-serif"
+    ],
+    "font_serif": [
+      "Noto Serif CJK SC",
+      "STIX",
+      "Noto Serif",
+      "serif"
+    ],
+    "stroke_svg": {
+      "main": 2.8,
+      "feedback": 2.1,
+      "local": 1.8,
+      "outline": 2.0,
+      "hair": 0.85
+    },
+    "role_order": [
+      "structure",
+      "memory",
+      "fifo"
+    ],
+    "line_styles": [
+      "solid",
+      "dashed",
+      "dashdot",
+      "dotted"
+    ],
+    "markers": [
+      "o",
+      "s",
+      "D",
+      "^"
+    ]
+  },
+  "palettes": {
+    "qinglu": {
+      "name": "青绿·赭石",
+      "structure": "#446E67",
+      "memory": "#94784D",
+      "fifo": "#9A655B",
+      "note": "默认；青绿主线、赭石驻留、淡朱FIFO。"
+    },
+    "qianjiang": {
+      "name": "浅绛·苔色",
+      "structure": "#657563",
+      "memory": "#987251",
+      "fifo": "#906472",
+      "note": "暖色替代；保留各角色、明暗和线型。"
+    },
+    "yanlan": {
+      "name": "烟岚·石青",
+      "structure": "#586F86",
+      "memory": "#8D8065",
+      "fifo": "#936A68",
+      "note": "冷色替代；适合较多数据线的论文。"
+    },
+    "mono": {
+      "name": "墨线·灰阶",
+      "structure": "#404040",
+      "memory": "#686868",
+      "fifo": "#858585",
+      "note": "黑白打印版；同时使用线型和节点形状区分。",
+      "ink": "#232323",
+      "muted": "#585858",
+      "hair": "#747474",
+      "faint": "#BDBDBD"
+    }
+  }
+}

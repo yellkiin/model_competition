@@ -1,0 +1,92 @@
+{
+  "protected_module_text_and_coordinates": {
+    "bipartite-example": true,
+    "source-base": true,
+    "source-structure": true,
+    "source-residency": true,
+    "source-fifo": true
+  },
+  "formula_boxes_svg_units": {
+    "makespan-title": [
+      2286.566964285714,
+      1661.1996875,
+      427.8898363095238,
+      32.2500625
+    ],
+    "makespan-formula": [
+      2369.5894345238094,
+      1714.783482142857,
+      280.3808482142857,
+      51.97418303571428
+    ],
+    "copy-tiebreak": [
+      2295.354910714286,
+      1782.6717857142858,
+      428.01456845238096,
+      29.495938988095237
+    ]
+  },
+  "connector_formula_collisions_with_12_unit_margin": [],
+  "variants": {
+    "qinglu": {
+      "text_nodes": 172,
+      "raster_nodes": 0,
+      "named_layers": [
+        "page",
+        "joint-decision",
+        "neighborhoods",
+        "execution",
+        "accept-feedback",
+        "outputs",
+        "legend",
+        "ink-process-links"
+      ]
+    },
+    "qianjiang": {
+      "text_nodes": 172,
+      "raster_nodes": 0,
+      "named_layers": [
+        "page",
+        "joint-decision",
+        "neighborhoods",
+        "execution",
+        "accept-feedback",
+        "outputs",
+        "legend",
+        "ink-process-links"
+      ]
+    },
+    "yanlan": {
+      "text_nodes": 172,
+      "raster_nodes": 0,
+      "named_layers": [
+        "page",
+        "joint-decision",
+        "neighborhoods",
+        "execution",
+        "accept-feedback",
+        "outputs",
+        "legend",
+        "ink-process-links"
+      ]
+    },
+    "mono": {
+      "text_nodes": 172,
+      "raster_nodes": 0,
+      "named_layers": [
+        "page",
+        "joint-decision",
+        "neighborhoods",
+        "execution",
+        "accept-feedback",
+        "outputs",
+        "legend",
+        "ink-process-links"
+      ]
+    }
+  },
+  "renderer": "Inkscape 1.4 (e7c3feb100, 2024-10-09)",
+  "visual_review": "PNG and independently rasterized PDF inspected locally; all four themes generated.",
+  "chart_adapter": "Matplotlib 3.10.8: existing line/scatter/bar numeric arrays and axis limits preserved; CJK labels rendered without warnings; rc_context restored.",
+  "scope": "Workflow refinement and reusable styling tools. No original experiment values modified; no paper-wide figure replacement."
+}
