@@ -15,22 +15,21 @@ jobs:
           fetch-depth: 1
           lfs: false
           sparse-checkout: |
-            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/总体/图片
-            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题一/图片
-            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题二/图片
-            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题三/图片
-      - name: Package existing figure assets without regenerating data
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题一/源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题二/源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题三/源码
+      - name: Package source listings used by the existing appendix; do not execute
         shell: python
         run: |
           import pathlib, zipfile
-          w = pathlib.Path('20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解')
-          with zipfile.ZipFile('paper-existing-figures.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-              for folder in ['总体', '问题一', '问题二', '问题三']:
-                  for p in sorted((w/folder/'图片').rglob('*')):
+          w = pathlib.Path('20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件')
+          with zipfile.ZipFile('paper-appendix-inputs.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+              for folder in ['问题一', '问题二', '问题三']:
+                  for p in sorted((w/folder/'源码').rglob('*.py')):
                       if p.is_file(): z.write(p, str(p))
-          print('Existing assets copied only. No experimental execution.')
+          print('Source listing files copied; no solvers or tests executed.')
       - uses: actions/upload-artifact@v4
         with:
-          name: paper-existing-figures
-          path: paper-existing-figures.zip
+          name: paper-appendix-inputs
+          path: paper-appendix-inputs.zip
           retention-days: 3
