@@ -60,6 +60,7 @@ bootstrap='\n'.join([
  r'\setCJKsansfont[AutoFakeBold=2.15,Path='+fontpath+r']{SimHei.ttf}',
  r'\setCJKfamilyfont{zhhei}[AutoFakeBold=2.15,Path='+fontpath+r']{SimHei.ttf}',
  r'\setCJKfamilyfont{zhli}[Path='+fontpath+r']{LiSu.ttf}',
+ r'\setCJKfamilyfont{gmcmabstract}[AutoFakeBold=2.15,Path='+fontpath+r']{LiSu.ttf}',
  r'\renewcommand{\lishu}{\CJKfamily{zhli}}',''])
 source=source.replace('\\begin{document}',bootstrap+'\\begin{document}')
 tex.write_text(source,encoding='utf-8')
@@ -78,7 +79,6 @@ finally:
         if f.exists(): shutil.copy2(f,ART/f.name)
 shutil.copy2(paper/'paper.pdf',ROOT/WS/'论文/论文.pdf'); changed.append(WS/'论文/论文.pdf')
 (ART/'compile-environment.txt').write_text('Windows native SimSun / Times New Roman / Arial / Courier New / Consolas. Existing repository SimHei. Unchanged masthead and labels use only glyphs already embedded in the current 78-page manuscript (STXinwei, LiSu), reconstructed solely in a disposable directory. No fonts or temporary font substitutions are committed. Three XeLaTeX passes and BibTeX; no experiments, smoke tests or hash tests.\n',encoding='utf-8')
-# Collect delivery files before pushing so a network failure cannot discard a successful compilation.
 with zipfile.ZipFile(ART/'revised-manuscript.zip','w',zipfile.ZIP_DEFLATED) as z:
     for rel in changed:
         z.write(ROOT/rel,rel.as_posix())
