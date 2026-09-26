@@ -1,0 +1,70 @@
+name: Publish reviewed workflow v5 once
+on:
+  push:
+    branches: [figures/workflow-v5-alignment-q2-20260927]
+    paths:
+      - paper_a_figures/engraved_workflow/ink_v5/build.py
+      - paper_a_figures/engraved_workflow/ink_v5/verify.py
+      - .github/workflows/publish-workflow-v5-once.yml
+permissions:
+  contents: write
+concurrency:
+  group: publish-reviewed-workflow-v5
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      D: paper_a_figures/engraved_workflow/ink_v5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          lfs: false
+          sparse-checkout: |
+            paper_a_figures/engraved_workflow/ink_v4
+            paper_a_figures/engraved_workflow/ink_v5
+            .github/workflows
+      - name: Install vector exporters
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends inkscape poppler-utils
+      - name: Reproduce locally reviewed four-palette vectors
+        run: |
+          python3 "$D/build.py" --all
+          python3 "$D/verify.py" --renders
+      - name: Match every SVG against the local review
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          d=Path(os.environ['D'])
+          expected=json.loads((d/'docs/REVIEWED_SVG_SHA256.json').read_text())
+          for rel,sha in expected.items():
+              actual=hashlib.sha256((d/rel).read_bytes()).hexdigest()
+              assert actual==sha, (rel,actual,sha)
+          print('All 8 published SVGs match the locally reviewed artwork byte-for-byte.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: workflow-ink-v5-complete
+          include-hidden-files: true
+          retention-days: 30
+          path: |
+            paper_a_figures/engraved_workflow/ink_v5/
+            !paper_a_figures/engraved_workflow/ink_v5/**/__pycache__/**
+      - name: Commit complete v5 figures and remove this one-use exporter
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$D/assets" "$D/exports" "$D/docs"
+          git rm .github/workflows/publish-workflow-v5-once.yml
+          git diff --cached --name-only | while IFS= read -r p; do
+            case "$p" in
+              "$D"/*|.github/workflows/publish-workflow-v5-once.yml) ;;
+              *) echo "Unexpected modified path: $p"; exit 1 ;;
+            esac
+          done
+          git commit -m 'fig(A): publish verified v5 four-palette SVG PDF PNG and remove one-use exporter'
+          git push origin HEAD:refs/heads/figures/workflow-v5-alignment-q2-20260927
