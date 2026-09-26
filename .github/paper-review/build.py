@@ -47,7 +47,10 @@ recover(ROOT/WS/'论文/论文.pdf',fonts)
 shutil.copy2(ROOT/'各种建模agent/MathModelAgent/backend/fonts/simhei.ttf',fonts/'SimHei.ttf')
 fontpath=fonts.as_posix()+'/'
 style=paper/'gmcm-title.sty'
-style.write_text(style.read_text(encoding='utf-8').replace('{STXinwei}','{'+fontpath+'STXinwei.ttf}'),encoding='utf-8')
+st=style.read_text(encoding='utf-8')
+st=st.replace(r'\IfFontExistsTF{STXinwei}',r'\IfFileExists{'+fontpath+'STXinwei.ttf}')
+st=st.replace(r'\setCJKfamilyfont{hwxw}[AutoFakeBold=2]{STXinwei}',r'\setCJKfamilyfont{hwxw}[AutoFakeBold=2,Path='+fontpath+r']{STXinwei.ttf}')
+style.write_text(st,encoding='utf-8')
 tex=paper/'论文.tex'; source=tex.read_text(encoding='utf-8')
 source=source.replace('\\documentclass[bwprint]','\\documentclass[bwprint,fontset=fandol]')
 bootstrap='\n'.join([
@@ -75,13 +78,7 @@ finally:
         if f.exists(): shutil.copy2(f,ART/f.name)
 shutil.copy2(paper/'paper.pdf',ROOT/WS/'论文/论文.pdf'); changed.append(WS/'论文/论文.pdf')
 (ART/'compile-environment.txt').write_text('Windows native SimSun / Times New Roman / Arial / Courier New / Consolas. Existing repository SimHei. Unchanged masthead and labels use only glyphs already embedded in the current 78-page manuscript (STXinwei, LiSu), reconstructed solely in a disposable directory. No fonts or temporary font substitutions are committed. Three XeLaTeX passes and BibTeX; no experiments, smoke tests or hash tests.\n',encoding='utf-8')
-run(['git','config','user.name','github-actions[bot]'])
-run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'])
-run(['git','add','--']+[p.as_posix() for p in changed])
-if subprocess.run(['git','diff','--cached','--quiet']).returncode:
-    run(['git','commit','-m','revise(A): implement annotated theory, notation, workflow and compiled manuscript'])
-    run(['git','push','origin','HEAD:'+BRANCH])
-(ART/'MANUSCRIPT_COMMIT.txt').write_text(subprocess.check_output(['git','rev-parse','HEAD']).decode(),encoding='utf-8')
+# Collect delivery files before pushing so a network failure cannot discard a successful compilation.
 with zipfile.ZipFile(ART/'revised-manuscript.zip','w',zipfile.ZIP_DEFLATED) as z:
     for rel in changed:
         z.write(ROOT/rel,rel.as_posix())
@@ -89,3 +86,10 @@ with zipfile.ZipFile(ART/'revised-manuscript.zip','w',zipfile.ZIP_DEFLATED) as z
         z.write(ROOT/rel,rel.as_posix())
 shutil.copy2(paper/'paper.pdf',ART/'论文.pdf')
 shutil.rmtree(fonts)
+run(['git','config','user.name','github-actions[bot]'])
+run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'])
+run(['git','add','--']+[p.as_posix() for p in changed])
+if subprocess.run(['git','diff','--cached','--quiet']).returncode:
+    run(['git','commit','-m','revise(A): implement annotated theory, notation, workflow and compiled manuscript'])
+    run(['git','push','origin','HEAD:'+BRANCH])
+(ART/'MANUSCRIPT_COMMIT.txt').write_text(subprocess.check_output(['git','rev-parse','HEAD']).decode(),encoding='utf-8')
