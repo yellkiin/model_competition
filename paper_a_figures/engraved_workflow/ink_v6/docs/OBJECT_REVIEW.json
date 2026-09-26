@@ -1,0 +1,92 @@
+{
+  "version": "ink_v6",
+  "variants": [
+    {
+      "palette": "qinglu",
+      "svg_pair_source_verified": true,
+      "portable_text_nodes": 0,
+      "editable_text_nodes": 101,
+      "six_operation_checks": "PASS",
+      "inherited_01_graph_and_03_artwork": "PASS",
+      "pdf_pages": 1,
+      "pdf_fonts": 0,
+      "pdf_images": 0,
+      "png": [
+        6000,
+        2657
+      ],
+      "preview": [
+        2100,
+        930
+      ]
+    },
+    {
+      "palette": "qianjiang",
+      "svg_pair_source_verified": true,
+      "portable_text_nodes": 0,
+      "editable_text_nodes": 101,
+      "six_operation_checks": "PASS",
+      "inherited_01_graph_and_03_artwork": "PASS",
+      "pdf_pages": 1,
+      "pdf_fonts": 0,
+      "pdf_images": 0,
+      "png": [
+        6000,
+        2657
+      ],
+      "preview": [
+        2100,
+        930
+      ]
+    },
+    {
+      "palette": "yanlan",
+      "svg_pair_source_verified": true,
+      "portable_text_nodes": 0,
+      "editable_text_nodes": 101,
+      "six_operation_checks": "PASS",
+      "inherited_01_graph_and_03_artwork": "PASS",
+      "pdf_pages": 1,
+      "pdf_fonts": 0,
+      "pdf_images": 0,
+      "png": [
+        6000,
+        2657
+      ],
+      "preview": [
+        2100,
+        930
+      ]
+    },
+    {
+      "palette": "mono",
+      "svg_pair_source_verified": true,
+      "portable_text_nodes": 0,
+      "editable_text_nodes": 101,
+      "six_operation_checks": "PASS",
+      "inherited_01_graph_and_03_artwork": "PASS",
+      "pdf_pages": 1,
+      "pdf_fonts": 0,
+      "pdf_images": 0,
+      "png": [
+        6000,
+        2657
+      ],
+      "preview": [
+        2100,
+        930
+      ]
+    }
+  ],
+  "geometry_sha256": {
+    "0": "4be5313e332b4292510a63c85942e5228d99ed5861ee5e93e4dc331ef886e251",
+    "1": "c950758f49d62336e5e19cf51c271cbc23d7de3f4cde619ccb722000f337e663"
+  },
+  "scope": "Only ink_v6; no solver experiments, numerical results or existing paper files changed.",
+  "best_semantics": "Best feasible among evaluated candidates; no global optimality certificate.",
+  "coverage_in_prose": {
+    "Q1": "abcd",
+    "Q2": "abcde",
+    "Q3": "abcdef"
+  }
+}
