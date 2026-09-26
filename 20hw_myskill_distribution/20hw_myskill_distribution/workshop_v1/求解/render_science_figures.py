@@ -1,4 +1,4 @@
-"""Render the 16 predeclared questions from real formal figure-data tables.
+"""Render the 18 predeclared scientific figures from real formal figure-data tables.
 
 All plots use per-case or explicitly identified purposive-sample rows.  No
 smoothed values, synthetic replicates, test labels, or template statistics enter.
@@ -25,21 +25,64 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "求解/图件数据"
 OUT = ROOT / "求解/正式图件"
-BLUE = "#264F82"
-CYAN = "#178E9D"
-ORANGE = "#D7793C"
-PURPLE = "#7A609F"
-GREEN = "#43876F"
-LIGHT = "#D9E5F0"
-INK = "#1C2C41"
-PALETTE = [BLUE, CYAN, ORANGE, PURPLE, GREEN]
+# Nature Figure v2.8 style-only adaptation: the scientific transforms and
+# statistics below are unchanged; only visual encoding and export metadata move
+# to a restrained, color-vision-aware publication palette.
+NATURE = {
+    "blue_main": "#0F4D92",
+    "blue_secondary": "#3775BA",
+    "teal": "#42949E",
+    "violet": "#9A4D8E",
+    "baseline_dark": "#484878",
+    "baseline_mid": "#7884B4",
+    "baseline_soft": "#B4C0E4",
+    "neutral_light": "#D8D8D8",
+    "neutral_mid": "#A8A8A8",
+    "neutral_dark": "#606060",
+    "neutral_black": "#272727",
+    "delta_up": "#2E9E44",
+    "delta_down": "#E53935",
+    "bg_lilac": "#E0E0F0",
+    "bg_aqua": "#E0F0F0",
+    "bg_peach": "#F0E0D0",
+}
+PRIMARY = NATURE["blue_main"]
+SECONDARY = NATURE["teal"]
+VIOLET = NATURE["violet"]
+BASELINE = NATURE["baseline_mid"]
+BASELINE_DARK = NATURE["baseline_dark"]
+LIGHT = NATURE["neutral_light"]
+NEUTRAL_MID = NATURE["neutral_mid"]
+NEUTRAL_DARK = NATURE["neutral_dark"]
+POSITIVE = NATURE["delta_up"]
+ADVERSE = NATURE["delta_down"]
+INK = NATURE["neutral_black"]
+
+# Ordered core-count series use a single blue/lilac family; unrelated case
+# categories use distinct restrained hues rather than a sequential scale.
+PALETTE = [
+    NATURE["baseline_soft"],
+    NATURE["baseline_mid"],
+    NATURE["blue_secondary"],
+    NATURE["blue_main"],
+    NATURE["baseline_dark"],
+]
+CASE_COLORS = [PRIMARY, SECONDARY, VIOLET, BASELINE_DARK, BASELINE, NEUTRAL_DARK]
+NATURE_SEQ_CMAP = mcolors.LinearSegmentedColormap.from_list(
+    "nature_seq", [NATURE["bg_aqua"], NATURE["baseline_soft"], PRIMARY]
+)
 
 
 plt.rcParams.update({
-    "font.family": "Microsoft YaHei", "pdf.fonttype": 42,
+    "font.family": "sans-serif",
+    "font.sans-serif": ["Arial", "Microsoft YaHei", "Noto Sans CJK SC", "DejaVu Sans", "sans-serif"],
+    "svg.fonttype": "none",
+    "pdf.fonttype": 42,
     "font.size": 9, "axes.labelsize": 9, "axes.titlesize": 10,
-    "axes.edgecolor": "#728298", "axes.labelcolor": INK,
+    "axes.edgecolor": NEUTRAL_MID, "axes.labelcolor": INK,
+    "axes.linewidth": .9,
     "xtick.color": INK, "ytick.color": INK, "text.color": INK,
+    "legend.frameon": False,
     "savefig.facecolor": "white", "figure.facecolor": "white",
     "axes.spines.top": False, "axes.spines.right": False,
 })
@@ -72,10 +115,12 @@ def save(name, fig, rows, observation):
     OUT.mkdir(exist_ok=True)
     fig.canvas.draw()
     pdf = OUT / f"{name}.pdf"
+    svg = OUT / f"{name}.svg"
     png = OUT / f"{name}.png"
     with warnings.catch_warnings(record=True) as caught:
         warnings.simplefilter("always")
         fig.savefig(pdf, bbox_inches=None)
+        fig.savefig(svg, bbox_inches=None)
         fig.savefig(png, dpi=300, bbox_inches=None)
     glyph = [str(w.message) for w in caught if "Glyph" in str(w.message)]
     if glyph:
@@ -86,8 +131,10 @@ def save(name, fig, rows, observation):
              "input": source.relative_to(ROOT).as_posix(),
              "input_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
              "output_pdf": pdf.relative_to(ROOT).as_posix(),
+             "output_svg": svg.relative_to(ROOT).as_posix(),
              "output_png": png.relative_to(ROOT).as_posix(),
              "pdf_sha256": hashlib.sha256(pdf.read_bytes()).hexdigest(),
+             "svg_sha256": hashlib.sha256(svg.read_bytes()).hexdigest(),
              "png_sha256": hashlib.sha256(png.read_bytes()).hexdigest(),
              "scientific_observation": observation, "status": "rendered_pending_visual_review"}
     (OUT / f"{name}.stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -98,7 +145,7 @@ def q1_f01():
     name = "q1-F01"; rows = read(name)
     x = np.log10(arr(rows, "internal_ops")); y = arr(rows, "largest_component_fraction")
     fig, ax = canvas()
-    cmap = mcolors.LinearSegmentedColormap.from_list("visible_density", ["#B4DCD1", "#3CAAB1", "#234A7B"])
+    cmap = mcolors.LinearSegmentedColormap.from_list("visible_density", [NATURE["bg_aqua"], NATURE["baseline_soft"], PRIMARY])
     hb = ax.hexbin(x, y, gridsize=(17, 11), mincnt=1, cmap=cmap, linewidths=.35, edgecolors="white")
     fig.colorbar(hb, ax=ax, label="算例数", shrink=.82)
     ax.set(xlabel="非 COPY 操作数（对数刻度）", ylabel="最大弱连通块占比", title="100 个官方计算图的结构差异")
@@ -138,13 +185,13 @@ def q1_f03():
     groups = [speed[bins == i] for i in range(4)]
     fig, ax = canvas(87)
     vp = ax.violinplot(groups, positions=np.arange(4), showextrema=False, widths=.82)
-    for body, color in zip(vp["bodies"], [BLUE, CYAN, PURPLE, ORANGE]):
+    for body, color in zip(vp["bodies"], [PALETTE[0], PALETTE[1], PALETTE[2], PALETTE[3]]):
         body.set_facecolor(color); body.set_edgecolor(color); body.set_alpha(.32)
     for i, values in enumerate(groups):
         ax.scatter(np.full(len(values), i) + np.linspace(-.12, .12, len(values)), values,
                    s=7, color=PALETTE[i], alpha=.55, zorder=3)
         ax.hlines(np.median(values), i-.27, i+.27, color=INK, lw=2)
-    ax.axhline(1, color="#778596", ls="--", lw=.9)
+    ax.axhline(1, color="#606060", ls="--", lw=.9)
     ax.set_xticks(range(4), [f"Q{i+1}\nn={len(groups[i])}" for i in range(4)])
     ax.set(xlabel="最大弱连通块占比四分位组", ylabel="五核加速比", title="图结构与五核收益的异质性")
     return save(name, fig, rows, "按输入结构四分位分组的五核加速比分布；每点仍是一例，不把组差称因果。")
@@ -155,10 +202,10 @@ def q1_f04():
     x = arr(rows, "added_copy_mb"); y = arr(rows, "speedup"); size = arr(rows, "internal_ops")
     fig, ax = canvas()
     sc = ax.scatter(x, y, c=np.log10(size), s=22 + 34 * (np.log10(size)-2.7),
-                    cmap="viridis", alpha=.78, edgecolor="white", linewidth=.35)
+                    cmap=NATURE_SEQ_CMAP, alpha=.78, edgecolor="white", linewidth=.35)
     fig.colorbar(sc, ax=ax, label="操作数 log10", shrink=.82)
     ax.set_xscale("symlog", linthresh=.1)
-    ax.axhline(1, color="#778596", ls="--", lw=.9)
+    ax.axhline(1, color="#606060", ls="--", lw=.9)
     ax.set(xlabel="五核新增 DDR 搬运 / MiB（对称对数刻度）", ylabel="五核加速比",
            title="并行收益与额外搬运的逐例权衡")
     label(ax, .04, .95, "零新增搬运在横轴原点", va="top", fontsize=7)
@@ -176,7 +223,7 @@ def q1_f05():
         totals[i, j] += 1; bands[i, j] += row["candidate"] == "bands8"
     rate = np.divide(bands, totals, out=np.full((4, 4), np.nan), where=totals > 0)
     fig, ax = canvas(83)
-    im = ax.imshow(rate, cmap="BuPu", vmin=0, vmax=1, aspect="auto")
+    im = ax.imshow(rate, cmap=NATURE_SEQ_CMAP, vmin=0, vmax=1, aspect="auto")
     fig.colorbar(im, ax=ax, label="依赖段候选胜出比例", shrink=.86)
     for i in range(4):
         for j in range(4):
@@ -197,7 +244,7 @@ def q1_f06():
     for row in rows:
         by[row["case"], row["cores"]].append(row)
     fig, ax = canvas()
-    color = {"components": BLUE, "bands8": ORANGE, "batches800": GREEN}
+    color = {"components": PRIMARY, "bands8": SECONDARY, "batches800": VIOLET}
     for key, group in by.items():
         best = min(float(r["makespan_cycles"]) for r in group)
         for r in group:
@@ -209,7 +256,7 @@ def q1_f06():
         ax.scatter(xx, yy, s=21, alpha=.68, color=color[candidate], label=candidate,
                    edgecolor="white", linewidth=.25)
     ax.set_xscale("log")
-    ax.axhline(1, color="#8996A6", ls="--", lw=.9)
+    ax.axhline(1, color="#606060", ls="--", lw=.9)
     ax.set(xlabel="单候选官方评估耗时 / s（对数刻度）", ylabel="本候选时长相对该配置最佳时长的比值倒数",
            title="候选质量与官方评估计算成本")
     ax.legend(frameon=False, title="候选", fontsize=8)
@@ -230,7 +277,7 @@ def q2_f01():
         ax.scatter(vals, y, s=7, alpha=.36, color=PALETTE[i], zorder=3)
         ax.vlines(np.median(vals), i+.54, i+1.16, color=INK, lw=2.1, zorder=4)
         ax.text(1.53, i+.85, f"均值 {vals.mean():.3f}  中位 {np.median(vals):.3f}", fontsize=7, va="center")
-    ax.axvline(1, color="#68788B", ls="--", lw=.9)
+    ax.axvline(1, color="#606060", ls="--", lw=.9)
     ax.set_yticks([i+.85 for i in range(4)], [f"{n}核" for n in range(2, 6)])
     ax.set(xlabel="同方案场景 A 时长 / 场景 B 时长", title="规则改变本身的成对收益")
     ax.set_ylim(.4, 4.35); ax.set_xlim(.72, 1.78)
@@ -242,11 +289,11 @@ def q2_f02():
     groups = [arr([r for r in rows if int(r["cores"]) == n], "q2_policy_gain") for n in range(2, 6)]
     fig, ax = canvas(84)
     bp = ax.boxplot(groups, positions=np.arange(2, 6), widths=.58, patch_artist=True,
-                    showfliers=True, flierprops={"markersize": 3, "markerfacecolor": ORANGE, "alpha": .5})
+                    showfliers=True, flierprops={"markersize": 3, "markerfacecolor": NEUTRAL_DARK, "alpha": .5})
     for patch, c in zip(bp["boxes"], PALETTE):
         patch.set_facecolor(mcolors.to_rgba(c, .25)); patch.set_edgecolor(c)
     for med in bp["medians"]: med.set_color(INK); med.set_linewidth(2)
-    ax.axhline(1, color="#69798B", ls="--", lw=.9)
+    ax.axhline(1, color="#606060", ls="--", lw=.9)
     ax.set(xlabel="核数", ylabel="固定问题一方案时长 / 问题二择优时长",
            title="场景 B 内重新择优的附加收益")
     ax.set_xticks(range(2, 6)); ax.set_ylim(.98, max(max(g) for g in groups)*1.07)
@@ -264,7 +311,7 @@ def q2_f03():
                     arr(sub, "spill_added_copy_bytes").mean()/1048576)
     x = np.array(list(means)); part = np.array([means[n][0] for n in x]); spill = np.array([means[n][1] for n in x])
     fig, ax = canvas(83)
-    ax.stackplot(x, part, spill, labels=["切图边界", "容量 Spill"], colors=[CYAN, ORANGE], alpha=.78)
+    ax.stackplot(x, part, spill, labels=["切图边界", "容量 Spill"], colors=[SECONDARY, ADVERSE], alpha=.78)
     ax.plot(x, part+spill, color=INK, marker="o", ms=4, lw=1)
     ax.set_xticks(x)
     ax.set(xlabel="核数", ylabel="平均新增 DDR 搬运 / MiB", title="问题二新增搬运的来源分解")
@@ -280,10 +327,10 @@ def q2_f04():
     size = arr(rows, "internal_ops")
     marker_area = 22 + 66 * (np.log10(size) - np.log10(size).min()) / max(.01, np.ptp(np.log10(size)))
     fig, ax = canvas()
-    sc = ax.scatter(x, y, c=c, cmap="viridis", vmin=0, vmax=1, s=marker_area,
+    sc = ax.scatter(x, y, c=c, cmap=NATURE_SEQ_CMAP, vmin=0, vmax=1, s=marker_area,
                     alpha=.78, edgecolor="white", lw=.4)
     fig.colorbar(sc, ax=ax, label="最大弱连通块占比", shrink=.85)
-    ax.axvline(1, color="#778596", ls="--", lw=.9)
+    ax.axvline(1, color="#606060", ls="--", lw=.9)
     ax.text(.02, .03, "点面积 ∝ 非COPY操作数的对数", transform=ax.transAxes,
             fontsize=7.5, color=INK, va="bottom")
     ax.set(xlabel="五核私有存储最大峰值 / 题定容量", ylabel="五核加速比",
@@ -296,9 +343,9 @@ def q2_f05():
     x = np.asarray([float(r["q1_speedup"])-float(r["q2_speedup"]) for r in rows])
     y = np.asarray([(int(r["q2_added_copy_bytes"])-int(r["q1_added_copy_bytes"]))/1048576 for r in rows])
     fig, ax = canvas()
-    ax.scatter(x, y, s=30, c=np.where(y < 0, CYAN, ORANGE), alpha=.72,
+    ax.scatter(x, y, s=30, c=np.where(y < 0, POSITIVE, ADVERSE), alpha=.72,
                edgecolors="white", linewidths=.35)
-    ax.axhline(0, color="#7B8A9B", lw=.9); ax.axvline(0, color="#7B8A9B", lw=.9)
+    ax.axhline(0, color="#606060", lw=.9); ax.axvline(0, color="#606060", lw=.9)
     ax.set(xlabel="五核加速比变化：问题一 − 问题二", ylabel="新增DDR搬运变化：问题二 − 问题一 / MiB",
            title="换场景并重新择优后的速度—搬运方向")
     label(ax, .03, .96, "左下：同时加速且减少新增搬运", va="top", fontsize=7)
@@ -311,7 +358,7 @@ def q2_f06():
     means = [arr([r for r in rows if int(r["cores"]) == n], "q2_speedup").mean() for n in core]
     assert len(rows) == 500
     fig, ax = canvas(83)
-    ax.plot(core, means, color=CYAN, marker="o", ms=6, lw=2.1, label="场景B平均加速比")
+    ax.plot(core, means, color=PRIMARY, marker="o", ms=6, lw=2.1, label="场景B平均加速比")
     for n, mean in zip(core, means):
         ax.annotate(f"{mean:.3f}", (n, mean), xytext=(0, 8), textcoords="offset points",
                     ha="center", fontsize=8, color=INK)
@@ -327,7 +374,7 @@ def q3_f01():
     for n, c in zip(range(1, 6), PALETTE):
         vals = np.sort(arr([r for r in rows if int(r["cores"]) == n], "cache_gain"))
         ax.step(vals, np.arange(1, 101)/100, where="post", color=c, lw=1.6, label=f"{n}核")
-    ax.axvline(1, color="#708092", ls="--", lw=.9)
+    ax.axvline(1, color="#606060", ls="--", lw=.9)
     ax.set(xlabel="同方案无 L2 / 有 L2 时长", ylabel="累计案例比例",
            title="官方固定配置下的 Cache 收益经验分布")
     ax.set_xlim(.99, 1.45); ax.set_ylim(0, 1.01)
@@ -339,11 +386,11 @@ def q3_f02():
     name = "q3-F02"; rows = read(name)
     x = arr(rows, "q3_cache_hit_rate"); y = arr(rows, "q3_cache_gain")
     fig, ax = canvas()
-    cmap = mcolors.LinearSegmentedColormap.from_list("visible_cache_density", ["#B7D9D7", "#55A6AF", "#07546B"])
+    cmap = mcolors.LinearSegmentedColormap.from_list("visible_cache_density", [NATURE["bg_aqua"], NATURE["baseline_soft"], PRIMARY])
     hb = ax.hexbin(x, y, gridsize=(21, 15), mincnt=1, cmap=cmap, linewidths=.2)
     fig.colorbar(hb, ax=ax, label="算例数", shrink=.83)
-    ax.scatter(x[x==0], y[x==0], s=11, facecolors="none", edgecolors=ORANGE, lw=.8, label="零命中")
-    ax.axhline(1, color="#778596", ls="--", lw=.9)
+    ax.scatter(x[x==0], y[x==0], s=11, facecolors="none", edgecolors=BASELINE_DARK, lw=.8, label="零命中")
+    ax.axhline(1, color="#606060", ls="--", lw=.9)
     ax.set(xlabel="L2 命中字节率", ylabel="同方案 Cache 加速比",
            title="命中率与全局时长收益的关系")
     ax.legend(frameon=False, loc="upper left", fontsize=7)
@@ -365,9 +412,9 @@ def q3_f03():
                           if float(r["capacity_bytes"])/1048576 == cx and float(r["bandwidth_bytes_per_cycle"]) == by)
                           for cx in order_x] for by in order_y])
         X, Y = np.meshgrid(order_x, order_y)
-        ax.plot_surface(X, Y, mesh, cmap="viridis", linewidth=.5, edgecolor="#52738C",
+        ax.plot_surface(X, Y, mesh, cmap=NATURE_SEQ_CMAP, linewidth=.5, edgecolor="#52738C",
                         antialiased=True, alpha=.92)
-        ax.scatter(x, y, z, color=ORANGE, s=13, depthshade=False)
+        ax.scatter(x, y, z, color=VIOLET, s=13, depthshade=False)
         ax.set(xlabel="容量/MiB", ylabel="带宽/B/周期", zlabel="时长/千周期")
         ax.set_title(case, pad=2, fontsize=9)
         ax.view_init(elev=26, azim=-52)
@@ -385,7 +432,7 @@ def q3_f04():
                      key=lambda r: int(r["capacity_bytes"]))
         assert len(sub) == 3
         x = arr(sub, "capacity_bytes")/1048576; y = arr(sub, "hit_rate")
-        ax.plot(x, y, marker="o", ms=4, lw=1.3, color=PALETTE[i%5], label=case[-3:])
+        ax.plot(x, y, marker="o", ms=4, lw=1.3, color=CASE_COLORS[i % len(CASE_COLORS)], label=case[-3:])
     ax.set_xscale("log", base=4)
     ax.set_xticks([.25, 1, 4], ["0.25", "1", "4"])
     ax.set(xlabel="L2 容量 / MiB（读带宽固定250 B/周期）", ylabel="命中字节率",
@@ -405,7 +452,7 @@ def q3_f05():
     miss = np.array([totals[n][1] for n in range(1, 6)])
     fig, ax = canvas(82)
     ypos = np.arange(1, 6)
-    ax.barh(ypos, hit, color=CYAN, height=.62, label="命中字节")
+    ax.barh(ypos, hit, color=PRIMARY, height=.62, label="命中字节")
     ax.barh(ypos, miss, left=hit, color=LIGHT, height=.62, label="未命中字节")
     for n, h, m in zip(ypos, hit, miss):
         ax.text(h+m, n, f"  {h/(h+m):.1%}", va="center", fontsize=8)
@@ -423,9 +470,9 @@ def q3_f06():
     no_l2 = [arr([r for r in rows if int(r["cores"]) == n], "no_l2_speedup").mean() for n in core]
     with_l2 = [arr([r for r in rows if int(r["cores"]) == n], "with_l2_speedup").mean() for n in core]
     fig, ax = canvas(87)
-    ax.plot(core, no_l2, color=ORANGE, marker="o", ms=5.5, lw=2,
+    ax.plot(core, no_l2, color=BASELINE, marker="o", ms=5.5, lw=2,
             label="同方案无L2")
-    ax.plot(core, with_l2, color=BLUE, marker="s", ms=5.5, lw=2,
+    ax.plot(core, with_l2, color=PRIMARY, marker="s", ms=5.5, lw=2,
             label="同方案有L2")
     ax.set(xlabel="核心数", ylabel="相对原图无L2单核的加速比", title="问题三：同方案无L2与共享只读L2比较")
     ax.set_xticks(core); ax.set_xlim(.85, 5.15); ax.set_ylim(.8, max(with_l2)*1.18)
