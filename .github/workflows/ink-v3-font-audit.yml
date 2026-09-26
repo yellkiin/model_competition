@@ -7,31 +7,18 @@ permissions:
   contents: read
 jobs:
   audit:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 1
-          filter: blob:none
-          sparse-checkout: |
-            paper_a_figures/engraved_workflow/ink_v2/assets
-            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/论文
-      - name: Collect only the figure inputs and paper typography evidence
+      - name: Check installed paper font families and vector renderer
+        shell: pwsh
         run: |
-          set -euo pipefail
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq poppler-utils
-          mkdir -p /tmp/ink-v3-reference/v2 /tmp/ink-v3-reference/paper
-          cp paper_a_figures/engraved_workflow/ink_v2/assets/*.svg /tmp/ink-v3-reference/v2/
-          P='20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/论文'
-          cp "$P/论文.pdf" "$P/论文.tex" "$P/gmcmthesis.cls" "$P/论文.log" /tmp/ink-v3-reference/paper/
-          pdffonts "$P/论文.pdf" > /tmp/ink-v3-reference/paper/pdffonts.txt
-          git rev-parse HEAD > /tmp/ink-v3-reference/MAIN_COMMIT.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ink-v3-scoped-typography-reference
-          path: /tmp/ink-v3-reference/
-          retention-days: 3
-          if-no-files-found: error
+          Add-Type -AssemblyName System.Drawing
+          $families = (New-Object System.Drawing.Text.InstalledFontCollection).Families.Name
+          foreach ($name in @('SimSun', 'NSimSun', 'Times New Roman', 'SimHei')) {
+            Write-Output "$name : $($families -contains $name)"
+          }
+          Get-ChildItem C:\Windows\Fonts | Where-Object { $_.Name -match 'simsun|times|simhei' } | Select-Object Name,Length
+          Get-Command inkscape -ErrorAction SilentlyContinue | Select-Object Source
+          Write-Output "Inkscape known path: $(Test-Path 'C:\Program Files\Inkscape\bin\inkscape.exe')"
+          exit 0
