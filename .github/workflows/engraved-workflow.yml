@@ -1,0 +1,49 @@
+name: Engraved workflow figure
+on:
+  pull_request:
+    paths:
+      - 'paper_a_figures/engraved_workflow/**'
+      - '.github/workflows/engraved-workflow.yml'
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          sparse-checkout: paper_a_figures/engraved_workflow
+          sparse-checkout-cone-mode: true
+          lfs: false
+      - name: Install vector renderer and CJK fonts
+        run: sudo apt-get update -qq && sudo apt-get install -y inkscape fonts-noto-cjk fonts-stix poppler-utils
+      - name: Build and validate
+        run: python3 paper_a_figures/engraved_workflow/build.py
+      - name: Check PDF text and page
+        run: |
+          pdfinfo paper_a_figures/engraved_workflow/exports/workflow.pdf
+          pdftotext paper_a_figures/engraved_workflow/exports/workflow.pdf /tmp/workflow-text.txt
+          grep 'Makespan' /tmp/workflow-text.txt
+      - name: Commit generated figure assets to this dedicated PR only
+        if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'figures/engraved-workflow-20260926'
+        env:
+          FIGURE_BRANCH: ${{ github.head_ref }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add paper_a_figures/engraved_workflow/assets/ paper_a_figures/engraved_workflow/exports/
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(figures): render editable SVG, vector PDF and high-resolution PNG'
+            git push origin "HEAD:$FIGURE_BRANCH"
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: engraved-workflow-editable-and-exports
+          path: |
+            paper_a_figures/engraved_workflow/assets/
+            paper_a_figures/engraved_workflow/exports/
+          retention-days: 30
