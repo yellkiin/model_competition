@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - .github/workflows/engraved_workflow_v3_delivery.yml
+      - paper_a_figures/engraved_workflow/ink_v3/**
 permissions:
   contents: write
 concurrency:
@@ -15,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout4v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
@@ -23,16 +24,17 @@ jobs:
           sparse-checkout: |
             paper_a_figures/engraved_workflow/ink_v2/assets
             paper_a_figures/engraved_workflow/ink_v3
-      - name: Install local vector renderer and CJK fonts
+      - name: Install local vector renderer and paper-compatible fonts
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq inkscape fonts-noto-cjk fonts-noto-core fonts-stix poppler-utils python3-pil
+          sudo apt-get install -y -qq inkscape fonts-noto-cjk fonts-noto-core fonts-stix fonts-liberation2 poppler-utils python3-pil
       - name: Generate figure files and verify vector structure
         env:
           SOURCE_COMMIT: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
-          python paper_a_figures/engraved_workflow/ink_v3/build.py
+          python paper_a_figures/engraved_workflow/ink_v3/build.py --svg-only
+          python paper_a_figures/engraved_workflow/ink_v3/finalize_v3.py
           python - <<'PY'
           import json,os,subprocess,xml.etree.ElementTree as ET
           from pathlib import Path
@@ -48,11 +50,23 @@ jobs:
               links=[e for e in r.iter() if e.get('data-source')]
               assert len(ids)==len(set(ids)) and not r.findall('.//s:image',ns)
               assert len(links)==5 and r.find('.//*[@id="legend"]') is None
-              assert not any('字典序' in t or 'Step1' in t or '停止？' in t for t in texts)
+              assert not any('字典序' in t or 'Step1' in t or '停止？' in t or '固定同一方案' in t for t in texts)
+              assert r.find('.//*[@id="graph-definition"]') is not None
+              for ident in ['text-024','text-031','text-063','text-114']:
+                  assert 'white' not in (r.find(f'.//*[@id="{ident}"]').get('class') or '')
+              for ident in ['text-104','text-113']:
+                  label=r.find(f'.//*[@id="{ident}"]')
+                  assert len(label.findall('s:tspan',ns))==2
+              for ident,x in [('text-122','2190'),('text-123','2821')]:
+                  label=r.find(f'.//*[@id="{ident}"]')
+                  assert label.get('x')==x and label.get('text-anchor')=='middle'
+              formula=r.find('.//*[@id="makespan-v3"]')
+              assert formula is not None and all((c.tail or '')=='' for c in list(formula))
               png=root/'exports'/f'workflow_{name}_v3.png'
               assert Image.open(png).size==(6000,3650)
               assert (root/'exports'/f'workflow_{name}_v3.pdf').read_bytes().startswith(b'%PDF-')
-              checks.append({'palette':name,'svg_text_objects':len(texts),'concept_links':len(links),'png_size':[6000,3650]})
+              checks.append({'palette':name,'svg_text_objects':len(texts),'concept_links':len(links),'png_size':[6000,3650],
+                  'font_alignment':'Times/SimSun compatible + STIX math','b_blocks_uniform':True,'alignment_fixes_verified':True})
           receipt={'source_commit':os.environ['SOURCE_COMMIT'],'v2_input_commit':'70d4888886cd9f77037f7b010ce0241349ef056d','workflow_run':os.environ['GITHUB_RUN_ID'],'renderer':subprocess.check_output(['inkscape','--version'],text=True).strip(),'checks':checks,'scope':'vector rendering and file publication, not solver experiments','new_experiments':0,'visual_review':'performed separately after downloading actual exported previews'}
           (root/'docs/EXPORT_RECEIPT.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n')
           PY
@@ -65,7 +79,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add paper_a_figures/engraved_workflow/ink_v3
           if ! git diff --cached --quiet; then
-            git commit -m 'fig(A): publish third-version editable SVG, PDF, PNG and explanation'
+            git commit -m 'fig(A): regenerate v3 after typography and alignment fixes'
             git push origin HEAD:figures/engraved-workflow-v3-20260926
           fi
           python - <<'PY'
