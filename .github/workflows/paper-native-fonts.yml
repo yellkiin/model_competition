@@ -1,0 +1,20 @@
+name: Paper native font availability
+on:
+  push:
+    branches: [fix/paper-a-annotations-20260927]
+    paths: [.github/workflows/paper-native-fonts.yml]
+permissions:
+  contents: read
+jobs:
+  fonts:
+    runs-on: windows-latest
+    steps:
+      - name: Inspect required native fonts only
+        shell: pwsh
+        run: |
+          $names = 'simsun.ttc','simhei.ttf','simkai.ttf','simfang.ttf','SIMLI.TTF','STXINWEI.TTF','times.ttf','arial.ttf','cour.ttf'
+          foreach ($n in $names) {
+            $p = Join-Path $env:WINDIR "Fonts/$n"
+            Write-Output "$n : $(Test-Path $p)"
+          }
+          Get-ChildItem $env:WINDIR/Fonts -File | Where-Object { $_.Name -match 'xin|wei|simsun|simli|kai' } | Select-Object Name,Length
