@@ -1,5 +1,7 @@
 # 可复用的线刻设色工具
 
+当前流程图范例是 **[线刻设色第二版 ink_v2](../engraved_workflow/ink_v2/README.md)**。该目录提供四套配色的可编辑 SVG／SVGZ、PDF、高清 PNG 和预览；[图件总入口](../README.md) 默认展示第二版青绿图。
+
 入口：`AGENT.md`。色彩与线条唯一来源：`palettes.json`。不是新增调度算法，也不修改原始实验数据。
 
 - `qinglu`：青绿·赭石，默认；`qianjiang`：浅绛·苔色；`yanlan`：烟岚·石青；`mono`：灰阶。

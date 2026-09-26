@@ -2,11 +2,22 @@
 
 保留原 `engraved_workflow` 的六算子案例、子图包络、核心剖面、细排线与各方法模块；本轮重点改局部设色、跨模块连接和右下角公式留白。原母版、论文正文和其他论文图不覆盖。
 
+这是当前流程图的主要展示、编辑和排版版本；第一版黑白 SVG 保留为生成器输入。返回 [图件总入口](../../README.md) 或 [流程图目录](../README.md)。
+
 ## 先看成图
 
-默认配色：青绿·赭石。仓库 `assets/workflow_qinglu.svgz` 为可编辑母版；另有浅绛、烟岚及灰阶。会话交付包同时提供普通 `.svg`。所有文字仍是text/tspan，各模块、公式与流程连接都有独立ID。SVG中没有嵌入位图或字体文件。
+![第二版总流程图 · 青绿·赭石](exports/workflow_qinglu_preview.png)
 
-`.svgz` 是同一SVG的无损压缩版本，Inkscape可直接打开编辑；本地运行会生成普通 `.svg`。所有PDF/高清PNG在本次会话完整包内，并可用下面命令在本地重新导出。
+默认配色：青绿·赭石。仓库同时提供普通 SVG 和 SVGZ 可编辑母版；另有浅绛、烟岚及灰阶。所有文字仍是 text/tspan，各模块、公式与流程连接都有独立 ID。SVG 中没有嵌入位图或字体文件。
+
+`.svgz` 是同一 SVG 的无损压缩版本，Inkscape 可直接打开编辑。下表中的 PDF、高清 PNG 和预览已随交付包上传到仓库，可直接下载使用，也可用下面命令在本地重新导出。
+
+| 配色 | 可编辑矢量母版 | 矢量 PDF | 高清 PNG | 预览 |
+| --- | --- | --- | --- | --- |
+| 青绿·赭石（默认） | [SVG](assets/workflow_qinglu.svg) / [SVGZ](assets/workflow_qinglu.svgz) | [PDF](exports/workflow_qinglu.pdf) | [PNG](exports/workflow_qinglu.png) | [预览](exports/workflow_qinglu_preview.png) |
+| 浅绛·苔色 | [SVG](assets/workflow_qianjiang.svg) / [SVGZ](assets/workflow_qianjiang.svgz) | [PDF](exports/workflow_qianjiang.pdf) | [PNG](exports/workflow_qianjiang.png) | [预览](exports/workflow_qianjiang_preview.png) |
+| 烟岚·石青 | [SVG](assets/workflow_yanlan.svg) / [SVGZ](assets/workflow_yanlan.svgz) | [PDF](exports/workflow_yanlan.pdf) | [PNG](exports/workflow_yanlan.png) | [预览](exports/workflow_yanlan_preview.png) |
+| 灰阶 | [SVG](assets/workflow_mono.svg) / [SVGZ](assets/workflow_mono.svgz) | [PDF](exports/workflow_mono.pdf) | [PNG](exports/workflow_mono.png) | [预览](exports/workflow_mono_preview.png) |
 
 主要连接现在只用单线：共同状态到来源选择、筛选通过到执行、执行到右侧评价、判断到更新、停止到输出。筛去重选和下一轮反馈各走独立通道。删除了原来包围公式的小弯箭头，Cq公式恢复为右侧评价区域的居中对象，箭头从区域右边进入，不穿过公式。
 
@@ -36,4 +47,4 @@ python paper_a_figures/engraved_workflow/ink_v2/build.py --all-palettes
 
 `paper_a_figures/ink_engraving_agent/AGENT.md` 是完整操作提示词；`style.py` 能将同套风格赋予SVG及既有Matplotlib绘图代码，提供显式角色绑定、连续/发散色阶和保留文字的矢量导出。当前只交付总流程图与工具，不提前替换论文所有数据图。
 
-`docs/REFERENCES.md` 记录新增国画设色来源。本次所有排版、绘制、渲染和视觉检查在本地容器完成，没有文生图、云端渲染或复制画作像素。
+[docs/REFERENCES.md](docs/REFERENCES.md) 记录新增国画设色来源。[原包制作记录](docs/LOCAL_REVIEW.md) 记录原制图环境的排版、绘制、渲染与视觉检查；[仓库整合记录](docs/BUNDLE_INTEGRATION.md) 记录本机导入与构建情况。图件采用程序化矢量制作，没有文生图、云端渲染或复制画作像素。

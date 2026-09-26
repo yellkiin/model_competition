@@ -1,59 +1,49 @@
-# 计算图调度的联合优化 · 黑白线刻总流程图
+# 计算图调度的联合优化 · 线刻设色总流程图（第二版）
 
-![流程图预览](exports/workflow_preview.png)
+当前展示和编辑入口是 **[第二版 ink_v2](ink_v2/README.md)**，默认使用青绿·赭石配色。第二版保留六算子案例、子图包络、核心剖面和细排线，并整理跨模块主流程、外侧反馈通道及右下角目标公式留白。
 
-这是独立的新图件工作区。没有沿用旧总流程图的布局或绘图代码，也不覆盖论文、求解器、官方评估器和已有实验结果。母版以黑白线刻、张量格、子图包络、核心剖面和收束曲线建立后续图件的共同语言。
+![第二版总流程图 · 青绿·赭石](ink_v2/exports/workflow_qinglu_preview.png)
 
-## 文件与编辑入口
+## 第二版文件与编辑入口
 
 | 文件 | 用途 |
 | --- | --- |
-| `assets/workflow.svg` | 可编辑母版；真实 text/tspan、节点、路径和具名图层，无嵌入位图 |
-| `exports/workflow.pdf` | A3 横向矢量图，文字可搜索；适合排版和放大查看 |
-| `exports/workflow.png` | 6000 像素宽成图 |
-| `exports/workflow_preview.png` | 1800 像素宽预览 |
-| `assets/style_guide.svg` / `exports/style_guide.pdf` | 线宽、材质、对象、文字层级的可复用样式页 |
-| `src/draw_workflow.py` | 主要作图源代码，Python 标准库生成 SVG |
-| `src/draw_style_guide.py` | 使用相同绘图组件的样式页 |
-| `assets/example_case.json` | 贯穿案例的拓扑、分组与示意次序 |
-| `tests/test_workflow.py` | 结构、示意案例和关键术语检查 |
-| `docs/SOURCE_MAP.md` | 方法、题面机制与图中位置的逐项对应 |
-| `docs/PROCESS.md` | 构图、绘制、检查、导出、提交的过程记录 |
-| `docs/PROVENANCE.json` | 输入与理论快照的校验记录 |
-| `docs/AI_USAGE.md` | AI 辅助绘图范围 |
+| [workflow_qinglu.svg](ink_v2/assets/workflow_qinglu.svg) / [SVGZ](ink_v2/assets/workflow_qinglu.svgz) | 默认青绿版可编辑母版，保留文字、具名图层和矢量对象 |
+| [workflow_qinglu.pdf](ink_v2/exports/workflow_qinglu.pdf) | 默认青绿版矢量 PDF，用于论文排版 |
+| [workflow_qinglu.png](ink_v2/exports/workflow_qinglu.png) | 默认青绿版高清 PNG |
+| [workflow_qinglu_preview.png](ink_v2/exports/workflow_qinglu_preview.png) | 第二版预览 |
+| [四套配色与构建说明](ink_v2/README.md) | 青绿、浅绛、烟岚、灰阶的完整资产表 |
+| [第二版生成器](ink_v2/build.py) | 从第一版源母版生成第二版 SVG，并可导出 PDF／PNG |
+| [方法与来源对齐](ink_v2/docs/SOURCE_ALIGNMENT.md) | 第二版与 workshop_v2 的对应关系 |
+| [原包制作记录](ink_v2/docs/LOCAL_REVIEW.md) / [整合记录](ink_v2/docs/BUNDLE_INTEGRATION.md) | 图件制作与本次仓库整合的记录 |
+| [线刻设色工具](../ink_engraving_agent/README.md) | 共用角色色板与后续数据图风格适配 |
 
-SVG 可直接在 Inkscape 中编辑。五个主要图层及内部案例组有独立名称。修改文字无需解除轮廓；箭头、曲线、节点、存储剖面均为矢量对象。`src/draw_workflow.py` 中 `Drawing` 负责通用组件，`input_plate`、`neighborhoods`、`execution_plate`、`control_and_outputs` 负责各部分布局。
+## 生成第二版
 
-**两种修改路径不要混用：**手动编辑 SVG 后另存版本；重新运行生成器会重建母版。长期维护优先修改源代码。`example_case.json` 是案例语义与测试数据，坐标和文字目前在 Python 中显式绘制，并非修改 JSON 即可自动重新排版。
-
-## 本地复现
-
-需要 Python 3.10 或更新版本。仅生成 SVG 使用标准库：
+在仓库根目录运行，Python 3.10 或更新版本即可生成四套可编辑 SVG：
 
 ```bash
-python3 paper_a_figures/engraved_workflow/build.py --svg-only
+python paper_a_figures/engraved_workflow/ink_v2/build.py --all-palettes --svg-only
 ```
 
-导出 PDF/PNG 另需 Inkscape CLI 与字体。Ubuntu 示例：
+安装 Inkscape 并将其加入 PATH 后，可重新导出四套 PDF、6000 像素 PNG 和 1800 像素预览：
 
 ```bash
-sudo apt-get update
-sudo apt-get install inkscape fonts-noto-cjk fonts-stix poppler-utils
-python3 paper_a_figures/engraved_workflow/build.py
+python paper_a_figures/engraved_workflow/ink_v2/build.py --all-palettes
 ```
 
-也可进入本目录运行 `python3 build.py`。Windows 安装 Python、Inkscape 及 Noto CJK 字体，并把 Inkscape 的 `bin` 加入 PATH 后运行 `python build.py`。不依赖远程生图服务，绘图脚本没有网络请求。项目不附带字体文件；PDF 导出保留所需字体子集。
-
-`python3 build.py --png-width 9000` 可更改高分辨率 PNG 的宽度。默认 6000；预览固定 1800。SVG 的逻辑画布为 3000 × 2120，物理尺寸约 420 × 296.8 mm。此为密集总图，建议 A3 横向整页或数字放大阅读，不建议缩成双栏论文中的半栏小图；后续可按图层拆分为局部方法图。
+仓库已经包含交付包中的 SVG、SVGZ、PDF、高清 PNG 和预览，查看与使用这些文件无需先运行构建命令。字体与不同 Inkscape 版本可能影响重新导出的字形度量；字体文件不随图件分发。
 
 ## 阅读主线
 
-从左侧同一计算图形成联合决策，经共同当前最好状态进入中间的候选来源。每轮选择一个来源，预检与有效下界筛选后进入右侧固定执行器。底部以实际 Makespan 和次级 COPY 字节判定是否严格接受，再反馈到共同状态。停止后保存已验证结果；第三问同方案无 L2 配对位于输出侧，不参与搜索接受。
+从同一计算图形成联合决策，经共同当前最好状态进入候选来源；每轮选择一个来源，预检与有效下界筛选后进入固定执行器。实际 Makespan 和次级 COPY 字节用于严格接受判定，下一轮通过外侧通道反馈到共同状态。停止后保存已验证结果；第三问同方案无 L2 配对位于输出侧。
 
-A–D、o1–o6、t0–t6 是贯穿机制示例，不是某个实测 case 的结果。图中区间和 Pipe 活动用于解释机制，不按实际周期比例绘制。图上未添加实验成绩。
+A–D、o1–o6、t0–t6 是机制示例。图中区间和 Pipe 活动不按实际周期比例绘制，图件未添加实验成绩。
 
-## 自动构建与 PR
+## 第一版源母版与历史记录
 
-仓库工作流 `.github/workflows/engraved-workflow.yml` 仅针对本目录变更运行。它生成源 SVG、PDF/PNG 和校验报告，并上传 Actions artifact。在本次同仓库专用 PR 分支上，工作流只提交本目录的 `assets/` 与 `exports/`，使成图与制作源文件一起留在 PR；不自动合并、不修改论文正文或实验数据。其他分支只构建并上传 artifact。
+`assets/workflow.svg` 是第一版黑白源母版，也是第二版生成器的固定输入。第一版的 `src/`、`build.py`、`assets/`、`exports/`、`tests/` 和 `docs/` 保留，供源对象编辑与制作过程追溯。运行本目录的旧 `build.py` 会生成第一版；生成当前第二版请使用上面的 `ink_v2/build.py` 命令。
 
-本地首次视觉检查使用 Inkscape 1.4 与 Poppler。不同系统的 Inkscape/字体版本可能影响文字度量和 PDF 二进制内容；提交的 SVG 由标准库确定性生成，便于审核差异。`exports/build_report.json` 保存实际渲染器与画布边界检查结果。
+[第一版来源映射](docs/SOURCE_MAP.md)、[第一版制作过程](docs/PROCESS.md) 和 [AI 辅助记录](docs/AI_USAGE.md) 描述第一版阶段；第二版说明以 `ink_v2/` 内文档为准。现有 `.github/workflows/engraved-workflow.yml` 仍是第一版的历史构建工作流，第二版复现命令见本页和第二版 README。
+
+手动编辑第二版 SVG 时请另存文件；长期维护可修改 `ink_v2/build.py` 和共用色板后重新生成。第二版生成器始终读取第一版源母版，避免把上次生成的第二版再次作为输入。
