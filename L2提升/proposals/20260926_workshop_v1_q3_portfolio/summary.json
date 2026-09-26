@@ -1,0 +1,72 @@
+{
+  "protected_files_checked": 3661,
+  "protected_changes": [],
+  "rows": 500,
+  "cores": {
+    "1": {
+      "count": 100,
+      "improved": 32,
+      "worse": 0,
+      "baseline_speedup": 1.0086217156663206,
+      "speedup": 1.01776921652567,
+      "optimization_gain": 1.009129247127294,
+      "time_reduction_pct": 0.8409041133445996,
+      "baseline_cache_gain": 1.0086217156663206,
+      "cache_gain": 1.0084512781117647
+    },
+    "2": {
+      "count": 100,
+      "improved": 82,
+      "worse": 0,
+      "baseline_speedup": 1.8025870758154223,
+      "speedup": 2.0285183360453796,
+      "optimization_gain": 1.1415459673104242,
+      "time_reduction_pct": 10.059372872247778,
+      "baseline_cache_gain": 1.012041055391711,
+      "cache_gain": 1.0014437177573752
+    },
+    "3": {
+      "count": 100,
+      "improved": 82,
+      "worse": 0,
+      "baseline_speedup": 2.487250078961685,
+      "speedup": 2.827152048379304,
+      "optimization_gain": 1.1852571156364393,
+      "time_reduction_pct": 12.11533788325096,
+      "baseline_cache_gain": 1.0142890182706343,
+      "cache_gain": 1.0061465086399968
+    },
+    "4": {
+      "count": 100,
+      "improved": 81,
+      "worse": 0,
+      "baseline_speedup": 3.1044207899952374,
+      "speedup": 3.536188753111826,
+      "optimization_gain": 1.2176751670570518,
+      "time_reduction_pct": 13.373999986356672,
+      "baseline_cache_gain": 1.0190062665161619,
+      "cache_gain": 1.0177234731891658
+    },
+    "5": {
+      "count": 100,
+      "improved": 76,
+      "worse": 0,
+      "baseline_speedup": 3.610379887949727,
+      "speedup": 4.135513513458252,
+      "optimization_gain": 1.2532930202102053,
+      "time_reduction_pct": 14.835837961989698,
+      "baseline_cache_gain": 1.0259568436822528,
+      "cache_gain": 1.0374104743253678
+    }
+  },
+  "official_config": {
+    "capacity": {
+      "L1": 524288,
+      "UB": 131072
+    },
+    "bandwidth": 60,
+    "cross_core_copy_delay_cycles": 500,
+    "cache_capacity_bytes": 1048576,
+    "cache_bandwidth_bytes_per_cycle": 250
+  }
+}

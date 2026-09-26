@@ -1,0 +1,7 @@
+{
+  "full_multicore_rows_before_stop": 400,
+  "generation_failures": 0,
+  "completed_shards": "cases 1-50 from full-range job, cases 51-100 from second-half job",
+  "redundant_cached_search_pid_stopped": 23504,
+  "reason": "All 400 case/core rows already completed. This process had moved into previously completed rows; verified no child evaluators before stopping. Removed only its stale row locks."
+}

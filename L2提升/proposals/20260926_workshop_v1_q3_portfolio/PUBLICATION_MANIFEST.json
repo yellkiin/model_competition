@@ -1,0 +1,577 @@
+{
+  "date": "2026-09-26",
+  "experiment": "early workshop_v1 Q3 portfolio",
+  "scope": "Not a comparison against newer Unified/Trident. Full candidate traces remain in the original workspace.",
+  "github_base_commit": "2db3b616f492b36f1a5250886028a0a1deec3b56",
+  "source_files": {
+    "代表算例改进机制.md": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/代表算例改进机制.md",
+      "source": {
+        "size": 12315,
+        "sha256": "62e51769a5dbb8079b52639f87b96cde823dc7625a887fbd7c5966c1ec171cb7",
+        "git_blob_sha1": "fcaf41504368e224a17c1cbae36d8e74fd5a1714"
+      },
+      "published": {
+        "size": 11294,
+        "sha256": "89df9fa7004da8a5859c88d6e705b6a562a72a5cb9a033dbab9411bf016524c8",
+        "git_blob_sha1": "d2353472cff32eddfa98ef84786e9ee00fd864cf"
+      },
+      "byte_identical": false
+    },
+    "问题三_L2分析与算法改进报告.md": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/问题三_L2分析与算法改进报告.md",
+      "source": {
+        "size": 18990,
+        "sha256": "9e1ef411d92d5e82157ee95e704b72e757e29b542ca90af18c413d0ece3714b8",
+        "git_blob_sha1": "38ffeefb08a393a1f3aa04b045c601af1f372b67"
+      },
+      "published": {
+        "size": 19587,
+        "sha256": "c8831fd14b75c71ff1caa8d7ea7834eddb08b90d78a18cc8b126b43c6ffb540c",
+        "git_blob_sha1": "5e79a3c62896536720149e60289b2e1b8a036fb2"
+      },
+      "byte_identical": false
+    },
+    "all_questions_comparison.csv": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/all_questions_comparison.csv",
+      "source": {
+        "size": 197372,
+        "sha256": "15efcf6f1a4a8df728a82251c93be82b37b43cb64252399c81ae732447c0f0a0",
+        "git_blob_sha1": "a82328f166b470361c1389a182329a908e073dc7"
+      },
+      "published": {
+        "size": 197372,
+        "sha256": "15efcf6f1a4a8df728a82251c93be82b37b43cb64252399c81ae732447c0f0a0",
+        "git_blob_sha1": "a82328f166b470361c1389a182329a908e073dc7"
+      },
+      "byte_identical": true
+    },
+    "analyze_representative.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/analyze_representative.py",
+      "source": {
+        "size": 22715,
+        "sha256": "89a0a92998f3c233de788908f78b3f8ea58f19210f859883a68c64652899a3f9",
+        "git_blob_sha1": "57701098ea351ce567cc83c1701909126afedf12"
+      },
+      "published": {
+        "size": 22715,
+        "sha256": "89a0a92998f3c233de788908f78b3f8ea58f19210f859883a68c64652899a3f9",
+        "git_blob_sha1": "57701098ea351ce567cc83c1701909126afedf12"
+      },
+      "byte_identical": true
+    },
+    "audit_and_export.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/audit_and_export.py",
+      "source": {
+        "size": 7963,
+        "sha256": "d6b405e51bd93d268e2655142b2fd93a7ffd3399ca4864b9e2cd5eb65c4e6523",
+        "git_blob_sha1": "302f2ccf170f7b157283dbe30fb5eb61ed211fc3"
+      },
+      "published": {
+        "size": 7963,
+        "sha256": "d6b405e51bd93d268e2655142b2fd93a7ffd3399ca4864b9e2cd5eb65c4e6523",
+        "git_blob_sha1": "302f2ccf170f7b157283dbe30fb5eb61ed211fc3"
+      },
+      "byte_identical": true
+    },
+    "band_candidates.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/band_candidates.py",
+      "source": {
+        "size": 11464,
+        "sha256": "5db3446d8bb9aeaa185c77db3fd44564146cd1d939e5875bc8f496e3d131cc67",
+        "git_blob_sha1": "ec7baa6779497e5ffa953a1b20382cfc2fb8776d"
+      },
+      "published": {
+        "size": 11464,
+        "sha256": "5db3446d8bb9aeaa185c77db3fd44564146cd1d939e5875bc8f496e3d131cc67",
+        "git_blob_sha1": "ec7baa6779497e5ffa953a1b20382cfc2fb8776d"
+      },
+      "byte_identical": true
+    },
+    "baseline_replay_audit.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/baseline_replay_audit.json",
+      "source": {
+        "size": 1048,
+        "sha256": "22ff6fa4698be58645c74b686e318539ef259cf5bf95b89284c883d2a045d8c6",
+        "git_blob_sha1": "6bdb2ec7425aa83f2e4e26e66f092f88d196400b"
+      },
+      "published": {
+        "size": 1048,
+        "sha256": "22ff6fa4698be58645c74b686e318539ef259cf5bf95b89284c883d2a045d8c6",
+        "git_blob_sha1": "6bdb2ec7425aa83f2e4e26e66f092f88d196400b"
+      },
+      "byte_identical": true
+    },
+    "baseline_snapshot.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/baseline_snapshot.json",
+      "source": {
+        "size": 1054526,
+        "sha256": "1548da4dcac2abb6d2ff724b0d451ab996bc9e4530880a74f1ff7845b9c69979",
+        "git_blob_sha1": "00bdef27fa324198672f04fb9733ec05e3fa97d1"
+      },
+      "published": {
+        "size": 1054526,
+        "sha256": "1548da4dcac2abb6d2ff724b0d451ab996bc9e4530880a74f1ff7845b9c69979",
+        "git_blob_sha1": "00bdef27fa324198672f04fb9733ec05e3fa97d1"
+      },
+      "byte_identical": true
+    },
+    "build_report.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/build_report.py",
+      "source": {
+        "size": 21100,
+        "sha256": "01fb99b9f553a9e4281b8d4f5c826ba99371fe1e42adc3893243b8044077509c",
+        "git_blob_sha1": "520b8b6310bf32dd5afacff4dd2551395ec78b74"
+      },
+      "published": {
+        "size": 21100,
+        "sha256": "01fb99b9f553a9e4281b8d4f5c826ba99371fe1e42adc3893243b8044077509c",
+        "git_blob_sha1": "520b8b6310bf32dd5afacff4dd2551395ec78b74"
+      },
+      "byte_identical": true
+    },
+    "cache_candidates.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/cache_candidates.py",
+      "source": {
+        "size": 9525,
+        "sha256": "843dad282f6f93f0e8f849cb78e2f229282ff1e8bcda06bc9d565953bc7c88ea",
+        "git_blob_sha1": "3769258fecbfafd0f2d03acf1264e7a945e5b751"
+      },
+      "published": {
+        "size": 9525,
+        "sha256": "843dad282f6f93f0e8f849cb78e2f229282ff1e8bcda06bc9d565953bc7c88ea",
+        "git_blob_sha1": "3769258fecbfafd0f2d03acf1264e7a945e5b751"
+      },
+      "byte_identical": true
+    },
+    "final_audit.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/final_audit.json",
+      "source": {
+        "size": 147103,
+        "sha256": "0da3f1af46841c7b87f961f9c3d4183d248f2abf2ff1c6a7b3a2f09ac88dffd3",
+        "git_blob_sha1": "24b3e39d8ba187a3a56a6f5e16ca947fd714b6c8"
+      },
+      "published": {
+        "size": 147103,
+        "sha256": "0da3f1af46841c7b87f961f9c3d4183d248f2abf2ff1c6a7b3a2f09ac88dffd3",
+        "git_blob_sha1": "24b3e39d8ba187a3a56a6f5e16ca947fd714b6c8"
+      },
+      "byte_identical": true
+    },
+    "final_statistics_review.md": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/final_statistics_review.md",
+      "source": {
+        "size": 6005,
+        "sha256": "5d83c979ad3417b5c50d941379390e8a5f515686aaaaf71ac0255043a5547149",
+        "git_blob_sha1": "4753f57b3870b0282452cbca867ad9d9686fa5bc"
+      },
+      "published": {
+        "size": 6283,
+        "sha256": "e7d0508a62aa59c961fff7cad0ca349cd0e89b04a8d3cff1c2323053e3ed9891",
+        "git_blob_sha1": "e0383397525593a2c54554f6661ae5942feaf859"
+      },
+      "byte_identical": false
+    },
+    "gain_distribution.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/gain_distribution.json",
+      "source": {
+        "size": 1309,
+        "sha256": "402a628099c03aedfc67196242c58118c475fcd17d5f4d02c1afc5cae6aa9f03",
+        "git_blob_sha1": "1129be40c7fe9181381b9d11dddf3af7a86916dd"
+      },
+      "published": {
+        "size": 1309,
+        "sha256": "402a628099c03aedfc67196242c58118c475fcd17d5f4d02c1afc5cae6aa9f03",
+        "git_blob_sha1": "1129be40c7fe9181381b9d11dddf3af7a86916dd"
+      },
+      "byte_identical": true
+    },
+    "optimize_q3.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/optimize_q3.py",
+      "source": {
+        "size": 19176,
+        "sha256": "ee6f045f5fa7b0551ecb380bc8543991de98c3d7182e588ba133dbcd7a411df8",
+        "git_blob_sha1": "67efae52366c31a54e669d5fc2639b3771a98e33"
+      },
+      "published": {
+        "size": 19176,
+        "sha256": "ee6f045f5fa7b0551ecb380bc8543991de98c3d7182e588ba133dbcd7a411df8",
+        "git_blob_sha1": "67efae52366c31a54e669d5fc2639b3771a98e33"
+      },
+      "byte_identical": true
+    },
+    "plan_archive_manifest.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/plan_archive_manifest.json",
+      "source": {
+        "size": 149047,
+        "sha256": "595795838cf9d8c7869a72975876f6036d7a972de2ccac83be2a9edf0cd21a1d",
+        "git_blob_sha1": "fcea6f9bd786ebc35442dd085deb0dfd588f6325"
+      },
+      "published": {
+        "size": 149047,
+        "sha256": "595795838cf9d8c7869a72975876f6036d7a972de2ccac83be2a9edf0cd21a1d",
+        "git_blob_sha1": "fcea6f9bd786ebc35442dd085deb0dfd588f6325"
+      },
+      "byte_identical": true
+    },
+    "refine_candidates.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/refine_candidates.py",
+      "source": {
+        "size": 1755,
+        "sha256": "7ae042ca51666feaeac7c2f4f1ca6875a09ca63482348d8f0d1312163cf2ba83",
+        "git_blob_sha1": "5110d5804e6cb5b7f1e4f8c2d538c18ef6ba8380"
+      },
+      "published": {
+        "size": 1755,
+        "sha256": "7ae042ca51666feaeac7c2f4f1ca6875a09ca63482348d8f0d1312163cf2ba83",
+        "git_blob_sha1": "5110d5804e6cb5b7f1e4f8c2d538c18ef6ba8380"
+      },
+      "byte_identical": true
+    },
+    "representative_mechanisms.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/representative_mechanisms.json",
+      "source": {
+        "size": 117605,
+        "sha256": "e5d8faf670b751838bc3680e8511a6d3dee75bb8238fc5e686a5a6e3611260b0",
+        "git_blob_sha1": "f45a2e2f1d2e02b25b8045052b28a554961a35b8"
+      },
+      "published": {
+        "size": 117605,
+        "sha256": "e5d8faf670b751838bc3680e8511a6d3dee75bb8238fc5e686a5a6e3611260b0",
+        "git_blob_sha1": "f45a2e2f1d2e02b25b8045052b28a554961a35b8"
+      },
+      "byte_identical": true
+    },
+    "run_history.jsonl": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/run_history.jsonl",
+      "source": {
+        "size": 7437,
+        "sha256": "7b4165fc81031c6fafffda92a41341d33e551e938166a5ec848f9576d9a4c6c9",
+        "git_blob_sha1": "0669f4d59ac11e3999276266a89872c668c680d6"
+      },
+      "published": {
+        "size": 7437,
+        "sha256": "7b4165fc81031c6fafffda92a41341d33e551e938166a5ec848f9576d9a4c6c9",
+        "git_blob_sha1": "0669f4d59ac11e3999276266a89872c668c680d6"
+      },
+      "byte_identical": true
+    },
+    "search_completion_note.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/search_completion_note.json",
+      "source": {
+        "size": 409,
+        "sha256": "10c516c6be3be9feca0683508bbf909904d549507764fbd214e4951fd9722090",
+        "git_blob_sha1": "b5b4353c58e949a37444f86424d078b330c0c271"
+      },
+      "published": {
+        "size": 409,
+        "sha256": "10c516c6be3be9feca0683508bbf909904d549507764fbd214e4951fd9722090",
+        "git_blob_sha1": "b5b4353c58e949a37444f86424d078b330c0c271"
+      },
+      "byte_identical": true
+    },
+    "selected_results.csv": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/selected_results.csv",
+      "source": {
+        "size": 253202,
+        "sha256": "cb57bfc986afd4f28fdee1ce7587968d0f0bda316899d861d93e4a3a444e5339",
+        "git_blob_sha1": "f9bbf398a20e66c8ab6f88e38d3a488f24ee6fd8"
+      },
+      "published": {
+        "size": 253202,
+        "sha256": "cb57bfc986afd4f28fdee1ce7587968d0f0bda316899d861d93e4a3a444e5339",
+        "git_blob_sha1": "f9bbf398a20e66c8ab6f88e38d3a488f24ee6fd8"
+      },
+      "byte_identical": true
+    },
+    "selected_results.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/selected_results.json",
+      "source": {
+        "size": 491516,
+        "sha256": "dc91d7496e2e2ed9e3be76243c572b853559c5ad100e5eac18b12a64513584c6",
+        "git_blob_sha1": "bcf8d8ffe95f1b2eb21a6831574d1b8532b882e7"
+      },
+      "published": {
+        "size": 491516,
+        "sha256": "dc91d7496e2e2ed9e3be76243c572b853559c5ad100e5eac18b12a64513584c6",
+        "git_blob_sha1": "bcf8d8ffe95f1b2eb21a6831574d1b8532b882e7"
+      },
+      "byte_identical": true
+    },
+    "solve_q3_optimized.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/solve_q3_optimized.py",
+      "source": {
+        "size": 14738,
+        "sha256": "fd8dc260c9ef61d6a1065d14586926c7b1411be098bf6fe77bbc4e72def99410",
+        "git_blob_sha1": "d719b4ae70f1c726d1787653880086756d34450b"
+      },
+      "published": {
+        "size": 14738,
+        "sha256": "fd8dc260c9ef61d6a1065d14586926c7b1411be098bf6fe77bbc4e72def99410",
+        "git_blob_sha1": "d719b4ae70f1c726d1787653880086756d34450b"
+      },
+      "byte_identical": true
+    },
+    "summary.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/summary.json",
+      "source": {
+        "size": 2111,
+        "sha256": "3caa9b077d87d98a2e05b8400673af1ff825d60e4e28d75e0c1443e2737063c0",
+        "git_blob_sha1": "9da5dc95cfcbbc676c251b8cf15e1400db48e195"
+      },
+      "published": {
+        "size": 2111,
+        "sha256": "3caa9b077d87d98a2e05b8400673af1ff825d60e4e28d75e0c1443e2737063c0",
+        "git_blob_sha1": "9da5dc95cfcbbc676c251b8cf15e1400db48e195"
+      },
+      "byte_identical": true
+    },
+    "README_通用Q3改进器.md": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/README_通用Q3改进器.md",
+      "source": {
+        "size": 4063,
+        "sha256": "75a2c64777c13d87b2e84f2f9f38f01adb35ef56424d54cd513abc8db3c4c9cc",
+        "git_blob_sha1": "df2bf908d21efb17457c7305547ff8f790f29b5d"
+      },
+      "published": {
+        "size": 4341,
+        "sha256": "0948b6068ac90ab98b295ee763f32ee5177fd1e3ff7756e4c18fe7ac6e25c1ac",
+        "git_blob_sha1": "d66a81851f1f0223f487bf7d0e31fe9bf85efd7e"
+      },
+      "byte_identical": false
+    },
+    "analysis_potential/结论.md": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/analysis_potential/结论.md",
+      "source": {
+        "size": 10010,
+        "sha256": "241be57f84b1ae55139f38e5a1ddd6e40c9f36bb7809808dfbedf0a08fc05c34",
+        "git_blob_sha1": "d119511b5a10a0377ddb6425d8d9d53c1561c695"
+      },
+      "published": {
+        "size": 10010,
+        "sha256": "241be57f84b1ae55139f38e5a1ddd6e40c9f36bb7809808dfbedf0a08fc05c34",
+        "git_blob_sha1": "d119511b5a10a0377ddb6425d8d9d53c1561c695"
+      },
+      "byte_identical": true
+    },
+    "analysis_potential/analyze.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/analysis_potential/analyze.py",
+      "source": {
+        "size": 6824,
+        "sha256": "5cc1c700d10dd00b97f114368635cea6b7049a4110148e2f823f8e85c8cfc200",
+        "git_blob_sha1": "a11791cc53354285eb56d355f0c5276236a49d4a"
+      },
+      "published": {
+        "size": 6824,
+        "sha256": "5cc1c700d10dd00b97f114368635cea6b7049a4110148e2f823f8e85c8cfc200",
+        "git_blob_sha1": "a11791cc53354285eb56d355f0c5276236a49d4a"
+      },
+      "byte_identical": true
+    },
+    "analysis_potential/five_core_potential.csv": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/analysis_potential/five_core_potential.csv",
+      "source": {
+        "size": 33303,
+        "sha256": "649133d7604a8eb417b8554223116623ecd7bd531927efb94d15d87a1d0713bc",
+        "git_blob_sha1": "7112d6743eeb2330cc9c77e9c5aae201fdad5be6"
+      },
+      "published": {
+        "size": 33303,
+        "sha256": "649133d7604a8eb417b8554223116623ecd7bd531927efb94d15d87a1d0713bc",
+        "git_blob_sha1": "7112d6743eeb2330cc9c77e9c5aae201fdad5be6"
+      },
+      "byte_identical": true
+    },
+    "analysis_potential/summary.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/analysis_potential/summary.json",
+      "source": {
+        "size": 27238,
+        "sha256": "351bcd961657789ae7c29b7ea3fa9bcd2163e87a2aa288b0eda1e508fdf9205c",
+        "git_blob_sha1": "6541b0bdf523e6ecadf72d4dd59af94225a1f55f"
+      },
+      "published": {
+        "size": 27238,
+        "sha256": "351bcd961657789ae7c29b7ea3fa9bcd2163e87a2aa288b0eda1e508fdf9205c",
+        "git_blob_sha1": "6541b0bdf523e6ecadf72d4dd59af94225a1f55f"
+      },
+      "byte_identical": true
+    },
+    "analysis_potential/final_statistics_check.py": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/analysis_potential/final_statistics_check.py",
+      "source": {
+        "size": 2943,
+        "sha256": "76357f8ffbee229edd82a64c0c4a5a1878f17df165025f3e01e4140d946c92c4",
+        "git_blob_sha1": "ae6df0974451ae620bdaec6af53f526fc5ecd191"
+      },
+      "published": {
+        "size": 2943,
+        "sha256": "76357f8ffbee229edd82a64c0c4a5a1878f17df165025f3e01e4140d946c92c4",
+        "git_blob_sha1": "ae6df0974451ae620bdaec6af53f526fc5ecd191"
+      },
+      "byte_identical": true
+    },
+    "analysis_potential/final_statistics_check.json": {
+      "source_relative_to_workshop": "求解/q3_l2_optimization_20260926/analysis_potential/final_statistics_check.json",
+      "source": {
+        "size": 11976,
+        "sha256": "aa341da653236075f2edf7fd77de2cb886d1cbad4cbc1a7b757bc8e91f956695",
+        "git_blob_sha1": "d6f89699eb4cc1809ca7495a5e8d3384cf5ae108"
+      },
+      "published": {
+        "size": 11976,
+        "sha256": "aa341da653236075f2edf7fd77de2cb886d1cbad4cbc1a7b757bc8e91f956695",
+        "git_blob_sha1": "d6f89699eb4cc1809ca7495a5e8d3384cf5ae108"
+      },
+      "byte_identical": true
+    },
+    "问题三_L2结果核查总结.md": {
+      "source_relative_to_workshop": "求解/问题三_L2结果核查总结.md",
+      "source": {
+        "size": 14166,
+        "sha256": "d03057ebc555e65e256705ecfba2853e1c9de1993c8146fd1d844c8d9d91930e",
+        "git_blob_sha1": "1f5ccb9c1792ceb7e8b2d5b7b90a8058b3b54a3b"
+      },
+      "published": {
+        "size": 14079,
+        "sha256": "71e4ff41390c67d7e7e3505abe55fcbc1af7905ffdb0fbf8d0ab836ab1be1dc1",
+        "git_blob_sha1": "282378ad438bdf7ba896af5653797ac8ea4c380e"
+      },
+      "byte_identical": false
+    }
+  },
+  "referenced_local_archive": {
+    "求解/正式实验/候选评估/case_003/n5/bands8/q3.json.gz": {
+      "size": 219349,
+      "sha256": "a38dc80568a85e59b9c5e1ece663a53e1fb6166cff3670972d6d9439144d26b1",
+      "git_blob_sha1": "694f770f6f867eed2efbbdf37336ca28a96c8960"
+    },
+    "求解/q3_l2_optimization_20260926/evaluations/case_003/n5/bands32_scale_04b7d7ea0d/q3.json.gz": {
+      "size": 364611,
+      "sha256": "1aa841680ea653c637d502ba7bd6250fd667a8566629f4dbd5dcc2a9906bfe07",
+      "git_blob_sha1": "15577f63903d3045b4f1f22409b9d5207c52ad30"
+    },
+    "求解/q3_l2_optimization_20260926/evaluations/case_003/n5/bands32_scale_04b7d7ea0d/q2.json.gz": {
+      "size": 309070,
+      "sha256": "eaeae9e83a271bfd2899b0f054d29187db7784e33090786e17e59f2b74928f8f",
+      "git_blob_sha1": "73da9d3b3781f6dec94c6405cae5c4f1c51e8cb5"
+    },
+    "求解/正式实验/候选评估/case_056/n5/bands8/q3.json.gz": {
+      "size": 140433,
+      "sha256": "7bfbc62b12c024fa3dbbbcd6505b1fc6ed5ee6c3c6b63492cafb0163eba0c7d4",
+      "git_blob_sha1": "7c4defee51de934ea7ef791498972db6d6caba57"
+    },
+    "求解/q3_l2_optimization_20260926/evaluations/case_056/n5/bands64_scale_52a77323f9/q3.json.gz": {
+      "size": 322459,
+      "sha256": "d441cd60826f4eec77d9724d5a2f9dd0d240627949887fe0bf6803b6572bd17e",
+      "git_blob_sha1": "26454de6550f8fd00dd9ba7d58b5c6c298e3393a"
+    },
+    "求解/q3_l2_optimization_20260926/evaluations/case_056/n5/bands64_scale_52a77323f9/q2.json.gz": {
+      "size": 249745,
+      "sha256": "7962d5ad9d391db19419a5afe0335bbfdfb73ccfa9b1a50afcf3933bbfcfa70b",
+      "git_blob_sha1": "53e8afc9c2c388a5f0b8a1e00802c1024c802242"
+    },
+    "求解/正式实验/候选评估/case_044/n5/components/q3.json.gz": {
+      "size": 26701,
+      "sha256": "86c441ce73232d1c6ae6a1d27e10430abf5c391237cdcbddf14d03e4c9304c69",
+      "git_blob_sha1": "0d5361fc62005b9a7290683e7361c7f44c9a29c2"
+    },
+    "求解/q3_l2_optimization_20260926/evaluations/case_044/n5/bands8_pipebytes_w75_8f5e6c2e95/q3.json.gz": {
+      "size": 38472,
+      "sha256": "f56b4b5d32eed6c9530944bcaaf583aa6b0badb390e202132e70d67e3fdf8471",
+      "git_blob_sha1": "f97e04b53105120fd60fbe57970c013a72b0804b"
+    },
+    "求解/q3_l2_optimization_20260926/evaluations/case_044/n5/bands8_pipebytes_w75_8f5e6c2e95/q2.json.gz": {
+      "size": 29977,
+      "sha256": "c3854e938d8b5c997963821d0857f98d72869f861791ed26d01ee500e780aa39",
+      "git_blob_sha1": "2e17e11bceb8c0d21941b3f2409d85e43637e2c8"
+    },
+    "求解/正式实验/候选评估/case_083/n5/components/q3.json.gz": {
+      "size": 61966,
+      "sha256": "e4778d8afde84811a2da593853935e4005034b64db0d936f153c65985b085604",
+      "git_blob_sha1": "217af06bca16bfb0d3f7a019e1285b35518344a2"
+    },
+    "求解/q3_l2_optimization_20260926/evaluations/case_083/n5/bands64_scale_ef4d013070/q3.json.gz": {
+      "size": 76194,
+      "sha256": "cea45e954d456f90947c2c03f59740afc60a0d5b1fe0192390ac4249c4a0b3ad",
+      "git_blob_sha1": "74374b35704ddf84926f5deebab65cdee4fb350e"
+    },
+    "求解/q3_l2_optimization_20260926/evaluations/case_083/n5/bands64_scale_ef4d013070/q2.json.gz": {
+      "size": 69396,
+      "sha256": "b663da35ceb78e9eb87200c381bd58e51c6bf31986616257d2a87770c45aa724",
+      "git_blob_sha1": "685b7378f1103a9185deb3e35dd066b948ea3fdd"
+    },
+    "论文/论文.pdf": {
+      "size": 1643328,
+      "sha256": "488f77be7cf2a8299396446877782c40d41280ede7247d3562b73f7322543dfc",
+      "git_blob_sha1": "fa2abe9c7c344c557939ed494989065d25a29a5f"
+    },
+    "论文/章节内容/06_问题三.tex": {
+      "size": 19762,
+      "sha256": "6e64ee4cf04bcc83b342fd3adf1f5c6fe05105367f2372242ad581559eaeccab",
+      "git_blob_sha1": "69bf12f973f8e38a4f0c5554ec26a4c31cc7096b"
+    },
+    "题目/通用神经网络处理器下的多核调度问题.docx": {
+      "size": 297415,
+      "sha256": "d03f1d9a39f1fcae23467cc9fd384cbc61e4f13fc71f3567bdf44e1f3bab0b46",
+      "git_blob_sha1": "6dcaf4210c218b14da89aabdb073a7316c0117f8"
+    },
+    "求解/正式实验/逐例分析.csv": {
+      "size": 110125,
+      "sha256": "ab7e31c5aee6ccaa9f3effb2288388e1fbe89763085512466a63481ef71e9c59",
+      "git_blob_sha1": "7ec90bbafff553c0ed2f22fb7f36ab0bb6d8e45e"
+    },
+    "数据/原始/A题官方附件/data/config.txt": {
+      "size": 341,
+      "sha256": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+      "git_blob_sha1": "94e7b0cd981d709e676c6b1a8dd5ae66bd3abc5c"
+    },
+    "数据/原始/A题官方附件/code/multicore_cut_evaluate_problem_3.py": {
+      "size": 32112,
+      "sha256": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0",
+      "git_blob_sha1": "b98ceb4de58cd6767af67cd763c460c79562ac23"
+    },
+    "求解/run_official_experiments.py": {
+      "size": 9844,
+      "sha256": "93204bcd97f3e7ffc45409db483151be69eb88e4c961115b7c75d00a19eaecb3",
+      "git_blob_sha1": "a41f2b04097d674cb81314ca2eb34d966892eb2f"
+    },
+    "求解/正式实验/候选评估/case_002/n5/bands8/q2.json.gz": {
+      "size": 38350,
+      "sha256": "783b09236150df26a7af5a1b15148fbc22316f82d7bf503fb1b6d1c3a7fabff2",
+      "git_blob_sha1": "1bb34e01d9c4496fcb0868d49333602834289950"
+    },
+    "求解/正式实验/候选评估/case_002/n5/bands8/q3.json.gz": {
+      "size": 58383,
+      "sha256": "3ab09e1a5124a157842677f8660780ca438a202606077d2fc092d567228f1d30",
+      "git_blob_sha1": "0216342b0a702a4c85e2d426ad9d93956646aac0"
+    },
+    "求解/正式实验/候选评估/case_056/n5/bands8/q2.json.gz": {
+      "size": 118179,
+      "sha256": "9a022f340d5024678f252b357ec5d27dcd5f5f6d8d6a562182c2bcb9038f2666",
+      "git_blob_sha1": "15e9d4a14d55125350b321d8ddd70549293184d4"
+    },
+    "求解/正式实验/候选评估/case_083/n5/components/q2.json.gz": {
+      "size": 50564,
+      "sha256": "0d083bbd6d57626f938311e6fbd9c1b85e4334b91b22ea62104206c8aa15ba6c",
+      "git_blob_sha1": "a32c4cb3ff6307a683068b83d4ff44aef669cce4"
+    }
+  },
+  "archive_conversion": {
+    "source_name": "问题三_优化计划_500组.zip",
+    "source": {
+      "size": 7914409,
+      "sha256": "c0a37bf2d76efe4b94cac7df3eb8804d5838e901e4890987f7aaa1e59438ecf2",
+      "git_blob_sha1": "8c3e9a65ed7bb08c1e80edc542cb25c922030f3e"
+    },
+    "published_name": "问题三_优化计划_500组.tar.xz",
+    "published": {
+      "size": 1990916,
+      "sha256": "d4027ed958612fedd664d0815705bcd4bf4a679e756eca9eefd059c8ed3b3a18",
+      "git_blob_sha1": "b264215ac020a4a96db697f8919e41350c74c798"
+    },
+    "members": 503,
+    "plans": 500,
+    "all_member_bytes_identical": true,
+    "reason": "Recompressed to a smaller standard-library-readable archive after large ZIP upload transport failed."
+  }
+}

@@ -1,0 +1,3652 @@
+{
+  "schema_version": 2,
+  "created_at": "2026-09-26T21:01:12+0800",
+  "selection_source": "finalized",
+  "finalized_live_mismatches_at_start": [],
+  "scope": "Five-core representative selections, unchanged official evaluator/config; selected.json and original outputs unchanged.",
+  "official_config": {
+    "capacity": {
+      "L1": 524288,
+      "UB": 131072
+    },
+    "bandwidth": 60,
+    "cross_core_copy_delay_cycles": 500,
+    "cache_capacity_bytes": 1048576,
+    "cache_bandwidth_bytes_per_cycle": 250
+  },
+  "analysis_source_sha256": "89a0a92998f3c233de788908f78b3f8ea58f19210f859883a68c64652899a3f9",
+  "cases": [
+    {
+      "case": "case_003",
+      "cores": 5,
+      "selection_snapshot": {
+        "case": "case_003",
+        "cores": 5,
+        "candidate": "bands32_scale",
+        "baseline_makespan": 443616,
+        "makespan": 142684,
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_003\\n5\\bands32_scale_04b7d7ea0d\\plan.json",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_003\\n5\\bands32_scale_04b7d7ea0d\\q3.json.gz",
+        "q3_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_003\\n5\\bands32_scale_04b7d7ea0d\\q3.receipt.json",
+        "added_copy_bytes": 3900208,
+        "no_l2_makespan": 144728,
+        "cache_hit_rate": 0.5008223604413092,
+        "baseline_cache_gain": 1.0053875423789944,
+        "baseline_speedup": 1.3575073937820097,
+        "search_status": "SEARCHED",
+        "q2_counterfactual_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_003\\n5\\bands32_scale_04b7d7ea0d\\q2.json.gz",
+        "optimization_gain": 3.1090802052087128,
+        "time_reduction_pct": 67.83614657721994,
+        "cache_gain": 1.014325362339155,
+        "speedup": 4.220599366432116
+      },
+      "old": {
+        "plan_path": "求解\\正式实验\\候选评估\\case_003\\n5\\bands8\\plan.json",
+        "plan_sha256": "0b668d72ddb8dc7e9a62990cd0b34a28748a1249175a19141bd611f195e489a7",
+        "q3_result_path": "求解\\正式实验\\候选评估\\case_003\\n5\\bands8\\q3.json.gz",
+        "q3_result_sha256": "a38dc80568a85e59b9c5e1ece663a53e1fb6166cff3670972d6d9439144d26b1",
+        "makespan": 443616,
+        "subgraph_count": 20,
+        "subgraph_count_by_core": [
+          5,
+          3,
+          6,
+          3,
+          3
+        ],
+        "internal_op_count_by_core": [
+          5796,
+          590,
+          6159,
+          594,
+          316
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 168088,
+            "PIPE_V": 132560
+          },
+          {
+            "PIPE_V": 18091,
+            "PIPE_M": 34444
+          },
+          {
+            "PIPE_M": 175324,
+            "PIPE_V": 145509
+          },
+          {
+            "PIPE_V": 18143,
+            "PIPE_M": 34444
+          },
+          {
+            "PIPE_V": 10886,
+            "PIPE_M": 26492
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 175324,
+        "global_compute_lower_bound": 87758.4,
+        "core_finish_times": [
+          443585,
+          443616,
+          441494,
+          443613,
+          437820
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 1284264,
+          "scheduled_copy_bytes": 2592888,
+          "added_copy_bytes": 1308624,
+          "partition_added_copy_bytes": 1308624,
+          "spill_added_copy_bytes": 0
+        },
+        "cache_stats": {
+          "copy_in_hits": 94,
+          "copy_in_misses": 727,
+          "hit_bytes": 479372,
+          "miss_bytes": 1770536,
+          "hits": 94,
+          "accesses": 821,
+          "hit_rate": 0.21306293412886215
+        },
+        "copy_in_bytes": 2249908,
+        "copy_out_bytes_inferred": 342980,
+        "ddr_copy_bytes_inferred": 2113516,
+        "copy_in_count": 821,
+        "copy_out_count": 592,
+        "cross_core_transfer_count": 575,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 199296,
+            "UB": 102082
+          },
+          "1": {
+            "L1": 116736,
+            "UB": 16386
+          },
+          "2": {
+            "L1": 99840,
+            "UB": 102402
+          },
+          "3": {
+            "L1": 116736,
+            "UB": 16384
+          },
+          "4": {
+            "L1": 116736,
+            "UB": 16384
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 289966,
+            "memory_dependency_count": 16419,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 179,
+              "PIPE_MTE3": 283,
+              "PIPE_M": 1138,
+              "PIPE_V": 4658
+            }
+          },
+          "1": {
+            "local_makespan": 52989,
+            "memory_dependency_count": 908,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 163,
+              "PIPE_MTE3": 10,
+              "PIPE_M": 97,
+              "PIPE_V": 493
+            }
+          },
+          "2": {
+            "local_makespan": 314831,
+            "memory_dependency_count": 16900,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 211,
+              "PIPE_MTE3": 281,
+              "PIPE_M": 1165,
+              "PIPE_V": 4994
+            }
+          },
+          "3": {
+            "local_makespan": 53043,
+            "memory_dependency_count": 914,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 163,
+              "PIPE_MTE3": 11,
+              "PIPE_M": 97,
+              "PIPE_V": 497
+            }
+          },
+          "4": {
+            "local_makespan": 38536,
+            "memory_dependency_count": 245,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 105,
+              "PIPE_MTE3": 7,
+              "PIPE_M": 53,
+              "PIPE_V": 263
+            }
+          }
+        },
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 174,
+            "miss_bytes": 465544,
+            "hit_count": 5,
+            "hit_bytes": 41088,
+            "copy_in_pipe_busy_cycles": 18795,
+            "ddr_read_op_duration_sum": 18280,
+            "cache_read_op_duration_sum": 515
+          },
+          {
+            "core_id": 1,
+            "miss_count": 149,
+            "miss_bytes": 223616,
+            "hit_count": 14,
+            "hit_bytes": 87042,
+            "copy_in_pipe_busy_cycles": 14905,
+            "ddr_read_op_duration_sum": 13880,
+            "cache_read_op_duration_sum": 1025
+          },
+          {
+            "core_id": 2,
+            "miss_count": 195,
+            "miss_bytes": 730080,
+            "hit_count": 16,
+            "hit_bytes": 145414,
+            "copy_in_pipe_busy_cycles": 22708,
+            "ddr_read_op_duration_sum": 21852,
+            "cache_read_op_duration_sum": 856
+          },
+          {
+            "core_id": 3,
+            "miss_count": 137,
+            "miss_bytes": 211328,
+            "hit_count": 26,
+            "hit_bytes": 99330,
+            "copy_in_pipe_busy_cycles": 14352,
+            "ddr_read_op_duration_sum": 13279,
+            "cache_read_op_duration_sum": 1073
+          },
+          {
+            "core_id": 4,
+            "miss_count": 72,
+            "miss_bytes": 139968,
+            "hit_count": 33,
+            "hit_bytes": 106498,
+            "copy_in_pipe_busy_cycles": 12405,
+            "ddr_read_op_duration_sum": 11299,
+            "cache_read_op_duration_sum": 1106
+          }
+        ],
+        "matched_no_l2_makespan": 446006
+      },
+      "new": {
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_003\\n5\\bands32_scale_04b7d7ea0d\\plan.json",
+        "plan_sha256": "095157fc049ca4b0eff0d39e52034f3190a1e8d164dfd7b0235259f24eb556f9",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_003\\n5\\bands32_scale_04b7d7ea0d\\q3.json.gz",
+        "q3_result_sha256": "1aa841680ea653c637d502ba7bd6250fd667a8566629f4dbd5dcc2a9906bfe07",
+        "makespan": 142684,
+        "subgraph_count": 155,
+        "subgraph_count_by_core": [
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "internal_op_count_by_core": [
+          2553,
+          2833,
+          2814,
+          2422,
+          2833
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 78548,
+            "PIPE_V": 58870
+          },
+          {
+            "PIPE_M": 97152,
+            "PIPE_V": 68179
+          },
+          {
+            "PIPE_M": 88432,
+            "PIPE_V": 73071
+          },
+          {
+            "PIPE_M": 77508,
+            "PIPE_V": 56890
+          },
+          {
+            "PIPE_M": 97152,
+            "PIPE_V": 68179
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 97152,
+        "global_compute_lower_bound": 87758.4,
+        "core_finish_times": [
+          136350,
+          142009,
+          142684,
+          140453,
+          141942
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 1284264,
+          "scheduled_copy_bytes": 5184472,
+          "added_copy_bytes": 3900208,
+          "partition_added_copy_bytes": 3900208,
+          "spill_added_copy_bytes": 0
+        },
+        "cache_stats": {
+          "copy_in_hits": 822,
+          "copy_in_misses": 884,
+          "hit_bytes": 2064530,
+          "miss_bytes": 2057750,
+          "hits": 822,
+          "accesses": 1706,
+          "hit_rate": 0.5008223604413092
+        },
+        "copy_in_bytes": 4122280,
+        "copy_out_bytes_inferred": 1062192,
+        "ddr_copy_bytes_inferred": 3119942,
+        "copy_in_count": 1706,
+        "copy_out_count": 1283,
+        "cross_core_transfer_count": 1266,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 64384,
+            "UB": 21476
+          },
+          "1": {
+            "L1": 116736,
+            "UB": 22308
+          },
+          "2": {
+            "L1": 137856,
+            "UB": 22820
+          },
+          "3": {
+            "L1": 113536,
+            "UB": 21314
+          },
+          "4": {
+            "L1": 116736,
+            "UB": 22308
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 132726,
+            "memory_dependency_count": 6191,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 321,
+              "PIPE_MTE3": 417,
+              "PIPE_M": 519,
+              "PIPE_V": 2034
+            }
+          },
+          "1": {
+            "local_makespan": 159905,
+            "memory_dependency_count": 6969,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 310,
+              "PIPE_MTE3": 190,
+              "PIPE_M": 528,
+              "PIPE_V": 2305
+            }
+          },
+          "2": {
+            "local_makespan": 161156,
+            "memory_dependency_count": 7036,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 397,
+              "PIPE_MTE3": 199,
+              "PIPE_M": 500,
+              "PIPE_V": 2314
+            }
+          },
+          "3": {
+            "local_makespan": 133673,
+            "memory_dependency_count": 6237,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 367,
+              "PIPE_MTE3": 285,
+              "PIPE_M": 475,
+              "PIPE_V": 1947
+            }
+          },
+          "4": {
+            "local_makespan": 160268,
+            "memory_dependency_count": 6954,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 311,
+              "PIPE_MTE3": 192,
+              "PIPE_M": 528,
+              "PIPE_V": 2305
+            }
+          }
+        },
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 229,
+            "miss_bytes": 464066,
+            "hit_count": 92,
+            "hit_bytes": 279044,
+            "copy_in_pipe_busy_cycles": 21223,
+            "ddr_read_op_duration_sum": 19485,
+            "cache_read_op_duration_sum": 1738
+          },
+          {
+            "core_id": 1,
+            "miss_count": 136,
+            "miss_bytes": 328192,
+            "hit_count": 174,
+            "hit_bytes": 343172,
+            "copy_in_pipe_busy_cycles": 22521,
+            "ddr_read_op_duration_sum": 19474,
+            "cache_read_op_duration_sum": 3047
+          },
+          {
+            "core_id": 2,
+            "miss_count": 229,
+            "miss_bytes": 590192,
+            "hit_count": 168,
+            "hit_bytes": 567810,
+            "copy_in_pipe_busy_cycles": 28273,
+            "ddr_read_op_duration_sum": 25099,
+            "cache_read_op_duration_sum": 3174
+          },
+          {
+            "core_id": 3,
+            "miss_count": 190,
+            "miss_bytes": 433634,
+            "hit_count": 177,
+            "hit_bytes": 444804,
+            "copy_in_pipe_busy_cycles": 23753,
+            "ddr_read_op_duration_sum": 20890,
+            "cache_read_op_duration_sum": 2863
+          },
+          {
+            "core_id": 4,
+            "miss_count": 100,
+            "miss_bytes": 241666,
+            "hit_count": 211,
+            "hit_bytes": 429700,
+            "copy_in_pipe_busy_cycles": 20485,
+            "ddr_read_op_duration_sum": 17020,
+            "cache_read_op_duration_sum": 3465
+          }
+        ],
+        "matched_no_l2_makespan": 144728,
+        "matched_no_l2_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_003\\n5\\bands32_scale_04b7d7ea0d\\q2.receipt.json",
+        "matched_no_l2_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_003\\n5\\bands32_scale_04b7d7ea0d\\q2.json.gz",
+        "matched_timing_by_core": [
+          {
+            "core_id": 0,
+            "changed_operations_by_type": {
+              "COPY_IN": 319,
+              "MATMUL": 519,
+              "ADD": 547,
+              "MUL": 69,
+              "COPY_OUT": 417,
+              "REDUCE": 424,
+              "SUB": 348,
+              "SQRT": 24,
+              "DIV": 244,
+              "SIGMOID": 43,
+              "RELU": 155,
+              "EXP": 171,
+              "NEG": 2
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 138343,
+              "copy_in_pipe_busy_cycles": 39154,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 880,
+                  "end": 138157,
+                  "busy": 78548,
+                  "idle_between_first_last": 58729
+                },
+                "PIPE_V": {
+                  "start": 175,
+                  "end": 138342,
+                  "busy": 58870,
+                  "idle_between_first_last": 79297
+                }
+              }
+            },
+            "l2": {
+              "finish": 136350,
+              "copy_in_pipe_busy_cycles": 21223,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 867,
+                  "end": 136164,
+                  "busy": 78548,
+                  "idle_between_first_last": 56749
+                },
+                "PIPE_V": {
+                  "start": 175,
+                  "end": 136349,
+                  "busy": 58870,
+                  "idle_between_first_last": 77304
+                }
+              }
+            }
+          },
+          {
+            "core_id": 1,
+            "changed_operations_by_type": {
+              "COPY_IN": 310,
+              "MATMUL": 528,
+              "SIGMOID": 15,
+              "MUL": 75,
+              "ADD": 647,
+              "REDUCE": 465,
+              "COPY_OUT": 190,
+              "DIV": 241,
+              "SUB": 431,
+              "RELU": 193,
+              "EXP": 216,
+              "SQRT": 22
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 144127,
+              "copy_in_pipe_busy_cycles": 42499,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 3000,
+                  "end": 143315,
+                  "busy": 97152,
+                  "idle_between_first_last": 43163
+                },
+                "PIPE_V": {
+                  "start": 5060,
+                  "end": 144126,
+                  "busy": 68179,
+                  "idle_between_first_last": 70887
+                }
+              }
+            },
+            "l2": {
+              "finish": 142009,
+              "copy_in_pipe_busy_cycles": 22521,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 2997,
+                  "end": 141225,
+                  "busy": 97152,
+                  "idle_between_first_last": 41076
+                },
+                "PIPE_V": {
+                  "start": 5057,
+                  "end": 142008,
+                  "busy": 68179,
+                  "idle_between_first_last": 68772
+                }
+              }
+            }
+          },
+          {
+            "core_id": 2,
+            "changed_operations_by_type": {
+              "COPY_IN": 396,
+              "MATMUL": 500,
+              "ADD": 668,
+              "SIGMOID": 20,
+              "RELU": 251,
+              "REDUCE": 464,
+              "MUL": 70,
+              "COPY_OUT": 199,
+              "DIV": 226,
+              "SUB": 395,
+              "EXP": 198,
+              "SQRT": 22
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 144728,
+              "copy_in_pipe_busy_cycles": 57831,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 700,
+                  "end": 144497,
+                  "busy": 88432,
+                  "idle_between_first_last": 55365
+                },
+                "PIPE_V": {
+                  "start": 744,
+                  "end": 144727,
+                  "busy": 73071,
+                  "idle_between_first_last": 70912
+                }
+              }
+            },
+            "l2": {
+              "finish": 142684,
+              "copy_in_pipe_busy_cycles": 28273,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 699,
+                  "end": 142453,
+                  "busy": 88432,
+                  "idle_between_first_last": 53322
+                },
+                "PIPE_V": {
+                  "start": 743,
+                  "end": 142683,
+                  "busy": 73071,
+                  "idle_between_first_last": 68869
+                }
+              }
+            }
+          },
+          {
+            "core_id": 3,
+            "changed_operations_by_type": {
+              "COPY_IN": 365,
+              "MATMUL": 475,
+              "ADD": 523,
+              "MUL": 55,
+              "SIGMOID": 31,
+              "COPY_OUT": 285,
+              "REDUCE": 413,
+              "RELU": 155,
+              "NEG": 3,
+              "DIV": 234,
+              "SUB": 339,
+              "EXP": 171,
+              "SQRT": 16
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 142552,
+              "copy_in_pipe_busy_cycles": 47376,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 880,
+                  "end": 142334,
+                  "busy": 77508,
+                  "idle_between_first_last": 63946
+                },
+                "PIPE_V": {
+                  "start": 175,
+                  "end": 142551,
+                  "busy": 56890,
+                  "idle_between_first_last": 85486
+                }
+              }
+            },
+            "l2": {
+              "finish": 140453,
+              "copy_in_pipe_busy_cycles": 23753,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 867,
+                  "end": 140235,
+                  "busy": 77508,
+                  "idle_between_first_last": 61860
+                },
+                "PIPE_V": {
+                  "start": 175,
+                  "end": 140452,
+                  "busy": 56890,
+                  "idle_between_first_last": 83387
+                }
+              }
+            }
+          },
+          {
+            "core_id": 4,
+            "changed_operations_by_type": {
+              "COPY_IN": 311,
+              "MATMUL": 528,
+              "SIGMOID": 16,
+              "MUL": 74,
+              "ADD": 647,
+              "REDUCE": 465,
+              "NEG": 1,
+              "COPY_OUT": 192,
+              "DIV": 241,
+              "SUB": 431,
+              "RELU": 192,
+              "EXP": 216,
+              "SQRT": 22
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 144100,
+              "copy_in_pipe_busy_cycles": 44250,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 3000,
+                  "end": 143316,
+                  "busy": 97152,
+                  "idle_between_first_last": 43164
+                },
+                "PIPE_V": {
+                  "start": 5060,
+                  "end": 144099,
+                  "busy": 68179,
+                  "idle_between_first_last": 70860
+                }
+              }
+            },
+            "l2": {
+              "finish": 141942,
+              "copy_in_pipe_busy_cycles": 20485,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 2997,
+                  "end": 141266,
+                  "busy": 97152,
+                  "idle_between_first_last": 41117
+                },
+                "PIPE_V": {
+                  "start": 5057,
+                  "end": 141941,
+                  "busy": 68179,
+                  "idle_between_first_last": 68705
+                }
+              }
+            }
+          }
+        ]
+      },
+      "core_reassigned_op_count": 10375,
+      "q3_reduction_pct": 67.83614657721994,
+      "no_l2_reduction_pct": 67.55021232898213,
+      "cache_saving_cycles_old": 2390,
+      "cache_saving_cycles_new": 2044,
+      "analysis_summary": "10,375个原始计算操作改变核心归属。固定归属计算下界从175,324变为97,152周期，可据此评估重分核改善；下界之外的收益仍包含依赖顺序与通信时序变化。新方案在无L2时也缩短67.55%，而有L2的总改善为67.84%；两者不能都称为缓存收益。估算DDR总搬运增加1,006,426B。因此不能把提速解释为减少总DDR流量；需看计算分配、关键链和共享带宽请求时序。原最晚核心1的COPY_IN Pipe占用从14,905变为22,521周期，其核完工从443,616变为142,009周期。同方案L2节省的绝对周期由2,390变为2,044；这是各方案自己的有/无L2差值，不能据此做唯一因果归因。"
+    },
+    {
+      "case": "case_056",
+      "cores": 5,
+      "selection_snapshot": {
+        "case": "case_056",
+        "cores": 5,
+        "candidate": "bands64_scale",
+        "baseline_makespan": 219072,
+        "makespan": 112685,
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_056\\n5\\bands64_scale_52a77323f9\\plan.json",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_056\\n5\\bands64_scale_52a77323f9\\q3.json.gz",
+        "q3_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_056\\n5\\bands64_scale_52a77323f9\\q3.receipt.json",
+        "added_copy_bytes": 2579538,
+        "no_l2_makespan": 114441,
+        "cache_hit_rate": 0.26279585889009477,
+        "baseline_cache_gain": 1.0000821647677476,
+        "baseline_speedup": 1.2657254236050248,
+        "search_status": "SEARCHED",
+        "q2_counterfactual_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_056\\n5\\bands64_scale_52a77323f9\\q2.json.gz",
+        "optimization_gain": 1.9441096862936504,
+        "time_reduction_pct": 48.56257303534911,
+        "cache_gain": 1.0155832630784931,
+        "speedup": 2.4607090562186626
+      },
+      "old": {
+        "plan_path": "求解\\正式实验\\候选评估\\case_056\\n5\\bands8\\plan.json",
+        "plan_sha256": "4f951153e298a710f599a294a1a1f2c052ccdc6a3c53902a64493d4201e068f1",
+        "q3_result_path": "求解\\正式实验\\候选评估\\case_056\\n5\\bands8\\q3.json.gz",
+        "q3_result_sha256": "7bfbc62b12c024fa3dbbbcd6505b1fc6ed5ee6c3c6b63492cafb0163eba0c7d4",
+        "makespan": 219072,
+        "subgraph_count": 20,
+        "subgraph_count_by_core": [
+          5,
+          3,
+          3,
+          4,
+          5
+        ],
+        "internal_op_count_by_core": [
+          3183,
+          397,
+          341,
+          1536,
+          2221
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 57380,
+            "PIPE_V": 101745
+          },
+          {
+            "PIPE_V": 18374,
+            "PIPE_M": 3944
+          },
+          {
+            "PIPE_M": 5626,
+            "PIPE_V": 10772
+          },
+          {
+            "PIPE_M": 24922,
+            "PIPE_V": 46911
+          },
+          {
+            "PIPE_M": 39144,
+            "PIPE_V": 68151
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 101745,
+        "global_compute_lower_bound": 49190.6,
+        "core_finish_times": [
+          219072,
+          217420,
+          215465,
+          217488,
+          215459
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 221600,
+          "scheduled_copy_bytes": 819094,
+          "added_copy_bytes": 597494,
+          "partition_added_copy_bytes": 597494,
+          "spill_added_copy_bytes": 0
+        },
+        "cache_stats": {
+          "copy_in_hits": 76,
+          "copy_in_misses": 580,
+          "hit_bytes": 55888,
+          "miss_bytes": 479802,
+          "hits": 76,
+          "accesses": 656,
+          "hit_rate": 0.1043289962478299
+        },
+        "copy_in_bytes": 535690,
+        "copy_out_bytes_inferred": 283404,
+        "ddr_copy_bytes_inferred": 763206,
+        "copy_in_count": 656,
+        "copy_out_count": 424,
+        "cross_core_transfer_count": 387,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 26176,
+            "UB": 123940
+          },
+          "1": {
+            "L1": 10752,
+            "UB": 61448
+          },
+          "2": {
+            "L1": 10752,
+            "UB": 16514
+          },
+          "3": {
+            "L1": 19456,
+            "UB": 26820
+          },
+          "4": {
+            "L1": 23040,
+            "UB": 123298
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 151216,
+            "memory_dependency_count": 7221,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 126,
+              "PIPE_MTE3": 149,
+              "PIPE_M": 594,
+              "PIPE_V": 2589
+            }
+          },
+          "1": {
+            "local_makespan": 22614,
+            "memory_dependency_count": 765,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 96,
+              "PIPE_MTE3": 16,
+              "PIPE_M": 38,
+              "PIPE_V": 359
+            }
+          },
+          "2": {
+            "local_makespan": 16608,
+            "memory_dependency_count": 283,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 111,
+              "PIPE_MTE3": 24,
+              "PIPE_M": 57,
+              "PIPE_V": 284
+            }
+          },
+          "3": {
+            "local_makespan": 68729,
+            "memory_dependency_count": 2916,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 169,
+              "PIPE_MTE3": 61,
+              "PIPE_M": 269,
+              "PIPE_V": 1267
+            }
+          },
+          "4": {
+            "local_makespan": 102584,
+            "memory_dependency_count": 4414,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 154,
+              "PIPE_MTE3": 174,
+              "PIPE_M": 414,
+              "PIPE_V": 1807
+            }
+          }
+        },
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 121,
+            "miss_bytes": 74726,
+            "hit_count": 5,
+            "hit_bytes": 2594,
+            "copy_in_pipe_busy_cycles": 3182,
+            "ddr_read_op_duration_sum": 3164,
+            "cache_read_op_duration_sum": 18
+          },
+          {
+            "core_id": 1,
+            "miss_count": 77,
+            "miss_bytes": 119498,
+            "hit_count": 19,
+            "hit_bytes": 15362,
+            "copy_in_pipe_busy_cycles": 5530,
+            "ddr_read_op_duration_sum": 5445,
+            "cache_read_op_duration_sum": 85
+          },
+          {
+            "core_id": 2,
+            "miss_count": 90,
+            "miss_bytes": 80654,
+            "hit_count": 21,
+            "hit_bytes": 15396,
+            "copy_in_pipe_busy_cycles": 5224,
+            "ddr_read_op_duration_sum": 5143,
+            "cache_read_op_duration_sum": 81
+          },
+          {
+            "core_id": 3,
+            "miss_count": 148,
+            "miss_bytes": 106766,
+            "hit_count": 21,
+            "hit_bytes": 15876,
+            "copy_in_pipe_busy_cycles": 5868,
+            "ddr_read_op_duration_sum": 5782,
+            "cache_read_op_duration_sum": 86
+          },
+          {
+            "core_id": 4,
+            "miss_count": 144,
+            "miss_bytes": 98158,
+            "hit_count": 10,
+            "hit_bytes": 6660,
+            "copy_in_pipe_busy_cycles": 4818,
+            "ddr_read_op_duration_sum": 4782,
+            "cache_read_op_duration_sum": 36
+          }
+        ],
+        "matched_no_l2_makespan": 219090
+      },
+      "new": {
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_056\\n5\\bands64_scale_52a77323f9\\plan.json",
+        "plan_sha256": "f87c2e3d46335c1dc9cc1823c881faf12ca46ec63f75320abc31af1c2660c845",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_056\\n5\\bands64_scale_52a77323f9\\q3.json.gz",
+        "q3_result_sha256": "d441cd60826f4eec77d9724d5a2f9dd0d240627949887fe0bf6803b6572bd17e",
+        "makespan": 112685,
+        "subgraph_count": 288,
+        "subgraph_count_by_core": [
+          57,
+          57,
+          58,
+          57,
+          59
+        ],
+        "internal_op_count_by_core": [
+          1428,
+          1402,
+          1548,
+          1635,
+          1665
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 18480,
+            "PIPE_V": 43772
+          },
+          {
+            "PIPE_M": 18128,
+            "PIPE_V": 42750
+          },
+          {
+            "PIPE_V": 51048,
+            "PIPE_M": 28792
+          },
+          {
+            "PIPE_V": 55596,
+            "PIPE_M": 27936
+          },
+          {
+            "PIPE_M": 37680,
+            "PIPE_V": 52787
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 55596,
+        "global_compute_lower_bound": 49190.6,
+        "core_finish_times": [
+          112273,
+          112651,
+          111894,
+          112685,
+          111286
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 221600,
+          "scheduled_copy_bytes": 2801138,
+          "added_copy_bytes": 2579538,
+          "partition_added_copy_bytes": 2579538,
+          "spill_added_copy_bytes": 0
+        },
+        "cache_stats": {
+          "copy_in_hits": 484,
+          "copy_in_misses": 1422,
+          "hit_bytes": 431022,
+          "miss_bytes": 1209118,
+          "hits": 484,
+          "accesses": 1906,
+          "hit_rate": 0.26279585889009477
+        },
+        "copy_in_bytes": 1640140,
+        "copy_out_bytes_inferred": 1160998,
+        "ddr_copy_bytes_inferred": 2370116,
+        "copy_in_count": 1906,
+        "copy_out_count": 1516,
+        "cross_core_transfer_count": 1479,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 17440,
+            "UB": 37160
+          },
+          "1": {
+            "L1": 17408,
+            "UB": 40648
+          },
+          "2": {
+            "L1": 23040,
+            "UB": 46212
+          },
+          "3": {
+            "L1": 14368,
+            "UB": 82404
+          },
+          "4": {
+            "L1": 47648,
+            "UB": 92676
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 59304,
+            "memory_dependency_count": 3025,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 402,
+              "PIPE_MTE3": 201,
+              "PIPE_M": 200,
+              "PIPE_V": 1228
+            }
+          },
+          "1": {
+            "local_makespan": 58949,
+            "memory_dependency_count": 2947,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 401,
+              "PIPE_MTE3": 187,
+              "PIPE_M": 199,
+              "PIPE_V": 1203
+            }
+          },
+          "2": {
+            "local_makespan": 70185,
+            "memory_dependency_count": 3151,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 379,
+              "PIPE_MTE3": 359,
+              "PIPE_M": 301,
+              "PIPE_V": 1247
+            }
+          },
+          "3": {
+            "local_makespan": 78074,
+            "memory_dependency_count": 3528,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 365,
+              "PIPE_MTE3": 325,
+              "PIPE_M": 279,
+              "PIPE_V": 1356
+            }
+          },
+          "4": {
+            "local_makespan": 84287,
+            "memory_dependency_count": 3349,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 359,
+              "PIPE_MTE3": 444,
+              "PIPE_M": 393,
+              "PIPE_V": 1272
+            }
+          }
+        },
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 315,
+            "miss_bytes": 266326,
+            "hit_count": 87,
+            "hit_bytes": 79014,
+            "copy_in_pipe_busy_cycles": 13402,
+            "ddr_read_op_duration_sum": 12947,
+            "cache_read_op_duration_sum": 455
+          },
+          {
+            "core_id": 1,
+            "miss_count": 279,
+            "miss_bytes": 236332,
+            "hit_count": 122,
+            "hit_bytes": 110314,
+            "copy_in_pipe_busy_cycles": 13301,
+            "ddr_read_op_duration_sum": 12723,
+            "cache_read_op_duration_sum": 578
+          },
+          {
+            "core_id": 2,
+            "miss_count": 274,
+            "miss_bytes": 222126,
+            "hit_count": 105,
+            "hit_bytes": 82188,
+            "copy_in_pipe_busy_cycles": 12712,
+            "ddr_read_op_duration_sum": 12247,
+            "cache_read_op_duration_sum": 465
+          },
+          {
+            "core_id": 3,
+            "miss_count": 274,
+            "miss_bytes": 248092,
+            "hit_count": 91,
+            "hit_bytes": 87206,
+            "copy_in_pipe_busy_cycles": 12115,
+            "ddr_read_op_duration_sum": 11660,
+            "cache_read_op_duration_sum": 455
+          },
+          {
+            "core_id": 4,
+            "miss_count": 280,
+            "miss_bytes": 236242,
+            "hit_count": 79,
+            "hit_bytes": 72300,
+            "copy_in_pipe_busy_cycles": 10558,
+            "ddr_read_op_duration_sum": 10195,
+            "cache_read_op_duration_sum": 363
+          }
+        ],
+        "matched_no_l2_makespan": 114441,
+        "matched_no_l2_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_056\\n5\\bands64_scale_52a77323f9\\q2.receipt.json",
+        "matched_no_l2_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_056\\n5\\bands64_scale_52a77323f9\\q2.json.gz",
+        "matched_timing_by_core": [
+          {
+            "core_id": 0,
+            "changed_operations_by_type": {
+              "COPY_IN": 401,
+              "MATMUL": 200,
+              "ADD": 345,
+              "SIGMOID": 33,
+              "REDUCE": 241,
+              "SUB": 212,
+              "MUL": 75,
+              "DIV": 93,
+              "EXP": 105,
+              "COPY_OUT": 201,
+              "SQRT": 24,
+              "RELU": 97,
+              "NEG": 3
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 114048,
+              "copy_in_pipe_busy_cycles": 19235,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 55,
+                  "end": 113922,
+                  "busy": 18480,
+                  "idle_between_first_last": 95387
+                },
+                "PIPE_V": {
+                  "start": 69,
+                  "end": 114047,
+                  "busy": 43772,
+                  "idle_between_first_last": 70206
+                }
+              }
+            },
+            "l2": {
+              "finish": 112273,
+              "copy_in_pipe_busy_cycles": 13402,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 51,
+                  "end": 112147,
+                  "busy": 18480,
+                  "idle_between_first_last": 93616
+                },
+                "PIPE_V": {
+                  "start": 65,
+                  "end": 112272,
+                  "busy": 43772,
+                  "idle_between_first_last": 68435
+                }
+              }
+            }
+          },
+          {
+            "core_id": 1,
+            "changed_operations_by_type": {
+              "COPY_IN": 401,
+              "REDUCE": 243,
+              "SUB": 211,
+              "MATMUL": 199,
+              "MUL": 69,
+              "ADD": 344,
+              "SIGMOID": 25,
+              "DIV": 89,
+              "EXP": 108,
+              "COPY_OUT": 187,
+              "SQRT": 21,
+              "RELU": 89,
+              "NEG": 4
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 114413,
+              "copy_in_pipe_busy_cycles": 19759,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 145,
+                  "end": 114287,
+                  "busy": 18128,
+                  "idle_between_first_last": 96014
+                },
+                "PIPE_V": {
+                  "start": 90,
+                  "end": 114412,
+                  "busy": 42750,
+                  "idle_between_first_last": 71572
+                }
+              }
+            },
+            "l2": {
+              "finish": 112651,
+              "copy_in_pipe_busy_cycles": 13301,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 132,
+                  "end": 112525,
+                  "busy": 18128,
+                  "idle_between_first_last": 94265
+                },
+                "PIPE_V": {
+                  "start": 86,
+                  "end": 112650,
+                  "busy": 42750,
+                  "idle_between_first_last": 69814
+                }
+              }
+            }
+          },
+          {
+            "core_id": 2,
+            "changed_operations_by_type": {
+              "COPY_IN": 378,
+              "MATMUL": 301,
+              "SIGMOID": 23,
+              "ADD": 329,
+              "REDUCE": 220,
+              "SUB": 213,
+              "MUL": 71,
+              "DIV": 171,
+              "EXP": 105,
+              "COPY_OUT": 359,
+              "SQRT": 21,
+              "RELU": 93,
+              "NEG": 1
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 113680,
+              "copy_in_pipe_busy_cycles": 18081,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 50,
+                  "end": 113554,
+                  "busy": 28792,
+                  "idle_between_first_last": 84712
+                },
+                "PIPE_V": {
+                  "start": 64,
+                  "end": 113679,
+                  "busy": 51048,
+                  "idle_between_first_last": 62567
+                }
+              }
+            },
+            "l2": {
+              "finish": 111894,
+              "copy_in_pipe_busy_cycles": 12712,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 49,
+                  "end": 111768,
+                  "busy": 28792,
+                  "idle_between_first_last": 82927
+                },
+                "PIPE_V": {
+                  "start": 63,
+                  "end": 111893,
+                  "busy": 51048,
+                  "idle_between_first_last": 60782
+                }
+              }
+            }
+          },
+          {
+            "core_id": 3,
+            "changed_operations_by_type": {
+              "COPY_IN": 364,
+              "MATMUL": 279,
+              "SIGMOID": 22,
+              "REDUCE": 309,
+              "SUB": 241,
+              "MUL": 72,
+              "ADD": 325,
+              "DIV": 172,
+              "COPY_OUT": 325,
+              "EXP": 96,
+              "SQRT": 24,
+              "RELU": 91,
+              "NEG": 4
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 114441,
+              "copy_in_pipe_busy_cycles": 19076,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 55,
+                  "end": 114291,
+                  "busy": 27936,
+                  "idle_between_first_last": 86300
+                },
+                "PIPE_V": {
+                  "start": 69,
+                  "end": 114440,
+                  "busy": 55596,
+                  "idle_between_first_last": 58775
+                }
+              }
+            },
+            "l2": {
+              "finish": 112685,
+              "copy_in_pipe_busy_cycles": 12115,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 51,
+                  "end": 112535,
+                  "busy": 27936,
+                  "idle_between_first_last": 84548
+                },
+                "PIPE_V": {
+                  "start": 65,
+                  "end": 112684,
+                  "busy": 55596,
+                  "idle_between_first_last": 57023
+                }
+              }
+            }
+          },
+          {
+            "core_id": 4,
+            "changed_operations_by_type": {
+              "COPY_IN": 358,
+              "MATMUL": 393,
+              "ADD": 312,
+              "SIGMOID": 19,
+              "DIV": 179,
+              "REDUCE": 309,
+              "SUB": 184,
+              "EXP": 92,
+              "MUL": 65,
+              "COPY_OUT": 444,
+              "SQRT": 20,
+              "RELU": 88,
+              "NEG": 4
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 113048,
+              "copy_in_pipe_busy_cycles": 14995,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 50,
+                  "end": 112898,
+                  "busy": 37680,
+                  "idle_between_first_last": 75168
+                },
+                "PIPE_V": {
+                  "start": 114,
+                  "end": 113047,
+                  "busy": 52787,
+                  "idle_between_first_last": 60146
+                }
+              }
+            },
+            "l2": {
+              "finish": 111286,
+              "copy_in_pipe_busy_cycles": 10558,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 49,
+                  "end": 111136,
+                  "busy": 37680,
+                  "idle_between_first_last": 73407
+                },
+                "PIPE_V": {
+                  "start": 110,
+                  "end": 111285,
+                  "busy": 52787,
+                  "idle_between_first_last": 58388
+                }
+              }
+            }
+          }
+        ]
+      },
+      "core_reassigned_op_count": 6373,
+      "q3_reduction_pct": 48.56257303534911,
+      "no_l2_reduction_pct": 47.76530193071341,
+      "cache_saving_cycles_old": 18,
+      "cache_saving_cycles_new": 1756,
+      "analysis_summary": "6,373个原始计算操作改变核心归属。固定归属计算下界从101,745变为55,596周期，可据此评估重分核改善；下界之外的收益仍包含依赖顺序与通信时序变化。新方案在无L2时也缩短47.77%，而有L2的总改善为48.56%；两者不能都称为缓存收益。估算DDR总搬运增加1,606,910B。因此不能把提速解释为减少总DDR流量；需看计算分配、关键链和共享带宽请求时序。原最晚核心0的COPY_IN Pipe占用从3,182变为13,402周期，其核完工从219,072变为112,273周期。同方案L2节省的绝对周期由18变为1,756；这是各方案自己的有/无L2差值，不能据此做唯一因果归因。"
+    },
+    {
+      "case": "case_044",
+      "cores": 5,
+      "selection_snapshot": {
+        "case": "case_044",
+        "cores": 5,
+        "candidate": "bands8_pipebytes_w75",
+        "baseline_makespan": 102921,
+        "makespan": 49324,
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\bands8_pipebytes_w75_8f5e6c2e95\\plan.json",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\bands8_pipebytes_w75_8f5e6c2e95\\q3.json.gz",
+        "q3_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\bands8_pipebytes_w75_8f5e6c2e95\\q3.receipt.json",
+        "added_copy_bytes": 1718144,
+        "no_l2_makespan": 54402,
+        "cache_hit_rate": 0.17208690086586884,
+        "baseline_cache_gain": 1.2912039331137475,
+        "baseline_speedup": 1.5002477628472324,
+        "search_status": "SEARCHED",
+        "q2_counterfactual_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\bands8_pipebytes_w75_8f5e6c2e95\\q2.json.gz",
+        "optimization_gain": 2.0866312545616736,
+        "time_reduction_pct": 52.07586401220353,
+        "cache_gain": 1.102951909820777,
+        "speedup": 3.130463871543265
+      },
+      "old": {
+        "plan_path": "求解\\正式实验\\候选评估\\case_044\\n5\\components\\plan.json",
+        "plan_sha256": "c7fb599253f6b7a0b19d7d4c1b7ad480642d75781a601cd8f73a6d594581a0e1",
+        "q3_result_path": "求解\\正式实验\\候选评估\\case_044\\n5\\components\\q3.json.gz",
+        "q3_result_sha256": "86c441ce73232d1c6ae6a1d27e10430abf5c391237cdcbddf14d03e4c9304c69",
+        "makespan": 102921,
+        "subgraph_count": 5,
+        "subgraph_count_by_core": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "internal_op_count_by_core": [
+          372,
+          248,
+          248,
+          248,
+          248
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 20292,
+            "PIPE_V": 2724
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 20292,
+        "global_compute_lower_bound": 14880.8,
+        "core_finish_times": [
+          102921,
+          94107,
+          94107,
+          94107,
+          94107
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 975456,
+          "scheduled_copy_bytes": 7171488,
+          "added_copy_bytes": 6196032,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 2474432
+        },
+        "cache_stats": {
+          "copy_in_hits": 86,
+          "copy_in_misses": 261,
+          "hit_bytes": 2474432,
+          "miss_bytes": 4674528,
+          "hits": 86,
+          "accesses": 347,
+          "hit_rate": 0.3461247510127347
+        },
+        "copy_in_bytes": 7148960,
+        "copy_out_bytes_inferred": 22528,
+        "ddr_copy_bytes_inferred": 4697056,
+        "copy_in_count": 347,
+        "copy_out_count": 11,
+        "cross_core_transfer_count": 0,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "1": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "2": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "3": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "4": {
+            "L1": 524192,
+            "UB": 0
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 51867,
+            "memory_dependency_count": 859,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 79,
+              "PIPE_MTE3": 3,
+              "PIPE_M": 150,
+              "PIPE_V": 222
+            }
+          },
+          "1": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 546,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "2": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 544,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "3": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 550,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "4": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 552,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          }
+        },
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 53,
+            "miss_bytes": 936544,
+            "hit_count": 26,
+            "hit_bytes": 825024,
+            "copy_in_pipe_busy_cycles": 86692,
+            "ddr_read_op_duration_sum": 78245,
+            "cache_read_op_duration_sum": 8447
+          },
+          {
+            "core_id": 1,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 15,
+            "hit_bytes": 412352,
+            "copy_in_pipe_busy_cycles": 86086,
+            "ddr_read_op_duration_sum": 78175,
+            "cache_read_op_duration_sum": 7911
+          },
+          {
+            "core_id": 2,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 15,
+            "hit_bytes": 412352,
+            "copy_in_pipe_busy_cycles": 86086,
+            "ddr_read_op_duration_sum": 78175,
+            "cache_read_op_duration_sum": 7911
+          },
+          {
+            "core_id": 3,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 15,
+            "hit_bytes": 412352,
+            "copy_in_pipe_busy_cycles": 86086,
+            "ddr_read_op_duration_sum": 78175,
+            "cache_read_op_duration_sum": 7911
+          },
+          {
+            "core_id": 4,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 15,
+            "hit_bytes": 412352,
+            "copy_in_pipe_busy_cycles": 86086,
+            "ddr_read_op_duration_sum": 78175,
+            "cache_read_op_duration_sum": 7911
+          }
+        ],
+        "matched_no_l2_makespan": 132892
+      },
+      "new": {
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\bands8_pipebytes_w75_8f5e6c2e95\\plan.json",
+        "plan_sha256": "b095d89c3832b8ea6a5a68e8f268367b60982912397613fd4600cb3a6ce23a98",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\bands8_pipebytes_w75_8f5e6c2e95\\q3.json.gz",
+        "q3_result_sha256": "f56b4b5d32eed6c9530944bcaaf583aa6b0badb390e202132e70d67e3fdf8471",
+        "makespan": 49324,
+        "subgraph_count": 34,
+        "subgraph_count_by_core": [
+          6,
+          6,
+          8,
+          7,
+          7
+        ],
+        "internal_op_count_by_core": [
+          276,
+          248,
+          264,
+          280,
+          296
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 14994,
+            "PIPE_V": 2310
+          },
+          {
+            "PIPE_M": 14290,
+            "PIPE_V": 1681
+          },
+          {
+            "PIPE_M": 14696,
+            "PIPE_V": 1867
+          },
+          {
+            "PIPE_V": 1999,
+            "PIPE_M": 14874
+          },
+          {
+            "PIPE_M": 15550,
+            "PIPE_V": 2131
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 15550,
+        "global_compute_lower_bound": 14880.8,
+        "core_finish_times": [
+          49324,
+          47069,
+          46984,
+          48383,
+          48178
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 975456,
+          "scheduled_copy_bytes": 2693600,
+          "added_copy_bytes": 1718144,
+          "partition_added_copy_bytes": 1718144,
+          "spill_added_copy_bytes": 0
+        },
+        "cache_stats": {
+          "copy_in_hits": 60,
+          "copy_in_misses": 215,
+          "hit_bytes": 456000,
+          "miss_bytes": 2193824,
+          "hits": 60,
+          "accesses": 275,
+          "hit_rate": 0.17208690086586884
+        },
+        "copy_in_bytes": 2649824,
+        "copy_out_bytes_inferred": 43776,
+        "ddr_copy_bytes_inferred": 2237600,
+        "copy_in_count": 275,
+        "copy_out_count": 65,
+        "cross_core_transfer_count": 54,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 98560,
+            "UB": 0
+          },
+          "1": {
+            "L1": 485504,
+            "UB": 0
+          },
+          "2": {
+            "L1": 487168,
+            "UB": 0
+          },
+          "3": {
+            "L1": 281600,
+            "UB": 0
+          },
+          "4": {
+            "L1": 283392,
+            "UB": 0
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 19897,
+            "memory_dependency_count": 0,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 46,
+              "PIPE_MTE3": 11,
+              "PIPE_M": 111,
+              "PIPE_V": 165
+            }
+          },
+          "1": {
+            "local_makespan": 25691,
+            "memory_dependency_count": 634,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 47,
+              "PIPE_MTE3": 21,
+              "PIPE_M": 103,
+              "PIPE_V": 145
+            }
+          },
+          "2": {
+            "local_makespan": 31627,
+            "memory_dependency_count": 817,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 60,
+              "PIPE_MTE3": 15,
+              "PIPE_M": 108,
+              "PIPE_V": 156
+            }
+          },
+          "3": {
+            "local_makespan": 24011,
+            "memory_dependency_count": 272,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 62,
+              "PIPE_MTE3": 11,
+              "PIPE_M": 111,
+              "PIPE_V": 169
+            }
+          },
+          "4": {
+            "local_makespan": 24759,
+            "memory_dependency_count": 310,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 60,
+              "PIPE_MTE3": 7,
+              "PIPE_M": 117,
+              "PIPE_V": 179
+            }
+          }
+        },
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 29,
+            "miss_bytes": 138080,
+            "hit_count": 17,
+            "hit_bytes": 49152,
+            "copy_in_pipe_busy_cycles": 10960,
+            "ddr_read_op_duration_sum": 10707,
+            "cache_read_op_duration_sum": 253
+          },
+          {
+            "core_id": 1,
+            "miss_count": 37,
+            "miss_bytes": 597984,
+            "hit_count": 10,
+            "hit_bytes": 7040,
+            "copy_in_pipe_busy_cycles": 26188,
+            "ddr_read_op_duration_sum": 26153,
+            "cache_read_op_duration_sum": 35
+          },
+          {
+            "core_id": 2,
+            "miss_count": 43,
+            "miss_bytes": 870880,
+            "hit_count": 17,
+            "hit_bytes": 66432,
+            "copy_in_pipe_busy_cycles": 35311,
+            "ddr_read_op_duration_sum": 34915,
+            "cache_read_op_duration_sum": 396
+          },
+          {
+            "core_id": 3,
+            "miss_count": 57,
+            "miss_bytes": 352352,
+            "hit_count": 5,
+            "hit_bytes": 109056,
+            "copy_in_pipe_busy_cycles": 19036,
+            "ddr_read_op_duration_sum": 18553,
+            "cache_read_op_duration_sum": 483
+          },
+          {
+            "core_id": 4,
+            "miss_count": 49,
+            "miss_bytes": 234528,
+            "hit_count": 11,
+            "hit_bytes": 224320,
+            "copy_in_pipe_busy_cycles": 15873,
+            "ddr_read_op_duration_sum": 14852,
+            "cache_read_op_duration_sum": 1021
+          }
+        ],
+        "matched_no_l2_makespan": 54402,
+        "matched_no_l2_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\bands8_pipebytes_w75_8f5e6c2e95\\q2.receipt.json",
+        "matched_no_l2_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\bands8_pipebytes_w75_8f5e6c2e95\\q2.json.gz",
+        "matched_timing_by_core": [
+          {
+            "core_id": 0,
+            "changed_operations_by_type": {
+              "COPY_IN": 36,
+              "CONV": 64,
+              "RELU": 65,
+              "ADD": 36,
+              "COPY_OUT": 10
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 54234,
+              "copy_in_pipe_busy_cycles": 11578,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 54155,
+                  "busy": 14994,
+                  "idle_between_first_last": 38961
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 54199,
+                  "busy": 2310,
+                  "idle_between_first_last": 51539
+                }
+              }
+            },
+            "l2": {
+              "finish": 49324,
+              "copy_in_pipe_busy_cycles": 10960,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 49245,
+                  "busy": 14994,
+                  "idle_between_first_last": 34051
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 49289,
+                  "busy": 2310,
+                  "idle_between_first_last": 46629
+                }
+              }
+            }
+          },
+          {
+            "core_id": 1,
+            "changed_operations_by_type": {
+              "COPY_IN": 37,
+              "CONV": 73,
+              "RELU": 76,
+              "ADD": 29,
+              "COPY_OUT": 20
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 53063,
+              "copy_in_pipe_busy_cycles": 26331,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 52984,
+                  "busy": 14290,
+                  "idle_between_first_last": 38494
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 53028,
+                  "busy": 1681,
+                  "idle_between_first_last": 50997
+                }
+              }
+            },
+            "l2": {
+              "finish": 47069,
+              "copy_in_pipe_busy_cycles": 26188,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 46987,
+                  "busy": 14290,
+                  "idle_between_first_last": 32497
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 47031,
+                  "busy": 1681,
+                  "idle_between_first_last": 45000
+                }
+              }
+            }
+          },
+          {
+            "core_id": 2,
+            "changed_operations_by_type": {
+              "COPY_IN": 50,
+              "CONV": 78,
+              "RELU": 79,
+              "ADD": 37,
+              "COPY_OUT": 15
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 53268,
+              "copy_in_pipe_busy_cycles": 37479,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 53189,
+                  "busy": 14696,
+                  "idle_between_first_last": 38293
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 53233,
+                  "busy": 1867,
+                  "idle_between_first_last": 51016
+                }
+              }
+            },
+            "l2": {
+              "finish": 46984,
+              "copy_in_pipe_busy_cycles": 35311,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 46905,
+                  "busy": 14696,
+                  "idle_between_first_last": 32009
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 46949,
+                  "busy": 1867,
+                  "idle_between_first_last": 44732
+                }
+              }
+            }
+          },
+          {
+            "core_id": 3,
+            "changed_operations_by_type": {
+              "COPY_IN": 52,
+              "CONV": 81,
+              "RELU": 81,
+              "ADD": 48,
+              "COPY_OUT": 10
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 52200,
+              "copy_in_pipe_busy_cycles": 23283,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 52121,
+                  "busy": 14874,
+                  "idle_between_first_last": 37047
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 52165,
+                  "busy": 1999,
+                  "idle_between_first_last": 49816
+                }
+              }
+            },
+            "l2": {
+              "finish": 48383,
+              "copy_in_pipe_busy_cycles": 19036,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 48304,
+                  "busy": 14874,
+                  "idle_between_first_last": 33230
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 48348,
+                  "busy": 1999,
+                  "idle_between_first_last": 45999
+                }
+              }
+            }
+          },
+          {
+            "core_id": 4,
+            "changed_operations_by_type": {
+              "COPY_IN": 50,
+              "CONV": 87,
+              "RELU": 87,
+              "ADD": 52,
+              "COPY_OUT": 7
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 54402,
+              "copy_in_pipe_busy_cycles": 21666,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 54323,
+                  "busy": 15550,
+                  "idle_between_first_last": 38573
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 54367,
+                  "busy": 2131,
+                  "idle_between_first_last": 51886
+                }
+              }
+            },
+            "l2": {
+              "finish": 48178,
+              "copy_in_pipe_busy_cycles": 15873,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 200,
+                  "end": 48099,
+                  "busy": 15550,
+                  "idle_between_first_last": 32349
+                },
+                "PIPE_V": {
+                  "start": 350,
+                  "end": 48143,
+                  "busy": 2131,
+                  "idle_between_first_last": 45662
+                }
+              }
+            }
+          }
+        ]
+      },
+      "core_reassigned_op_count": 368,
+      "q3_reduction_pct": 52.07586401220353,
+      "no_l2_reduction_pct": 59.06299852511814,
+      "cache_saving_cycles_old": 29971,
+      "cache_saving_cycles_new": 5078,
+      "analysis_summary": "368个原始计算操作改变核心归属。固定归属计算下界从20,292变为15,550周期，可据此评估重分核改善；下界之外的收益仍包含依赖顺序与通信时序变化。新方案在无L2时也缩短59.06%，而有L2的总改善为52.08%；两者不能都称为缓存收益。估算DDR总搬运减少2,459,456B。SPILL新增搬运从2,474,432B清零，说明新执行顺序与驻留安排消除了此类换出/换入开销。原最晚核心0的COPY_IN Pipe占用从86,692变为10,960周期，其核完工从102,921变为49,324周期。同方案L2节省的绝对周期由29,971变为5,078；这是各方案自己的有/无L2差值，不能据此做唯一因果归因。"
+    },
+    {
+      "case": "case_083",
+      "cores": 5,
+      "selection_snapshot": {
+        "case": "case_083",
+        "cores": 5,
+        "candidate": "bands64_scale",
+        "baseline_makespan": 310731,
+        "makespan": 185314,
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\bands64_scale_ef4d013070\\plan.json",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\bands64_scale_ef4d013070\\q3.json.gz",
+        "q3_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\bands64_scale_ef4d013070\\q3.receipt.json",
+        "added_copy_bytes": 3721600,
+        "no_l2_makespan": 185314,
+        "cache_hit_rate": 0.18958848353999386,
+        "baseline_cache_gain": 1.4239969620025037,
+        "baseline_speedup": 3.40485178498444,
+        "search_status": "SEARCHED",
+        "q2_counterfactual_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\bands64_scale_ef4d013070\\q2.json.gz",
+        "optimization_gain": 1.6767810311147566,
+        "time_reduction_pct": 40.361920761044125,
+        "cache_gain": 1.0,
+        "speedup": 5.709190886819129
+      },
+      "old": {
+        "plan_path": "求解\\正式实验\\候选评估\\case_083\\n5\\components\\plan.json",
+        "plan_sha256": "b19343e8a9afcbdd0856fa0551dbd9aa65c0c77098fabd86951274e4f10b85d7",
+        "q3_result_path": "求解\\正式实验\\候选评估\\case_083\\n5\\components\\q3.json.gz",
+        "q3_result_sha256": "e4778d8afde84811a2da593853935e4005034b64db0d936f153c65985b085604",
+        "makespan": 310731,
+        "subgraph_count": 5,
+        "subgraph_count_by_core": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "internal_op_count_by_core": [
+          868,
+          744,
+          744,
+          744,
+          744
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 183092,
+            "PIPE_V": 16100
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 183092,
+        "global_compute_lower_bound": 162167.2,
+        "core_finish_times": [
+          310731,
+          278960,
+          278960,
+          278960,
+          278960
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 1438304,
+          "scheduled_copy_bytes": 16496352,
+          "added_copy_bytes": 15058048,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 11336448
+        },
+        "cache_stats": {
+          "copy_in_hits": 386,
+          "copy_in_misses": 293,
+          "hit_bytes": 10966272,
+          "miss_bytes": 5263840,
+          "hits": 386,
+          "accesses": 679,
+          "hit_rate": 0.6756744500592479
+        },
+        "copy_in_bytes": 16230112,
+        "copy_out_bytes_inferred": 266240,
+        "ddr_copy_bytes_inferred": 5530080,
+        "copy_in_count": 679,
+        "copy_out_count": 33,
+        "cross_core_transfer_count": 0,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "1": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "2": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "3": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "4": {
+            "L1": 524288,
+            "UB": 0
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 258156,
+            "memory_dependency_count": 2433,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 159,
+              "PIPE_MTE3": 9,
+              "PIPE_M": 350,
+              "PIPE_V": 518
+            }
+          },
+          "1": {
+            "local_makespan": 222209,
+            "memory_dependency_count": 1947,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 130,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "2": {
+            "local_makespan": 222209,
+            "memory_dependency_count": 1958,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 130,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "3": {
+            "local_makespan": 222209,
+            "memory_dependency_count": 1949,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 130,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "4": {
+            "local_makespan": 222209,
+            "memory_dependency_count": 1952,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 130,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          }
+        },
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 69,
+            "miss_bytes": 1345632,
+            "hit_count": 90,
+            "hit_bytes": 2287360,
+            "copy_in_pipe_busy_cycles": 133390,
+            "ddr_read_op_duration_sum": 91292,
+            "cache_read_op_duration_sum": 42098
+          },
+          {
+            "core_id": 1,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "hit_count": 74,
+            "hit_bytes": 2169728,
+            "copy_in_pipe_busy_cycles": 128175,
+            "ddr_read_op_duration_sum": 85115,
+            "cache_read_op_duration_sum": 43060
+          },
+          {
+            "core_id": 2,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "hit_count": 74,
+            "hit_bytes": 2169728,
+            "copy_in_pipe_busy_cycles": 128175,
+            "ddr_read_op_duration_sum": 85115,
+            "cache_read_op_duration_sum": 43060
+          },
+          {
+            "core_id": 3,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "hit_count": 74,
+            "hit_bytes": 2169728,
+            "copy_in_pipe_busy_cycles": 128175,
+            "ddr_read_op_duration_sum": 85115,
+            "cache_read_op_duration_sum": 43060
+          },
+          {
+            "core_id": 4,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "hit_count": 74,
+            "hit_bytes": 2169728,
+            "copy_in_pipe_busy_cycles": 128175,
+            "ddr_read_op_duration_sum": 85115,
+            "cache_read_op_duration_sum": 43060
+          }
+        ],
+        "matched_no_l2_makespan": 442480
+      },
+      "new": {
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\bands64_scale_ef4d013070\\plan.json",
+        "plan_sha256": "5edc97c1cbb3e32ea2ca50f053e8f9dcff25bcdd6228836d73ffc7048abcc9d6",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\bands64_scale_ef4d013070\\q3.json.gz",
+        "q3_result_sha256": "cea45e954d456f90947c2c03f59740afc60a0d5b1fe0192390ac4249c4a0b3ad",
+        "makespan": 185314,
+        "subgraph_count": 310,
+        "subgraph_count_by_core": [
+          62,
+          62,
+          62,
+          62,
+          62
+        ],
+        "internal_op_count_by_core": [
+          868,
+          744,
+          744,
+          744,
+          744
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 183092,
+            "PIPE_V": 16100
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 183092,
+        "global_compute_lower_bound": 162167.2,
+        "core_finish_times": [
+          185314,
+          159569,
+          159569,
+          159569,
+          159569
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 1438304,
+          "scheduled_copy_bytes": 5159904,
+          "added_copy_bytes": 3721600,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 0
+        },
+        "cache_stats": {
+          "copy_in_hits": 49,
+          "copy_in_misses": 232,
+          "hit_bytes": 930112,
+          "miss_bytes": 3975840,
+          "hits": 49,
+          "accesses": 281,
+          "hit_rate": 0.18958848353999386
+        },
+        "copy_in_bytes": 4905952,
+        "copy_out_bytes_inferred": 253952,
+        "ddr_copy_bytes_inferred": 4229792,
+        "copy_in_count": 281,
+        "copy_out_count": 31,
+        "cross_core_transfer_count": 0,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 262656,
+            "UB": 0
+          },
+          "1": {
+            "L1": 246272,
+            "UB": 0
+          },
+          "2": {
+            "L1": 246272,
+            "UB": 0
+          },
+          "3": {
+            "L1": 246272,
+            "UB": 0
+          },
+          "4": {
+            "L1": 246272,
+            "UB": 0
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 200115,
+            "memory_dependency_count": 3676,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 57,
+              "PIPE_MTE3": 7,
+              "PIPE_M": 350,
+              "PIPE_V": 518
+            }
+          },
+          "1": {
+            "local_makespan": 173358,
+            "memory_dependency_count": 3044,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 56,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "2": {
+            "local_makespan": 173358,
+            "memory_dependency_count": 3055,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 56,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "3": {
+            "local_makespan": 173358,
+            "memory_dependency_count": 3059,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 56,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "4": {
+            "local_makespan": 173358,
+            "memory_dependency_count": 3049,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 56,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          }
+        },
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 8,
+            "miss_bytes": 57632,
+            "hit_count": 49,
+            "hit_bytes": 930112,
+            "copy_in_pipe_busy_cycles": 8095,
+            "ddr_read_op_duration_sum": 4352,
+            "cache_read_op_duration_sum": 3743
+          },
+          {
+            "core_id": 1,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "copy_in_pipe_busy_cycles": 66255,
+            "ddr_read_op_duration_sum": 66255,
+            "cache_read_op_duration_sum": 0
+          },
+          {
+            "core_id": 2,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "copy_in_pipe_busy_cycles": 66255,
+            "ddr_read_op_duration_sum": 66255,
+            "cache_read_op_duration_sum": 0
+          },
+          {
+            "core_id": 3,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "copy_in_pipe_busy_cycles": 66255,
+            "ddr_read_op_duration_sum": 66255,
+            "cache_read_op_duration_sum": 0
+          },
+          {
+            "core_id": 4,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "copy_in_pipe_busy_cycles": 66255,
+            "ddr_read_op_duration_sum": 66255,
+            "cache_read_op_duration_sum": 0
+          }
+        ],
+        "matched_no_l2_makespan": 185314,
+        "matched_no_l2_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\bands64_scale_ef4d013070\\q2.receipt.json",
+        "matched_no_l2_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\bands64_scale_ef4d013070\\q2.json.gz",
+        "matched_timing_by_core": [
+          {
+            "core_id": 0,
+            "changed_operations_by_type": {
+              "COPY_IN": 49
+            },
+            "non_copy_operation_timings_equal": true,
+            "no_l2": {
+              "finish": 185314,
+              "copy_in_pipe_busy_cycles": 53049,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 185037,
+                  "busy": 183092,
+                  "idle_between_first_last": 1235
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 185177,
+                  "busy": 16100,
+                  "idle_between_first_last": 167785
+                }
+              }
+            },
+            "l2": {
+              "finish": 185314,
+              "copy_in_pipe_busy_cycles": 8095,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 185037,
+                  "busy": 183092,
+                  "idle_between_first_last": 1235
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 185177,
+                  "busy": 16100,
+                  "idle_between_first_last": 167785
+                }
+              }
+            }
+          },
+          {
+            "core_id": 1,
+            "changed_operations_by_type": {
+              "COPY_IN": 28,
+              "CONV": 126,
+              "RELU": 126,
+              "ADD": 72,
+              "COPY_OUT": 6
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 161084,
+              "copy_in_pipe_busy_cycles": 74544,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 160396,
+                  "busy": 156936,
+                  "idle_between_first_last": 2750
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 160536,
+                  "busy": 13800,
+                  "idle_between_first_last": 145444
+                }
+              }
+            },
+            "l2": {
+              "finish": 159569,
+              "copy_in_pipe_busy_cycles": 66255,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 158881,
+                  "busy": 156936,
+                  "idle_between_first_last": 1235
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 159021,
+                  "busy": 13800,
+                  "idle_between_first_last": 143929
+                }
+              }
+            }
+          },
+          {
+            "core_id": 2,
+            "changed_operations_by_type": {
+              "COPY_IN": 28,
+              "CONV": 126,
+              "RELU": 126,
+              "ADD": 72,
+              "COPY_OUT": 6
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 161084,
+              "copy_in_pipe_busy_cycles": 74544,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 160396,
+                  "busy": 156936,
+                  "idle_between_first_last": 2750
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 160536,
+                  "busy": 13800,
+                  "idle_between_first_last": 145444
+                }
+              }
+            },
+            "l2": {
+              "finish": 159569,
+              "copy_in_pipe_busy_cycles": 66255,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 158881,
+                  "busy": 156936,
+                  "idle_between_first_last": 1235
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 159021,
+                  "busy": 13800,
+                  "idle_between_first_last": 143929
+                }
+              }
+            }
+          },
+          {
+            "core_id": 3,
+            "changed_operations_by_type": {
+              "COPY_IN": 28,
+              "CONV": 126,
+              "RELU": 126,
+              "ADD": 72,
+              "COPY_OUT": 6
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 161084,
+              "copy_in_pipe_busy_cycles": 74544,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 160396,
+                  "busy": 156936,
+                  "idle_between_first_last": 2750
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 160536,
+                  "busy": 13800,
+                  "idle_between_first_last": 145444
+                }
+              }
+            },
+            "l2": {
+              "finish": 159569,
+              "copy_in_pipe_busy_cycles": 66255,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 158881,
+                  "busy": 156936,
+                  "idle_between_first_last": 1235
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 159021,
+                  "busy": 13800,
+                  "idle_between_first_last": 143929
+                }
+              }
+            }
+          },
+          {
+            "core_id": 4,
+            "changed_operations_by_type": {
+              "COPY_IN": 28,
+              "CONV": 126,
+              "RELU": 126,
+              "ADD": 72,
+              "COPY_OUT": 6
+            },
+            "non_copy_operation_timings_equal": false,
+            "no_l2": {
+              "finish": 161084,
+              "copy_in_pipe_busy_cycles": 74544,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 160396,
+                  "busy": 156936,
+                  "idle_between_first_last": 2750
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 160536,
+                  "busy": 13800,
+                  "idle_between_first_last": 145444
+                }
+              }
+            },
+            "l2": {
+              "finish": 159569,
+              "copy_in_pipe_busy_cycles": 66255,
+              "compute_pipe_timing": {
+                "PIPE_M": {
+                  "start": 710,
+                  "end": 158881,
+                  "busy": 156936,
+                  "idle_between_first_last": 1235
+                },
+                "PIPE_V": {
+                  "start": 1292,
+                  "end": 159021,
+                  "busy": 13800,
+                  "idle_between_first_last": 143929
+                }
+              }
+            }
+          }
+        ]
+      },
+      "core_reassigned_op_count": 0,
+      "q3_reduction_pct": 40.361920761044125,
+      "no_l2_reduction_pct": 58.119237027662265,
+      "cache_saving_cycles_old": 131749,
+      "cache_saving_cycles_new": 0,
+      "analysis_summary": "原始计算操作没有换核，各核心各计算Pipe工作量完全不变；改善不能归因于计算负载均衡。新方案在无L2时也缩短58.12%，而有L2的总改善为40.36%；两者不能都称为缓存收益。估算DDR总搬运减少1,300,288B。SPILL新增搬运从11,336,448B清零，说明新执行顺序与驻留安排消除了此类换出/换入开销。原最晚核心0的COPY_IN Pipe占用从133,390变为8,095周期，其核完工从310,731变为185,314周期。同方案L2节省的绝对周期由131,749变为0；这是各方案自己的有/无L2差值，不能据此做唯一因果归因。当前有/无L2总时间相同，但仍有49次命中、930,112B命中数据。关键核心0的COPY_IN占用由无L2的53,049降至有L2的8,095周期。这个关键核心的全部原始计算操作起止时间却完全一致，直接表明更快的读入未缩短计算关键路径。总完工仅高于该固定归属计算下界1.21%，缓存的局部加速被计算瓶颈遮蔽，不能解释为缓存未启用。"
+    }
+  ],
+  "historical_candidate_comparisons": [
+    {
+      "case": "case_044",
+      "cores": 5,
+      "selection_snapshot": {
+        "case": "case_044",
+        "cores": 5,
+        "candidate": "cache_fixed_stagger",
+        "baseline_makespan": 102921,
+        "makespan": 100173,
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\cache_fixed_stagger_943270bb6d\\plan.json",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\cache_fixed_stagger_943270bb6d\\q3.json.gz",
+        "q3_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\cache_fixed_stagger_943270bb6d\\q3.receipt.json",
+        "added_copy_bytes": 7021120,
+        "no_l2_makespan": null,
+        "cache_hit_rate": 0.43215390727520075,
+        "baseline_cache_gain": 1.2912039331137475,
+        "baseline_speedup": 1.5002477628472324,
+        "search_status": "SEARCHED"
+      },
+      "old": {
+        "plan_path": "求解\\正式实验\\候选评估\\case_044\\n5\\components\\plan.json",
+        "plan_sha256": "c7fb599253f6b7a0b19d7d4c1b7ad480642d75781a601cd8f73a6d594581a0e1",
+        "q3_result_path": "求解\\正式实验\\候选评估\\case_044\\n5\\components\\q3.json.gz",
+        "q3_result_sha256": "86c441ce73232d1c6ae6a1d27e10430abf5c391237cdcbddf14d03e4c9304c69",
+        "makespan": 102921,
+        "subgraph_count": 5,
+        "subgraph_count_by_core": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "internal_op_count_by_core": [
+          372,
+          248,
+          248,
+          248,
+          248
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 20292,
+            "PIPE_V": 2724
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 20292,
+        "global_compute_lower_bound": 14880.8,
+        "core_finish_times": [
+          102921,
+          94107,
+          94107,
+          94107,
+          94107
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 975456,
+          "scheduled_copy_bytes": 7171488,
+          "added_copy_bytes": 6196032,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 2474432
+        },
+        "cache_stats": {
+          "copy_in_hits": 86,
+          "copy_in_misses": 261,
+          "hit_bytes": 2474432,
+          "miss_bytes": 4674528,
+          "hits": 86,
+          "accesses": 347,
+          "hit_rate": 0.3461247510127347
+        },
+        "copy_in_bytes": 7148960,
+        "copy_out_bytes_inferred": 22528,
+        "ddr_copy_bytes_inferred": 4697056,
+        "copy_in_count": 347,
+        "copy_out_count": 11,
+        "cross_core_transfer_count": 0,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "1": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "2": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "3": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "4": {
+            "L1": 524192,
+            "UB": 0
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 51867,
+            "memory_dependency_count": 859,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 79,
+              "PIPE_MTE3": 3,
+              "PIPE_M": 150,
+              "PIPE_V": 222
+            }
+          },
+          "1": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 546,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "2": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 544,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "3": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 550,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "4": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 552,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          }
+        },
+        "matched_no_l2_makespan": 132892,
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 53,
+            "miss_bytes": 936544,
+            "hit_count": 26,
+            "hit_bytes": 825024,
+            "copy_in_pipe_busy_cycles": 86692,
+            "ddr_read_op_duration_sum": 78245,
+            "cache_read_op_duration_sum": 8447
+          },
+          {
+            "core_id": 1,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 15,
+            "hit_bytes": 412352,
+            "copy_in_pipe_busy_cycles": 86086,
+            "ddr_read_op_duration_sum": 78175,
+            "cache_read_op_duration_sum": 7911
+          },
+          {
+            "core_id": 2,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 15,
+            "hit_bytes": 412352,
+            "copy_in_pipe_busy_cycles": 86086,
+            "ddr_read_op_duration_sum": 78175,
+            "cache_read_op_duration_sum": 7911
+          },
+          {
+            "core_id": 3,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 15,
+            "hit_bytes": 412352,
+            "copy_in_pipe_busy_cycles": 86086,
+            "ddr_read_op_duration_sum": 78175,
+            "cache_read_op_duration_sum": 7911
+          },
+          {
+            "core_id": 4,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 15,
+            "hit_bytes": 412352,
+            "copy_in_pipe_busy_cycles": 86086,
+            "ddr_read_op_duration_sum": 78175,
+            "cache_read_op_duration_sum": 7911
+          }
+        ]
+      },
+      "new": {
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\cache_fixed_stagger_943270bb6d\\plan.json",
+        "plan_sha256": "8d068e27ee20bdfcb1d8c138b4fff01708eb383380874b2662f739a38ab01564",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\cache_fixed_stagger_943270bb6d\\q3.json.gz",
+        "q3_result_sha256": "324c66795fb82dd1af9e264a6eddc749cc5dcbcb0d1714daa5e2544c4621d9d3",
+        "makespan": 100173,
+        "subgraph_count": 11,
+        "subgraph_count_by_core": [
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "internal_op_count_by_core": [
+          372,
+          248,
+          248,
+          248,
+          248
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 20292,
+            "PIPE_V": 2724
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          },
+          {
+            "PIPE_M": 13528,
+            "PIPE_V": 1816
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 20292,
+        "global_compute_lower_bound": 14880.8,
+        "core_finish_times": [
+          100173,
+          89951,
+          89951,
+          99033,
+          99033
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 975456,
+          "scheduled_copy_bytes": 7996576,
+          "added_copy_bytes": 7021120,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 3299520
+        },
+        "cache_stats": {
+          "copy_in_hits": 192,
+          "copy_in_misses": 195,
+          "hit_bytes": 3446016,
+          "miss_bytes": 4528032,
+          "hits": 192,
+          "accesses": 387,
+          "hit_rate": 0.43215390727520075
+        },
+        "copy_in_bytes": 7974048,
+        "copy_out_bytes_inferred": 22528,
+        "ddr_copy_bytes_inferred": 4550560,
+        "copy_in_count": 387,
+        "copy_out_count": 11,
+        "cross_core_transfer_count": 0,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "1": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "2": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "3": {
+            "L1": 524192,
+            "UB": 0
+          },
+          "4": {
+            "L1": 524192,
+            "UB": 0
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 51867,
+            "memory_dependency_count": 859,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 79,
+              "PIPE_MTE3": 3,
+              "PIPE_M": 150,
+              "PIPE_V": 222
+            }
+          },
+          "1": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 546,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "2": {
+            "local_makespan": 37336,
+            "memory_dependency_count": 544,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 67,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "3": {
+            "local_makespan": 44477,
+            "memory_dependency_count": 610,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 87,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          },
+          "4": {
+            "local_makespan": 44477,
+            "memory_dependency_count": 608,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 87,
+              "PIPE_MTE3": 2,
+              "PIPE_M": 100,
+              "PIPE_V": 148
+            }
+          }
+        },
+        "matched_no_l2_makespan": 140417,
+        "matched_no_l2_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\cache_fixed_stagger_943270bb6d\\q2.receipt.json",
+        "matched_no_l2_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_044\\n5\\cache_fixed_stagger_943270bb6d\\q2.json.gz",
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 31,
+            "miss_bytes": 887712,
+            "hit_count": 48,
+            "hit_bytes": 873856,
+            "copy_in_pipe_busy_cycles": 83543,
+            "ddr_read_op_duration_sum": 73985,
+            "cache_read_op_duration_sum": 9558
+          },
+          {
+            "core_id": 1,
+            "miss_count": 30,
+            "miss_bytes": 885664,
+            "hit_count": 37,
+            "hit_bytes": 461184,
+            "copy_in_pipe_busy_cycles": 81171,
+            "ddr_read_op_duration_sum": 73915,
+            "cache_read_op_duration_sum": 7256
+          },
+          {
+            "core_id": 2,
+            "miss_count": 30,
+            "miss_bytes": 885664,
+            "hit_count": 37,
+            "hit_bytes": 461184,
+            "copy_in_pipe_busy_cycles": 81171,
+            "ddr_read_op_duration_sum": 73915,
+            "cache_read_op_duration_sum": 7256
+          },
+          {
+            "core_id": 3,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 35,
+            "hit_bytes": 824896,
+            "copy_in_pipe_busy_cycles": 85762,
+            "ddr_read_op_duration_sum": 75493,
+            "cache_read_op_duration_sum": 10269
+          },
+          {
+            "core_id": 4,
+            "miss_count": 52,
+            "miss_bytes": 934496,
+            "hit_count": 35,
+            "hit_bytes": 824896,
+            "copy_in_pipe_busy_cycles": 85762,
+            "ddr_read_op_duration_sum": 75493,
+            "cache_read_op_duration_sum": 10269
+          }
+        ]
+      },
+      "core_reassigned_op_count": 0,
+      "q3_reduction_pct": 2.6700090360567863,
+      "no_l2_reduction_pct": -5.66249285133793,
+      "cache_saving_cycles_old": 29971,
+      "cache_saving_cycles_new": 40244,
+      "selection_still_current_at_analysis": true,
+      "analysis_summary": "这是更明确的缓存适配收益：0个原始计算操作改变所属核心，每核各计算Pipe工作量完全一致，固定归属计算下界不变。子图顺序与粒度改变后，SPILL搬运增加825088B，但缓存命中增加971584B，估算DDR总搬运反而下降146496B。关键core0的COPY_IN Pipe占用从86692降为83543周期，核完工提前2748周期。新方案若关闭L2，反而比原方案慢7525周期；有L2才胜出，表明该优化是以缓存命中与共享带宽时序补偿更多搬运，不能称为通用无缓存改进。",
+      "selection_still_current_at_report": true
+    },
+    {
+      "case": "case_083",
+      "cores": 5,
+      "selection_snapshot": {
+        "case": "case_083",
+        "cores": 5,
+        "candidate": "cache_fixed_stagger",
+        "baseline_makespan": 310731,
+        "makespan": 297918,
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\cache_fixed_stagger_6aac34bd94\\plan.json",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\cache_fixed_stagger_6aac34bd94\\q3.json.gz",
+        "q3_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\cache_fixed_stagger_6aac34bd94\\q3.receipt.json",
+        "added_copy_bytes": 16798336,
+        "no_l2_makespan": null,
+        "cache_hit_rate": 0.6956328184125006,
+        "baseline_cache_gain": 1.4239969620025037,
+        "baseline_speedup": 3.40485178498444,
+        "search_status": "SEARCHED"
+      },
+      "old": {
+        "plan_path": "求解\\正式实验\\候选评估\\case_083\\n5\\components\\plan.json",
+        "plan_sha256": "b19343e8a9afcbdd0856fa0551dbd9aa65c0c77098fabd86951274e4f10b85d7",
+        "q3_result_path": "求解\\正式实验\\候选评估\\case_083\\n5\\components\\q3.json.gz",
+        "q3_result_sha256": "e4778d8afde84811a2da593853935e4005034b64db0d936f153c65985b085604",
+        "makespan": 310731,
+        "subgraph_count": 5,
+        "subgraph_count_by_core": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "internal_op_count_by_core": [
+          868,
+          744,
+          744,
+          744,
+          744
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 183092,
+            "PIPE_V": 16100
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 183092,
+        "global_compute_lower_bound": 162167.2,
+        "core_finish_times": [
+          310731,
+          278960,
+          278960,
+          278960,
+          278960
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 1438304,
+          "scheduled_copy_bytes": 16496352,
+          "added_copy_bytes": 15058048,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 11336448
+        },
+        "cache_stats": {
+          "copy_in_hits": 386,
+          "copy_in_misses": 293,
+          "hit_bytes": 10966272,
+          "miss_bytes": 5263840,
+          "hits": 386,
+          "accesses": 679,
+          "hit_rate": 0.6756744500592479
+        },
+        "copy_in_bytes": 16230112,
+        "copy_out_bytes_inferred": 266240,
+        "ddr_copy_bytes_inferred": 5530080,
+        "copy_in_count": 679,
+        "copy_out_count": 33,
+        "cross_core_transfer_count": 0,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "1": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "2": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "3": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "4": {
+            "L1": 524288,
+            "UB": 0
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 258156,
+            "memory_dependency_count": 2433,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 159,
+              "PIPE_MTE3": 9,
+              "PIPE_M": 350,
+              "PIPE_V": 518
+            }
+          },
+          "1": {
+            "local_makespan": 222209,
+            "memory_dependency_count": 1947,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 130,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "2": {
+            "local_makespan": 222209,
+            "memory_dependency_count": 1958,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 130,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "3": {
+            "local_makespan": 222209,
+            "memory_dependency_count": 1949,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 130,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "4": {
+            "local_makespan": 222209,
+            "memory_dependency_count": 1952,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 130,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          }
+        },
+        "matched_no_l2_makespan": 442480,
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 69,
+            "miss_bytes": 1345632,
+            "hit_count": 90,
+            "hit_bytes": 2287360,
+            "copy_in_pipe_busy_cycles": 133390,
+            "ddr_read_op_duration_sum": 91292,
+            "cache_read_op_duration_sum": 42098
+          },
+          {
+            "core_id": 1,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "hit_count": 74,
+            "hit_bytes": 2169728,
+            "copy_in_pipe_busy_cycles": 128175,
+            "ddr_read_op_duration_sum": 85115,
+            "cache_read_op_duration_sum": 43060
+          },
+          {
+            "core_id": 2,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "hit_count": 74,
+            "hit_bytes": 2169728,
+            "copy_in_pipe_busy_cycles": 128175,
+            "ddr_read_op_duration_sum": 85115,
+            "cache_read_op_duration_sum": 43060
+          },
+          {
+            "core_id": 3,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "hit_count": 74,
+            "hit_bytes": 2169728,
+            "copy_in_pipe_busy_cycles": 128175,
+            "ddr_read_op_duration_sum": 85115,
+            "cache_read_op_duration_sum": 43060
+          },
+          {
+            "core_id": 4,
+            "miss_count": 56,
+            "miss_bytes": 979552,
+            "hit_count": 74,
+            "hit_bytes": 2169728,
+            "copy_in_pipe_busy_cycles": 128175,
+            "ddr_read_op_duration_sum": 85115,
+            "cache_read_op_duration_sum": 43060
+          }
+        ]
+      },
+      "new": {
+        "plan_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\cache_fixed_stagger_6aac34bd94\\plan.json",
+        "plan_sha256": "0788a0cc45e935f65404f78d19e9a121b983f58e21f43e51729186bf29e49348",
+        "q3_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\cache_fixed_stagger_6aac34bd94\\q3.json.gz",
+        "q3_result_sha256": "983410a28795825dd7ec863eecc81c55a8f14a92b3bf2b618988ec956cedcb2c",
+        "makespan": 297918,
+        "subgraph_count": 31,
+        "subgraph_count_by_core": [
+          7,
+          6,
+          6,
+          6,
+          6
+        ],
+        "internal_op_count_by_core": [
+          868,
+          744,
+          744,
+          744,
+          744
+        ],
+        "compute_pipe_cycles_by_core": [
+          {
+            "PIPE_M": 183092,
+            "PIPE_V": 16100
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          },
+          {
+            "PIPE_M": 156936,
+            "PIPE_V": 13800
+          }
+        ],
+        "fixed_assignment_compute_lower_bound": 183092,
+        "global_compute_lower_bound": 162167.2,
+        "core_finish_times": [
+          280917,
+          297918,
+          297918,
+          297918,
+          297918
+        ],
+        "data_movement_bytes": {
+          "original_graph_copy_bytes": 1438304,
+          "scheduled_copy_bytes": 18236640,
+          "added_copy_bytes": 16798336,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 13076736
+        },
+        "cache_stats": {
+          "copy_in_hits": 497,
+          "copy_in_misses": 270,
+          "hit_bytes": 12500800,
+          "miss_bytes": 5469600,
+          "hits": 497,
+          "accesses": 767,
+          "hit_rate": 0.6956328184125006
+        },
+        "copy_in_bytes": 17970400,
+        "copy_out_bytes_inferred": 266240,
+        "ddr_copy_bytes_inferred": 5735840,
+        "copy_in_count": 767,
+        "copy_out_count": 33,
+        "cross_core_transfer_count": 0,
+        "memory_peak_by_core": {
+          "0": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "1": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "2": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "3": {
+            "L1": 524288,
+            "UB": 0
+          },
+          "4": {
+            "L1": 524288,
+            "UB": 0
+          }
+        },
+        "step3_by_core": {
+          "0": {
+            "local_makespan": 258156,
+            "memory_dependency_count": 2433,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 159,
+              "PIPE_MTE3": 9,
+              "PIPE_M": 350,
+              "PIPE_V": 518
+            }
+          },
+          "1": {
+            "local_makespan": 229876,
+            "memory_dependency_count": 2058,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 152,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "2": {
+            "local_makespan": 229876,
+            "memory_dependency_count": 2060,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 152,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "3": {
+            "local_makespan": 229876,
+            "memory_dependency_count": 2063,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 152,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          },
+          "4": {
+            "local_makespan": 229876,
+            "memory_dependency_count": 2059,
+            "pipe_op_counts": {
+              "PIPE_MTE2": 152,
+              "PIPE_MTE3": 6,
+              "PIPE_M": 300,
+              "PIPE_V": 444
+            }
+          }
+        },
+        "matched_no_l2_makespan": 437808,
+        "matched_no_l2_receipt_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\cache_fixed_stagger_6aac34bd94\\q2.receipt.json",
+        "matched_no_l2_result_path": "求解\\q3_l2_optimization_20260926\\evaluations\\case_083\\n5\\cache_fixed_stagger_6aac34bd94\\q2.json.gz",
+        "cache_timing_by_core": [
+          {
+            "core_id": 0,
+            "miss_count": 42,
+            "miss_bytes": 1256480,
+            "hit_count": 117,
+            "hit_bytes": 2376512,
+            "copy_in_pipe_busy_cycles": 100998,
+            "ddr_read_op_duration_sum": 79393,
+            "cache_read_op_duration_sum": 21605
+          },
+          {
+            "core_id": 1,
+            "miss_count": 57,
+            "miss_bytes": 1053280,
+            "hit_count": 95,
+            "hit_bytes": 2531072,
+            "copy_in_pipe_busy_cycles": 131107,
+            "ddr_read_op_duration_sum": 87435,
+            "cache_read_op_duration_sum": 43672
+          },
+          {
+            "core_id": 2,
+            "miss_count": 57,
+            "miss_bytes": 1053280,
+            "hit_count": 95,
+            "hit_bytes": 2531072,
+            "copy_in_pipe_busy_cycles": 131107,
+            "ddr_read_op_duration_sum": 87435,
+            "cache_read_op_duration_sum": 43672
+          },
+          {
+            "core_id": 3,
+            "miss_count": 57,
+            "miss_bytes": 1053280,
+            "hit_count": 95,
+            "hit_bytes": 2531072,
+            "copy_in_pipe_busy_cycles": 131107,
+            "ddr_read_op_duration_sum": 87435,
+            "cache_read_op_duration_sum": 43672
+          },
+          {
+            "core_id": 4,
+            "miss_count": 57,
+            "miss_bytes": 1053280,
+            "hit_count": 95,
+            "hit_bytes": 2531072,
+            "copy_in_pipe_busy_cycles": 131107,
+            "ddr_read_op_duration_sum": 87435,
+            "cache_read_op_duration_sum": 43672
+          }
+        ]
+      },
+      "core_reassigned_op_count": 0,
+      "q3_reduction_pct": 4.123502321944061,
+      "no_l2_reduction_pct": 1.0558669318387226,
+      "cache_saving_cycles_old": 131749,
+      "cache_saving_cycles_new": 139890,
+      "selection_still_current_at_analysis": true,
+      "analysis_summary": "0个原始计算操作换核，各计算Pipe负载、固定归属下界均不变。这里SPILL、总搬运与估算DDR字节都增加，不能用“减少总流量”解释。轨迹显示原瓶颈core0的COPY_IN Pipe占用从133390降为100998周期；其CACHE_READ占用从42098降为21605，即使命中字节从2287360增至2376512，仍更早完成，支持共享缓存/DDR请求时序改善了关键核的等待。core0完工从310731提前到280917，其他核从278960延至297918，瓶颈发生转移；最终整体缩短12813周期。关闭L2也有4672周期改善，但新方案的缓存节省从131749增加到139890周期，说明重排与缓存效果共同作用。",
+      "selection_still_current_at_report": true
+    }
+  ]
+}
