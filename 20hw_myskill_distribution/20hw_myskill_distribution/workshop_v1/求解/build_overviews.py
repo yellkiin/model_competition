@@ -31,7 +31,7 @@ MECHANISMS = {
 \node[draw=blue!50,fill=cyan,minimum width=12mm] (b2) at (101,127) {$g_2$};
 \node[draw=blue!50,fill=cream,minimum width=12mm] (b3) at (136,127) {$g_3$};
 \draw[blue,thick,-{Latex[length=2mm]}] (b1)--(b2);
-\draw[orange!85!black,thick,dashed,-{Latex[length=2mm]}] (b2)--node[above,font=\fontsize{7}{8}\selectfont]{COPY}(b3);
+\draw[accentred,thick,dashed,-{Latex[length=2mm]}] (b2)--node[above,font=\fontsize{7}{8}\selectfont]{COPY}(b3);
 \node[text=ink,font=\fontsize{7.3}{8.5}\selectfont] at (113,116) {同核保留；跨核同步与搬运};
 ''',
     3: r'''
@@ -39,7 +39,7 @@ MECHANISMS = {
 \node[draw=blue!60,fill=cream,rounded corners=1mm,minimum width=22mm,minimum height=12mm,font=\fontsize{8}{9}\selectfont] (cache) at (122,137) {L2读池};
 \node[draw=blue!60,fill=white,rounded corners=1mm,minimum width=22mm,minimum height=12mm,font=\fontsize{8}{9}\selectfont] (ddr) at (122,121) {DDR读池};
 \draw[blue,thick,-{Latex[length=2mm]}] (query.north east)--node[above,font=\fontsize{7}{8}\selectfont]{命中}(cache.west);
-\draw[orange!85!black,thick,-{Latex[length=2mm]}] (query.south east)--node[below,font=\fontsize{7}{8}\selectfont]{未命中}(ddr.west);
+\draw[accentred,thick,-{Latex[length=2mm]}] (query.south east)--node[below,font=\fontsize{7}{8}\selectfont]{未命中}(ddr.west);
 ''',
 }
 
@@ -57,12 +57,13 @@ def build(q, d):
 \begin{document}
 \pagestyle{empty}\noindent
 \begin{tikzpicture}[x=1mm,y=1mm, every node/.style={font=\sffamily}]
-\definecolor{ink}{HTML}{26374F}
-\definecolor{cyan}{HTML}{E3F3F5}
-\definecolor{pink}{HTML}{F9E8EB}
-\definecolor{green}{HTML}{E7F4EB}
-\definecolor{cream}{HTML}{FFF3DD}
-\definecolor{blue}{HTML}{4A9DAD}
+\definecolor{ink}{HTML}{272727}
+\definecolor{cyan}{HTML}{E0F0F0}
+\definecolor{pink}{HTML}{E4CCD8}
+\definecolor{green}{HTML}{F0E0D0}
+\definecolor{cream}{HTML}{E0E0F0}
+\definecolor{blue}{HTML}{0F4D92}
+\definecolor{accentred}{HTML}{B64342}
 \fill[white] (0,0) rectangle (160,154);
 \fill[cyan] (0,113) rectangle (160,154);
 \fill[pink] (0,71) rectangle (160,110);
