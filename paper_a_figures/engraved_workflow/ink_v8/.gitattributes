@@ -1,0 +1,4 @@
+*.svg -filter -diff -merge text eol=lf
+*.svgz -filter -diff -merge binary
+*.png -filter -diff -merge binary
+*.pdf -filter -diff -merge binary
