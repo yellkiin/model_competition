@@ -315,8 +315,7 @@ def q2_f03():
     ax.plot(x, part+spill, color=INK, marker="o", ms=4, lw=1)
     ax.set_xticks(x)
     ax.set(xlabel="核数", ylabel="平均新增 DDR 搬运 / MiB", title="问题二新增搬运的来源分解")
-    ax.legend(loc="upper right", frameon=True, facecolor="white", framealpha=.92,
-              edgecolor="none", fontsize=8)
+    ax.legend(loc="upper right", frameon=False, fontsize=8)
     return save(name, fig, rows, "每核100例新增字节均值按官方 partition/spill 分解；线表示两部分之和。")
 
 
