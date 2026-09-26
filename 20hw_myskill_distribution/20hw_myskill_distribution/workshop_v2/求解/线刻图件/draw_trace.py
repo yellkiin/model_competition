@@ -60,8 +60,8 @@ ax.legend(handles=[Patch(facecolor=wash(M,.38),edgecolor=M,hatch='///',lw=.6,lab
 finish(fig,3,'q3_trace')
 DATA=HERE/'plot_data';DATA.mkdir(exist_ok=True)
 with (DATA/'q3_trace_events.csv').open('w',encoding='utf-8-sig',newline='') as f:
-    wr=csv.DictWriter(f,list(used[0]));wr.writeheader();wr.writerows(used)
+    wr=csv.DictWriter(f,list(used[0]),lineterminator='\n');wr.writeheader();wr.writerows(used)
 selected_ops=[r for r in ops if int(r['start_cycle'])<1400]
 with (DATA/'q3_trace_reads.csv').open('w',encoding='utf-8-sig',newline='') as f:
-    wr=csv.DictWriter(f,list(selected_ops[0]));wr.writeheader();wr.writerows(selected_ops)
+    wr=csv.DictWriter(f,list(selected_ops[0]),lineterminator='\n');wr.writeheader();wr.writerows(selected_ops)
 print('Trace rendered from original events:',len(used),'and read records:',len(selected_ops))

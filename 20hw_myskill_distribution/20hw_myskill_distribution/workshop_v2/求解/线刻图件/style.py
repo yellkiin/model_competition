@@ -68,3 +68,9 @@ def finish(fig,question,name):
                     metadata={'Creator':'paper ink figure suite'} if ext=='pdf' else None)
     plt.close(fig)
     return str(out.relative_to(WORK)/name)
+
+
+def note(fig,text,space=.09):
+    """All small reading notes share the lower-left position and font size."""
+    fig.set_layout_engine('constrained',rect=(0,space,1,1-space))
+    fig.text(.018,.012,text,ha='left',va='bottom',fontsize=8.5,color=GRAY,linespacing=1.35)

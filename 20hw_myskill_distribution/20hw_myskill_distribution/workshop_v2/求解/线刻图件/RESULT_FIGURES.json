@@ -136,7 +136,7 @@
         "求解\\问题三\\图片\\q3_pairs.svg",
         "求解\\问题三\\图片\\q3_pairs.png"
       ],
-      "meaning": "每核数100图固定完整方案的缓存周期比经验分布",
+      "meaning": "同方案开启L2后的执行时间缩短百分比，按核数分别排序展示100个算例",
       "input_files": [
         "数据/l2_patch_60_62/q3_latest_500.csv.xz"
       ],
@@ -150,7 +150,7 @@
         "求解\\问题三\\图片\\q3_hit_gain.svg",
         "求解\\问题三\\图片\\q3_hit_gain.png"
       ],
-      "meaning": "同一个Q3方案的命中率与配对周期比，保留全部100点，不做因果拟合",
+      "meaning": "五核同方案L2字节命中率与执行时间缩短百分比，保留全部100个算例",
       "input_files": [
         "数据/l2_patch_60_62/q3_latest_500.csv.xz"
       ],
@@ -164,7 +164,7 @@
         "求解\\问题三\\图片\\q3_parameters.svg",
         "求解\\问题三\\图片\\q3_parameters.png"
       ],
-      "meaning": "54个固定方案格点，共用以1为中心的色阶，无格点插值",
+      "meaning": "54个固定方案格点，颜色为相对默认配置的执行时间变化，0为默认；格内标注千周期",
       "input_files": [
         "求解/规范化数据/studies/cache_parameter_grid.csv"
       ],
