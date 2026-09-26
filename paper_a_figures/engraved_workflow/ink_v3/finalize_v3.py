@@ -201,7 +201,7 @@ def export(svg: Path, out_dir: Path, width: int) -> None:
     jobs = [
         (exports / f'{svg.stem}.pdf', ['--export-text-to-path']),
         (exports / f'{svg.stem}.png', [f'--export-width={width}']),
-        (exports / f'{svg.stem}_preview.png', ['--export-width=1800']),
+        (exports / f'{svgnstem}_preview.png', ['--export-width=1800']),
     ]
     for target, extra in jobs:
         cmd = [
@@ -219,7 +219,7 @@ def export(svg: Path, out_dir: Path, width: int) -> None:
 
 
 def update_build_info(out_dir: Path, palettes: list[str]) -> None:
-    info_path = out_dir / 'BUILD_INO.json'
+    info_path = out_dir / 'BUILD_INFO.json'
     data: dict[str, object] = {}
     if info_path.exists():
         data = json.loads(info_path.read_text(encoding='utf-8'))
@@ -262,7 +262,7 @@ def main() -> None:
     for name in args.palettes:
         svg = args.out / 'assets' / f'workflow_{name}_v3.svg'
         if not svg.exists():
-            raise FileNotFoundError(f'Run build.py --svg-only first: {svg)}')
+            raise FileNotFoundError(f'Run build.py --svg-only first: {svg}')
         finalize(svg, args.out, not args.no_export, args.png_width)
         print(svg)
     update_build_info(args.out, args.palettes)
