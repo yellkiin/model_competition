@@ -1,0 +1,39 @@
+name: Paper review dependencies
+on:
+  push:
+    branches: [fix/paper-a-annotations-20260927]
+    paths: [.github/workflows/paper-review-dependencies.yml]
+permissions:
+  contents: read
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题一/源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题二/源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题三/源码
+          fetch-depth: 1
+      - name: Package existing compile dependencies
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile
+          ws=Path('20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2')
+          dirs=[ws/'求解'/q/'图片' for q in ['总体','问题一','问题二','问题三']]
+          dirs += [ws/'提交附件/支撑材料文件'/q/'源码' for q in ['问题一','问题二','问题三']]
+          files=[]
+          for d in dirs:
+            if d.exists(): files += [p for p in d.rglob('*') if p.is_file()]
+          files += list((ws/'求解').glob('**/图表内容交接报告.md'))
+          with zipfile.ZipFile('paper-review-dependencies.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for p in files:
+              if p.suffix.lower() not in ['.ttf','.ttc','.otf','.woff','.woff2','.pyc']: z.write(p,p.as_posix())
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-review-dependencies
+          path: paper-review-dependencies.zip
+          retention-days: 3
