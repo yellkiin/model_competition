@@ -8,6 +8,7 @@
 \GMCMSymbolRow{集合}{E}{张量与操作之间的有向依赖边集合}{—}
 \GMCMSymbolRow{集合}{V}{待分配的非\texttt{COPY\_IN}/\texttt{COPY\_OUT}算子集合}{—}
 \GMCMSymbolRow{集合}{K}{可用同构核心的集合，$K=\{1,\ldots,n\}$}{—}
+\GMCMSymbolRow{集合}{P_t,C_t}{张量$t$的生成算子、使用算子集合，按有向依赖边定义}{—}
 \GMCMSymbolRow{参数}{n}{当前配置的核心数}{核}
 \GMCMSymbolRow{参数}{b_t}{张量$t$的大小}{B}
 \GMCMSymbolRow{参数}{p_v}{计算算子$v$的题给服务周期}{周期}
@@ -17,7 +18,7 @@
 \GMCMSymbolRow{变量}{\mathcal P}{待分配算子的非空互斥子图划分}{—}
 \GMCMSymbolRow{变量}{a}{子图到核心的映射}{—}
 \GMCMSymbolRow{变量}{\boldsymbol\pi}{各核心的子图执行顺序组成的序列族}{—}
-\GMCMSymbolRow{变量}{x}{由划分、归核和核内顺序构成的完整方案，$x=(\mathcal P,a,\boldsymbol\pi)$}{—}
+\GMCMSymbolRow{变量}{x}{由子图划分、核心映射和核内顺序构成的完整方案，$x=(\mathcal P,a,\boldsymbol\pi)$}{—}
 \GMCMSymbolRow{指标}{C_q(x)}{问题$q$中方案$x$的总体任务执行时间（Makespan）}{周期}
 \GMCMSymbolRow{指标}{D_q(x)}{问题$q$中方案$x$的总额外数据搬运量（按额外COPY字节统计）}{B}
 \GMCMSymbolRow{界}{L}{对当前问题全部可行方案成立的周期下界}{周期}

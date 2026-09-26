@@ -1,21 +1,26 @@
 \subsection{联合迭代的计算过程}
 \label{subsec:joint_iteration}
 \subsubsection{统一迭代伪代码}
-算法~\ref{alg:joint} 以当前最好可行方案为共同状态。$\mathcal D$ 表示已评价或被有效下界排除的方案集合，$\mathcal H$ 表示来源近期收益与成本记录。$\operatorname{Next}_q$ 每次给出一个完整候选：第一问按第4.5节的构造、结构变换和生产者释放切分生成；后两问的特有过程见算法~\ref{alg:residency}、\ref{alg:fifo}。实际来源按有限次序展开这些变换，不穷举全部邻域。
+算法~\ref{alg:joint} 以当前最好可行方案为共同状态。$\mathcal D$ 表示已评价或被有效下界排除的方案集合，$\mathcal H$ 表示来源近期收益与成本记录。$\operatorname{Next}_q$ 每次给出一个完整候选：第一问按第4.5节的构造、结构变换和输出提前释放切分生成；后两问的特有过程见算法~\ref{alg:residency}、\ref{alg:fifo}。实际来源按有限次序展开这些变换，不穷举全部邻域。
 \begin{algorithm}[htbp]
 \caption{统一完整方案的多邻域迭代（第一问取 $q=1$）}\label{alg:joint}
 \small
 \begin{algorithmic}[1]
 \Require $G,n,\theta,q$，可用初始方案，累计时间和评价次数上限
 \Ensure 已完整评价且可用的最好方案 $x$ 及 $\mathcal R_q(x)$
-\State 确认已有方案，或按式~\eqref{eq:frontier_construct}--\eqref{eq:construct_map} 构造并评价初值
-\State 无已有解时，按内部排序量优先评价至多3个初值及其邻域候选；取得可行解后进入迭代
+\If{已有同配置可行方案}
+ \State 以该方案作为当前方案
+\Else
+ \State 建立分量分组、同核合并、多粒度划分及整图单核的候选池；第三问另加分量顺序候选
+ \State 按式~\eqref{eq:base_proxy} 排序评价，接受后补入局部候选；初始阶段共用至多3次完整评价
+ \State 按第4.5.1节的调用与时间条件结束初始评价，以其中最好可行方案作为当前方案
+\EndIf
 \State 若仍无可行解则返回未取得可行初值；否则置 $\mathcal D\gets\{\text{已考察方案}\}$，建立 $\mathcal H$
 \State 置可用来源 $\mathcal S\gets\{\mathrm B,\mathrm S,\mathrm M\}$；若 $q=3$，加入 $\mathrm F$
 \While{时间、调用数、近界与停滞条件均允许，且 $\mathcal S\ne\varnothing$}
  \State 按初次覆盖、时间准入、访问间隔及式~\eqref{eq:sourcepriority} 选择来源 $s$
  \State $y\gets\operatorname{Next}_q(s,x,\mathcal R_q(x))$；来源耗尽则从本轮 $\mathcal S$ 移除并继续
- \State 若 $y$ 覆盖不全、核序不合法、$H_y$ 有环或 $y\in\mathcal D$，则跳过
+ \State 若 $y$ 覆盖不全、核内顺序不合法、$H_y$ 有环或 $y\in\mathcal D$，则跳过
  \State 将 $y$ 加入 $\mathcal D$；若 $L(y)>C_q(x)$，则跳过完整评价
  \State 以 $\mathcal E_q(G,y;\theta)$ 完整执行；评价结束已越搜索截止则不接受
  \State 按实际收益与生成、评价成本更新 $\mathcal H$，按式~\eqref{eq:accept} 更新当前方案
@@ -39,10 +44,19 @@
 算例046的第一问五核方案含 $15$ 个子图，序列长度为 $(4,2,2,2,5)$。每个子图是独立 Task，所以五核序列中共有 $15-5=10$ 处同核相邻 Task 交接；承担五个子图的核心至少经历四次规定的相邻任务等待。该方案周期为 $91730$，额外 COPY $3669568$ B，其中划分搬运 $3564096$ B、自动换入换出 $105472$ B。第二问独立选出的方案含 $31$ 个子图，序列长度为 $(5,7,7,5,7)$，周期 $69268$，额外 COPY $2469536$ B，未产生自动换出的额外字节。第二问的更多子图仍属于五个核心级Task。同核任务等待、跨核依赖和DDR服务在五核执行中相互交错，周期由完整事件序列决定。两例分别展示了有效核心数、子图粒度和自动换出如何与任务规则共同进入完整周期。
 
 \subsubsection{可行方案空间的嵌入性质}
-除周期下界外，可行方案还具有随可用核数扩展的嵌入性质。固定问题编号和全部硬件参数，设允许核心空闲，增加一颗核心不减少原核心的 Pipe、L1/UB 容量，也不改变共享 DDR 或 L2 总带宽与事件优先规则。对任意 $n$ 核可行方案 $x$，构造 $n+1$ 核方案 $\iota(x)$：保持全部子图集合、算子映射、原有核心归属及原核序列不变，仅令新增核心的序列为空。由于没有任何新操作、COPY 或缓存请求从空核心发射，原方案的任务边界、缓冲实例和事件顺序均不变，故
+除周期下界外，可行方案还具有随可用核数扩展的嵌入性质。固定问题编号和全部硬件参数，设允许核心空闲，增加一颗核心不减少原核心的 Pipe、L1/UB 容量，也不改变共享 DDR 或 L2 总带宽与事件优先规则。对任意 $n$ 核可行方案 $x$，构造 $n+1$ 核方案 $\iota(x)$：保持全部子图集合、算子映射、原有所属核心及原核心的子图序列不变，仅令新增核心的序列为空。由于没有任何新操作、COPY 或缓存请求从空核心发射，原方案的任务边界、缓冲实例和事件顺序均不变，故：
 \begin{equation}
  \iota(x)\in\mathcal F_q(n+1),\qquad
  C_q(\iota(x))=C_q(x),\qquad D_q(\iota(x))=D_q(x).
  \label{eq:core_embedding}
 \end{equation}
-于是同配置、同评价规则下的理论最优周期满足 $C_{q,n+1}^{*}\le C_{q,n}^{*}$。证明只需把任意 $n$ 核可行方案按上法嵌入 $n+1$ 核可行集；后者的最小值不大于其中这个方案的周期。这一单调性针对理论最优值；有限预算启发式在不同核数下取得的结果不必单调。第一、二问的一核点采用原始整图参考，其定义见式~\eqref{eq:speedup}。
+
+由于 $\iota(\mathcal F_q(n))\subseteq\mathcal F_q(n+1)$，在同配置、同评价规则下，有：
+\[
+ C_{q,n+1}^{*}
+ =\min_{z\in\mathcal F_q(n+1)}C_q(z)
+ \le\min_{x\in\mathcal F_q(n)}C_q(\iota(x))
+ =\min_{x\in\mathcal F_q(n)}C_q(x)=C_{q,n}^{*}.
+\]
+
+可用核心数增加使理论最优周期不增。有限预算下，各核数配置分别搜索，取得的方案可能处于不同质量水平。第一、二问的一核点采用原始整图参考，其定义见式~\eqref{eq:speedup}。

@@ -1,0 +1,42 @@
+{
+  "base_commit": "15e8f51623ccbf02cbb89732b030858e1b6ad7c5",
+  "tex_sources": [
+    "论文.tex",
+    "摘要.tex",
+    "章节内容/01_问题重述.tex",
+    "章节内容/02_模型假设.tex",
+    "章节内容/03_关键性符号说明.tex",
+    "章节内容/04_问题一.tex",
+    "章节内容/05_问题二.tex",
+    "章节内容/06_问题三.tex",
+    "章节内容/90_模型评价与展望.tex",
+    "章节内容/98_参考文献.tex",
+    "章节内容/99_附录.generated.tex",
+    "综合图片段/q1.tex",
+    "章节内容/方法补充.tex",
+    "章节内容/数据表/q1_means.tex",
+    "综合图片段/q2.tex",
+    "章节内容/数据表/q2_means.tex",
+    "综合图片段/q3.tex",
+    "章节内容/数据表/q3_means.tex",
+    "章节内容/数据表/q3_pairs.tex",
+    "章节内容/缓存事件补充.tex",
+    "章节内容/数据表/appendix_results.tex",
+    "章节内容/数据表/appendix_pairs.tex"
+  ],
+  "source_count": 22,
+  "before_words": 1672,
+  "after_words": 1720,
+  "before_tokens": 12603,
+  "after_tokens": 13830,
+  "method": "jieba Chinese segmentation plus a manually defined terminology dictionary; actual TeX input tree; code bodies, references and file paths excluded",
+  "retained_local_terms": [
+    "弱连通分量",
+    "商图",
+    "前驱闭包",
+    "深度层带",
+    "在途填充",
+    "驻留窗口"
+  ],
+  "caution": "Word distribution highlights candidates for human review; chapter-specific terms are not automatically errors."
+}
