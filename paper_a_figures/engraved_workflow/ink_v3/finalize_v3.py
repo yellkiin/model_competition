@@ -201,7 +201,7 @@ def export(svg: Path, out_dir: Path, width: int) -> None:
     jobs = [
         (exports / f'{svg.stem}.pdf', ['--export-text-to-path']),
         (exports / f'{svg.stem}.png', [f'--export-width={width}']),
-        (exports / f'{svgnstem}_preview.png', ['--export-width=1800']),
+        (exports / f'{svg.stem}_preview.png', ['--export-width=1800']),
     ]
     for target, extra in jobs:
         cmd = [
