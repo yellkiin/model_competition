@@ -46,11 +46,20 @@ MECHANISMS = {
 
 def build(q, d):
     # Absolute scientific graphic paths keep TeX compilation independent of cwd.
-    img1 = (ROOT / '正式图件' / (d['imgs'][0] + '.pdf')).as_posix()
-    img2 = (ROOT / '正式图件' / (d['imgs'][1] + '.pdf')).as_posix()
+    # Keep figure includes repository-relative so the generated TeX is portable
+    # across Windows workstations, Linux CI, and archived submission bundles.
+    img1 = '../正式图件/' + d['imgs'][0] + '.pdf'
+    img2 = '../正式图件/' + d['imgs'][1] + '.pdf'
     tex = r'''\documentclass{article}
 \usepackage[paperwidth=160mm,paperheight=154mm,margin=0pt]{geometry}
-\usepackage[UTF8,fontset=windows]{ctex}
+\usepackage[UTF8,fontset=none]{ctex}
+\IfFontExistsTF{Microsoft YaHei}{%
+  \setCJKmainfont{Microsoft YaHei}
+  \setCJKsansfont{Microsoft YaHei}
+}{%
+  \setCJKmainfont{Noto Sans CJK SC}
+  \setCJKsansfont{Noto Sans CJK SC}
+}
 \usepackage{tikz}
 \usepackage{graphicx}
 \usetikzlibrary{arrows.meta,positioning,calc}
