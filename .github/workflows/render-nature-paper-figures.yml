@@ -1,0 +1,174 @@
+name: Render Nature paper figures
+
+on:
+  push:
+    branches:
+      - style/nature-figure-paper-palette-20260926
+    paths:
+      - '20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/render_science_figures.py'
+      - '20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/build_overviews.py'
+      - '20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/总体路线图*.drawio'
+      - '20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/图件数据/**'
+      - '.github/workflows/render-nature-paper-figures.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONUTF8: '1'
+      WORKSHOP: 20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+          lfs: false
+          sparse-checkout: |
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解
+            .github/workflows/render-nature-paper-figures.yml
+
+      - name: Install rendering dependencies
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            fonts-noto-cjk texlive-xetex texlive-lang-chinese texlive-latex-extra \
+            pdf2svg xvfb wget
+          python -m pip install --upgrade pip
+          python -m pip install numpy matplotlib pillow pymupdf
+          git clone --depth 1 https://github.com/Yuan1z0825/nature-skills.git /tmp/nature-skills
+          python -m pip install -r /tmp/nature-skills/skills/nature-figure/requirements.txt
+          wget -q https://github.com/jgraph/drawio-desktop/releases/download/v31.5.2/drawio-amd64-31.5.2.deb -O /tmp/drawio.deb
+          sudo apt-get install -y /tmp/drawio.deb
+
+      - name: Render 18 scientific figures
+        shell: bash
+        run: |
+          python "$WORKSHOP/求解/render_science_figures.py" --figure all
+
+      - name: Render question overview figures
+        shell: bash
+        run: |
+          python "$WORKSHOP/求解/build_overviews.py"
+          python - <<'PY'
+          from pathlib import Path
+          import fitz, subprocess
+          root = Path("20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解/综合图")
+          for q in (1, 2, 3):
+              tex = root / f"q{q}-overview.tex"
+              subprocess.run(
+                  ["xelatex", "-interaction=nonstopmode", "-halt-on-error", tex.name],
+                  cwd=root, check=True,
+              )
+              pdf = root / f"q{q}-overview.pdf"
+              doc = fitz.open(pdf)
+              page = doc[0]
+              page.get_pixmap(dpi=300, alpha=False).save(root / f"q{q}-overview.png")
+              subprocess.run(
+                  ["pdf2svg", pdf.name, f"q{q}-overview.svg"],
+                  cwd=root, check=True,
+              )
+          PY
+
+      - name: Render global roadmap
+        shell: bash
+        run: |
+          xvfb-run -a drawio --no-sandbox --export --format pdf --crop \
+            --output "$WORKSHOP/求解/总体路线图_紧凑.pdf" "$WORKSHOP/求解/总体路线图_紧凑.drawio"
+          xvfb-run -a drawio --no-sandbox --export --format png --scale 2 --crop \
+            --output "$WORKSHOP/求解/总体路线图_紧凑.png" "$WORKSHOP/求解/总体路线图_紧凑.drawio"
+          xvfb-run -a drawio --no-sandbox --export --format svg --crop \
+            --output "$WORKSHOP/求解/总体路线图_紧凑.svg" "$WORKSHOP/求解/总体路线图_紧凑.drawio"
+          xvfb-run -a drawio --no-sandbox --export --format pdf --crop \
+            --output "$WORKSHOP/求解/总体路线图.pdf" "$WORKSHOP/求解/总体路线图.drawio"
+          xvfb-run -a drawio --no-sandbox --export --format png --scale 2 --crop \
+            --output "$WORKSHOP/求解/总体路线图.png" "$WORKSHOP/求解/总体路线图.drawio"
+          xvfb-run -a drawio --no-sandbox --export --format svg --crop \
+            --output "$WORKSHOP/求解/总体路线图.svg" "$WORKSHOP/求解/总体路线图.drawio"
+          python - <<'PY'
+          from pathlib import Path
+          import fitz
+          root = Path("20hw_myskill_distribution/20hw_myskill_distribution/workshop_v1/求解")
+          source = fitz.open(root / "总体路线图_紧凑.pdf")
+          width = 160 * 72 / 25.4
+          height = width * source[0].rect.height / source[0].rect.width
+          target = fitz.open()
+          page = target.new_page(width=width, height=height)
+          page.show_pdf_page(page.rect, source, 0)
+          out = root / "总体路线图_论文宽.pdf"
+          target.save(out)
+          doc = fitz.open(out)
+          doc[0].get_pixmap(dpi=300, alpha=False).save(root / "总体路线图_论文尺寸.png")
+          PY
+
+      - name: Run nature-figure audits
+        shell: bash
+        run: |
+          set +e
+          QA="$WORKSHOP/求解/正式图件/nature_qa"
+          mkdir -p "$QA"
+          python /tmp/nature-skills/skills/nature-figure/scripts/validate_figure.py \
+            "$WORKSHOP/求解/render_science_figures.py" --json > "$QA/source-validation.json"
+          echo -e "file\ttext_exit\tcollision_exit" > "$QA/summary.tsv"
+          while IFS= read -r pdf; do
+            stem="$(basename "${pdf%.pdf}")"
+            python /tmp/nature-skills/skills/nature-figure/scripts/audit_pdf_text.py "$pdf" --min-pt 5 --json \
+              > "$QA/${stem}.text.json"
+            text_exit=$?
+            python /tmp/nature-skills/skills/nature-figure/scripts/audit_figure_collisions.py "$pdf" \
+              --json-out "$QA/${stem}.collision.json" \
+              --overlay-pdf "$QA/${stem}.collision-overlay.pdf"
+            collision_exit=$?
+            echo -e "${stem}\t${text_exit}\t${collision_exit}" >> "$QA/summary.tsv"
+          done < <(find "$WORKSHOP/求解/正式图件" "$WORKSHOP/求解/综合图" -maxdepth 1 -type f -name '*.pdf' | sort)
+          for pdf in "$WORKSHOP/求解/总体路线图.pdf" "$WORKSHOP/求解/总体路线图_论文宽.pdf"; do
+            stem="$(basename "${pdf%.pdf}")"
+            python /tmp/nature-skills/skills/nature-figure/scripts/audit_pdf_text.py "$pdf" --min-pt 5 --json \
+              > "$QA/${stem}.text.json"
+            text_exit=$?
+            python /tmp/nature-skills/skills/nature-figure/scripts/audit_figure_collisions.py "$pdf" \
+              --json-out "$QA/${stem}.collision.json" \
+              --overlay-pdf "$QA/${stem}.collision-overlay.pdf"
+            collision_exit=$?
+            echo -e "${stem}\t${text_exit}\t${collision_exit}" >> "$QA/summary.tsv"
+          done
+          cat "$QA/summary.tsv"
+
+      - name: Commit regenerated figures to PR branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            "$WORKSHOP/求解/正式图件" \
+            "$WORKSHOP/求解/综合图/q1-overview.tex" \
+            "$WORKSHOP/求解/综合图/q1-overview.pdf" \
+            "$WORKSHOP/求解/综合图/q1-overview.png" \
+            "$WORKSHOP/求解/综合图/q1-overview.svg" \
+            "$WORKSHOP/求解/综合图/q2-overview.tex" \
+            "$WORKSHOP/求解/综合图/q2-overview.pdf" \
+            "$WORKSHOP/求解/综合图/q2-overview.png" \
+            "$WORKSHOP/求解/综合图/q2-overview.svg" \
+            "$WORKSHOP/求解/综合图/q3-overview.tex" \
+            "$WORKSHOP/求解/综合图/q3-overview.pdf" \
+            "$WORKSHOP/求解/综合图/q3-overview.png" \
+            "$WORKSHOP/求解/综合图/q3-overview.svg" \
+            "$WORKSHOP/求解/总体路线图.pdf" \
+            "$WORKSHOP/求解/总体路线图.png" \
+            "$WORKSHOP/求解/总体路线图.svg" \
+            "$WORKSHOP/求解/总体路线图_紧凑.pdf" \
+            "$WORKSHOP/求解/总体路线图_紧凑.png" \
+            "$WORKSHOP/求解/总体路线图_紧凑.svg" \
+            "$WORKSHOP/求解/总体路线图_论文宽.pdf" \
+            "$WORKSHOP/求解/总体路线图_论文尺寸.png"
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "figures: regenerate paper assets with nature palette"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
