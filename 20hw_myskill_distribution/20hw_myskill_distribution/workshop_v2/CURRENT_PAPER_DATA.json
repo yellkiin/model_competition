@@ -1,1 +1,15 @@
-{"scope":"Q3-only override after PRs60/61/62","base_dataset":"求解/规范化数据/combined/","q1_q2":"unchanged","q3_raw_sources":"数据/l2_patch_60_62/sources/","q3_statistics":"数据/l2_patch_60_62/q3_core_summary.csv","q3_keys":500,"changed":90,"retained":410,"paper_denominator_count":100,"patch_native_denominator_count":97,"original_singlecore_source":"existing appendix_results Q1 n1 and previous normalized original baseline records","parameter_sensitivity":"pre-patch fixed-plan experiment, not rerun","verification":"table-level merge and arithmetic checks; no original evaluator rerun","final_pdf":"recompile after concurrent manuscript edits; old PDF not overwritten"}
+{
+  "scope": "A题正式论文统一结果",
+  "source_commit": "f1574d71b7aa273d9971171ffbe9698ab6d792c2",
+  "q1_q2": "求解/规范化数据/combined/",
+  "q3": "数据/l2_patch_60_62/q3_latest_500.csv.xz",
+  "graphs": 100,
+  "q3_cases_by_cores": 500,
+  "reference": "逐图原始整图单核周期；先求逐图比值，再算术平均",
+  "paired_control": "同一完整方案，仅关闭L2；不使用第二问独立优选方案代替",
+  "parameter_study": "六图、每图固定方案的54个容量带宽格点；另有12个边界适配结果",
+  "timing": "自适应搜索时间曲线仅计当时已保存可用解；候选优选单独受限",
+  "manuscript": "论文/论文.tex",
+  "pdf": "论文/论文.pdf",
+  "report": "论文/批注文件夹/批注落实修改报告.md"
+}
