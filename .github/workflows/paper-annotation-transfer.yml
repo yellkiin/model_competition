@@ -1,0 +1,45 @@
+name: Paper annotation transfer
+on:
+  push:
+    branches: [fix/paper-a-annotations-20260927]
+    paths: [.github/workflows/paper-annotation-transfer.yml]
+permissions:
+  contents: read
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/论文
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/题目
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/其他数据/官方评价代码
+            paper_a_figures/engraved_workflow/ink_v3
+          fetch-depth: 1
+      - name: Package existing sources only
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile, subprocess
+          root=Path('.')
+          ws=Path('20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2')
+          dirs=[ws/'论文',ws/'求解/论文理论',ws/'求解/支撑材料源/方法源码',ws/'题目',ws/'提交附件/支撑材料文件/其他数据/官方评价代码',Path('paper_a_figures/engraved_workflow/ink_v3')]
+          singles=[ws/'求解/THEORY_ALIGNMENT.md',ws/'求解/METHOD_TO_CODE.csv',ws/'求解/FINAL_THEORY_BINDING.json']
+          files=set(singles)
+          for d in dirs:
+            if d.exists(): files.update(p for p in d.rglob('*') if p.is_file())
+          files.update(p for p in ws.glob('*') if p.is_file())
+          with zipfile.ZipFile('paper-review-inputs.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for p in sorted(files):
+              if not p.is_file() or p.suffix.lower() in ['.ttf','.ttc','.otf','.woff','.woff2','.zip','.pyc']: continue
+              if p.suffix.lower()=='.pdf' and p.parent==ws/'论文' and p.name!='论文.pdf': continue
+              z.write(p,p.as_posix())
+            z.writestr('BASE_COMMIT.txt','2236080cd82e031c8768d7ac9fe46d7b47eea95e\n')
+            z.writestr('REPOSITORY_FILES.txt',subprocess.check_output(['git','ls-tree','-r','--name-only','HEAD']).decode())
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-review-inputs
+          path: paper-review-inputs.zip
+          retention-days: 3
