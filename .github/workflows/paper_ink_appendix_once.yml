@@ -1,0 +1,31 @@
+name: Export exact appendix listings
+on:
+  push:
+    branches: ['figures/paper-wide-ink-style-20260927']
+    paths: ['.github/workflows/paper_ink_appendix_once.yml']
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          sparse-checkout: |
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题一/源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题二/源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题三/源码
+      - shell: python
+        run: |
+          from pathlib import Path
+          import zipfile
+          w=Path('20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2')
+          with zipfile.ZipFile('appendix_sources.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in (w/'提交附件/支撑材料文件').rglob('*.py'):
+                  z.write(p,str(p))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-appendix-sources
+          path: appendix_sources.zip
+          retention-days: 3
