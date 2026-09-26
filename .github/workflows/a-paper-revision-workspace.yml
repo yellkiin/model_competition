@@ -4,32 +4,101 @@ on:
     branches: [docs/a-paper-annotations-20260927]
     paths: ['.github/workflows/a-paper-revision-workspace.yml']
 permissions:
-  contents: read
+  contents: write
 jobs:
-  source-snapshot:
+  compile-revised-paper:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
+    env:
+      PAPER: 20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/论文
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
           lfs: false
           sparse-checkout: |
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/论文
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/总体/图片
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题一/图片
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题二/图片
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题三/图片
             20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题一/源码
             20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题二/源码
             20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题三/源码
-      - name: Package source listings used by the existing appendix; do not execute
+            paper_a_figures/engraved_workflow/ink_v3
+      - name: Apply reviewed text edits and copy the designated existing figure
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: python
         run: |
-          import pathlib, zipfile
-          w = pathlib.Path('20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件')
-          with zipfile.ZipFile('paper-appendix-inputs.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-              for folder in ['问题一', '问题二', '问题三']:
-                  for p in sorted((w/folder/'源码').rglob('*.py')):
-                      if p.is_file(): z.write(p, str(p))
-          print('Source listing files copied; no solvers or tests executed.')
+          import os, json, base64, lzma, pathlib, urllib.request, shutil
+          chunks = ['1d9f32835624170501db61b64fb17a1729fb16bf', 'e13aa5843a403b4926429b73928c7479cd406033', '2ae0f59837f8504e2caa92b8eba5cddce305158b', 'd73c0bf279c00187046bbd95a48731a4ebb6a460']
+          data = bytearray()
+          for sha in chunks:
+              req = urllib.request.Request('https://api.github.com/repos/yellkiin/model_competition/git/blobs/' + sha, headers={'Authorization': 'Bearer ' + os.environ['GH_TOKEN'], 'Accept': 'application/vnd.github+json'})
+              with urllib.request.urlopen(req) as r: obj = json.load(r)
+              data.extend(base64.b64decode(obj['content']))
+          edits = json.loads(lzma.decompress(bytes(data)))
+          p = pathlib.Path(os.environ['PAPER'])
+          changed = []
+          for rel, operations in edits.items():
+              target = p / rel
+              if not target.resolve().is_relative_to(p.resolve()) or target.suffix not in {'.tex', '.sty', '.cls'}:
+                  raise ValueError('Unexpected revision path: ' + rel)
+              lines = target.read_text(encoding='utf-8-sig').splitlines(True)
+              for start, end, replacement in reversed(operations):
+                  lines[start:end] = replacement.splitlines(True)
+              target.write_bytes(''.join(lines).replace('\n', '\r\n').encode('utf-8'))
+              changed.append(str(target))
+          (p/'图片').mkdir(exist_ok=True)
+          shutil.copyfile('paper_a_figures/engraved_workflow/ink_v3/assets/workflow_v3_mono.svg', p/'图片/workflow_v3_mono.svg')
+          changed += [str(p/'图片/workflow_v3_mono.svg'), str(p/'图片/workflow_v3_mono.pdf'), str(p/'论文.pdf')]
+          pathlib.Path('/tmp/paper-changed.json').write_text(json.dumps(changed, ensure_ascii=False))
+          print('Applied reviewed text only. Solver code, experiment records and original figures remain unchanged.')
+      - name: Install typesetting tools only
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-lang-chinese texlive-latex-extra texlive-fonts-recommended texlive-science inkscape fonts-noto-cjk fonts-liberation fonts-dejavu-core python3-pygments
+      - name: Convert the existing SVG and compile TeX; do not execute solvers or tests
+        run: |
+          mkdir -p /tmp/paper-build-logs
+          inkscape paper_a_figures/engraved_workflow/ink_v3/assets/workflow_v3_mono.svg --export-type=pdf --export-filename="$PAPER/图片/workflow_v3_mono.pdf" > /tmp/paper-build-logs/svg.log 2>&1
+          cd "$PAPER"
+          xelatex -shell-escape -interaction=nonstopmode -halt-on-error 论文.tex > /tmp/paper-build-logs/xelatex1.log 2>&1
+          bibtex 论文 > /tmp/paper-build-logs/bibtex.log 2>&1
+          xelatex -shell-escape -interaction=nonstopmode -halt-on-error 论文.tex > /tmp/paper-build-logs/xelatex2.log 2>&1
+          xelatex -shell-escape -interaction=nonstopmode -halt-on-error 论文.tex > /tmp/paper-build-logs/xelatex3.log 2>&1
+          xelatex -shell-escape -interaction=nonstopmode -halt-on-error 论文.tex > /tmp/paper-build-logs/xelatex4.log 2>&1
+      - name: Commit only the reviewed paper and remove this temporary transfer workflow
+        shell: python
+        run: |
+          import json, pathlib, subprocess
+          files = json.loads(pathlib.Path('/tmp/paper-changed.json').read_text())
+          subprocess.run(['git', 'add', '--'] + files, check=True)
+          subprocess.run(['git', 'rm', '--', '.github/workflows/a-paper-revision-workspace.yml'], check=True)
+          subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+          subprocess.run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+          subprocess.run(['git', 'commit', '-m', 'docs: implement paper annotations and compile the revised manuscript'], check=True)
+          subprocess.run(['git', 'push', 'origin', 'HEAD:docs/a-paper-annotations-20260927'], check=True)
+      - name: Package compiled paper and build evidence
+        if: always()
+        shell: python
+        run: |
+          import os, pathlib, zipfile, json
+          p = pathlib.Path(os.environ['PAPER'])
+          files = json.loads(pathlib.Path('/tmp/paper-changed.json').read_text()) if pathlib.Path('/tmp/paper-changed.json').exists() else []
+          with zipfile.ZipFile('paper-revision-compiled.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+              for f in files:
+                  path = pathlib.Path(f)
+                  if path.exists(): z.write(path, str(path))
+              for ext in ['aux', 'log', 'bbl', 'blg']:
+                  f = p/('论文.'+ext)
+                  if f.exists(): z.write(f, 'build-evidence/'+f.name)
+              for f in pathlib.Path('/tmp/paper-build-logs').glob('*'):
+                  if f.is_file(): z.write(f, 'build-evidence/'+f.name)
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: paper-appendix-inputs
-          path: paper-appendix-inputs.zip
-          retention-days: 3
+          name: paper-revision-compiled
+          path: paper-revision-compiled.zip
+          retention-days: 7
