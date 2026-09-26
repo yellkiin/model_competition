@@ -165,8 +165,8 @@ def q1_f02():
         p10, p90 = np.quantile(values, [.1, .9])
         means.append(values.mean()); lows.append(p10); highs.append(p90)
     core = np.arange(1, 6)
-    ax.fill_between(core, lows, highs, color=BLUE, alpha=.14, label="案例10–90分位")
-    ax.plot(core, means, color=BLUE, marker="o", ms=6, lw=2.1, label="100例平均加速比")
+    ax.fill_between(core, lows, highs, color=PRIMARY, alpha=.14, label="案例10–90分位")
+    ax.plot(core, means, color=PRIMARY, marker="o", ms=6, lw=2.1, label="100例平均加速比")
     for n, mean in zip(core, means):
         ax.annotate(f"{mean:.3f}", (n, mean), xytext=(0, 7), textcoords="offset points",
                     ha="center", fontsize=8, color=INK)
@@ -231,7 +231,7 @@ def q1_f05():
                 ax.text(j, i, f"{rate[i,j]:.0%}\nn={totals[i,j]}", ha="center", va="center",
                         fontsize=8, color="white" if rate[i,j] > .55 else INK)
             else:
-                ax.text(j, i, "无算例", ha="center", va="center", fontsize=7, color="#66778A")
+                ax.text(j, i, "无算例", ha="center", va="center", fontsize=7, color=NEUTRAL_DARK)
     ax.set_xticks(range(4), ["≤0.05", "0.05–0.20", "0.20–0.60", ">0.60"])
     ax.set_yticks(range(4), ["≤32", "33–256", "257–2048", ">2048"])
     ax.set(xlabel="最大弱连通块占比", ylabel="DAG 最大层宽 / Op", title="依赖段候选胜出的输入结构范围")
@@ -412,7 +412,7 @@ def q3_f03():
                           if float(r["capacity_bytes"])/1048576 == cx and float(r["bandwidth_bytes_per_cycle"]) == by)
                           for cx in order_x] for by in order_y])
         X, Y = np.meshgrid(order_x, order_y)
-        ax.plot_surface(X, Y, mesh, cmap=NATURE_SEQ_CMAP, linewidth=.5, edgecolor="#52738C",
+        ax.plot_surface(X, Y, mesh, cmap=NATURE_SEQ_CMAP, linewidth=.5, edgecolor=NEUTRAL_DARK,
                         antialiased=True, alpha=.92)
         ax.scatter(x, y, z, color=VIOLET, s=13, depthshade=False)
         ax.set(xlabel="容量/MiB", ylabel="带宽/B/周期", zlabel="时长/千周期")
