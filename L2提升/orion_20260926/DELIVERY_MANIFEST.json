@@ -1,0 +1,30 @@
+{
+  "study": "ORION Q3/L2 small batch 2026-09-26",
+  "parent_implementation_commit": "217444aba097259feb09cac8544279533f670986",
+  "official_input_ref": "b513a98f86183a8c1b41d67a547f06fa9d578e2a",
+  "best_fixed_version": "L2_window_v1",
+  "cases": [
+    "001",
+    "026",
+    "030",
+    "033",
+    "080",
+    "083"
+  ],
+  "cores": 5,
+  "measured_platform": "Windows 11, Python 3.12.8 x64, i7-13650HX, max2workers",
+  "published_code": "_frozen/research_a_orion_unified",
+  "packaging_changes": [
+    "public runpy wrapper",
+    "Linux child process start_new_session; no algorithm changes",
+    "report helper now requires explicit audit.ok=true and empty errors; existing saved results rechecked without reevaluation"
+  ],
+  "container_execution_performed_for_this_delivery": false,
+  "measured_records": "reports/",
+  "old_real_plans": "seeds/jobs/",
+  "best_fixed_version_plans": "incumbents_v1/jobs/",
+  "large_raw_responses_uploaded": false,
+  "raw_data_location_policy": "Original responses and all candidates remain in user local study root; portable source-relative indexes preserved.",
+  "source_of_case_scores": "actual saved original official evaluation, not estimates",
+  "legacy_import_key_note": "Frozen Graph code retains existing internal fingerprint; no standalone hash or file-fingerprint task is added."
+}

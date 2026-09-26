@@ -1,0 +1,42 @@
+{
+  "existing_F": {
+    "samples": 6,
+    "improved": 1,
+    "mean_cycle_reduction_percent": 0.0038534558920277906,
+    "am_speedup": 1.000038543470454,
+    "gm_speedup": 1.000038539756981,
+    "calls": 145,
+    "official_seconds": 77.95578940119594,
+    "total_job_wall_seconds": 95.07138442993164
+  },
+  "L2_window_v1": {
+    "samples": 6,
+    "improved": 3,
+    "mean_cycle_reduction_percent": 0.09306431356148985,
+    "am_speedup": 1.0009329188517013,
+    "gm_speedup": 1.0009322142574402,
+    "calls": 162,
+    "official_seconds": 99.66777530009858,
+    "total_job_wall_seconds": 205.62730598449707
+  },
+  "L2_local_v2": {
+    "samples": 6,
+    "improved": 2,
+    "mean_cycle_reduction_percent": 0.004654453427499483,
+    "am_speedup": 1.0000465562790306,
+    "gm_speedup": 1.0000465514896224,
+    "calls": 184,
+    "official_seconds": 143.55658600048628,
+    "total_job_wall_seconds": 171.5175585746765
+  },
+  "L2_hybrid_v3": {
+    "samples": 6,
+    "improved": 3,
+    "mean_cycle_reduction_percent": 0.09080863206371766,
+    "am_speedup": 1.0009103470192338,
+    "gm_speedup": 1.0009096291550106,
+    "calls": 195,
+    "official_seconds": 220.36278449965175,
+    "total_job_wall_seconds": 263.72592878341675
+  }
+}
