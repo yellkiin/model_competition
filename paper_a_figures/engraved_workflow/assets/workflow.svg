@@ -1,0 +1,1075 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="420mm" height="296.8mm" viewBox="0 0 3000 2120" role="img" aria-labelledby="title desc">
+<title id="title">计算图调度的联合优化：联合决策—统一执行—多邻域迭代改进</title>
+<desc id="desc">可编辑黑白线刻流程图。以六算子分叉汇合案例表达划分、归核、顺序、候选生成、预检、完整执行、字典序接受与反馈；第三问固定同一方案作无L2对照。案例为机制示意，不是实测计划。</desc>
+<defs>
+<style>
+text{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#171717;stroke:none}
+.serif,.math{font-family:'Noto Serif CJK SC','STIX','Noto Serif',serif}
+.halo{paint-order:stroke;stroke:white;stroke-width:7;stroke-linejoin:round}
+.bold{font-weight:700}.muted{fill:#505050}.white{fill:white}
+path,rect,ellipse{stroke-linecap:round;stroke-linejoin:round}
+.fine{fill:none;stroke:#171717;stroke-width:1.6}
+.hair{fill:none;stroke:#505050;stroke-width:.85}
+.faint{fill:none;stroke:#b6b6b6;stroke-width:1.1}
+.route{fill:none;stroke:#171717;stroke-width:3}
+.outline{fill:none;stroke:#171717;stroke-width:2}
+.paper{fill:white;stroke:#171717;stroke-width:2}
+.black{fill:#171717;stroke:#171717;stroke-width:1.5}
+.hatch{fill:url(#hatch);stroke:#171717;stroke-width:1.3}
+.grid{fill:url(#grid);stroke:#171717;stroke-width:1.8}
+.dashed{fill:none;stroke:#505050;stroke-width:1.6;stroke-dasharray:7 6}
+.boundary{fill:url(#sparse);stroke:#171717;stroke-width:2.3;stroke-dasharray:10 5}
+</style>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="white"/><path d="M-1,1L1,-1M0,6L6,0M5,7L7,5" stroke="#171717" stroke-width=".6"/></pattern>
+<pattern id="sparse" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="white"/><path d="M0,12L12,0" stroke="#b6b6b6" stroke-width=".5"/></pattern>
+<pattern id="grid" width="7" height="7" patternUnits="userSpaceOnUse"><rect width="7" height="7" fill="white"/><path d="M7,0H0V7" fill="none" stroke="#171717" stroke-width=".55"/></pattern>
+<marker id="arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0L10,5L0,10L2.6,5Z" fill="#171717"/></marker>
+</defs>
+<g id="page" inkscape:groupmode="layer" inkscape:label="版面与标题"><title>版面与标题</title>
+<rect x="0" y="0" width="3000" height="2120" class="" fill="white" stroke="none"/>
+<path class="route" d="M87,61H2917" />
+<text x="90" y="145" font-size="59" text-anchor="start" class="serif bold">计算图调度的联合优化</text>
+<text x="92" y="199" font-size="31" text-anchor="start" class="">联合决策—统一执行—多邻域迭代改进</text>
+<text x="2915" y="125" font-size="37" text-anchor="end" class="math">G  →  (𝒫, a, π)  →  ℰ<tspan baseline-shift="sub" font-size="70%">q</tspan>  →  (C<tspan baseline-shift="sub" font-size="70%">q</tspan>, D<tspan baseline-shift="sub" font-size="70%">q</tspan>)</text>
+<text x="2915" y="181" font-size="25" text-anchor="end" class="muted">方法总览 / 黑白线刻</text>
+<path class="fine" d="M90,228H2916" />
+</g>
+<g id="joint-decision" inkscape:groupmode="layer" inkscape:label="01 联合决策：同一个计算图、划分、核心归属与核内顺序"><title>01 联合决策：同一个计算图、划分、核心归属与核内顺序</title>
+<text x="88" y="277" font-size="42" text-anchor="start" class="serif">01</text>
+<text x="170" y="276" font-size="39" text-anchor="start" class="bold">联合决策</text>
+<text x="170" y="318" font-size="24" text-anchor="start" class="muted">只改变划分、核心归属与核内顺序</text>
+<text x="92" y="348" font-size="24" text-anchor="start" class="muted">输入：G、问题 q、核数 n、配置 θ 与预算</text>
+<text x="92" y="381" font-size="34" text-anchor="start" class="math">G = (T ∪ O, E)</text>
+<text x="914" y="381" font-size="25" text-anchor="end" class="muted">原始算子与依赖保持不变</text>
+<g id="bipartite-example" transform="translate(116,421) scale(.91)"><title>贯穿案例：A={o1}, B={o2,o4}, C={o3,o5}, D={o6}</title>
+<path class="boundary" d="M254,38C294,2 500,4 567,40C603,65 603,153 565,176C505,210 296,208 254,175C222,148 220,71 254,38Z" />
+<path class="boundary" d="M254,303C294,267 500,269 567,305C603,330 603,418 565,441C505,475 296,473 254,440C222,413 220,336 254,303Z" />
+<ellipse cx="94" cy="240" rx="60" ry="82" class="boundary" />
+<ellipse cx="741" cy="240" rx="60" ry="82" class="boundary" />
+<path class="hair" d="M244,69C285,4 535,4 581,69" />
+<path class="hair" d="M244,145C285,210 535,210 581,145" />
+<path class="hair" d="M244.54,68.19C285,5.8 535,5.8 580.46,68.19" />
+<path class="hair" d="M244.54,145.81C285,208.2 535,208.2 580.46,145.81" />
+<path class="hair" d="M245.08,67.38C285,7.6 535,7.6 579.92,67.38" />
+<path class="hair" d="M245.08,146.62C285,206.4 535,206.4 579.92,146.62" />
+<path class="hair" d="M245.62,66.57C285,9.4 535,9.4 579.38,66.57" />
+<path class="hair" d="M245.62,147.43C285,204.6 535,204.6 579.38,147.43" />
+<path class="hair" d="M246.16,65.76C285,11.2 535,11.2 578.84,65.76" />
+<path class="hair" d="M246.16,148.24C285,202.8 535,202.8 578.84,148.24" />
+<path class="hair" d="M246.7,64.95C285,13 535,13 578.3,64.95" />
+<path class="hair" d="M246.7,149.05C285,201 535,201 578.3,149.05" />
+<path class="hair" d="M247.24,64.14C285,14.8 535,14.8 577.76,64.14" />
+<path class="hair" d="M247.24,149.86C285,199.2 535,199.2 577.76,149.86" />
+<path class="hair" d="M247.78,63.33C285,16.6 535,16.6 577.22,63.33" />
+<path class="hair" d="M247.78,150.67C285,197.4 535,197.4 577.22,150.67" />
+<path class="hair" d="M248.32,62.52C285,18.4 535,18.4 576.68,62.52" />
+<path class="hair" d="M248.32,151.48C285,195.6 535,195.6 576.68,151.48" />
+<path class="hair" d="M248.86,61.71C285,20.2 535,20.2 576.14,61.71" />
+<path class="hair" d="M248.86,152.29C285,193.8 535,193.8 576.14,152.29" />
+<path class="hair" d="M249.4,60.9C285,22 535,22 575.6,60.9" />
+<path class="hair" d="M249.4,153.1C285,192 535,192 575.6,153.1" />
+<path class="hair" d="M249.94,60.09C285,23.8 535,23.8 575.06,60.09" />
+<path class="hair" d="M249.94,153.91C285,190.2 535,190.2 575.06,153.91" />
+<path class="hair" d="M250.48,59.28C285,25.6 535,25.6 574.52,59.28" />
+<path class="hair" d="M250.48,154.72C285,188.4 535,188.4 574.52,154.72" />
+<path class="hair" d="M251.02,58.47C285,27.4 535,27.4 573.98,58.47" />
+<path class="hair" d="M251.02,155.53C285,186.6 535,186.6 573.98,155.53" />
+<path class="hair" d="M251.56,57.66C285,29.2 535,29.2 573.44,57.66" />
+<path class="hair" d="M251.56,156.34C285,184.8 535,184.8 573.44,156.34" />
+<path class="hair" d="M244,334C285,269 535,269 581,334" />
+<path class="hair" d="M244,410C285,475 535,475 581,410" />
+<path class="hair" d="M244.54,333.19C285,270.8 535,270.8 580.46,333.19" />
+<path class="hair" d="M244.54,410.81C285,473.2 535,473.2 580.46,410.81" />
+<path class="hair" d="M245.08,332.38C285,272.6 535,272.6 579.92,332.38" />
+<path class="hair" d="M245.08,411.62C285,471.4 535,471.4 579.92,411.62" />
+<path class="hair" d="M245.62,331.57C285,274.4 535,274.4 579.38,331.57" />
+<path class="hair" d="M245.62,412.43C285,469.6 535,469.6 579.38,412.43" />
+<path class="hair" d="M246.16,330.76C285,276.2 535,276.2 578.84,330.76" />
+<path class="hair" d="M246.16,413.24C285,467.8 535,467.8 578.84,413.24" />
+<path class="hair" d="M246.7,329.95C285,278 535,278 578.3,329.95" />
+<path class="hair" d="M246.7,414.05C285,466 535,466 578.3,414.05" />
+<path class="hair" d="M247.24,329.14C285,279.8 535,279.8 577.76,329.14" />
+<path class="hair" d="M247.24,414.86C285,464.2 535,464.2 577.76,414.86" />
+<path class="hair" d="M247.78,328.33C285,281.6 535,281.6 577.22,328.33" />
+<path class="hair" d="M247.78,415.67C285,462.4 535,462.4 577.22,415.67" />
+<path class="hair" d="M248.32,327.52C285,283.4 535,283.4 576.68,327.52" />
+<path class="hair" d="M248.32,416.48C285,460.6 535,460.6 576.68,416.48" />
+<path class="hair" d="M248.86,326.71C285,285.2 535,285.2 576.14,326.71" />
+<path class="hair" d="M248.86,417.29C285,458.8 535,458.8 576.14,417.29" />
+<path class="hair" d="M249.4,325.9C285,287 535,287 575.6,325.9" />
+<path class="hair" d="M249.4,418.1C285,457 535,457 575.6,418.1" />
+<path class="hair" d="M249.94,325.09C285,288.8 535,288.8 575.06,325.09" />
+<path class="hair" d="M249.94,418.91C285,455.2 535,455.2 575.06,418.91" />
+<path class="hair" d="M250.48,324.28C285,290.6 535,290.6 574.52,324.28" />
+<path class="hair" d="M250.48,419.72C285,453.4 535,453.4 574.52,419.72" />
+<path class="hair" d="M251.02,323.47C285,292.4 535,292.4 573.98,323.47" />
+<path class="hair" d="M251.02,420.53C285,451.6 535,451.6 573.98,420.53" />
+<path class="hair" d="M251.56,322.66C285,294.2 535,294.2 573.44,322.66" />
+<path class="hair" d="M251.56,421.34C285,449.8 535,449.8 573.44,421.34" />
+<path class="fine" d="M-33,240H43" marker-end="url(#arrow)"/>
+<path class="fine" d="M145,240H174" marker-end="url(#arrow)"/>
+<path class="fine" d="M215,224C253,219 252,150 263,128" marker-end="url(#arrow)"/>
+<path class="fine" d="M215,257C253,262 252,329 263,350" marker-end="url(#arrow)"/>
+<path class="fine" d="M352,107H383" marker-end="url(#arrow)"/>
+<path class="fine" d="M429,107H468" marker-end="url(#arrow)"/>
+<path class="fine" d="M352,372H383" marker-end="url(#arrow)"/>
+<path class="fine" d="M429,372H468" marker-end="url(#arrow)"/>
+<path class="fine" d="M572,107H612" marker-end="url(#arrow)"/>
+<path class="fine" d="M572,372H612" marker-end="url(#arrow)"/>
+<path class="fine" d="M654,117C685,124 700,180 717,205" marker-end="url(#arrow)"/>
+<path class="fine" d="M654,362C685,355 700,300 717,275" marker-end="url(#arrow)"/>
+<path class="fine" d="M792,240H843" marker-end="url(#arrow)"/>
+<g transform="translate(198,240) scale(1.02)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+<text x="-3" y="48" font-size="25" text-anchor="middle" class="math">t₁</text>
+</g>
+<g transform="translate(-58,240) scale(0.94)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+<text x="-3" y="48" font-size="25" text-anchor="middle" class="math">t₀</text>
+</g>
+<g transform="translate(410,107) scale(0.94)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+<text x="-3" y="48" font-size="25" text-anchor="middle" class="math">t₂</text>
+</g>
+<g transform="translate(410,372) scale(0.94)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+<text x="-3" y="48" font-size="25" text-anchor="middle" class="math">t₃</text>
+</g>
+<g transform="translate(636,107) scale(0.94)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+<text x="-3" y="48" font-size="25" text-anchor="middle" class="math">t₄</text>
+</g>
+<g transform="translate(636,372) scale(0.94)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+<text x="-3" y="48" font-size="25" text-anchor="middle" class="math">t₅</text>
+</g>
+<g transform="translate(870,240) scale(0.94)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+<text x="-3" y="48" font-size="25" text-anchor="middle" class="math">t₆</text>
+</g>
+<ellipse cx="94" cy="240" rx="52" ry="38" class="paper" />
+<path class="hair" d="M138,240H145" />
+<path class="hair" d="M137,246.4L143.9,247.7" />
+<path class="hair" d="M134.2,252.6L140.6,255" />
+<path class="hair" d="M129.6,258.2L135.3,261.7" />
+<path class="hair" d="M123.4,263L128.1,267.5" />
+<path class="hair" d="M116,266.8L119.5,272" />
+<path class="hair" d="M107.6,269.5L109.8,275.2" />
+<path class="hair" d="M98.6,270.8L99.3,276.8" />
+<path class="hair" d="M89.4,270.8L88.7,276.8" />
+<path class="hair" d="M80.4,269.5L78.2,275.2" />
+<path class="hair" d="M72,266.8L68.5,272" />
+<path class="hair" d="M64.6,263L59.9,267.5" />
+<path class="hair" d="M58.4,258.2L52.7,261.7" />
+<path class="hair" d="M53.8,252.6L47.4,255" />
+<path class="hair" d="M51,246.4L44.1,247.7" />
+<path class="hair" d="M50,240H43" />
+<path class="hair" d="M51,233.6L44.1,232.3" />
+<path class="hair" d="M53.8,227.4L47.4,225" />
+<path class="hair" d="M58.4,221.8L52.7,218.3" />
+<path class="hair" d="M64.6,217L59.9,212.5" />
+<path class="hair" d="M72,213.2L68.5,208" />
+<path class="hair" d="M80.4,210.5L78.2,204.8" />
+<path class="hair" d="M89.4,209.2L88.7,203.2" />
+<path class="hair" d="M98.6,209.2L99.3,203.2" />
+<path class="hair" d="M107.6,210.5L109.8,204.8" />
+<path class="hair" d="M116,213.2L119.5,208" />
+<path class="hair" d="M123.4,217L128.1,212.5" />
+<path class="hair" d="M129.6,221.8L135.3,218.3" />
+<path class="hair" d="M134.2,227.4L140.6,225" />
+<path class="hair" d="M137,233.6L143.9,232.3" />
+<ellipse cx="94" cy="240" rx="43" ry="30" class="paper" />
+<text x="94" y="249" font-size="30" text-anchor="middle" class="math">o₁</text>
+<ellipse cx="300" cy="107" rx="52" ry="38" class="paper" />
+<path class="hair" d="M344,107H351" />
+<path class="hair" d="M343,113.4L349.9,114.7" />
+<path class="hair" d="M340.2,119.6L346.6,122" />
+<path class="hair" d="M335.6,125.2L341.3,128.7" />
+<path class="hair" d="M329.4,130L334.1,134.5" />
+<path class="hair" d="M322,133.8L325.5,139" />
+<path class="hair" d="M313.6,136.5L315.8,142.2" />
+<path class="hair" d="M304.6,137.8L305.3,143.8" />
+<path class="hair" d="M295.4,137.8L294.7,143.8" />
+<path class="hair" d="M286.4,136.5L284.2,142.2" />
+<path class="hair" d="M278,133.8L274.5,139" />
+<path class="hair" d="M270.6,130L265.9,134.5" />
+<path class="hair" d="M264.4,125.2L258.7,128.7" />
+<path class="hair" d="M259.8,119.6L253.4,122" />
+<path class="hair" d="M257,113.4L250.1,114.7" />
+<path class="hair" d="M256,107H249" />
+<path class="hair" d="M257,100.6L250.1,99.3" />
+<path class="hair" d="M259.8,94.4L253.4,92" />
+<path class="hair" d="M264.4,88.8L258.7,85.3" />
+<path class="hair" d="M270.6,84L265.9,79.5" />
+<path class="hair" d="M278,80.2L274.5,75" />
+<path class="hair" d="M286.4,77.5L284.2,71.8" />
+<path class="hair" d="M295.4,76.2L294.7,70.2" />
+<path class="hair" d="M304.6,76.2L305.3,70.2" />
+<path class="hair" d="M313.6,77.5L315.8,71.8" />
+<path class="hair" d="M322,80.2L325.5,75" />
+<path class="hair" d="M329.4,84L334.1,79.5" />
+<path class="hair" d="M335.6,88.8L341.3,85.3" />
+<path class="hair" d="M340.2,94.4L346.6,92" />
+<path class="hair" d="M343,100.6L349.9,99.3" />
+<ellipse cx="300" cy="107" rx="43" ry="30" class="paper" />
+<text x="300" y="116" font-size="30" text-anchor="middle" class="math">o₂</text>
+<ellipse cx="300" cy="372" rx="52" ry="38" class="paper" />
+<path class="hair" d="M344,372H351" />
+<path class="hair" d="M343,378.4L349.9,379.7" />
+<path class="hair" d="M340.2,384.6L346.6,387" />
+<path class="hair" d="M335.6,390.2L341.3,393.7" />
+<path class="hair" d="M329.4,395L334.1,399.5" />
+<path class="hair" d="M322,398.8L325.5,404" />
+<path class="hair" d="M313.6,401.5L315.8,407.2" />
+<path class="hair" d="M304.6,402.8L305.3,408.8" />
+<path class="hair" d="M295.4,402.8L294.7,408.8" />
+<path class="hair" d="M286.4,401.5L284.2,407.2" />
+<path class="hair" d="M278,398.8L274.5,404" />
+<path class="hair" d="M270.6,395L265.9,399.5" />
+<path class="hair" d="M264.4,390.2L258.7,393.7" />
+<path class="hair" d="M259.8,384.6L253.4,387" />
+<path class="hair" d="M257,378.4L250.1,379.7" />
+<path class="hair" d="M256,372H249" />
+<path class="hair" d="M257,365.6L250.1,364.3" />
+<path class="hair" d="M259.8,359.4L253.4,357" />
+<path class="hair" d="M264.4,353.8L258.7,350.3" />
+<path class="hair" d="M270.6,349L265.9,344.5" />
+<path class="hair" d="M278,345.2L274.5,340" />
+<path class="hair" d="M286.4,342.5L284.2,336.8" />
+<path class="hair" d="M295.4,341.2L294.7,335.2" />
+<path class="hair" d="M304.6,341.2L305.3,335.2" />
+<path class="hair" d="M313.6,342.5L315.8,336.8" />
+<path class="hair" d="M322,345.2L325.5,340" />
+<path class="hair" d="M329.4,349L334.1,344.5" />
+<path class="hair" d="M335.6,353.8L341.3,350.3" />
+<path class="hair" d="M340.2,359.4L346.6,357" />
+<path class="hair" d="M343,365.6L349.9,364.3" />
+<ellipse cx="300" cy="372" rx="43" ry="30" class="paper" />
+<text x="300" y="381" font-size="30" text-anchor="middle" class="math">o₃</text>
+<ellipse cx="520" cy="107" rx="52" ry="38" class="paper" />
+<path class="hair" d="M564,107H571" />
+<path class="hair" d="M563,113.4L569.9,114.7" />
+<path class="hair" d="M560.2,119.6L566.6,122" />
+<path class="hair" d="M555.6,125.2L561.3,128.7" />
+<path class="hair" d="M549.4,130L554.1,134.5" />
+<path class="hair" d="M542,133.8L545.5,139" />
+<path class="hair" d="M533.6,136.5L535.8,142.2" />
+<path class="hair" d="M524.6,137.8L525.3,143.8" />
+<path class="hair" d="M515.4,137.8L514.7,143.8" />
+<path class="hair" d="M506.4,136.5L504.2,142.2" />
+<path class="hair" d="M498,133.8L494.5,139" />
+<path class="hair" d="M490.6,130L485.9,134.5" />
+<path class="hair" d="M484.4,125.2L478.7,128.7" />
+<path class="hair" d="M479.8,119.6L473.4,122" />
+<path class="hair" d="M477,113.4L470.1,114.7" />
+<path class="hair" d="M476,107H469" />
+<path class="hair" d="M477,100.6L470.1,99.3" />
+<path class="hair" d="M479.8,94.4L473.4,92" />
+<path class="hair" d="M484.4,88.8L478.7,85.3" />
+<path class="hair" d="M490.6,84L485.9,79.5" />
+<path class="hair" d="M498,80.2L494.5,75" />
+<path class="hair" d="M506.4,77.5L504.2,71.8" />
+<path class="hair" d="M515.4,76.2L514.7,70.2" />
+<path class="hair" d="M524.6,76.2L525.3,70.2" />
+<path class="hair" d="M533.6,77.5L535.8,71.8" />
+<path class="hair" d="M542,80.2L545.5,75" />
+<path class="hair" d="M549.4,84L554.1,79.5" />
+<path class="hair" d="M555.6,88.8L561.3,85.3" />
+<path class="hair" d="M560.2,94.4L566.6,92" />
+<path class="hair" d="M563,100.6L569.9,99.3" />
+<ellipse cx="520" cy="107" rx="43" ry="30" class="paper" />
+<text x="520" y="116" font-size="30" text-anchor="middle" class="math">o₄</text>
+<ellipse cx="520" cy="372" rx="52" ry="38" class="paper" />
+<path class="hair" d="M564,372H571" />
+<path class="hair" d="M563,378.4L569.9,379.7" />
+<path class="hair" d="M560.2,384.6L566.6,387" />
+<path class="hair" d="M555.6,390.2L561.3,393.7" />
+<path class="hair" d="M549.4,395L554.1,399.5" />
+<path class="hair" d="M542,398.8L545.5,404" />
+<path class="hair" d="M533.6,401.5L535.8,407.2" />
+<path class="hair" d="M524.6,402.8L525.3,408.8" />
+<path class="hair" d="M515.4,402.8L514.7,408.8" />
+<path class="hair" d="M506.4,401.5L504.2,407.2" />
+<path class="hair" d="M498,398.8L494.5,404" />
+<path class="hair" d="M490.6,395L485.9,399.5" />
+<path class="hair" d="M484.4,390.2L478.7,393.7" />
+<path class="hair" d="M479.8,384.6L473.4,387" />
+<path class="hair" d="M477,378.4L470.1,379.7" />
+<path class="hair" d="M476,372H469" />
+<path class="hair" d="M477,365.6L470.1,364.3" />
+<path class="hair" d="M479.8,359.4L473.4,357" />
+<path class="hair" d="M484.4,353.8L478.7,350.3" />
+<path class="hair" d="M490.6,349L485.9,344.5" />
+<path class="hair" d="M498,345.2L494.5,340" />
+<path class="hair" d="M506.4,342.5L504.2,336.8" />
+<path class="hair" d="M515.4,341.2L514.7,335.2" />
+<path class="hair" d="M524.6,341.2L525.3,335.2" />
+<path class="hair" d="M533.6,342.5L535.8,336.8" />
+<path class="hair" d="M542,345.2L545.5,340" />
+<path class="hair" d="M549.4,349L554.1,344.5" />
+<path class="hair" d="M555.6,353.8L561.3,350.3" />
+<path class="hair" d="M560.2,359.4L566.6,357" />
+<path class="hair" d="M563,365.6L569.9,364.3" />
+<ellipse cx="520" cy="372" rx="43" ry="30" class="paper" />
+<text x="520" y="381" font-size="30" text-anchor="middle" class="math">o₅</text>
+<ellipse cx="741" cy="240" rx="52" ry="38" class="paper" />
+<path class="hair" d="M785,240H792" />
+<path class="hair" d="M784,246.4L790.9,247.7" />
+<path class="hair" d="M781.2,252.6L787.6,255" />
+<path class="hair" d="M776.6,258.2L782.3,261.7" />
+<path class="hair" d="M770.4,263L775.1,267.5" />
+<path class="hair" d="M763,266.8L766.5,272" />
+<path class="hair" d="M754.6,269.5L756.8,275.2" />
+<path class="hair" d="M745.6,270.8L746.3,276.8" />
+<path class="hair" d="M736.4,270.8L735.7,276.8" />
+<path class="hair" d="M727.4,269.5L725.2,275.2" />
+<path class="hair" d="M719,266.8L715.5,272" />
+<path class="hair" d="M711.6,263L706.9,267.5" />
+<path class="hair" d="M705.4,258.2L699.7,261.7" />
+<path class="hair" d="M700.8,252.6L694.4,255" />
+<path class="hair" d="M698,246.4L691.1,247.7" />
+<path class="hair" d="M697,240H690" />
+<path class="hair" d="M698,233.6L691.1,232.3" />
+<path class="hair" d="M700.8,227.4L694.4,225" />
+<path class="hair" d="M705.4,221.8L699.7,218.3" />
+<path class="hair" d="M711.6,217L706.9,212.5" />
+<path class="hair" d="M719,213.2L715.5,208" />
+<path class="hair" d="M727.4,210.5L725.2,204.8" />
+<path class="hair" d="M736.4,209.2L735.7,203.2" />
+<path class="hair" d="M745.6,209.2L746.3,203.2" />
+<path class="hair" d="M754.6,210.5L756.8,204.8" />
+<path class="hair" d="M763,213.2L766.5,208" />
+<path class="hair" d="M770.4,217L775.1,212.5" />
+<path class="hair" d="M776.6,221.8L782.3,218.3" />
+<path class="hair" d="M781.2,227.4L787.6,225" />
+<path class="hair" d="M784,233.6L790.9,232.3" />
+<ellipse cx="741" cy="240" rx="43" ry="30" class="paper" />
+<text x="741" y="249" font-size="30" text-anchor="middle" class="math">o₆</text>
+<text x="94" y="351" font-size="33" text-anchor="middle" class="serif">A</text>
+<text x="414" y="14" font-size="33" text-anchor="middle" class="serif">B</text>
+<text x="414" y="511" font-size="33" text-anchor="middle" class="serif">C</text>
+<text x="741" y="351" font-size="33" text-anchor="middle" class="serif">D</text>
+</g>
+<text x="92" y="951" font-size="32" text-anchor="start" class="math">𝒫 = {A, B, C, D}</text>
+<text x="914" y="951" font-size="25" text-anchor="end" class="muted">非边界算子完整覆盖、互不相交</text>
+<path class="hair" d="M279,987C289.3,1004.1 311.4,1021.0 303,1058" />
+<path class="hair" d="M279,987C285.2,1004.5 307.2,1021.0 303,1058" />
+<path class="hair" d="M279,987C281.0,1005.0 303.0,1021.0 303,1058" />
+<path class="hair" d="M279,987C276.8,1005.5 298.8,1021.0 303,1058" />
+<path class="hair" d="M279,987C272.7,1005.9 294.6,1021.0 303,1058" />
+<path class="route" d="M279,987C281,1005 303,1021 303,1058" marker-end="url(#arrow)"/>
+<path class="hair" d="M457,987C465.4,1010.0 495.4,1036.0 487,1058" />
+<path class="hair" d="M457,987C461.2,1010.0 491.2,1036.0 487,1058" />
+<path class="hair" d="M457,987C457.0,1010.0 487.0,1036.0 487,1058" />
+<path class="hair" d="M457,987C452.8,1010.0 482.8,1036.0 487,1058" />
+<path class="hair" d="M457,987C448.6,1010.0 478.6,1036.0 487,1058" />
+<path class="route" d="M457,987C457,1010 487,1036 487,1058" marker-end="url(#arrow)"/>
+<path class="hair" d="M654,987C683.9,1082.1 345.0,1084.1 319,1177" />
+<path class="hair" d="M654,987C679.7,1082.4 340.8,1083.9 319,1177" />
+<path class="hair" d="M654,987C675.5,1082.8 336.6,1083.7 319,1177" />
+<path class="hair" d="M654,987C671.4,1083.2 332.4,1083.4 319,1177" />
+<path class="hair" d="M654,987C667.2,1083.6 328.2,1083.2 319,1177" />
+<path class="hair" d="M654,987C663.0,1084.0 324.0,1083.0 319,1177" />
+<path class="hair" d="M654,987C658.8,1084.4 319.8,1082.8 319,1177" />
+<path class="hair" d="M654,987C654.6,1084.8 315.6,1082.6 319,1177" />
+<path class="hair" d="M654,987C650.5,1085.2 311.4,1082.3 319,1177" />
+<path class="hair" d="M654,987C646.3,1085.6 307.2,1082.1 319,1177" />
+<path class="hair" d="M654,987C642.1,1085.9 303.0,1081.9 319,1177" />
+<path class="route" d="M654,987C663,1084 324,1083 319,1177" marker-end="url(#arrow)"/>
+<path class="hair" d="M812,987C817.4,1028.6 739.1,1042.8 679,1058" />
+<path class="hair" d="M812,987C813.2,1028.3 737.6,1038.9 679,1058" />
+<path class="hair" d="M812,987C809.0,1028.0 736.0,1035.0 679,1058" />
+<path class="hair" d="M812,987C804.8,1027.7 734.4,1031.1 679,1058" />
+<path class="hair" d="M812,987C800.6,1027.4 732.9,1027.2 679,1058" />
+<path class="route" d="M812,987C809,1028 736,1035 679,1058" marker-end="url(#arrow)"/>
+<text x="115" y="1119" font-size="35" text-anchor="start" class="math">k₁</text>
+<path class="hatch" d="M185,1150H864l18,-18H204Z" />
+<path class="fine" d="M180,1164H884" marker-end="url(#arrow)"/>
+<path class="hatch" d="M245,1084l13,-13h138l-13,13Z" />
+<path class="hatch" d="M383,1084l13,-13v57l-13,13Z" />
+<rect x="245" y="1084" width="138" height="57" class="paper" />
+<text x="314" y="1122.5" font-size="29" text-anchor="middle" class="math">A</text>
+<path class="hatch" d="M430,1084l13,-13h138l-13,13Z" />
+<path class="hatch" d="M568,1084l13,-13v57l-13,13Z" />
+<rect x="430" y="1084" width="138" height="57" class="black" />
+<text x="499" y="1122.5" font-size="29" text-anchor="middle" class="white math">B</text>
+<path class="hatch" d="M625,1084l13,-13h138l-13,13Z" />
+<path class="hatch" d="M763,1084l13,-13v57l-13,13Z" />
+<rect x="625" y="1084" width="138" height="57" class="paper" />
+<text x="694" y="1122.5" font-size="29" text-anchor="middle" class="math">D</text>
+<text x="115" y="1238" font-size="35" text-anchor="start" class="math">k₂</text>
+<path class="hatch" d="M185,1269H864l18,-18H204Z" />
+<path class="fine" d="M180,1283H884" marker-end="url(#arrow)"/>
+<path class="hatch" d="M245,1203l13,-13h138l-13,13Z" />
+<path class="hatch" d="M383,1203l13,-13v57l-13,13Z" />
+<rect x="245" y="1203" width="138" height="57" class="paper" />
+<text x="314" y="1241.5" font-size="29" text-anchor="middle" class="math">C</text>
+<text x="841" y="1320" font-size="27" text-anchor="end" class="math">a：归属核心   π：每核排列</text>
+<path class="fine" d="M865,1274C904,1323 903,1338 854,1370" marker-end="url(#arrow)"/>
+<text x="92" y="1395" font-size="28" text-anchor="start" class="bold">基础构造 / 历史方案</text>
+<path class="route" d="M382,1384H468" marker-end="url(#arrow)"/>
+<text x="490" y="1395" font-size="27" text-anchor="start" class="">目标配置下先完整验证</text>
+<path class="route" d="M806,1409C853,1444 782,1481 728,1481" marker-end="url(#arrow)"/>
+<path class="hatch" d="M189,1455H721L748,1482L721,1515H189L165,1482Z" />
+<rect x="197" y="1462" width="514" height="45" class="paper" />
+<text x="453" y="1494" font-size="27" text-anchor="middle" class="bold">当前最好可行方案 x  +  执行记录</text>
+<path class="hair" d="M752,1482C1007.0,1456.8 981.0,404.8 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1461.0 981.0,409.0 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1465.2 981.0,413.2 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1469.4 981.0,417.4 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1473.6 981.0,421.6 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1477.8 981.0,425.8 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1482.0 981.0,430.0 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1486.2 981.0,434.2 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1490.4 981.0,438.4 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1494.6 981.0,442.6 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1498.8 981.0,446.8 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1503.0 981.0,451.0 1056,430" />
+<path class="hair" d="M752,1482C1007.0,1507.2 981.0,455.2 1056,430" />
+<path class="route" d="M752,1482C1007,1482 981,430 1056,430" marker-end="url(#arrow)"/>
+</g>
+<g id="neighborhoods" inkscape:groupmode="layer" inkscape:label="02 多邻域候选与来源选择"><title>02 多邻域候选与来源选择</title>
+<text x="1030" y="277" font-size="42" text-anchor="start" class="serif">02</text>
+<text x="1112" y="276" font-size="39" text-anchor="start" class="bold">多邻域迭代改进</text>
+<text x="1112" y="318" font-size="24" text-anchor="start" class="muted">所有来源共享同一个当前最好方案</text>
+<text x="1503" y="388" font-size="32" text-anchor="middle" class="bold">每轮只选择一个来源</text>
+<text x="1503" y="432" font-size="25" text-anchor="middle" class="">初次覆盖 · 近期收益 / 成本 · 失败比例</text>
+<text x="1503" y="468" font-size="25" text-anchor="middle" class="muted">访问间隔 · 剩余预算准入</text>
+<path class="fine" d="M1070,492H1928" />
+<g id="source-base"><title>基础构造：粒度、关键性排序与负载映射</title>
+<ellipse cx="1067" cy="545" rx="17" ry="17" class="black" />
+<text x="1067" y="552" font-size="19" text-anchor="middle" class="white">a</text>
+<text x="1098" y="555" font-size="31" text-anchor="start" class="bold">基础构造</text>
+<text x="1050" y="594" font-size="24" text-anchor="start" class="muted">粒度 · 关键性排序 · 负载映射</text>
+<path class="boundary" d="M1143,620Q1250,582 1362,620V680Q1250,718 1143,680Z" />
+<path class="boundary" d="M1143,750Q1250,712 1362,750V810Q1250,848 1143,810Z" />
+<path class="fine" d="M1112,715C1136,715 1141,650 1156,650" marker-end="url(#arrow)"/>
+<path class="fine" d="M1112,715C1136,715 1141,780 1156,780" marker-end="url(#arrow)"/>
+<path class="fine" d="M1214,650C1238,650 1275,650 1290,650" marker-end="url(#arrow)"/>
+<path class="fine" d="M1214,780C1238,780 1275,780 1290,780" marker-end="url(#arrow)"/>
+<path class="fine" d="M1348,650C1372,650 1387,715 1402,715" marker-end="url(#arrow)"/>
+<path class="fine" d="M1348,780C1372,780 1387,715 1402,715" marker-end="url(#arrow)"/>
+<ellipse cx="1084" cy="715" rx="33" ry="26" class="paper" />
+<path class="hair" d="M1109,715H1116" />
+<path class="hair" d="M1107.5,721.5L1114.1,723.6" />
+<path class="hair" d="M1103.2,727.2L1108.5,731.1" />
+<path class="hair" d="M1096.5,731.5L1100,736.7" />
+<path class="hair" d="M1088.3,733.7L1089.6,739.6" />
+<path class="hair" d="M1079.7,733.7L1078.4,739.6" />
+<path class="hair" d="M1071.5,731.5L1068,736.7" />
+<path class="hair" d="M1064.8,727.2L1059.5,731.1" />
+<path class="hair" d="M1060.5,721.5L1053.9,723.6" />
+<path class="hair" d="M1059,715H1052" />
+<path class="hair" d="M1060.5,708.5L1053.9,706.4" />
+<path class="hair" d="M1064.8,702.8L1059.5,698.9" />
+<path class="hair" d="M1071.5,698.5L1068,693.3" />
+<path class="hair" d="M1079.7,696.3L1078.4,690.4" />
+<path class="hair" d="M1088.3,696.3L1089.6,690.4" />
+<path class="hair" d="M1096.5,698.5L1100,693.3" />
+<path class="hair" d="M1103.2,702.8L1108.5,698.9" />
+<path class="hair" d="M1107.5,708.5L1114.1,706.4" />
+<ellipse cx="1084" cy="715" rx="24" ry="18" class="paper" />
+<text x="1084" y="724" font-size="23" text-anchor="middle" class="math">o₁</text>
+<ellipse cx="1186" cy="650" rx="33" ry="26" class="paper" />
+<path class="hair" d="M1211,650H1218" />
+<path class="hair" d="M1209.5,656.5L1216.1,658.6" />
+<path class="hair" d="M1205.2,662.2L1210.5,666.1" />
+<path class="hair" d="M1198.5,666.5L1202,671.7" />
+<path class="hair" d="M1190.3,668.7L1191.6,674.6" />
+<path class="hair" d="M1181.7,668.7L1180.4,674.6" />
+<path class="hair" d="M1173.5,666.5L1170,671.7" />
+<path class="hair" d="M1166.8,662.2L1161.5,666.1" />
+<path class="hair" d="M1162.5,656.5L1155.9,658.6" />
+<path class="hair" d="M1161,650H1154" />
+<path class="hair" d="M1162.5,643.5L1155.9,641.4" />
+<path class="hair" d="M1166.8,637.8L1161.5,633.9" />
+<path class="hair" d="M1173.5,633.5L1170,628.3" />
+<path class="hair" d="M1181.7,631.3L1180.4,625.4" />
+<path class="hair" d="M1190.3,631.3L1191.6,625.4" />
+<path class="hair" d="M1198.5,633.5L1202,628.3" />
+<path class="hair" d="M1205.2,637.8L1210.5,633.9" />
+<path class="hair" d="M1209.5,643.5L1216.1,641.4" />
+<ellipse cx="1186" cy="650" rx="24" ry="18" class="paper" />
+<text x="1186" y="659" font-size="23" text-anchor="middle" class="math">o₂</text>
+<ellipse cx="1186" cy="780" rx="33" ry="26" class="paper" />
+<path class="hair" d="M1211,780H1218" />
+<path class="hair" d="M1209.5,786.5L1216.1,788.6" />
+<path class="hair" d="M1205.2,792.2L1210.5,796.1" />
+<path class="hair" d="M1198.5,796.5L1202,801.7" />
+<path class="hair" d="M1190.3,798.7L1191.6,804.6" />
+<path class="hair" d="M1181.7,798.7L1180.4,804.6" />
+<path class="hair" d="M1173.5,796.5L1170,801.7" />
+<path class="hair" d="M1166.8,792.2L1161.5,796.1" />
+<path class="hair" d="M1162.5,786.5L1155.9,788.6" />
+<path class="hair" d="M1161,780H1154" />
+<path class="hair" d="M1162.5,773.5L1155.9,771.4" />
+<path class="hair" d="M1166.8,767.8L1161.5,763.9" />
+<path class="hair" d="M1173.5,763.5L1170,758.3" />
+<path class="hair" d="M1181.7,761.3L1180.4,755.4" />
+<path class="hair" d="M1190.3,761.3L1191.6,755.4" />
+<path class="hair" d="M1198.5,763.5L1202,758.3" />
+<path class="hair" d="M1205.2,767.8L1210.5,763.9" />
+<path class="hair" d="M1209.5,773.5L1216.1,771.4" />
+<ellipse cx="1186" cy="780" rx="24" ry="18" class="paper" />
+<text x="1186" y="789" font-size="23" text-anchor="middle" class="math">o₃</text>
+<ellipse cx="1320" cy="650" rx="33" ry="26" class="paper" />
+<path class="hair" d="M1345,650H1352" />
+<path class="hair" d="M1343.5,656.5L1350.1,658.6" />
+<path class="hair" d="M1339.2,662.2L1344.5,666.1" />
+<path class="hair" d="M1332.5,666.5L1336,671.7" />
+<path class="hair" d="M1324.3,668.7L1325.6,674.6" />
+<path class="hair" d="M1315.7,668.7L1314.4,674.6" />
+<path class="hair" d="M1307.5,666.5L1304,671.7" />
+<path class="hair" d="M1300.8,662.2L1295.5,666.1" />
+<path class="hair" d="M1296.5,656.5L1289.9,658.6" />
+<path class="hair" d="M1295,650H1288" />
+<path class="hair" d="M1296.5,643.5L1289.9,641.4" />
+<path class="hair" d="M1300.8,637.8L1295.5,633.9" />
+<path class="hair" d="M1307.5,633.5L1304,628.3" />
+<path class="hair" d="M1315.7,631.3L1314.4,625.4" />
+<path class="hair" d="M1324.3,631.3L1325.6,625.4" />
+<path class="hair" d="M1332.5,633.5L1336,628.3" />
+<path class="hair" d="M1339.2,637.8L1344.5,633.9" />
+<path class="hair" d="M1343.5,643.5L1350.1,641.4" />
+<ellipse cx="1320" cy="650" rx="24" ry="18" class="paper" />
+<text x="1320" y="659" font-size="23" text-anchor="middle" class="math">o₄</text>
+<ellipse cx="1320" cy="780" rx="33" ry="26" class="paper" />
+<path class="hair" d="M1345,780H1352" />
+<path class="hair" d="M1343.5,786.5L1350.1,788.6" />
+<path class="hair" d="M1339.2,792.2L1344.5,796.1" />
+<path class="hair" d="M1332.5,796.5L1336,801.7" />
+<path class="hair" d="M1324.3,798.7L1325.6,804.6" />
+<path class="hair" d="M1315.7,798.7L1314.4,804.6" />
+<path class="hair" d="M1307.5,796.5L1304,801.7" />
+<path class="hair" d="M1300.8,792.2L1295.5,796.1" />
+<path class="hair" d="M1296.5,786.5L1289.9,788.6" />
+<path class="hair" d="M1295,780H1288" />
+<path class="hair" d="M1296.5,773.5L1289.9,771.4" />
+<path class="hair" d="M1300.8,767.8L1295.5,763.9" />
+<path class="hair" d="M1307.5,763.5L1304,758.3" />
+<path class="hair" d="M1315.7,761.3L1314.4,755.4" />
+<path class="hair" d="M1324.3,761.3L1325.6,755.4" />
+<path class="hair" d="M1332.5,763.5L1336,758.3" />
+<path class="hair" d="M1339.2,767.8L1344.5,763.9" />
+<path class="hair" d="M1343.5,773.5L1350.1,771.4" />
+<ellipse cx="1320" cy="780" rx="24" ry="18" class="paper" />
+<text x="1320" y="789" font-size="23" text-anchor="middle" class="math">o₅</text>
+<ellipse cx="1432" cy="715" rx="33" ry="26" class="paper" />
+<path class="hair" d="M1457,715H1464" />
+<path class="hair" d="M1455.5,721.5L1462.1,723.6" />
+<path class="hair" d="M1451.2,727.2L1456.5,731.1" />
+<path class="hair" d="M1444.5,731.5L1448,736.7" />
+<path class="hair" d="M1436.3,733.7L1437.6,739.6" />
+<path class="hair" d="M1427.7,733.7L1426.4,739.6" />
+<path class="hair" d="M1419.5,731.5L1416,736.7" />
+<path class="hair" d="M1412.8,727.2L1407.5,731.1" />
+<path class="hair" d="M1408.5,721.5L1401.9,723.6" />
+<path class="hair" d="M1407,715H1400" />
+<path class="hair" d="M1408.5,708.5L1401.9,706.4" />
+<path class="hair" d="M1412.8,702.8L1407.5,698.9" />
+<path class="hair" d="M1419.5,698.5L1416,693.3" />
+<path class="hair" d="M1427.7,696.3L1426.4,690.4" />
+<path class="hair" d="M1436.3,696.3L1437.6,690.4" />
+<path class="hair" d="M1444.5,698.5L1448,693.3" />
+<path class="hair" d="M1451.2,702.8L1456.5,698.9" />
+<path class="hair" d="M1455.5,708.5L1462.1,706.4" />
+<ellipse cx="1432" cy="715" rx="24" ry="18" class="paper" />
+<text x="1432" y="724" font-size="23" text-anchor="middle" class="math">o₆</text>
+<text x="1245" y="881" font-size="23" text-anchor="middle" class="muted">同一图的算子投影 / 分组粒度可变</text>
+</g>
+<g id="source-structure"><title>结构与负载：迁移、交换、拆分、联合迁移</title>
+<ellipse cx="1558" cy="545" rx="17" ry="17" class="black" />
+<text x="1558" y="552" font-size="19" text-anchor="middle" class="white">b</text>
+<text x="1589" y="555" font-size="31" text-anchor="start" class="bold">依赖结构与负载</text>
+<text x="1541" y="594" font-size="24" text-anchor="start" class="muted">迁移 · 交换 · 拆分 · 联合迁移</text>
+<text x="1545" y="674" font-size="27" text-anchor="start" class="math">k₁</text>
+<path class="fine" d="M1593,699H1940" marker-end="url(#arrow)"/>
+<text x="1545" y="774" font-size="27" text-anchor="start" class="math">k₂</text>
+<path class="fine" d="M1593,799H1940" marker-end="url(#arrow)"/>
+<path class="hatch" d="M1607,641l8,-8h69l-8,8Z" />
+<path class="hatch" d="M1676,641l8,-8v46l-8,8Z" />
+<rect x="1607" y="641" width="69" height="46" class="paper" />
+<text x="1641.5" y="674" font-size="29" text-anchor="middle" class="math">A</text>
+<rect x="1710" y="641" width="69" height="46" class="dashed" />
+<text x="1744" y="674" font-size="28" text-anchor="middle" class="muted math">B</text>
+<path class="hatch" d="M1836,641l8,-8h69l-8,8Z" />
+<path class="hatch" d="M1905,641l8,-8v46l-8,8Z" />
+<rect x="1836" y="641" width="69" height="46" class="paper" />
+<text x="1870.5" y="674" font-size="29" text-anchor="middle" class="math">D</text>
+<path class="hatch" d="M1677,741l8,-8h69l-8,8Z" />
+<path class="hatch" d="M1746,741l8,-8v46l-8,8Z" />
+<rect x="1677" y="741" width="69" height="46" class="black" />
+<text x="1711.5" y="774" font-size="29" text-anchor="middle" class="white math">B</text>
+<path class="hatch" d="M1836,741l8,-8h69l-8,8Z" />
+<path class="hatch" d="M1905,741l8,-8v46l-8,8Z" />
+<rect x="1836" y="741" width="69" height="46" class="paper" />
+<text x="1870.5" y="774" font-size="29" text-anchor="middle" class="math">C</text>
+<path class="hair" d="M1743,691C1785.9,721.0 1774.7,738.4 1711,728" />
+<path class="hair" d="M1743,691C1782.9,724.0 1774.9,734.2 1711,728" />
+<path class="hair" d="M1743,691C1780.0,727.0 1775.0,730.0 1711,728" />
+<path class="hair" d="M1743,691C1777.1,730.0 1775.1,725.8 1711,728" />
+<path class="hair" d="M1743,691C1774.1,733.0 1775.3,721.6 1711,728" />
+<path class="route" d="M1743,691C1780,727 1775,730 1711,728" marker-end="url(#arrow)"/>
+<text x="1541" y="854" font-size="27" text-anchor="start" class="math">B = {o₂, o₄}</text>
+<path class="fine" d="M1719,844H1760" marker-end="url(#arrow)"/>
+<text x="1791" y="854" font-size="27" text-anchor="start" class="math">B₁ | B₂</text>
+</g>
+<path class="faint" d="M1050,922H1940" />
+<g id="source-residency"><title>驻留重组：生产消费次序与张量存活区间</title>
+<ellipse cx="1067" cy="959" rx="17" ry="17" class="black" />
+<text x="1067" y="966" font-size="19" text-anchor="middle" class="white">c</text>
+<text x="1098" y="969" font-size="31" text-anchor="start" class="bold">驻留数据重组</text>
+<text x="1050" y="1008" font-size="24" text-anchor="start" class="muted">改变分组 / 顺序，缩短驻留区间</text>
+<path class="hatch" d="M1075,1140l6,-6h58l-6,6Z" />
+<path class="hatch" d="M1133,1140l6,-6v38l-6,6Z" />
+<rect x="1075" y="1140" width="58" height="38" class="paper" />
+<text x="1104" y="1169" font-size="29" text-anchor="middle" class="math">o₂</text>
+<path class="hatch" d="M1171,1140l6,-6h58l-6,6Z" />
+<path class="hatch" d="M1229,1140l6,-6v38l-6,6Z" />
+<rect x="1171" y="1140" width="58" height="38" class="paper" />
+<text x="1200" y="1169" font-size="29" text-anchor="middle" class="math">o₃</text>
+<path class="hatch" d="M1267,1140l6,-6h58l-6,6Z" />
+<path class="hatch" d="M1325,1140l6,-6v38l-6,6Z" />
+<rect x="1267" y="1140" width="58" height="38" class="paper" />
+<text x="1296" y="1169" font-size="29" text-anchor="middle" class="math">o₄</text>
+<path class="hatch" d="M1363,1140l6,-6h58l-6,6Z" />
+<path class="hatch" d="M1421,1140l6,-6v38l-6,6Z" />
+<rect x="1363" y="1140" width="58" height="38" class="paper" />
+<text x="1392" y="1169" font-size="29" text-anchor="middle" class="math">o₅</text>
+<path class="hair" d="M1104,1132C1104,1078 1296,1078 1296,1132" />
+<path class="hair" d="M1104,1132C1104,1076 1296,1076 1296,1132" />
+<path class="hair" d="M1104,1132C1104,1074 1296,1074 1296,1132" />
+<path class="hair" d="M1104,1132C1104,1072 1296,1072 1296,1132" />
+<path class="hair" d="M1104,1132C1104,1070 1296,1070 1296,1132" />
+<path class="hair" d="M1104,1132C1104,1068 1296,1068 1296,1132" />
+<path class="hair" d="M1104,1132C1104,1066 1296,1066 1296,1132" />
+<text x="1200" y="1071" font-size="24" text-anchor="middle" class="math">t₂</text>
+<path class="hair" d="M1200,1132C1200,1060 1392,1060 1392,1132" />
+<path class="hair" d="M1200,1132C1200,1058 1392,1058 1392,1132" />
+<path class="hair" d="M1200,1132C1200,1056 1392,1056 1392,1132" />
+<path class="hair" d="M1200,1132C1200,1054 1392,1054 1392,1132" />
+<path class="hair" d="M1200,1132C1200,1052 1392,1052 1392,1132" />
+<path class="hair" d="M1200,1132C1200,1050 1392,1050 1392,1132" />
+<path class="hair" d="M1200,1132C1200,1048 1392,1048 1392,1132" />
+<text x="1296" y="1053" font-size="24" text-anchor="middle" class="math">t₃</text>
+<path class="hatch" d="M1075,1246l6,-6h58l-6,6Z" />
+<path class="hatch" d="M1133,1246l6,-6v38l-6,6Z" />
+<rect x="1075" y="1246" width="58" height="38" class="paper" />
+<text x="1104" y="1275" font-size="29" text-anchor="middle" class="math">o₂</text>
+<path class="hatch" d="M1171,1246l6,-6h58l-6,6Z" />
+<path class="hatch" d="M1229,1246l6,-6v38l-6,6Z" />
+<rect x="1171" y="1246" width="58" height="38" class="paper" />
+<text x="1200" y="1275" font-size="29" text-anchor="middle" class="math">o₄</text>
+<path class="hatch" d="M1267,1246l6,-6h58l-6,6Z" />
+<path class="hatch" d="M1325,1246l6,-6v38l-6,6Z" />
+<rect x="1267" y="1246" width="58" height="38" class="paper" />
+<text x="1296" y="1275" font-size="29" text-anchor="middle" class="math">o₃</text>
+<path class="hatch" d="M1363,1246l6,-6h58l-6,6Z" />
+<path class="hatch" d="M1421,1246l6,-6v38l-6,6Z" />
+<rect x="1363" y="1246" width="58" height="38" class="paper" />
+<text x="1392" y="1275" font-size="29" text-anchor="middle" class="math">o₅</text>
+<path class="hair" d="M1104,1238C1104,1205 1200,1205 1200,1238" />
+<path class="hair" d="M1104,1238C1104,1203 1200,1203 1200,1238" />
+<path class="hair" d="M1104,1238C1104,1201 1200,1201 1200,1238" />
+<path class="hair" d="M1104,1238C1104,1199 1200,1199 1200,1238" />
+<path class="hair" d="M1104,1238C1104,1197 1200,1197 1200,1238" />
+<path class="hair" d="M1104,1238C1104,1195 1200,1195 1200,1238" />
+<path class="hair" d="M1104,1238C1104,1193 1200,1193 1200,1238" />
+<text x="1152" y="1198" font-size="24" text-anchor="middle" class="math">t₂</text>
+<path class="hair" d="M1296,1238C1296,1205 1392,1205 1392,1238" />
+<path class="hair" d="M1296,1238C1296,1203 1392,1203 1392,1238" />
+<path class="hair" d="M1296,1238C1296,1201 1392,1201 1392,1238" />
+<path class="hair" d="M1296,1238C1296,1199 1392,1199 1392,1238" />
+<path class="hair" d="M1296,1238C1296,1197 1392,1197 1392,1238" />
+<path class="hair" d="M1296,1238C1296,1195 1392,1195 1392,1238" />
+<path class="hair" d="M1296,1238C1296,1193 1392,1193 1392,1238" />
+<text x="1344" y="1198" font-size="24" text-anchor="middle" class="math">t₃</text>
+<path class="fine" d="M1455,1128V1212" marker-end="url(#arrow)"/>
+<text x="1050" y="1318" font-size="22" text-anchor="start" class="muted">由驻留分析提出候选，Spill 由执行器决定</text>
+</g>
+<g id="source-fifo"><title>FIFO事件时序：仅第三问、只修改合法核内顺序</title>
+<ellipse cx="1558" cy="959" rx="17" ry="17" class="black" />
+<text x="1558" y="966" font-size="19" text-anchor="middle" class="white">d</text>
+<text x="1589" y="969" font-size="31" text-anchor="start" class="bold">FIFO 事件时序 · Q3</text>
+<text x="1541" y="1008" font-size="25" text-anchor="start" class="math">𝒫、a 保持不变，仅重排 π</text>
+<rect x="1612" y="1086" width="209" height="77" class="hatch" />
+<text x="1716" y="1136" font-size="28" text-anchor="middle" class="bold">驻留窗口</text>
+<path class="fine" d="M1544,1188H1950" marker-end="url(#arrow)"/>
+<path class="fine" d="M1612,1080L1612,1204" />
+<text x="1612" y="1240" font-size="29" text-anchor="middle" class="math">fₜ</text>
+<path class="fine" d="M1821,1080L1821,1204" />
+<text x="1821" y="1240" font-size="29" text-anchor="middle" class="math">eₜ</text>
+<path class="fine" d="M1904,1080L1904,1204" />
+<text x="1904" y="1240" font-size="29" text-anchor="middle" class="math">sₜ</text>
+<ellipse cx="1904" cy="1188" rx="7" ry="7" class="paper" />
+<ellipse cx="1713" cy="1188" rx="7" ry="7" class="black" />
+<path class="hair" d="M1904,1080C1872.2,1024.2 1757.1,1025.5 1713,1080" />
+<path class="hair" d="M1904,1080C1876.1,1022.6 1753.6,1023.2 1713,1080" />
+<path class="hair" d="M1904,1080C1880.0,1021.0 1750.0,1021.0 1713,1080" />
+<path class="hair" d="M1904,1080C1883.9,1019.4 1746.4,1018.8 1713,1080" />
+<path class="hair" d="M1904,1080C1887.8,1017.8 1742.9,1016.5 1713,1080" />
+<path class="route" d="M1904,1080C1880,1021 1750,1021 1713,1080" marker-end="url(#arrow)"/>
+<text x="1712" y="1240" font-size="29" text-anchor="middle" class="math">s′ₜ</text>
+<text x="1541" y="1289" font-size="25" text-anchor="start" class="math">填充后、淘汰前：fₜ ≤ s′ₜ &lt; eₜ</text>
+<text x="1541" y="1325" font-size="22" text-anchor="start" class="muted">同刻按事件顺序；新时序须完整重演</text>
+</g>
+<text x="1503" y="1397" font-size="34" text-anchor="middle" class="math">完整候选  y = (𝒫′, a′, π′)</text>
+<path class="fine" d="M1255,1348C1255,1363 1430,1346 1503,1346" />
+<path class="fine" d="M1750,1348C1750,1363 1575,1346 1503,1346" />
+<path class="fine" d="M1503,1346V1359" marker-end="url(#arrow)"/>
+<path class="route" d="M1070,1427H1938" />
+<text x="1090" y="1475" font-size="30" text-anchor="start" class="bold">结构预检 / 去重</text>
+<text x="1090" y="1516" font-size="24" text-anchor="start" class="">覆盖 · 唯一归核 · 合图无环</text>
+<path class="fine" d="M1480,1452L1480,1530" />
+<text x="1513" y="1475" font-size="30" text-anchor="start" class="bold">有效下界筛选</text>
+<text x="1513" y="1516" font-size="25" text-anchor="start" class="math">L(y) &gt; U 筛去；等号保留</text>
+<text x="1513" y="1554" font-size="22" text-anchor="start" class="math muted">U = C<tspan baseline-shift="sub" font-size="70%">q</tspan>(x)</text>
+<path class="hair" d="M1933,1479C1993.0,1466.4 2066.0,1442.4 2118,1455" />
+<path class="hair" d="M1933,1479C1993.0,1470.6 2066.0,1446.6 2118,1455" />
+<path class="hair" d="M1933,1479C1993.0,1474.8 2066.0,1450.8 2118,1455" />
+<path class="hair" d="M1933,1479C1993.0,1479.0 2066.0,1455.0 2118,1455" />
+<path class="hair" d="M1933,1479C1993.0,1483.2 2066.0,1459.2 2118,1455" />
+<path class="hair" d="M1933,1479C1993.0,1487.4 2066.0,1463.4 2118,1455" />
+<path class="hair" d="M1933,1479C1993.0,1491.6 2066.0,1467.6 2118,1455" />
+<path class="route" d="M1933,1479C1993,1479 2066,1455 2118,1455" marker-end="url(#arrow)"/>
+<text x="2008" y="1415" font-size="24" text-anchor="middle" class="muted">通过</text>
+<path class="dashed" d="M1938,1528C1982,1528 1980,500 1960,470C1951,453 1941,437 1931,435" marker-end="url(#arrow)"/>
+<text x="1999" y="1173" font-size="22" text-anchor="middle" class="muted">筛</text>
+<text x="1999" y="1205" font-size="22" text-anchor="middle" class="muted">去</text>
+<text x="1999" y="1237" font-size="22" text-anchor="middle" class="muted">重</text>
+<text x="1999" y="1269" font-size="22" text-anchor="middle" class="muted">选</text>
+</g>
+<g id="execution" inkscape:groupmode="layer" inkscape:label="03 固定执行器：重建任务与COPY、自动Spill、Pipe、DDR和FIFO"><title>03 固定执行器：重建任务与COPY、自动Spill、Pipe、DDR和FIFO</title>
+<text x="2090" y="277" font-size="42" text-anchor="start" class="serif">03</text>
+<text x="2172" y="276" font-size="39" text-anchor="start" class="bold">统一执行</text>
+<text x="2172" y="318" font-size="24" text-anchor="start" class="muted">以 y 重建执行，不沿用旧方案的周期</text>
+<text x="2090" y="378" font-size="29" text-anchor="start" class="bold">示例候选：B 迁至 k₂</text>
+<text x="2898" y="378" font-size="33" text-anchor="end" class="math">ℰ<tspan baseline-shift="sub" font-size="70%">q</tspan>(G, y; θ)</text>
+<text x="2272" y="422" font-size="31" text-anchor="middle" class="bold">核心 k₁</text>
+<path class="hatch" d="M2157,453l8,-8h102l-8,8Z" />
+<path class="hatch" d="M2259,453l8,-8v42l-8,8Z" />
+<rect x="2157" y="453" width="102" height="42" class="paper" />
+<text x="2208" y="484" font-size="29" text-anchor="middle" class="math">A</text>
+<path class="hatch" d="M2284,453l8,-8h102l-8,8Z" />
+<path class="hatch" d="M2386,453l8,-8v42l-8,8Z" />
+<rect x="2284" y="453" width="102" height="42" class="paper" />
+<text x="2335" y="484" font-size="29" text-anchor="middle" class="math">D</text>
+<path class="grid" d="M2130,538l32,-28h294l-32,28Z" />
+<path class="hatch" d="M2424,538l32,-28v225l-32,28Z" />
+<rect x="2130" y="538" width="294" height="225" class="paper" />
+<text x="2137" y="580" font-size="22" text-anchor="start" class="math">M</text>
+<path class="faint" d="M2207,580H2407" />
+<rect x="2240" y="565" width="90" height="22" class="hatch" />
+<path class="hair" d="M2207,593H2405" />
+<text x="2137" y="627" font-size="22" text-anchor="start" class="math">V</text>
+<path class="faint" d="M2207,627H2407" />
+<rect x="2264.6" y="612" width="75.6" height="22" class="hatch" />
+<path class="hair" d="M2207,640H2405" />
+<text x="2137" y="674" font-size="22" text-anchor="start" class="math">MTE2</text>
+<path class="faint" d="M2207,674H2407" />
+<rect x="2211.8" y="659" width="84.96" height="22" class="hatch" />
+<path class="hair" d="M2207,687H2405" />
+<text x="2137" y="721" font-size="22" text-anchor="start" class="math">MTE3</text>
+<path class="faint" d="M2207,721H2407" />
+<rect x="2297" y="706" width="57.6" height="22" class="hatch" />
+<path class="hair" d="M2207,734H2405" />
+<path class="hatch" d="M2138,808l13,-13h123l-13,13Z" />
+<path class="hatch" d="M2261,808l13,-13v68l-13,13Z" />
+<rect x="2138" y="808" width="123" height="68" class="paper" />
+<text x="2199.5" y="852" font-size="29" text-anchor="middle" class="math">L1</text>
+<path class="hair" d="M2145,858H2253" />
+<path class="hair" d="M2145,860H2253" />
+<path class="hair" d="M2145,862H2253" />
+<path class="hair" d="M2145,864H2253" />
+<path class="hair" d="M2145,866H2253" />
+<path class="hair" d="M2145,868H2253" />
+<path class="hair" d="M2145,870H2253" />
+<path class="hatch" d="M2285,808l13,-13h123l-13,13Z" />
+<path class="hatch" d="M2408,808l13,-13v68l-13,13Z" />
+<rect x="2285" y="808" width="123" height="68" class="paper" />
+<text x="2346.5" y="852" font-size="29" text-anchor="middle" class="math">UB</text>
+<path class="hair" d="M2292,858H2400" />
+<path class="hair" d="M2292,860H2400" />
+<path class="hair" d="M2292,862H2400" />
+<path class="hair" d="M2292,864H2400" />
+<path class="hair" d="M2292,866H2400" />
+<path class="hair" d="M2292,868H2400" />
+<path class="hair" d="M2292,870H2400" />
+<path class="hair" d="M2213,766C2221.4,778.0 2198.4,778.0 2190,792" />
+<path class="hair" d="M2213,766C2217.2,778.0 2194.2,778.0 2190,792" />
+<path class="hair" d="M2213,766C2213.0,778.0 2190.0,778.0 2190,792" />
+<path class="hair" d="M2213,766C2208.8,778.0 2185.8,778.0 2190,792" />
+<path class="hair" d="M2213,766C2204.6,778.0 2181.6,778.0 2190,792" />
+<path class="route" d="M2213,766C2213,778 2190,778 2190,792" marker-end="url(#arrow)"/>
+<path class="hair" d="M2353,766C2361.4,778.0 2353.4,778.0 2345,792" />
+<path class="hair" d="M2353,766C2357.2,778.0 2349.2,778.0 2345,792" />
+<path class="hair" d="M2353,766C2353.0,778.0 2345.0,778.0 2345,792" />
+<path class="hair" d="M2353,766C2348.8,778.0 2340.8,778.0 2345,792" />
+<path class="hair" d="M2353,766C2344.6,778.0 2336.6,778.0 2345,792" />
+<path class="route" d="M2353,766C2353,778 2345,778 2345,792" marker-end="url(#arrow)"/>
+<text x="2687" y="422" font-size="31" text-anchor="middle" class="bold">核心 k₂</text>
+<path class="hatch" d="M2572,453l8,-8h102l-8,8Z" />
+<path class="hatch" d="M2674,453l8,-8v42l-8,8Z" />
+<rect x="2572" y="453" width="102" height="42" class="black" />
+<text x="2623" y="484" font-size="29" text-anchor="middle" class="white math">B</text>
+<path class="hatch" d="M2699,453l8,-8h102l-8,8Z" />
+<path class="hatch" d="M2801,453l8,-8v42l-8,8Z" />
+<rect x="2699" y="453" width="102" height="42" class="paper" />
+<text x="2750" y="484" font-size="29" text-anchor="middle" class="math">C</text>
+<path class="grid" d="M2545,538l32,-28h294l-32,28Z" />
+<path class="hatch" d="M2839,538l32,-28v225l-32,28Z" />
+<rect x="2545" y="538" width="294" height="225" class="paper" />
+<text x="2552" y="580" font-size="22" text-anchor="start" class="math">M</text>
+<path class="faint" d="M2622,580H2822" />
+<rect x="2655" y="565" width="90" height="22" class="hatch" />
+<path class="hair" d="M2622,593H2820" />
+<text x="2552" y="627" font-size="22" text-anchor="start" class="math">V</text>
+<path class="faint" d="M2622,627H2822" />
+<rect x="2679.6" y="612" width="75.6" height="22" class="hatch" />
+<path class="hair" d="M2622,640H2820" />
+<text x="2552" y="674" font-size="22" text-anchor="start" class="math">MTE2</text>
+<path class="faint" d="M2622,674H2822" />
+<rect x="2626.8" y="659" width="84.96" height="22" class="hatch" />
+<path class="hair" d="M2622,687H2820" />
+<text x="2552" y="721" font-size="22" text-anchor="start" class="math">MTE3</text>
+<path class="faint" d="M2622,721H2822" />
+<rect x="2712" y="706" width="57.6" height="22" class="hatch" />
+<path class="hair" d="M2622,734H2820" />
+<path class="hatch" d="M2553,808l13,-13h123l-13,13Z" />
+<path class="hatch" d="M2676,808l13,-13v68l-13,13Z" />
+<rect x="2553" y="808" width="123" height="68" class="paper" />
+<text x="2614.5" y="852" font-size="29" text-anchor="middle" class="math">L1</text>
+<path class="hair" d="M2560,858H2668" />
+<path class="hair" d="M2560,860H2668" />
+<path class="hair" d="M2560,862H2668" />
+<path class="hair" d="M2560,864H2668" />
+<path class="hair" d="M2560,866H2668" />
+<path class="hair" d="M2560,868H2668" />
+<path class="hair" d="M2560,870H2668" />
+<path class="hatch" d="M2700,808l13,-13h123l-13,13Z" />
+<path class="hatch" d="M2823,808l13,-13v68l-13,13Z" />
+<rect x="2700" y="808" width="123" height="68" class="paper" />
+<text x="2761.5" y="852" font-size="29" text-anchor="middle" class="math">UB</text>
+<path class="hair" d="M2707,858H2815" />
+<path class="hair" d="M2707,860H2815" />
+<path class="hair" d="M2707,862H2815" />
+<path class="hair" d="M2707,864H2815" />
+<path class="hair" d="M2707,866H2815" />
+<path class="hair" d="M2707,868H2815" />
+<path class="hair" d="M2707,870H2815" />
+<path class="hair" d="M2628,766C2636.4,778.0 2613.4,778.0 2605,792" />
+<path class="hair" d="M2628,766C2632.2,778.0 2609.2,778.0 2605,792" />
+<path class="hair" d="M2628,766C2628.0,778.0 2605.0,778.0 2605,792" />
+<path class="hair" d="M2628,766C2623.8,778.0 2600.8,778.0 2605,792" />
+<path class="hair" d="M2628,766C2619.6,778.0 2596.6,778.0 2605,792" />
+<path class="route" d="M2628,766C2628,778 2605,778 2605,792" marker-end="url(#arrow)"/>
+<path class="hair" d="M2768,766C2776.4,778.0 2768.4,778.0 2760,792" />
+<path class="hair" d="M2768,766C2772.2,778.0 2764.2,778.0 2760,792" />
+<path class="hair" d="M2768,766C2768.0,778.0 2760.0,778.0 2760,792" />
+<path class="hair" d="M2768,766C2763.8,778.0 2755.8,778.0 2760,792" />
+<path class="hair" d="M2768,766C2759.6,778.0 2751.6,778.0 2760,792" />
+<path class="route" d="M2768,766C2768,778 2760,778 2760,792" marker-end="url(#arrow)"/>
+<path class="hair" d="M2195,885C2088.3,964.6 2108.9,1053.2 2265,1060" />
+<path class="hair" d="M2195,885C2086.2,961.0 2109.2,1057.4 2265,1060" />
+<path class="hair" d="M2195,885C2084.1,957.3 2109.5,1061.6 2265,1060" />
+<path class="hair" d="M2195,885C2082.1,953.7 2109.7,1065.8 2265,1060" />
+<path class="hair" d="M2195,885C2080.0,950.0 2110.0,1070.0 2265,1060" />
+<path class="hair" d="M2195,885C2077.9,946.3 2110.3,1074.2 2265,1060" />
+<path class="hair" d="M2195,885C2075.9,942.7 2110.5,1078.4 2265,1060" />
+<path class="hair" d="M2195,885C2073.8,939.0 2110.8,1082.6 2265,1060" />
+<path class="hair" d="M2195,885C2071.7,935.4 2111.1,1086.8 2265,1060" />
+<path class="route" d="M2195,885C2080,950 2110,1070 2265,1060" marker-end="url(#arrow)"/>
+<path class="hair" d="M2314,1060C2341.4,993.3 2363.1,949.2 2354,885" />
+<path class="hair" d="M2314,1060C2344.9,995.5 2367.1,947.8 2354,885" />
+<path class="hair" d="M2314,1060C2348.5,997.8 2371.0,946.4 2354,885" />
+<path class="hair" d="M2314,1060C2352.0,1000.0 2375.0,945.0 2354,885" />
+<path class="hair" d="M2314,1060C2355.5,1002.2 2379.0,943.6 2354,885" />
+<path class="hair" d="M2314,1060C2359.1,1004.5 2382.9,942.2 2354,885" />
+<path class="hair" d="M2314,1060C2362.6,1006.7 2386.9,940.8 2354,885" />
+<path class="route" d="M2314,1060C2352,1000 2375,945 2354,885" marker-end="url(#arrow)"/>
+<path class="hair" d="M2642,885C2567.8,981.9 2545.6,1003.9 2680,1060" />
+<path class="hair" d="M2642,885C2564.9,979.0 2544.5,1007.9 2680,1060" />
+<path class="hair" d="M2642,885C2561.9,976.0 2543.3,1011.9 2680,1060" />
+<path class="hair" d="M2642,885C2559.0,973.0 2542.2,1016.0 2680,1060" />
+<path class="hair" d="M2642,885C2556.0,970.0 2541.0,1020.0 2680,1060" />
+<path class="hair" d="M2642,885C2553.0,967.0 2539.8,1024.0 2680,1060" />
+<path class="hair" d="M2642,885C2550.1,964.0 2538.7,1028.1 2680,1060" />
+<path class="hair" d="M2642,885C2547.1,961.0 2537.5,1032.1 2680,1060" />
+<path class="hair" d="M2642,885C2544.2,958.1 2536.4,1036.1 2680,1060" />
+<path class="route" d="M2642,885C2556,970 2541,1020 2680,1060" marker-end="url(#arrow)"/>
+<path class="hair" d="M2778,1060C2906.8,987.5 2883.2,959.6 2790,885" />
+<path class="hair" d="M2778,1060C2908.5,991.4 2885.5,956.1 2790,885" />
+<path class="hair" d="M2778,1060C2910.3,995.2 2887.7,952.5 2790,885" />
+<path class="hair" d="M2778,1060C2912.0,999.0 2890.0,949.0 2790,885" />
+<path class="hair" d="M2778,1060C2913.7,1002.8 2892.3,945.5 2790,885" />
+<path class="hair" d="M2778,1060C2915.5,1006.6 2894.5,941.9 2790,885" />
+<path class="hair" d="M2778,1060C2917.2,1010.5 2896.8,938.4 2790,885" />
+<path class="route" d="M2778,1060C2912,999 2890,949 2790,885" marker-end="url(#arrow)"/>
+<text x="2100" y="949" font-size="23" text-anchor="start" class="halo">COPY_OUT</text>
+<text x="2790" y="949" font-size="23" text-anchor="end" class="halo">COPY_IN</text>
+<g transform="translate(2190,996) scale(0.78)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+</g>
+<g transform="translate(2821,1001) scale(0.78)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+</g>
+<path class="hatch" d="M2180,1080l31,-31h637l-31,31Z" />
+<path class="hatch" d="M2817,1080l31,-31v82l-31,31Z" />
+<rect x="2180" y="1080" width="637" height="82" class="paper" />
+<text x="2498.5" y="1131" font-size="29" text-anchor="middle" class="math">DDR  共享带宽池 · 60 B/周期</text>
+<path class="hair" d="M2190,1147H2808" />
+<path class="hair" d="M2190,1149H2808" />
+<path class="hair" d="M2190,1151H2808" />
+<path class="hair" d="M2190,1153H2808" />
+<path class="hair" d="M2190,1155H2808" />
+<path class="hair" d="M2190,1157H2808" />
+<path class="hair" d="M2190,1159H2808" />
+<path class="hair" d="M2190,1161H2808" />
+<path class="hair" d="M2190,1163H2808" />
+<path class="hair" d="M2190,1165H2808" />
+<path class="hatch" d="M2363,1252l24,-24h457l-24,24Z" />
+<path class="hatch" d="M2820,1252l24,-24v79l-24,24Z" />
+<rect x="2363" y="1252" width="457" height="79" class="paper" />
+<text x="2591.5" y="1301.5" font-size="29" text-anchor="middle" class="math">只读 L2 · FIFO · Q3</text>
+<text x="2590" y="1368" font-size="25" text-anchor="middle" class="math">1 MiB · 250 B/周期</text>
+<path class="dashed" d="M2375,1201H2810" />
+<path class="dashed" d="M2385,1169C2338,1204 2337,1241 2363,1277" marker-end="url(#arrow)"/>
+<text x="2090" y="1253" font-size="23" text-anchor="start" class="">未命中读 DDR</text>
+<text x="2090" y="1289" font-size="23" text-anchor="start" class="">完成后尝试填充</text>
+<path class="hair" d="M2822,1292C2944.5,1200.6 2944.5,861.4 2879,677" />
+<path class="hair" d="M2822,1292C2946.4,1204.3 2948.3,859.5 2879,677" />
+<path class="hair" d="M2822,1292C2948.3,1208.1 2952.0,857.6 2879,677" />
+<path class="hair" d="M2822,1292C2950.2,1211.8 2955.8,855.7 2879,677" />
+<path class="hair" d="M2822,1292C2952.2,1215.5 2959.5,853.8 2879,677" />
+<path class="hair" d="M2822,1292C2954.1,1219.3 2963.3,851.9 2879,677" />
+<path class="hair" d="M2822,1292C2956.0,1223.0 2967.0,850.0 2879,677" />
+<path class="hair" d="M2822,1292C2957.9,1226.7 2970.7,848.1 2879,677" />
+<path class="hair" d="M2822,1292C2959.8,1230.5 2974.5,846.2 2879,677" />
+<path class="hair" d="M2822,1292C2961.8,1234.2 2978.2,844.3 2879,677" />
+<path class="hair" d="M2822,1292C2963.7,1237.9 2982.0,842.4 2879,677" />
+<path class="hair" d="M2822,1292C2965.6,1241.7 2985.7,840.5 2879,677" />
+<path class="hair" d="M2822,1292C2967.5,1245.4 2989.5,838.6 2879,677" />
+<path class="route" d="M2822,1292C2956,1223 2967,850 2879,677" marker-end="url(#arrow)"/>
+<text x="2916" y="1071" font-size="22" text-anchor="middle" class="muted halo">命</text>
+<text x="2916" y="1103" font-size="22" text-anchor="middle" class="muted halo">中</text>
+<text x="2916" y="1135" font-size="22" text-anchor="middle" class="muted halo">读</text>
+<text x="2500" y="1404" font-size="21" text-anchor="middle" class="muted">COPY_IN 发射时查询；命中不刷新 FIFO</text>
+<text x="2500" y="1438" font-size="25" text-anchor="middle" class="">Step1 核内顺序 → Step2 驻留 / Spill</text>
+<text x="2500" y="1476" font-size="25" text-anchor="middle" class="">→ Step3 Pipe 排布 → 全局离散事件模拟</text>
+<path class="fine" d="M2118,1455C2070,1455 2064,608 2104,562" marker-end="url(#arrow)"/>
+<path class="route" d="M2866,1492C2960,1540 2960,1657 2828,1732" marker-end="url(#arrow)"/>
+<text x="2092" y="1533" font-size="22" text-anchor="start" class="muted">Q1 子图级 Task；跨子图经 DDR，同核亦如此</text>
+<text x="2092" y="1567" font-size="21" text-anchor="start" class="muted">同核前序完成 +100；跨核前驱完成 +1000（周期）</text>
+<text x="2092" y="1601" font-size="21" text-anchor="start" class="muted">Q2/3 核心级 Task；跨核 COPY_OUT 完成 +500（周期）</text>
+</g>
+<g id="accept-feedback" inkscape:groupmode="layer" inkscape:label="04 完整评价、严格接受、状态刷新与预算控制"><title>04 完整评价、严格接受、状态刷新与预算控制</title>
+<path class="fine" d="M90,1625H2920" />
+<text x="2900" y="1687" font-size="30" text-anchor="end" class="bold">总体任务执行时间（Makespan）</text>
+<text x="2526" y="1750" font-size="43" text-anchor="middle" class="math">C<tspan baseline-shift="sub" font-size="70%">q</tspan>(y) = max<tspan baseline-shift="sub" font-size="70%">j</tspan> f<tspan baseline-shift="sub" font-size="70%">j</tspan></text>
+<text x="2900" y="1803" font-size="25" text-anchor="end" class="math">周期持平，再比较额外 COPY 字节 D<tspan baseline-shift="sub" font-size="70%">q</tspan>(y)</text>
+<path class="hair" d="M2180,1748C2119.0,1769.0 1950.0,1769.0 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1764.8 1950.0,1764.8 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1760.6 1950.0,1760.6 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1756.4 1950.0,1756.4 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1752.2 1950.0,1752.2 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1748.0 1950.0,1748.0 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1743.8 1950.0,1743.8 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1739.6 1950.0,1739.6 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1735.4 1950.0,1735.4 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1731.2 1950.0,1731.2 1889,1748" />
+<path class="hair" d="M2180,1748C2119.0,1727.0 1950.0,1727.0 1889,1748" />
+<path class="route" d="M2180,1748C2119,1748 1950,1748 1889,1748" marker-end="url(#arrow)"/>
+<text x="1505" y="1687" font-size="31" text-anchor="middle" class="bold">04  可行且字典序严格改善？</text>
+<path class="paper" d="M1127,1745L1163,1708H1842L1880,1745L1842,1787H1163Z" />
+<text x="1505" y="1760" font-size="28" text-anchor="middle" class="math">y ∈ ℱ<tspan baseline-shift="sub" font-size="70%">q</tspan>  且  (C<tspan baseline-shift="sub" font-size="70%">q</tspan>(y), D<tspan baseline-shift="sub" font-size="70%">q</tspan>(y)) &lt;<tspan baseline-shift="sub" font-size="70%">lex</tspan> (C<tspan baseline-shift="sub" font-size="70%">q</tspan>(x), D<tspan baseline-shift="sub" font-size="70%">q</tspan>(x))</text>
+<text x="2045" y="1710" font-size="24" text-anchor="middle" class="muted">实际评价</text>
+<path class="hair" d="M1122,1748C1040.0,1773.2 982.0,1773.2 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1769.0 982.0,1769.0 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1764.8 982.0,1764.8 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1760.6 982.0,1760.6 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1756.4 982.0,1756.4 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1752.2 982.0,1752.2 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1748.0 982.0,1748.0 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1743.8 982.0,1743.8 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1739.6 982.0,1739.6 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1735.4 982.0,1735.4 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1731.2 982.0,1731.2 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1727.0 982.0,1727.0 883,1748" />
+<path class="hair" d="M1122,1748C1040.0,1722.8 982.0,1722.8 883,1748" />
+<path class="route" d="M1122,1748C1040,1748 982,1748 883,1748" marker-end="url(#arrow)"/>
+<text x="1000" y="1708" font-size="27" text-anchor="middle" class="bold">是</text>
+<text x="105" y="1687" font-size="31" text-anchor="start" class="bold">同步更新共同状态</text>
+<text x="105" y="1753" font-size="48" text-anchor="start" class="math">x ← y</text>
+<text x="341" y="1749" font-size="29" text-anchor="start" class="">方案 + 完整执行记录</text>
+<text x="105" y="1810" font-size="25" text-anchor="start" class="">刷新依赖父状态的局部流；保留全局构造进度</text>
+<path class="hair" d="M116,1734C10.7,1719.4 32.0,1500.8 208,1526" />
+<path class="hair" d="M116,1734C12.3,1715.5 32.0,1505.0 208,1526" />
+<path class="hair" d="M116,1734C13.8,1711.6 32.0,1509.2 208,1526" />
+<path class="hair" d="M116,1734C15.4,1707.7 32.0,1513.4 208,1526" />
+<path class="hair" d="M116,1734C16.9,1703.8 32.0,1517.6 208,1526" />
+<path class="hair" d="M116,1734C18.5,1699.9 32.0,1521.8 208,1526" />
+<path class="hair" d="M116,1734C20.0,1696.0 32.0,1526.0 208,1526" />
+<path class="hair" d="M116,1734C21.5,1692.1 32.0,1530.2 208,1526" />
+<path class="hair" d="M116,1734C23.1,1688.2 32.0,1534.4 208,1526" />
+<path class="hair" d="M116,1734C24.6,1684.3 32.0,1538.6 208,1526" />
+<path class="hair" d="M116,1734C26.2,1680.4 32.0,1542.8 208,1526" />
+<path class="hair" d="M116,1734C27.7,1676.5 32.0,1547.0 208,1526" />
+<path class="hair" d="M116,1734C29.3,1672.6 32.0,1551.2 208,1526" />
+<path class="route" d="M116,1734C20,1696 32,1526 208,1526" marker-end="url(#arrow)"/>
+<path class="dashed" d="M1511,1789V1854" marker-end="url(#arrow)"/>
+<text x="1550" y="1835" font-size="25" text-anchor="start" class="muted">否：保留 x</text>
+<path class="fine" d="M793,1790C844,1869 1300,1880 1400,1880" marker-end="url(#arrow)"/>
+<text x="1046" y="1831" font-size="23" text-anchor="middle" class="muted">接受 / 未接受后均检查</text>
+<path class="paper" d="M1400,1880L1510,1845L1620,1880L1510,1915Z" />
+<text x="1510" y="1889" font-size="26" text-anchor="middle" class="bold">停止？</text>
+<path class="" d="M1400,1880C1352,1930 1013,2000 1013,1790V495Q1013,392 1060,392" fill="none" stroke="white" stroke-width="9"/>
+<path class="dashed" d="M1400,1880C1352,1930 1013,2000 1013,1790V495Q1013,392 1060,392" marker-end="url(#arrow)"/>
+<text x="1285" y="1970" font-size="24" text-anchor="middle" class="muted">否：下一轮</text>
+</g>
+<g id="outputs" inkscape:groupmode="layer" inkscape:label="05 停止与输出；第三问同方案配对不参与接受"><title>05 停止与输出；第三问同方案配对不参与接受</title>
+<text x="94" y="1926" font-size="30" text-anchor="start" class="bold">05  停止与保存</text>
+<text x="94" y="1973" font-size="24" text-anchor="start" class="">时间 / 次数预算 · 质量界 · 来源耗尽 · 经验停滞</text>
+<text x="94" y="2016" font-size="24" text-anchor="start" class="muted">只保存截止前已验证、已可用的最好方案</text>
+<path class="fine" d="M1620,1880H1780" marker-end="url(#arrow)"/>
+<text x="1690" y="1851" font-size="25" text-anchor="middle" class="bold">是</text>
+<text x="1806" y="1918" font-size="28" text-anchor="start" class="bold">方案 x + 实际指标 + 时间—质量记录</text>
+<text x="1806" y="1968" font-size="26" text-anchor="start" class="">Q3：固定同一个 (𝒫, a, π)，再执行无 L2 对照</text>
+<text x="1806" y="2014" font-size="27" text-anchor="start" class="math">R<tspan baseline-shift="super" font-size="70%">L2</tspan> = C₂(x₃) / C₃(x₃)；配对不参与搜索接受</text>
+</g>
+<g id="legend" inkscape:groupmode="layer" inkscape:label="线型、对象与示意说明"><title>线型、对象与示意说明</title>
+<path class="fine" d="M90,2055H2920" />
+<g transform="translate(110,2090) scale(0.47)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+</g>
+<text x="140" y="2093" font-size="21" text-anchor="start" class="">张量</text>
+<ellipse cx="260" cy="2086" rx="23" ry="13" class="paper" />
+<text x="294" y="2093" font-size="21" text-anchor="start" class="">算子</text>
+<rect x="412" y="2074" width="44" height="22" class="boundary" rx="8"/>
+<text x="470" y="2093" font-size="21" text-anchor="start" class="">子图边界</text>
+<rect x="637" y="2074" width="31" height="22" class="black" />
+<text x="684" y="2093" font-size="21" text-anchor="start" class="">操作对象</text>
+<path class="dashed" d="M850,2087H903" marker-end="url(#arrow)"/>
+<text x="917" y="2093" font-size="21" text-anchor="start" class="">反馈 / 条件路径</text>
+<text x="2913" y="2093" font-size="21" text-anchor="end" class="muted">机制案例为示意，非实测计划；执行时间线不按比例。</text>
+</g>
+</svg>

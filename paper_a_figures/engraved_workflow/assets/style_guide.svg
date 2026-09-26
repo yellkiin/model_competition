@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="300mm" height="196.667mm" viewBox="0 0 1800 1180" role="img" aria-labelledby="title desc">
+<title id="title">黑白线刻图形语法与可编辑组件</title>
+<desc id="desc">可编辑黑白线刻流程图。以六算子分叉汇合案例表达划分、归核、顺序、候选生成、预检、完整执行、字典序接受与反馈；第三问固定同一方案作无L2对照。案例为机制示意，不是实测计划。</desc>
+<defs>
+<style>
+text{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#171717;stroke:none}
+.serif,.math{font-family:'Noto Serif CJK SC','STIX','Noto Serif',serif}
+.halo{paint-order:stroke;stroke:white;stroke-width:7;stroke-linejoin:round}
+.bold{font-weight:700}.muted{fill:#505050}.white{fill:white}
+path,rect,ellipse{stroke-linecap:round;stroke-linejoin:round}
+.fine{fill:none;stroke:#171717;stroke-width:1.6}
+.hair{fill:none;stroke:#505050;stroke-width:.85}
+.faint{fill:none;stroke:#b6b6b6;stroke-width:1.1}
+.route{fill:none;stroke:#171717;stroke-width:3}
+.outline{fill:none;stroke:#171717;stroke-width:2}
+.paper{fill:white;stroke:#171717;stroke-width:2}
+.black{fill:#171717;stroke:#171717;stroke-width:1.5}
+.hatch{fill:url(#hatch);stroke:#171717;stroke-width:1.3}
+.grid{fill:url(#grid);stroke:#171717;stroke-width:1.8}
+.dashed{fill:none;stroke:#505050;stroke-width:1.6;stroke-dasharray:7 6}
+.boundary{fill:url(#sparse);stroke:#171717;stroke-width:2.3;stroke-dasharray:10 5}
+</style>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="white"/><path d="M-1,1L1,-1M0,6L6,0M5,7L7,5" stroke="#171717" stroke-width=".6"/></pattern>
+<pattern id="sparse" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="white"/><path d="M0,12L12,0" stroke="#b6b6b6" stroke-width=".5"/></pattern>
+<pattern id="grid" width="7" height="7" patternUnits="userSpaceOnUse"><rect width="7" height="7" fill="white"/><path d="M7,0H0V7" fill="none" stroke="#171717" stroke-width=".55"/></pattern>
+<marker id="arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0L10,5L0,10L2.6,5Z" fill="#171717"/></marker>
+</defs>
+<g id="style-page" inkscape:groupmode="layer" inkscape:label="黑白线刻图形语法"><title>黑白线刻图形语法</title>
+<rect x="0" y="0" width="1800" height="1180" class="" fill="white" stroke="none"/>
+<path class="route" d="M70,65H1730" />
+<text x="70" y="139" font-size="51" text-anchor="start" class="serif bold">黑白线刻 / 图形语法</text>
+<text x="70" y="191" font-size="27" text-anchor="start" class="">共用节点、线条、材质与文字层级；后续图件直接复用 Drawing。</text>
+<path class="fine" d="M70,220H1730" />
+</g>
+<g id="line-grammar" inkscape:groupmode="layer" inkscape:label="线条与信息层级"><title>线条与信息层级</title>
+<text x="70" y="285" font-size="34" text-anchor="start" class="bold">01  线条层级</text>
+<path class="hair" d="M80,345H300" />
+<text x="340" y="354" font-size="26" text-anchor="start" class="">0.85  细部排线 / 曲面描线</text>
+<path class="fine" d="M80,405H300" />
+<text x="340" y="414" font-size="26" text-anchor="start" class="">1.60  依赖边 / 内部结构</text>
+<path class="route" d="M80,465H300" />
+<text x="340" y="474" font-size="26" text-anchor="start" class="">3.00  主流程 / 方向</text>
+<path class="dashed" d="M80,525H300" marker-end="url(#arrow)"/>
+<text x="340" y="534" font-size="26" text-anchor="start" class="">虚线：条件路径与反馈</text>
+<path class="hair" d="M80,610C243.7,480.6 465.6,679.7 690,610" />
+<path class="hair" d="M80,610C245.7,484.3 467.4,683.5 690,610" />
+<path class="hair" d="M80,610C247.8,488.0 469.2,687.2 690,610" />
+<path class="hair" d="M80,610C249.8,491.6 471.0,691.0 690,610" />
+<path class="hair" d="M80,610C251.8,495.3 472.8,694.8 690,610" />
+<path class="hair" d="M80,610C253.9,499.0 474.6,698.6 690,610" />
+<path class="hair" d="M80,610C255.9,502.7 476.4,702.4 690,610" />
+<path class="hair" d="M80,610C258.0,506.3 478.2,706.2 690,610" />
+<path class="hair" d="M80,610C260.0,510.0 480.0,710.0 690,610" />
+<path class="hair" d="M80,610C262.0,513.7 481.8,713.8 690,610" />
+<path class="hair" d="M80,610C264.1,517.3 483.6,717.6 690,610" />
+<path class="hair" d="M80,610C266.1,521.0 485.4,721.4 690,610" />
+<path class="hair" d="M80,610C268.2,524.7 487.2,725.2 690,610" />
+<path class="hair" d="M80,610C270.2,528.4 489.0,729.0 690,610" />
+<path class="hair" d="M80,610C272.2,532.0 490.8,732.8 690,610" />
+<path class="hair" d="M80,610C274.3,535.7 492.6,736.5 690,610" />
+<path class="hair" d="M80,610C276.3,539.4 494.4,740.3 690,610" />
+<path class="route" d="M80,610C260,510 480,710 690,610" marker-end="url(#arrow)"/>
+<text x="80" y="700" font-size="25" text-anchor="start" class="muted">一条主路径 + 收束曲线；箭头只标一次。</text>
+</g>
+<g id="object-grammar" inkscape:groupmode="layer" inkscape:label="对象与操作对象"><title>对象与操作对象</title>
+<text x="960" y="285" font-size="34" text-anchor="start" class="bold">02  对象与操作对象</text>
+<g transform="translate(1053,393) scale(1.6)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+</g>
+<ellipse cx="1248" cy="389" rx="52" ry="38" class="paper" />
+<path class="hair" d="M1292,389H1299" />
+<path class="hair" d="M1291,395.4L1297.9,396.7" />
+<path class="hair" d="M1288.2,401.6L1294.6,404" />
+<path class="hair" d="M1283.6,407.2L1289.3,410.7" />
+<path class="hair" d="M1277.4,412L1282.1,416.5" />
+<path class="hair" d="M1270,415.8L1273.5,421" />
+<path class="hair" d="M1261.6,418.5L1263.8,424.2" />
+<path class="hair" d="M1252.6,419.8L1253.3,425.8" />
+<path class="hair" d="M1243.4,419.8L1242.7,425.8" />
+<path class="hair" d="M1234.4,418.5L1232.2,424.2" />
+<path class="hair" d="M1226,415.8L1222.5,421" />
+<path class="hair" d="M1218.6,412L1213.9,416.5" />
+<path class="hair" d="M1212.4,407.2L1206.7,410.7" />
+<path class="hair" d="M1207.8,401.6L1201.4,404" />
+<path class="hair" d="M1205,395.4L1198.1,396.7" />
+<path class="hair" d="M1204,389H1197" />
+<path class="hair" d="M1205,382.6L1198.1,381.3" />
+<path class="hair" d="M1207.8,376.4L1201.4,374" />
+<path class="hair" d="M1212.4,370.8L1206.7,367.3" />
+<path class="hair" d="M1218.6,366L1213.9,361.5" />
+<path class="hair" d="M1226,362.2L1222.5,357" />
+<path class="hair" d="M1234.4,359.5L1232.2,353.8" />
+<path class="hair" d="M1243.4,358.2L1242.7,352.2" />
+<path class="hair" d="M1252.6,358.2L1253.3,352.2" />
+<path class="hair" d="M1261.6,359.5L1263.8,353.8" />
+<path class="hair" d="M1270,362.2L1273.5,357" />
+<path class="hair" d="M1277.4,366L1282.1,361.5" />
+<path class="hair" d="M1283.6,370.8L1289.3,367.3" />
+<path class="hair" d="M1288.2,376.4L1294.6,374" />
+<path class="hair" d="M1291,382.6L1297.9,381.3" />
+<ellipse cx="1248" cy="389" rx="43" ry="30" class="paper" />
+<text x="1248" y="398" font-size="30" text-anchor="middle" class="math">o₁</text>
+<path class="hatch" d="M1380,355l13,-13h180l-13,13Z" />
+<path class="hatch" d="M1560,355l13,-13v76l-13,13Z" />
+<rect x="1380" y="355" width="180" height="76" class="black" />
+<text x="1470" y="403" font-size="29" text-anchor="middle" class="white math">B</text>
+<text x="1050" y="491" font-size="27" text-anchor="middle" class="">张量</text>
+<text x="1250" y="491" font-size="27" text-anchor="middle" class="">算子</text>
+<text x="1490" y="491" font-size="27" text-anchor="middle" class="">本轮操作对象</text>
+<path class="boundary" d="M990,560C1060,519 1450,519 1550,560V638C1450,679 1060,679 990,638Z" />
+<ellipse cx="1100" cy="600" rx="52" ry="38" class="paper" />
+<path class="hair" d="M1144,600H1151" />
+<path class="hair" d="M1143,606.4L1149.9,607.7" />
+<path class="hair" d="M1140.2,612.6L1146.6,615" />
+<path class="hair" d="M1135.6,618.2L1141.3,621.7" />
+<path class="hair" d="M1129.4,623L1134.1,627.5" />
+<path class="hair" d="M1122,626.8L1125.5,632" />
+<path class="hair" d="M1113.6,629.5L1115.8,635.2" />
+<path class="hair" d="M1104.6,630.8L1105.3,636.8" />
+<path class="hair" d="M1095.4,630.8L1094.7,636.8" />
+<path class="hair" d="M1086.4,629.5L1084.2,635.2" />
+<path class="hair" d="M1078,626.8L1074.5,632" />
+<path class="hair" d="M1070.6,623L1065.9,627.5" />
+<path class="hair" d="M1064.4,618.2L1058.7,621.7" />
+<path class="hair" d="M1059.8,612.6L1053.4,615" />
+<path class="hair" d="M1057,606.4L1050.1,607.7" />
+<path class="hair" d="M1056,600H1049" />
+<path class="hair" d="M1057,593.6L1050.1,592.3" />
+<path class="hair" d="M1059.8,587.4L1053.4,585" />
+<path class="hair" d="M1064.4,581.8L1058.7,578.3" />
+<path class="hair" d="M1070.6,577L1065.9,572.5" />
+<path class="hair" d="M1078,573.2L1074.5,568" />
+<path class="hair" d="M1086.4,570.5L1084.2,564.8" />
+<path class="hair" d="M1095.4,569.2L1094.7,563.2" />
+<path class="hair" d="M1104.6,569.2L1105.3,563.2" />
+<path class="hair" d="M1113.6,570.5L1115.8,564.8" />
+<path class="hair" d="M1122,573.2L1125.5,568" />
+<path class="hair" d="M1129.4,577L1134.1,572.5" />
+<path class="hair" d="M1135.6,581.8L1141.3,578.3" />
+<path class="hair" d="M1140.2,587.4L1146.6,585" />
+<path class="hair" d="M1143,593.6L1149.9,592.3" />
+<ellipse cx="1100" cy="600" rx="43" ry="30" class="paper" />
+<text x="1100" y="609" font-size="30" text-anchor="middle" class="math">o₂</text>
+<g transform="translate(1260,600) scale(1.05)">
+<path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
+<path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
+<rect x="-22" y="-15" width="33" height="35" class="grid" />
+<text x="-3" y="48" font-size="25" text-anchor="middle" class="math">t₂</text>
+</g>
+<ellipse cx="1430" cy="600" rx="52" ry="38" class="paper" />
+<path class="hair" d="M1474,600H1481" />
+<path class="hair" d="M1473,606.4L1479.9,607.7" />
+<path class="hair" d="M1470.2,612.6L1476.6,615" />
+<path class="hair" d="M1465.6,618.2L1471.3,621.7" />
+<path class="hair" d="M1459.4,623L1464.1,627.5" />
+<path class="hair" d="M1452,626.8L1455.5,632" />
+<path class="hair" d="M1443.6,629.5L1445.8,635.2" />
+<path class="hair" d="M1434.6,630.8L1435.3,636.8" />
+<path class="hair" d="M1425.4,630.8L1424.7,636.8" />
+<path class="hair" d="M1416.4,629.5L1414.2,635.2" />
+<path class="hair" d="M1408,626.8L1404.5,632" />
+<path class="hair" d="M1400.6,623L1395.9,627.5" />
+<path class="hair" d="M1394.4,618.2L1388.7,621.7" />
+<path class="hair" d="M1389.8,612.6L1383.4,615" />
+<path class="hair" d="M1387,606.4L1380.1,607.7" />
+<path class="hair" d="M1386,600H1379" />
+<path class="hair" d="M1387,593.6L1380.1,592.3" />
+<path class="hair" d="M1389.8,587.4L1383.4,585" />
+<path class="hair" d="M1394.4,581.8L1388.7,578.3" />
+<path class="hair" d="M1400.6,577L1395.9,572.5" />
+<path class="hair" d="M1408,573.2L1404.5,568" />
+<path class="hair" d="M1416.4,570.5L1414.2,564.8" />
+<path class="hair" d="M1425.4,569.2L1424.7,563.2" />
+<path class="hair" d="M1434.6,569.2L1435.3,563.2" />
+<path class="hair" d="M1443.6,570.5L1445.8,564.8" />
+<path class="hair" d="M1452,573.2L1455.5,568" />
+<path class="hair" d="M1459.4,577L1464.1,572.5" />
+<path class="hair" d="M1465.6,581.8L1471.3,578.3" />
+<path class="hair" d="M1470.2,587.4L1476.6,585" />
+<path class="hair" d="M1473,593.6L1479.9,592.3" />
+<ellipse cx="1430" cy="600" rx="43" ry="30" class="paper" />
+<text x="1430" y="609" font-size="30" text-anchor="middle" class="math">o₄</text>
+<path class="fine" d="M1153,600H1230" marker-end="url(#arrow)"/>
+<path class="fine" d="M1288,600H1375" marker-end="url(#arrow)"/>
+<text x="1275" y="714" font-size="25" text-anchor="middle" class="muted">封闭虚线包络表示一个子图</text>
+</g>
+<g id="material-grammar" inkscape:groupmode="layer" inkscape:label="材质：不用彩色面板区分信息"><title>材质：不用彩色面板区分信息</title>
+<path class="fine" d="M70,750H1730" />
+<text x="70" y="821" font-size="34" text-anchor="start" class="bold">03  材质与黑白对比</text>
+<rect x="80" y="864" width="140" height="87" class="paper" />
+<text x="150" y="993" font-size="26" text-anchor="middle" class="">留白</text>
+<rect x="274" y="864" width="140" height="87" class="hatch" />
+<text x="344" y="993" font-size="26" text-anchor="middle" class="">斜排线</text>
+<rect x="468" y="864" width="140" height="87" class="grid" />
+<text x="538" y="993" font-size="26" text-anchor="middle" class="">张量格</text>
+<rect x="662" y="864" width="140" height="87" class="black" />
+<text x="732" y="993" font-size="26" text-anchor="middle" class="">实黑</text>
+<text x="80" y="1050" font-size="24" text-anchor="start" class="muted">白底；不使用阴影滤镜、渐变或外部位图。</text>
+</g>
+<g id="type-grammar" inkscape:groupmode="layer" inkscape:label="文字保留为可编辑text与tspan"><title>文字保留为可编辑text与tspan</title>
+<text x="960" y="821" font-size="34" text-anchor="start" class="bold">04  文字层级</text>
+<text x="965" y="884" font-size="29" text-anchor="start" class="serif">主标题：Noto Serif CJK SC / 59</text>
+<text x="965" y="940" font-size="27" text-anchor="start" class="">模块：39 / 31；说明：24–28</text>
+<text x="965" y="997" font-size="35" text-anchor="start" class="math">ℰ<tspan baseline-shift="sub" font-size="70%">q</tspan>(G, x; θ)  →  (C<tspan baseline-shift="sub" font-size="70%">q</tspan>, D<tspan baseline-shift="sub" font-size="70%">q</tspan>)</text>
+<text x="965" y="1050" font-size="24" text-anchor="start" class="muted">数学下标使用 tspan；正文不转轮廓。</text>
+</g>
+<path class="fine" d="M70,1110H1730" />
+<text x="70" y="1148" font-size="22" text-anchor="start" class="muted">线宽与字号以上述 3000 × 2120 母版坐标为准；只在关键对象上使用实黑。</text>
+</svg>
