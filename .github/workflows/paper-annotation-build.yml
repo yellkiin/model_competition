@@ -1,0 +1,53 @@
+name: Compile annotated A manuscript
+on:
+  push:
+    branches: [fix/paper-a-annotations-20260927]
+    paths:
+      - .github/workflows/paper-annotation-build.yml
+      - .github/paper-review/**
+permissions:
+  contents: write
+concurrency:
+  group: paper-annotation-build
+  cancel-in-progress: false
+jobs:
+  compile:
+    runs-on: windows-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            .github/paper-review
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/论文
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/总体/图片
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题一/图片
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题二/图片
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/问题三/图片
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题一/源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题二/源码
+            20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/提交附件/支撑材料文件/问题三/源码
+            paper_a_figures/engraved_workflow/ink_v3
+            各种建模agent/MathModelAgent/backend/fonts
+      - uses: r-lib/actions/setup-tinytex@v2
+      - name: Install TeX and rendering dependencies
+        shell: pwsh
+        run: |
+          tlmgr install collection-xetex collection-latexextra collection-langchinese collection-fontsrecommended tex-gyre latexmk
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip install --quiet PyMuPDF fonttools latexminted
+      - name: Apply manuscript revisions and compile only
+        shell: pwsh
+        env:
+          PYTHONUTF8: '1'
+        run: |
+          python .github/paper-review/build.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: revised-a-manuscript-review
+          path: paper-review-output/
+          retention-days: 7
+          if-no-files-found: warn
