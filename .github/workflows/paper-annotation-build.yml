@@ -31,16 +31,22 @@ jobs:
             paper_a_figures/engraved_workflow/ink_v3
             各种建模agent/MathModelAgent/backend/fonts
       - uses: r-lib/actions/setup-tinytex@v2
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
+        id: texcache
         with:
           path: C:/Users/runneradmin/AppData/Roaming/TinyTeX
-          key: paper-native-tex-20260927-explicit-v1
+          key: paper-native-tex-20260927-explicit-v2
       - name: Install TeX and rendering dependencies
         shell: pwsh
         run: |
-          tlmgr install xetex ctex xecjk fandol fontspec lm tex-gyre amsmath amsfonts tools geometry graphics xcolor makecell booktabs multirow cprotect listings setspace caption enumitem ulem titlesec natbib etoolbox placeins hyperref needspace tocloft appendix pgf algorithms algorithmicx minted tcolorbox mdframed subfig siunitx colortbl xurl latexmk
+          tlmgr install xetex fandol lm tex-gyre latexmk algorithmicx algorithms amsfonts amsmath appendix auxhook bigfoot bigintcalc bitset booktabs caption catchfile colortbl cprotect ctex enumitem environ etexcmds etoolbox fancyvrb float fontspec fvextra geometry gettitlestring graphics hycolor hyperref iftex infwarerr intcalc kvdefinekeys kvoptions kvsetkeys l3backend latex2pydata lineno listings ltxcmds makecell mdframed minted multirow natbib needspace pdfcol pdfescape pdftexcmds pgf pgfopts placeins refcount rerunfilecheck setspace siunitx stringenc subfig tcolorbox tikzfill titlesec tocloft tools translations trimspaces ulem uniquecounter upquote url xcolor xecjk xurl zhnumber zref ifplatform xstring xkeyval
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m pip install --quiet PyMuPDF fonttools latexminted
+      - uses: actions/cache/save@v4
+        if: steps.texcache.outputs.cache-hit != 'true'
+        with:
+          path: C:/Users/runneradmin/AppData/Roaming/TinyTeX
+          key: paper-native-tex-20260927-explicit-v2
       - name: Apply manuscript revisions and compile only
         shell: pwsh
         env:
