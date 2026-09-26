@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Figure 1.1, version 3: reuse ink_v2 engraving, redraw the conceptual flow.
+"""Figure 1.1 v3: preserve ink_v2 engraving and apply reviewed typography.
 
-Only reads ink_v2 vector assets. Does not use other figure PRs, execute a solver,
-embed bitmaps/fonts, or edit the second version. Python 3.10+; Inkscape for export.
+Python 3.10+, fontTools and Inkscape. The bundled formula cache avoids a TeX
+runtime except when equations change. Native paper fonts are required for
+portable exports. No solver, experiment, font redistribution or v2 mutation.
 """
 from __future__ import annotations
 import argparse
@@ -10,8 +11,6 @@ from copy import deepcopy
 import gzip
 import json
 from pathlib import Path
-import shutil
-import subprocess
 import xml.etree.ElementTree as ET
 
 HERE = Path(__file__).resolve().parent
@@ -61,10 +60,9 @@ def omit(g, ids):
             if e.get('id') in ids: parent.remove(e)
 
 def arrow(parent, ident, source, target, d, feedback=False):
-    e = element(parent, 'path', id=ident, d=d, **{'class': 'concept-feedback' if feedback else 'concept-main',
+    return element(parent, 'path', id=ident, d=d, **{'class': 'concept-feedback' if feedback else 'concept-main',
         'marker-end': 'url(#concept-feedback-arrow)' if feedback else 'url(#concept-arrow)',
         'data-source':source,'data-target':target})
-    return e
 
 def local_arrow(parent, d):
     return element(parent, 'path', d=d, **{'class':'fine', 'marker-end':'url(#arrow)'})
@@ -113,7 +111,7 @@ def render(name, source_dir, out_dir):
     for x in (981,2023):
         element(page,'path',d=f'M{x},351V1301',**{'class':'panel-divider'})
 
-    # 01: reuse exact bipartite graph and engraved task/core strips.
+    # 01: reuse the exact bipartite graph and engraved task/core strips.
     left=group(root,'joint-decision-v3','01 联合决策')
     panel_heading(left,88,'01','联合决策','子图划分 · 核心映射 · 核内顺序')
     text(left,92,380,'输入：计算图、硬件配置与搜索预算',28,'muted')
@@ -126,7 +124,7 @@ def render(name, source_dir, out_dir):
     for e in list(original)[10:44]: rails.append(deepcopy(e))
     text(left,883,1300,'核心映射 a  ·  核内顺序 π',28,'math muted','end')
 
-    # 02: four original illustrations are preserved; captions are shortened.
+    # 02: four original illustrations, with short captions.
     mid=group(root,'neighborhoods-v3','02 多邻域协同')
     panel_heading(mid,1030,'02','多邻域协同','共享当前方案，探索互补改进')
     element(mid,'rect',x=1050,y=357,width=910,height=96,rx=5,fill='white',stroke=old_feedback,stroke_width=1.5)
@@ -154,7 +152,7 @@ def render(name, source_dir, out_dir):
     omit(fifo,{'text-092'})
     element(mid,'path',d='M1050,883H1960',**{'class':'faint'})
 
-    # 03: retain the engraved two-core execution cutaway; move detail to prose.
+    # 03: retain the engraved two-core execution cutaway.
     right=group(root,'execution-v3','03 统一执行评价')
     panel_heading(right,2090,'03','统一执行评价','任务 · 存储 · 流水线 · 共享带宽')
     text(right,2090,372,'候选示意：B 迁至 k₂',29,'bold')
@@ -166,7 +164,7 @@ def render(name, source_dir, out_dir):
     change(hardware,'text-128','读完成后填充',font_size=25)
     omit(hardware,{'text-126'})
 
-    # One straight, left-to-right process lane; no long inter-column detours.
+    # One straight left-to-right process lane.
     lane=group(root,'main-process-v3','主流程：当前方案 → 完整候选 → 统一评价')
     current=bevel(lane,92,1370,802,106,'current-state-v3')
     text(current,493,1413,'当前最好可行方案',33,'bold','middle')
@@ -185,7 +183,7 @@ def render(name, source_dir, out_dir):
     arrow(lane,'current-to-candidate','current-state-v3','candidate-v3','M925,1422H1036')
     arrow(lane,'candidate-to-evaluation','candidate-v3','objective-v3','M1988,1422H2075')
 
-    # A single visual return loop and a stop/output branch replace code-level gates.
+    # Single return loop and stop/output branch.
     feedback=group(root,'feedback-output-v3','评价反馈、迭代与输出')
     node=element(feedback,'g',id='feedback-v3')
     element(node,'rect',x=1070,y=1536,width=890,height=100,rx=4,fill='white',stroke=old_feedback,stroke_width=1.8)
@@ -199,44 +197,42 @@ def render(name, source_dir, out_dir):
     arrow(feedback,'finish-to-output','feedback-v3','outputs-v3','M1515,1637V1706')
     text(feedback,1550,1682,'停止时',26,'muted')
     out=element(feedback,'g',id='outputs-v3')
-    text(out,1515,1754,'输出：调度方案 · 性能指标 · 时间—质量曲线',34,'bold','middle')
-    text(out,1515,1796,'Q3：固定同一方案，比较无 L2 / 有 L2',27,'muted','middle')
+    text(out,1515,1771,'输出：调度方案 · 性能指标 · 时间—质量曲线',34,'bold','middle')
     dest=Path(out_dir)/'assets';dest.mkdir(parents=True,exist_ok=True)
     file=dest/f'workflow_{name}_v3.svg'
     ET.indent(root,space='  ')
     ET.ElementTree(root).write(file,encoding='utf-8',xml_declaration=True)
-    with (dest/f'workflow_{name}_v3.svgz').open('wb') as raw:
-        with gzip.GzipFile(fileobj=raw,mode='wb',mtime=0) as compressed:compressed.write(file.read_bytes())
+    with file.with_suffix('.svgz').open('wb') as raw:
+        with gzip.GzipFile(fileobj=raw,mode='wb',mtime=0) as z:z.write(file.read_bytes())
     return file
-
-def export(svg, out_dir, width):
-    exe=shutil.which('inkscape')
-    if not exe: raise RuntimeError('Editable SVG is ready; install Inkscape to export PDF and PNG.')
-    folder=Path(out_dir)/'exports';folder.mkdir(parents=True,exist_ok=True)
-    for suffix,opts in [('.pdf',['--export-text-to-path']),('.png',[f'--export-width={width}']),('_preview.png',['--export-width=1800'])]:
-        target=folder/(svg.stem+suffix)
-        cmd=[exe,str(svg),f'--export-filename={target}','--export-area-page',
-             '--export-background=white','--export-background-opacity=1',*opts]
-        p=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,timeout=180)
-        if p.returncode:raise RuntimeError(p.stderr)
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--source-dir',type=Path,default=HERE.parent/'ink_v2/assets')
     p.add_argument('--out',type=Path,default=HERE)
     p.add_argument('--palettes',nargs='+',choices=PALETTES,default=['mono','qinglu'])
-    p.add_argument('--svg-only',action='store_true');p.add_argument('--png-width',type=int,default=6000)
+    p.add_argument('--svg-only',action='store_true')
+    p.add_argument('--png-width',type=int,default=6000)
     a=p.parse_args()
     if a.png_width<1200:p.error('png-width must be at least 1200')
+    from finalize_v3 import finalize, update_build_info
+    # Reuse the bundled formula cache when writing into a separate output folder.
+    if a.out.resolve()!=HERE.resolve() and (HERE/'assets/math_layout.json').is_file():
+        import shutil
+        (a.out/'assets').mkdir(parents=True,exist_ok=True)
+        cache=a.out/'assets/math_layout.json'
+        if not cache.exists():shutil.copyfile(HERE/'assets/math_layout.json',cache)
     for name in a.palettes:
         svg=render(name,a.source_dir,a.out)
-        if not a.svg_only:export(svg,a.out,a.png_width)
+        finalize(svg,a.out,not a.svg_only,a.png_width)
         print(svg)
     report={'version':'ink_v3','source_version':'ink_v2','source_commit':BASE_COMMIT,
         'canvas_viewbox':[0,0,3000,1825],'palettes':a.palettes,'main_inter_module_links':2,
         'feedback_links':2,'output_links':1,'legend_removed':True,'lexicographic_diamond_removed':True,
         'exact_execution_parameters_moved_to_prose':True,'embedded_raster':False,'font_files_embedded':False,
-        'new_experiments':0}
+        'new_experiments':0,'font_alignment':'SimSun / Times New Roman / Computer Modern',
+        'bottom_q3_note_removed':True,'b_highlight_removed':True,'finalizer_integrated':True}
     (a.out/'BUILD_INFO.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    update_build_info(a.out,a.palettes)
 
 if __name__=='__main__':main()
