@@ -1,5 +1,10 @@
 name: Engraved workflow v3 delivery
 on:
+  push:
+    branches: [figures/engraved-workflow-v3-20260926]
+    paths:
+      - .github/workflows/engraved_workflow_v3_delivery.yml
+      - paper_a_figures/engraved_workflow/ink_v3/**
   pull_request:
     branches: [main]
     paths:
@@ -12,13 +17,15 @@ concurrency:
   cancel-in-progress: false
 jobs:
   render:
-    if: github.event.pull_request.head.ref == 'figures/engraved-workflow-v3-20260926' && github.event.pull_request.head.repo.full_name == github.repository
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/figures/engraved-workflow-v3-20260926') ||
+      (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'figures/engraved-workflow-v3-20260926' && github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout4v4
+      - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 1
           filter: blob:none
           sparse-checkout: |
@@ -30,7 +37,7 @@ jobs:
           sudo apt-get install -y -qq inkscape fonts-noto-cjk fonts-noto-core fonts-stix fonts-liberation2 poppler-utils python3-pil
       - name: Generate figure files and verify vector structure
         env:
-          SOURCE_COMMIT: ${{ github.event.pull_request.head.sha }}
+          SOURCE_COMMIT: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
         run: |
           set -euo pipefail
           python paper_a_figures/engraved_workflow/ink_v3/build.py --svg-only
