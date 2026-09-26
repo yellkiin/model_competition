@@ -1,0 +1,22 @@
+{
+  "source_commit":"5a3d840545166811d79fd35ce5b660af43b1777d",
+  "source_path":"求解/规范化数据/studies/cache_parameter_grid.csv",
+  "source_blob_sha":"2b3b4cb9c948e8c0983b6c4ce8faac8ec09b99cb",
+  "scope":"Explicit transcription of case/mode/capacity/bandwidth/makespan from all 66 rows read through GitHub. This is a selected-column projection, not byte-exact CSV recovery or a recheck of all hit-rate, timing and plan files.",
+  "fixed_plan_grid_order":{"outer_capacity_bytes":[262144,1048576,4194304],"inner_bandwidth_bytes_per_cycle":[60,250,500]},
+  "fixed_plan_makespan_cycles":{
+    "case_001":[47502,47502,47502,47502,47502,47502,47502,47502,47502],
+    "case_080":[79170,80014,81744,67300,63001,64297,67942,63001,64297],
+    "case_006":[18052,18052,18052,18052,18052,18052,18052,18052,18052],
+    "case_044":[53817,50799,44299,50723,36208,44299,50723,36208,44299],
+    "case_004":[82819,82819,82819,82819,82819,82819,82819,82819,82819],
+    "case_046":[69827,86142,86445,82174,49119,49181,82174,49119,49181]
+  },
+  "bounded_readaptation_corner_order":[[262144,60],[4194304,500]],
+  "bounded_readaptation_makespan_cycles":{
+    "case_001":[47502,47502],"case_080":[64725,63234],"case_006":[17265,18052],
+    "case_044":[41802,40054],"case_004":[82819,82819],"case_046":[66050,49181]
+  },
+  "checks":{"fixed_count":54,"readapted_count":12,"unique_selected_keys":66,"default_grid_cycles_match_q3_main":6},
+  "official_evaluator_rerun":false
+}

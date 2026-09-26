@@ -1,0 +1,32 @@
+test_anytime_count_is_computed (test_audit_paper_data.CoverageTests.test_anytime_count_is_computed) ... ok
+test_anytime_includes_q0_reference (test_audit_paper_data.CoverageTests.test_anytime_includes_q0_reference) ... ok
+test_duplicate_does_not_overwrite (test_audit_paper_data.CoverageTests.test_duplicate_does_not_overwrite) ... ok
+test_missing_case_core (test_audit_paper_data.CoverageTests.test_missing_case_core) ... ok
+test_missing_spill_not_zero (test_audit_paper_data.CoverageTests.test_missing_spill_not_zero) ... ok
+test_pair_coverage_and_hit_bounds (test_audit_paper_data.CoverageTests.test_pair_coverage_and_hit_bounds) ... ok
+test_pair_flag_required (test_audit_paper_data.CoverageTests.test_pair_flag_required) ... ok
+test_pair_ratio_checked (test_audit_paper_data.CoverageTests.test_pair_ratio_checked) ... ok
+test_report_uses_computed_comparisons (test_audit_paper_data.CoverageTests.test_report_uses_computed_comparisons) ... ok
+test_spill_exceeds_copy (test_audit_paper_data.CoverageTests.test_spill_exceeds_copy) ... ok
+test_unknown_study_mode (test_audit_paper_data.CoverageTests.test_unknown_study_mode) ... ok
+test_valid_main_grid (test_audit_paper_data.CoverageTests.test_valid_main_grid) ... ok
+test_wrong_question_or_status (test_audit_paper_data.CoverageTests.test_wrong_question_or_status) ... ok
+test_boolean_values (test_audit_paper_data.ScalarTests.test_boolean_values) ... ok
+test_cycle_zero_rejected (test_audit_paper_data.ScalarTests.test_cycle_zero_rejected) ... ok
+test_integrality_and_precision (test_audit_paper_data.ScalarTests.test_integrality_and_precision) ... ok
+test_missing_is_not_zero (test_audit_paper_data.ScalarTests.test_missing_is_not_zero) ... ok
+test_nonfinite_and_negative_rejected (test_audit_paper_data.ScalarTests.test_nonfinite_and_negative_rejected) ... ok
+test_actual_published_tables (test_audit_paper_data.WorkspaceIntegrationTests.test_actual_published_tables) ... ok
+test_corrupt_summary_fails (test_audit_paper_data.WorkspaceIntegrationTests.test_corrupt_summary_fails) ... ok
+test_cross_file_mismatch_fails (test_audit_paper_data.WorkspaceIntegrationTests.test_cross_file_mismatch_fails) ... ok
+test_duplicate_pair_fails (test_audit_paper_data.WorkspaceIntegrationTests.test_duplicate_pair_fails) ... ok
+test_failed_run_replaces_stale_report (test_audit_paper_data.WorkspaceIntegrationTests.test_failed_run_replaces_stale_report) ... AuditError: Missing input files: ['求解/规范化数据/combined/appendix_q1.csv', '求解/规范化数据/combined/appendix_q2.csv', '求解/规范化数据/combined/appendix_q3.csv', '求解/规范化数据/combined/pairs.csv', '求解/规范化数据/combined/anytime.csv', '求解/规范化数据/studies/cache_parameter_grid.csv']
+ok
+test_import_has_no_writes (test_audit_paper_data.WorkspaceIntegrationTests.test_import_has_no_writes) ... ok
+test_missing_main_row_fails (test_audit_paper_data.WorkspaceIntegrationTests.test_missing_main_row_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.147s
+
+OK
+FAIL

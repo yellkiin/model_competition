@@ -1,0 +1,59 @@
+{
+  "displayed_configurations": 1500,
+  "displayed_cache_pairs": 500,
+  "main_stats": {
+    "q1_n1": {"count":100,"mean_speedup":1.0,"median_speedup":1.0,"min_speedup":1.0,"max_speedup":1.0,"mean_added_copy_bytes":12416861.2,"median_added_copy_bytes":0.0},
+    "q1_n2": {"count":100,"mean_speedup":1.9832352091535908,"median_speedup":1.9810317815547063,"min_speedup":1.24453125,"max_speedup":3.648036174657953,"mean_added_copy_bytes":14633080.16,"median_added_copy_bytes":1622928.0},
+    "q1_n3": {"count":100,"mean_speedup":2.71059937480608,"median_speedup":2.843999278268324,"min_speedup":1.459570894097885,"max_speedup":5.4659388665326745,"mean_added_copy_bytes":14174980.26,"median_added_copy_bytes":1696987.0},
+    "q1_n4": {"count":100,"mean_speedup":3.385216355459945,"median_speedup":3.7003472032462996,"min_speedup":1.5139149095616038,"max_speedup":6.380572859411262,"mean_added_copy_bytes":13568864.04,"median_added_copy_bytes":1855147.0},
+    "q1_n5": {"count":100,"mean_speedup":3.9179853062705785,"median_speedup":4.422735062896114,"min_speedup":1.5156909687408346,"max_speedup":6.392838749483711,"mean_added_copy_bytes":14585335.66,"median_added_copy_bytes":1990466.0},
+    "q2_n1": {"count":100,"mean_speedup":1.0,"median_speedup":1.0,"min_speedup":1.0,"max_speedup":1.0,"mean_added_copy_bytes":12416861.2,"median_added_copy_bytes":0.0},
+    "q2_n2": {"count":100,"mean_speedup":2.1167882020467346,"median_speedup":2.018880387517412,"min_speedup":1.5706186837564704,"max_speedup":3.653330147333085,"mean_added_copy_bytes":6798521.8,"median_added_copy_bytes":937539.0},
+    "q2_n3": {"count":100,"mean_speedup":3.015316480266515,"median_speedup":3.006422724211871,"min_speedup":1.7940872829657437,"max_speedup":5.472643461407507,"mean_added_copy_bytes":7094020.44,"median_added_copy_bytes":1498124.0},
+    "q2_n4": {"count":100,"mean_speedup":3.7868172483247293,"median_speedup":3.9421074296033662,"min_speedup":1.9552009818962872,"max_speedup":7.071598392441656,"mean_added_copy_bytes":7581532.48,"median_added_copy_bytes":1012037.0},
+    "q2_n5": {"count":100,"mean_speedup":4.4538064457658715,"median_speedup":4.714263094224686,"min_speedup":1.991872460143795,"max_speedup":8.776810904279523,"mean_added_copy_bytes":8094619.1,"median_added_copy_bytes":1310458.0},
+    "q3_n1": {"count":100,"mean_speedup":1.1007509221326828,"median_speedup":1.042736050718585,"min_speedup":0.9969099007433421,"max_speedup":2.0540220557913083,"mean_added_copy_bytes":5356941.14,"median_added_copy_bytes":108032.0},
+    "q3_n2": {"count":100,"mean_speedup":2.1221938845147683,"median_speedup":2.0270591546322407,"min_speedup":1.52245938196878,"max_speedup":3.653330147333085,"mean_added_copy_bytes":8468830.34,"median_added_copy_bytes":971779.0},
+    "q3_n3": {"count":100,"mean_speedup":3.0320332611153127,"median_speedup":3.018208687881043,"min_speedup":1.766728280961183,"max_speedup":5.472643461407507,"mean_added_copy_bytes":7063819.7,"median_added_copy_bytes":1689975.0},
+    "q3_n4": {"count":100,"mean_speedup":3.8376050420764836,"median_speedup":3.965606926037483,"min_speedup":1.9852528819192024,"max_speedup":7.094869444161489,"mean_added_copy_bytes":7859996.08,"median_added_copy_bytes":1411832.0},
+    "q3_n5": {"count":100,"mean_speedup":4.597829265850352,"median_speedup":4.856497309016793,"min_speedup":2.071745962934865,"max_speedup":8.776810904279523,"mean_added_copy_bytes":8293721.4,"median_added_copy_bytes":1484117.0}
+  },
+  "cache_stats": {
+    "1":{"count":100,"mean_ratio":1.0002844524850667,"median_ratio":1.0,"mean_hit_rate":0.05988491,"improved":28,"same":72,"worse":0},
+    "2":{"count":100,"mean_ratio":1.0046769687655241,"median_ratio":1.0000746801895541,"mean_hit_rate":0.17570662,"improved":58,"same":42,"worse":0},
+    "3":{"count":100,"mean_ratio":1.015586806149891,"median_ratio":1.0009292183142593,"mean_hit_rate":0.23418851,"improved":66,"same":34,"worse":0},
+    "4":{"count":100,"mean_ratio":1.0303863218628446,"median_ratio":1.0018087621911755,"mean_hit_rate":0.24698306,"improved":71,"same":28,"worse":1},
+    "5":{"count":100,"mean_ratio":1.0558429548125037,"median_ratio":1.007735024354472,"mean_hit_rate":0.30174293,"improved":77,"same":23,"worse":0}
+  },
+  "comparisons_n5": {
+    "q2_vs_q1_makespan":{"improved":89,"same":9,"worse":2},
+    "q2_vs_q1_added_copy_bytes":{"improved":50,"same":12,"worse":38},
+    "q3_vs_q2_makespan":{"improved":66,"same":18,"worse":16}
+  },
+  "q1_over_q2_n5":{"mean":1.1728166309575971,"median":1.0912692587546262},
+  "summary_rows_checked":20,
+  "spill_n5":{
+    "q1":{"zero_count":88,"positive_count":12,"mean":206080.96},
+    "q2":{"zero_count":74,"positive_count":26,"mean":2645062.08},
+    "q3":{"zero_count":73,"positive_count":27,"mean":2721567.68}
+  },
+  "status":"PASS_SCOPED",
+  "mode":"tables",
+  "limitations":[
+    "No official evaluator or solver rerun.",
+    "No PDF compilation, page or hyperlink verification.",
+    "Numeric agreement is not evidence of same-plan byte identity.",
+    "Table mode: original appendix CSVs, same_plan flags and full raw response files were not checked.",
+    "Table mode: anytime.csv and parameter-grid CSV were not checked.",
+    "Individual hit rates were read at their printed six-decimal precision."
+  ],
+  "inputs":[
+    {"path":"论文/章节内容/数据表/appendix_results.tex","sha256":"c93802c5c326dec8824bd4f4c52e87a638b91fb071029ff693f50042891904a6"},
+    {"path":"论文/章节内容/数据表/appendix_pairs.tex","sha256":"40a0b653802811f00e47cef08d19a880ead9675684d0f5d57be31c103923ed28"},
+    {"path":"论文/章节内容/数据表/q1_means.tex","sha256":"e20ad2c9e36fdda5b2d53f8c3ab312831ef4898d7cc54f6a672470b5eef88a66"},
+    {"path":"论文/章节内容/数据表/q2_means.tex","sha256":"1bc3014f72da5495b6dbfb19a49497ce09cf2e7fe08a033c2e00be2757f6085e"},
+    {"path":"论文/章节内容/数据表/q3_means.tex","sha256":"c1bfe08b7920bc2a21499908f8df2abd45f5674ab34a40edc885388c9728bb1d"},
+    {"path":"论文/章节内容/数据表/q3_pairs.tex","sha256":"f46ef2da6d01b70933fb265aad07d4e45330b00e094a1820fa024153a01878b3"},
+    {"path":"求解/规范化数据/combined/cross_question.csv","sha256":"f7de908ffeaeb19d0e8b86635e36d3575da504032a4a043967c3d5290168a567"}
+  ]
+}
