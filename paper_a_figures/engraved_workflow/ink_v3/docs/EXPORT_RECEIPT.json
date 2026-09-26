@@ -1,35 +1,39 @@
 {
-  "source_commit": "5caf3ed975e0518e1e1272b039ef8a8d00b50fb8",
-  "v2_input_commit": "70d4888886cd9f77037f7b010ce0241349ef056d",
-  "workflow_run": "36255023169",
-  "renderer": "Inkscape 1.2.2 (b0a8486541, 2022-12-01)",
   "checks": [
     {
       "palette": "mono",
-      "svg_text_objects": 128,
-      "concept_links": 5,
-      "png_size": [
+      "svg_sha256": "2eabb87e6deac92f59782fe1f5822091ef9032e68bdd72c4bff8b065cc2593c7",
+      "pdf_sha256": "d33be4d82ea6715d71c4016dde982557a44d949d54121f58fae1484d0355170e",
+      "semantic_label_count": 133,
+      "global_links": 5,
+      "font_independent": true,
+      "png_pixels": [
         6000,
         3650
       ],
-      "font_alignment": "Times/SimSun compatible + STIX math",
-      "b_blocks_uniform": true,
-      "alignment_fixes_verified": true
+      "uniform_b_blocks": true,
+      "bottom_q3_note_removed": true,
+      "math_font": "Computer Modern",
+      "editable_source_kept": true
     },
     {
       "palette": "qinglu",
-      "svg_text_objects": 128,
-      "concept_links": 5,
-      "png_size": [
+      "svg_sha256": "d28dee4792e9dc4269b0969af88054c98441cc28ee85cb26d07adee6ba610d44",
+      "pdf_sha256": "4512a75b3792ebd9cbd42bd3463a38982862077ffd9f2d48e82b2b288dd0f4d2",
+      "semantic_label_count": 133,
+      "global_links": 5,
+      "font_independent": true,
+      "png_pixels": [
         6000,
         3650
       ],
-      "font_alignment": "Times/SimSun compatible + STIX math",
-      "b_blocks_uniform": true,
-      "alignment_fixes_verified": true
+      "uniform_b_blocks": true,
+      "bottom_q3_note_removed": true,
+      "math_font": "Computer Modern",
+      "editable_source_kept": true
     }
   ],
-  "scope": "vector rendering and file publication, not solver experiments",
-  "new_experiments": 0,
-  "visual_review": "performed separately after downloading actual exported previews"
+  "new_solver_experiments": 0,
+  "scope": "Figure typography, vector layout and deterministic exports only",
+  "visual_review": "Exported SVG and PDF previews require separate visual inspection"
 }
