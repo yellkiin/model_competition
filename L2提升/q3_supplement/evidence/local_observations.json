@@ -1,0 +1,22 @@
+{
+  "scope": "six optional adaptation runs on three actual strong five-core plans; not the 500-plan archive experiment",
+  "backend": "unified native official engine explicitly selected, Linux CPython 3.13.5",
+  "observations": [
+    {"case":"case_044","n":5,"mode":"explore","old_makespan":29006,"selected":29006,"new_q3_successful_calls":6,"new_pair_calls":0,"old_pair_reused":true,"wall_seconds":3.7567296028137207,
+     "candidates":[{"name":"portfolio_bands4_w0.25","makespan":82680,"status":"ok"},{"name":"portfolio_bands8_w0.25","makespan":74907,"status":"ok"},{"name":"portfolio_bands16_w0.25","makespan":66146,"status":"ok"},{"name":"portfolio_bands8_w0.75","makespan":49324,"status":"ok"},{"name":"weak_fifo","makespan":56847,"status":"ok"},{"name":"weak_low_footprint","makespan":46924,"status":"ok"}]},
+    {"case":"case_044","n":5,"mode":"selective","old_makespan":29006,"selected":29006,"new_q3_successful_calls":2,"new_pair_calls":0,"old_pair_reused":true,"wall_seconds":2.139077663421631,
+     "candidates":[{"name":"weak_fifo","makespan":56847,"status":"ok"},{"name":"weak_low_footprint","makespan":46924,"status":"ok"}]},
+    {"case":"case_083","n":5,"mode":"explore","old_makespan":177323,"selected":177323,"new_q3_successful_calls":5,"new_pair_calls":0,"old_pair_reused":true,"wall_seconds":8.273677110671997,
+     "candidates":[{"name":"portfolio_bands4_w0.25","makespan":186761,"status":"ok"},{"name":"portfolio_bands8_w0.25","makespan":224346,"status":"ok"},{"name":"portfolio_bands16_w0.25","makespan":197098,"status":"ok"},{"name":"portfolio_bands8_w0.75","makespan":216117,"status":"ok"},{"name":"weak_fifo","makespan":177323,"status":"ok"}]},
+    {"case":"case_083","n":5,"mode":"selective","old_makespan":177323,"selected":177323,"new_q3_successful_calls":1,"new_pair_calls":0,"old_pair_reused":true,"wall_seconds":3.0097217559814453,
+     "candidates":[{"name":"weak_fifo","makespan":177323,"status":"ok"}]},
+    {"case":"case_084","n":5,"mode":"explore","old_makespan":285686,"selected":285686,"new_q3_successful_calls":4,"new_pair_calls":0,"old_pair_reused":true,"wall_seconds":31.56165075302124,
+     "candidates":[{"name":"portfolio_bands4_w0.25","makespan":728986,"status":"ok"},{"name":"portfolio_bands8_w0.25","makespan":1231473,"status":"ok"},{"name":"portfolio_bands8_w0.75","makespan":1311885,"status":"ok"},{"name":"weak_fifo","makespan":503472,"status":"ok"}]},
+    {"case":"case_084","n":5,"mode":"selective","old_makespan":285686,"selected":285686,"new_q3_successful_calls":1,"new_pair_calls":0,"old_pair_reused":true,"wall_seconds":9.774029731750488,
+     "candidates":[{"name":"weak_fifo","makespan":503472,"status":"ok"}]}
+  ],
+  "acceptance_path":{"case":"case_044","old_Q3":46827,"existing_candidate_Q3":29006,"same_plan_noL2":71782,"new_Q3_calls":1,"new_Q2_calls":1,"meaning":"exercise actual candidate replacement and pair; not a new algorithm score"},
+  "inherit_path":{"case":"case_044","Q3":29006,"new_evaluator_calls":0,"pair":"inherited_exact_plan"},
+  "full_100_rerun":false,
+  "Windows_execution":false
+}
