@@ -1,7 +1,7 @@
 {
-  "source_commit": "c66a8b71e1a7467d9a286c63372d43e60533dd59",
+  "source_commit": "ba6a0e580869dfaffc3edb80af24d8715a634484",
   "v2_input_commit": "70d4888886cd9f77037f7b010ce0241349ef056d",
-  "workflow_run": "36249177115",
+  "workflow_run": "36253111964",
   "renderer": "Inkscape 1.2.2 (b0a8486541, 2022-12-01)",
   "checks": [
     {
@@ -11,7 +11,10 @@
       "png_size": [
         6000,
         3650
-      ]
+      ],
+      "font_alignment": "Times/SimSun compatible + STIX math",
+      "b_blocks_uniform": true,
+      "alignment_fixes_verified": true
     },
     {
       "palette": "qinglu",
@@ -20,7 +23,10 @@
       "png_size": [
         6000,
         3650
-      ]
+      ],
+      "font_alignment": "Times/SimSun compatible + STIX math",
+      "b_blocks_uniform": true,
+      "alignment_fixes_verified": true
     }
   ],
   "scope": "vector rendering and file publication, not solver experiments",

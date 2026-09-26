@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="420mm" height="255.5mm" viewBox="0 0 3000 1825" role="img" aria-labelledby="title desc" data-version="ink_v3" data-input-version="ink_v2">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" width="420mm" height="255.5mm" viewBox="0 0 3000 1825" role="img" aria-labelledby="title desc" data-version="ink_v3" data-input-version="ink_v2">
   <title id="title">图1.1 计算图调度的联合优化：联合决策、多邻域协同与统一执行评价</title>
   <desc id="desc">由第二版原始矢量重组的第三版。主阅读方向从左至右：当前方案、完整候选、统一执行评价；评价反馈回到当前方案，停止时输出最好可行方案。底部无图例、无字典序判定菱形。六算子图和硬件为示意。</desc>
   <defs>
@@ -90,8 +90,14 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
 .panel-divider {fill:none;stroke:#202724;stroke-width:1;opacity:.16;}
 .v3-notes {font-size:27px;}
 </style>
+    <style id="paper-font-fix">
+/* workshop_v2 typography: Times-style Latin, Song-style Chinese, STIX math. */
+text {font-family:'Times New Roman','SimSun','Liberation Serif','Tinos','Noto Serif CJK SC','Songti SC',serif;}
+.serif {font-family:'Times New Roman','Liberation Serif','Tinos','Noto Serif CJK SC','SimSun','Songti SC',serif;}
+.math {font-family:'STIX Math','STIX','Cambria Math','Times New Roman','Liberation Serif','Tinos',serif;}
+</style>
   </defs>
-  <g id="page-v3" inkscape:groupmode="layer" inkscape:label="版面与标题">
+  <g id="page-v3" ns1:groupmode="layer" ns1:label="版面与标题">
     <title>版面与标题</title>
     <rect x="0" y="0" width="3000" height="1825" fill="white" stroke="none" />
     <path d="M88,54H2918" class="route" />
@@ -102,7 +108,7 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
     <path d="M981,351V1301" class="panel-divider" />
     <path d="M2023,351V1301" class="panel-divider" />
   </g>
-  <g id="joint-decision-v3" inkscape:groupmode="layer" inkscape:label="01 联合决策">
+  <g id="joint-decision-v3" ns1:groupmode="layer" ns1:label="01 联合决策">
     <title>01 联合决策</title>
     <text x="88" y="285" font-size="43" text-anchor="start" class="serif">01</text>
     <text x="171" y="285" font-size="43" text-anchor="start" class="bold">联合决策</text>
@@ -110,7 +116,7 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
     <text x="92" y="380" font-size="28" text-anchor="start" class="muted">输入：计算图、硬件配置与搜索预算</text>
     <g id="bipartite-example" transform="translate(116,435) scale(.91)">
       <title>贯穿案例：A={o1}, B={o2,o4}, C={o3,o5}, D={o6}</title>
-      <path class="boundary" d="M254,38C294,2 500,4 567,40C603,65 603,153 565,176C505,210 296,208 254,175C222,148 220,71 254,38Z" style="fill:url(#ink-structure-hatch);stroke:#446E67" />
+      <path class="boundary" d="M254,38C294,2 500,4 567,40C603,65 603,153 565,176C505,210 296,208 254,175C222,148 220,71 254,38Z" />
       <path class="boundary" d="M254,303C294,267 500,269 567,305C603,330 603,418 565,441C505,475 296,473 254,440C222,413 220,336 254,303Z" />
       <ellipse cx="94" cy="240" rx="60" ry="82" class="boundary" />
       <ellipse cx="741" cy="240" rx="60" ry="82" class="boundary" />
@@ -195,7 +201,7 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
       <ellipse cx="741" cy="240" rx="43" ry="30" class="paper" />
       <text x="741" y="249" font-size="30" text-anchor="middle" class="math" id="text-022">o₆</text>
       <text x="94" y="351" font-size="33" text-anchor="middle" class="serif" id="text-023">A</text>
-      <text x="414" y="14" font-size="33" text-anchor="middle" class="serif text-structure" id="text-024">B</text>
+      <text x="414" y="14" font-size="33" text-anchor="middle" class="serif" id="text-024">B</text>
       <text x="414" y="511" font-size="33" text-anchor="middle" class="serif" id="text-025">C</text>
       <text x="741" y="351" font-size="33" text-anchor="middle" class="serif" id="text-026">D</text>
     </g>
@@ -223,8 +229,8 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
       <text x="314" y="1122.5" font-size="29" text-anchor="middle" class="math" id="text-030">A</text>
       <path class="hatch" d="M430,1084l13,-13h138l-13,13Z" />
       <path class="hatch" d="M568,1084l13,-13v57l-13,13Z" />
-      <rect x="430" y="1084" width="138" height="57" class="black role-structure" />
-      <text x="499" y="1122.5" font-size="29" text-anchor="middle" class="white math" id="text-031">B</text>
+      <rect x="430" y="1084" width="138" height="57" class="paper" />
+      <text x="499" y="1122.5" font-size="29" text-anchor="middle" class="math" id="text-031">B</text>
       <path class="hatch" d="M625,1084l13,-13h138l-13,13Z" />
       <path class="hatch" d="M763,1084l13,-13v57l-13,13Z" />
       <rect x="625" y="1084" width="138" height="57" class="paper" />
@@ -238,8 +244,9 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
       <text x="314" y="1241.5" font-size="29" text-anchor="middle" class="math" id="text-034">C</text>
     </g>
     <text x="883" y="1300" font-size="28" text-anchor="end" class="math muted">核心映射 a  ·  核内顺序 π</text>
+    <text id="graph-definition" x="914" y="380" font-size="32" text-anchor="end" class="math">G = (T ∪ O, E)</text>
   </g>
-  <g id="neighborhoods-v3" inkscape:groupmode="layer" inkscape:label="02 多邻域协同">
+  <g id="neighborhoods-v3" ns1:groupmode="layer" ns1:label="02 多邻域协同">
     <title>02 多邻域协同</title>
     <text x="1030" y="285" font-size="43" text-anchor="start" class="serif">02</text>
     <text x="1113" y="285" font-size="43" text-anchor="start" class="bold">多邻域协同</text>
@@ -310,8 +317,8 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
       <text x="1870.5" y="674" font-size="29" text-anchor="middle" class="math" id="text-062">D</text>
       <path class="hatch" d="M1677,741l8,-8h69l-8,8Z" />
       <path class="hatch" d="M1746,741l8,-8v46l-8,8Z" />
-      <rect x="1677" y="741" width="69" height="46" class="black role-structure" />
-      <text x="1711.5" y="774" font-size="29" text-anchor="middle" class="white math" id="text-063">B</text>
+      <rect x="1677" y="741" width="69" height="46" class="paper" />
+      <text x="1711.5" y="774" font-size="29" text-anchor="middle" class="math" id="text-063">B</text>
       <path class="hatch" d="M1836,741l8,-8h69l-8,8Z" />
       <path class="hatch" d="M1905,741l8,-8v46l-8,8Z" />
       <rect x="1836" y="741" width="69" height="46" class="paper" />
@@ -397,14 +404,14 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
     </g>
     <path d="M1050,883H1960" class="faint" />
   </g>
-  <g id="execution-v3" inkscape:groupmode="layer" inkscape:label="03 统一执行评价">
+  <g id="execution-v3" ns1:groupmode="layer" ns1:label="03 统一执行评价">
     <title>03 统一执行评价</title>
     <text x="2090" y="285" font-size="43" text-anchor="start" class="serif">03</text>
     <text x="2173" y="285" font-size="43" text-anchor="start" class="bold">统一执行评价</text>
     <text x="2173" y="327" font-size="27" text-anchor="start" class="muted">任务 · 存储 · 流水线 · 共享带宽</text>
-    <text x="2090" y="372" font-size="29" text-anchor="start" class="bold">候选示意：B 迁至 k₂</text>
+    <text x="2090" y="372" font-size="29" text-anchor="start" class="bold">候选示意：迁移 B</text>
     <g id="hardware-cutaway-v3" transform="translate(0,0)">
-      <text x="2272" y="422" font-size="31" text-anchor="middle" class="bold" id="text-104">核心 k₁</text>
+      <text x="2272" y="424" font-size="30" text-anchor="middle" class="bold" id="text-104" xml:space="preserve" data-tight-text="true">核心 <tspan class="math">k</tspan><tspan baseline-shift="sub" font-size="70%" class="math">1</tspan></text>
       <path class="hatch" d="M2157,453l8,-8h102l-8,8Z" />
       <path class="hatch" d="M2259,453l8,-8v42l-8,8Z" />
       <rect x="2157" y="453" width="102" height="42" class="paper" />
@@ -448,11 +455,11 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
       <path class="hair" d="M2353,766C2361.4,778.0 2353.4,778.0 2345,792" opacity=".55" />
       <path class="hair" d="M2353,766C2344.6,778.0 2336.6,778.0 2345,792" opacity=".55" />
       <path class="route local-link" d="M2353,766C2353,778 2345,778 2345,792" marker-end="url(#arrow)" />
-      <text x="2687" y="422" font-size="31" text-anchor="middle" class="bold" id="text-113">核心 k₂</text>
+      <text x="2687" y="424" font-size="30" text-anchor="middle" class="bold" id="text-113" xml:space="preserve" data-tight-text="true">核心 <tspan class="math">k</tspan><tspan baseline-shift="sub" font-size="70%" class="math">2</tspan></text>
       <path class="hatch" d="M2572,453l8,-8h102l-8,8Z" />
       <path class="hatch" d="M2674,453l8,-8v42l-8,8Z" />
-      <rect x="2572" y="453" width="102" height="42" class="black role-structure" />
-      <text x="2623" y="484" font-size="29" text-anchor="middle" class="white math" id="text-114">B</text>
+      <rect x="2572" y="453" width="102" height="42" class="paper" />
+      <text x="2623" y="484" font-size="29" text-anchor="middle" class="math" id="text-114">B</text>
       <path class="hatch" d="M2699,453l8,-8h102l-8,8Z" />
       <path class="hatch" d="M2801,453l8,-8v42l-8,8Z" />
       <rect x="2699" y="453" width="102" height="42" class="paper" />
@@ -504,8 +511,8 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
       <path class="hair" d="M2778,1060C2906.8,987.5 2883.2,959.6 2790,885" opacity=".55" />
       <path class="hair" d="M2778,1060C2917.2,1010.5 2896.8,938.4 2790,885" opacity=".55" />
       <path class="route local-link" d="M2778,1060C2912,999 2890,949 2790,885" marker-end="url(#arrow)" />
-      <text x="2100" y="949" font-size="23" text-anchor="start" class="halo" id="text-122">COPY_OUT</text>
-      <text x="2790" y="949" font-size="23" text-anchor="end" class="halo" id="text-123">COPY_IN</text>
+      <text x="2190" y="946" font-size="22" text-anchor="middle" class="serif halo" id="text-122">COPY_OUT</text>
+      <text x="2821" y="946" font-size="22" text-anchor="middle" class="serif halo" id="text-123">COPY_IN</text>
       <g transform="translate(2190,996) scale(0.78)">
         <path class="paper" d="M-22,-15L11,-15L24,-27L-9,-27Z" />
         <path class="hatch" d="M11,-15L24,-27V7L11,20Z" />
@@ -537,7 +544,7 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
       <text x="2916" y="1135" font-size="22" text-anchor="middle" class="muted halo" id="text-131">读</text>
     </g>
   </g>
-  <g id="main-process-v3" inkscape:groupmode="layer" inkscape:label="主流程：当前方案 → 完整候选 → 统一评价">
+  <g id="main-process-v3" ns1:groupmode="layer" ns1:label="主流程：当前方案 → 完整候选 → 统一评价">
     <title>主流程：当前方案 → 完整候选 → 统一评价</title>
     <g id="current-state-v3">
       <path d="M92,1370 l12,-12 h802 l-12,12 Z" class="hatch" />
@@ -558,17 +565,12 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
       <path d="M2905,1370 l12,-12 v106 l-12,12 Z" class="hatch" />
       <rect x="2090" y="1370" width="815" height="106" class="paper wash-structure" />
       <text x="2497" y="1412" font-size="31" text-anchor="middle" class="bold">总体任务执行时间（Makespan）</text>
-      <text x="2497" y="1456" font-size="36" text-anchor="middle" class="math" id="makespan-v3">C<tspan baseline-shift="sub" font-size="70%">q</tspan>
-        <tspan>(y) = max</tspan>
-        <tspan baseline-shift="sub" font-size="70%">j</tspan>
-        <tspan> f</tspan>
-        <tspan baseline-shift="sub" font-size="70%">j</tspan>
-      </text>
+      <text x="2497" y="1458" font-size="36" text-anchor="middle" class="math" id="makespan-v3" xml:space="preserve" data-tight-text="true">C<tspan baseline-shift="sub" font-size="70%">q</tspan><tspan>(y) = </tspan><tspan font-style="normal">max</tspan><tspan baseline-shift="sub" font-size="70%">j</tspan><tspan> f</tspan><tspan baseline-shift="sub" font-size="70%">j</tspan></text>
     </g>
     <path id="current-to-candidate" d="M925,1422H1036" class="concept-main" marker-end="url(#concept-arrow)" data-source="current-state-v3" data-target="candidate-v3" />
     <path id="candidate-to-evaluation" d="M1988,1422H2075" class="concept-main" marker-end="url(#concept-arrow)" data-source="candidate-v3" data-target="objective-v3" />
   </g>
-  <g id="feedback-output-v3" inkscape:groupmode="layer" inkscape:label="评价反馈、迭代与输出">
+  <g id="feedback-output-v3" ns1:groupmode="layer" ns1:label="评价反馈、迭代与输出">
     <title>评价反馈、迭代与输出</title>
     <g id="feedback-v3">
       <rect x="1070" y="1536" width="890" height="100" rx="4" fill="white" stroke="#446E67" stroke-width="1.8" />
@@ -581,8 +583,7 @@ text {fill:#202724;font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;}
     <path id="finish-to-output" d="M1515,1637V1706" class="concept-main" marker-end="url(#concept-arrow)" data-source="feedback-v3" data-target="outputs-v3" />
     <text x="1550" y="1682" font-size="26" text-anchor="start" class="muted">停止时</text>
     <g id="outputs-v3">
-      <text x="1515" y="1754" font-size="34" text-anchor="middle" class="bold">输出：调度方案 · 性能指标 · 时间—质量曲线</text>
-      <text x="1515" y="1796" font-size="27" text-anchor="middle" class="muted">Q3：固定同一方案，比较无 L2 / 有 L2</text>
+      <text x="1515" y="1771" font-size="34" text-anchor="middle" class="bold">输出：调度方案 · 性能指标 · 时间—质量曲线</text>
     </g>
   </g>
 </svg>
