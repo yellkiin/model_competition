@@ -9,9 +9,9 @@
   "filled_region_count": 68,
   "image_region_count": 0,
   "summary": {
-    "fail": 4,
-    "warn": 3,
-    "contained_fill_overlays": 55,
+    "fail": 3,
+    "warn": 1,
+    "contained_fill_overlays": 53,
     "contained_image_overlays": 0
   },
   "thresholds": {
@@ -42,31 +42,6 @@
       "object_count": 1,
       "object_indexes": [
         5
-      ]
-    },
-    {
-      "severity": "FAIL",
-      "kind": "text-stroke",
-      "page": 1,
-      "message": "Text is crossed by 2 stroked path(s)",
-      "text": "切图边界",
-      "text_bbox": [
-        419.60455322265625,
-        343.7574768066406,
-        428.27899169921875,
-        346.64892578125
-      ],
-      "other_text": null,
-      "other_bbox": [
-        290.71563720703125,
-        343.3963928222656,
-        428.4577941894531,
-        351.4317932128906
-      ],
-      "object_count": 2,
-      "object_indexes": [
-        89,
-        93
       ]
     },
     {
@@ -135,55 +110,6 @@
       "object_count": 1,
       "object_indexes": [
         5
-      ]
-    },
-    {
-      "severity": "WARN",
-      "kind": "text-fill-edge",
-      "page": 1,
-      "message": "Text partially overlaps the edge of 2 filled region(s)",
-      "text": "切图边界",
-      "text_bbox": [
-        419.60455322265625,
-        343.7574768066406,
-        428.27899169921875,
-        346.64892578125
-      ],
-      "other_text": null,
-      "other_bbox": [
-        290.71563720703125,
-        343.3963928222656,
-        428.4577941894531,
-        403.0391845703125
-      ],
-      "object_count": 2,
-      "object_indexes": [
-        76,
-        93
-      ]
-    },
-    {
-      "severity": "WARN",
-      "kind": "text-fill-edge",
-      "page": 1,
-      "message": "Text partially overlaps the edge of 1 filled region(s)",
-      "text": "容量 Spill",
-      "text_bbox": [
-        419.60455322265625,
-        348.0946350097656,
-        432.76953125,
-        350.986083984375
-      ],
-      "other_text": null,
-      "other_bbox": [
-        290.71563720703125,
-        344.1192626953125,
-        427.73486328125,
-        403.0391845703125
-      ],
-      "object_count": 1,
-      "object_indexes": [
-        76
       ]
     }
   ]
