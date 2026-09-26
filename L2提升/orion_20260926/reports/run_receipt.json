@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-09-26T12:13:03.089941+00:00",
+  "interpreter": "<PYTHON312>",
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "13th Gen Intel(R) Core(TM) i7-13650HX",
+  "physical_cores": 14,
+  "logical_processors": 20,
+  "parent_source_commit": "217444aba097259feb09cac8544279533f670986",
+  "experimental_code": "uncommitted isolated package, per-batch source_snapshot retained",
+  "commands": [
+    "& '<PYTHON312>' -X utf8 -u -m research_a_orion_unified.l2_refine_20260926.experiment --out '<LOCAL_L2_RUN_ROOT>\\round1' --official '<OFFICIAL_DIR>' --seed-root '<LOCAL_RAW_ROOT>\\host0\\records\\run' --cases 001 026 030 033 080 083 --seconds 120 --calls 64 --workers 2 --wall-seconds 1200",
+    "& '<PYTHON312>' -X utf8 -u -m research_a_orion_unified.l2_refine_20260926.experiment --out '<LOCAL_L2_RUN_ROOT>\\round2_local_v2' --official '<OFFICIAL_DIR>' --seed-root '<LOCAL_RAW_ROOT>\\host0\\records\\run' --cases 001 026 030 033 080 083 --seconds 120 --calls 64 --workers 2 --wall-seconds 720 --arms existing_F L2_local_v2 --version q3-l2-local-2",
+    "& '<PYTHON312>' -X utf8 -u -m research_a_orion_unified.l2_refine_20260926.experiment --out '<LOCAL_L2_RUN_ROOT>\\round3_hybrid_v3' --official '<OFFICIAL_DIR>' --seed-root '<LOCAL_RAW_ROOT>\\host0\\records\\run' --cases 001 026 030 033 080 083 --seconds 120 --calls 64 --workers 2 --wall-seconds 480 --arms L2_hybrid_v3 --version q3-l2-hybrid-3"
+  ],
+  "coverage": {
+    "planned": 30,
+    "completed": 30,
+    "partial": 0,
+    "failed": 0,
+    "time_limit_exits": 0,
+    "not_started": 0,
+    "exact_pairs": 30,
+    "saved_best_legal": 30,
+    "search_limit_counts": {
+      "source_exhausted_or_no_further_improving_epoch": 24,
+      "search_time_limit": 3,
+      "call_cap": 3
+    },
+    "late_legal_candidates": 2,
+    "official_calls": 831,
+    "batch_wall_seconds": {
+      "round1": 156.87184238433838,
+      "round2_local_v2": 139.58265590667725,
+      "round3_hybrid_v3": 160.79894995689392
+    }
+  },
+  "workers_max": 2,
+  "official_input_config_unchanged": true,
+  "full_experiment_resumed": false,
+  "old_singlecore_recomputed": false,
+  "new_q1_runs": 0,
+  "new_q2_independent_searches": 0,
+  "q2_is_exact_q3_plan_replay": true,
+  "verification": "saved original response status/audit and plan object equality; no hash tasks",
+  "raw_evidence_audit": "RAW_RESPONSE_AUDIT.md + existing_q3_pair_audit.csv + existing_q3_audit_totals.json",
+  "round_order": [
+    "round1",
+    "round2_local_v2",
+    "round3_hybrid_v3"
+  ],
+  "best_fixed_version": "L2_window_v1",
+  "best_fixed_version_source": "round1/source_snapshot/",
+  "best_fixed_version_results": "round1/jobs/*_L2_window_v1/",
+  "best_selection_scope": "same six diagnostic cases, mean percentage cycle reduction; no per-case stitching",
+  "publication_note": "Original local paths redacted. Per-batch source snapshots and large responses remain local; published runtime in ../_frozen. This receipt describes original Windows measurement."
+}

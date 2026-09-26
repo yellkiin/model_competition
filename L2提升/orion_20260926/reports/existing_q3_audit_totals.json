@@ -1,0 +1,25 @@
+{
+  "scope": "existing saved official response content checks; no evaluator, no new solve, no hashes",
+  "complete": true,
+  "elapsed_seconds": 19.82799999997951,
+  "planned_jobs": 501,
+  "processed_jobs": 501,
+  "original": {
+    "jobs": 500,
+    "pairs_content_verified": 498,
+    "parsed_responses": 998,
+    "q3_content_verified": 500,
+    "no_l2_content_verified": 498
+  },
+  "selected": {
+    "jobs": 500,
+    "pairs_content_verified": 499,
+    "parsed_responses": 999,
+    "q3_content_verified": 500,
+    "no_l2_content_verified": 499
+  },
+  "recovery_authorized": true,
+  "recovery_selection_relative": "host1/records/research_a_orion_trident/runs/save_recovery_20260925/shard_1/SELECTED_RECOVERIES.json",
+  "selection_rule": "Explicit user-authorized save-error continuation; replace this key with its completed continuation, not best-of-independent-arms selection. Original records remain unchanged.",
+  "limitations": "Saved audit receipts are checked, not independently re-proved. No graph/config/evaluator is changed. Recovery never backfills original trajectories."
+}

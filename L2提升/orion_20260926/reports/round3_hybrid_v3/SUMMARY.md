@@ -1,0 +1,74 @@
+# Q3/L2 小批次本轮结果
+
+本报告由保存的真实官方响应、请求、attempts 和资源日志生成；没有调用求解器或评估器。
+
+固定案例：001, 026, 030, 033, 080, 083；Q3/五核，最多 2 workers。每作业 120.0 秒、最多 64 次官方调用，起点和最终同方案 Q2 回放均计入。
+本轮总墙钟 160.799 秒。
+
+各臂都是在同一份既有强方案上做局部 Q3 改进，并非完整 SMFB 搜索。本次六图是机制诊断样本，没有运行 100 图；结果不证明全局最优，也不代表总体均值。
+
+| 臂 | 作业 | 起点新回放验证 | 最终同plan配对 | 改善/持平/变差 | 官方调用 | 官方秒数之和 |
+|---|---:|---:|---:|---:|---:|---:|
+| L2_hybrid_v3 | 6 | 6 | 6 | 3/3/0 | 195 | 220.363 |
+
+官方秒数是各次评价自身 `eval_seconds` 求和；并行作业的和不等于整轮墙钟。单作业墙钟取 `execution.wall_seconds`，包含读取、构造、评价、保存和配对。
+
+| 图 | 臂 | 状态 | 起点 Q3/Q2 | 最终 Q3/Q2 | Q3下降% | 最终同plan L2比 | hit | Spill | addedCOPY | calls | 墙钟秒 | raw候选Q3 |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| case_001 | L2_hybrid_v3 | complete | 47502/47502 | 47502/47502 | 0.000 | 1.000000 | 0.000000 | 0 | 4608 | 20 | 2.274 | 47502 |
+| case_026 | L2_hybrid_v3 | complete | 23047/25762 | 23047/25762 | 0.000 | 1.117803 | 0.378393 | 0 | 453240 | 11 | 1.504 | 23047 |
+| case_030 | L2_hybrid_v3 | complete | 559901/560353 | 558512/558845 | 0.248 | 1.000596 | 0.709768 | 0 | 6318080 | 35 | 102.347 | 558512 |
+| case_033 | L2_hybrid_v3 | complete | 351503/351503 | 350553/350567 | 0.270 | 1.000040 | 0.592653 | 0 | 8951424 | 64 | 49.881 | 350553 |
+| case_080 | L2_hybrid_v3 | complete | 63001/94963 | 63001/94963 | 0.000 | 1.507325 | 0.503110 | 0 | 3616768 | 16 | 5.268 | 63001 |
+| case_083 | L2_hybrid_v3 | complete | 177330/203523 | 177283/203317 | 0.027 | 1.146850 | 0.574816 | 0 | 5802368 | 49 | 102.451 | 177283 |
+
+hit 是官方命中字节率（0..1）。raw 候选列排除种子，只包含搜索时限内真实评价的合法候选；未优于 incumbent 的候选仍报告。缺合法新候选时留空，不把保留种子冒充新方法改善。
+
+## 同方案核对与描述性差分
+
+起点须通过本次 Q3 重新评价，周期等于 prior_makespan，且 attempt plan 与保存种子 JSON 对象相同。起点 Q2 同样检查方案对象与原响应；最终检查 best_plan 与 same_plan_no_l2_plan 对象相等、两份官方响应 status/audit 和 makespan 一致。核查不使用哈希。核对不通过的配对数值不用于收益计算。
+
+| 图 | 臂 | 起点缓存节省周期 | 最终缓存节省周期 | 无L2方案变化周期 | 缓存节省差周期 |
+|---|---|---:|---:|---:|---:|
+| case_001 | L2_hybrid_v3 | 0 | 0 | 0 | 0 |
+| case_026 | L2_hybrid_v3 | 2715 | 2715 | 0 | 0 |
+| case_030 | L2_hybrid_v3 | 452 | 333 | 1508 | -119 |
+| case_033 | L2_hybrid_v3 | 0 | 14 | 936 | 14 |
+| case_080 | L2_hybrid_v3 | 31962 | 31962 | 0 | 0 |
+| case_083 | L2_hybrid_v3 | 26193 | 26034 | 206 | -159 |
+
+起点缓存节省=seedQ2−seedQ3；最终缓存节省=bestQ2−bestQ3；无L2方案变化=seedQ2−bestQ2。恒等式 seedQ3−bestQ3 = (seedQ2−bestQ2) + [(bestQ2−bestQ3)−(seedQ2−seedQ3)] 仅是描述性代数分解。两部分不是独立因果效应：改变方案会同时改变依赖、带宽竞争与缓存访问时序。
+
+## 候选来源与退出原因
+
+| 臂 | 来源 | 调用 | 合法 | 非法/错误 | 显式超时 | 未结束 | 接受 | 严格周期改善 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| L2_hybrid_v3 | l2/observed_window | 47 | 47 | 0 | 0 | 0 | 1 | 1 |
+| L2_hybrid_v3 | l2/unpack_reorder | 13 | 13 | 0 | 0 | 0 | 3 | 3 |
+| L2_hybrid_v3 | l2v2/joint_local | 17 | 17 | 0 | 0 | 0 | 0 | 0 |
+| L2_hybrid_v3 | l2v2/local_window | 103 | 103 | 0 | 0 | 0 | 0 | 0 |
+| L2_hybrid_v3 | pair | 9 | 9 | 0 | 0 | 0 | 0 | 0 |
+| L2_hybrid_v3 | seed | 6 | 6 | 0 | 0 | 0 | 6 | 0 |
+
+seed/pair 单列，接受种子不计为新候选改善；未结束调用不能当成已成功评价。
+
+| 图 | 臂 | 搜索退出判定 | 依据 | 搜索上限秒 | 单项/调用上限 |
+|---|---|---|---|---:|---|
+| case_001 | L2_hybrid_v3 | source_exhausted_or_no_further_improving_epoch | inferred; round1 did not record exact generator exhaustion | 96.0 | 120.0s / 64 |
+| case_026 | L2_hybrid_v3 | source_exhausted_or_no_further_improving_epoch | inferred; round1 did not record exact generator exhaustion | 96.0 | 120.0s / 64 |
+| case_030 | L2_hybrid_v3 | search_time_limit | inferred from recorded attempt completion times | 96.0 | 120.0s / 64 |
+| case_033 | L2_hybrid_v3 | call_cap | inferred from recorded calls; one final-pair slot reserved | 96.0 | 120.0s / 64 |
+| case_080 | L2_hybrid_v3 | source_exhausted_or_no_further_improving_epoch | inferred; round1 did not record exact generator exhaustion | 96.0 | 120.0s / 64 |
+| case_083 | L2_hybrid_v3 | search_time_limit | inferred from recorded attempt completion times | 96.0 | 120.0s / 64 |
+
+原 runner 若未写精确停止原因，本表明确标注推断：调用达到 calls−1 表示预留最终配对槽后的搜索调用上限；候选完成时刻跨过搜索截止表示时间上限；提前结束且没有触及时限/调用上限表示来源耗尽或无进一步改进的 epoch。不把这种提前停止写成用满 96 秒或 64 次评价。
+
+## 资源与局限
+
+资源来自 resources.jsonl 的现场采点，不是另跑性能基准：
+
+- {"samples": 161, "active_samples": 160, "active_max": 2, "active_mean": 1.6375, "target_max": 2, "cpu_active_mean": 0.23189980509370417, "cpu_peak": 0.39308176100628933, "available_ram_min_gib": 12.256786346435547}
+- 状态分布：{"L2_hybrid_v3": {"complete": 6}}
+- 重复 case/arm 键：[]；运行错误条数：0。
+
+cpu_active_mean/cpu_peak 使用 active>0 且 CPU 非空的样本；active_mean 同样只取运行时采点，RAM 是全机可用内存。保存原始 attempts/response/日志，不对未完成结果补造分数。

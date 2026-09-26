@@ -1,0 +1,37 @@
+{
+  "inspection_kind": "targeted_static_import_closure",
+  "executed_tests_or_evaluations": false,
+  "parent_commit": "217444aba097259feb09cac8544279533f670986",
+  "destination_package_root": "L2提升/orion_20260926/_frozen/research_a_orion_unified",
+  "frozen_parent_files": [
+    "__init__.py",
+    "io.py",
+    "resources.py",
+    "fifo.py",
+    "trace.py",
+    "vendor/__init__.py",
+    "vendor/orion/__init__.py",
+    "vendor/orion/core.py",
+    "vendor/orion/engine.py",
+    "vendor/orion/worker.py"
+  ],
+  "experiment_files": [
+    "l2_refine_20260926/__init__.py",
+    "l2_refine_20260926/experiment.py",
+    "l2_refine_20260926/candidates.py",
+    "l2_refine_20260926/candidates_v2.py",
+    "l2_refine_20260926/candidates_v3.py"
+  ],
+  "external_original_official_imports": [
+    "contest_io",
+    "evaluation_validation",
+    "multicore_cut_evaluate_problem_1",
+    "multicore_cut_evaluate_problem_2",
+    "multicore_cut_evaluate_problem_3",
+    "singlecore_evaluate"
+  ],
+  "official_attachment_policy": "Keep complete original code directory, original data/config.txt and graph JSON unchanged; provide an explicit absolute --official path.",
+  "bootstrap_module": "research_a_orion_unified.l2_refine_20260926.experiment",
+  "worker_cwd_with_proposed_layout": "L2提升/orion_20260926/_frozen",
+  "bootstrap_execution_verified": false
+}
