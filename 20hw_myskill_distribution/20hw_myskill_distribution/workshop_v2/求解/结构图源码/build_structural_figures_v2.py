@@ -72,12 +72,12 @@ FIG = {
 \draw[data](lookup.east)--(73,64)|-node[pos=.28,above,lab]{命中}(hit.west);\draw[arr](lookup.east)--(73,64)|-node[pos=.28,below,lab]{未命中}(miss.west);
 \node[store,text width=29mm](l2)at(139,69){二级缓存 L2\\独立读池：250 B/周期};\node[store,text width=29mm](ddr)at(139,55){DDR 片外存储\\共享读写池：60 B/周期};
 \draw[data](hit.east)--(l2.west);\draw[data](miss.east)--(ddr.west);
-\node[sm,text width=34mm,fill=porange](done)at(119,40){DDR 读完成事件\\此时才尝试填充};\draw[arr](ddr.south)--(done.north);
-\node[heading]at(5,31){FIFO 队列：只按插入顺序移动};
+\node[sm,text width=59mm,fill=porange](done)at(114,40){任一 COPY\_IN 完成后尝试填充\\仍驻留：保持队位；已离开：重新入队};\draw[arr](ddr.south)--(139,48)--(done.north east);\draw[data](l2.east)--(158,69)--(158,40)--(done.east);
+\node[heading]at(5,31){FIFO 队列：按成功填入的先后排列};
 \node[sm,text width=31mm](old)at(31,21){最早插入\\优先驱逐};\node[sm,text width=27mm](resident)at(79,21){已驻留项};\node[sm,text width=31mm](new)at(127,21){最近插入};
 \draw[arr](old.east)--(resident.west);\draw[arr](resident.east)--(new.west);\draw[arr](old.west)--(5,21);\node[lab,anchor=west]at(5,26){驱逐};
 \draw[data](done.south)--(119,34)-|(new.north);
-\node[lab,anchor=west,align=left,text width=148mm]at(6,9){命中不刷新队位；未命中仅在 DDR 读取完成时入队，超容量按先进先出驱逐；大于 L2 容量的张量不驻留。};
+\node[lab,anchor=west,align=left,text width=148mm]at(6,9){命中保持队位；每次读入完成时尝试填充，空间不足则从队首淘汰；大于 L2 容量的张量跳过填充。};
 \node[lab,anchor=west,align=left,text width=148mm]at(6,4){跨核写出仍经 DDR，完成后等待 500 周期再释放 COPY\_IN；填充完成前重复发射仍可能未命中。};
 \end{tikzpicture}'''
 }

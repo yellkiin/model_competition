@@ -35,7 +35,8 @@ def means_table(question: int, means: list[dict[str, str]]) -> str:
     lines = [
         "% 由求解/规范化数据/combined/means.csv 生成；逐图加速比的算术平均。",
         r"\begin{table}[htbp]",
-        r"\centering\small",
+        rf"\caption{{问题{['一', '二', '三'][question - 1]}各核数逐图加速比统计}}\label{{tab:q{question}_mean}}",
+        r"\centering\normalsize",
         r"\setlength{\tabcolsep}{5pt}",
         r"\begin{tabular}{rrrrrr}",
         r"\toprule",
@@ -51,7 +52,6 @@ def means_table(question: int, means: list[dict[str, str]]) -> str:
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
-        rf"\caption{{问题{['一', '二', '三'][question - 1]}各核数逐图加速比统计}}\label{{tab:q{question}_mean}}",
         r"\end{table}",
     ]
     return "\n".join(lines)
@@ -68,12 +68,13 @@ def pairs_table(pairs: list[dict[str, str]]) -> str:
     lines = [
         "% 由同一方案的有/无 L2 双响应计算；比值为无 L2 周期/有 L2 周期。",
         r"\begin{table}[htbp]",
-        r"\centering\small",
+        r"\caption{第三问同一方案有无 L2 的周期配对统计}\label{tab:q3_pairs}",
+        r"\centering\normalsize",
         r"\setlength{\tabcolsep}{4pt}",
-        r"\resizebox{160mm}{!}{%",
+        
         r"\begin{tabular}{rrrrrrrr}",
         r"\toprule",
-        r"核心数 & 配对数 & 平均周期比 & 中位周期比 & 改善 & 相同 & 退化 & 平均字节命中率 \\",
+        r"核数 & 配对数 & \shortstack{平均\\周期比} & \shortstack{中位\\周期比} & 改善 & 相同 & 退化 & \shortstack{平均字节\\命中率} \\",
         r"\midrule",
     ]
     for n, group in groups.items():
@@ -91,8 +92,7 @@ def pairs_table(pairs: list[dict[str, str]]) -> str:
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
-        r"}%",
-        r"\caption{第三问同一方案有无 L2 的周期配对统计}\label{tab:q3_pairs}",
+        
         r"\end{table}",
     ]
     return "\n".join(lines)
@@ -103,14 +103,14 @@ def appendix_table(question: int, ns: tuple[int, ...], values: dict[tuple[str, i
     suffix = "、".join(str(n) for n in ns)
     title = "一二三"[question - 1]
     right_cycle = r">{\raggedleft\arraybackslash}p{28mm}"
-    right_bytes = r">{\raggedleft\arraybackslash}p{36mm}"
-    colspec = r"@{}p{18mm}" + (right_cycle + right_bytes) * len(ns) + r"@{}"
-    headings = ["图编号"]
+    right_bytes = r">{\raggedleft\arraybackslash}p{39mm}"
+    colspec = r"@{}p{15mm}" + (right_cycle + right_bytes) * len(ns) + r"@{}"
+    headings = ["算例"]
     for n in ns:
-        headings += [f"{n} 核周期", f"{n} 核额外 COPY/B"]
+        headings += [rf"\shortstack{{{n} 核\\周期}}", rf"\shortstack{{{n} 核额外\\COPY/B}}"]
     lines = [
         "% 周期为总体任务执行时间；字节为额外 COPY。q1/q2 单核使用题设约定的原始整图响应。",
-        r"\begingroup\scriptsize",
+        r"\begingroup\normalsize",
         r"\setlength{\tabcolsep}{3pt}",
         r"\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}",
         r"\setlength{\LTcapwidth}{160mm}",
@@ -120,6 +120,7 @@ def appendix_table(question: int, ns: tuple[int, ...], values: dict[tuple[str, i
         " & ".join(headings) + r"\\",
         r"\midrule",
         r"\endfirsthead",
+        rf"\caption[]{{问题{title}逐例结果：{suffix} 核（续）}}\\",
         r"\toprule",
         " & ".join(headings) + r"\\",
         r"\midrule",
@@ -128,11 +129,18 @@ def appendix_table(question: int, ns: tuple[int, ...], values: dict[tuple[str, i
         r"\endfoot",
     ]
     for case in cases:
-        cells = [case.replace("case_", "图 ")]
+        # This final block otherwise reaches the ordinary page builder after
+        # longtable has finished, dropping its continuation header in this template.
+        # Keep the actual page boundary inside longtable instead.
+        if question == 3 and ns == (1, 2) and case == "case_098":
+            lines.append(r"\noalign{\penalty-10000}")
+        cells = [case.removeprefix("case_")]
         for n in ns:
             r = values.get((case, n))
             cells += [integer(r["makespan"]), integer(r["added_copy_bytes"])] if r else ["—", "—"]
-        lines.append(" & ".join(cells) + r"\\")
+        # Keep the last three rows together, including at a longtable chunk boundary.
+        ending = r"\\*" if case in cases[-3:-1] else r"\\"
+        lines.append(" & ".join(cells) + ending)
     lines += [r"\end{longtable}", r"\endgroup"]
     return "\n".join(lines)
 

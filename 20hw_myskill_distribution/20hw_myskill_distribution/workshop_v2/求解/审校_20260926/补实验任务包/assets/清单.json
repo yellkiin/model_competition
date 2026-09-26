@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "status": "source_materials_copied_experiments_not_run",
+  "scope": "only case_080/q3/n5 and case_046/q3/n5",
+  "common_files_per_case": [
+    "request.json",
+    "progress.json",
+    "e0001_plan.json",
+    "e0001_result.json.gz",
+    "config.txt",
+    "<case>.json",
+    "official_code/",
+    "source_snapshot/"
+  ],
+  "cases": {
+    "case_080": {
+      "original_job_relative_to_workspace": ".orion_paper_cache/local_raw/host0/records/run/jobs/case_080_q3_n5",
+      "official_relative_to_workspace": ".orion_paper_cache/local_raw/shard0_outer/records/03_inputs/official",
+      "executed_snapshot_relative_to_workspace": ".orion_paper_cache/local_raw/host0/records/run/source_snapshot",
+      "seed_makespan_cycles": 63518,
+      "version": "trident-1.3-win-save.1",
+      "claimed_commit_unverified_by_snapshot": "854d8775ee378e14089fade6e30fd83b0a832842"
+    },
+    "case_046": {
+      "original_job_relative_to_workspace": ".orion_paper_cache/local_raw/host2/records/research_a_orion_trident/runs/round01/shard_2/jobs/case_046_q3_n5",
+      "official_relative_to_workspace": ".orion_paper_cache/local_raw/host2/records/research_a_orion_trident/runs/assets_shard_2/official",
+      "executed_snapshot_relative_to_workspace": ".orion_paper_cache/local_raw/host2/records/research_a_orion_trident/runs/round01/shard_2/source_snapshot",
+      "seed_makespan_cycles": 52952,
+      "version": "trident-1.3",
+      "claimed_commit_unverified_by_snapshot": "489ec93a4c74683679e6a87a0175e4b8a3e3bbe1"
+    }
+  }
+}

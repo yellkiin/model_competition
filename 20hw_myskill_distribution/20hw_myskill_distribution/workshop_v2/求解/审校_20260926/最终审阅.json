@@ -1,0 +1,69 @@
+{
+  "conclusion": "reviewed_for_delivery",
+  "scope": "text_and_figure_table_content_review",
+  "reviewed_at": "2026-09-26T18:22:41.876306+08:00",
+  "pdf": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\论文_审校版_20260926.pdf",
+  "pages": 78,
+  "body_pages": [
+    4,
+    37
+  ],
+  "body_page_count": 34,
+  "references_page": 38,
+  "appendix_pages": [
+    39,
+    78
+  ],
+  "figures": 20,
+  "rounds": [
+    "主审逐句核对题面、理论、执行源码与正文",
+    "专题独立复核后由主审裁定并直接修订",
+    "重算逐例汇总，编译并查看整本页面及修改页"
+  ],
+  "actual_visual_work": {
+    "rendered_pages": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\审校_20260926\\页面复核\\PAGE_INDEX.json",
+    "scope": "主审实际查看整本缩览；放大复看图4.5、图5.5、FIFO机制、参考文献、附件表、代码范围及长表断页。",
+    "style_scope": "图形布局和配色保持原有设计；FIFO只修正执行语义及必要逻辑连接。",
+    "handoff": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\审校_20260926\\图表内容交接报告.md"
+  },
+  "compilation": {
+    "method": "project-local XeLaTeX → BibTeX → XeLaTeX twice; ASCII jobname paper",
+    "log": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\论文\\compile.log",
+    "undefined_reference_or_citation": false,
+    "missing_glyph": false,
+    "overfull_diagnostics": 20,
+    "underfull_diagnostics": 40,
+    "notes": "保留模板字体族重定义、hyperref已有选项及longtable盒宽诊断；实际页面未见相应横向裁切。"
+  },
+  "references": {
+    "label_count": 63,
+    "missing_refs": [],
+    "duplicate_labels": [],
+    "missing_citations": [],
+    "internal_pdf_links": 138,
+    "invalid_link_pages": [],
+    "mapping": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\审校_20260926\\编号与引用映射.csv",
+    "destination_label_checks": 63,
+    "destination_label_mismatches": [],
+    "link_method": "Resolve both direct and named PDF destinations; compare label anchors with auxiliary page numbers."
+  },
+  "numerical_work": {
+    "report": "D:\\华为杯写作\\ORION_Paper_Agent\\workshop_v1\\求解\\审校_20260926\\数值终审核对.md",
+    "main_configurations": 1400,
+    "paired_configurations": 500,
+    "displayed_main_rows": 1500,
+    "new_evaluations_this_review": 0,
+    "raw_data_modified": false
+  },
+  "remaining_work": [
+    {
+      "item": "图4.5热图和其他图内标签的内容表达",
+      "status": "交给绘图者，要求见图表内容交接报告；本轮按用户要求不重做样式。"
+    },
+    {
+      "item": "两图四组邻域对照共8项",
+      "status": "可选增强，任务包已准备；尚未执行。"
+    }
+  ],
+  "completion_policy": "按用户要求不运行哈希与冒烟；完成本次文字及图表内容审校，不宣称完成后续重绘或未运行的实验。"
+}
