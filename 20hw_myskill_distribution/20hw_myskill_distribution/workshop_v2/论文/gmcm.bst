@@ -50,7 +50,7 @@ FUNCTION {load.config}
   #0 'show.missing.address.publisher :=
   #0 'show.url :=
   #0 'show.doi :=
-  #0 'show.note :=
+  #1 'show.note :=
 }
 
 ENTRY
@@ -1310,6 +1310,8 @@ FUNCTION {monograph}
   format.address.publisher output
   format.pages output
   format.year "year" output.check
+  new.block
+  format.note output
   fin.entry
 }
 
@@ -1366,6 +1368,8 @@ FUNCTION {article}
   format.journal.number "" output.after
   format.journal.pages "" output.after
   format.year "year" output.check
+  new.block
+  format.note output
   fin.entry
 }
 

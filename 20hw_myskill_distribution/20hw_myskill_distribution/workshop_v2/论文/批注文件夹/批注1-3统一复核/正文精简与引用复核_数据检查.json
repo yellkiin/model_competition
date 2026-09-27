@@ -1,0 +1,28 @@
+{
+  "scope": "论文实际使用的最终指标及附录逐项比对，不运行求解器，不改原始记录。",
+  "cases": 100,
+  "q1_q2_each_n": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "q1_q2_each_cells": 500,
+  "single_core_baselines": 100,
+  "q3_complete_same_plan_pairs": 500,
+  "main_appendix_cells": 1500,
+  "pair_appendix_rows": 500,
+  "missing_final_required_metrics": 0,
+  "issues": [],
+  "q1_five_core_mean": 3.9179853062705785,
+  "q2_five_core_mean": 4.4538064457658715,
+  "q3_five_core_mean": 4.633285839797243,
+  "q3_five_core_cache_ratio": 1.0559623270491574,
+  "sources": [
+    "求解/规范化数据/combined/main.csv",
+    "数据/l2_patch_60_62/q3_latest_500.csv.xz",
+    "论文/章节内容/数据表/appendix_results.tex",
+    "论文/章节内容/数据表/appendix_pairs.tex"
+  ]
+}
