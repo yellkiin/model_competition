@@ -1,0 +1,95 @@
+\AppendixPart{6}{算法参数的实验取值}\label{app:parameters}
+以下取值对应正文所述的实际方法。时间参数以主机秒计，服务时间和交接阈值以模拟周期计。计数和权重均为无量纲量。题给硬件参数仍按正文执行模型设置。
+
+\Needspace{8\baselineskip}
+\begingroup\small
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}
+\begin{longtable}{@{}p{36mm}p{57mm}p{59mm}@{}}
+\caption{初始构造与搜索控制}\label{tab:parameters_search}\\
+\toprule
+参数 & 含义 & 实验取值\\
+\midrule
+\endfirsthead
+\caption[]{初始构造与搜索控制（续）}\\
+\toprule
+参数 & 含义 & 实验取值\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$t_0,b_0$ & 最小服务周期、比例分母的最小字节量 & 1周期，1 B\\
+$h_{\rm cut},\rho_{\rm cut}$ & 短序列阈值、切分比例下限 & 6，0.15\\
+$\gamma_1,\gamma_2,\gamma_3$ & 三问的边界通信权重 & 2，1，1\\
+$\mathcal G,\kappa_{\rm cut}$ & 构造粒度、切分次数系数 & $\{2,4,8\}$，2\\
+$\lambda_{\rm in}$ & 初始核心映射的输入通信权重 & 0.25\\
+$N_{\rm init},K_{\rm init}$ & 初始评价上限、每次补入候选上限 & 3，12\\
+$\tau_{\rm init},\alpha_{\rm init}$ & 初始时间下限、预算比例 & 2 s，0.25\\
+$\mathcal R_{\rm split}$ & 前缀切分比例集合 & $\{1/4,1/2,3/4\}$\\
+$\delta_{\rm rel},K_{\rm rel}$ & 输出提前量阈值、候选上限 & 100周期，4\\
+$\eta_{\rm exp},\nu_0,\nu_1$ & 探索强度、调用计数平滑量 & 0.012，2，1\\
+$c_{\min},\lambda_{\rm fail}$ & 调用成本下限、失败惩罚权重 & 0.005 s，1\\
+$w_{\rm hist},H_{\rm gap}$ & 近期统计窗口、优先再访间隔 & 8，8\\
+$N_{\rm cover},K_{\rm cover}$ & 初次覆盖的调用数、候选数阈值 & 2，12\\
+$N_{\rm warm}$ & FIFO来源启用前的成功调用阈值 & 4\\
+$\tau_{\rm warm},\alpha_{\rm warm}$ & FIFO来源暂缓时限、预算比例 & 20 s，0.18\\
+$\kappa_{\rm cost},\tau_{\rm margin}$ & 准入成本放大系数、时间余量 & 1.2，0.05 s\\
+$\tau_{\max},N_{\max}$ & 自适应迭代总时间、评价次数上限 & 600 s，2048\\
+$\epsilon_{\rm gap}$ & 相对当前周期的近界容差 & 0.0025\\
+$\tau_{\rm stall},N_{\rm stall}$ & 连续无改善时间、评价次数 & 30 s，32\\
+$N_{\rm stall}^{\rm src}$ & 各可用来源连续无改善次数 & 8\\
+\end{longtable}\endgroup
+
+\Needspace{8\baselineskip}
+\begingroup\small
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}
+\begin{longtable}{@{}p{36mm}p{57mm}p{59mm}@{}}
+\caption{驻留重组与缓存候选}\label{tab:parameters_residency}\\
+\toprule
+参数 & 含义 & 实验取值\\
+\midrule
+\endfirsthead
+\toprule
+参数 & 含义 & 实验取值\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$c_{\rm comp},h_{\rm small}$ & 分量数下限、小分量大小上限 & 8，32\\
+$\rho_{\rm small},\rho_{\rm share}$ & 小分量算子占比、共享输入比阈值 & 0.75，0.10\\
+$K_{\rm tensor},K_{\rm hull},K_{\rm move}$ & 张量、闭包子图、迁移候选上限 & 20，10，20\\
+$\mathcal B_{\rm owner}$ & 保持核心映射的带数尝试顺序 & $(16,32,64,8)$\\
+$\mathcal A_{\rm batch}$ & 容量放大系数与阶段数尝试顺序 & $(1,2),(1.5,2),(2,2),(1,3),$\newline$(2.5,2),(1.5,3),(2,3),(2.5,3)$\\
+$(\alpha_0,\alpha_1,\alpha_2)$ & FIFO请求排序的三项权重 & $(0.25,0.5,0.25)$\\
+$K_{\rm req},K_{\rm look}$ & 优先请求数、相邻子图考察上限 & 12，32\\
+$\mathcal D_{\rm use}$ & 使用算子所在子图的移动距离 & $\{1,2,4,8\}$\\
+$\mathcal D_{\rm fill},\mathcal D_{\rm evict}$ & 填充、淘汰相关子图的移动距离 & $\{1,2,4\}$，$\{1,2\}$\\
+$d_{\rm joint}$ & 联合移动的子图位移 & 1\\
+$(K^{\rm F}_1,\ldots,K^{\rm F}_5)$ & 五步生成过程的累计候选上限 & $(12,18,22,24,32)$\\
+\end{longtable}\endgroup
+
+\Needspace{8\baselineskip}
+\begingroup\small
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}
+\begin{longtable}{@{}p{36mm}p{57mm}p{59mm}@{}}
+\caption{第三问多粒度候选优选}\label{tab:parameters_portfolio}\\
+\toprule
+参数 & 含义 & 实验取值\\
+\midrule
+\endfirsthead
+\toprule
+参数 & 含义 & 实验取值\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$\alpha_{\rm band}$ & 当前深度层带负载权重 & 0.7\\
+$\eta_{\rm cache}$ & 通信排序中的驻留收益权重 & 0.5\\
+$\mathcal B_{\rm plain}$ & 普通负载映射的目标带数 & $\{2,4,16,32,64\}$\\
+$\mathcal A_{\rm comm}$ & 通信感知映射的带数、权重组合 & $\{4,8,16,32,64\}\times\{0.25\}$\newline$\cup\{(8,0.75)\}$\\
+$\mu_{\rm bal}$ & 完整分量映射的总负载权重 & 0.15\\
+$\varepsilon$ & 候选优选的相对周期改善门槛 & $10^{-3}$\\
+\end{longtable}\endgroup
+

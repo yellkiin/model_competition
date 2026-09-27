@@ -144,9 +144,11 @@
   \section{附录}%
 }
 
+\newcounter{paperappendixpart}
 \newcommand{\AppendixPart}[2]{%
   \par\vspace{1.3\baselineskip}%
   \phantomsection
+  \setcounter{paperappendixpart}{#1}\addtocounter{paperappendixpart}{-1}\refstepcounter{paperappendixpart}%
   \noindent{\songti\fontsize{12pt}{18pt}\selectfont\bfseries 附录 #1：#2}\par
   \addcontentsline{toc}{subsection}{附录 #1：#2}%
   \vspace{0.55\baselineskip}%

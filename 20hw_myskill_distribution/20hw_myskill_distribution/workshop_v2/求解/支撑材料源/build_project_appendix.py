@@ -99,6 +99,7 @@ def main():
     rendered += "\\AppendixPart{5}{逐例结果与同方案配对}\n"
     rendered += "\\input{章节内容/数据表/appendix_results.tex}\n"
     rendered += "\\input{章节内容/数据表/appendix_pairs.tex}\n"
+    rendered += "\\input{章节内容/算法参数.tex}\n"
     rendered += "\\AppendixEnd\n"
     pairs_target = create_pairs_tex()
     target = PAPER / "章节内容/99_附录.generated.tex"
