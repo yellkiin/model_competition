@@ -1,0 +1,832 @@
+{
+  "version": "ink_v13",
+  "layout": "3 rows x 2 columns",
+  "themes": {
+    "mono": {
+      "editable": {
+        "file": "workflow_mono_v13_editable.svg",
+        "elements": 829,
+        "ids": 318,
+        "references": 15,
+        "text_nodes": 107,
+        "viewBox": "0 235 3150 2000",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "alignment": {
+          "top_card_y": 356,
+          "top_card_height": 96,
+          "side_illustration_uniform_scale": 1.12,
+          "joint_cluster_uniform_scale": 1.18,
+          "joint_cluster_gap_increase": 100,
+          "hardware_component_offsets": {
+            "core-tasks": 0,
+            "pipelines": 50,
+            "private-memory": 125,
+            "copy-annotations": 215,
+            "ddr": 270,
+            "l2": 333,
+            "fill-annotations": 333,
+            "hit-annotation": 215
+          },
+          "hardware_component_scales": {
+            "core-tasks": 1.1,
+            "pipelines": 1.16,
+            "private-memory": 1.1,
+            "copy-annotations": 1.0,
+            "ddr": 1.1,
+            "l2": 1.12,
+            "fill-annotations": 1.0,
+            "hit-annotation": 1.0
+          },
+          "original_aspect_preserved": true,
+          "result_card_hatch_depth": 12
+        },
+        "normalized_geometry_sha256": "686d74e0a1afbe92e0dea281a740bcabac5ab0ae99029493afa4a075f8443b0b"
+      },
+      "portable": {
+        "file": "workflow_mono_v13.svg",
+        "elements": 1373,
+        "ids": 318,
+        "references": 15,
+        "text_nodes": 0,
+        "viewBox": "0 235 3150 2000",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "alignment": {
+          "top_card_y": 356,
+          "top_card_height": 96,
+          "side_illustration_uniform_scale": 1.12,
+          "joint_cluster_uniform_scale": 1.18,
+          "joint_cluster_gap_increase": 100,
+          "hardware_component_offsets": {
+            "core-tasks": 0,
+            "pipelines": 50,
+            "private-memory": 125,
+            "copy-annotations": 215,
+            "ddr": 270,
+            "l2": 333,
+            "fill-annotations": 333,
+            "hit-annotation": 215
+          },
+          "hardware_component_scales": {
+            "core-tasks": 1.1,
+            "pipelines": 1.16,
+            "private-memory": 1.1,
+            "copy-annotations": 1.0,
+            "ddr": 1.1,
+            "l2": 1.12,
+            "fill-annotations": 1.0,
+            "hit-annotation": 1.0
+          },
+          "original_aspect_preserved": true,
+          "result_card_hatch_depth": 12
+        },
+        "normalized_geometry_sha256": "8180dfb74a168255c5362e714b5124c4ff8da7eb26ad3ed5bbb1a80dcdab1720"
+      },
+      "detail": {
+        "file": "workflow_mono_v13_detail.svg",
+        "elements": 649,
+        "ids": 165,
+        "references": 9,
+        "text_nodes": 0,
+        "viewBox": "1050 235 1080 1875",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "normalized_geometry_sha256": "32077296bdcda6fed0fbf79533c7614a929eb90050188294571aeda58d090634"
+      },
+      "pdf": {
+        "file": "workflow_mono_v13.pdf",
+        "pages": 1,
+        "images": 0,
+        "width_pt": 1339.37,
+        "height_pt": 850.394
+      },
+      "png": {
+        "file": "workflow_mono_v13.png",
+        "width_px": 6000,
+        "height_px": 3810
+      },
+      "detail_pdf": {
+        "file": "workflow_mono_v13_detail.pdf",
+        "pages": 1,
+        "images": 0,
+        "width_pt": 425.197,
+        "height_pt": 738.189
+      },
+      "detail_png": {
+        "file": "workflow_mono_v13_detail.png",
+        "width_px": 3000,
+        "height_px": 5209
+      },
+      "svgz": {
+        "file": "workflow_mono_v13.svgz",
+        "matches_portable_svg": true
+      }
+    },
+    "qianjiang": {
+      "editable": {
+        "file": "workflow_qianjiang_v13_editable.svg",
+        "elements": 829,
+        "ids": 318,
+        "references": 15,
+        "text_nodes": 107,
+        "viewBox": "0 235 3150 2000",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "alignment": {
+          "top_card_y": 356,
+          "top_card_height": 96,
+          "side_illustration_uniform_scale": 1.12,
+          "joint_cluster_uniform_scale": 1.18,
+          "joint_cluster_gap_increase": 100,
+          "hardware_component_offsets": {
+            "core-tasks": 0,
+            "pipelines": 50,
+            "private-memory": 125,
+            "copy-annotations": 215,
+            "ddr": 270,
+            "l2": 333,
+            "fill-annotations": 333,
+            "hit-annotation": 215
+          },
+          "hardware_component_scales": {
+            "core-tasks": 1.1,
+            "pipelines": 1.16,
+            "private-memory": 1.1,
+            "copy-annotations": 1.0,
+            "ddr": 1.1,
+            "l2": 1.12,
+            "fill-annotations": 1.0,
+            "hit-annotation": 1.0
+          },
+          "original_aspect_preserved": true,
+          "result_card_hatch_depth": 12
+        },
+        "normalized_geometry_sha256": "686d74e0a1afbe92e0dea281a740bcabac5ab0ae99029493afa4a075f8443b0b"
+      },
+      "portable": {
+        "file": "workflow_qianjiang_v13.svg",
+        "elements": 1373,
+        "ids": 318,
+        "references": 15,
+        "text_nodes": 0,
+        "viewBox": "0 235 3150 2000",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "alignment": {
+          "top_card_y": 356,
+          "top_card_height": 96,
+          "side_illustration_uniform_scale": 1.12,
+          "joint_cluster_uniform_scale": 1.18,
+          "joint_cluster_gap_increase": 100,
+          "hardware_component_offsets": {
+            "core-tasks": 0,
+            "pipelines": 50,
+            "private-memory": 125,
+            "copy-annotations": 215,
+            "ddr": 270,
+            "l2": 333,
+            "fill-annotations": 333,
+            "hit-annotation": 215
+          },
+          "hardware_component_scales": {
+            "core-tasks": 1.1,
+            "pipelines": 1.16,
+            "private-memory": 1.1,
+            "copy-annotations": 1.0,
+            "ddr": 1.1,
+            "l2": 1.12,
+            "fill-annotations": 1.0,
+            "hit-annotation": 1.0
+          },
+          "original_aspect_preserved": true,
+          "result_card_hatch_depth": 12
+        },
+        "normalized_geometry_sha256": "8180dfb74a168255c5362e714b5124c4ff8da7eb26ad3ed5bbb1a80dcdab1720"
+      },
+      "detail": {
+        "file": "workflow_qianjiang_v13_detail.svg",
+        "elements": 649,
+        "ids": 165,
+        "references": 9,
+        "text_nodes": 0,
+        "viewBox": "1050 235 1080 1875",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "normalized_geometry_sha256": "32077296bdcda6fed0fbf79533c7614a929eb90050188294571aeda58d090634"
+      },
+      "pdf": {
+        "file": "workflow_qianjiang_v13.pdf",
+        "pages": 1,
+        "images": 0,
+        "width_pt": 1339.37,
+        "height_pt": 850.394
+      },
+      "png": {
+        "file": "workflow_qianjiang_v13.png",
+        "width_px": 6000,
+        "height_px": 3810
+      },
+      "detail_pdf": {
+        "file": "workflow_qianjiang_v13_detail.pdf",
+        "pages": 1,
+        "images": 0,
+        "width_pt": 425.197,
+        "height_pt": 738.189
+      },
+      "detail_png": {
+        "file": "workflow_qianjiang_v13_detail.png",
+        "width_px": 3000,
+        "height_px": 5209
+      },
+      "svgz": {
+        "file": "workflow_qianjiang_v13.svgz",
+        "matches_portable_svg": true
+      }
+    },
+    "qinglu": {
+      "editable": {
+        "file": "workflow_qinglu_v13_editable.svg",
+        "elements": 829,
+        "ids": 318,
+        "references": 15,
+        "text_nodes": 107,
+        "viewBox": "0 235 3150 2000",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "alignment": {
+          "top_card_y": 356,
+          "top_card_height": 96,
+          "side_illustration_uniform_scale": 1.12,
+          "joint_cluster_uniform_scale": 1.18,
+          "joint_cluster_gap_increase": 100,
+          "hardware_component_offsets": {
+            "core-tasks": 0,
+            "pipelines": 50,
+            "private-memory": 125,
+            "copy-annotations": 215,
+            "ddr": 270,
+            "l2": 333,
+            "fill-annotations": 333,
+            "hit-annotation": 215
+          },
+          "hardware_component_scales": {
+            "core-tasks": 1.1,
+            "pipelines": 1.16,
+            "private-memory": 1.1,
+            "copy-annotations": 1.0,
+            "ddr": 1.1,
+            "l2": 1.12,
+            "fill-annotations": 1.0,
+            "hit-annotation": 1.0
+          },
+          "original_aspect_preserved": true,
+          "result_card_hatch_depth": 12
+        },
+        "normalized_geometry_sha256": "686d74e0a1afbe92e0dea281a740bcabac5ab0ae99029493afa4a075f8443b0b"
+      },
+      "portable": {
+        "file": "workflow_qinglu_v13.svg",
+        "elements": 1373,
+        "ids": 318,
+        "references": 15,
+        "text_nodes": 0,
+        "viewBox": "0 235 3150 2000",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "alignment": {
+          "top_card_y": 356,
+          "top_card_height": 96,
+          "side_illustration_uniform_scale": 1.12,
+          "joint_cluster_uniform_scale": 1.18,
+          "joint_cluster_gap_increase": 100,
+          "hardware_component_offsets": {
+            "core-tasks": 0,
+            "pipelines": 50,
+            "private-memory": 125,
+            "copy-annotations": 215,
+            "ddr": 270,
+            "l2": 333,
+            "fill-annotations": 333,
+            "hit-annotation": 215
+          },
+          "hardware_component_scales": {
+            "core-tasks": 1.1,
+            "pipelines": 1.16,
+            "private-memory": 1.1,
+            "copy-annotations": 1.0,
+            "ddr": 1.1,
+            "l2": 1.12,
+            "fill-annotations": 1.0,
+            "hit-annotation": 1.0
+          },
+          "original_aspect_preserved": true,
+          "result_card_hatch_depth": 12
+        },
+        "normalized_geometry_sha256": "8180dfb74a168255c5362e714b5124c4ff8da7eb26ad3ed5bbb1a80dcdab1720"
+      },
+      "detail": {
+        "file": "workflow_qinglu_v13_detail.svg",
+        "elements": 649,
+        "ids": 165,
+        "references": 9,
+        "text_nodes": 0,
+        "viewBox": "1050 235 1080 1875",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "normalized_geometry_sha256": "32077296bdcda6fed0fbf79533c7614a929eb90050188294571aeda58d090634"
+      },
+      "pdf": {
+        "file": "workflow_qinglu_v13.pdf",
+        "pages": 1,
+        "images": 0,
+        "width_pt": 1339.37,
+        "height_pt": 850.394
+      },
+      "png": {
+        "file": "workflow_qinglu_v13.png",
+        "width_px": 6000,
+        "height_px": 3810
+      },
+      "detail_pdf": {
+        "file": "workflow_qinglu_v13_detail.pdf",
+        "pages": 1,
+        "images": 0,
+        "width_pt": 425.197,
+        "height_pt": 738.189
+      },
+      "detail_png": {
+        "file": "workflow_qinglu_v13_detail.png",
+        "width_px": 3000,
+        "height_px": 5209
+      },
+      "svgz": {
+        "file": "workflow_qinglu_v13.svgz",
+        "matches_portable_svg": true
+      }
+    },
+    "yanlan": {
+      "editable": {
+        "file": "workflow_yanlan_v13_editable.svg",
+        "elements": 829,
+        "ids": 318,
+        "references": 15,
+        "text_nodes": 107,
+        "viewBox": "0 235 3150 2000",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "alignment": {
+          "top_card_y": 356,
+          "top_card_height": 96,
+          "side_illustration_uniform_scale": 1.12,
+          "joint_cluster_uniform_scale": 1.18,
+          "joint_cluster_gap_increase": 100,
+          "hardware_component_offsets": {
+            "core-tasks": 0,
+            "pipelines": 50,
+            "private-memory": 125,
+            "copy-annotations": 215,
+            "ddr": 270,
+            "l2": 333,
+            "fill-annotations": 333,
+            "hit-annotation": 215
+          },
+          "hardware_component_scales": {
+            "core-tasks": 1.1,
+            "pipelines": 1.16,
+            "private-memory": 1.1,
+            "copy-annotations": 1.0,
+            "ddr": 1.1,
+            "l2": 1.12,
+            "fill-annotations": 1.0,
+            "hit-annotation": 1.0
+          },
+          "original_aspect_preserved": true,
+          "result_card_hatch_depth": 12
+        },
+        "normalized_geometry_sha256": "686d74e0a1afbe92e0dea281a740bcabac5ab0ae99029493afa4a075f8443b0b"
+      },
+      "portable": {
+        "file": "workflow_yanlan_v13.svg",
+        "elements": 1373,
+        "ids": 318,
+        "references": 15,
+        "text_nodes": 0,
+        "viewBox": "0 235 3150 2000",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "alignment": {
+          "top_card_y": 356,
+          "top_card_height": 96,
+          "side_illustration_uniform_scale": 1.12,
+          "joint_cluster_uniform_scale": 1.18,
+          "joint_cluster_gap_increase": 100,
+          "hardware_component_offsets": {
+            "core-tasks": 0,
+            "pipelines": 50,
+            "private-memory": 125,
+            "copy-annotations": 215,
+            "ddr": 270,
+            "l2": 333,
+            "fill-annotations": 333,
+            "hit-annotation": 215
+          },
+          "hardware_component_scales": {
+            "core-tasks": 1.1,
+            "pipelines": 1.16,
+            "private-memory": 1.1,
+            "copy-annotations": 1.0,
+            "ddr": 1.1,
+            "l2": 1.12,
+            "fill-annotations": 1.0,
+            "hit-annotation": 1.0
+          },
+          "original_aspect_preserved": true,
+          "result_card_hatch_depth": 12
+        },
+        "normalized_geometry_sha256": "8180dfb74a168255c5362e714b5124c4ff8da7eb26ad3ed5bbb1a80dcdab1720"
+      },
+      "detail": {
+        "file": "workflow_yanlan_v13_detail.svg",
+        "elements": 649,
+        "ids": 165,
+        "references": 9,
+        "text_nodes": 0,
+        "viewBox": "1050 235 1080 1875",
+        "panels": {
+          "source-a": {
+            "row": 1,
+            "column": 1
+          },
+          "source-b": {
+            "row": 1,
+            "column": 2
+          },
+          "source-c": {
+            "row": 2,
+            "column": 1
+          },
+          "source-d": {
+            "row": 2,
+            "column": 2
+          },
+          "source-e": {
+            "row": 3,
+            "column": 1
+          },
+          "source-f": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        "normalized_geometry_sha256": "32077296bdcda6fed0fbf79533c7614a929eb90050188294571aeda58d090634"
+      },
+      "pdf": {
+        "file": "workflow_yanlan_v13.pdf",
+        "pages": 1,
+        "images": 0,
+        "width_pt": 1339.37,
+        "height_pt": 850.394
+      },
+      "png": {
+        "file": "workflow_yanlan_v13.png",
+        "width_px": 6000,
+        "height_px": 3810
+      },
+      "detail_pdf": {
+        "file": "workflow_yanlan_v13_detail.pdf",
+        "pages": 1,
+        "images": 0,
+        "width_pt": 425.197,
+        "height_pt": 738.189
+      },
+      "detail_png": {
+        "file": "workflow_yanlan_v13_detail.png",
+        "width_px": 3000,
+        "height_px": 5209
+      },
+      "svgz": {
+        "file": "workflow_yanlan_v13.svgz",
+        "matches_portable_svg": true
+      }
+    }
+  },
+  "errors": [],
+  "additional_pngs": [
+    {
+      "file": "four_palettes_review.png",
+      "width_px": 2200,
+      "height_px": 1470
+    },
+    {
+      "file": "workflow_qinglu_v13_A4_preview.png",
+      "width_px": 953,
+      "height_px": 1348
+    },
+    {
+      "file": "workflow_mono_v13_detail_preview.png",
+      "width_px": 2100,
+      "height_px": 3646
+    },
+    {
+      "file": "workflow_mono_v13_preview.png",
+      "width_px": 2100,
+      "height_px": 1334
+    },
+    {
+      "file": "workflow_qianjiang_v13_detail_preview.png",
+      "width_px": 2100,
+      "height_px": 3646
+    },
+    {
+      "file": "workflow_qianjiang_v13_preview.png",
+      "width_px": 2100,
+      "height_px": 1334
+    },
+    {
+      "file": "workflow_qinglu_v13_detail_preview.png",
+      "width_px": 2100,
+      "height_px": 3646
+    },
+    {
+      "file": "workflow_qinglu_v13_preview.png",
+      "width_px": 2100,
+      "height_px": 1334
+    },
+    {
+      "file": "workflow_yanlan_v13_detail_preview.png",
+      "width_px": 2100,
+      "height_px": 3646
+    },
+    {
+      "file": "workflow_yanlan_v13_preview.png",
+      "width_px": 2100,
+      "height_px": 1334
+    }
+  ],
+  "passed": true
+}
