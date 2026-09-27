@@ -25,6 +25,16 @@ PANEL_POSITIONS = {
     "source-c": (2, 1), "source-d": (2, 2),
     "source-e": (3, 1), "source-f": (3, 2),
 }
+HARDWARE_OFFSETS = {
+    "core-tasks": 0, "pipelines": 50, "private-memory": 125,
+    "copy-annotations": 215, "ddr": 270, "l2": 333,
+    "fill-annotations": 333, "hit-annotation": 215,
+}
+HARDWARE_SCALES = {
+    "core-tasks": 1.10, "pipelines": 1.16, "private-memory": 1.10,
+    "copy-annotations": 1.0, "ddr": 1.10, "l2": 1.12,
+    "fill-annotations": 1.0, "hit-annotation": 1.0,
+}
 SVG_NS = "http://www.w3.org/2000/svg"
 URL_REF = re.compile(r"url\(\s*['\"]?#([^)'\"\s]+)['\"]?\s*\)")
 HEX_COLOR = re.compile(r"#[0-9a-fA-F]{3,8}\b")
@@ -38,6 +48,23 @@ def local_name(name: str) -> str:
 def require(condition: bool, message: str) -> None:
     if not condition:
         raise ValueError(message)
+
+
+def check_uniform_scale(node: ET.Element, expected: float, filename: str) -> None:
+    """Only allow translations and a uniform component scale, never stretching."""
+    transform = node.get("transform", "")
+    operations = re.findall(r"([A-Za-z]+)\s*\([^)]*\)", transform)
+    require(operations and all(operation in ("translate", "scale") for operation in operations),
+            f"{filename}: unexpected transform on {node.get('id')}: {transform}")
+    scales = re.findall(r"scale\(\s*([^)]*)\)", transform)
+    require(len(scales) == (0 if expected == 1 else 1),
+            f"{filename}: unexpected scale count on {node.get('id')}: {transform}")
+    if scales:
+        values = [float(value) for value in re.split(r"[ ,]+", scales[0].strip())]
+        if len(values) == 1:
+            values *= 2
+        require(len(values) == 2 and all(abs(value - expected) < 1e-9 for value in values),
+                f"{filename}: {node.get('id')} must use uniform scale {expected}, found {scales}")
 
 
 def inspect_svg(path: Path, portable: bool) -> tuple[ET.Element, dict]:
@@ -75,12 +102,84 @@ def inspect_svg(path: Path, portable: bool) -> tuple[ET.Element, dict]:
         actual = (panel.get("data-row"), panel.get("data-column"))
         require(actual == tuple(map(str, expected)),
                 f"{path.name}: {identifier} should be row/column {expected}, found {actual}")
+        require(panel.get("data-v13-panel-labels-enlarged") == "true"
+                and panel.get("data-v13-panel-text-factor") == "1.12"
+                and panel.get("data-v13-small-math-total") == "1.2",
+                f"{path.name}: {identifier} lacks final enlarged-label metadata")
         panels[identifier] = {"row": expected[0], "column": expected[1]}
-    return root, {
+    require("selection-to-pool" not in ids,
+            f"{path.name}: removed selection-to-pool arrow remains")
+    require("residency-transition-v13" in ids,
+            f"{path.name}: missing repositioned residency transition arrow")
+    residency_arrow = ids["residency-transition-v13"]
+    require(re.sub(r"\s+", "", residency_arrow.get("d", "")) == "M1455,1188V1230",
+            f"{path.name}: residency arrow must lie between its two block rows")
+    require(residency_arrow.get("class") == "fine" and residency_arrow.get("marker-end") == "url(#arrow)",
+            f"{path.name}: residency arrow must retain its original stroke and arrowhead")
+    result = {
         "file": path.name, "elements": sum(1 for _ in root.iter()),
         "ids": len(ids), "references": len(references), "text_nodes": text_count,
         "viewBox": root.get("viewBox"), "panels": panels,
     }
+    if "joint-decision-v6" in ids:
+        require([float(value) for value in root.get("viewBox", "").split()] == [0, 235, 3150, 2000],
+                f"{path.name}: full figure must use the final 3150 x 2000 canvas")
+        # The final direction enlarges intact side diagrams and selected
+        # components uniformly; all x/y scaling factors must remain equal.
+        for identifier in ("joint-body-v13", "hardware-cutaway-v6"):
+            require(identifier in ids, f"{path.name}: missing illustration {identifier}")
+            body = ids[identifier]
+            check_uniform_scale(body, 1.12, path.name)
+            expected_spacing = ("compact-translations-uniform-scale" if identifier == "joint-body-v13"
+                                else "uniform-components-compact")
+            require(body.get("data-v13-component-spacing") == expected_spacing,
+                    f"{path.name}: {identifier} lacks final component-spacing metadata")
+        require(not any(e.get("data-v13-vertical-scale") for e in root.iter()),
+                f"{path.name}: obsolete vertical-only stretching metadata remains")
+        graph = ids.get("bipartite-example")
+        require(graph is not None and graph.get("data-v13-spaced") == "true"
+                and graph.get("data-v13-cluster-gap-increase") == "100",
+                f"{path.name}: joint graph must retain the 100-unit increase in cluster separation")
+        require(graph.get("data-v13-cluster-uniform-scale") == "1.18",
+                f"{path.name}: B/C subgraphs must retain their final uniform enlargement")
+        hardware = ids["hardware-cutaway-v6"]
+        offsets = dict(part.split(":", 1) for part in hardware.get("data-v13-component-offsets", "").split(";") if ":" in part)
+        require(offsets == {key: str(value) for key, value in HARDWARE_OFFSETS.items()},
+                f"{path.name}: unexpected hardware component-spacing offsets {offsets}")
+        spacing_wrappers = [child for child in hardware if child.get("data-v13-spacing-role")]
+        require({child.get("data-v13-spacing-role") for child in spacing_wrappers} == set(HARDWARE_OFFSETS),
+                f"{path.name}: missing hardware spacing groups")
+        for wrapper in spacing_wrappers:
+            role = wrapper.get("data-v13-spacing-role")
+            require(wrapper.get("data-v13-translate-y") == str(HARDWARE_OFFSETS[role]),
+                    f"{path.name}: inconsistent spacing metadata for {role}")
+            require(float(wrapper.get("data-v13-uniform-component-scale", "nan")) == HARDWARE_SCALES[role],
+                    f"{path.name}: inconsistent uniform scale metadata for {role}")
+            check_uniform_scale(wrapper, HARDWARE_SCALES[role], path.name)
+        cards = [ids.get("original-graph-card"), ids.get("evaluation-title-card")]
+        pool = ids.get("neighborhoods-v6")
+        pool_cards = [child for child in pool if local_name(child.tag) == "rect"] if pool is not None else []
+        require(len(pool_cards) == 1, f"{path.name}: expected one middle-column top card")
+        cards += pool_cards
+        for card in cards:
+            require(card is not None, f"{path.name}: missing column top card")
+            require(float(card.get("y", "nan")) == 356 and float(card.get("height", "nan")) == 96,
+                    f"{path.name}: all column top cards must span y=356..452")
+        for identifier in ("current-state-v6", "candidate-v6", "objective-v6"):
+            result_card = ids.get(identifier)
+            require(result_card is not None, f"{path.name}: missing result card {identifier}")
+            faces = [child for child in result_card if local_name(child.tag) == "path" and child.get("class") == "hatch"]
+            require(len(faces) == 2 and all("l12,-12" in re.sub(r"\s+", "", face.get("d", "")) for face in faces),
+                    f"{path.name}: {identifier} must retain separate 12-unit top and side hatching faces")
+        result["alignment"] = {"top_card_y": 356, "top_card_height": 96,
+                               "side_illustration_uniform_scale": 1.12,
+                               "joint_cluster_uniform_scale": 1.18,
+                               "joint_cluster_gap_increase": 100,
+                               "hardware_component_offsets": HARDWARE_OFFSETS,
+                               "hardware_component_scales": HARDWARE_SCALES,
+                               "original_aspect_preserved": True,
+                               "result_card_hatch_depth": 12}
+    return root, result
 
 
 def geometry_digest(root: ET.Element) -> str:
