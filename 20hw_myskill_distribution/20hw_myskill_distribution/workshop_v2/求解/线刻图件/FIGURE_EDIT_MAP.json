@@ -1,17 +1,18 @@
 {
   "paper_base": "PR #69 plus local annotation2 revision",
-  "master": "用户指定V13青绿图，匹配main #78母版",
+  "master": "用户2026-09-27最新上传流程图PNG",
   "theme": "qinglu",
   "redrawn": 19,
   "reused_master": 1,
   "figures": [
     {
       "number": "1.1",
-      "file": "workflow_qinglu_v13",
-      "action": "采用用户提供V13总图，两列三排展示六类候选，正文同步解释",
+      "file": "workflow_qinglu_latest_20260927",
+      "action": "以用户最新PNG替换图1.1，描述同步图中迁移、交换、切分示例与反馈回路",
       "meaning": "三环节闭环及a—f操作，对应三问的联合方案与统一评价",
-      "editable_source": "论文/图片/workflow_qinglu_v13_editable.svg",
-      "portable_source": "论文/图片/workflow_qinglu_v13.svg"
+      "editable_source": null,
+      "source": "论文/图片/workflow_qinglu_latest_20260927.png",
+      "source_note": "本轮仅提供PNG。既有V13 SVG为历史图源，未伪装为当前可编辑源。"
     },
     {
       "number": "4.1",
