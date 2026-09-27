@@ -113,9 +113,9 @@
 \end{align}
 \noindent 式中，$r$ 遍历计算流水线类型，$B_{\mathrm{mandatory}}$ 只包含能证明所有方案都必须通过 DDR 服务的字节。对第一、二问，初始输入读取和最终输出写出提供这种必要流量，第三问的初始缓存为空，无逻辑别名时首次读取仍须经过 DDR。存在显式逻辑别名时，第三问的流量下界仅计必要写出量。
 
-\textbf{命题1：}在计算依赖保留、算子不重算或删除、同类计算流水线每核串行、必要 DDR 流量判断成立的条件下，对任意可行方案 $x$，有 $L\le C_q(x)$。
+命题1：在计算依赖保留、算子不重算或删除、同类计算流水线每核串行、必要 DDR 流量判断成立的条件下，对任意可行方案 $x$，有 $L\le C_q(x)$。
 
-\textbf{证明：}固定任意可行方案 $x$，记 $C=C_q(x)$。对依赖路径 $P=(v_1,\ldots,v_h)$，有 $s_{v_1}\ge0$、$s_{v_{j+1}}\ge f_{v_j}$ 和 $f_{v_j}\ge s_{v_j}+\widetilde p_{v_j}$，逐项递推得：
+证明：固定任意可行方案 $x$，记 $C=C_q(x)$。对依赖路径 $P=(v_1,\ldots,v_h)$，有 $s_{v_1}\ge0$、$s_{v_{j+1}}\ge f_{v_j}$ 和 $f_{v_j}\ge s_{v_j}+\widetilde p_{v_j}$，逐项递推得：
 \[
  C\ge f_{v_h}\ge\sum_{j=1}^{h}\widetilde p_{v_j}
  \quad\Longrightarrow\quad C\ge L_{\mathrm{path}}.
@@ -148,9 +148,9 @@
 
 无前驱任务满足 $F_i\ge\ell_i=z_i$，故按拓扑序归纳，所有任务均满足 $F_i\ge z_i$。将 $\max_i z_i$、固定核心的流水线负载下界及必要搬运下界取最大值，得到候选专属下界 $L(x)$。
 
-\textbf{命题2：}若 $L(x)\le C_q(x)$，当前已保留方案周期为 $U$，则 $L(x)>U$ 的候选不能改善主目标。
+命题2：若 $L(x)\le C_q(x)$，当前已保留方案周期为 $U$，则 $L(x)>U$ 的候选不能改善主目标。
 
-\textbf{证明：}$C_q(x)\ge L(x)>U$，故该候选的周期严格更差。
+证明：$C_q(x)\ge L(x)>U$，故该候选的周期严格更差。
 
 过滤使用严格大于，当 $L(x)=U$ 时，候选仍可能在相同周期下减少额外 COPY 字节。全局质量界仍使用对全部方案成立的 $L$。
 
@@ -181,11 +181,12 @@
  \label{eq:frontier_construct}
 \end{equation}
 \noindent 式中，$\gamma_q$ 为问题 $q$ 的边界通信权重，实验取 $(\gamma_1,\gamma_2,\gamma_3)=(2,1,1)$。$F(A,B)$ 是两侧均有关联操作的张量字节总和，具体为：
-\[
+\begin{equation}
  F(A,B)=\sum_{t\in T}b_t\,
  \mathbf1\{(P_t\cup C_t)\cap A\ne\varnothing\}\,
  \mathbf1\{(P_t\cup C_t)\cap B\ne\varnothing\},
-\]
+\label{eq:cut_communication}
+\end{equation}
 \noindent 式中，$\mathbf1\{\cdot\}$ 为指示函数，条件成立时取1，否则取0。每个张量在该切点只计一次。第一问的权重计及写出和读入两段通信，后两问降低该权重以利用同核复用。目标的第一项限制较重一侧的计算负载，第二项控制新边界上的通信代价。切点目标相同时，先取两侧负载差较小者，再取较早的切点。
 
 切开后分别提取两侧的弱连通分量作为新子图。拓扑序保证不存在从 $B_j$ 指向 $A_j$ 的依赖边，而同侧不同弱连通分量之间没有依赖边。因此，这一细分保持子图依赖图无环。对粒度集合 $\mathcal G$ 中的 $g$，令目标负载为 $\max\{t_0,W(V)/(gn)\}$，式中，$t_0$ 为最小服务周期。当所有可继续划分的子图均不超过该目标、已无可划分子图，或切分次数达到 $\kappa_{\rm cut}gn$ 时结束。$\kappa_{\rm cut}$ 控制切分次数。实验取 $\mathcal G=\{2,4,8\}$、$\kappa_{\rm cut}=2$，最小服务周期 $t_0=1$ 周期。
@@ -266,9 +267,9 @@
 每个图、问题及核数配置的自适应迭代受累计时间 $\tau_{\max}$ 和评价次数 $N_{\max}$ 限制，实验取 $N_{\max}=2048$。总时间包含解析、已有方案确认、候选生成、评价与保存，第三问另在预算内预留同方案配对时间。近界、预算耗尽、来源耗尽或停滞均可终止搜索。停滞须同时满足：无周期改善的持续时间达到 $\tau_{\rm stall}$，连续无改善评价数达到 $N_{\rm stall}$，每个仍可用来源的无改善次数达到 $N_{\rm stall}^{\rm src}$。实验取 $\tau_{\rm stall}=30$ s、$N_{\rm stall}=32$、$N_{\rm stall}^{\rm src}=8$。
 
 \subsubsection{可行性保持与目标单调性}
-\textbf{命题3：}若初始方案 $x^{(0)}\in\mathcal F_q$，每次只在相同配置下接受完整执行可行且字典序严格改善的候选，则所有已保留方案均可行，且目标序列字典序单调不增。
+命题3：若初始方案 $x^{(0)}\in\mathcal F_q$，每次只在相同配置下接受完整执行可行且字典序严格改善的候选，则所有已保留方案均可行，且目标序列字典序单调不增。
 
-\textbf{证明：}记目标对 $\Phi_q(x)=(C_q(x),D_q(x))$。由式~\eqref{eq:accept}，第 $k$ 步只有两种更新：
+证明：记目标对 $\Phi_q(x)=(C_q(x),D_q(x))$。由式~\eqref{eq:accept}，第 $k$ 步只有两种更新：
 \[
  x^{(k+1)}=x^{(k)},\quad\text{或}\quad
  x^{(k+1)}=y\in\mathcal F_q,\quad
@@ -316,6 +317,7 @@
  U(\tau)=\min_{x\in\mathcal A(\tau)}C_q(x).
  \label{eq:anytime}
 \end{equation}
+
 图~\ref{fig:q1_anytime} 每30秒汇总100个算例的三类进展：已取得可用解、可用周期不超过最终周期的1.05倍，以及已达到最终周期。第二类条件为 $U_i(\tau)\le1.05C_{i,1,5}$。30秒时，三类算例数分别为93、80和58。120秒时为98、92和68。300秒时为99、97和80。最终周期取搜索结束时的结果，停止后方案保持可用。
 \begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{../求解/问题一/图片/q1_anytime.pdf}
 \caption{第一问五核搜索的可用解与质量达成进度}\label{fig:q1_anytime}\end{figure}

@@ -3,21 +3,22 @@
 \AppendixStart
 \AppendixPart{1}{附件文件及内容}
 \AppendixAttachmentTableBegin
-\AppendixAttachmentRow{1}{问题一}{完整方法源码、代码环境说明和 Task/调度逐例结果表。}
-\AppendixAttachmentRow{2}{问题二}{完整方法源码、代码环境说明和跨核交接/DDR 逐例结果表。}
-\AppendixAttachmentRow{3}{问题三}{完整方法源码、代码环境说明和 L2/FIFO 同方案配对逐例结果表。}
-\AppendixAttachmentRow{4}{其他数据}{100 个原始计算图、官方配置、完整官方评价代码及来源说明。}
-\AppendixAttachmentRow{5}{其他支撑材料}{1400 个已选主配置和 500 个同方案配对的计划/官方响应、各分片执行源码、数据表及整理复现程序。}
+\AppendixAttachmentRow{1}{code/}{三问求解、候选生成与方案评价的程序。}
+\AppendixAttachmentRow{2}{official/}{100个输入计算图、硬件配置及官方评价程序。}
+\AppendixAttachmentRow{3}{plans/}{第一、二问各400份及第三问500份正式方案。}
+\AppendixAttachmentRow{4}{appendices/}{逐例周期与额外搬运、同方案缓存对照、均值及54组参数结果。}
+\AppendixAttachmentRow{5}{supplement/}{12组边界重优化结果、FIFO与读入轨迹、候选示例及补充图。}
+\AppendixAttachmentRow{6}{README.md}{附件目录与程序使用说明。}
 \AppendixAttachmentTableEnd
 \AppendixPart{2}{问题一关键代码}
-\AppendixCodeFile[firstline=58,lastline=121,firstnumber=58]{官方评价与字典序接受（片段 1）}{python}{../提交附件/支撑材料文件/问题一/源码/research_a_orion_trident/solve.py}
-\AppendixCodeFile[firstline=43,lastline=49,firstnumber=43]{初始结构候选构造（片段 2）}{python}{../提交附件/支撑材料文件/问题一/源码/research_a_orion_trident/sources.py}
+\AppendixCodeFile[firstline=63,lastline=126,firstnumber=63]{官方评价与字典序接受（片段 1）}{python}{../求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/solve.py}
+\AppendixCodeFile[firstline=48,lastline=54,firstnumber=48]{初始结构候选构造（片段 2）}{python}{../求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/sources.py}
 \AppendixPart{3}{问题二关键代码}
-\AppendixCodeFile[firstline=350,lastline=376,firstnumber=350]{跨核交接与 DDR 搬运量（片段 1）}{python}{../提交附件/支撑材料文件/问题二/源码/research_a_orion_trident/vendor/orion/core.py}
-\AppendixCodeFile[firstline=377,lastline=431,firstnumber=377]{全局及候选下界（片段 2）}{python}{../提交附件/支撑材料文件/问题二/源码/research_a_orion_trident/vendor/orion/core.py}
+\AppendixCodeFile[firstline=355,lastline=381,firstnumber=355]{跨核交接与 DDR 搬运量（片段 1）}{python}{../求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/vendor/orion/core.py}
+\AppendixCodeFile[firstline=382,lastline=436,firstnumber=382]{全局及候选下界（片段 2）}{python}{../求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/vendor/orion/core.py}
 \AppendixPart{4}{问题三关键代码}
-\AppendixCodeFile[firstline=19,lastline=63,firstnumber=19]{FIFO 事件驱动的候选定位与顺序移动（片段 1）}{python}{../提交附件/支撑材料文件/问题三/源码/research_a_orion_trident/fifo.py}
-\AppendixCodeFile[firstline=258,lastline=275,firstnumber=258]{同一完整方案的无 L2 官方配对（片段 2）}{python}{../提交附件/支撑材料文件/问题三/源码/research_a_orion_trident/solve.py}
+\AppendixCodeFile[firstline=24,lastline=68,firstnumber=24]{FIFO 事件驱动的候选定位与顺序移动（片段 1）}{python}{../求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/fifo.py}
+\AppendixCodeFile[firstline=263,lastline=280,firstnumber=263]{同一完整方案的无 L2 官方配对（片段 2）}{python}{../求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/solve.py}
 \AppendixPart{5}{逐例结果与同方案配对}
 \input{章节内容/数据表/appendix_results.tex}
 \input{章节内容/数据表/appendix_pairs.tex}

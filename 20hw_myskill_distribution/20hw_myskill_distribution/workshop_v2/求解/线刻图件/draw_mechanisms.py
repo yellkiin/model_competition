@@ -83,6 +83,7 @@ class Drawing:
         self.rule(x,57,x+350,57,color,1.25)
     def save(self,q):
         out=WORK/'求解'/('问题'+['','一','二','三'][q])/'图片';out.mkdir(parents=True,exist_ok=True)
+        ET.indent(self.root,space='  ')
         p=out/(self.name+'.svg');ET.ElementTree(self.root).write(p,encoding='utf-8',xml_declaration=True)
         exe=shutil.which('inkscape')
         if not exe:
@@ -141,12 +142,22 @@ def overview_shell(name,q):
     elif q==2:
         d.lines(1009,282,['同核驻留与容量','跨核交接与共享带宽','固定顺序下的事件执行'],22,34,INK)
     else:
-        d.lines(1009,282,['发射查询 · 完成填充','FIFO淘汰 · 双带宽池','重建完整执行事件'],22,34,INK)
+        d.text(883,275,'DDR',20,M,anchor='start')
+        d.text(883,308,'L2',20,F,anchor='start')
+        for y,c,segments in [(263,M,[(0,65),(83,95)]),(296,F,[(29,80),(137,41)])]:
+            d.rule(942,y+18,1138,y+18,P['faint'],.7)
+            for x,w in segments:d.frame(947+x,y,w,17,c=c,fill=wash(c,.13))
+        d.text(1009,351,'查询 → 服务 → 完成填充',21,INK)
+        d.text(1009,378,'按FIFO更新队列',20,F)
     d.link([(1009,400),(1009,430)])
     d.box(857,443,304,52,'周期优先，同周期比较搬运','f',21)
     # One outer feedback loop carries the improved complete plan.
-    d.link([(1009,503),(1009,548),(27,548),(27,472),(52,472)],'s',width=1.5)
-    d.text(520,536,'保留更优完整方案，继续改进',22,S)
+    if q==3:
+        d.link([(1009,495),(1009,548),(198,548),(198,496)],'s',width=1.5)
+        d.text(601,536,'保留更优完整方案，继续改进',22,S)
+    else:
+        d.link([(1009,503),(1009,548),(27,548),(27,472),(52,472)],'s',width=1.5)
+        d.text(520,536,'保留更优完整方案，继续改进',22,S)
     return d
 
 def q1_overview():
@@ -214,29 +225,47 @@ def q2_overview():
 
 def q3_overview():
     d=overview_shell('q3_overview',3)
-    d.cube(68,114,263,58,'共享只读 L2','f',26)
-    d.link([(131,188),(131,221)],'f');d.link([(268,188),(268,221)],'f')
-    d.cube(56,238,123,53,'核心任务','ink',23)
-    d.cube(213,238,123,53,'核心任务','ink',23)
-    d.lines(195,358,['子图划分 · 核心映射','核内顺序'],23,38,INK)
+    d.frame(45,103,316,239,c=S,dash='6 4',fill='none',rx=6)
+    d.cube(83,138,224,49,'共享只读 L2','f',25)
+    d.link([(127,202),(127,244)],'f')
+    d.link([(275,202),(275,244)],'f')
+    d.cube(68,260,109,43,'核心任务','ink',21)
+    d.cube(217,260,109,43,'核心任务','ink',21)
+    d.lines(203,379,['联合划分、映射与顺序'],23,34,INK)
+    d.link([(203,393),(203,435)],'s')
     d.box(65,443,266,52,'当前完整方案','s',24)
-    # Both source families live inside one candidate stage and merge once.
-    d.frame(428,91,315,123,c=S,fill=wash(S,.035),rx=4)
-    d.text(585,124,'共同操作 a—e',24,S)
-    d.lines(585,161,['构造 · 迁移 · 交换 · 切分','驻留重组与通信映射'],21,32,INK)
-    d.frame(428,248,315,177,c=F,fill=wash(F,.035),rx=4)
-    d.text(585,282,'FIFO 顺序操作 f',24,F)
-    d.text(585,317,'保持划分与核心映射',21,INK)
-    d.frame(473,352,160,34,c=F,fill=wash(F,.13))
-    d.text(553,376,'驻留窗口',21,F)
-    d.rule(458,396,716,396,GRAY,1)
-    d.link([(703,384),(703,339),(554,339)],'f')
-    d.text(688,419,'读入前移',19,F)
-    d.link([(755,153),(783,153),(783,336),(755,336)],'m',arrow=False)
-    d.link([(372,290),(408,290)],'s',arrow=False)
-    d.link([(416,153),(408,153),(408,336),(416,336)],'s',arrow=False)
-    d.link([(783,244),(820,244),(820,116),(843,116)],'m')
-    d.text(599,479,'各来源分别生成完整候选',21,GRAY)
+    # The current plan fans out to independent candidate families.
+    d.link([(332,469),(393,469),(393,148)],'s',arrow=False)
+    for y in [148,280,426]:d.link([(393,y),(421,y)],'s',width=1.5)
+    # Candidate outputs share one route to the common feasibility/evaluation step.
+    for y in [148,280,426]:d.link([(779,y),(801,y)],'m',arrow=False)
+    d.link([(801,426),(801,116),(848,116)],'m',width=1.5)
+
+    # Parallel candidate families: no arrow suggests a sequential dependency.
+    d.frame(430,91,342,113,c=M,fill=wash(M,.025),rx=3)
+    d.text(601,119,'结构与驻留改进',24,M)
+    d.cube(456,155,50,28,'A','s',19)
+    d.cube(525,155,50,28,'B','s',19)
+    d.link([(589,169),(619,169)],'m')
+    d.cube(634,155,106,28,'A ∪ B','m',20)
+
+    d.frame(430,224,342,113,c=M,fill=wash(M,.025),rx=3)
+    d.text(601,252,'通信感知划分',24,M)
+    for x in [455,514,661,720]:d.op(x,299,'',rx=15,ry=12)
+    for x1,x2 in [(472,496),(531,643),(678,702)]:
+        d.link([(x1,299),(x2,299)],'m',width=1.3)
+    d.frame(435,277,100,43,c=S,dash='4 3',fill='none',rx=5)
+    d.frame(641,277,100,43,c=S,dash='4 3',fill='none',rx=5)
+
+    d.frame(430,357,342,138,c=F,fill=wash(F,.025),rx=3)
+    d.text(601,385,'FIFO子图时序调整',24,F)
+    d.text(451,417,'原序',19,GRAY,anchor='start')
+    d.text(451,463,'候选',19,GRAY,anchor='start')
+    for y in [411,457]:
+        d.link([(507,y),(752,y)],'f',width=1.0)
+        for x,lab,role in [(541,'A','s'),(613,'B','m'),(685,'C','f')]:
+            if y==457 and lab in ['B','C']:x=1298-x
+            d.box(x-22,y-17,44,31,lab,role,19)
     d.save(3)
 
 
