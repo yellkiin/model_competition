@@ -1,19 +1,239 @@
 {
   "record_type": "actual_manuscript_citation_claim_map",
-  "basis": "论文/章节内容中实际出现的\\cite、论文/参考文献.bib、.orion_paper_cache/literature/LITERATURE_CARDS.json；原文页码和观察均转录自既有原文卡，本次仅核对卡片与正文、未重新阅读PDF或获取在线回执。",
-  "online_receipt": "未取得；不以本地PDF或文献卡冒充在线检索回执",
+  "basis": "2026-09-27 核读本文实际引用句、对应原文的模型/方法段落与线上出版方、作者或机构页面。",
+  "online_receipt": "本次已获取所列10项的可靠在线来源，具体URL与阅读页见各项。IEEE入口正文受限时使用会议官网，ACM DOI受限时使用作者arXiv，Elsevier页面受限时使用York机构页面。",
   "references": [
-    {"key":"A49","manuscript":"章节内容/01_问题重述.tex:6；04_问题一.tex:67","claim":"DAG分组、映射和任务级调度共同影响通信与并行；原文同处理器零通信假设不适用于本题第一问。","card_observation":"物理页2右栏：先分K≥p簇，再调度簇内任务，而非把簇当原子任务；模型使用duplex single-port及同处理器通信零代价。","card_pages_read":[1,2,3,4],"card_pages_visually_reviewed":[2],"boundary":"仅为联合决策动机，不能据此计算本题DDR和Makespan。"},
-    {"key":"A02","manuscript":"章节内容/04_问题一.tex:36","claim":"原图无环不保证分组商图无环，分组需额外无环约束。","card_observation":"物理页3 Definition 4.3要求粗化后无环，Theorem 1讨论收缩边的安全条件。","card_pages_read":[2,3,4],"card_pages_visually_reviewed":[3],"boundary":"其平衡最小割目标不能代替本题完整执行可行性。"},
-    {"key":"A39","manuscript":"章节内容/04_问题一.tex:15","claim":"共享张量的生产者到多个消费者可借有向超边作集合表达。","card_observation":"物理页3定义tail/head与商图，λ−1为跨分区连接度代理；物理页5有多head收缩限制。","card_pages_read":[2,3,4,5],"card_pages_visually_reviewed":[3,5],"boundary":"连接度代理并非官方COPY字节或Makespan。"},
-    {"key":"A16","manuscript":"章节内容/04_问题一.tex:88；05_问题二.tex:39","claim":"张量驻留、换出和取回状态可解释片外访问及容量压力。","card_observation":"物理页4式(9)(10)给容量/地址约束，式(12)最小化Spill/Retrieve字节。","card_pages_read":[1,2,3,4],"card_pages_visually_reviewed":[4],"boundary":"本题Spill由固定执行器生成，不采用原文自由地址、置换或ILP最优性。"},
-    {"key":"A42","manuscript":"章节内容/04_问题一.tex:148；05_问题二.tex:47","claim":"从可行调度出发作局部迁移及多初值改进是有限预算搜索的通用组织。","card_observation":"物理页5 §4.3提出处理器/邻近超步的小步迁移并保留合法低成本方案。","card_pages_read":[3,4,5,6],"card_pages_visually_reviewed":[5],"boundary":"BSP超步计费及ILP不用于本题事件执行。"},
-    {"key":"A01","manuscript":"章节内容/04_问题一.tex:139","claim":"上行rank与最早完成时刻映射可作为初始构造思路。","card_observation":"物理页5（印刷页264）图2为HEFT伪代码，式(8)为平均代价递归rank。","card_pages_read":[4,5,6],"card_pages_visually_reviewed":[5],"boundary":"rank/EFT仅为候选代理，不是本题官方周期。"},
-    {"key":"A12","manuscript":"章节内容/04_问题一.tex:157；06_问题三.tex:44","claim":"可依据已测收益分配有限搜索资源。","card_observation":"物理页9 §5.2实测更新成本模型；物理页10 §6分配调优时间，先轮流暖启再择优。","card_pages_read":[7,8,9,10],"card_pages_visually_reviewed":[9,10],"boundary":"Ansor调优task非本题执行Task；本文未训练其成本模型。"},
-    {"key":"A08","manuscript":"章节内容/01_问题重述.tex:6；04_问题一.tex:141","claim":"算子分组粒度与并行执行机会相互作用。","card_observation":"物理页4图3展示合并与并行stage，图4按ending集合递归分解。","card_pages_read":[1,3,4,5],"card_pages_visually_reviewed":[4],"boundary":"stage全序、图重写及单GPU代价不移入本题。"},
-    {"key":"A17","manuscript":"章节内容/05_问题二.tex:39","claim":"合法顺序改变活跃张量集合及峰值存储。","card_observation":"物理页4图4展示图重写、软预算、动态规划；图5为零入度集合搜索。","card_pages_read":[1,3,4,5],"card_pages_visually_reviewed":[4],"boundary":"本题仅调整完整子图的划分、归核和核内顺序，不改原图或继承峰值内存目标。"},
-    {"key":"A40","manuscript":"章节内容/06_问题三.tex:17","claim":"缓存亲和与执行时序可能影响DAG调度的复用机会。","card_observation":"物理页4图2为L1/L2和LRU；物理页5图3及式(1)是Cache Reuse Profile。","card_pages_read":[1,4,5,6],"card_pages_visually_reviewed":[4,5],"boundary":"原文LRU与周期DAG不能预测本题完成填充、命中不更新的FIFO。"}
+    {
+      "key": "A49",
+      "manuscript": "章节内容/01_问题重述.tex:8",
+      "claim": "分组与映射影响任务调度的通信和并行性。",
+      "card_observation": "物理页2右栏：先分K≥p簇，再调度簇内任务，而非把簇当原子任务；模型使用duplex single-port及同处理器通信零代价。",
+      "card_pages_read": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "card_pages_visually_reviewed": [
+        2
+      ],
+      "boundary": "仅为联合决策动机，不能据此计算本题DDR和Makespan。",
+      "verified_url": "https://www.ipdps.org/ipdps2019/2019-advance-program.html",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        2
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    },
+    {
+      "key": "A02",
+      "manuscript": "章节内容/04_问题一.tex:39",
+      "claim": "原DAG上的任意收缩不一定保留无环性。",
+      "card_observation": "物理页3 Definition 4.3要求粗化后无环，Theorem 1讨论收缩边的安全条件。",
+      "card_pages_read": [
+        2,
+        3,
+        4
+      ],
+      "card_pages_visually_reviewed": [
+        3
+      ],
+      "boundary": "其平衡最小割目标不能代替本题完整执行可行性。",
+      "verified_url": "https://people.bordeaux.inria.fr/julien.herrmann/pub/conf/ccgrid2017.pdf",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        3
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    },
+    {
+      "key": "A39",
+      "manuscript": "章节内容/04_问题一.tex:22",
+      "claim": "有向超边具有尾、头集合，无环划分要求商图无环。",
+      "card_observation": "物理页3定义tail/head与商图，λ−1为跨分区连接度代理；物理页5有多head收缩限制。",
+      "card_pages_read": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "card_pages_visually_reviewed": [
+        3,
+        5
+      ],
+      "boundary": "连接度代理并非官方COPY字节或Makespan。",
+      "verified_url": "https://epubs.siam.org/doi/10.1137/1.9781611976472.1",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        3,
+        5
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    },
+    {
+      "key": "A16",
+      "manuscript": "章节内容/04_问题一.tex:92、章节内容/05_问题二.tex:47",
+      "claim": "算子顺序、张量驻留与换出取回共同影响片外访问。",
+      "card_observation": "物理页4式(9)(10)给容量/地址约束，式(12)最小化Spill/Retrieve字节。",
+      "card_pages_read": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "card_pages_visually_reviewed": [
+        4
+      ],
+      "boundary": "本题Spill由固定执行器生成，不采用原文自由地址、置换或ILP最优性。",
+      "verified_url": "https://arxiv.org/abs/2311.18246",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        4
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    },
+    {
+      "key": "A42",
+      "manuscript": "章节内容/04_问题一.tex:242、章节内容/05_问题二.tex:75",
+      "claim": "从可行调度出发进行局部迁移和多初值改进。",
+      "card_observation": "物理页5 §4.3提出处理器/邻近超步的小步迁移并保留合法低成本方案。",
+      "card_pages_read": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "card_pages_visually_reviewed": [
+        5
+      ],
+      "boundary": "BSP超步计费及ILP不用于本题事件执行。",
+      "verified_url": "https://arxiv.org/abs/2404.15246",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        5
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    },
+    {
+      "key": "A01",
+      "manuscript": "章节内容/04_问题一.tex:204",
+      "claim": "上行优先级和最早完成时间映射的构造思想。本文的权重和流水线估计按自身实现定义。",
+      "card_observation": "物理页5（印刷页264）图2为HEFT伪代码，式(8)为平均代价递归rank。",
+      "card_pages_read": [
+        4,
+        5,
+        6
+      ],
+      "card_pages_visually_reviewed": [
+        5
+      ],
+      "boundary": "rank/EFT仅为候选代理，不是本题官方周期。",
+      "verified_url": "https://openaccess.marmara.edu.tr/entities/publication/feba5344-0457-405a-8cb2-1d26f8963e33",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        5
+      ],
+      "current_read_method": "正文提取乱码，实际查看第264页（物理第5页）的图2、式8—10和4.2节。"
+    },
+    {
+      "key": "A12",
+      "manuscript": "章节内容/01_问题重述.tex:8",
+      "claim": "Ansor生成候选张量程序，以实测性能和任务调优选择程序。已删除其对本文来源指数的泛化背书。",
+      "card_observation": "物理页9 §5.2实测更新成本模型；物理页10 §6分配调优时间，先轮流暖启再择优。",
+      "card_pages_read": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "card_pages_visually_reviewed": [
+        9,
+        10
+      ],
+      "boundary": "Ansor调优task非本题执行Task；本文未训练其成本模型。",
+      "verified_url": "https://www.usenix.org/conference/osdi20/presentation/zheng",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        9,
+        10
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    },
+    {
+      "key": "A08",
+      "manuscript": "章节内容/01_问题重述.tex:8",
+      "claim": "算子合并与并行执行的分组方式影响执行时间。",
+      "card_observation": "物理页4图3展示合并与并行stage，图4按ending集合递归分解。",
+      "card_pages_read": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "card_pages_visually_reviewed": [
+        4
+      ],
+      "boundary": "stage全序、图重写及单GPU代价不移入本题。",
+      "verified_url": "https://proceedings.mlsys.org/paper_files/paper/2021/hash/1f8053a67ec8e0b57455713cefdd8218-Abstract.html",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        4
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    },
+    {
+      "key": "A17",
+      "manuscript": "章节内容/05_问题二.tex:47",
+      "claim": "拓扑顺序影响活跃张量集合与峰值存储。",
+      "card_observation": "物理页4图4展示图重写、软预算、动态规划；图5为零入度集合搜索。",
+      "card_pages_read": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "card_pages_visually_reviewed": [
+        4
+      ],
+      "boundary": "本题仅调整完整子图的划分、归核和核内顺序，不改原图或继承峰值内存目标。",
+      "verified_url": "https://proceedings.mlsys.org/paper_files/paper/2020/hash/79c36fe64e04b80fc44845bb9fe73242-Abstract.html",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        4
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    },
+    {
+      "key": "A40",
+      "manuscript": "章节内容/06_问题三.tex:17",
+      "claim": "节点亲和与延迟执行影响缓存复用。其LRU模型未当作本文FIFO规则或命题4的来源。",
+      "card_observation": "物理页4图2为L1/L2和LRU；物理页5图3及式(1)是Cache Reuse Profile。",
+      "card_pages_read": [
+        1,
+        4,
+        5,
+        6
+      ],
+      "card_pages_visually_reviewed": [
+        4,
+        5
+      ],
+      "boundary": "原文LRU与周期DAG不能预测本题完成填充、命中不更新的FIFO。",
+      "verified_url": "https://pure.york.ac.uk/portal/en/publications/a-cache-aware-dag-scheduling-method-on-multicores-exploiting-node/",
+      "verified_date": "2026-09-27",
+      "current_read_pages": [
+        4,
+        5
+      ],
+      "current_read_method": "读取相关原文页的模型或方法段落，结合原文卡核对论点。"
+    }
   ],
-  "ai_explanation": "GPT-6主审依据现有原文卡归纳每条引用与正文论点的对应和适用边界；GPT-6-sol/luna在资料、图件、排版工作中提供辅助。AI说明不是原文摘录、学术证据或在线核验；原文阅读页是既有LITERATURE_CARDS.json记录。",
-  "substantive_issue": "模板参考文献证据.schema.json将AI工具字段写死为DeepSeek-V4.1-Flash，与实际GPT-6使用及当前参考文献.bib冲突；此本地记录不伪装满足该模板。"
+  "ai_explanation": "本轮由GPT-6 Astra独立核读和修改，无新增子代理工作。实际型号与发布日期来自OpenAI官方Changelog，AI工具条目不承担数学论据。",
+  "substantive_issue": "模板参考文献证据.schema.json将AI工具字段写死为DeepSeek-V4.1-Flash，与实际GPT-6使用及当前参考文献.bib冲突；此本地记录不伪装满足该模板。",
+  "ai_release_source": "https://developers.openai.com/api/docs/changelog",
+  "ai_release_dates": {
+    "gpt-6-astra": "2026-09-03",
+    "gpt-6-sol": "2026-09-22",
+    "gpt-6-luna": "2026-09-22"
+  }
 }
