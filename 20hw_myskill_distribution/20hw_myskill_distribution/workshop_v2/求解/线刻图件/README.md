@@ -1,6 +1,6 @@
-# 论文图件：V7线刻设色统一版
+# 论文图件：青绿线刻设色统一版
 
-正文共20幅图。图1.1采用PR #71的V7母版（延续V6三环节版型），论文副本统一“核心映射”等术语。其余19图沿用#69的数据与入口，并按批注1—3统一复核。原始数据和求解器不变。
+正文共20幅图。图1.1采用用户指定的V13青绿母版，中栏两列三排展示六类候选，保留三环节与评价反馈回路。其余19图沿用#69的数据与入口，并按批注1—3统一复核。原始数据和求解器不变。
 
 后续修改首先阅读`../../论文/批注文件夹/批注1-3统一复核/论文修改总约束与批注原话.md`。图号及源码对应见`FIGURE_EDIT_MAP.json`。
 
@@ -14,10 +14,10 @@ python "20hw_myskill_distribution/20hw_myskill_distribution/workshop_v2/求解/�
 
 Python需要Matplotlib和NumPy。机制图优先使用PATH中的Inkscape导出；没有Inkscape时，使用Node.js、Playwright与本机Edge/Chromium，由`render_svg.mjs`将SVG直接打印为矢量PDF，并生成PNG预览。可通过`PAPER_BROWSER`和`PAPER_NODE_MODULES`指定已有运行时。绘图不调用求解器。
 
-图1.1的文字可编辑源为`../../论文/图片/workflow_qinglu_v7.svg`，其原始母版位于仓库`paper_a_figures/engraved_workflow/ink_v7/assets`。导出论文副本：
+图1.1采用用户提供的V13青绿图。便携源为`../../论文/图片/workflow_qinglu_v13.svg`，文字可编辑源为`../../论文/图片/workflow_qinglu_v13_editable.svg`，对应母版位于仓库`paper_a_figures/engraved_workflow/ink_v13/assets`。便携源文字已转为矢量轮廓，编辑文字时使用editable文件。导出论文副本：
 
 ```powershell
-node render_svg.mjs ../../论文/图片/workflow_qinglu_v7.svg
+node render_svg.mjs ../../论文/图片/workflow_qinglu_v13.svg
 ```
 
 机制图保留文字、矩形、连线、纹理及公式的`data-tex`，结果图保留SVG文字与坐标对象；正式PDF均为矢量导出。每幅图同时保存PDF、SVG和PNG。修改文本时直接改生成器或总图SVG，再导出，不能仅修改预览图。

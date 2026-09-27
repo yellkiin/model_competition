@@ -1,16 +1,17 @@
 {
   "paper_base": "PR #69 plus local annotation2 revision",
-  "master": "PR #71 V7, manuscript copy uses unified terminology",
+  "master": "用户指定V13青绿图，匹配main #78母版",
   "theme": "qinglu",
   "redrawn": 19,
   "reused_master": 1,
   "figures": [
     {
       "number": "1.1",
-      "file": "workflow_qinglu_v7",
-      "action": "采用#71 V7总图并统一术语",
+      "file": "workflow_qinglu_v13",
+      "action": "采用用户提供V13总图，两列三排展示六类候选，正文同步解释",
       "meaning": "三环节闭环及a—f操作，对应三问的联合方案与统一评价",
-      "editable_source": "论文/图片/workflow_qinglu_v7.svg"
+      "editable_source": "论文/图片/workflow_qinglu_v13_editable.svg",
+      "portable_source": "论文/图片/workflow_qinglu_v13.svg"
     },
     {
       "number": "4.1",
