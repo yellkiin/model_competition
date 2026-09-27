@@ -1,0 +1,61 @@
+{
+  "source_zip": "D:\\微信\\聊天文件\\xwechat_files\\wxid_kkdzfyengc9h11_9fcb\\msg\\file\\2026-09\\A题_提交附件_复核定稿版.zip",
+  "scope": "读取提交附件、逐项比较论文表格与绘图数据。不运行求解器或官方重评，不进行哈希或冒烟测试。",
+  "counts": {
+    "q1_rows": 500,
+    "q2_rows": 500,
+    "q3_rows": 500,
+    "paper_main_cells_compared": 1500,
+    "paper_pair_rows_compared": 500,
+    "mean_rows_compared": 15,
+    "cache_parameter_grid.csv": 54,
+    "cache_boundary_adaptation.csv": 12,
+    "trace_fifo_events.csv": 13,
+    "trace_pipe_ddr.csv": 20,
+    "files": 1461,
+    "uncompressed_bytes": 342096726,
+    "categories": {
+      "README.md": 1,
+      "appendices": 5,
+      "code": 33,
+      "official": 111,
+      "plans": 1300,
+      "supplement": 11
+    },
+    "plans": {
+      "q1": 400,
+      "q2": 400,
+      "q3": 500
+    }
+  },
+  "key_code": [
+    {
+      "zip_path": "A题_提交附件/code/research_a_orion_trident/solve.py",
+      "paper_snapshot": "求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/solve.py",
+      "body_matches_previous": true,
+      "line_offset": 5
+    },
+    {
+      "zip_path": "A题_提交附件/code/research_a_orion_trident/sources.py",
+      "paper_snapshot": "求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/sources.py",
+      "body_matches_previous": true,
+      "line_offset": 5
+    },
+    {
+      "zip_path": "A题_提交附件/code/research_a_orion_trident/fifo.py",
+      "paper_snapshot": "求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/fifo.py",
+      "body_matches_previous": true,
+      "line_offset": 5
+    },
+    {
+      "zip_path": "A题_提交附件/code/research_a_orion_trident/vendor/orion/core.py",
+      "paper_snapshot": "求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident/vendor/orion/core.py",
+      "body_matches_previous": true,
+      "line_offset": 5
+    }
+  ],
+  "issues": [],
+  "claim_12_boundary_results": "present; 6 cases x 2 boundary configurations",
+  "raw_response_files_in_package": false,
+  "note": "提交包提供1300份正式方案、1500行逐例指标和评价程序。原始整图单核值列于前两问附录，不另列调度方案。结果JSON、完整Trace和日志由复现入口生成，不能表述为已经随包提供。"
+}

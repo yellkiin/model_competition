@@ -9,24 +9,30 @@ from __future__ import annotations
 import csv
 import importlib.util
 import json
+import lzma
 from pathlib import Path
 
 W = Path(__file__).resolve().parents[2]
 ROOT = W.parents[0]
 ORIGINAL = ROOT / "华为杯_论文规范模板/tools/build_appendix.py"
+if not ORIGINAL.is_file():
+    ORIGINAL = next((parent / "ORION_Paper_Agent/华为杯_论文规范模板/tools/build_appendix.py"
+                     for parent in W.parents
+                     if (parent / "ORION_Paper_Agent/华为杯_论文规范模板/tools/build_appendix.py").is_file()), ORIGINAL)
 PAPER = W / "论文"
-SUPPORT = W / "提交附件/支撑材料文件"
-PAIRS = W / "求解/规范化数据/combined/pairs.csv"
+SUPPORT = W / "求解/支撑材料源/复核定稿附件源码/code/research_a_orion_trident"
+PAIRS = W / "数据/l2_patch_60_62/q3_latest_500.csv.xz"
 
 
 def source_segment(question, source, first, last, caption):
-    path = SUPPORT / question / "源码/research_a_orion_trident" / source
+    path = SUPPORT / source
     if not path.is_file():
         raise FileNotFoundError(path)
-    return dict(caption=caption, language="python", firstline=first,
-                lastline=last, firstnumber=first,
-                paper_relative_path="../提交附件/支撑材料文件/" + question +
-                                    "/源码/research_a_orion_trident/" + source)
+    # The submitted files add five attribution lines before the unchanged code.
+    return dict(caption=caption, language="python", firstline=first + 5,
+                lastline=last + 5, firstnumber=first + 5,
+                paper_relative_path="../求解/支撑材料源/复核定稿附件源码/code/"
+                                    "research_a_orion_trident/" + source)
 
 
 def num(value):
@@ -34,16 +40,19 @@ def num(value):
 
 
 def create_pairs_tex():
-    with PAIRS.open(encoding="utf-8-sig", newline="") as stream:
-        rows = list(csv.DictReader(stream))
+    with lzma.open(PAIRS, "rt", encoding="utf-8-sig", newline="") as stream:
+        rows = [dict(case=r["case"], n=r["n"], without_l2=r["no_l2_makespan"],
+                     with_l2=r["makespan"], without_l2_added_bytes=r["no_l2_added_copy_bytes"],
+                     with_l2_added_bytes=r["added_copy_bytes"], hit_rate=r["cache_hit_rate"])
+                for r in csv.DictReader(stream)]
     if len(rows) != 500:
         raise ValueError("配对长表需要真实 500 组")
     lines = [
-        "% 由 combined/pairs.csv 的 500 组实际同方案官方响应生成；仅显示命中率保留六位小数。",
+        "% 由正式500组同方案完整评价记录生成；仅显示命中率保留六位小数。",
         r"\Needspace{8\baselineskip}",
         r"\begingroup\normalsize",
         r"\setlength{\tabcolsep}{1.5pt}",
-        r"\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}",
+        r"\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}",
         r"\setlength{\LTcapwidth}{160mm}",
         r"\begin{longtable}{@{}p{12mm}>{\raggedleft\arraybackslash}p{9mm}>{\raggedleft\arraybackslash}p{24mm}>{\raggedleft\arraybackslash}p{24mm}>{\raggedleft\arraybackslash}p{30mm}>{\raggedleft\arraybackslash}p{30mm}>{\raggedleft\arraybackslash}p{23mm}@{}}",
         r"\caption{问题三逐图逐核同方案有无 L2 的官方评价结果}\label{tab:appendix_q3_all_pairs}\\",
@@ -77,11 +86,12 @@ def main():
     assert spec and spec.loader
     spec.loader.exec_module(module)
     inventory = [
-        dict(path="问题一", description="完整方法源码、代码环境说明和 Task/调度逐例结果表。"),
-        dict(path="问题二", description="完整方法源码、代码环境说明和跨核交接/DDR 逐例结果表。"),
-        dict(path="问题三", description="完整方法源码、代码环境说明和 L2/FIFO 同方案配对逐例结果表。"),
-        dict(path="其他数据", description="100 个原始计算图、官方配置、完整官方评价代码及来源说明。"),
-        dict(path="其他支撑材料", description="1400 个已选主配置和 500 个同方案配对的计划/官方响应、各分片执行源码、数据表及整理复现程序。"),
+        dict(path="code/", description="三问求解、候选生成与方案评价的程序。"),
+        dict(path="official/", description="100个输入计算图、硬件配置及官方评价程序。"),
+        dict(path="plans/", description="第一、二问各400份及第三问500份正式方案。"),
+        dict(path="appendices/", description="逐例周期与额外搬运、同方案缓存对照、均值及54组参数结果。"),
+        dict(path="supplement/", description="12组边界重优化结果、FIFO与读入轨迹、候选示例及补充图。"),
+        dict(path="README.md", description="附件目录与程序使用说明。"),
     ]
     problems = [
         dict(code=[source_segment("问题一", "solve.py", 58, 121, "官方评价与字典序接受"),
@@ -106,12 +116,12 @@ def main():
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(rendered, encoding="utf-8")
     receipt = dict(generator="original build_appendix.render_appendix_tex; project-local adapter",
-                   original_generator=str(ORIGINAL), status="generated_not_audited",
+                   original_generator=str(ORIGINAL), status="rendered",
                    attachment_rows=len(inventory), question_count=len(problems),
                    code_segments=sum(len(x["code"]) for x in problems),
                    q3_pair_rows=500, appendix_tex=str(target), pair_table_tex=str(pairs_target),
-                   source="actual curated package and combined/pairs.csv",
-                   note="No full support-package audit, hash pass, or PDF compilation asserted")
+                   source="A题_提交附件_复核定稿版.zip; 数据/l2_patch_60_62/q3_latest_500.csv.xz",
+                   note="附件目录按提交包列示，源码引用提交原件副本。数值比对与页面审阅分别记录。")
     (W / "求解/支撑材料源/APPENDIX_GENERATION_RECORD.json").write_text(
         json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(receipt, ensure_ascii=False))

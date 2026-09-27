@@ -112,7 +112,7 @@ def appendix_table(question: int, ns: tuple[int, ...], values: dict[tuple[str, i
         "% 周期为总体任务执行时间；字节为额外 COPY。q1/q2 单核使用题设约定的原始整图响应。",
         r"\begingroup\normalsize",
         r"\setlength{\tabcolsep}{3pt}",
-        r"\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}",
+        r"\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}",
         r"\setlength{\LTcapwidth}{160mm}",
         rf"\begin{{longtable}}{{{colspec}}}",
         rf"\caption{{问题{title}逐例结果：{suffix} 核}}\label{{tab:appendix_q{question}_n{''.join(map(str, ns))}}}\\",
